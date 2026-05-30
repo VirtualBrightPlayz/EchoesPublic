@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bpwwmtsj7mdhu"
+path="res://.godot/imported/SCP Echoes OST - NTF Spawn Stinger.ogg-8777118e0844af5e16a26024d89212a5.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/stingers/SCP Echoes OST - NTF Spawn Stinger.ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - NTF Spawn Stinger.ogg-8777118e0844af5e16a26024d89212a5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

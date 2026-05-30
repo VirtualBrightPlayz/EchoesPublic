@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://etgus1j0k6xk"]
+
+[ext_resource type="Texture2D" uid="uid://cic2kyoei5uu4" path="res://models/main/general_door/T_General_Door_GeneralDoor.png" id="1_p3t1j"]
+[ext_resource type="Texture2D" uid="uid://hp1lil2rkotc" path="res://models/main/general_door/N_General_Door_GeneralDoor.png" id="2_m2bar"]
+[ext_resource type="Texture2D" uid="uid://dsy6pghim2w7a" path="res://models/main/general_door/ORM_General_Door_GeneralDoor.png" id="3_peaxw"]
+
+[resource]
+albedo_texture = ExtResource("1_p3t1j")
+orm_texture = ExtResource("3_peaxw")
+normal_enabled = true
+normal_texture = ExtResource("2_m2bar")

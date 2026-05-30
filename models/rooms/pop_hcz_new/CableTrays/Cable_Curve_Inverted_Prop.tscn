@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ap1g7breogp"]
+
+[ext_resource type="PackedScene" uid="uid://bowatbghas47" path="res://models/rooms/pop_hcz_new/CableTrays/CableTrays.fbx" id="1_06483"]
+[ext_resource type="PackedScene" uid="uid://dfodco6aeowhn" path="res://models/rooms/pop_hcz_new/CableTrays/CableTray_Curve_Backwards.fbx" id="2_ocqiu"]
+
+[node name="Cable_Curve_Inverted" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CableTrays" parent="StaticBody3D" instance=ExtResource("1_06483")]
+
+[node name="CableTrayC" parent="StaticBody3D/CableTrays" index="0"]
+visible = false
+
+[node name="CableTrayS" parent="StaticBody3D/CableTrays" index="1"]
+visible = false
+
+[node name="CableTraySC" parent="StaticBody3D/CableTrays" index="2"]
+visible = false
+
+[node name="CableTray_Curve_Backwards" parent="StaticBody3D" instance=ExtResource("2_ocqiu")]
+
+[editable path="StaticBody3D/CableTrays"]

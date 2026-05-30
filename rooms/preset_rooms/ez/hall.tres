@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://367s8ip3cquh"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_dj5di"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_4pppu"]
+
+[resource]
+resource_name = "Entrance Hall"
+script = ExtResource("1_dj5di")
+type = 2
+stage = 3
+scenes = []
+sceneFile = "uid://cbcrj3e08l0xt"
+isGeneric = true
+category = "Entrance"

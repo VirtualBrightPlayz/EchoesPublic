@@ -1,0 +1,1 @@
+for filename in *bump.jpg; do echo ${filename}; convert ${filename} -channel G -negate ${filename}; done

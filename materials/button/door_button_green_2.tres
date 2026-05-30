@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://sv6exwgovn0k"]
+
+[ext_resource type="Shader" uid="uid://c8axlb41c3vwd" path="res://shaders/door_button.gdshader" id="1_ft3uq"]
+[ext_resource type="Texture2D" uid="uid://cjma2tsjhta35" path="res://textures/main/button/ButtonGreen_BaseColor.png" id="2_aj67m"]
+[ext_resource type="Texture2D" uid="uid://tt3gejtws45f" path="res://textures/main/button/ButtonGreen_Emission_NoLogo.png" id="3_d4m6x"]
+[ext_resource type="Texture2D" uid="uid://dfp356dlssa5u" path="res://textures/main/button/Button_Emission.png" id="4_7pdym"]
+[ext_resource type="Texture2D" uid="uid://bjvy2hjh3qfuj" path="res://textures/main/button/Button_Metallic.png" id="4_kqt8l"]
+[ext_resource type="Texture2D" uid="uid://kxt3iqagug04" path="res://textures/main/button/Button_Normal.png" id="5_g4ffo"]
+[ext_resource type="Texture2D" uid="uid://dngxh8k0o6vb4" path="res://textures/main/button/Button_Roughness.png" id="6_4pewj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ft3uq")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_aj67m")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("4_kqt8l")
+shader_parameter/texture_roughness = ExtResource("6_4pewj")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_emission = ExtResource("3_d4m6x")
+shader_parameter/emission_energy = 5.0
+shader_parameter/emission_color = Color(0, 0, 0, 1)
+shader_parameter/texture_emission_alt = ExtResource("4_7pdym")
+shader_parameter/emission_alt_energy = 5.0
+shader_parameter/texture_normal = ExtResource("5_g4ffo")
+shader_parameter/normal_scale = 1.0

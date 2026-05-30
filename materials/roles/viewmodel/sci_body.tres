@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cxdhe7xcf58qm"]
+
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="1_c42oi"]
+[ext_resource type="Texture2D" uid="uid://dj2nnxfta884x" path="res://models/scpsl/scientist/Researcher1__Pan_Janusz_Body_diffuse.png" id="2_6vxwp"]
+[ext_resource type="Texture2D" uid="uid://njwmg0hdbbj" path="res://models/scpsl/scientist/Researcher1__Pan_Janusz_Body_normal.png" id="3_ixh3n"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_c42oi")
+shader_parameter/fov = 70.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_6vxwp")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("3_ixh3n")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

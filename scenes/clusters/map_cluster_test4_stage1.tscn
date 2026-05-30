@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://comoop8hc6ed4"]
+
+[ext_resource type="Script" uid="uid://cue0tcrjet1oq" path="res://scripts/layout_generator/MapCluster.cs" id="1_ahlu7"]
+[ext_resource type="Script" uid="uid://c34p57woshxpt" path="res://scripts/layout_generator/MapRoom.cs" id="2_dxqji"]
+
+[node name="MapClusterTest4" type="Node3D"]
+script = ExtResource("1_ahlu7")
+
+[node name="MapConn" type="Node3D" parent="." groups=["map_connection"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 31.2)
+
+[node name="MapConn2" type="Node3D" parent="." groups=["map_connection"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.2, 0, 20.8)
+
+[node name="Endoff" type="Node3D" parent="."]
+script = ExtResource("2_dxqji")
+
+[node name="Hall" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8, 0, 20.8)
+script = ExtResource("2_dxqji")
+type = 2
+
+[node name="Endoff3" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.8, 0, 20.8)
+script = ExtResource("2_dxqji")
+
+[node name="XRoom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.8)
+script = ExtResource("2_dxqji")
+type = 4

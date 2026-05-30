@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://4bdibkvqg0r7"
+path="res://.godot/imported/SCP-106 Stinger.ogg-058f86af389bc337e2f34a956dcca4fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/106/src/SCP-106 Stinger.ogg"
+dest_files=["res://.godot/imported/SCP-106 Stinger.ogg-058f86af389bc337e2f34a956dcca4fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

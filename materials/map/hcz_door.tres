@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dn6ilvflbpnvn"]
+
+[ext_resource type="Texture2D" uid="uid://c4ffkj3npeqcj" path="res://textures/main/hcz_door/door_BaseColor_2k.png" id="1_3tclt"]
+[ext_resource type="Texture2D" uid="uid://g3745i1abko" path="res://textures/main/hcz_door/door_Metallic_2k.png" id="2_ca858"]
+[ext_resource type="Texture2D" uid="uid://c20oeg1d5314o" path="res://textures/main/hcz_door/door_Normal_2k.png" id="3_cmt68"]
+[ext_resource type="Texture2D" uid="uid://n8ecp6ygif5l" path="res://textures/main/hcz_door/door_Roughness_2k.png" id="4_du7sk"]
+
+[resource]
+albedo_texture = ExtResource("1_3tclt")
+metallic = 1.0
+metallic_texture = ExtResource("2_ca858")
+roughness_texture = ExtResource("4_du7sk")
+normal_enabled = true
+normal_texture = ExtResource("3_cmt68")
+texture_filter = 5

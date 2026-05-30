@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameEffect" format=3 uid="uid://4n72q4yj0g6c"]
+
+[ext_resource type="PackedScene" uid="uid://dcq2yi6dpgphq" path="res://scenes/player/ragdolls/zombie_ragdoll.tscn" id="1_w6ey3"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_muscc"]
+
+[resource]
+resource_name = "Zombie Ragdoll"
+script = ExtResource("2_muscc")
+DisplayName = "Ragdoll"
+scene = ExtResource("1_w6ey3")
+Lifetime = 0.0

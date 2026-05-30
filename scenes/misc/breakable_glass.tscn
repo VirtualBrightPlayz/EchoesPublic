@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://5wgpxwfbjh5h"]
+
+[ext_resource type="Script" uid="uid://c5q1456r65doq" path="res://scripts/map/BreakableGlass.cs" id="1_semkg"]
+[ext_resource type="Script" uid="uid://bnmy8qo6srtpy" path="res://scripts/map/BreakableGlassTool.cs" id="1_utt6e"]
+[ext_resource type="ArrayMesh" uid="uid://de050kqu44hsf" path="res://scenes/misc/glass1.tres" id="3_b0k5j"]
+[ext_resource type="ArrayMesh" uid="uid://qasadxhh3tce" path="res://scenes/misc/glass2.tres" id="4_gflo8"]
+[ext_resource type="Material" uid="uid://b066akiwx4iiv" path="res://scenes/misc/brokenglass.tres" id="4_nrkdl"]
+[ext_resource type="ArrayMesh" uid="uid://blrk1rlhynx88" path="res://scenes/misc/glass3.tres" id="6_gflo8"]
+[ext_resource type="ArrayMesh" uid="uid://5dcyvhsxc8cb" path="res://scenes/misc/glass4.tres" id="6_nrkdl"]
+[ext_resource type="Material" uid="uid://d10efwhmp4vtr" path="res://models/rooms/lcz/textures/new glass.tres" id="7_baoty"]
+[ext_resource type="ArrayMesh" uid="uid://bi45dqqnouu2h" path="res://scenes/misc/glass5.tres" id="8_baoty"]
+[ext_resource type="ArrayMesh" uid="uid://87pcuid1n0n7" path="res://scenes/misc/glass6.tres" id="9_tiwxe"]
+[ext_resource type="AudioStream" uid="uid://bel6eug40lfut" path="res://audio/glass/519349__pjezisek__windowglass.mp3" id="9_utt6e"]
+[ext_resource type="ArrayMesh" uid="uid://ju7p57ox8y4o" path="res://scenes/misc/glass7.tres" id="10_molv2"]
+[ext_resource type="ArrayMesh" uid="uid://kkrt0w33tfv8" path="res://scenes/misc/glass8.tres" id="11_2xbgt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tf2uw"]
+material = ExtResource("7_baoty")
+size = Vector3(3, 3, 0.05)
+
+[sub_resource type="Curve" id="Curve_12ckk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.778894, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tf2uw"]
+curve = SubResource("Curve_12ckk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sxxsb"]
+lifetime_randomness = 1.0
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(1.5, 1.5, 0.05)
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, 0.25, 1)
+initial_velocity_min = -1.0
+initial_velocity_max = 8.0
+radial_accel_min = 4.9999976
+radial_accel_max = 4.9999976
+scale_min = 0.099999994
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_tf2uw")
+collision_mode = 1
+collision_friction = 0.35
+collision_bounce = 0.36
+collision_use_scale = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fxfvh"]
+size = Vector3(3.00488, 3.00024, 0.0507813)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ldnty"]
+properties/0/path = NodePath(".:Health")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="Breakable Glass" type="Node3D" unique_id=643981472 node_paths=PackedStringArray("breakableGlass")]
+script = ExtResource("1_utt6e")
+breakableGlass = NodePath("Glassparticle")
+
+[node name="Glassparticle" type="StaticBody3D" parent="." unique_id=166043457 node_paths=PackedStringArray("Particles", "Mesh", "Audio", "Shape")]
+collision_layer = 436
+collision_mask = 157
+script = ExtResource("1_semkg")
+Particles = [NodePath("Glass/GPUParticles3D"), NodePath("Glass/GPUParticles3D2"), NodePath("Glass/GPUParticles3D3"), NodePath("Glass/GPUParticles3D4"), NodePath("Glass/GPUParticles3D5"), NodePath("Glass/GPUParticles3D6"), NodePath("Glass/GPUParticles3D7"), NodePath("Glass/GPUParticles3D8")]
+Mesh = NodePath("Glass/MeshInstance3D")
+Audio = NodePath("AudioStreamPlayer3D")
+Shape = NodePath("CollisionShape3D")
+metadata/_custom_type_script = "uid://c5q1456r65doq"
+
+[node name="Glass" type="Node3D" parent="Glassparticle" unique_id=1473265404]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Glassparticle/Glass" unique_id=2099283110]
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("BoxMesh_tf2uw")
+skeleton = NodePath("../..")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=1886358014]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("3_b0k5j")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=2071625725]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("4_gflo8")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=1664088958]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+transform_align = 2
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("6_gflo8")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=1668850980]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+transform_align = 2
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("6_nrkdl")
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=655184314]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("8_baoty")
+
+[node name="GPUParticles3D6" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=1723580896]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("9_tiwxe")
+
+[node name="GPUParticles3D7" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=1369059585]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("10_molv2")
+
+[node name="GPUParticles3D8" type="GPUParticles3D" parent="Glassparticle/Glass" unique_id=1059692874]
+material_override = ExtResource("4_nrkdl")
+cast_shadow = 0
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.99
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sxxsb")
+draw_pass_1 = ExtResource("11_2xbgt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Glassparticle" unique_id=1806738488]
+shape = SubResource("BoxShape3D_fxfvh")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Glassparticle" unique_id=1757250809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.40417, 0)
+size = Vector3(50, 1, 50)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Glassparticle" unique_id=1292846561]
+stream = ExtResource("9_utt6e")
+max_distance = 25.0
+bus = &"World"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Glassparticle" unique_id=1453214407]
+replication_interval = 0.2
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_ldnty")

@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://gf47oqf1wml0"]
+
+[ext_resource type="AudioStream" uid="uid://pod5pp0tnytr" path="res://audio/PropsImpacts/Generic/Generic_Box/Generic_box_impact1.wav" id="1_jsxlt"]
+[ext_resource type="AudioStream" uid="uid://4uq5qqxrbgr2" path="res://audio/PropsImpacts/Generic/Generic_Box/Generic_box_impact2.wav" id="2_qdw6d"]
+[ext_resource type="AudioStream" uid="uid://bsbn3t14q738p" path="res://audio/PropsImpacts/Generic/Generic_Box/Generic_box_impact3.wav" id="3_acjc6"]
+
+[resource]
+random_pitch = 1.85
+random_volume_offset_db = 0.32
+streams_count = 3
+stream_0/stream = ExtResource("1_jsxlt")
+stream_1/stream = ExtResource("2_qdw6d")
+stream_2/stream = ExtResource("3_acjc6")

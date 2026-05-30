@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bqs1uvlphqv35"]
+
+[ext_resource type="Texture2D" uid="uid://bubx43lea4ilo" path="res://models/rooms/pop_hcz_new/Pop_Cards/CardTextures/CardHolderSec/SecCardHolder_T.png" id="1_wwsct"]
+[ext_resource type="Texture2D" uid="uid://3xj3urg1211" path="res://models/rooms/pop_hcz_new/Pop_Cards/CardTextures/CardHolderSec/SecCardHolder_E.png" id="2_fywam"]
+[ext_resource type="Texture2D" uid="uid://0v64mpakyddn" path="res://models/rooms/pop_hcz_new/Pop_Cards/CardTextures/CardHolderSec/SecCardHolder_N.png" id="3_w1hou"]
+[ext_resource type="Texture2D" uid="uid://dfgtfacml4pxs" path="res://models/rooms/pop_hcz_new/Pop_Cards/CardTextures/CardHolderSec/SecCardHolder_ORM.png" id="4_mx2f8"]
+
+[resource]
+albedo_texture = ExtResource("1_wwsct")
+orm_texture = ExtResource("4_mx2f8")
+emission_enabled = true
+emission_texture = ExtResource("2_fywam")
+normal_enabled = true
+normal_texture = ExtResource("3_w1hou")

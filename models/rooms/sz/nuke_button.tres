@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b5kl7swh81xoi"]
+
+[ext_resource type="Texture2D" uid="uid://di8qp728gwdfh" path="res://models/rooms/sz/M_LightEmission_BaseColor.png" id="1_l4ya3"]
+[ext_resource type="Texture2D" uid="uid://bc6kvxhhf7lw" path="res://models/rooms/sz/M_LightEmission_Emission.png" id="2_3grxs"]
+[ext_resource type="Texture2D" uid="uid://clog5n55behme" path="res://models/rooms/sz/M_LightEmission_Metallic.png" id="3_pmwwg"]
+[ext_resource type="Texture2D" uid="uid://dc4lgymuk0nuq" path="res://models/rooms/sz/M_LightEmission_Normal.png" id="4_k6xuq"]
+[ext_resource type="Texture2D" uid="uid://coo2w433xcvpo" path="res://models/rooms/sz/M_LightEmission_Roughness.png" id="5_ih8aa"]
+
+[resource]
+albedo_texture = ExtResource("1_l4ya3")
+metallic = 1.0
+metallic_texture = ExtResource("3_pmwwg")
+roughness_texture = ExtResource("5_ih8aa")
+emission_enabled = true
+emission_texture = ExtResource("2_3grxs")
+normal_enabled = true
+normal_texture = ExtResource("4_k6xuq")

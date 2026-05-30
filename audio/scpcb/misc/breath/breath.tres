@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://cd84ofvguvd1l"]
+
+[ext_resource type="AudioStream" uid="uid://8afng5j07rab" path="res://audio/scpcb/misc/breath/breath1.ogg" id="1_amrjv"]
+[ext_resource type="AudioStream" uid="uid://5fwkaj6xbsry" path="res://audio/scpcb/misc/breath/breath2.ogg" id="2_t46t5"]
+[ext_resource type="AudioStream" uid="uid://dsk1bapjiy300" path="res://audio/scpcb/misc/breath/breath3.ogg" id="3_vansq"]
+[ext_resource type="AudioStream" uid="uid://b7gfm6bx1kjvd" path="res://audio/scpcb/misc/breath/breath4.ogg" id="4_dsu20"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_amrjv")
+stream_1/stream = ExtResource("2_t46t5")
+stream_2/stream = ExtResource("3_vansq")
+stream_3/stream = ExtResource("4_dsu20")

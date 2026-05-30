@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettings" load_steps=5 format=3 uid="uid://pfcmexbt3eef"]
+
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_7rxx2"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_1qgm0"]
+[ext_resource type="PackedScene" uid="uid://bxx02o4n8j3gd" path="res://scenes/rooms/hcz/hcz_EndRoom_457.tscn" id="3_1qgm0"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="3_qcf0i"]
+
+[resource]
+script = ExtResource("3_qcf0i")
+RoomScenes = Array[PackedScene]([ExtResource("3_1qgm0")])
+RequiredInstances = 1
+MaximumInstances = 1
+Connections = 2
+metadata/_custom_type_script = "uid://c3ohb0venlcjp"

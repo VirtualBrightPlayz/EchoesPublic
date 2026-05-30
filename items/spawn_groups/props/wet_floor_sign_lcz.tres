@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PropSpawnGroup" load_steps=3 format=3 uid="uid://2t46hoq2p06j"]
+
+[ext_resource type="PackedScene" uid="uid://bsx52g02v6aam" path="res://scenes/rooms/props/dynamic/wet_floor_sign_new.tscn" id="1_fnpn4"]
+[ext_resource type="Script" uid="uid://dg32kkoa2ddpl" path="res://scripts/map/PropSpawnGroup.cs" id="4_7ojma"]
+
+[resource]
+script = ExtResource("4_7ojma")
+Props = [ExtResource("1_fnpn4")]
+RemoveUsedProp = false
+RemoveUsedSpawn = true
+MaxSpawned = 2

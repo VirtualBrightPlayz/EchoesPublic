@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://cxv807hgg0kir"]
+
+[ext_resource type="Texture2D" uid="uid://xrmxgdb2v6tf" path="res://textures/inv_icons/StickyNade_Icon.png" id="1_1n7y6"]
+[ext_resource type="PackedScene" uid="uid://wa1kluu61ake" path="res://scenes/items/grenade_sticky.tscn" id="2_ikcq3"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_xs5lj"]
+
+[resource]
+resource_name = "Sticky Grenade"
+script = ExtResource("3_xs5lj")
+ItemScene = ExtResource("2_ikcq3")
+Icon = ExtResource("1_1n7y6")
+Description = "A grenade that sticks to the surface it hits, doing decent damage."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=4 uid="uid://d2fphyc14i0on"]
+
+[ext_resource type="Material" uid="uid://biuau2dwvrnu2" path="res://textures/main/ez/randomprops/books.tres" id="1_2lujp"]
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_v4jpk"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_hp2rn"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d2yee"]
+_surfaces = [{
+"aabb": AABB(-0.140271, -0.005, -0.208856, 0.280541, 0.305, 0.417713),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAAAAAIAAgAFAAQABQACAAMAAAAEAAYABQAHAAQABwAGAAQACAABAAAABgAIAAAACQABAAgAAQAJAAMAAwAKAAUACwAHAAUABQAKAAsADAAKAAMADAALAAoAAwAJAA0AAwANAAwABwALAA4ADgALAAwADgAMAA0ADgAGAAcACQAPAA0ADQAPAA4ACAAPAAkABgAOABAADwAIABEAEQAIAAYADgAPABIAEQASAA8AEgAQAA4ABgATABEAEgARABMAEAATAAYAEwAQABIA"),
+"name": "books",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("EqMPPpqZmT4KoUu+EqMPPpqZmT563lW+EqMPPgrXo7t63lW+EqMPvgrXo7t63lW+EqMPPj0K1z3NzEw+EqMPPgrXo7t63lU+oWUFPj0K1z0KoUs+EqMPPj0K1z163lU+oWUFPpqZmT4KoUu+EqMPvpqZmT563lW+EqMPvgrXo7t63lU+EqMPvj0K1z163lU+EqMPvj0K1z3NzEw+EqMPvpqZmT4KoUu+oWUFvj0K1z0KoUs+oWUFvpqZmT4KoUu+oWUFvgrXozsKoUs+oWUFPgrXozsKoUu+oWUFvgrXozsKoUu+oWUFPgrXozsKoUs+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_aweh7"]
+resource_name = "bindfileholder"
+_surfaces = [{
+"aabb": AABB(-0.140271, -0.005, -0.208856, 0.280541, 0.305, 0.417713),
+"attribute_data": PackedByteArray("cAlhPsRYJj/sBmE+bMImPyuwiT4I1SY/xM2APrjuFT8f44k+3pcVP9POgD4qkRU/IPKAPrCfCT8P8YA+Pv0JP1sFij7yAwo/PDiKPp6N8T7eFGI+wjvyPjMXYj54aPE+2l22Pq4IIj/RL7c+sHIiP0N0tj5iciI/Kjm3PnbkFj/Yy5E+/HMiP5Jmtj4yThc/3suRPjIKIj+OfbY+huQWP/z3kD78cyI/ZtKRPrbXFj/z0ZE+gEEXP5L+kD501xY/D/GAPj79CT/TzoA+KpEVPx/jiT7elxU/WwWKPvIDCj+FW2I+okDaPjMXYj54aPE+PDiKPp6N8T5mWoo+ymXaPhNsSD8gVBA/yZhUP75EED9HoUw/yLggP8mASD8AviA/AQpLP/TL+T6pylU/ZM/5PrjIVT9yFAk/EAhLP7QSCT+nf6w+ah0KP1sFij7yAwo/H+OJPt6XFT9oXaw+WLEVP3skOD9Ykys/5BY4P7LSID/JgEg/AL4gP1uOSD+cfis/FKNIP3boOz9bjkg/nH4rP9iuTD9seSs/yM9UPxrZOz9bjkg/nH4rP8mASD8AviA/R6FMP8i4ID/Yrkw/bHkrPw=="),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAgAEAAMABAAFAAMABgAHAAgABgAIAAkACQAKAAYACQALAAoADAANAA4ADwANAAwADAAOABAADAARAA8AEAASAAwADwARABMAFAASABAAFQATABEAFgASABQAEQAWABUAFAAXABYAFgAXABUAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQA"),
+"material": ExtResource("1_2lujp"),
+"name": "books",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("EqMPPpqZmT4KoUu+EqMPPpqZmT563lW+EqMPPgrXo7t63lW+EqMPPj0K1z3NzEw+EqMPPgrXo7t63lU+EqMPPj0K1z163lU+EqMPvj0K1z3NzEw+EqMPvj0K1z163lU+EqMPvgrXo7t63lU+EqMPvgrXo7t63lW+EqMPvpqZmT4KoUu+EqMPvpqZmT563lW+oWUFvj0K1z0KoUs+EqMPvj0K1z163lU+EqMPvj0K1z3NzEw+EqMPPj0K1z163lU+EqMPvpqZmT4KoUu+oWUFPj0K1z0KoUs+oWUFvpqZmT4KoUu+EqMPPj0K1z3NzEw+EqMPvpqZmT563lW+EqMPPpqZmT4KoUu+oWUFPpqZmT4KoUu+EqMPPpqZmT563lW+EqMPvj0K1z163lU+EqMPPj0K1z163lU+EqMPPgrXo7t63lU+EqMPvgrXo7t63lU+EqMPPpqZmT563lW+EqMPvpqZmT563lW+EqMPvgrXo7t63lW+EqMPPgrXo7t63lW+oWUFPgrXozsKoUu+oWUFPpqZmT4KoUu+oWUFPj0K1z0KoUs+oWUFPgrXozsKoUs+oWUFPgrXozsKoUu+oWUFvgrXozsKoUu+oWUFvpqZmT4KoUu+oWUFPpqZmT4KoUu+EqMPvgrXo7t63lW+EqMPvgrXo7t63lU+EqMPPgrXo7t63lU+EqMPPgrXo7t63lW+oWUFvgrXozsKoUu+oWUFPgrXozsKoUu+oWUFPgrXozsKoUs+oWUFvgrXozsKoUs+oWUFvgrXozsKoUu+oWUFvgrXozsKoUs+oWUFvj0K1z0KoUs+oWUFvpqZmT4KoUu+oWUFvgrXozsKoUs+oWUFPgrXozsKoUs+oWUFPj0K1z0KoUs+oWUFvj0K1z0KoUs+////f/9/oX////9//3+hf////3//f6F/////f/9/oX////9//3+hf////3//f6F/AAD/f7uA/n8AAP9/u4D+fwAA/3+7gP5/AAD/f7uA/n8AAP9/u4D+fwAA/3+7gP5/9IBO7liAlrf/f///i4D/v1yB0eYmgPmz/3///8l//79cgdHm+3/2swp/Tu7qf5K39IBO7hSAkreiftHmHoD5s/9///8ZgP+/on7R5keA/bMKf07uMYCUt/9///81gP+//3//f0N/oX//f/9/Q3+hf/9//39Df6F//3//f0N/oX//////u4Chf/////+7gKF//////7uAoX//////u4ChfwAA/3//f67/AAD/f/9/rv8AAP9//3+u/wAA/3//f67//3//fxQA9L//f/9/FAD1v/9//38UAPS//3//fxQA9L//fwAAAABeAP9/AAAAAF4A/38AAAAAXgD/fwAAAABeAP9///9ef/+//3///15//7//f///Xn//v/9///9ef/+/////f6CA//////9/n4D//////3+fgP//////f6CA////////X3+u//////9ef67//////15/rv//////X3+u/w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d2yee")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hp2rn"]
+size = Vector3(0.283203, 0.0158691, 0.422485)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cat44"]
+size = Vector3(0.0136719, 0.304382, 0.422485)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pu6n4"]
+size = Vector3(0.283203, 0.110596, 0.0169067)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4hoi"]
+size = Vector3(0.283203, 0.30481, 0.0133362)
+
+[node name="BinderFileFolder" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 0.5
+script = ExtResource("1_v4jpk")
+Category = 3
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="bindfileholder" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_aweh7")
+skeleton = NodePath("")
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_hp2rn")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00280762, 0.000305176)
+shape = SubResource("BoxShape3D_hp2rn")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134766, 0.147064, 0.000305176)
+shape = SubResource("BoxShape3D_cat44")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135, 0.147, 0)
+shape = SubResource("BoxShape3D_cat44")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0501709, 0.203094)
+shape = SubResource("BoxShape3D_pu6n4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.147278, -0.203735)
+shape = SubResource("BoxShape3D_r4hoi")

@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://3tvplvbwoc45"]
+
+[ext_resource type="Texture2D" uid="uid://871ulhc6fw5i" path="res://textures/main/ez/randomprops/T_wetfloorsign.png" id="1_gyjb8"]
+[ext_resource type="Texture2D" uid="uid://dwuca2gb67q2h" path="res://textures/main/ez/randomprops/ORM_wetfloorsign.png" id="2_4cnm5"]
+[ext_resource type="Texture2D" uid="uid://d1ic76vtms7a7" path="res://textures/main/ez/randomprops/N_wetfloorsign.png" id="2_dsb3n"]
+
+[resource]
+albedo_texture = ExtResource("1_gyjb8")
+orm_texture = ExtResource("2_4cnm5")
+normal_enabled = true
+normal_texture = ExtResource("2_dsb3n")
+ao_enabled = true

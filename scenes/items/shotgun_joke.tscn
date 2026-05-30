@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d4lh1tdvlf3dw"]
+
+[ext_resource type="PackedScene" uid="uid://be5d54oook4jq" path="res://scenes/items/shotgun.tscn" id="1_kn421"]
+
+[node name="Shotgun" unique_id=109861391 instance=ExtResource("1_kn421")]
+
+[node name="Model" parent="." index="0" unique_id=227409148]
+PelletsPerShot = 60
+AmmoPerReload = 0
+PenetrationBudget = 500.0
+
+[node name="Skeleton3D" parent="ViewmodelPistol/GlockAnims/Skel_Arm" index="0" unique_id=283417646]
+bones/1/rotation = Quaternion(-0.39613593, -0.5977057, 0.47641665, 0.5087746)
+bones/2/rotation = Quaternion(-6.8225967e-07, 2.0609468e-07, 0.20771833, 0.97818875)
+bones/3/rotation = Quaternion(0.061438344, -0.08970193, 0.05953327, 0.9922876)
+bones/5/rotation = Quaternion(-0.20489338, 0.03943409, 0.13805766, 0.9681961)
+bones/6/rotation = Quaternion(0.13403119, 0.0719694, -0.095127076, 0.98377186)
+bones/7/rotation = Quaternion(0.22701757, 0.09606445, -0.18782468, 0.9507663)
+bones/24/rotation = Quaternion(-0.0015550816, -0.04687579, -0.03312611, 0.99835014)
+bones/25/rotation = Quaternion(4.6482748e-07, -0.046901785, -3.350575e-08, 0.9988995)
+bones/26/rotation = Quaternion(-0.24749489, 0.7701872, -0.5230299, 0.26832363)
+bones/27/rotation = Quaternion(-1.1195108e-06, -1.878621e-07, -0.33982036, 0.94049037)
+bones/28/rotation = Quaternion(0.14538193, -0.4653205, 0.13702431, 0.8623023)
+bones/30/rotation = Quaternion(0.014180189, -0.013773571, -0.2577251, 0.96601605)
+bones/31/rotation = Quaternion(0.021944812, -0.32193133, 0.11796709, 0.93912864)
+bones/49/rotation = Quaternion(0.0050956476, -0.15356514, 0.032768633, 0.9875819)
+bones/50/rotation = Quaternion(5.239204e-07, -0.15364951, -9.1183345e-08, 0.98812544)
+bones/51/position = Vector3(-0.050045848, -0.10946268, 0.13369265)
+bones/51/rotation = Quaternion(-0.34797645, 0.667796, 0.4686905, -0.46183336)
+bones/52/position = Vector3(-0.010077655, -0.10947272, 0.15801272)
+bones/52/rotation = Quaternion(0.5140533, 0.35555473, 0.50035495, 0.59914523)
+bones/56/position = Vector3(-0.03816019, -0.05586858, 0.23828828)
+bones/56/rotation = Quaternion(0.49694303, -0.5033655, -0.5027459, 0.49690786)
+
+[node name="Mag_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="1" unique_id=1209249718]
+transform = Transform3D(0.002810732, 0.021204934, -0.9997713, -0.304686, 0.9522565, 0.019340415, 0.9524488, 0.30456182, 0.009137307, -0.04012347, -0.14403313, 0.19275475)
+
+[node name="Slide_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="2" unique_id=1752236631]
+transform = Transform3D(-0.012261391, -0.00065116014, -0.9999247, -0.9999248, 0.0005879438, 0.012260854, 0.0005800158, 0.9999997, -0.00065839814, -0.037698966, -0.037004743, 0.18609895)
+
+[node name="Trigger_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="3" unique_id=267995825]
+transform = Transform3D(-0.0006169458, -0.035139337, -0.9993823, -0.39813012, -0.9167538, 0.03247966, -0.91732883, 0.3979042, -0.0134245185, -0.038137205, -0.059995055, 0.2515105)
+
+[node name="Grip_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="4" unique_id=1728105466]
+transform = Transform3D(-0.012260675, -0.00065115094, -0.9999247, -0.9999248, 0.00058829784, 0.012260139, 0.0005803704, 0.9999997, -0.0006583929, -0.03816019, -0.05586858, 0.23828828)
+
+[editable path="Model/870_Shotgun"]
+[editable path="ViewmodelPistol"]
+[editable path="ViewmodelPistol/fps_arms"]
+[editable path="ViewmodelPistol/fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm"]
+[editable path="ViewmodelPistol/GlockAnims"]
+[editable path="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Grip_2/870_Shotgun"]

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://3hkhr362l0l6"]
+
+[ext_resource type="Texture2D" uid="uid://c5oahsodi1okq" path="res://models/main/scp/scp_173/T_SCP173Texture.png" id="1_d7avg"]
+[ext_resource type="Texture2D" uid="uid://7kqsqg3jywgg" path="res://models/main/scp/scp_173/N_SCP173Texture.png" id="2_f8lxh"]
+[ext_resource type="Texture2D" uid="uid://d3dwqp61ches1" path="res://models/main/scp/scp_173/ORM_SCP173Texture.png" id="3_20b5q"]
+
+[resource]
+albedo_texture = ExtResource("1_d7avg")
+orm_texture = ExtResource("3_20b5q")
+normal_enabled = true
+normal_texture = ExtResource("2_f8lxh")

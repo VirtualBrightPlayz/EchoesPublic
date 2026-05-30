@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://iugux4fv7h10"]
+
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="1_2h4aw"]
+[ext_resource type="Resource" uid="uid://by5npy04t6f23" path="res://items/medkit.tres" id="1_2kw0i"]
+
+[resource]
+script = ExtResource("1_2h4aw")
+Items = [ExtResource("1_2kw0i")]
+metadata/_custom_type_script = "uid://vus0iseb56sl"

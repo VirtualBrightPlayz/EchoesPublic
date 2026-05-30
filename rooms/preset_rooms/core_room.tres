@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://c5hcclsooqhkd"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_mk0pg"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="2_6bmmf"]
+
+[resource]
+resource_name = "Core Room"
+script = ExtResource("1_mk0pg")
+type = 4
+size = 2
+scenes = []
+sceneFile = "uid://df0obbgtvfud3"
+gridRect = Rect2i(-1, -1, 3, 3)
+category = "Misc."
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

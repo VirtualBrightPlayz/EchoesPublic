@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxs17kd0ds7ne"]
+
+[ext_resource type="PackedScene" uid="uid://c2acddhosxp06" path="res://scenes/rooms/hcz/hcz_xroom.tscn" id="1_8ssnp"]
+[ext_resource type="PackedScene" uid="uid://0jpitc4t1x73" path="res://scenes/rooms/hcz/hcz_hall.tscn" id="2_ixoqf"]
+[ext_resource type="PackedScene" uid="uid://64mbuw68oxh3" path="res://scenes/rooms/doors/lcz_door.tscn" id="3_mmr0e"]
+[ext_resource type="PackedScene" uid="uid://xjjsu2u3d15e" path="res://scenes/misc/fake_class_d.tscn" id="4_nh7dv"]
+[ext_resource type="PackedScene" uid="uid://bg14sxp67g0by" path="res://scenes/misc/debug_player_controller.tscn" id="5_f2d5l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5ac2"]
+shading_mode = 0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HczXroom" parent="." instance=ExtResource("1_8ssnp")]
+visible = false
+
+[node name="HczHall" parent="." instance=ExtResource("2_ixoqf")]
+visible = false
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="MainBox" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+size = Vector3(20, 9, 21)
+material = SubResource("StandardMaterial3D_u5ac2")
+
+[node name="DoorCut" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64, 10)
+operation = 2
+size = Vector3(1.968, 3.28, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+operation = 2
+size = Vector3(19, 7, 20)
+
+[node name="LczDoor" parent="." instance=ExtResource("3_mmr0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+visible = false
+
+[node name="FakeClassD" parent="." instance=ExtResource("4_nh7dv")]
+visible = false
+
+[node name="DebugPlayerController" parent="." instance=ExtResource("5_f2d5l")]

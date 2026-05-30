@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://lorjcxlsht6i"]
+
+[ext_resource type="Texture2D" uid="uid://c8dijo7qusjpe" path="res://models/scpcb/npc/helmet.jpg" id="1_yaqfs"]
+[ext_resource type="Texture2D" uid="uid://cf8ccv22so6db" path="res://models/scpcb/npc/helmetbump.jpg" id="2_mue5v"]
+
+[resource]
+albedo_texture = ExtResource("1_yaqfs")
+normal_enabled = true
+normal_texture = ExtResource("2_mue5v")

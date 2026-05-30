@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://oxl7mq4cna54"]
+
+[ext_resource type="Shader" uid="uid://d0yqji3dxdbs5" path="res://shaders/inf_detail.gdshader" id="1_gv8ac"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gv8ac")
+shader_parameter/size = 64.0
+shader_parameter/scale = 1.0

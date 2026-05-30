@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://deyhe8jrj57ia"]
+
+[ext_resource type="Script" uid="uid://5abgunst43h7" path="res://scripts/player/PlayerConsole.cs" id="1_j6krh"]
+
+[node name="player_console_ui" type="Control" node_paths=PackedStringArray("ConsoleInput", "ConsoleOutput")]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_j6krh")
+ConsoleInput = NodePath("LineEdit")
+ConsoleOutput = NodePath("RichTextLabel")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 800.0
+offset_bottom = 31.0
+mouse_filter = 2
+expand_to_text_length = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 30.0
+offset_right = 800.0
+offset_bottom = 65.0
+mouse_filter = 2
+fit_content = true

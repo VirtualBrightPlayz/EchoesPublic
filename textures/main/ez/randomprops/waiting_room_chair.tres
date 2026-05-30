@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://dtrjl8hcy27gh"]
+
+[ext_resource type="Texture2D" uid="uid://bebd8x3tqctro" path="res://textures/main/ez/randomprops/T_waiting_room_chair.png" id="1_2skd3"]
+[ext_resource type="Texture2D" uid="uid://cx28fsaya0dl7" path="res://textures/main/ez/randomprops/N_waiting_room_chair.png" id="2_etep8"]
+[ext_resource type="Texture2D" uid="uid://dvugxm0ancqje" path="res://textures/main/ez/randomprops/ORM_waiting_room_chair.png" id="2_ugw1x"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_2skd3")
+orm_texture = ExtResource("2_ugw1x")
+normal_enabled = true
+normal_texture = ExtResource("2_etep8")
+ao_enabled = true

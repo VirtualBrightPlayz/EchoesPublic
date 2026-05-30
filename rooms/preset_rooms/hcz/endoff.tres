@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://seb4f1kgvd0i"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_caopw"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_6cqyg"]
+
+[resource]
+resource_name = "Heavy Endoff"
+script = ExtResource("2_caopw")
+stage = 2
+scenes = []
+sceneFile = "uid://bfa4jp7bk5rak"
+isGeneric = true
+category = "Heavy Containment"

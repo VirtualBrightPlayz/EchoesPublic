@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bysgmqd7gtpow"]
+
+[ext_resource type="Texture2D" uid="uid://77n3riiccktc" path="res://textures/scpcb_pbr/metal3/Metal3_Diffuse.png" id="1_3l7xw"]
+[ext_resource type="Texture2D" uid="uid://ctsctkbcon8kh" path="res://textures/scpcb_pbr/metal3/Metal3_Normal.png" id="3_1w1ox"]
+[ext_resource type="Texture2D" uid="uid://din17fbcslhyx" path="res://textures/scpcb_pbr/metal3/Metal3_Roughness.png" id="4_0jkhs"]
+
+[resource]
+albedo_texture = ExtResource("1_3l7xw")
+metallic = 0.13
+metallic_specular = 0.28
+roughness_texture = ExtResource("4_0jkhs")
+normal_enabled = true
+normal_texture = ExtResource("3_1w1ox")
+texture_filter = 5

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bbtr1i7ghkdpr"]
+
+[ext_resource type="Script" uid="uid://gx0pyqxwbhkk" path="res://scripts/layout_generator/example_spawn_validator/XRoomNeighbourSpawnValidator.cs" id="1_lx3v8"]
+
+[resource]
+script = ExtResource("1_lx3v8")

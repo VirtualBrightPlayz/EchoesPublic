@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cqxavokomsbgd"]
+
+[ext_resource type="Texture2D" uid="uid://cwid5regvvwhl" path="res://textures/main/ez/randomprops/T_jerry_can.png" id="1_3fwkn"]
+[ext_resource type="Texture2D" uid="uid://dbbq3qrh3on5j" path="res://textures/main/ez/randomprops/ORM_jerry_can.png" id="2_iqb2h"]
+[ext_resource type="Texture2D" uid="uid://cq8nwqeoxqc3c" path="res://textures/main/ez/randomprops/N_jerry_can.png" id="2_q70v8"]
+
+[resource]
+albedo_texture = ExtResource("1_3fwkn")
+orm_texture = ExtResource("2_iqb2h")
+normal_enabled = true
+normal_texture = ExtResource("2_q70v8")
+ao_enabled = true

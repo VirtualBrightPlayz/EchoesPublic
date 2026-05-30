@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://jg8wxv3vao03"]
+
+[ext_resource type="Resource" uid="uid://d4fy776rf773k" path="res://items/keycards/maintenance_lvl_1.tres" id="1_huxi3"]
+[ext_resource type="Resource" uid="uid://cseg2afemf5an" path="res://items/keycards/research_lvl_1.tres" id="2_wdnsa"]
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="4_0y0be"]
+
+[resource]
+script = ExtResource("4_0y0be")
+Items = [ExtResource("1_huxi3"), ExtResource("2_wdnsa")]
+MaxSpawned = 7

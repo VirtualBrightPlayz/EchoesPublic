@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ddxsbh6qdfbq3"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_sj6ce"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_a4ixt"]
+
+[resource]
+resource_name = "Curve - HCZ V1"
+script = ExtResource("2_sj6ce")
+type = 1
+scenes = []
+sceneFile = "uid://cggx85cbjhoqu"
+zone = 2
+category = "HCZ V1 (Metal Tubes) (Echoes)"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

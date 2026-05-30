@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dudao73aswipu"]
+
+[ext_resource type="Texture2D" uid="uid://bx2l1yepc2lkg" path="res://models/scpcb/scp/scp-939_licker_diffusetest01.jpg" id="1_joiqg"]
+[ext_resource type="Texture2D" uid="uid://c3cbtsjsi3tdb" path="res://models/scpcb/scp/scp-939_licker_normal.png" id="2_yy4g7"]
+
+[resource]
+albedo_texture = ExtResource("1_joiqg")
+metallic_specular = 0.3
+roughness = 0.19
+normal_enabled = true
+normal_texture = ExtResource("2_yy4g7")

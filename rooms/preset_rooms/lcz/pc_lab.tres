@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bleltiohqx6oq"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_umd8c"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_umd8c"]
+
+[resource]
+resource_name = "Light Computer Lab"
+script = ExtResource("2_umd8c")
+stage = 1
+scenes = []
+sceneFile = "uid://dlp8cym7j7e8e"
+isInterest = true
+category = "Light Containment"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AmmoProxyItem" format=3 uid="uid://cumxxskg15hr3"]
+
+[ext_resource type="Script" uid="uid://bcd6u6pdmfga8" path="res://scripts/items/AmmoProxyItem.cs" id="1_e81se"]
+[ext_resource type="Resource" uid="uid://cwigahnxphwyd" path="res://items/ammo_rifle.tres" id="1_prc3h"]
+
+[resource]
+script = ExtResource("1_e81se")
+BasePreset = ExtResource("1_prc3h")
+AmmoAmount = 100

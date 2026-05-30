@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=9 format=3 uid="uid://t8bdk8s3dx54"]
+
+[ext_resource type="Resource" uid="uid://nmxv6a253rp8" path="res://rooms/ez/GateA.tres" id="1_kybg3"]
+[ext_resource type="Resource" uid="uid://3iab1kvd41e2" path="res://rooms/ez/GateB.tres" id="2_qefu7"]
+[ext_resource type="Resource" uid="uid://bm20feqjkisbd" path="res://rooms/lcz/914.tres" id="5_ectlo"]
+[ext_resource type="Resource" uid="uid://0f104w2ciymk" path="res://rooms/lcz/173.tres" id="6_gcrfo"]
+[ext_resource type="Resource" uid="uid://d228k870jjf24" path="res://rooms/lcz/toilets.tres" id="7_iiyct"]
+[ext_resource type="Resource" uid="uid://cajhw2xcfwns1" path="res://rooms/hcz/106.tres" id="14_gvo3f"]
+[ext_resource type="Resource" uid="uid://f82t71aqlxer" path="res://rooms/ez/Intercom.tres" id="15_cbjtg"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="16_tjn5s"]
+
+[resource]
+script = ExtResource("16_tjn5s")
+Collection = Array[Resource]([ExtResource("1_kybg3"), ExtResource("2_qefu7"), ExtResource("14_gvo3f"), ExtResource("15_cbjtg"), ExtResource("5_ectlo"), ExtResource("6_gcrfo"), ExtResource("7_iiyct")])

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqbxilmlh3qkh"]
+
+[ext_resource type="Script" uid="uid://bh760b06egpey" path="res://scripts/items/WorldItem.cs" id="1_1qjih"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4u4ih"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fpaq0"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_h5du4"]
+properties/0/path = NodePath(".:ItemSerial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:ItemPosition")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:ItemRotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="GunBase" type="RigidBody3D" node_paths=PackedStringArray("marker") groups=["snow_body"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_1qjih")
+marker = NodePath("Marker3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4u4ih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fpaq0")
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_h5du4")
+visibility_update_mode = 1
+
+[node name="Marker3D" type="Marker3D" parent="."]

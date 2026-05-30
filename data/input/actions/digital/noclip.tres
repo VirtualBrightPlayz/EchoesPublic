@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" load_steps=2 format=3 uid="uid://dm5jahsqffcp0"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_p5d3m"]
+
+[resource]
+resource_name = "NoClip"
+script = ExtResource("1_p5d3m")
+GodotAction = &"admin_noclip"
+LocaleKey = "Action_NoClip"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

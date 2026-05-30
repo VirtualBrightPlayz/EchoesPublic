@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bu6v53rgimnfc"]
+
+[ext_resource type="Script" uid="uid://o3od3mcq5q36" path="res://scripts/player/controllers/ClimbingController.cs" id="1_knthf"]
+[ext_resource type="Texture2D" uid="uid://how2f6lkhav0" path="res://icons/sound-icon-white.png" id="2_0k58l"]
+[ext_resource type="Script" uid="uid://ygb4esl4cg44" path="res://scripts/TalkingIndicator.cs" id="3_kd8ow"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_knthf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0k58l"]
+radius = 0.7
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_lmeee"]
+
+[node name="ClimbController" type="CharacterBody3D" unique_id=1455183051 node_paths=PackedStringArray("shapeCast", "floorMarker", "head", "speakingIndicator", "camera", "footstepsAudio", "collider")]
+collision_layer = 2
+collision_mask = 33
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_snap_length = 0.5
+script = ExtResource("1_knthf")
+rotateFloorSpeed = 10.0
+shapeCast = NodePath("ShapeCast3D")
+floorMarker = NodePath("Floor")
+Speed = 4.0
+Accel = 70.0
+SprintMultiplier = 1.0
+SneakMultiplier = 0.5
+GravityMulti = 2.0
+head = NodePath("Head")
+speakingIndicator = NodePath("VoiceIcon")
+camera = NodePath("Head/Camera3D")
+footstepsAudio = NodePath("Footsteps")
+collider = NodePath("CollisionShape3D")
+metadata/_custom_type_script = "uid://o3od3mcq5q36"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1375692944]
+shape = SubResource("SphereShape3D_knthf")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=307173452]
+enabled = false
+shape = SubResource("SphereShape3D_0k58l")
+target_position = Vector3(0, 0, 0)
+max_results = 64
+collision_mask = 33
+
+[node name="Head" type="Node3D" parent="." unique_id=842290162]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1369209226]
+cull_mask = 1048543
+current = true
+fov = 70.0
+far = 100.0
+
+[node name="VoiceIcon" type="Sprite3D" parent="." unique_id=197253934]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0)
+billboard = 2
+texture = ExtResource("2_0k58l")
+
+[node name="Talking" type="Node" parent="." unique_id=1719324666 node_paths=PackedStringArray("spr")]
+script = ExtResource("3_kd8ow")
+spr = NodePath("../VoiceIcon")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=351829675]
+stream = SubResource("AudioStreamPolyphonic_lmeee")
+volume_db = -2.0
+unit_size = 2.0
+max_db = 0.0
+autoplay = true
+max_distance = 50.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Floor" type="Marker3D" parent="." unique_id=1112404600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

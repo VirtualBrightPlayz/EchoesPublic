@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dthbxu2uf1exb"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_lmka1"]
+[ext_resource type="PackedScene" uid="uid://72yuqpailjwx" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Stool.fbx" id="2_lmka1"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_1hwjl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lmka1"]
+height = 4.5722656
+radius = 0.12109375
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nrbye"]
+height = 4.25
+radius = 0.11767578
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2stdv"]
+height = 0.84375
+radius = 0.016601563
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lmka1"]
+size = Vector3(0.5361328, 0.05078125, 0.52563477)
+
+[node name="Lab_Stool_Prop" type="RigidBody3D" unique_id=1525064305 node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 1.5
+script = ExtResource("1_lmka1")
+Category = 13
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1585311884]
+transform = Transform3D(-4.808253e-09, 0.11, 0, -0.11, -4.808253e-09, 0, 0, 0, 0.11, 0, 0.43081504, 0.25140786)
+shape = SubResource("CylinderShape3D_lmka1")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="." unique_id=298793762]
+transform = Transform3D(2.1017541e-16, -4.808253e-09, -0.11, -0.11, -4.8082525e-09, 0, -4.8082525e-09, 0.11, -4.808253e-09, 0.23475069, 0.64570034, 0)
+shape = SubResource("CylinderShape3D_nrbye")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="." unique_id=647541099]
+transform = Transform3D(2.1017541e-16, -4.808253e-09, -0.11, -0.11, -4.8082525e-09, 0, -4.8082525e-09, 0.11, -4.808253e-09, -0.23296927, 0.6468133, 0)
+shape = SubResource("CylinderShape3D_nrbye")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1116922205]
+transform = Transform3D(-4.808253e-09, 0.11, 0, -0.11, -4.808253e-09, 0, 0, 0, 0.11, 0, 0.431, -0.251)
+shape = SubResource("CylinderShape3D_lmka1")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=2106886251]
+transform = Transform3D(0.9967858, 0.079762734, -0.007477705, -0.080107495, 0.9934143, -0.08192107, 0.00089420757, 0.082256794, 0.9966109, -0.25241923, 0.42621762, -0.25183582)
+shape = SubResource("CylinderShape3D_2stdv")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=190192990]
+transform = Transform3D(0.0008941642, 0.08225679, 0.9966109, -0.080107495, 0.9934144, -0.08192107, -0.99678594, -0.07976273, 0.0074776607, -0.252, 0.426, 0.252)
+shape = SubResource("CylinderShape3D_2stdv")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1892917555]
+transform = Transform3D(-0.0008942521, -0.08225679, -0.9966109, -0.080107495, 0.9934144, -0.08192107, 0.99678594, 0.07976274, -0.0074777496, 0.252, 0.426, -0.252)
+shape = SubResource("CylinderShape3D_2stdv")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=1899600732]
+transform = Transform3D(-0.99678594, -0.07976274, 0.0074777934, -0.080107495, 0.9934144, -0.08192106, -0.0008942948, -0.08225678, -0.99661076, 0.252, 0.426, 0.252)
+shape = SubResource("CylinderShape3D_2stdv")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="." unique_id=1692639696]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0.8685642, 0)
+shape = SubResource("BoxShape3D_lmka1")
+
+[node name="Stool" parent="." unique_id=134211424 instance=ExtResource("2_lmka1")]
+
+[node name="TransformSync" type="Node" parent="." unique_id=753634261]
+script = ExtResource("3_1hwjl")
+targetNode = NodePath("..")
+CanClaim = true
+
+[editable path="Stool"]

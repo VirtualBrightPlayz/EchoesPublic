@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cnht55qmxb0se"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_5nuka"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_5qofo"]
+
+[resource]
+resource_name = "Entrance X-Room"
+script = ExtResource("2_5nuka")
+type = 4
+stage = 3
+scenes = []
+sceneFile = "uid://cyrgg6r1hm6vh"
+isGeneric = true
+category = "Entrance"

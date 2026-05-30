@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dhta16d1vnl0c"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_jjiyg"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_iiw8q"]
+[ext_resource type="Resource" uid="uid://de6njwqor5lbc" path="res://rooms/preset_rooms/property_data/spawnpoint_classd.tres" id="4_4fuu6"]
+
+[resource]
+resource_name = "SCP-914"
+script = ExtResource("2_jjiyg")
+size = 1
+stage = 1
+scenes = []
+sceneFile = "uid://u7hnp4brhrwu"
+isInterest = true
+category = "Light Containment"
+templateData = Array[ExtResource("3_iiw8q")]([ExtResource("4_4fuu6")])
+templateDefaultValues = Dictionary[String, String]({
+"spawnpoint_classd": "true"
+})

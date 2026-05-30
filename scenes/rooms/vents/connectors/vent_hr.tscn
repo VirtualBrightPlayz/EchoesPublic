@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=3 uid="uid://drteuhva776um"]
+
+[ext_resource type="PackedScene" uid="uid://b84q5y1dhlwwa" path="res://models/main/vents/VentConnectorH.glb" id="1_1lclf"]
+[ext_resource type="Material" uid="uid://kwlo5nklci7r" path="res://materials/scpcb_map/metalpanel.tres" id="2_0lxqj"]
+[ext_resource type="PackedScene" uid="uid://1ycirdcdx657" path="res://models/main/vents/VentCover.glb" id="3_j86fw"]
+[ext_resource type="Material" uid="uid://ckn82kcpey4tf" path="res://materials/scpcb_map/dirtymetal.tres" id="4_kb80q"]
+[ext_resource type="Script" uid="uid://dttau2qmvvmsg" path="res://scripts/map/Vent.cs" id="5_07j2f"]
+[ext_resource type="Script" uid="uid://dj5hgaaw4y2et" path="res://scripts/map/VentTeleporter.cs" id="6_64uqj"]
+[ext_resource type="Resource" uid="uid://dtpwoa1uigmv5" path="res://sounds/vent_173.tres" id="6_bi72m"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_plaxh"]
+data = PackedVector3Array(-1, 1, 3, 1, 1, 1, -1, 1, 1, -1, 1, 3, 1, 1, 3, 1, 1, 1, -1, 1, 1, -1, -1, 3, -1, 1, 3, -1, 1, 1, -1, -1, 1, -1, -1, 3, 1, -1, 7, -1, 1, 7, -1, -1, 7, 1, -1, 7, 1, 1, 7, -1, 1, 7, 1, 1, -1, 2.9, -1, -1, 2.9, 1, -1, 1, 1, -1, 1, -1, -1, 2.9, -1, -1, 1, 1, 7, 3, -1, 7, 3, 1, 7, 1, 1, 7, 1, -1, 7, 3, -1, 7, 1, 1, 5, 1, -1, 3, 1, 1, 3, 1, 1, 5, 1, -1, 5, 1, -1, 3, 3, 1, 5, 1, -1, 5, 1, 1, 5, 3, 1, 5, 3, -1, 5, 1, -1, 5, 1, -1, 7, 3, -1, 5, 3, -1, 7, 1, -1, 7, 1, -1, 5, 3, -1, 5, 1, -1, 5, -1, -1, 7, -1, -1, 5, 1, -1, 5, 1, -1, 7, -1, -1, 7, 1, -1, 5, -1, -1, 3, 1, -1, 3, 1, -1, 5, -1, -1, 5, -1, -1, 3, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, 1, 2.9, 1, -3, 1, -1, -3, 1, 1, -3, 2.9, 1, -3, 2.9, -1, -3, 1, -1, -3, 1, -1, -1, 2.9, -1, -3, 2.9, -1, -1, 1, -1, -1, 1, -1, -3, 2.9, -1, -3, -1, -1, -3, 1, 1, -3, 1, -1, -3, -1, -1, -3, -1, 1, -3, 1, 1, -3, 1, 1, -3, 2.9, 1, -1, 2.9, 1, -3, 1, 1, -3, 1, 1, -1, 2.9, 1, -1, 1, 1, 7, -1, 1, 5, -1, 1, 7, 1, 1, 7, 1, 1, 5, -1, 1, 5, -1, -1, 7, -1, 1, 5, -1, -1, 5, -1, -1, 7, -1, 1, 7, -1, 1, 5, 1, -1, 3, -1, -1, 1, 1, -1, 1, 1, -1, 3, -1, -1, 3, -1, -1, 1, 1, 1, 3, 1, -1, 1, 1, 1, 1, 1, 1, 3, 1, -1, 3, 1, -1, 1, -1, 1, -1, 1, 1, -3, -1, 1, -3, -1, 1, -1, 1, 1, -1, 1, 1, -3, 1, -1, -1, -1, -1, -3, 1, -1, -3, 1, -1, -1, -1, -1, -1, -1, -1, -3, -1, -1, -1, -1, 1, -3, -1, -1, -3, -1, -1, -1, -1, 1, -1, -1, 1, -3, -1, 1, 1, 1, 1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 5, 1, 1, 3, -1, 1, 3, -1, 1, 5, 1, 1, 5, 1, 1, 3, -1, 1, 3, -1, -1, 5, -1, 1, 5, -1, 1, 3, -1, -1, 3, -1, -1, 5, 1, -1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 5, 3, 1, 7, 3, 1, 5, 1, 1, 5, 1, 1, 7, 3, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tit5"]
+size = Vector3(1.8, 0.042, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xumpw"]
+size = Vector3(2.0058, 0.621431, 2.00476)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtl1x"]
+size = Vector3(2.02485, 2.01318, 0.344238)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqjwp"]
+size = Vector3(1.9967, 2.03271, 2.04395)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7552e"]
+properties/0/path = NodePath("VentCover:position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath("VentCover:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath("VentCover:freeze")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath("Interact:locked")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+
+[node name="VentHR" type="Node3D"]
+
+[node name="VentConnectorH" parent="." instance=ExtResource("1_1lclf")]
+transform = Transform3D(1, 0, -0.000540972, 0, 1, 0, 0.000540972, 0, 1, 0, 0, 0)
+
+[node name="Cube_006" parent="VentConnectorH" index="0"]
+layers = 9
+material_override = ExtResource("2_0lxqj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="VentConnectorH/Cube_006" index="0"]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VentConnectorH/Cube_006/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_plaxh")
+
+[node name="VentCover" type="RigidBody3D" parent="."]
+transform = Transform3D(1, -0.000540972, 2.36466e-11, 1.73472e-18, -4.37114e-08, -1, 0.000540972, 1, -4.37114e-08, 0, 0, 0.0249996)
+collision_layer = 0
+collision_mask = 9
+freeze = true
+continuous_cd = true
+
+[node name="Mesh" parent="VentCover" instance=ExtResource("3_j86fw")]
+
+[node name="Cube" parent="VentCover/Mesh" index="0"]
+transform = Transform3D(1, 0, 5.42101e-20, 0, 0.025, 1.32115e-17, 0, -9.78107e-17, 0.025, 0, 0, -0.975)
+layers = 9
+material_override = ExtResource("4_kb80q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VentCover"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -1.20216e-15, -8.07887e-12, 1, -0.00405093, 0.00602244, 0.00517038)
+shape = SubResource("BoxShape3D_8tit5")
+
+[node name="Interact" type="StaticBody3D" parent="." node_paths=PackedStringArray("EntryPoint", "ExitPoint", "VentCover", "Teleporter")]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("5_07j2f")
+EntryPoint = NodePath("../EntryPoint")
+ExitPoint = NodePath("../ExitPoint")
+VentCover = NodePath("../VentCover")
+Teleporter = NodePath("../Teleporter")
+Sound = ExtResource("6_bi72m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interact"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.10271e-09, -0.0242104)
+shape = SubResource("BoxShape3D_xumpw")
+
+[node name="EndCollider" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.827953)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndCollider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00992203, -0.000244141, -0.327881)
+shape = SubResource("BoxShape3D_dtl1x")
+
+[node name="Teleporter" type="Area3D" parent="." node_paths=PackedStringArray("Forward")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+collision_mask = 2
+script = ExtResource("6_64uqj")
+Connector = true
+Forward = NodePath("Forward")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00701904, -0.0012207, -0.00244141)
+shape = SubResource("BoxShape3D_iqjwp")
+
+[node name="Forward" type="Node3D" parent="Teleporter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="EntryPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.81445)
+
+[node name="ExitPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.895)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_7552e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.2
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_shadow = 5.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.2
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_shadow = 5.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.2
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_shadow = 5.0
+
+[editable path="VentConnectorH"]
+[editable path="VentCover/Mesh"]

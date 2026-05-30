@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://b5favjraf47rm"]
+
+[ext_resource type="Texture2D" uid="uid://dbegh4hrwhd4s" path="res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_PanelsBaking_HCZ_Wall_Trimming_BaseColor.png" id="1_sg7ap"]
+[ext_resource type="Texture2D" uid="uid://d1sw5m2j436kb" path="res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_Wall_Trimming_Normal.png" id="2_5o1g4"]
+[ext_resource type="Texture2D" uid="uid://btfa3srjb5kdh" path="res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_PanelsBaking_HCZ_Wall_Trimming_OcclusionRoughnessMetallic.png" id="3_ha03q"]
+
+[resource]
+albedo_texture = ExtResource("1_sg7ap")
+orm_texture = ExtResource("3_ha03q")
+normal_enabled = true
+normal_texture = ExtResource("2_5o1g4")

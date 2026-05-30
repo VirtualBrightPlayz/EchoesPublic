@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InputActionStickPad" format=3 uid="uid://dt5aa20wlv0o4"]
+
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="1_jcbqg"]
+
+[resource]
+resource_name = "CameraLockMenu"
+script = ExtResource("1_jcbqg")
+GodotAction = &"player_camera"
+GodotActionPositiveX = &"player_camera_joystick_left"
+GodotActionNegativeX = &"player_camera_joystick_right"
+GodotActionPositiveY = &"player_camera_joystick_up"
+GodotActionNegativeY = &"player_camera_joystick_down"
+LocaleKey = "Action_CameraLockMenu"
+Mode = 1
+metadata/_custom_type_script = "uid://cv67jfffymwa5"

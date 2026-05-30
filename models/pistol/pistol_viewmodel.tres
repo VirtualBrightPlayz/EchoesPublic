@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://djhrnios4cewo"]
+
+[ext_resource type="Texture2D" uid="uid://bke6ic4ps7y7j" path="res://models/pistol/Pistol_Albedo.png" id="1_6vyn8"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="1_mm61j"]
+[ext_resource type="Texture2D" uid="uid://dy1vjxqseqj0y" path="res://models/pistol/Pistol_Metallic.tga" id="2_oixsx"]
+[ext_resource type="Texture2D" uid="uid://d16sgju5bsi6" path="res://models/pistol/Pistol_Normal.png" id="3_jjv4k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mm61j")
+shader_parameter/fov = 70.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_6vyn8")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("2_oixsx")
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 0, 0, 1)
+shader_parameter/texture_roughness = ExtResource("2_oixsx")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.5
+shader_parameter/texture_normal = ExtResource("3_jjv4k")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

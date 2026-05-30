@@ -1,0 +1,48 @@
+[role]
+name = 'SCP173'
+display_name = 'ROLE_NAME_SCP_173'
+team = 'SCP'
+ui_color = '#ff0000'
+controller = 'SCP'
+model = 'SCP173'
+abilities = ['Use', 'Statue', 'StatueAttack']
+
+[role.stats]
+max_health = 3500.0
+spawn_stage = 0
+can_capture_points = false
+immune_damage_types = ['Water']
+
+[role.stats.movement]
+speed = 15.0
+acceleration = 1000.0
+sprint_speed_multiplier = 1.0
+crouch_speed_multiplier = 0.5
+jump_velocity = 8.0
+gravity_multiplier = 2.0
+default_footsteps = '173'
+force_default_footsteps = true
+footstep_interval = 0.1
+
+[role.voice]
+can_use_intercom = false
+proximity_chat = false
+global_team_chat = true
+main_chat_channel = 1
+alt_chat_channel = 1
+proximity_chat_channel = 0
+listening_chat_channels = [0,1]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_SCP_173'
+hint_text = 'ROLE_HINT_SCP_173'
+hint_time = 5.0
+spawn_audio = '173_spawn'
+
+[role.chase_music]
+chase_time = 20.0
+spotted_audio = '173_spotted'
+pre_chase_audio = '173_pre_chase'
+chase_audio = '173_chase'
+chase_layer_audio = '173_chase_layer'
+post_chase_audio = '173_post_chase'

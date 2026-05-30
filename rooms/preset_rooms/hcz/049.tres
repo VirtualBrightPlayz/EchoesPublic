@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bxgo245duwt77"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="3_2jhh3"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_ss1i4"]
+
+[resource]
+resource_name = "SCP-049"
+script = ExtResource("3_2jhh3")
+size = 2
+stage = 2
+scenes = []
+sceneFile = "uid://ixrpc7m3nk8w"
+isInterest = true
+gridRect = Rect2i(0, -1, 1, 2)
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

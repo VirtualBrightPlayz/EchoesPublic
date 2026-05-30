@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="InputActionSet" format=3 uid="uid://c728b743bj887"]
+
+[ext_resource type="Script" uid="uid://c5rpk473lbp36" path="res://scripts/player/input/InputActionAnalog.cs" id="1_ff4hl"]
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="2_q6t6m"]
+[ext_resource type="Resource" uid="uid://dodfk1oja24cj" path="res://data/input/actions/digital/crouch.tres" id="3_q6t6m"]
+[ext_resource type="Resource" uid="uid://cccxh2wkftaif" path="res://data/input/actions/stick_pad/move.tres" id="4_747ma"]
+[ext_resource type="Resource" uid="uid://bed7q5plt61ok" path="res://data/input/actions/digital/jump.tres" id="4_w8q8o"]
+[ext_resource type="Resource" uid="uid://bievr8pbyabxx" path="res://data/input/actions/digital/sprint.tres" id="5_lpg61"]
+[ext_resource type="Resource" uid="uid://dsde0rh2d13w7" path="res://data/input/actions/stick_pad/camera.tres" id="5_xf4vm"]
+[ext_resource type="Resource" uid="uid://bt5hydgoc781x" path="res://data/input/actions/digital/use.tres" id="6_w8q8o"]
+[ext_resource type="Resource" uid="uid://xxkb8dfkifda" path="res://data/input/actions/digital/proximity_voice.tres" id="7_4s18n"]
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="7_yvuy5"]
+[ext_resource type="Resource" uid="uid://cif535e83yln3" path="res://data/input/actions/digital/team_voice.tres" id="8_7bbrj"]
+[ext_resource type="Script" uid="uid://cwm4ujckr2ppq" path="res://scripts/player/input/InputActionSet.cs" id="8_xjinn"]
+[ext_resource type="Resource" uid="uid://cv8t6omy0xjft" path="res://data/input/actions/digital/pause.tres" id="9_5stkf"]
+[ext_resource type="Resource" uid="uid://o7h1k73akxnl" path="res://data/input/actions/digital/inventory.tres" id="10_yvuy5"]
+[ext_resource type="Resource" uid="uid://cafdr6e7b13l1" path="res://data/input/actions/digital/primary.tres" id="11_xjinn"]
+[ext_resource type="Resource" uid="uid://bo2k4cbvx4bah" path="res://data/input/actions/digital/secondary.tres" id="12_5stkf"]
+[ext_resource type="Resource" uid="uid://bnn7ogvhrilb6" path="res://data/input/actions/digital/player_list.tres" id="13_7pn3y"]
+[ext_resource type="Resource" uid="uid://cxd3fyiv03ksa" path="res://data/input/actions/digital/admin_menu.tres" id="14_7gy10"]
+[ext_resource type="Resource" uid="uid://bck7io3ryas02" path="res://data/input/actions/digital/throw.tres" id="15_7gy10"]
+[ext_resource type="Resource" uid="uid://mvv8xnbtxnbv" path="res://data/input/actions/digital/reload.tres" id="16_ebj8k"]
+[ext_resource type="Resource" uid="uid://dm5jahsqffcp0" path="res://data/input/actions/digital/noclip.tres" id="17_0mp7a"]
+[ext_resource type="Resource" uid="uid://drg71mqtoukfu" path="res://data/input/actions/digital/inventory_one.tres" id="18_pvxyy"]
+[ext_resource type="Resource" uid="uid://byia3jfuf4oef" path="res://data/input/actions/digital/inventory_two.tres" id="19_r3dwc"]
+[ext_resource type="Resource" uid="uid://ufy8a3kl368a" path="res://data/input/actions/digital/hide_ui.tres" id="20_r3dwc"]
+
+[resource]
+resource_name = "InGame"
+script = ExtResource("8_xjinn")
+LocaleKey = "Set_InGame"
+LockMouse = true
+StickPadActions = Array[ExtResource("7_yvuy5")]([ExtResource("4_747ma"), ExtResource("5_xf4vm")])
+DigitalActions = Array[ExtResource("2_q6t6m")]([ExtResource("3_q6t6m"), ExtResource("4_w8q8o"), ExtResource("5_lpg61"), ExtResource("6_w8q8o"), ExtResource("7_4s18n"), ExtResource("8_7bbrj"), ExtResource("9_5stkf"), ExtResource("10_yvuy5"), ExtResource("11_xjinn"), ExtResource("12_5stkf"), ExtResource("13_7pn3y"), ExtResource("14_7gy10"), ExtResource("15_7gy10"), ExtResource("16_ebj8k"), ExtResource("17_0mp7a"), ExtResource("18_pvxyy"), ExtResource("19_r3dwc"), ExtResource("20_r3dwc")])
+metadata/_custom_type_script = "uid://cwm4ujckr2ppq"

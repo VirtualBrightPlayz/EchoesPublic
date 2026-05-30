@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://5bie5c84td75"]
+
+[ext_resource type="PackedScene" uid="uid://dpu3f6ffem35x" path="res://scenes/player/controllers_old/player_controller_457.tscn" id="1_olxjj"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="2_ecm4u"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="6_8lo7p"]
+
+[resource]
+resource_name = "SCP457"
+script = ExtResource("6_8lo7p")
+RoleColor = Color(1, 0, 0, 1)
+MaxHealth = 3500.0
+DisplayName = "ROLE_NAME_SCP_457"
+Objective = "ROLE_OBJ_SCP_457"
+HintText = "ROLE_HINT_SCP_457"
+HintTime = 5.0
+team = 2
+canUseIntercom = false
+proxChat = false
+globalTeamChat = true
+mainChatChannel = 1
+altChatChannel = 1
+listeningChatChannels = PackedInt32Array(0, 1)
+SpawnAudio = ExtResource("2_ecm4u")
+ControllerScene = ExtResource("1_olxjj")
+SprintStaminaDecreaseRate = 0.0
+SprintStaminaIncreaseRate = 1.0
+MaxSprintStamina = 100.0
+SprintStaminaPause = 5.0
+OverrideNoSCPSprint = true

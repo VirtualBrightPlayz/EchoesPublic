@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dekurqrp5uypk"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_1fydj"]
+[ext_resource type="PackedScene" uid="uid://i2br6wa5dtyn" path="res://models/rooms/pop_hcz_new/Pop_Props/Crates & Boxes/Crate_1x1x1_WarehouseProp.fbx" id="2_bub5p"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_shhil"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a21cu"]
+size = Vector3(0.9494629, 0.9379883, 0.953125)
+
+[node name="wood_box_1" type="RigidBody3D" unique_id=2128407703 node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 25.0
+script = ExtResource("1_1fydj")
+Category = 6
+DestroyOnDeath = []
+xformSync = NodePath("TransformSyncNative")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="Crate_1x1x1_WarehouseProp" parent="." unique_id=1808590712 instance=ExtResource("2_bub5p")]
+
+[node name="TransformSyncNative" type="Node" parent="." unique_id=1849351937]
+script = ExtResource("3_shhil")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1683299455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4642711, 0)
+shape = SubResource("BoxShape3D_a21cu")

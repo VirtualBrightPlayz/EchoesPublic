@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://b333bhqo7s71e"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_74aqg"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_ic0hq"]
+
+[resource]
+resource_name = "Entrance Endoff"
+script = ExtResource("2_74aqg")
+stage = 3
+scenes = []
+sceneFile = "uid://bpns5egwqebw"
+isGeneric = true
+category = "Entrance"

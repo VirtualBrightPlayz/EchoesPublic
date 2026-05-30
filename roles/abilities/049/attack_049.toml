@@ -1,0 +1,13 @@
+[ability]
+name = 'SCP049_Attack'
+base_name = 'Attack'
+
+[ability.data]
+damage_amount = 1000.0
+damage_type = 'Scp049'
+attack_cooldown_time = 1.0
+friendly_fire_allowed = false
+attack_sound_name = '049_kill'
+damage_effect_type = 'Invalid'
+damage_effect_duration = 2.5
+damage_effect_intensity = 1.0

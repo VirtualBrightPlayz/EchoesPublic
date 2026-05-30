@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://l3aguj5tipmi"]
+
+[ext_resource type="Shader" uid="uid://cajpkmjr7be20" path="res://materials/shaders/KTvisualshaderBackfaceCull.tres" id="1_j20tv"]
+[ext_resource type="Texture2D" uid="uid://dbdvulg0hrsa2" path="res://models/rooms/lcz/textures/T_Tiles.png" id="2_mfypl"]
+[ext_resource type="Texture2D" uid="uid://dxmxrsf3hupqh" path="res://models/rooms/lcz/textures/NAO_Tiles.png" id="4_3h3pa"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_j20tv")
+shader_parameter/Scale = Vector2(1, 1)
+shader_parameter/Pan = Vector2(0, 0)
+shader_parameter/Base_Color = ExtResource("2_mfypl")
+shader_parameter/Base_Color_Tint = Color(0.488, 0.599833, 0.61, 1)
+shader_parameter/Metallic_Strength = 1.0
+shader_parameter/Roughness_Strength = 1.0
+shader_parameter/Specular_Strength = 1.0
+shader_parameter/Emissive_Tint = Color(0, 0, 0, 1)
+shader_parameter/NAO = ExtResource("4_3h3pa")
+shader_parameter/AO_Strength = 1.0
+shader_parameter/N_Depth = 1.0

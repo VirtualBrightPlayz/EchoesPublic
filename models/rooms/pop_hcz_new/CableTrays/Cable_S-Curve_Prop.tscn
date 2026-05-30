@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm02obw3xpx7s"]
+
+[ext_resource type="PackedScene" uid="uid://bowatbghas47" path="res://models/rooms/pop_hcz_new/CableTrays/CableTrays.fbx" id="1_whe38"]
+
+[node name="Cable_S-Curve" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CableTrays" parent="StaticBody3D" instance=ExtResource("1_whe38")]
+
+[node name="CableTrayC" parent="StaticBody3D/CableTrays" index="0"]
+visible = false
+
+[node name="CableTrayS" parent="StaticBody3D/CableTrays" index="1"]
+visible = false
+
+[editable path="StaticBody3D/CableTrays"]

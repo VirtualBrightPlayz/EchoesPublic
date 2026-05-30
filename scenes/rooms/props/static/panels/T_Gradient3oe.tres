@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cqq7edywnc555"]
+
+[ext_resource type="Texture2D" uid="uid://ds5dlfojbx7lt" path="res://scenes/rooms/props/static/panels/textures/T_Gradient3.png" id="1_g50wu"]
+
+[resource]
+albedo_color = Color(0.5019608, 0.2901961, 0, 1)
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 0.5833334, 0, 1)
+emission_energy_multiplier = 0.0
+emission_operator = 1
+emission_texture = ExtResource("1_g50wu")
+anisotropy = 1.0

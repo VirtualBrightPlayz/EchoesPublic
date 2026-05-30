@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=3 format=3 uid="uid://d4nfatlhj58pv"]
+
+[ext_resource type="Resource" uid="uid://dyyqsu50f8kmi" path="res://rooms/ez/Checkpoint.tres" id="1_4mkmk"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="6_y343t"]
+
+[resource]
+script = ExtResource("6_y343t")
+Collection = Array[Resource]([ExtResource("1_4mkmk")])

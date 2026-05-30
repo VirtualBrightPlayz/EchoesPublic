@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bxx1xbdsnvoxh"]
+
+[ext_resource type="Texture2D" uid="uid://tcncrvolbenh" path="res://textures/main/ez/walltrim/T_wall 2.png" id="1_o2fjw"]
+[ext_resource type="Texture2D" uid="uid://cw11bc3jemi6d" path="res://textures/main/ez/walltrim/N_wall 2.png" id="2_gyn00"]
+[ext_resource type="Texture2D" uid="uid://d4jpxkdtuoa30" path="res://textures/main/ez/walltrim/ORM_wall 2.png" id="3_y5465"]
+
+[resource]
+albedo_texture = ExtResource("1_o2fjw")
+orm_texture = ExtResource("3_y5465")
+normal_enabled = true
+normal_texture = ExtResource("2_gyn00")
+ao_enabled = true

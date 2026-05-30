@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cpjrob27tynha"]
+
+[ext_resource type="Shader" uid="uid://cxmltobioryu1" path="res://shaders/PBR_Glass.gdshader" id="1_yaw7t"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yaw7t")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/roughness = 0.15
+shader_parameter/normal_strength = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)

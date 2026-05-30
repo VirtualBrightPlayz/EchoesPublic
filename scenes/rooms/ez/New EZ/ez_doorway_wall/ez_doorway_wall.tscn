@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dvkjy5s6l5006"]
+
+[ext_resource type="PackedScene" uid="uid://dvifswxdkmvec" path="res://scenes/rooms/ez/New EZ/ez_doorway_wall/ez_doorway_wall.fbx" id="1_ibgf6"]
+[ext_resource type="PackedScene" uid="uid://64mbuw68oxh3" path="res://scenes/rooms/doors/lcz_door.tscn" id="2_di1ux"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="2_qw6c4"]
+[ext_resource type="Resource" uid="uid://brjxp8712l8em" path="res://projectile_resistance/concrete_pr.tres" id="3_e80yh"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ibgf6"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 0
+
+[node name="EzDoor" type="Node3D" unique_id=609785076]
+
+[node name="ez_doorway_wall" parent="." unique_id=221681645 instance=ExtResource("1_ibgf6")]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="ProjectileSettings" type="Node" parent="ez_doorway_wall/doorway/StaticBody3D" parent_id_path=PackedInt32Array(221681645, 87558794) index="1" unique_id=1260602943]
+script = ExtResource("2_qw6c4")
+Medium = ExtResource("3_e80yh")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=435185932]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_ibgf6")
+
+[node name="LczDoor" parent="." unique_id=1065678483 instance=ExtResource("2_di1ux")]
+
+[editable path="ez_doorway_wall"]

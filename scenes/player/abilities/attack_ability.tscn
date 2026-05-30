@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://byd6k51t5mt31"]
+
+[ext_resource type="Script" uid="uid://jeuawgyta018" path="res://scripts/player/controllers/ability/AttackAbility.cs" id="1_b34tq"]
+
+[node name="AttackAbility" type="Node" unique_id=1990849728 node_paths=PackedStringArray("rayCast", "attackCooldown")]
+script = ExtResource("1_b34tq")
+rayCast = NodePath("RayCast3DPlayer")
+attackCooldown = NodePath("AttackCooldown")
+metadata/_custom_type_script = "uid://jeuawgyta018"
+
+[node name="RayCast3DPlayer" type="RayCast3D" parent="." unique_id=1045190860]
+enabled = false
+target_position = Vector3(0, 0, -3)
+collision_mask = 281
+hit_back_faces = false
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1524593876]
+one_shot = true

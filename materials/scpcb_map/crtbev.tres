@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bjk8ufc5gig7e"]
+
+[ext_resource type="Texture2D" uid="uid://o2jo5pxljmlv" path="res://textures/scpcb_pbr/crate/CRTBEV_Diffuse.png" id="1_3mq1x"]
+[ext_resource type="Texture2D" uid="uid://c25a1sfxk2by2" path="res://textures/scpcb_pbr/crate/CRTBEV_Metallic.png" id="2_05vxd"]
+[ext_resource type="Texture2D" uid="uid://favplx48ml58" path="res://textures/scpcb_pbr/crate/CRTBEV_Normal.png" id="3_veqan"]
+[ext_resource type="Texture2D" uid="uid://diras2tfkquv2" path="res://textures/scpcb_pbr/crate/CRTBEV_Roughness.png" id="4_1igh0"]
+
+[resource]
+albedo_texture = ExtResource("1_3mq1x")
+metallic = 1.0
+metallic_texture = ExtResource("2_05vxd")
+roughness_texture = ExtResource("4_1igh0")
+normal_enabled = true
+normal_texture = ExtResource("3_veqan")
+texture_filter = 5

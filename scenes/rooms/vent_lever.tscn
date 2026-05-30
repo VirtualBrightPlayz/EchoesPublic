@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh0jpp308fd6v"]
+
+[ext_resource type="PackedScene" uid="uid://b387yxgf4v85i" path="res://models/scpcb/props/leverhandle.glb" id="1_r6hed"]
+[ext_resource type="Script" uid="uid://ddgo284eko5xt" path="res://scripts/map/VentLever.cs" id="1_rtvif"]
+[ext_resource type="Resource" uid="uid://c03crcv3ppyjg" path="res://sounds/lever_flip.tres" id="2_448i0"]
+[ext_resource type="PackedScene" uid="uid://ctk6i8hf1qfai" path="res://models/scpcb/props/leverbase.glb" id="2_te4a4"]
+[ext_resource type="Material" uid="uid://dcawk0fjracwk" path="res://materials/scpcb_map/mechanical_lever.tres" id="3_okxyv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgwwl"]
+size = Vector3(0.845947, 1.31445, 0.522339)
+
+[node name="VentLever" type="StaticBody3D" node_paths=PackedStringArray("leverHandle")]
+collision_layer = 261
+collision_mask = 261
+script = ExtResource("1_rtvif")
+unlockedRot = Vector3(90, 0, 0)
+lockedRot = Vector3(270, 0, 0)
+leverHandle = NodePath("leverhandle")
+speed = 10.0
+sound = ExtResource("2_448i0")
+
+[node name="leverhandle" parent="." instance=ExtResource("1_r6hed")]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0, 0, 0)
+
+[node name="Mesh01" parent="leverhandle" index="0"]
+surface_material_override/0 = ExtResource("3_okxyv")
+
+[node name="leverbase" parent="." instance=ExtResource("2_te4a4")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="default" parent="leverbase" index="0"]
+surface_material_override/0 = ExtResource("3_okxyv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.109436)
+shape = SubResource("BoxShape3D_rgwwl")
+
+[editable path="leverhandle"]
+[editable path="leverbase"]

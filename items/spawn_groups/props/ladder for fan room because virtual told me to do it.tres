@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PropSpawnGroup" format=3 uid="uid://v8nym6o3q4yl"]
+
+[ext_resource type="PackedScene" uid="uid://cmxyxum1vmbxc" path="res://scenes/rooms/props/dynamic/ladder_2.tscn" id="1_40hlp"]
+[ext_resource type="Script" uid="uid://dg32kkoa2ddpl" path="res://scripts/map/PropSpawnGroup.cs" id="2_gdtfw"]
+
+[resource]
+script = ExtResource("2_gdtfw")
+Props = [ExtResource("1_40hlp")]
+MaxSpawned = 1
+metadata/_custom_type_script = "uid://dg32kkoa2ddpl"

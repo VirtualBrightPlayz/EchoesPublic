@@ -1,0 +1,160 @@
+[gd_scene load_steps=22 format=3 uid="uid://bfw3t8bisu27y"]
+
+[ext_resource type="Texture2D" uid="uid://ctbkdo1d3ogu5" path="res://textures/scpcb/decals/decal1.png" id="1_5rwv6"]
+[ext_resource type="Texture2D" uid="uid://cgtm2bm6q41sd" path="res://textures/scpcb/decals/decal1-mask.png" id="1_e10tn"]
+[ext_resource type="Texture2D" uid="uid://b446lahj8lu8j" path="res://textures/scpcb/decals/decal2.png" id="3_moeed"]
+[ext_resource type="PackedScene" uid="uid://dsfbg36x7cmnn" path="res://models/scpcb/rooms/pocketdimension2.glb" id="4_8s1nw"]
+[ext_resource type="Texture2D" uid="uid://8jp4b5r3ist5" path="res://textures/scpcb/rockmoss.jpg" id="6_moeed"]
+[ext_resource type="Shader" uid="uid://cfopr8oa82msu" path="res://shaders/portals/portal.gdshader" id="7_7efja"]
+[ext_resource type="Environment" uid="uid://dm3nps0ldtkkd" path="res://scenes/facility_env.tres" id="7_lm7w0"]
+[ext_resource type="Texture2D" uid="uid://c1fgbll1ugrwx" path="res://textures/scpcb/rockmossbump.jpg" id="7_s3qgr"]
+[ext_resource type="Material" uid="uid://gwk1ylrs7qve" path="res://materials/scpcb_map/rockmoss.tres" id="8_2sxs8"]
+[ext_resource type="Script" uid="uid://tws2odeodjn6" path="res://scripts/CustomRoomLogic/portal_camera.gd" id="8_moeed"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lm7w0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcxxp"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_5rwv6")
+stencil_mode = 3
+stencil_flags = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iyijs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8s1nw"]
+transparency = 1
+depth_test = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_e10tn")
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_3ue3v"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:scale")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ypow"]
+transparency = 1
+depth_test = 1
+albedo_texture = ExtResource("6_moeed")
+roughness = 0.3
+normal_enabled = true
+normal_texture = ExtResource("7_s3qgr")
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2sxs8"]
+
+[sub_resource type="World3D" id="World3D_lm7w0"]
+environment = ExtResource("7_lm7w0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_moeed"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7efja"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lm7w0"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_7efja")
+shader_parameter/screen = SubResource("ViewportTexture_7efja")
+
+[node name="Portal106" type="Node3D" groups=["106_portal"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.01, 0)
+mesh = SubResource("PlaneMesh_lm7w0")
+surface_material_override/0 = SubResource("StandardMaterial3D_vcxxp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_iyijs")
+surface_material_override/0 = SubResource("StandardMaterial3D_8s1nw")
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(4, 2, 4)
+texture_albedo = ExtResource("3_moeed")
+distance_fade_enabled = true
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_3ue3v")
+
+[node name="pocketdimension2" parent="." instance=ExtResource("4_8s1nw")]
+transform = Transform3D(0.75, 0, 0, 0, -3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, -0.063574396, 2.262251)
+visible = false
+
+[node name="classname=brush" parent="pocketdimension2" index="0"]
+layers = 64
+surface_material_override/0 = SubResource("StandardMaterial3D_0ypow")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="pocketdimension2/classname=light\r\ncolor=255 255 255\r\nintensity=1_2\r\nrang_a89aa42" index="0"]
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+light_cull_mask = 4294966336
+distance_fade_enabled = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="pocketdimension2"]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 2.3639994, -3.9954574)
+layers = 64
+mesh = SubResource("PlaneMesh_2sxs8")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ypow")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+own_world_3d = true
+world_3d = SubResource("World3D_lm7w0")
+use_occlusion_culling = true
+scaling_3d_scale = 0.7
+gui_disable_input = true
+positional_shadow_atlas_size = 0
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" node_paths=PackedStringArray("ref_point")]
+current = true
+script = ExtResource("8_moeed")
+ref_point = NodePath("../../MeshInstance3D3")
+
+[node name="pocketdimension2" parent="SubViewport" instance=ExtResource("4_8s1nw")]
+transform = Transform3D(0.75, 0, 0, 0, -3.278354e-08, 0.75, 0, -0.75, -3.278354e-08, 0, -0.063574396, 2.262251)
+
+[node name="classname=brush" parent="SubViewport/pocketdimension2" index="0"]
+layers = 64
+surface_material_override/0 = ExtResource("8_2sxs8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewport/pocketdimension2/classname=light\r\ncolor=255 255 255\r\nintensity=1_2\r\nrang_a89aa42" index="0"]
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+light_cull_mask = 4294966336
+distance_fade_enabled = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewport/pocketdimension2"]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 2.3639994, -3.9954574)
+layers = 64
+mesh = SubResource("PlaneMesh_2sxs8")
+surface_material_override/0 = ExtResource("8_2sxs8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
+mesh = SubResource("PlaneMesh_moeed")
+surface_material_override/0 = SubResource("ShaderMaterial_lm7w0")
+
+[editable path="pocketdimension2"]
+[editable path="SubViewport/pocketdimension2"]

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://b5eaqmavhwbuv"]
+
+[ext_resource type="Texture2D" uid="uid://c7lpo5167bww8" path="res://models/rooms/lcz/textures/T_toilet materials.png" id="1_ule5k"]
+[ext_resource type="Texture2D" uid="uid://dlrgkdem67eon" path="res://models/rooms/lcz/textures/N_toilet materials.png" id="2_vaw86"]
+[ext_resource type="Texture2D" uid="uid://dd2orkatpju0r" path="res://models/rooms/lcz/textures/ORM_toilet materials.png" id="3_7uglv"]
+
+[resource]
+albedo_texture = ExtResource("1_ule5k")
+orm_texture = ExtResource("3_7uglv")
+normal_enabled = true
+normal_texture = ExtResource("2_vaw86")

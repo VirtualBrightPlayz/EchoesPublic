@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://biay4ybcb6mq1"]
+
+[ext_resource type="Texture2D" uid="uid://c6plnwb2q7fum" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/V1_CorrugatedMetal_T.png" id="1_57i18"]
+[ext_resource type="Texture2D" uid="uid://bt087ugr8syp" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/V1_CorrugatedMetal_N.png" id="2_24fcw"]
+[ext_resource type="Texture2D" uid="uid://dn4fqbobtixmp" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/V1_CorrugatedMetal_ORM.png" id="3_u6kxy"]
+
+[resource]
+albedo_texture = ExtResource("1_57i18")
+orm_texture = ExtResource("3_u6kxy")
+normal_enabled = true
+normal_texture = ExtResource("2_24fcw")

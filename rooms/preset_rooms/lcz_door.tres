@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://5wthv07ick05"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_y2jbb"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_y2jbb"]
+
+[resource]
+resource_name = "LCZ Door"
+script = ExtResource("2_y2jbb")
+type = 5
+stage = 1
+scenes = []
+sceneFile = "uid://64mbuw68oxh3"
+category = "Doors"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

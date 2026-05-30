@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://djsyc6ocu14uj"]
+
+[ext_resource type="Script" uid="uid://d3v1pd35tg3t4" path="res://scripts/player/controllers/FPController.cs" id="1_od3q5"]
+[ext_resource type="Texture2D" uid="uid://how2f6lkhav0" path="res://icons/sound-icon-white.png" id="2_ofqtj"]
+[ext_resource type="Script" uid="uid://ygb4esl4cg44" path="res://scripts/TalkingIndicator.cs" id="3_3gvgb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r6h60"]
+radius = 0.4
+height = 2.5
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_lmeee"]
+
+[node name="SCPController" type="CharacterBody3D" unique_id=1973391966 node_paths=PackedStringArray("head", "speakingIndicator", "camera", "footstepsAudio", "collider")]
+collision_layer = 2
+collision_mask = 33
+floor_max_angle = 0.872665
+floor_snap_length = 0.5
+script = ExtResource("1_od3q5")
+Speed = 4.0
+Accel = 70.0
+SprintMultiplier = 1.0
+SneakMultiplier = 0.5
+GravityMulti = 2.0
+head = NodePath("Head")
+speakingIndicator = NodePath("VoiceIcon")
+camera = NodePath("Head/Camera3D")
+footstepsAudio = NodePath("Footsteps")
+footstepInterval = 0.6
+collider = NodePath("CollisionShape3D")
+metadata/_custom_type_script = "uid://d3v1pd35tg3t4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1375692944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_r6h60")
+
+[node name="Head" type="Node3D" parent="." unique_id=842290162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1369209226]
+cull_mask = 1048543
+fov = 70.0
+far = 100.0
+
+[node name="VoiceIcon" type="Sprite3D" parent="." unique_id=197253934]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3, 0)
+billboard = 2
+texture = ExtResource("2_ofqtj")
+
+[node name="Talking" type="Node" parent="." unique_id=1719324666 node_paths=PackedStringArray("spr")]
+script = ExtResource("3_3gvgb")
+spr = NodePath("../VoiceIcon")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=351829675]
+stream = SubResource("AudioStreamPolyphonic_lmeee")
+volume_db = -2.0
+unit_size = 2.0
+max_db = 0.0
+autoplay = true
+max_distance = 50.0
+bus = &"World"
+attenuation_filter_db = 0.0

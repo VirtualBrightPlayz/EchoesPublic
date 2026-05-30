@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://ciop7j37sua54"]
+
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="1_4a2pt"]
+[ext_resource type="Texture2D" uid="uid://bioaq1i5gxa15" path="res://textures/inv_icons/SodiePOP_ItemIcon.png" id="1_jehku"]
+[ext_resource type="PackedScene" uid="uid://b7vwrkcgghnpu" path="res://scenes/items/scp207.tscn" id="1_quhpd"]
+
+[resource]
+resource_name = "SCP-207"
+script = ExtResource("1_4a2pt")
+ItemScene = ExtResource("1_quhpd")
+Icon = ExtResource("1_jehku")
+Description = "A fizzy soda that can accelerate your speed. May cause heart palpitations."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

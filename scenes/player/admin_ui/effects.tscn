@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg522grki8k5j"]
+
+[ext_resource type="Script" uid="uid://cbwjj5p3vnym6" path="res://scripts/ui/admin/AdminCategoryEffects.cs" id="1_w6f03"]
+
+[node name="Effects" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Handler" type="Node" parent="." node_paths=PackedStringArray("container", "clearEffectsButton")]
+script = ExtResource("1_w6f03")
+container = NodePath("../ScrollContainer/GridContainer")
+clearEffectsButton = NodePath("../Buttons/ClearAllEffects")
+
+[node name="Labels" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 4
+
+[node name="Label" type="Label" parent="Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EFFECT_TYPE"
+
+[node name="Label2" type="Label" parent="Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EFFECT_DURATION"
+
+[node name="Label3" type="Label" parent="Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EFFECT_INTENSITY"
+
+[node name="Label4" type="Label" parent="Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "EFFECT_ACTION"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HFlowContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="ClearAllEffects" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "ADMIN_PANEL_CLEAR_EFFECTS"

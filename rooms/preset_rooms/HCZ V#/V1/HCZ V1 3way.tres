@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dqxe1ji5aonj1"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_ey0j2"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_ycux1"]
+
+[resource]
+resource_name = "3 way - HCZ V1"
+script = ExtResource("2_ey0j2")
+type = 3
+scenes = []
+sceneFile = "uid://2hwuvkl3g55v"
+zone = 2
+category = "HCZ V1 (Metal Tubes) (Echoes)"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

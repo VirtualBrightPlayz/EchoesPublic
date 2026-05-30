@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://jkm6epr1q1en"]
+
+[ext_resource type="Script" uid="uid://dycnw8hay0y64" path="res://scripts/ui/WorkshopUploadUI.cs" id="1_ahy0s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ub3eb"]
+font_size = 32
+
+[node name="WorkshopUpdate" type="PanelContainer" unique_id=774240509 node_paths=PackedStringArray("generalPopup", "listFormRoot", "newItemBtn", "itemListContainer", "updateFormRoot", "titleLabel", "titleEdit", "descEdit", "contentFolderEdit", "previewFileEdit", "commentEdit", "updateBtn", "folderSelectDialog", "previewSelectDialog", "selectFolderBtn", "selectPreviewBtn")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ahy0s")
+generalPopup = NodePath("Popup")
+listFormRoot = NodePath("Controls")
+newItemBtn = NodePath("Controls/VBoxContainer/New")
+itemListContainer = NodePath("Controls/ScrollContainer/VBoxContainer")
+updateFormRoot = NodePath("Upload")
+titleLabel = NodePath("Upload/VBoxContainer/Label")
+titleEdit = NodePath("Upload/VBoxContainer/Title/LineEdit")
+descEdit = NodePath("Upload/VBoxContainer/Desc/LineEdit")
+contentFolderEdit = NodePath("Upload/VBoxContainer/ContentFolder/LineEdit")
+previewFileEdit = NodePath("Upload/VBoxContainer/PreviewFile/LineEdit")
+commentEdit = NodePath("Upload/VBoxContainer/UpdateComment/LineEdit")
+updateBtn = NodePath("Upload/VBoxContainer/HBoxContainer/Update")
+folderSelectDialog = NodePath("FolderSelect")
+previewSelectDialog = NodePath("PreviewSelect")
+selectFolderBtn = NodePath("Upload/VBoxContainer/ContentFolder/Button")
+selectPreviewBtn = NodePath("Upload/VBoxContainer/PreviewFile/Button")
+metadata/_edit_lock_ = true
+
+[node name="Controls" type="HBoxContainer" parent="." unique_id=2022911928]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls" unique_id=47125977]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Exit" type="Button" parent="Controls/VBoxContainer" unique_id=985988437]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Return to Menu"
+
+[node name="Label2" type="LinkButton" parent="Controls/VBoxContainer" unique_id=1713383800]
+layout_mode = 2
+text = "By creating an item, you agree to the workshop terms of service"
+uri = "https://steamcommunity.com/sharedfiles/workshoplegalagreement"
+
+[node name="New" type="Button" parent="Controls/VBoxContainer" unique_id=718315296]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "New Workshop Item"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Controls" unique_id=1703636545]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/ScrollContainer" unique_id=1567746996]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Upload" type="ScrollContainer" parent="." unique_id=477203165]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Upload" unique_id=290251129]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Upload/VBoxContainer" unique_id=1840827770]
+layout_mode = 2
+text = "Editing"
+label_settings = SubResource("LabelSettings_ub3eb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="HBoxContainer" parent="Upload/VBoxContainer" unique_id=1292440228]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Upload/VBoxContainer/Title" unique_id=429271302]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Title"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Upload/VBoxContainer/Title" unique_id=223411181]
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="Desc" type="HBoxContainer" parent="Upload/VBoxContainer" unique_id=958719191]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Upload/VBoxContainer/Desc" unique_id=273523722]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Description"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LineEdit" type="TextEdit" parent="Upload/VBoxContainer/Desc" unique_id=594914765]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="ContentFolder" type="HBoxContainer" parent="Upload/VBoxContainer" unique_id=2142299299]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Upload/VBoxContainer/ContentFolder" unique_id=715808622]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Content Folder"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Upload/VBoxContainer/ContentFolder" unique_id=1243725106]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "C:\\MyEpicMod\\"
+clear_button_enabled = true
+
+[node name="Button" type="Button" parent="Upload/VBoxContainer/ContentFolder" unique_id=537645909]
+layout_mode = 2
+text = "Select"
+
+[node name="PreviewFile" type="HBoxContainer" parent="Upload/VBoxContainer" unique_id=1800638772]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Upload/VBoxContainer/PreviewFile" unique_id=600294649]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Preview Image"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Upload/VBoxContainer/PreviewFile" unique_id=1994615035]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "C:\\MyEpicMod\\Preview.png"
+clear_button_enabled = true
+
+[node name="Button" type="Button" parent="Upload/VBoxContainer/PreviewFile" unique_id=381122572]
+layout_mode = 2
+text = "Select"
+
+[node name="UpdateComment" type="HBoxContainer" parent="Upload/VBoxContainer" unique_id=290406689]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Upload/VBoxContainer/UpdateComment" unique_id=1233211876]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Update Comment"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Upload/VBoxContainer/UpdateComment" unique_id=775114976]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Required"
+clear_button_enabled = true
+
+[node name="Label2" type="LinkButton" parent="Upload/VBoxContainer" unique_id=1407417911]
+layout_mode = 2
+text = "By submitting this item, you agree to the workshop terms of service"
+uri = "https://steamcommunity.com/sharedfiles/workshoplegalagreement"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Upload/VBoxContainer" unique_id=1686568469]
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="Upload/VBoxContainer/HBoxContainer" unique_id=1775257462]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
+
+[node name="Update" type="Button" parent="Upload/VBoxContainer/HBoxContainer" unique_id=1258543145]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Update Item"
+
+[node name="FolderSelect" type="FileDialog" parent="." unique_id=2000240484]
+title = "Open a Directory"
+file_mode = 2
+display_mode = 1
+access = 2
+use_native_dialog = true
+
+[node name="PreviewSelect" type="FileDialog" parent="." unique_id=600915036]
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg")
+use_native_dialog = true
+
+[node name="Popup" type="AcceptDialog" parent="." unique_id=631304535]
+oversampling_override = 1.0
+initial_position = 2
+
+[connection signal="pressed" from="Controls/VBoxContainer/Exit" to="." method="Exit"]
+[connection signal="pressed" from="Upload/VBoxContainer/HBoxContainer/Cancel" to="." method="ListItems"]

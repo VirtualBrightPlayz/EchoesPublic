@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://4ey1jjccn6ru"]
+
+[ext_resource type="Texture2D" uid="uid://bxnblhbikqdu8" path="res://models/rooms/sz/texture_02.png" id="1_rs5px"]
+
+[resource]
+albedo_color = Color(0.633757, 0.633757, 0.633757, 1)
+albedo_texture = ExtResource("1_rs5px")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 10.0
+uv1_world_triplanar = true

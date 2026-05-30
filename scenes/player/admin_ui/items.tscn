@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ctbsr8uqwfq88"]
+
+[ext_resource type="Script" uid="uid://ctxknwcnki74h" path="res://scripts/ui/admin/AdminCategoryItems.cs" id="1_cevku"]
+
+[node name="Items" type="VBoxContainer" unique_id=1483455666]
+
+[node name="Handler" type="Node" parent="." unique_id=67635233 node_paths=PackedStringArray("ItemList")]
+script = ExtResource("1_cevku")
+ItemList = NodePath("../ItemList")
+
+[node name="ItemList" type="ItemList" parent="." unique_id=1791619030]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/guide_color = Color(0.69803923, 0.69803923, 0.69803923, 0)
+wraparound_items = false
+max_columns = 10
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2i(128, 128)
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=862512415]
+layout_mode = 2
+
+[node name="Commands" type="HBoxContainer" parent="." unique_id=1670486119]
+layout_mode = 2
+alignment = 1

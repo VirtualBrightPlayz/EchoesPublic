@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://q14y5t22c1r7"]
+
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_5tn1d"]
+[ext_resource type="Resource" uid="uid://buauhbvv7suuo" path="res://scripts/layout_generator/example_spawn_validator/HCZ2SpawnValidator.tres" id="1_mqepd"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_refgo"]
+[ext_resource type="PackedScene" uid="uid://muwjlhqjkjxx" path="res://scenes/rooms/lcz/lcz_endoff.tscn" id="2_yhrd8"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="3_7gftb"]
+
+[resource]
+script = ExtResource("3_7gftb")
+RoomScenes = Array[PackedScene]([ExtResource("2_yhrd8")])
+RequiredInstances = 0
+MaximumInstances = -1
+SpawnPoolEntries = 5
+Connections = 2
+BlockedNeighbours = 8
+PreSpawnValidatorResources = Array[ExtResource("2_refgo")]([ExtResource("1_mqepd")])
+PostSpawnValidatorResources = Array[ExtResource("2_refgo")]([])
+Test = false
+Constraints = Array[ExtResource("1_5tn1d")]([])
+MaxConsecutive = -1

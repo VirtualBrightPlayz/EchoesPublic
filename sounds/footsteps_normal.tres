@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://da3v2uwxotwrw"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_ivy3x"]
+[ext_resource type="AudioStream" uid="uid://b6e5fqbm1t3eg" path="res://audio/scpcb/steps/Step1.ogg" id="2_4pbnc"]
+[ext_resource type="AudioStream" uid="uid://x0aov3mh847b" path="res://audio/scpcb/steps/Step2.ogg" id="3_20vop"]
+[ext_resource type="AudioStream" uid="uid://cmsghuenvneib" path="res://audio/scpcb/steps/Step3.ogg" id="4_o1ayi"]
+[ext_resource type="AudioStream" uid="uid://i0bw88f4768h" path="res://audio/scpcb/steps/Step4.ogg" id="5_swdj8"]
+[ext_resource type="AudioStream" uid="uid://fwl1ocaehmno" path="res://audio/scpcb/steps/Step5.ogg" id="6_lnuv6"]
+[ext_resource type="AudioStream" uid="uid://dvaqma7sr7ak" path="res://audio/scpcb/steps/Step6.ogg" id="7_sgy7k"]
+[ext_resource type="AudioStream" uid="uid://bv2cnudsdfnpa" path="res://audio/scpcb/steps/Step7.ogg" id="8_tujf2"]
+[ext_resource type="AudioStream" uid="uid://d1hmhxxwe3sl5" path="res://audio/scpcb/steps/Step8.ogg" id="9_dj0h2"]
+
+[resource]
+script = ExtResource("1_ivy3x")
+DisplayName = "Footsteps Normal"
+streams = [ExtResource("2_4pbnc"), ExtResource("3_20vop"), ExtResource("4_o1ayi"), ExtResource("5_swdj8"), ExtResource("6_lnuv6"), ExtResource("7_sgy7k"), ExtResource("8_tujf2"), ExtResource("9_dj0h2")]
+volumeDb = -2.0
+unitSize = 2.0
+maxDistance = 50.0
+maxDb = -2.0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://cen6yieun0jh5"]
+
+[ext_resource type="PackedScene" uid="uid://c8kx158pflubj" path="res://scenes/items/flashlight.tscn" id="1_2opa4"]
+[ext_resource type="Texture2D" uid="uid://jf5q4xrdx0sb" path="res://textures/inv_icons/flashlight_icon.png" id="1_2yxpk"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="1_twf4v"]
+
+[resource]
+resource_name = "Flashlight"
+script = ExtResource("1_twf4v")
+ItemScene = ExtResource("1_2opa4")
+Icon = ExtResource("1_2yxpk")
+Description = "A light used to see in dark spaces."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

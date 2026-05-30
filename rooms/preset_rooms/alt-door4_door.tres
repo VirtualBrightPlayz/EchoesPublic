@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://7gkf7i3u5i4d"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_achdh"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_bdgo8"]
+
+[resource]
+resource_name = "HCZ Door"
+script = ExtResource("2_achdh")
+type = 5
+stage = 2
+scenes = []
+sceneFile = "uid://b16iyl4hcnkl5"
+category = "Doors"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

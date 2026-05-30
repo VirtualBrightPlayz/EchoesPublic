@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ct2p2mdxuslp2"]
+
+[ext_resource type="Script" uid="uid://yfxnobnmij6d" path="res://scripts/settings/classes/MicrophoneHardwareSelector.cs" id="1_mgd8u"]
+
+[node name="MicrophoneHardwareDetect" type="Container" unique_id=773361544 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_mgd8u")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+metadata/_custom_type_script = "uid://yfxnobnmij6d"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=963566450]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1799397458]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer" unique_id=257002193]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1264454657]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer" unique_id=1933541694]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+fit_to_longest_item = false
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1908744700]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14

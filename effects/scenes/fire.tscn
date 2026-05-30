@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvstdbptj8n2b"]
+
+[ext_resource type="Texture2D" uid="uid://bbup2bkoevmma" path="res://textures/flame.png" id="1_a7qnn"]
+[ext_resource type="AudioStream" uid="uid://csdbphqnuqs0g" path="res://audio/cc0/burn.wav" id="2_va6j2"]
+[ext_resource type="Script" uid="uid://cgon41wv5dcm3" path="res://scripts/map/LoopAudio3D.cs" id="3_a5yk0"]
+
+[sub_resource type="Curve" id="Curve_gs8sa"]
+_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(0.1, 1), 10.0, -1.11111, 1, 1, Vector2(1, 0), -1.11111, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bommj"]
+curve = SubResource("Curve_gs8sa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iq5ig"]
+angle_min = -90.0
+angle_max = 90.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+color = Color(1, 0.588235, 0, 1)
+alpha_curve = SubResource("CurveTexture_bommj")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2g5j"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_a7qnn")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_d0s7l"]
+material = SubResource("StandardMaterial3D_g2g5j")
+
+[node name="Fire" type="Node3D"]
+
+[node name="Particles" type="GPUParticles3D" parent="."]
+amount = 25
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_iq5ig")
+draw_pass_1 = SubResource("QuadMesh_d0s7l")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_va6j2")
+volume_db = -6.0
+unit_size = 3.0
+autoplay = true
+max_distance = 15.0
+bus = &"World"
+attenuation_filter_db = 0.0
+script = ExtResource("3_a5yk0")

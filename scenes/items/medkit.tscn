@@ -1,0 +1,126 @@
+[gd_scene format=4 uid="uid://tne4b361k44s"]
+
+[ext_resource type="Script" uid="uid://qxec1x02cf6r" path="res://scripts/items/Medkit.cs" id="1_fgnva"]
+[ext_resource type="Script" uid="uid://bgppldp6cwd1p" path="res://scripts/items/ItemObject.cs" id="1_wyd6e"]
+[ext_resource type="PackedScene" uid="uid://dhmwmamkhe1ym" path="res://models/scpcb/items/medkit.glb" id="2_fgnva"]
+[ext_resource type="PackedScene" uid="uid://qswrdrrw5jkq" path="res://models/main/items/Medkit/MedKitVirt.glb" id="3_nf5k6"]
+[ext_resource type="Script" uid="uid://cnnnnu62sw6be" path="res://scripts/items/ItemGrip.cs" id="4_3noyn"]
+[ext_resource type="PackedScene" uid="uid://ctbau0jq6wi5y" path="res://scenes/viewmodels/medkit.tscn" id="5_ah3oc"]
+[ext_resource type="Texture2D" uid="uid://cb5jgpwd5d358" path="res://models/scpcb/items/medkit_firstaidkit.jpg" id="5_nf5k6"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="6_w6e84"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_000s0"]
+size = Vector3(0.419922, 0.302734, 0.136719)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpesy"]
+resource_name = "MatD3D01"
+cull_mode = 2
+albedo_texture = ExtResource("5_nf5k6")
+roughness = 0.552786
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tabcg"]
+_surfaces = [{
+"aabb": AABB(-4, -2.6125, -1.175, 7.2, 5.2, 1.2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAAACAAMAAgABAAQABQABAAMAAwACAAYABQAHAAEAAwAHAAUAAQAHAAQABgAHAAMABwACAAQABgACAAcA"),
+"name": "MatD3D01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAD//wAA//8AAAAA/////wAA/////wAAAAAAAAAA//8AAP//AAAAAAAAAAD//wAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_okt2p"]
+resource_name = "medkit_Mesh_002"
+_surfaces = [{
+"aabb": AABB(-4, -2.6125, -1.175, 7.2, 5.2, 1.2),
+"attribute_data": PackedByteArray("SV30zUld//8wD/TNMA///0ld/38wD/9/SV2MizAPjItJXYyLMA+Mi0ld/38wD/9/MA95jTAPhL9JXXmNSV2Ev3VfjAt6bIwLdV+XPXpslz0AAIS/BA2EvwAAeY0EDXmN"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_vpesy"),
+"name": "MatD3D01",
+"primitive": 3,
+"uv_scale": Vector4(1.756, 1.9792, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("////////AID//wAA//8AgAAA/////wCAAAAAAP//AID//wAAAAD/PwAAAAAAAP8///8AAP///z8AAAAA////P/////////+/AAD//////7//////AAD/vwAA//8AAP+/AAD//wAAAAAAAAAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD/vwAA//////+/AAAAAAAA/78AAAAA////v///AAAAAAAA//8AAP//AAD/////AAAAAP///////wAA/3////9/////f////3///wAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f/9/////f////3////9/////v/9//7//f/+//3//v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tabcg")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ah3oc"]
+properties/0/path = NodePath(".:Serial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:Id")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:playerPath")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:ModelEnabled")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ItemGrip:holderPath")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[node name="Medkit" type="Node" unique_id=1483246283 node_paths=PackedStringArray("model", "viewModel", "grips")]
+script = ExtResource("1_wyd6e")
+model = NodePath("Model")
+viewModel = NodePath("ViewmodelMedkit")
+grips = [NodePath("ItemGrip")]
+metadata/_custom_type_script = "uid://bgppldp6cwd1p"
+
+[node name="Model" type="RigidBody3D" parent="." unique_id=608634624 node_paths=PackedStringArray("marker", "xformSync")]
+collision_layer = 4
+collision_mask = 5
+continuous_cd = true
+script = ExtResource("1_fgnva")
+marker = NodePath("RightMarker")
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" unique_id=2016862798]
+shape = SubResource("BoxShape3D_000s0")
+
+[node name="RightMarker" type="Marker3D" parent="Model" unique_id=2107464143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183171, 0, -0.0669769)
+
+[node name="LeftMarker" type="Marker3D" parent="Model" unique_id=851931532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190494, 0, -0.067)
+
+[node name="MedKitVirt" parent="Model" unique_id=1647165323 instance=ExtResource("3_nf5k6")]
+transform = Transform3D(-0.3, -2.62268e-08, 1.14641e-15, 0, -1.31134e-08, -0.3, 2.62268e-08, -0.3, 1.31134e-08, 0, 0, 0)
+
+[node name="medkit" parent="Model" unique_id=1734779140 instance=ExtResource("2_fgnva")]
+transform = Transform3D(5.5, 0, 0, 0, -2.40413e-07, 5.5, 0, -5.5, -2.40413e-07, 0.0159942, 1.39826e-09, 0.0319884)
+visible = false
+
+[node name="Mesh03" parent="Model/medkit" index="0" unique_id=1609911740]
+transform = Transform3D(0.01, 0, 0, 0, -3.57628e-09, -0.01, 0, 0.01, -3.57628e-09, 0, 0, 0)
+mesh = SubResource("ArrayMesh_okt2p")
+
+[node name="TransformSync" type="Node" parent="Model" unique_id=1467999458]
+script = ExtResource("6_w6e84")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="ViewmodelMedkit" parent="." unique_id=184224393 instance=ExtResource("5_ah3oc")]
+visible = false
+
+[node name="ItemGrip" type="Node" parent="." unique_id=1609872253 node_paths=PackedStringArray("item", "marker", "leftMarker", "rightMarker")]
+script = ExtResource("4_3noyn")
+item = NodePath("..")
+marker = NodePath("../Model/RightMarker")
+leftMarker = NodePath("../Model/LeftMarker")
+rightMarker = NodePath("../Model/RightMarker")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=1727661003]
+replication_interval = 5.0
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_ah3oc")
+
+[editable path="Model/medkit"]

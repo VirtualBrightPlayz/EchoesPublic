@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://c71x0cu5jb0yb"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_ea8x1"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_ea8x1"]
+
+[resource]
+resource_name = "SCP-1930"
+script = ExtResource("2_ea8x1")
+type = 2
+stage = 2
+scenes = []
+sceneFile = "uid://b5hp67p3bnh44"
+isInterest = true
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

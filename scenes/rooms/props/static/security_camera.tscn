@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://df028nxjfyf1v"]
+
+[ext_resource type="Script" uid="uid://dx2vfun8yga1u" path="res://scripts/map/FacilityCamera.cs" id="1_uoibo"]
+[ext_resource type="Texture2D" uid="uid://bgvfxnak0vybn" path="res://models/scpcb/props/CameraTexture.jpg" id="2_cojom"]
+[ext_resource type="ArrayMesh" uid="uid://c6lqp3tdm3lbl" path="res://models/scpcb/props/CamHead.obj" id="3_4hoc0"]
+[ext_resource type="Script" uid="uid://bqxiak8b5ew1c" path="res://scripts/map/FacilityCameraBlink.cs" id="4_vib0o"]
+[ext_resource type="AudioStream" uid="uid://c16x6ih7urr44" path="res://audio/scpcb/misc/Camera.ogg" id="5_34ute"]
+[ext_resource type="Script" uid="uid://cgon41wv5dcm3" path="res://scripts/map/LoopAudio3D.cs" id="6_fl8jx"]
+[ext_resource type="Texture2D" uid="uid://bg6ohvrd74ce1" path="res://icons/circle_05.png" id="7_uast6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkhex"]
+albedo_texture = ExtResource("2_cojom")
+
+[sub_resource type="QuadMesh" id="QuadMesh_j0teh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6gdt"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("7_uast6")
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_operator = 1
+emission_texture = ExtResource("7_uast6")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ggte3"]
+properties/0/path = NodePath(".:id")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:ownerId")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:_serverClaimed")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:cameraState")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:doCameraPan")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftc3d"]
+albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_25onc"]
+material = SubResource("StandardMaterial3D_ftc3d")
+top_radius = 0.02
+bottom_radius = 0.02
+
+[node name="SecurityCamera" type="Node3D" node_paths=PackedStringArray("Marker", "mesh", "pole")]
+script = ExtResource("1_uoibo")
+Marker = NodePath("CamHead/Marker3D")
+mesh = NodePath("CamHead")
+pole = NodePath("PoleRoot")
+
+[node name="CamHead" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vkhex")
+gi_mode = 0
+mesh = ExtResource("3_4hoc0")
+
+[node name="Marker3D" type="Marker3D" parent="CamHead"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -7.75, -13)
+
+[node name="Blink" type="Node" parent="CamHead" node_paths=PackedStringArray("camera", "target", "audio")]
+script = ExtResource("4_vib0o")
+camera = NodePath("../..")
+target = NodePath("../MeshInstance3D")
+audio = NodePath("../LoopAudio3D")
+
+[node name="Timer" type="Timer" parent="CamHead"]
+autostart = true
+
+[node name="LoopAudio3D" type="AudioStreamPlayer3D" parent="CamHead"]
+transform = Transform3D(-40, 0, -3.49691e-06, 0, 40, 0, 3.49691e-06, 0, -40, -3.29168, -10.0789, -9.39605)
+stream = ExtResource("5_34ute")
+volume_db = -12.0
+unit_size = 5.0
+autoplay = true
+max_distance = 15.0
+bus = &"World"
+attenuation_filter_db = 0.0
+parameters/looping = false
+script = ExtResource("6_fl8jx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CamHead"]
+transform = Transform3D(-5.38087, 0, -4.70411e-07, 0, 5.38087, 0, 4.70411e-07, 0, -5.38087, -3.29168, -10.0789, -9.39605)
+gi_mode = 0
+mesh = SubResource("QuadMesh_j0teh")
+surface_material_override/0 = SubResource("StandardMaterial3D_w6gdt")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.33
+delta_interval = 0.33
+replication_config = SubResource("SceneReplicationConfig_ggte3")
+
+[node name="PoleRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0522622, 0)
+
+[node name="CamPole" type="MeshInstance3D" parent="PoleRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00224805, 0.939333, 0.00011304)
+gi_mode = 0
+mesh = SubResource("CylinderMesh_25onc")
+skeleton = NodePath("../..")
+
+[connection signal="timeout" from="CamHead/Timer" to="CamHead/Blink" method="StateCheck"]

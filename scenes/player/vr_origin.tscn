@@ -1,0 +1,134 @@
+[gd_scene load_steps=14 format=3 uid="uid://cywtb1vhpikya"]
+
+[ext_resource type="Script" uid="uid://um5nq06doine" path="res://scripts/player/controllers/vr/VRPlayerOrigin.cs" id="1_tp6up"]
+[ext_resource type="Script" uid="uid://cp4prrnw25oqm" path="res://scripts/player/controllers/vr/VRPhysicsHand.cs" id="2_nfkhj"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://models/hands/scenes/highpoly/left_hand.tscn" id="2_oyufq"]
+[ext_resource type="Shader" uid="uid://6dd7yl4tcmjt" path="res://shaders/fullscreen_post.gdshader" id="2_x3rp3"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://models/hands/scenes/highpoly/right_hand.tscn" id="3_hig4r"]
+[ext_resource type="Script" uid="uid://d0tdkjti3a6tf" path="res://scripts/PIDController.cs" id="5_ndc3v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ndc3v"]
+radius = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sj5qk"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_x3rp3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mwgtw"]
+size = Vector2(2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkhv0"]
+size = Vector3(0.0699219, 0.130859, 0.256592)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5wra"]
+resource_local_to_scene = true
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 2
+shading_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_3o74p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnx6t"]
+size = Vector3(0.0699219, 0.130859, 0.256592)
+
+[node name="VROrigin" type="XROrigin3D" node_paths=PackedStringArray("head", "left", "right", "physLeft", "physRight", "handUIMesh", "viewUIMesh")]
+script = ExtResource("1_tp6up")
+head = NodePath("Head")
+left = NodePath("Left")
+right = NodePath("Right")
+physLeft = NodePath("Left/PhysHand")
+physRight = NodePath("Right/PhysHand")
+headShape = SubResource("SphereShape3D_ndc3v")
+handUIMesh = NodePath("Left/PhysHand/UI")
+viewUIMesh = NodePath("Head/UI")
+
+[node name="Head" type="XRCamera3D" parent="."]
+cull_mask = 1048543
+far = 100.0
+
+[node name="UI" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+material_override = SubResource("ShaderMaterial_sj5qk")
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+mesh = SubResource("QuadMesh_mwgtw")
+
+[node name="Left" type="XRController3D" parent="."]
+tracker = &"left_hand"
+metadata/hand = 0
+
+[node name="PhysHand" type="AnimatableBody3D" parent="Left" node_paths=PackedStringArray("hand", "pidController", "handMesh")]
+top_level = true
+collision_layer = 2
+collision_mask = 270
+script = ExtResource("2_nfkhj")
+hand = NodePath("..")
+rotateLerpWeight = 25.0
+rotateLerpTimerSpeed = 5.0
+pidController = NodePath("PIDController")
+handMesh = NodePath("LeftHand")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left/PhysHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0476562, -0.0654297, 0.13562)
+shape = SubResource("BoxShape3D_fkhv0")
+
+[node name="LeftHand" parent="Left/PhysHand" node_paths=PackedStringArray("hand") instance=ExtResource("2_oyufq")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+hand = NodePath("../..")
+
+[node name="UI" type="MeshInstance3D" parent="Left/PhysHand"]
+transform = Transform3D(-9.271e-09, 9.271e-09, -0.212096, -9.271e-09, -0.212096, -9.271e-09, -0.212096, 9.271e-09, 9.271e-09, -0.105871, -0.0561925, 0.139302)
+material_override = SubResource("StandardMaterial3D_n5wra")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_3o74p")
+
+[node name="PIDController" type="Node3D" parent="Left/PhysHand"]
+script = ExtResource("5_ndc3v")
+maxForce = 120.0
+Kp = 80.0
+Ki = 10.0
+Kd = 10.0
+maxRotationForce = 31.4
+KRp = 80.0
+KRi = 10.0
+KRd = 10.0
+metadata/_custom_type_script = "uid://d0tdkjti3a6tf"
+
+[node name="Right" type="XRController3D" parent="."]
+tracker = &"right_hand"
+metadata/hand = 1
+
+[node name="PhysHand" type="AnimatableBody3D" parent="Right" node_paths=PackedStringArray("hand", "pidController", "handMesh")]
+top_level = true
+collision_layer = 2
+collision_mask = 270
+script = ExtResource("2_nfkhj")
+hand = NodePath("..")
+isLeftHand = false
+rotateLerpWeight = 25.0
+rotateLerpTimerSpeed = 5.0
+pidController = NodePath("PIDController")
+handMesh = NodePath("RightHand")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right/PhysHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048, -0.065, 0.136)
+shape = SubResource("BoxShape3D_fnx6t")
+
+[node name="RightHand" parent="Right/PhysHand" node_paths=PackedStringArray("hand") instance=ExtResource("3_hig4r")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+hand = NodePath("../..")
+
+[node name="PIDController" type="Node3D" parent="Right/PhysHand"]
+script = ExtResource("5_ndc3v")
+maxForce = 120.0
+Kp = 80.0
+Ki = 10.0
+Kd = 10.0
+maxRotationForce = 31.4
+KRp = 80.0
+KRi = 10.0
+KRd = 10.0
+metadata/_custom_type_script = "uid://d0tdkjti3a6tf"

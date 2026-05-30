@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=4 uid="uid://d362lrrfojd6p"]
+
+[ext_resource type="Material" uid="uid://biuau2dwvrnu2" path="res://textures/main/ez/randomprops/books.tres" id="1_ifyma"]
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_rk8jy"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_rk8jy"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l8liq"]
+_surfaces = [{
+"aabb": AABB(-0.199862, -0.05, -0.25545, 0.412538, 0.1, 0.509721),
+"format": 34359742465,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYACAAJAAoACgAJAAsACgAMAAgADQALAAkACQAIAA0ACwAOAAoADAAKAA4ADgALAA0ACAAMAA8ADgAPAAwADwANAAgADQAPAA4A"),
+"name": "books",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("YTg/vs3MTD2PwnU+YTg/Ps3MTD2PwnU+YTg/Ps3MTL2PwnU+YTg/vs3MTL2PwnU+YTg/vs3MTD2PwnW+YTg/Ps3MTL2PwnW+YTg/Ps3MTD2PwnW+YTg/vs3MTL2PwnW+600jvq5pDT1MyoK+qKhMvq5pDT1hMmQ+9WwwPq5pDT3WL4I+qKhMvtWaFT1hMmQ+ssdZPq5pDT1LZ2W+600jvtWaFT1MyoK+9WwwPtWaFT3WL4I+ssdZPtWaFT1LZ2W+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_18ypf"]
+resource_name = "paperstack3"
+_surfaces = [{
+"aabb": AABB(-0.199862, -0.05, -0.25545, 0.412538, 0.1, 0.509721),
+"attribute_data": PackedByteArray("oNfjPhABSz+qVQE/EAFLP6pVAT+SIU8/odfjPpIhTz8tdgU/+kEfPy12BT9AETM/qFUBP0ARMz+oVQE/+EEfP6lVAT/GMTc/nNfjPsgxNz+a1+M+QBEzP6hVAT9AETM/jJbbPkARMz+Mlts++EEfP5rX4z74QR8/mtfjPkARMz+c1+M+yDE3P6lVAT/GMTc/qlUBPxABSz+g1+M+EAFLP5rX4z74QR8/qFUBP/hBHz+oVQE/QBEzP5rX4z5AETM/4sQ3P0b4CD+Etjc/FMPqPl/0Rj+6rOo+vgJHPxTtCD++xDc/jjUJP5kCRz9iKgk/9xBHPyLBHD8c0zc/UMwcPx12Nz8I+Ag/v2c3P6LC6j6Etjc/FMPqPuLENz9G+Ag/mQJHP2IqCT++xDc/jjUJP+LENz9G+Ag/vgJHPxTtCD8lQ0c/Lq3qPoNRRz9Q7Qg/vgJHPxTtCD9f9EY/uqzqPhzTNz9QzBw/9xBHPyLBHD/SEEc/av4cP/jSNz+YCR0/"),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwA"),
+"material": ExtResource("1_ifyma"),
+"name": "books",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("YTg/vs3MTD2PwnU+YTg/Ps3MTD2PwnU+YTg/Ps3MTL2PwnU+YTg/vs3MTL2PwnU+YTg/Ps3MTD2PwnU+YTg/Ps3MTD2PwnW+YTg/Ps3MTL2PwnW+YTg/Ps3MTL2PwnU+YTg/Ps3MTD2PwnW+YTg/vs3MTD2PwnW+YTg/vs3MTL2PwnW+YTg/Ps3MTL2PwnW+YTg/vs3MTD2PwnW+YTg/vs3MTD2PwnU+YTg/vs3MTL2PwnU+YTg/vs3MTL2PwnW+YTg/vs3MTD2PwnW+YTg/Ps3MTD2PwnW+YTg/Ps3MTD2PwnU+YTg/vs3MTD2PwnU+YTg/vs3MTL2PwnU+YTg/Ps3MTL2PwnU+YTg/Ps3MTL2PwnW+YTg/vs3MTL2PwnW+600jvq5pDT1MyoK+qKhMvq5pDT1hMmQ+9WwwPq5pDT3WL4I+ssdZPq5pDT1LZ2W+600jvtWaFT1MyoK+ssdZPtWaFT1LZ2W+9WwwPtWaFT3WL4I+qKhMvtWaFT1hMmQ+600jvtWaFT1MyoK+qKhMvtWaFT1hMmQ+qKhMvq5pDT1hMmQ+600jvq5pDT1MyoK+ssdZPtWaFT1LZ2W+600jvtWaFT1MyoK+600jvq5pDT1MyoK+ssdZPq5pDT1LZ2W+9WwwPtWaFT3WL4I+ssdZPtWaFT1LZ2W+ssdZPq5pDT1LZ2W+9WwwPq5pDT3WL4I+qKhMvtWaFT1hMmQ+9WwwPtWaFT3WL4I+9WwwPq5pDT3WL4I+qKhMvq5pDT1hMmQ+/3//f////7//f/9/////v/9//3////+//3//f////7////9//3/+/////3//f///////f/9//v////9//3/+///////+//+///////7//7///////v//v/////////+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AID/f////v//v/9////+//+//3////7//7//f///////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAFj2/7//fwAAWPb/v/9/AABY9v+//38AAFj2/7//f///t/X/v/9///+39f+//3///7f1/7//f///t/X/vwAA9onff8qAAAD2ieJ/uYAAAPaJ4n+5gAAA9onff8qA//8H9uz1DsD//wf27PUOwP//B/bs9Q7A//8H9uz1DsAH9v9/4n9B/wf2/3/gfzr/B/b/f+B/Ov8H9v9/4n9B/wh2/3/s9fC/CHb/f+z18L8Idv9/7PXwvwh2/3/s9fC/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_l8liq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rk8jy"]
+size = Vector3(0.386719, 0.111084, 0.505859)
+
+[node name="PaperStack1" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 0.5
+script = ExtResource("1_rk8jy")
+Category = 3
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="paperstack3" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_18ypf")
+skeleton = NodePath("")
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_rk8jy")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00204468, 0)
+shape = SubResource("BoxShape3D_rk8jy")

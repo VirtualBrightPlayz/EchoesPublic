@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="GameSound" load_steps=5 format=3 uid="uid://cjqc3tiutwv7e"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_gxpnn"]
+[ext_resource type="AudioStream" uid="uid://dfpsd034ibhrh" path="res://audio/scpcb/173/Rattle1.ogg" id="2_3bk28"]
+[ext_resource type="AudioStream" uid="uid://dh8420lx30nqa" path="res://audio/scpcb/173/Rattle2.ogg" id="3_5inia"]
+[ext_resource type="AudioStream" uid="uid://bd8ubunsoylc4" path="res://audio/scpcb/173/Rattle3.ogg" id="4_itv4u"]
+
+[resource]
+script = ExtResource("1_gxpnn")
+DisplayName = "Footsteps 173"
+streams = [ExtResource("2_3bk28"), ExtResource("3_5inia"), ExtResource("4_itv4u")]
+volumeDb = -2.0
+unitSize = 5.0
+maxDistance = 50.0
+maxDb = 3.0
+pitch = 1.0
+bus = ""

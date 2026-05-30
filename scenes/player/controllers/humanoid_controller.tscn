@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://biak4mf2jr46j"]
+
+[ext_resource type="Script" uid="uid://4d3w2a50fw6a" path="res://scripts/player/controllers/PlayerController.cs" id="1_2icfo"]
+[ext_resource type="Resource" uid="uid://bn34ephy78ly0" path="res://sounds/fall_damage.tres" id="2_615cu"]
+[ext_resource type="AudioStream" uid="uid://cd84ofvguvd1l" path="res://audio/scpcb/misc/breath/breath.tres" id="3_80xpu"]
+[ext_resource type="AudioStream" uid="uid://dpv7083g2nywi" path="res://audio/scpcb/misc/breath/breath0.ogg" id="4_ljrfy"]
+[ext_resource type="PackedScene" uid="uid://db8pmya1bga5e" path="res://effects/scenes/fire_noscript.tscn" id="6_3cbtv"]
+[ext_resource type="PackedScene" uid="uid://hlxqk4xv86v1" path="res://scenes/back_buffer_blur.tscn" id="23_qbphp"]
+[ext_resource type="Script" uid="uid://6uk6u6sb0kae" path="res://scripts/map/ElevatorShake.cs" id="24_7ur6t"]
+[ext_resource type="Texture2D" uid="uid://how2f6lkhav0" path="res://icons/sound-icon-white.png" id="26_0shp8"]
+[ext_resource type="Script" uid="uid://ygb4esl4cg44" path="res://scripts/TalkingIndicator.cs" id="27_f8bts"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qgydv"]
+radius = 0.25
+height = 2.5
+
+[node name="Humanoid" type="CharacterBody3D" unique_id=1549441607 node_paths=PackedStringArray("recoilTimer", "head", "speakingIndicator", "camera", "FireEffect", "footstepsAudio", "collider")]
+collision_layer = 2
+collision_mask = 33
+floor_max_angle = 0.872665
+floor_snap_length = 0.5
+script = ExtResource("1_2icfo")
+recoilSpeed = 4.0
+recoilTimer = NodePath("RecoilTimer")
+doFallDamge = false
+fallDamageSound = ExtResource("2_615cu")
+Speed = 4.0
+Accel = 70.0
+SprintMultiplier = 1.8
+SneakMultiplier = 0.5
+GravityMulti = 1.9
+head = NodePath("Head")
+speakingIndicator = NodePath("VoiceIcon")
+camera = NodePath("Head/Camera3D")
+FireEffect = NodePath("Fire")
+breaths = ExtResource("3_80xpu")
+outOfBreath = ExtResource("4_ljrfy")
+footstepsAudio = NodePath("Footsteps")
+collider = NodePath("CollisionShape3D")
+
+[node name="Fire" parent="." unique_id=1919710808 instance=ExtResource("6_3cbtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+Enabled = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=599147123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_qgydv")
+
+[node name="Head" type="AnimatableBody3D" parent="." unique_id=1764760535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+sync_to_physics = false
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1810159928]
+cull_mask = 1048543
+fov = 70.0
+far = 100.0
+
+[node name="BackBufferBlur" parent="Head/Camera3D" unique_id=1848030456 instance=ExtResource("23_qbphp")]
+
+[node name="ElevatorShake" type="Node" parent="Head/Camera3D" unique_id=1902862427]
+script = ExtResource("24_7ur6t")
+
+[node name="VoiceIcon" type="Sprite3D" parent="." unique_id=1737687753]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.75, 0)
+billboard = 2
+texture = ExtResource("26_0shp8")
+
+[node name="Talking" type="Node" parent="." unique_id=707395747 node_paths=PackedStringArray("spr")]
+script = ExtResource("27_f8bts")
+spr = NodePath("../VoiceIcon")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=853942552]
+volume_db = -2.0
+unit_size = 2.0
+max_distance = 50.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="RecoilTimer" type="Timer" parent="." unique_id=503822332]
+one_shot = true

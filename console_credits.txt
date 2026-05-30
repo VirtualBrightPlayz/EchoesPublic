@@ -1,0 +1,33 @@
+[u][b]Credits[/b][/u]
+
+Copyright 2025 Brian Zulch and contributors.
+
+* VirtualBrightPlayz
+* PintTheDragon
+* TheMoogle
+* moddedmcplayer
+* ToyB-Chan
+* JohnodonCode
+* NotIntense
+* DuoNineXcore
+* btelnyy
+* XtrithX
+* bunglow
+* Shahir
+* twinkledee
+* pop_pop_icard
+* SkevandCodiene
+* User8824/Lemon
+* seernix
+* Adlai130s
+* RoyalMintz
+* gruchacz
+
+The game's source code is copyright Brian Zulch and contributors, All rights reserved.
+Parts of the game's assets and source code are under different licenses.
+
+[u][b]Used Assets[/b][/u]
+
+{0}
+///
+{0,-36}|{1,-24}|{2}

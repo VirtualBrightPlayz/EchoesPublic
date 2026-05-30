@@ -1,0 +1,87 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://das8fn3n61utx"
+path="res://.godot/imported/PopMod_HCZ_457_EndRoom.fbx-1a399986705b7fb9a678c75714995b05.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/HCZ_V4/Meshes/PopMod_HCZ_457_EndRoom.fbx"
+dest_files=["res://.godot/imported/PopMod_HCZ_457_EndRoom.fbx-1a399986705b7fb9a678c75714995b05.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Catwalk_TrimSheet": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/CatwalkTrim.tres",
+"use_external/path": "uid://spv6oc7doiy0"
+},
+"ConcretPlaster": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcretePlaster.tres",
+"use_external/path": "uid://dj7268kgty7ye"
+},
+"ConcretRocky": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteRocky.tres",
+"use_external/path": "uid://cscnkf377dgw0"
+},
+"ConcretTiles": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteTiles.tres",
+"use_external/path": "uid://batgsopaswv3i"
+},
+"Concrete_Inset_Trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteTrim_Inset.tres",
+"use_external/path": "uid://btl8ifk3fa5sp"
+},
+"HCZ_Metal_Trimming_2.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/MetalPanels.tres",
+"use_external/path": "uid://dw24wtj061255"
+},
+"HCZ_WallTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/HCZ_Wall.tres",
+"use_external/path": "uid://b2eaadmpiwfqb"
+},
+"glass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/UnbreakableGlass.tres",
+"use_external/path": "uid://brholynkwpy6e"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

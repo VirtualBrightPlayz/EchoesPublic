@@ -1,0 +1,33 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://blrk1rlhynx88"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo3vj"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dxmip"]
+_surfaces = [{
+"aabb": AABB(-0.43326828, -0.2635113, -0.0073296716, 0.86653656, 0.5270226, 0.014659343),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMAAQAFAAIAAwAGAAQABwAGAAMAAwACAAcABAAGAAcABwACAAUABAAIAAEABwAIAAQABQABAAgABwAJAAgACAAJAAUABQAJAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("PitiPkvgZb6+LfC7ZvDWPmPvEz6+LfC7V9XdvvTqhj6+LfC7V9XdvkzVhr6+LfC7iQ9iPkENZr6+LfA7j8rdPvTqhj6+LfC7V9XdvvTqhr6+LfA7V9XdvvTqhj6+LfA7ef7WPgYqFD6+LfA7V9XdPvTqhj6+LfA7")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Cube_fracturepart3"
+_surfaces = [{
+"aabb": AABB(-0.43326828, -0.2635113, -0.0073296716, 0.86653656, 0.5270226, 0.014659343),
+"attribute_data": PackedByteArray("N0BBP3ILbT+dBXw/4ExnPgAAAAAAAAAAyPl/PwAAAAAAAAAAdOt/PwAAAAAAAAAAvA18P5zdZj44OEE/xiBtPwAAgD8AAAAAAAAAAAAAgD84OEE/xiBtP7wNfD+c3WY+nQV8P+BMZz43QEE/cgttP8j5fz8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAAAAyPl/PwAAAAAAAIA/AAAAAAAAAAB0638/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAHTrfz8AAAAAAACAPzg4QT/GIG0/N0BBP3ILbT8="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAABQAGAAcABQAIAAYABwAJAAUACgALAAwADAANAAoADgAMAAsACwAPAA4AEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgA"),
+"material": SubResource("StandardMaterial3D_eo3vj"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("PitiPkvgZb6+LfC7ZvDWPmPvEz6+LfC7V9XdvvTqhj6+LfC7j8rdPvTqhj6+LfC7V9XdvkzVhr6+LfC7V9XdvvTqhj6+LfA7ef7WPgYqFD6+LfA7iQ9iPkENZr6+LfA7V9XdPvTqhj6+LfA7V9XdvvTqhr6+LfA7iQ9iPkENZr6+LfA7ef7WPgYqFD6+LfA7ZvDWPmPvEz6+LfC7PitiPkvgZb6+LfC7j8rdPvTqhj6+LfC7V9XdPvTqhj6+LfA7V9XdvvTqhj6+LfA7V9XdvvTqhj6+LfC7j8rdPvTqhj6+LfC7V9XdPvTqhj6+LfA7V9XdvkzVhr6+LfC7V9XdvvTqhj6+LfC7V9XdvvTqhj6+LfA7V9XdvvTqhr6+LfA7V9XdvkzVhr6+LfC7V9XdvvTqhr6+LfA7iQ9iPkENZr6+LfA7PitiPkvgZb6+LfC7AAD//////z8AAP//////PwAA//////8//////////z8AAP//////P/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////78b0y9T/v8OgI3hTmFbgPE/jeFOYVuA8T8b0y9T/v8OgCDzfHK2gP8/IPN8craA/z//f///////v/9///////+//3///////7//f///////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/cogaB2mU/z9yiBoHaZT/P3KIGgdplP8/cogaB2mU/z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dxmip")

@@ -1,0 +1,39 @@
+[role]
+name = 'SCP939'
+display_name = 'ROLE_NAME_SCP_939'
+team = 'SCP'
+ui_color = '#ff0000'
+controller = 'WallClimb'
+model = 'SCP939'
+abilities = ['Use', 'Stamina', 'Zombie_Attack']
+# ragdoll_effect = 'Zombie Ragdoll'
+
+[role.stats]
+max_health = 2500.0
+spawn_stage = 1
+can_capture_points = false
+immune_damage_types = ['Water']
+
+[role.stats.movement]
+speed = 4.0
+acceleration = 70.0
+sprint_speed_multiplier = 1.5
+crouch_speed_multiplier = 0.5
+jump_velocity = 5.0
+gravity_multiplier = 1.9
+camera_height = 0.5
+
+[role.voice]
+can_use_intercom = false
+proximity_chat = true
+global_team_chat = true
+main_chat_channel = 1
+alt_chat_channel = 0
+proximity_chat_channel = 0
+listening_chat_channels = [0,1]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_SCP_939'
+hint_text = 'ROLE_HINT_SCP_939'
+hint_time = 5.0
+spawn_audio = '049_spawn'

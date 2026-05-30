@@ -1,0 +1,46 @@
+<Project Sdk="Godot.NET.Sdk/4.6.0">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="scripts\external\**" />
+    <Compile Remove="GDExtensionBindgen\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="scripts\external\OpusWrapper\OpusWrapper.csproj" />
+    <ProjectReference Include="scripts\external\DeBroglie\DeBroglie.csproj" />
+  </ItemGroup>
+  <!-- <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>addons\MonoMod\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>addons\MonoMod\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>addons\MonoMod\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Core">
+      <HintPath>addons\MonoMod\MonoMod.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Iced">
+      <HintPath>addons\MonoMod\MonoMod.Iced.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.ILHelpers">
+      <HintPath>addons\MonoMod\MonoMod.ILHelpers.dll</HintPath>
+    </Reference>
+  </ItemGroup> -->
+  <ItemGroup>
+    <!-- <PackageReference Include="Lib.Harmony" Version="2.3.5" /> -->
+    <!-- <PackageReference Include="MonoMod.RuntimeDetour" Version="25.2.2" /> -->
+    <PackageReference Include="HarmonyX" Version="2.16.0" />
+    <PackageReference Include="Mono.Cecil" Version="0.11.6" />
+    <PackageReference Include="Tracy-CSharp" Version="0.11.1-hotfix" />
+    <PackageReference Include="NWaves" Version="0.9.6" />
+    <PackageReference Include="Vosk" Version="0.3.38" />
+    <PackageReference Include="Tomlyn" Version="1.1.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AmbientProfile" load_steps=2 format=3 uid="uid://bxabcmknu3i4e"]
+
+[ext_resource type="Script" uid="uid://brb00nufs5ako" path="res://scripts/map/AmbientProfile.cs" id="1_qpqit"]
+
+[resource]
+script = ExtResource("1_qpqit")
+HasAdjustments = true
+Brightness = 1.2
+Saturation = 1.2
+Contrast = 1.05
+HasVignette = true
+VignetteAmount = 0.1
+metadata/_custom_type_script = "uid://brb00nufs5ako"

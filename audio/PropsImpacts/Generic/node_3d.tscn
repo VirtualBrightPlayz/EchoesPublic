@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://diulglhqq3gkk"]
+
+[ext_resource type="PackedScene" uid="uid://dfuv3yvsh0thd" path="res://scenes/rooms/ez/New EZ/ez_hall_officerooms_straight/ez_hall_officerooms_straight.tscn" id="1_qnexe"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ez_hall_officerooms_straight" parent="." instance=ExtResource("1_qnexe")]

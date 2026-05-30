@@ -1,0 +1,586 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh3k7kbtkxmj6"]
+
+[ext_resource type="Script" uid="uid://cue0tcrjet1oq" path="res://scripts/layout_generator/MapCluster.cs" id="1_nceor"]
+[ext_resource type="Script" uid="uid://c34p57woshxpt" path="res://scripts/layout_generator/MapRoom.cs" id="2_j1jcn"]
+[ext_resource type="Resource" uid="uid://fg6x0gfsgt66" path="res://rooms/preset_rooms/checkpoint2.tres" id="3_rs0ms"]
+[ext_resource type="Resource" uid="uid://digtqlxjfnnvc" path="res://rooms/preset_rooms/stairs.tres" id="4_vqn45"]
+[ext_resource type="Resource" uid="uid://7gkf7i3u5i4d" path="res://rooms/preset_rooms/alt-door4_door.tres" id="5_yggeb"]
+[ext_resource type="Resource" uid="uid://5wthv07ick05" path="res://rooms/preset_rooms/lcz_door.tres" id="6_3d3iu"]
+
+[node name="Loop1" type="Node3D"]
+script = ExtResource("1_nceor")
+metadata/_custom_type_script = "uid://cue0tcrjet1oq"
+
+[node name="MapConn" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.27358e-06, 20.8, 93.6)
+metadata/map_stage = 3
+
+[node name="MapConn2" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 62.4, 20.8, 93.6)
+metadata/map_stage = 3
+
+[node name="Hcz" type="Node3D" parent="."]
+
+[node name="MapRoom" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.8)
+script = ExtResource("2_j1jcn")
+type = 4
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom2" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.8)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom6" type="Node3D" parent="Hcz"]
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom4" type="Node3D" parent="Hcz"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20.8, 0, 41.6)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom7" type="Node3D" parent="Hcz"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 41.6, 0, 41.6)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom10" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 0, 41.6)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom5" type="Node3D" parent="Hcz"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 83.2, 0, 41.6)
+script = ExtResource("2_j1jcn")
+type = 4
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom19" type="Node3D" parent="Hcz"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 83.2, 0, 62.4)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom20" type="Node3D" parent="Hcz"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 104, 0, 41.6)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom21" type="Node3D" parent="Hcz"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 104, 0, -20.8)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom22" type="Node3D" parent="Hcz"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 41.6, 0, -5.72205e-06)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom23" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 20.8, 0, -41.6)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom24" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 7.62939e-06, 0, -41.6)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom25" type="Node3D" parent="Hcz"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8, 0, -20.8)
+script = ExtResource("2_j1jcn")
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom17" type="Node3D" parent="Hcz"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 83.2, 0, 20.8)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom18" type="Node3D" parent="Hcz"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 83.2, 0, 0)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom3" type="Node3D" parent="Hcz"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 41.6)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom8" type="Node3D" parent="Hcz"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20.8, 0, -20.8)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom15" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 41.6, 0, -20.8)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom16" type="Node3D" parent="Hcz"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 62.4, 0, -20.8)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom9" type="Node3D" parent="Hcz"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 0, -20.8)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 2
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 20.8, 83.2)
+script = ExtResource("2_j1jcn")
+type = 2
+room = ExtResource("3_rs0ms")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom12" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 20.8, 62.4)
+script = ExtResource("2_j1jcn")
+type = 2
+room = ExtResource("4_vqn45")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom13" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 62.4)
+script = ExtResource("2_j1jcn")
+type = 2
+room = ExtResource("3_rs0ms")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom14" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.8, 83.2)
+script = ExtResource("2_j1jcn")
+type = 2
+room = ExtResource("4_vqn45")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="Ez" type="Node3D" parent="."]
+
+[node name="MapRoom26" type="Node3D" parent="Ez"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.8, 104)
+script = ExtResource("2_j1jcn")
+type = 4
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom27" type="Node3D" parent="Ez"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 62.4, 20.8, 104)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom31" type="Node3D" parent="Ez"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 83.2, 20.8, 104)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom28" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41.6, 20.8, 104)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom32" type="Node3D" parent="Ez"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.2, 20.8, 124.8)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom35" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.4, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom36" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom38" type="Node3D" parent="Ez"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+type = 3
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom37" type="Node3D" parent="Ez"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 20.8, 124.8)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom33" type="Node3D" parent="Ez"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.2, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+type = 1
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom34" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+type = 1
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom29" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8, 20.8, 104)
+script = ExtResource("2_j1jcn")
+type = 2
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom30" type="Node3D" parent="Ez"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 104, 20.8, 104)
+script = ExtResource("2_j1jcn")
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom43" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8, 20.8, 104)
+script = ExtResource("2_j1jcn")
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom39" type="Node3D" parent="Ez"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 62.4, 20.8, 166.4)
+script = ExtResource("2_j1jcn")
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom41" type="Node3D" parent="Ez"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 41.6, 20.8, 187.2)
+script = ExtResource("2_j1jcn")
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom40" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8, 20.8, 166.4)
+script = ExtResource("2_j1jcn")
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom42" type="Node3D" parent="Ez"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41.6, 20.8, 166.4)
+script = ExtResource("2_j1jcn")
+type = 4
+stage = 3
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="HczDoors" type="Node3D" parent="."]
+
+[node name="MapRoom" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom2" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.2)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom3" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom25" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 52)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom4" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.4, 0, 41.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom5" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.2, 0, 41.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom6" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 0, 41.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom7" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 72.8, 0, 41.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom8" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 93.6, 0, 41.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom9" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 0, 52)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom10" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 0, 31.2)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom11" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 0, 10.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom12" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 0, -10.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom13" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 93.6, 0, -20.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom14" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 72.8, 0, -20.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom15" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52, 0, -20.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom16" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.2, 0, -20.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom17" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4, 0, -20.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom19" type="Node3D" parent="HczDoors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.4, 0, -20.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom18" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom20" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.2)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom21" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8, 0, -31.2)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom22" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, -10.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom23" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 0, 52)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom24" type="Node3D" parent="HczDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 20.8, 72.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("5_yggeb")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="EzDoors" type="Node3D" parent="."]
+
+[node name="MapRoom" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.8, 93.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom2" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.8, 114.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom3" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.8, 135.2)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom4" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.4, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom5" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.2, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom6" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom7" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 72.8, 20.8, 145.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom8" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 20.8, 135.2)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom9" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 20.8, 114.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom10" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 93.6, 20.8, 104)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom11" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 72.8, 20.8, 104)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom12" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 20.8, 104)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom13" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.2, 20.8, 104)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom14" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.4, 20.8, 104)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom15" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4, 20.8, 104)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom16" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 20.8, 93.6)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom17" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.2, 20.8, 166.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom18" type="Node3D" parent="EzDoors"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 20.8, 166.4)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom19" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 20.8, 156)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"
+
+[node name="MapRoom20" type="Node3D" parent="EzDoors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 20.8, 176.8)
+script = ExtResource("2_j1jcn")
+room = ExtResource("6_3d3iu")
+metadata/_custom_type_script = "uid://c34p57woshxpt"

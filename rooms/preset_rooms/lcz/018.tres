@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cdhe01t84c2vi"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_7utgc"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_7utgc"]
+
+[resource]
+resource_name = "SCP-018"
+script = ExtResource("2_7utgc")
+type = 2
+size = 1
+stage = 1
+scenes = []
+sceneFile = "uid://daadcietpym07"
+isInterest = true
+zone = 1
+category = "Light Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

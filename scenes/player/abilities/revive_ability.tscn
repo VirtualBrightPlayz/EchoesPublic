@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://4ynql5jh2v2w"]
+
+[ext_resource type="Script" uid="uid://c3dthxlqdk82p" path="res://scripts/player/controllers/ability/ReviveAbility.cs" id="1_q6aqh"]
+[ext_resource type="PackedScene" uid="uid://0i2i5uy4u0p0" path="res://scenes/npcs/zombie_npc.tscn" id="2_d43yu"]
+
+[node name="ReviveAbility" type="Node" unique_id=1356826492]
+script = ExtResource("1_q6aqh")
+reviveNpcPrefab = ExtResource("2_d43yu")
+metadata/_custom_type_script = "uid://c3dthxlqdk82p"

@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://fr4jbnw7o14b"]
+
+[ext_resource type="Script" uid="uid://4d3w2a50fw6a" path="res://scripts/player/controllers/PlayerController.cs" id="1_dgec7"]
+[ext_resource type="Resource" uid="uid://da3v2uwxotwrw" path="res://sounds/footsteps_normal.tres" id="2_jy8l3"]
+
+[sub_resource type="Curve" id="Curve_54a8a"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, -4.0, 0, 1, Vector2(0.5, -1), -4.0, 4.0, 1, 1, Vector2(1, 1), 4.0, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_8xikr"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 4.0, 0, 1, Vector2(0.5, 1), 4.0, -4.0, 1, 1, Vector2(1, -1), -4.0, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qgydv"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ok4x1"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_iowun"]
+size = Vector3(0.5, 0.2, 0.2)
+
+[node name="PlayerController" type="CharacterBody3D" node_paths=PackedStringArray("disableLocal", "head", "camera", "flashlight", "rayCast")]
+collision_layer = 2
+script = ExtResource("1_dgec7")
+disableLocal = [NodePath("Head/MeshInstance3D")]
+viewBobCurveX = SubResource("Curve_54a8a")
+viewBobCurveY = SubResource("Curve_8xikr")
+standingCameraHeight = 2.2
+viewBobOffsetScale = 0.05
+viewBobSpeed = 0.2
+JumpVelocity = 8.0
+GravityMulti = 2.0
+head = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+flashlight = NodePath("Head/SpotLight3D")
+rayCast = NodePath("Head/RayCast3D")
+footsteps = ExtResource("2_jy8l3")
+footstepInterval = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_qgydv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_ok4x1")
+skeleton = NodePath("../..")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+far = 100.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 5
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 15.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+mesh = SubResource("BoxMesh_iowun")

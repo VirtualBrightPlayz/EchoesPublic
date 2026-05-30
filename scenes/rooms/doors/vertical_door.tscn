@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cbnoe4vlxe466"]
+
+[ext_resource type="Script" uid="uid://gbx5cqsanacv" path="res://scripts/map/Door.cs" id="1_b74hc"]
+[ext_resource type="AudioStream" uid="uid://43ek16vycqf4" path="res://audio/Doors/LCZ/Opening/DoorsLCZOpen1.wav" id="2_bem6g"]
+[ext_resource type="AudioStream" uid="uid://ddjcs7nqre2dy" path="res://audio/Doors/LCZ/Opening/DoorsLCZOpen2.wav" id="3_o5ms4"]
+[ext_resource type="AudioStream" uid="uid://dhk0erok5ukiv" path="res://audio/Doors/LCZ/Opening/DoorsLCZOpen3.wav" id="4_kuubl"]
+[ext_resource type="AudioStream" uid="uid://b0u042dchbbyi" path="res://audio/Doors/LCZ/Close/DoorsLCZClose1.wav" id="5_4fvhn"]
+[ext_resource type="AudioStream" uid="uid://djsi3h2g4ehps" path="res://audio/Doors/LCZ/Close/DoorsLCZClose2.wav" id="6_d0o25"]
+[ext_resource type="AudioStream" uid="uid://olrk4fr7oppi" path="res://audio/Doors/LCZ/Close/DoorsLCZClose3.wav" id="7_fvtcf"]
+[ext_resource type="AudioStream" uid="uid://c0fwwfwupmgr8" path="res://audio/scpcb/doors/Button2.ogg" id="8_il84p"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="12_bem6g"]
+[ext_resource type="PackedScene" uid="uid://cyeg543i70j6d" path="res://models/main/vertical_door/vertical door.glb" id="13_bem6g"]
+[ext_resource type="Resource" uid="uid://dsqjeet0d5d3i" path="res://projectile_resistance/metal_pr.tres" id="13_o5ms4"]
+[ext_resource type="Material" uid="uid://wqhogjm40ymg" path="res://models/main/vertical_door/vertical_door.tres" id="14_o5ms4"]
+[ext_resource type="Script" uid="uid://m6uxe7omjc4a" path="res://scripts/map/DoorButton.cs" id="15_kuubl"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ct38c"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = false
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = false
+properties/1/replication_mode = 0
+properties/2/path = NodePath(".:isMoving")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:isOpen")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:isLocked")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_k6nfh"]
+size = Vector3(2.15781, 3.63852, 0.236444)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5ms4"]
+size = Vector3(1.99219, 3.23535, 0.330322)
+
+[node name="VerticalDoor" type="Node3D" unique_id=269444574 node_paths=PackedStringArray("marker", "doors", "startPoints", "endPoints", "audio", "audioNear", "occluder")]
+script = ExtResource("1_b74hc")
+marker = NodePath("Marker3D")
+doors = [NodePath("StaticBody3D")]
+startPoints = [NodePath("Door01Start")]
+endPoints = [NodePath("Door01End")]
+audio = NodePath("Audio")
+audioNear = NodePath("AudioNear")
+openSounds = [ExtResource("2_bem6g"), ExtResource("3_o5ms4"), ExtResource("4_kuubl")]
+closeSounds = [ExtResource("5_4fvhn"), ExtResource("6_d0o25"), ExtResource("7_fvtcf")]
+failSounds = [ExtResource("8_il84p")]
+speed = 0.7
+transition = 4
+distance = 2.8
+occluder = NodePath("OccluderInstance3D")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=934981887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+attenuation_model = 1
+volume_db = -5.0
+max_db = 0.0
+max_distance = 30.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="AudioNear" type="AudioStreamPlayer3D" parent="." unique_id=2004950708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+max_distance = 10.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=1517088569]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_ct38c")
+
+[node name="Door01Start" type="Marker3D" parent="." unique_id=2054432915]
+
+[node name="Door01End" type="Marker3D" parent="." unique_id=1826936085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0)
+
+[node name="Door02Start" type="Marker3D" parent="." unique_id=854019559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="Door02End" type="Marker3D" parent="." unique_id=1296510240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, -0.1)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1206080674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1853885203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67103, 0)
+occluder = SubResource("BoxOccluder3D_k6nfh")
+
+[node name="vertical door" parent="." unique_id=1738928477 instance=ExtResource("13_bem6g")]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+
+[node name="door" parent="vertical door" index="0" unique_id=1403019749]
+visible = false
+surface_material_override/0 = ExtResource("14_o5ms4")
+
+[node name="frame" parent="vertical door" index="1" unique_id=961740206]
+surface_material_override/0 = ExtResource("14_o5ms4")
+
+[node name="handles" parent="vertical door" index="2" unique_id=1201242443]
+visible = false
+surface_material_override/0 = ExtResource("14_o5ms4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=65928627 node_paths=PackedStringArray("marker")]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+collision_layer = 257
+collision_mask = 257
+script = ExtResource("15_kuubl")
+marker = NodePath("../Marker3D")
+target = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=191337009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62256, 0)
+shape = SubResource("BoxShape3D_o5ms4")
+
+[node name="vertical door" parent="StaticBody3D" unique_id=622375359 instance=ExtResource("13_bem6g")]
+
+[node name="door" parent="StaticBody3D/vertical door" index="0" unique_id=1403019749]
+surface_material_override/0 = ExtResource("14_o5ms4")
+
+[node name="frame" parent="StaticBody3D/vertical door" index="1" unique_id=961740206]
+visible = false
+surface_material_override/0 = ExtResource("14_o5ms4")
+
+[node name="handles" parent="StaticBody3D/vertical door" index="2" unique_id=1201242443]
+surface_material_override/0 = ExtResource("14_o5ms4")
+
+[node name="ProjectileSettings" type="Node" parent="StaticBody3D" unique_id=488082476]
+script = ExtResource("12_bem6g")
+Medium = ExtResource("13_o5ms4")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[editable path="vertical door"]
+[editable path="StaticBody3D/vertical door"]

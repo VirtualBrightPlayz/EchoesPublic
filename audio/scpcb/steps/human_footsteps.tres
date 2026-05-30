@@ -1,0 +1,22 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=9 format=3 uid="uid://c3tq40e73tdyh"]
+
+[ext_resource type="AudioStream" uid="uid://b6e5fqbm1t3eg" path="res://audio/scpcb/steps/Step1.ogg" id="1_5av6v"]
+[ext_resource type="AudioStream" uid="uid://x0aov3mh847b" path="res://audio/scpcb/steps/Step2.ogg" id="2_q5iai"]
+[ext_resource type="AudioStream" uid="uid://cmsghuenvneib" path="res://audio/scpcb/steps/Step3.ogg" id="3_3fbky"]
+[ext_resource type="AudioStream" uid="uid://i0bw88f4768h" path="res://audio/scpcb/steps/Step4.ogg" id="4_rx46d"]
+[ext_resource type="AudioStream" uid="uid://fwl1ocaehmno" path="res://audio/scpcb/steps/Step5.ogg" id="5_qigxy"]
+[ext_resource type="AudioStream" uid="uid://dvaqma7sr7ak" path="res://audio/scpcb/steps/Step6.ogg" id="6_sjlk4"]
+[ext_resource type="AudioStream" uid="uid://bv2cnudsdfnpa" path="res://audio/scpcb/steps/Step7.ogg" id="7_8lfsq"]
+[ext_resource type="AudioStream" uid="uid://d1hmhxxwe3sl5" path="res://audio/scpcb/steps/Step8.ogg" id="8_85wgo"]
+
+[resource]
+playback_mode = 1
+streams_count = 8
+stream_0/stream = ExtResource("1_5av6v")
+stream_1/stream = ExtResource("2_q5iai")
+stream_2/stream = ExtResource("3_3fbky")
+stream_3/stream = ExtResource("4_rx46d")
+stream_4/stream = ExtResource("5_qigxy")
+stream_5/stream = ExtResource("6_sjlk4")
+stream_6/stream = ExtResource("7_8lfsq")
+stream_7/stream = ExtResource("8_85wgo")

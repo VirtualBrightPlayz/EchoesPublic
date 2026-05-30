@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=14 format=3 uid="uid://btq68bpmwh4is"]
+
+[ext_resource type="Resource" uid="uid://dylc5nivc4rbv" path="res://rooms/vents/corner.tres" id="1_n62mr"]
+[ext_resource type="Resource" uid="uid://cfouunatj5whw" path="res://rooms/vents/dead_end.tres" id="2_wue7f"]
+[ext_resource type="Resource" uid="uid://gaypg534i0oj" path="res://rooms/vents/exit_hl.tres" id="3_1j1wb"]
+[ext_resource type="Resource" uid="uid://bgrs2ey4b2hc2" path="res://rooms/vents/exit_hr.tres" id="4_krg8h"]
+[ext_resource type="Resource" uid="uid://do8w4jbengk8n" path="res://rooms/vents/exit_vur.tres" id="6_g6fbt"]
+[ext_resource type="Resource" uid="uid://lwhq77bplunu" path="res://rooms/vents/four_way.tres" id="7_7h767"]
+[ext_resource type="Resource" uid="uid://bmbdgq5efqljb" path="res://rooms/vents/long.tres" id="8_ethc0"]
+[ext_resource type="Resource" uid="uid://ci2jusjgm6375" path="res://rooms/Empty.tres" id="9_3hsjx"]
+[ext_resource type="Resource" uid="uid://ctje20rgtpcs1" path="res://rooms/vents/three_way.tres" id="9_jngrf"]
+[ext_resource type="Resource" uid="uid://2p1qink5to8d" path="res://rooms/vents/exit_vul.tres" id="10_46j1v"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="10_iugti"]
+[ext_resource type="Resource" uid="uid://ivqm3trcskhv" path="res://rooms/vents/exit_vdl.tres" id="11_a85aw"]
+[ext_resource type="Resource" uid="uid://vaa4mbvsvguw" path="res://rooms/vents/exit_vdr.tres" id="12_ox02c"]
+
+[resource]
+script = ExtResource("10_iugti")
+Collection = Array[Resource]([ExtResource("1_n62mr"), ExtResource("2_wue7f"), ExtResource("3_1j1wb"), ExtResource("4_krg8h"), ExtResource("10_46j1v"), ExtResource("6_g6fbt"), ExtResource("7_7h767"), ExtResource("8_ethc0"), ExtResource("9_jngrf"), ExtResource("9_3hsjx"), ExtResource("11_a85aw"), ExtResource("12_ox02c")])

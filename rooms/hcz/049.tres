@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettings" load_steps=5 format=3 uid="uid://o1jqcntrnkbj"]
+
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_8wrbl"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_r0a43"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="3_1ycmu"]
+[ext_resource type="PackedScene" uid="uid://ixrpc7m3nk8w" path="res://scenes/rooms/hcz/hcz_049_LongHW.tscn" id="3_r0a43"]
+
+[resource]
+script = ExtResource("3_1ycmu")
+RoomScenes = Array[PackedScene]([ExtResource("3_r0a43")])
+RequiredInstances = 4
+MaximumInstances = 4
+CellPositions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, -1), Vector2i(1, 0), Vector2i(1, -1)])
+ConnectionDoors = Array[int]([2, 8, 0, 0])
+BlockedConnectionDoors = Array[int]([9, 3, 12, 6])
+metadata/_custom_type_script = "uid://c3ohb0venlcjp"

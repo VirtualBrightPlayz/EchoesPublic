@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://c3q0trlg75mu8"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_6r6jc"]
+[ext_resource type="AudioStream" uid="uid://jl14dktdlccs" path="res://audio/music/106/src/SCP Echoes OST - Corrosive Hunt (Chase).ogg" id="2_6r6jc"]
+
+[resource]
+resource_name = "106_chase"
+script = ExtResource("1_6r6jc")
+streams = [ExtResource("2_6r6jc")]
+forceLoop = true
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cwswu55un0j7i"]
+
+[ext_resource type="Texture2D" uid="uid://8etkv5m4f0rl" path="res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_PanelsBaking_HCZ_Panels_Trimming_BaseColor.png" id="1_k7phs"]
+[ext_resource type="Texture2D" uid="uid://caya5e6wy7jqi" path="res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_Panels_Trimming_Normal.png" id="2_adlkf"]
+[ext_resource type="Texture2D" uid="uid://baaipmsiy4sv6" path="res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_PanelsBaking_HCZ_Panels_Trimming_OcclusionRoughnessMetallic.png" id="3_k02wm"]
+
+[resource]
+albedo_texture = ExtResource("1_k7phs")
+orm_texture = ExtResource("3_k02wm")
+normal_enabled = true
+normal_texture = ExtResource("2_adlkf")

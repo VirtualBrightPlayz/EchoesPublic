@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgg6u61sx3ip4"]
+
+[ext_resource type="AudioStream" uid="uid://c3es8m62uje2c" path="res://audio/scpcb/intercom/Announc173Contain.ogg" id="1_513js"]
+
+[node name="Scp173Kill" type="Node3D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_513js")
+volume_db = -12.0
+autoplay = true
+bus = &"WorldLoud"

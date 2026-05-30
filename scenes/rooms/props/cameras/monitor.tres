@@ -1,0 +1,10 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://e2ywwv56lrs"]
+
+[ext_resource type="Texture2D" uid="uid://d3itamyauhvpf" path="res://textures/monitortexture.png" id="1_4ylxt"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.498039)
+albedo_texture = ExtResource("1_4ylxt")
+emission_enabled = true
+emission_texture = ExtResource("1_4ylxt")

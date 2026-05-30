@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://c771e618mak76"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_ou5lt"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_wn4bv"]
+
+[resource]
+resource_name = "Entrance T-Room"
+script = ExtResource("2_ou5lt")
+type = 3
+stage = 3
+scenes = []
+sceneFile = "uid://c4qdowkuu3o2v"
+isGeneric = true
+category = "Entrance"

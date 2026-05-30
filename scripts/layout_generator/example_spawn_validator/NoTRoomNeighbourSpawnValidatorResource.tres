@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8fjfhovosl6j"]
+
+[ext_resource type="Script" uid="uid://ducxp2kba8b7k" path="res://scripts/layout_generator/example_spawn_validator/NoTRoomNeighbourSpawnValidator.cs" id="1_dkxml"]
+
+[resource]
+script = ExtResource("1_dkxml")

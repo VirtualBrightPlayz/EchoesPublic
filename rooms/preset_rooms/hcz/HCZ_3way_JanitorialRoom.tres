@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cp5ie666m6lqt"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_425e4"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_qxr2r"]
+
+[resource]
+resource_name = "Heavy TRoom Janitor Closet"
+script = ExtResource("2_425e4")
+type = 3
+stage = 2
+scenes = []
+sceneFile = "uid://oml7a3ytktmn"
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

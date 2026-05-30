@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bcboegwjn1coi"]
+
+[ext_resource type="AudioStream" uid="uid://dsq7pab3f27fs" path="res://audio/PropsImpacts/Barrel/328918__hellska__6_barrel02.wav" id="1_le4im"]
+[ext_resource type="AudioStream" uid="uid://cn0c0y4xec4n7" path="res://audio/PropsImpacts/Barrel/328920__hellska__13_barrelandpavo.wav" id="2_33ium"]
+[ext_resource type="AudioStream" uid="uid://diis5vs2vhj0w" path="res://audio/PropsImpacts/Barrel/328921__hellska__12_barrel09.wav" id="3_nbc5s"]
+[ext_resource type="AudioStream" uid="uid://8eooygj33tsx" path="res://audio/PropsImpacts/Barrel/328924__hellska__7_barrel03.wav" id="4_mjllp"]
+
+[resource]
+random_pitch = 1.3348398
+streams_count = 4
+stream_0/stream = ExtResource("1_le4im")
+stream_1/stream = ExtResource("2_33ium")
+stream_2/stream = ExtResource("3_nbc5s")
+stream_3/stream = ExtResource("4_mjllp")

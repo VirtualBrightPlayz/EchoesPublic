@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://yf3d1geat4cq"]
+
+[ext_resource type="Script" uid="uid://e8j6df6mimqr" path="res://scripts/layout_generator/RoomInfoNode.cs" id="1_kn4nc"]
+
+[node name="RoomInfoNode" type="Node3D"]
+script = ExtResource("1_kn4nc")
+metadata/_custom_type_script = "uid://e8j6df6mimqr"

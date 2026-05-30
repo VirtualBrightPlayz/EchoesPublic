@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AmmoItemPreset" format=3 uid="uid://cmrt2u3sateg0"]
+
+[ext_resource type="Texture2D" uid="uid://brgfre2gmtk3m" path="res://textures/inv_icons/ammo.png" id="1_rn5kn"]
+[ext_resource type="PackedScene" uid="uid://5q8y3op87b0r" path="res://scenes/items/ammo_pistol.tscn" id="2_ax7bo"]
+[ext_resource type="Script" uid="uid://c7nu5dqrd8ay7" path="res://scripts/items/AmmoItemPreset.cs" id="3_ctn14"]
+
+[resource]
+resource_name = "SMG Ammo"
+script = ExtResource("3_ctn14")
+TypeOfAmmo = 2
+ItemScene = ExtResource("2_ax7bo")
+Icon = ExtResource("1_rn5kn")
+metadata/_custom_type_script = "uid://c7nu5dqrd8ay7"

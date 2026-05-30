@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d1n31xs2cpvm1"]
+
+[ext_resource type="Shader" uid="uid://brab1be70lj5g" path="res://shaders/glass_shader.gdshader" id="1_vai0b"]
+[ext_resource type="Texture2D" uid="uid://rjjmq53jhea" path="res://textures/main/ez/random_textures/T_Fracture_Voronoi.png" id="2_u6p43"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vai0b")
+shader_parameter/uvgen_scale = Vector2(1, 1)
+shader_parameter/uvgen_offset = Vector2(0, 0)
+shader_parameter/uvorm_scale = Vector2(0.52, 0.215)
+shader_parameter/uvorm_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/orm_texture = ExtResource("2_u6p43")
+shader_parameter/roughness_brightness = -0.225
+shader_parameter/roughness_contrast = 0.195
+shader_parameter/normal_strength = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)

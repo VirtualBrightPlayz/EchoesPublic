@@ -1,0 +1,13 @@
+[ability]
+name = 'Zombie_Attack'
+base_name = 'Attack'
+
+[ability.data]
+damage_amount = 25.0
+damage_type = 'Scp049_2'
+attack_cooldown_time = 1.0
+friendly_fire_allowed = false
+attack_sound_name = 'slash'
+damage_effect_type = 'Invalid'
+damage_effect_duration = 2.5
+damage_effect_intensity = 1.0

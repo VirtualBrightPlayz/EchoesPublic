@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b6v0uaeytdawm"]
+
+[ext_resource type="Shader" uid="uid://b1d0qxprhoa4q" path="res://shaders/anim_texture.gdshader" id="1_mtchb"]
+[ext_resource type="Texture2D" uid="uid://dnryufvpuphf7" path="res://scenes/rooms/props/static/panels/textures/NoisePanel.png" id="2_mtchb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mtchb")
+shader_parameter/albedo_tint = Color(0, 0, 0, 1)
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.4
+shader_parameter/emission = ExtResource("2_mtchb")
+shader_parameter/emission_color = Color(0, 1, 0.5666666, 1)
+shader_parameter/fb_size = Vector2(4, 4)
+shader_parameter/fb_speed = 5.0

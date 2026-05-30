@@ -1,0 +1,10 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://doubqlvll6xri"]
+
+[ext_resource type="Texture2D" uid="uid://kisx1uoqlqev" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/SolidWall_N.png" id="2_rwuak"]
+[ext_resource type="Texture2D" uid="uid://3eejsqnw0avi" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/SolidWall_ORM.png" id="3_p738r"]
+
+[resource]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+orm_texture = ExtResource("3_p738r")
+normal_enabled = true
+normal_texture = ExtResource("2_rwuak")

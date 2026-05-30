@@ -1,0 +1,1354 @@
+[gd_scene format=3 uid="uid://chsl7e0rmm01e"]
+
+[ext_resource type="Script" uid="uid://btrihqri18eos" path="res://scripts/settings/SettingsUIController.cs" id="1_v461p"]
+[ext_resource type="Script" uid="uid://jrmqrkqohgx6" path="res://scripts/settings/SettingsGenerator.cs" id="2_6xy4m"]
+[ext_resource type="PackedScene" uid="uid://b4aolylk0arph" path="res://scenes/ui/settings/parts/text.tscn" id="2_j7mfc"]
+[ext_resource type="PackedScene" uid="uid://dppncr6rktvej" path="res://scenes/ui/settings/parts/slider.tscn" id="3_i1qd3"]
+[ext_resource type="PackedScene" uid="uid://ns0ly4h7u75r" path="res://scenes/ui/settings/parts/dropdown.tscn" id="4_o3p2d"]
+[ext_resource type="PackedScene" uid="uid://odeuew8ond5v" path="res://scenes/ui/settings/parts/checkbox.tscn" id="5_jin38"]
+[ext_resource type="PackedScene" uid="uid://c8uxd4cqdbdvx" path="res://scenes/ui/settings/parts/screen_hardware_selector.tscn" id="6_jin38"]
+[ext_resource type="PackedScene" uid="uid://ct2p2mdxuslp2" path="res://scenes/ui/settings/parts/microphone_hardware_detect.tscn" id="7_tf500"]
+[ext_resource type="Script" uid="uid://bw5mryxmdmm4g" path="res://scripts/settings/SettingsResource.cs" id="8_wiwya"]
+[ext_resource type="Script" uid="uid://b3qjkbdb5iw7g" path="res://scripts/settings/classes/CSlider.cs" id="9_kfrmm"]
+[ext_resource type="Script" uid="uid://c2oc1yfphgwxb" path="res://scripts/settings/ControlsGenerator.cs" id="9_o3p2d"]
+[ext_resource type="Script" uid="uid://dsltrde3trc7j" path="res://scripts/settings/classes/UsernameEditSetting.cs" id="9_r4dja"]
+[ext_resource type="Script" uid="uid://b2y2886ya3rde" path="res://scripts/settings/classes/Checkbox.cs" id="10_icd6u"]
+[ext_resource type="Script" uid="uid://dttg5ivpudoeh" path="res://scripts/settings/ControlsUIController.cs" id="10_jin38"]
+[ext_resource type="PackedScene" uid="uid://beu45ttvabjoj" path="res://scenes/ui/settings/parts/key_input.tscn" id="10_tf500"]
+[ext_resource type="Script" uid="uid://boam2h5mftjul" path="res://scripts/settings/classes/Dropdown.cs" id="11_r4dja"]
+[ext_resource type="Script" uid="uid://yfxnobnmij6d" path="res://scripts/settings/classes/MicrophoneHardwareSelector.cs" id="12_kfrmm"]
+[ext_resource type="Script" uid="uid://cln51kxulpkgo" path="res://scripts/settings/classes/MonitorHardwareSelector.cs" id="15_r4dja"]
+
+[sub_resource type="Resource" id="Resource_jin38"]
+script = ExtResource("8_wiwya")
+Name = "Username"
+MemberName = "UserName"
+Tooltip = "Your in game username. This cannot be changed if you use Steam or are currently in a game."
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_tf500"]
+script = ExtResource("8_wiwya")
+Group = "Audio"
+Name = "Volume"
+MemberName = "Volume"
+ControlType = 1
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3p2d"]
+font_size = 14
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_m7ea7"]
+script = ExtResource("8_wiwya")
+Group = "Audio"
+Name = "Microphone Input"
+MemberName = "MicInputName"
+Tooltip = "Determines what microphone to use"
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_j6slp"]
+script = ExtResource("8_wiwya")
+Group = "Audio"
+Name = "Microphone Volume (Db)"
+MemberName = "MicVolumeDb"
+ControlType = 1
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_h0sdb"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "V-Sync"
+MemberName = "VSyncMode"
+ControlType = 2
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_bumpl"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "Shadow Quality"
+MemberName = "ShadowQuality"
+ControlType = 2
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_amydb"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "Volumetric Fog"
+MemberName = "VolumetricFog"
+ControlType = 3
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_kmore"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "MSAA"
+MemberName = "MSAA"
+ControlType = 2
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_vpfgo"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "Resolution Mode"
+MemberName = "ScreenMode"
+Tooltip = "What resolution mode to use."
+ControlType = 2
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_rxuk3"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "Monitor"
+MemberName = "ScreenId"
+ControlType = 1
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_jif15"]
+script = ExtResource("8_wiwya")
+Group = "Video"
+Name = "Resolution Scaling"
+MemberName = "ScalingMode"
+Tooltip = "Helps on older GPUs or in systems with a better GPU than CPU."
+ControlType = 2
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_cfofc"]
+script = ExtResource("8_wiwya")
+Group = "FSR"
+Name = "FSR Quality"
+MemberName = "FsrScale"
+ControlType = 2
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_j486x"]
+script = ExtResource("8_wiwya")
+Group = "FSR"
+Name = "FSR Sharpness"
+MemberName = "FsrSharpness"
+ControlType = 1
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_m471i"]
+script = ExtResource("8_wiwya")
+Group = "Preferences"
+Name = "Mouse Sensitivity"
+MemberName = "MouseSensitivity"
+ControlType = 1
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_8lrln"]
+script = ExtResource("8_wiwya")
+Group = "Preferences"
+Name = "Skip Startup File Preloading"
+MemberName = "SkipPreloading"
+ControlType = 3
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_6osny"]
+script = ExtResource("8_wiwya")
+Group = "Preferences"
+Name = "VR Snap Turn"
+MemberName = "SnapTurn"
+ControlType = 3
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_5awbf"]
+script = ExtResource("8_wiwya")
+Group = "Preferences"
+Name = "VR Turn Speed"
+MemberName = "TurnSpeed"
+ControlType = 1
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_edvos"]
+script = ExtResource("8_wiwya")
+Group = "Debug"
+Name = "Debug Mode"
+MemberName = "DebugMode"
+ControlType = 3
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[sub_resource type="Resource" id="Resource_vfrw7"]
+script = ExtResource("8_wiwya")
+Group = "Debug"
+Name = "Console Fullscreen"
+MemberName = "ConsoleFullscreen"
+ControlType = 3
+ObjectFullClass = "Settings"
+ObjectPropertyName = "User"
+
+[node name="SettingsUi" type="MarginContainer" unique_id=974653438]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
+
+[node name="Generator" type="Node" parent="." unique_id=810303931 node_paths=PackedStringArray("SettingsBox", "Controller")]
+script = ExtResource("2_6xy4m")
+SettingsBox = NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer")
+Controller = NodePath("../SettingsUIController")
+TypeToScene = Dictionary[int, PackedScene]({
+0: ExtResource("2_j7mfc"),
+1: ExtResource("3_i1qd3"),
+2: ExtResource("4_o3p2d"),
+3: ExtResource("5_jin38")
+})
+HardwareTypeToScene = Dictionary[int, PackedScene]({
+0: ExtResource("6_jin38"),
+2: ExtResource("7_tf500")
+})
+metadata/_custom_type_script = "uid://jrmqrkqohgx6"
+
+[node name="SettingsUIController" type="Node" parent="." unique_id=1444251099 node_paths=PackedStringArray("SaveButton", "CancelButton", "ResetButton", "SettingsControls", "RootControl")]
+script = ExtResource("1_v461p")
+SaveButton = NodePath("../SettingsPane/VBoxContainer/Actions/HBoxContainer/Save")
+CancelButton = NodePath("../SettingsPane/VBoxContainer/Actions/HBoxContainer/Cancel")
+ResetButton = NodePath("../SettingsPane/VBoxContainer/Actions/HBoxContainer/Reset")
+SettingsControls = [NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode"), NodePath("../SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen")]
+RootControl = NodePath("..")
+metadata/_custom_type_script = "uid://btrihqri18eos"
+
+[node name="ControlsGenerator" type="Node" parent="." unique_id=1091481386 node_paths=PackedStringArray("SettingsGenerator", "ControlsUIController")]
+script = ExtResource("9_o3p2d")
+SettingsGenerator = NodePath("../Generator")
+ControlsUIController = NodePath("../ControlsUIController")
+ControlScene = ExtResource("10_tf500")
+metadata/_custom_type_script = "uid://c2oc1yfphgwxb"
+
+[node name="ControlsUIController" type="Node" parent="." unique_id=391866583 node_paths=PackedStringArray("Inputs", "SettingsUIController")]
+script = ExtResource("10_jin38")
+Inputs = []
+SettingsUIController = NodePath("../SettingsUIController")
+metadata/_custom_type_script = "uid://dttg5ivpudoeh"
+
+[node name="SettingsPane" type="PanelContainer" parent="." unique_id=876689925]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane" unique_id=1707897428]
+layout_mode = 2
+
+[node name="SrollContainer" type="ScrollContainer" parent="SettingsPane/VBoxContainer" unique_id=1551310566]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer" unique_id=1210191922]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1552799086]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Misc_" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1667396139]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Misc."
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=387250291]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UserName" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=2063429371 node_paths=PackedStringArray("TextEdit", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Your in game username. This cannot be changed if you use Steam or are currently in a game."
+script = ExtResource("9_r4dja")
+TextEdit = NodePath("HBoxContainer/VBoxContainer/LineEdit")
+_minLengthPrivate = 3
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_jin38")
+metadata/_custom_type_script = "uid://dsltrde3trc7j"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName" unique_id=829471954]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName/HBoxContainer" unique_id=936987447]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+tooltip_text = "Your in game username. This cannot be changed if you use Steam or are currently in a game."
+mouse_filter = 0
+text = "Username"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName/HBoxContainer" unique_id=441020694]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName/HBoxContainer" unique_id=1724612574]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="LineEdit" type="LineEdit" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName/HBoxContainer/VBoxContainer" unique_id=798864357]
+layout_mode = 2
+size_flags_horizontal = 3
+max_length = 64
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName/HBoxContainer/VBoxContainer" unique_id=526821707]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="HSeparator3" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=234007490]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Audio" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1966671335]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1276542216]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Volume" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=887219295 node_paths=PackedStringArray("SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("9_kfrmm")
+SliderControl = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+MinLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min")
+MaxLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max")
+SpinBox = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_tf500")
+metadata/_custom_type_script = "uid://b3qjkbdb5iw7g"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume" unique_id=513506381]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer" unique_id=1330789468]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Volume"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer" unique_id=2063161304]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer" unique_id=1075492145]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer/VBoxContainer" unique_id=440977387]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=605586408]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Min" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2084713578]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0.001"
+
+[node name="HSlider" type="HSlider" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=105147640]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+scrollable = false
+
+[node name="Max" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=357918825]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "1"
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/Volume/HBoxContainer/VBoxContainer" unique_id=926559390]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+label_settings = SubResource("LabelSettings_o3p2d")
+
+[node name="MicInputName" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=773361544 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Determines what microphone to use"
+script = ExtResource("12_kfrmm")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_m7ea7")
+metadata/_custom_type_script = "uid://yfxnobnmij6d"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName" unique_id=963566450]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName/HBoxContainer" unique_id=1799397458]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+tooltip_text = "Determines what microphone to use"
+mouse_filter = 0
+text = "Microphone Input"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName/HBoxContainer" unique_id=257002193]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName/HBoxContainer" unique_id=1264454657]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName/HBoxContainer/VBoxContainer" unique_id=1933541694]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+fit_to_longest_item = false
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicInputName/HBoxContainer/VBoxContainer" unique_id=1908744700]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="MicVolumeDb" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1728853907 node_paths=PackedStringArray("SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("9_kfrmm")
+SliderControl = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+MinLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min")
+MaxLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max")
+SpinBox = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_j6slp")
+metadata/_custom_type_script = "uid://b3qjkbdb5iw7g"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb" unique_id=342163282]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer" unique_id=529565273]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Microphone Volume (Db)"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer" unique_id=1014017580]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer" unique_id=1499876850]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer/VBoxContainer" unique_id=1207348183]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=700029857]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+min_value = -20.0
+max_value = 20.0
+
+[node name="Min" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1241911070]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "-20"
+
+[node name="HSlider" type="HSlider" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=186495956]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = -20.0
+max_value = 20.0
+scrollable = false
+
+[node name="Max" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=190432120]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "20"
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MicVolumeDb/HBoxContainer/VBoxContainer" unique_id=1102929111]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+label_settings = SubResource("LabelSettings_o3p2d")
+
+[node name="HSeparator5" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=664797936]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Video" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=437012600]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Video"
+horizontal_alignment = 1
+
+[node name="HSeparator6" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=531814331]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSyncMode" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=235815443 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("11_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_h0sdb")
+metadata/_custom_type_script = "uid://boam2h5mftjul"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode" unique_id=264540810]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode/HBoxContainer" unique_id=1269471082]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "V-Sync"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode/HBoxContainer" unique_id=1285536187]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode/HBoxContainer" unique_id=103526065]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode/HBoxContainer/VBoxContainer" unique_id=390459243]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptive"
+popup/item_2/id = 2
+popup/item_3/text = "Mailbox"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VSyncMode/HBoxContainer/VBoxContainer" unique_id=1647964065]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="ShadowQuality" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1092822705 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("11_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_bumpl")
+metadata/_custom_type_script = "uid://boam2h5mftjul"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality" unique_id=999445758]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality/HBoxContainer" unique_id=554427486]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Shadow Quality"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality/HBoxContainer" unique_id=1655739013]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality/HBoxContainer" unique_id=1956302991]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality/HBoxContainer/VBoxContainer" unique_id=1321479660]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 5
+popup/item_0/text = "VeryLow"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+popup/item_4/text = "VeryHigh"
+popup/item_4/id = 4
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ShadowQuality/HBoxContainer/VBoxContainer" unique_id=362086457]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="VolumetricFog" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=239059125 node_paths=PackedStringArray("CheckboxControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_icd6u")
+CheckboxControl = NodePath("HBoxContainer/HBoxContainer/CheckBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/HBoxContainer/Label")
+Setting = SubResource("Resource_amydb")
+metadata/_custom_type_script = "uid://b2y2886ya3rde"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog" unique_id=369706992]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog/HBoxContainer" unique_id=1725124073]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Volumetric Fog"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog/HBoxContainer" unique_id=1192454550]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog/HBoxContainer" unique_id=2084621853]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog/HBoxContainer/HBoxContainer" unique_id=1274682943]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/VolumetricFog/HBoxContainer/HBoxContainer" unique_id=171001714]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="MSAA" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=2117418999 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("11_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_kmore")
+metadata/_custom_type_script = "uid://boam2h5mftjul"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA" unique_id=1765955521]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA/HBoxContainer" unique_id=1880363113]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "MSAA"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA/HBoxContainer" unique_id=960314648]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA/HBoxContainer" unique_id=419209451]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA/HBoxContainer/VBoxContainer" unique_id=1146546484]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 5
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Msaa2X"
+popup/item_1/id = 1
+popup/item_2/text = "Msaa4X"
+popup/item_2/id = 2
+popup/item_3/text = "Msaa8X"
+popup/item_3/id = 3
+popup/item_4/text = "Max"
+popup/item_4/id = 4
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MSAA/HBoxContainer/VBoxContainer" unique_id=1002928045]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="ScreenMode" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1461461157 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "What resolution mode to use."
+script = ExtResource("11_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_vpfgo")
+metadata/_custom_type_script = "uid://boam2h5mftjul"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode" unique_id=226613639]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode/HBoxContainer" unique_id=136693406]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+tooltip_text = "What resolution mode to use."
+mouse_filter = 0
+text = "Resolution Mode"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode/HBoxContainer" unique_id=1296889835]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode/HBoxContainer" unique_id=449205820]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode/HBoxContainer/VBoxContainer" unique_id=335393438]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenMode/HBoxContainer/VBoxContainer" unique_id=1015663355]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="ScreenId" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=442309867 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("15_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_rxuk3")
+metadata/_custom_type_script = "uid://cln51kxulpkgo"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId" unique_id=915562659]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId/HBoxContainer" unique_id=1872505969]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Monitor"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId/HBoxContainer" unique_id=1989697653]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId/HBoxContainer" unique_id=1956344468]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId/HBoxContainer/VBoxContainer" unique_id=832119191]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScreenId/HBoxContainer/VBoxContainer" unique_id=1626759403]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="ScalingMode" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1880634457 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Helps on older GPUs or in systems with a better GPU than CPU."
+script = ExtResource("11_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_jif15")
+metadata/_custom_type_script = "uid://boam2h5mftjul"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode" unique_id=492868245]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode/HBoxContainer" unique_id=2023776490]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+tooltip_text = "Helps on older GPUs or in systems with a better GPU than CPU."
+mouse_filter = 0
+text = "Resolution Scaling"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode/HBoxContainer" unique_id=42289627]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode/HBoxContainer" unique_id=1716966145]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode/HBoxContainer/VBoxContainer" unique_id=1101634033]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Fsr"
+popup/item_1/id = 1
+popup/item_2/text = "Fsr2"
+popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ScalingMode/HBoxContainer/VBoxContainer" unique_id=265088378]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="HSeparator7" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=80876139]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FSR" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1696342336]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FSR"
+horizontal_alignment = 1
+
+[node name="HSeparator8" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=424693447]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FsrScale" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1994184758 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("11_r4dja")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_cfofc")
+metadata/_custom_type_script = "uid://boam2h5mftjul"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale" unique_id=582178748]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale/HBoxContainer" unique_id=1123201623]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "FSR Quality"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale/HBoxContainer" unique_id=142384934]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale/HBoxContainer" unique_id=2657809]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale/HBoxContainer/VBoxContainer" unique_id=1733424732]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 4
+popup/item_0/text = "UltraQuality"
+popup/item_0/id = 0
+popup/item_1/text = "Quality"
+popup/item_1/id = 1
+popup/item_2/text = "Balanced"
+popup/item_2/id = 2
+popup/item_3/text = "Performance"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrScale/HBoxContainer/VBoxContainer" unique_id=29721155]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="FsrSharpness" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=172845893 node_paths=PackedStringArray("SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("9_kfrmm")
+SliderControl = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+MinLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min")
+MaxLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max")
+SpinBox = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_j486x")
+metadata/_custom_type_script = "uid://b3qjkbdb5iw7g"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness" unique_id=322627068]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer" unique_id=846981435]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "FSR Sharpness"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer" unique_id=1873484619]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer" unique_id=569040686]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer/VBoxContainer" unique_id=2060963104]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=947372639]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+min_value = 1.0
+max_value = 1.5
+step = 0.01
+value = 1.0
+
+[node name="Min" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=687154633]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "1"
+
+[node name="HSlider" type="HSlider" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=274123290]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 1.5
+step = 0.01
+value = 1.0
+scrollable = false
+
+[node name="Max" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1797141232]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "1.5"
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/FsrSharpness/HBoxContainer/VBoxContainer" unique_id=1837018890]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+label_settings = SubResource("LabelSettings_o3p2d")
+
+[node name="HSeparator9" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1737353509]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Preferences" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=330358021]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Preferences"
+horizontal_alignment = 1
+
+[node name="HSeparator10" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=837197670]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MouseSensitivity" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=381986727 node_paths=PackedStringArray("SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("9_kfrmm")
+SliderControl = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+MinLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min")
+MaxLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max")
+SpinBox = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_m471i")
+metadata/_custom_type_script = "uid://b3qjkbdb5iw7g"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity" unique_id=1493231333]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer" unique_id=1408385711]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Mouse Sensitivity"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer" unique_id=477671991]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer" unique_id=1531326754]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer/VBoxContainer" unique_id=89648166]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=935277507]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 2.01
+
+[node name="Min" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=603340683]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0.01"
+
+[node name="HSlider" type="HSlider" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1337550261]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 2.01
+scrollable = false
+
+[node name="Max" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=100800335]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "4"
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/MouseSensitivity/HBoxContainer/VBoxContainer" unique_id=1306335100]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+label_settings = SubResource("LabelSettings_o3p2d")
+
+[node name="SkipPreloading" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=627248695 node_paths=PackedStringArray("CheckboxControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_icd6u")
+CheckboxControl = NodePath("HBoxContainer/HBoxContainer/CheckBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/HBoxContainer/Label")
+Setting = SubResource("Resource_8lrln")
+metadata/_custom_type_script = "uid://b2y2886ya3rde"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading" unique_id=1854506578]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading/HBoxContainer" unique_id=527781330]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Skip Startup File Preloading"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading/HBoxContainer" unique_id=485806665]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading/HBoxContainer" unique_id=132554895]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading/HBoxContainer/HBoxContainer" unique_id=590252175]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SkipPreloading/HBoxContainer/HBoxContainer" unique_id=788899810]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="SnapTurn" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1904093218 node_paths=PackedStringArray("CheckboxControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_icd6u")
+CheckboxControl = NodePath("HBoxContainer/HBoxContainer/CheckBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/HBoxContainer/Label")
+Setting = SubResource("Resource_6osny")
+metadata/_custom_type_script = "uid://b2y2886ya3rde"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn" unique_id=1638603665]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn/HBoxContainer" unique_id=242494102]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "VR Snap Turn"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn/HBoxContainer" unique_id=485551229]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn/HBoxContainer" unique_id=578724189]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn/HBoxContainer/HBoxContainer" unique_id=1919668263]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/SnapTurn/HBoxContainer/HBoxContainer" unique_id=901014883]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="TurnSpeed" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=352941256 node_paths=PackedStringArray("SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("9_kfrmm")
+SliderControl = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+MinLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min")
+MaxLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max")
+SpinBox = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+Setting = SubResource("Resource_5awbf")
+metadata/_custom_type_script = "uid://b3qjkbdb5iw7g"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed" unique_id=723748697]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer" unique_id=1225327092]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "VR Turn Speed"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer" unique_id=1809834011]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer" unique_id=109857549]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer/VBoxContainer" unique_id=1127854758]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1457809519]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+min_value = 30.0
+max_value = 60.0
+value = 45.0
+
+[node name="Min" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1361656400]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "30"
+
+[node name="HSlider" type="HSlider" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=684251180]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 30.0
+max_value = 60.0
+value = 45.0
+scrollable = false
+
+[node name="Max" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1899796334]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "60"
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/TurnSpeed/HBoxContainer/VBoxContainer" unique_id=1784812017]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+label_settings = SubResource("LabelSettings_o3p2d")
+
+[node name="HSeparator11" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=985217583]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Debug" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=113170097]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Debug"
+horizontal_alignment = 1
+
+[node name="HSeparator12" type="HSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=51460463]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DebugMode" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=1122455503 node_paths=PackedStringArray("CheckboxControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_icd6u")
+CheckboxControl = NodePath("HBoxContainer/HBoxContainer/CheckBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/HBoxContainer/Label")
+Setting = SubResource("Resource_edvos")
+metadata/_custom_type_script = "uid://b2y2886ya3rde"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode" unique_id=2073241305]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode/HBoxContainer" unique_id=1720783604]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Debug Mode"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode/HBoxContainer" unique_id=483341073]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode/HBoxContainer" unique_id=109272216]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode/HBoxContainer/HBoxContainer" unique_id=1664870746]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/DebugMode/HBoxContainer/HBoxContainer" unique_id=1035316497]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="ConsoleFullscreen" type="Container" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer" unique_id=281451963 node_paths=PackedStringArray("CheckboxControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("10_icd6u")
+CheckboxControl = NodePath("HBoxContainer/HBoxContainer/CheckBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/HBoxContainer/Label")
+Setting = SubResource("Resource_vfrw7")
+metadata/_custom_type_script = "uid://b2y2886ya3rde"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen" unique_id=593528398]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen/HBoxContainer" unique_id=896808284]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 0
+text = "Console Fullscreen"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="VSeparator" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen/HBoxContainer" unique_id=1898902177]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen/HBoxContainer" unique_id=811671615]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen/HBoxContainer/HBoxContainer" unique_id=336198900]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/ConsoleFullscreen/HBoxContainer/HBoxContainer" unique_id=2033022664]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPane/VBoxContainer" unique_id=214596638]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Actions" type="MarginContainer" parent="SettingsPane/VBoxContainer" unique_id=1948739556]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPane/VBoxContainer/Actions" unique_id=2068273153]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPane/VBoxContainer/Actions/HBoxContainer" unique_id=119924940]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SETTINGS_MENU_REQUIRE_RESTART"
+
+[node name="Reset" type="Button" parent="SettingsPane/VBoxContainer/Actions/HBoxContainer" unique_id=767832508]
+layout_mode = 2
+text = "Reset
+"
+
+[node name="Save" type="Button" parent="SettingsPane/VBoxContainer/Actions/HBoxContainer" unique_id=955862882]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Save"
+
+[node name="Cancel" type="Button" parent="SettingsPane/VBoxContainer/Actions/HBoxContainer" unique_id=132669177]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Close"

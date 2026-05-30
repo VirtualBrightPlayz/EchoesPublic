@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7lnrr6dlw1eu"
+path="res://.godot/imported/The Dread.ogg-fae7fb0e0e030c30df93735ba12fbf52.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/scpcb/The Dread.ogg"
+dest_files=["res://.godot/imported/The Dread.ogg-fae7fb0e0e030c30df93735ba12fbf52.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

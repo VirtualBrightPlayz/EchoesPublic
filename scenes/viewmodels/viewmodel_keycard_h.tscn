@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://b7v806hj4wynv"]
+
+[ext_resource type="Script" uid="uid://c1trd2id4adti" path="res://scripts/player/role_ui/KeycardViewmodel.cs" id="1_mfdyg"]
+[ext_resource type="AudioStream" uid="uid://dswhc7awi6e1b" path="res://audio/scpcb/doors/KeycardUse1.ogg" id="2_dkwht"]
+[ext_resource type="AudioStream" uid="uid://v11gbpa0lkvr" path="res://audio/scpcb/doors/KeycardUse.wav" id="3_5d078"]
+[ext_resource type="Curve" uid="uid://ca1t17qyk2kme" path="res://textures/tweencurve.tres" id="4_1thon"]
+[ext_resource type="Texture2D" uid="uid://dxuokd4mivp6b" path="res://models/main/human/hands/T_Hand.png" id="5_thar6"]
+[ext_resource type="Texture2D" uid="uid://cwvmiqds21xjo" path="res://models/main/human/hands/N_Hand.png" id="6_1thon"]
+[ext_resource type="Texture2D" uid="uid://cf0mwyf7ggcfh" path="res://models/main/human/hands/ORM_Hand.png" id="7_4gddb"]
+[ext_resource type="Texture2D" uid="uid://bhf1nfqmmefe4" path="res://models/main/human/hands/SSS_Hand.png" id="8_tybgv"]
+[ext_resource type="PackedScene" uid="uid://dnajasrgihfyw" path="res://models/rooms/pop_hcz_new/Pop_Cards/KeycardAnims.glb" id="12_2f041"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u7kkk"]
+animation = &"Horizontal - Equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ersfx"]
+animation = &"Vertical - Equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebyem"]
+animation = &"Horizontal - Idle (250 Frames)"
+use_custom_timeline = true
+timeline_length = 30.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m4r8m"]
+animation = &"Vertical - Idle (250 fRAMES)"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d4tvw"]
+animation = &"Horizontal - Inspect"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_11etx"]
+animation = &"Vertical - Inspect"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yeao2"]
+animation = &"Horizontal - Use"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_blqlw"]
+animation = &"Veritcal - Use"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7y7lq"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ux12y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sw85l"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pirk5"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r5i7i"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_11etx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_blqlw"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_thar6"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1thon"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ersfx"]
+xfade_time = 0.1
+xfade_curve = ExtResource("4_1thon")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o6vsu"]
+states/EquipH/node = SubResource("AnimationNodeAnimation_u7kkk")
+states/EquipH/position = Vector2(287, -18)
+states/EquipV/node = SubResource("AnimationNodeAnimation_ersfx")
+states/EquipV/position = Vector2(347, 71)
+states/IdleH/node = SubResource("AnimationNodeAnimation_ebyem")
+states/IdleH/position = Vector2(549, 11)
+states/IdleV/node = SubResource("AnimationNodeAnimation_m4r8m")
+states/IdleV/position = Vector2(385, 164)
+states/InspectH/node = SubResource("AnimationNodeAnimation_d4tvw")
+states/InspectH/position = Vector2(683, 11)
+states/InspectV/node = SubResource("AnimationNodeAnimation_11etx")
+states/InspectV/position = Vector2(102, 266)
+states/UseH/node = SubResource("AnimationNodeAnimation_yeao2")
+states/UseH/position = Vector2(642, 134)
+states/UseV/node = SubResource("AnimationNodeAnimation_blqlw")
+states/UseV/position = Vector2(493.1057, 261)
+transitions = ["UseH", "IdleH", SubResource("AnimationNodeStateMachineTransition_7y7lq"), "Start", "EquipH", SubResource("AnimationNodeStateMachineTransition_ux12y"), "EquipH", "IdleH", SubResource("AnimationNodeStateMachineTransition_sw85l"), "IdleH", "InspectH", SubResource("AnimationNodeStateMachineTransition_pirk5"), "InspectH", "IdleH", SubResource("AnimationNodeStateMachineTransition_r5i7i"), "Start", "EquipV", SubResource("AnimationNodeStateMachineTransition_11etx"), "EquipV", "IdleV", SubResource("AnimationNodeStateMachineTransition_blqlw"), "IdleV", "InspectV", SubResource("AnimationNodeStateMachineTransition_thar6"), "InspectV", "IdleV", SubResource("AnimationNodeStateMachineTransition_1thon"), "UseV", "IdleV", SubResource("AnimationNodeStateMachineTransition_ersfx")]
+graph_offset = Vector2(-56.894287, -72)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_mfdyg"]
+albedo_texture = ExtResource("5_thar6")
+orm_texture = ExtResource("7_4gddb")
+normal_enabled = true
+normal_texture = ExtResource("6_1thon")
+subsurf_scatter_strength = 0.21
+subsurf_scatter_skin_mode = true
+subsurf_scatter_texture = ExtResource("8_tybgv")
+use_z_clip_scale = true
+z_clip_scale = 0.5
+use_fov_override = true
+fov_override = 58.7
+
+[node name="ViewmodelKeycard" type="Node3D" unique_id=1460788206 node_paths=PackedStringArray("root", "viewCam", "tree", "audio", "keycardPointV", "keycardPointH")]
+script = ExtResource("1_mfdyg")
+root = NodePath("Keycard Animations")
+viewCam = NodePath("Keycard Animations/Camera")
+tree = NodePath("AnimationTree3")
+usePathV = "UseV"
+usePathH = "UseH"
+audio = NodePath("AudioStreamPlayer3D")
+success = ExtResource("2_dkwht")
+fail = ExtResource("3_5d078")
+keycardPointV = NodePath("Keycard Animations/Skel_Arm/Skeleton3D/BoneAttachment3D/KeycardV")
+keycardPointH = NodePath("Keycard Animations/Skel_Arm/Skeleton3D/BoneAttachment3D/KeycardH")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=82657471]
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="AnimationTree3" type="AnimationTree" parent="." unique_id=193203680]
+root_node = NodePath("../Keycard Animations")
+tree_root = SubResource("AnimationNodeStateMachine_o6vsu")
+anim_player = NodePath("../Keycard Animations/AnimationPlayer")
+
+[node name="Keycard Animations" parent="." unique_id=1903306476 instance=ExtResource("12_2f041")]
+
+[node name="Skeleton3D" parent="Keycard Animations/Skel_Arm" parent_id_path=PackedInt32Array(1903306476, 1279570965) index="0" unique_id=493301538]
+bones/1/position = Vector3(-0.18628353, 0.33018833, 0.04433936)
+bones/1/rotation = Quaternion(-0.26472545, -0.655552, 0.51916575, 0.48024875)
+bones/2/rotation = Quaternion(-2.0999678e-06, 1.7415927e-07, 0.6344544, 0.77296036)
+bones/3/rotation = Quaternion(0.17136922, 0.13589112, 0.007822963, 0.97575873)
+bones/5/position = Vector3(-0.029621102, 0.02651345, -0.016719855)
+bones/5/rotation = Quaternion(-0.076737426, 0.048798848, 0.08164363, 0.99250406)
+bones/6/rotation = Quaternion(0.06427734, 0.22279984, -0.06705203, 0.9704291)
+bones/7/rotation = Quaternion(0.06104579, -0.04645599, -0.012935287, 0.99696946)
+bones/8/position = Vector3(-0.018305814, 0.06892341, 0.00923356)
+bones/8/rotation = Quaternion(0.05923556, -0.21969543, 0.06410153, 0.9716564)
+bones/9/rotation = Quaternion(-0.29783905, 0.043809168, 0.05461307, 0.95204526)
+bones/10/rotation = Quaternion(-0.6899007, 0.097768344, 0.05873168, 0.71486294)
+bones/11/rotation = Quaternion(-0.4385997, 0.16253033, -0.17081623, 0.8672002)
+bones/12/position = Vector3(-0.0005412759, 0.0660605, 0.013365918)
+bones/12/rotation = Quaternion(-0.0121710915, -0.10458012, -0.057763346, 0.9927629)
+bones/13/rotation = Quaternion(-0.64489716, 0.11160664, 0.07167181, 0.7526717)
+bones/14/rotation = Quaternion(-0.67219216, 0.045956768, 0.022841927, 0.73859596)
+bones/15/rotation = Quaternion(-0.5287502, 0.10348897, -0.19489428, 0.81959116)
+bones/16/rotation = Quaternion(-0.09306738, -0.07406362, -0.13650648, 0.98347294)
+bones/17/rotation = Quaternion(-0.6257289, 0.061550446, 0.18355516, 0.7556339)
+bones/18/rotation = Quaternion(-0.6479769, 0.112310305, 0.01916112, 0.75309044)
+bones/19/rotation = Quaternion(-0.59051, 0.18854828, -0.11127768, 0.7767656)
+bones/20/rotation = Quaternion(-0.16712706, 0.010062077, -0.23062927, 0.9585289)
+bones/21/rotation = Quaternion(-0.64369345, 0.09110436, 0.014398033, 0.7597048)
+bones/22/rotation = Quaternion(-0.6669403, 0.0237429, -0.09585464, 0.7385384)
+bones/23/rotation = Quaternion(-0.39536467, 0.1265192, -0.16029945, 0.89553547)
+bones/24/rotation = Quaternion(0.00095198146, 0.028683674, -0.03314888, 0.99903834)
+bones/25/rotation = Quaternion(4.9946976e-07, 0.028699199, -4.53581e-09, 0.99958813)
+bones/26/rotation = Quaternion(0.123981394, 0.69373226, -0.010705796, 0.7094008)
+bones/27/rotation = Quaternion(-2.6009136e-06, -1.3302402e-07, -0.7909622, 0.6118649)
+bones/28/rotation = Quaternion(-0.032639336, -0.14128464, -0.04396961, 0.9884533)
+bones/49/rotation = Quaternion(0.0010576874, -0.03186895, 0.033145644, 0.9989418)
+bones/50/rotation = Quaternion(4.7468927e-07, -0.031886287, -4.801604e-09, 0.9994915)
+bones/51/position = Vector3(-0.12959123, -0.20963456, 0.32332608)
+bones/51/rotation = Quaternion(-0.18766513, 0.6629294, 0.19902553, -0.6969185)
+bones/52/position = Vector3(0.22944254, -0.5171123, 0.07033794)
+bones/52/rotation = Quaternion(0.4541087, 0.49595368, 0.45410872, 0.5844661)
+bones/53/position = Vector3(-0.33939475, -0.6546858, 0.31768057)
+bones/54/position = Vector3(0.22738041, -0.5237167, -0.4178282)
+bones/56/position = Vector3(-0.10641566, -0.065947086, 0.373944)
+bones/56/rotation = Quaternion(0.013400361, 0.9733361, 0.21222305, 0.086015716)
+
+[node name="Arm" parent="Keycard Animations/Skel_Arm/Skeleton3D" index="0" unique_id=66300893]
+cast_shadow = 0
+gi_mode = 2
+surface_material_override/0 = SubResource("ORMMaterial3D_mfdyg")
+
+[node name="Card_H" parent="Keycard Animations/Skel_Arm/Skeleton3D" index="1" unique_id=1017799832]
+visible = false
+
+[node name="Card_V" parent="Keycard Animations/Skel_Arm/Skeleton3D" index="2" unique_id=1850570219]
+visible = false
+
+[node name="CardHolder_H" parent="Keycard Animations/Skel_Arm/Skeleton3D" index="3" unique_id=540826433]
+visible = false
+
+[node name="CardHolder_V" parent="Keycard Animations/Skel_Arm/Skeleton3D" index="4" unique_id=922711031]
+visible = false
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Keycard Animations/Skel_Arm/Skeleton3D" index="5" unique_id=1075992722]
+transform = Transform3D(-0.9848434, -0.010422923, 0.1731321, 0.06259514, 0.9095636, 0.4108234, -0.16175665, 0.41543394, -0.89512527, -0.10641566, -0.065947086, 0.373944)
+bone_name = "Keycard"
+bone_idx = 56
+
+[node name="KeycardV" type="Node3D" parent="Keycard Animations/Skel_Arm/Skeleton3D/BoneAttachment3D" unique_id=553404967]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0.029542284, 0.0018653988)
+
+[node name="KeycardH" type="Node3D" parent="Keycard Animations/Skel_Arm/Skeleton3D/BoneAttachment3D" unique_id=1849809653]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 5.820766e-11, -0.011904335, 0.0029086038)
+
+[node name="Cube" parent="Keycard Animations" index="2" unique_id=857284193]
+visible = false
+
+[node name="Cube_001" parent="Keycard Animations" index="3" unique_id=668797830]
+visible = false
+
+[node name="Cube_002" parent="Keycard Animations" index="4" unique_id=166095029]
+visible = false
+
+[node name="Cube_003" parent="Keycard Animations" index="5" unique_id=1449320697]
+visible = false
+
+[node name="BézierCircle" parent="Keycard Animations" index="6" unique_id=1283538430]
+visible = false
+
+[node name="BézierCircle_001" parent="Keycard Animations" index="7" unique_id=1754558175]
+visible = false
+
+[editable path="Keycard Animations"]

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://ojs6o8mae2le"]
+
+[ext_resource type="Texture2D" uid="uid://c7wm4606wjtvl" path="res://models/rooms/pop_hcz_new/HCZ_V3/T_Aluminum_HotSpot.png" id="1_f6hqm"]
+[ext_resource type="Texture2D" uid="uid://bxxmgktofdc6p" path="res://models/rooms/pop_hcz_new/HCZ_V3/N_Aluminum_HotSpot.png" id="2_ol1q3"]
+[ext_resource type="Texture2D" uid="uid://cavb2bdnrvkxf" path="res://models/rooms/pop_hcz_new/HCZ_V3/ORM_Aluminum_HotSpot.png" id="3_4gxh4"]
+
+[resource]
+albedo_texture = ExtResource("1_f6hqm")
+orm_texture = ExtResource("3_4gxh4")
+normal_enabled = true
+normal_texture = ExtResource("2_ol1q3")

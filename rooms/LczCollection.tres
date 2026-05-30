@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=21 format=3 uid="uid://lj61kl2rt4qg"]
+
+[ext_resource type="Resource" uid="uid://ci2jusjgm6375" path="res://rooms/Empty.tres" id="1_ab8da"]
+[ext_resource type="Resource" uid="uid://0f104w2ciymk" path="res://rooms/lcz/173.tres" id="2_pwq41"]
+[ext_resource type="Resource" uid="uid://bm20feqjkisbd" path="res://rooms/lcz/914.tres" id="3_kjw3b"]
+[ext_resource type="Resource" uid="uid://d228k870jjf24" path="res://rooms/lcz/toilets.tres" id="4_bm88b"]
+[ext_resource type="Resource" uid="uid://bcuqr40wk2fgq" path="res://rooms/lcz/corner.tres" id="5_522gs"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="5_n4lv0"]
+[ext_resource type="Resource" uid="uid://dowwcvn4bxf86" path="res://rooms/lcz/hall.tres" id="6_6404g"]
+[ext_resource type="Resource" uid="uid://dpfj5a2magbnu" path="res://rooms/lcz/troom.tres" id="7_t1gp0"]
+[ext_resource type="Resource" uid="uid://c5nxcmyp6iyya" path="res://rooms/lcz/xroom.tres" id="8_dime4"]
+[ext_resource type="Resource" uid="uid://du1f63sfxueis" path="res://rooms/lcz/elevator.tres" id="9_jon3r"]
+[ext_resource type="Resource" uid="uid://ifbvphj16pw8" path="res://rooms/lcz/372.tres" id="10_ks8rt"]
+[ext_resource type="Resource" uid="uid://bkyc2f4c2idby" path="res://rooms/lcz/lockroom.tres" id="11_a1ik1"]
+[ext_resource type="Resource" uid="uid://cr1e7jd007oup" path="res://rooms/lcz/hall_fan.tres" id="12_fy4g5"]
+[ext_resource type="Resource" uid="uid://q14y5t22c1r7" path="res://rooms/lcz/endoff.tres" id="13_f0jmm"]
+[ext_resource type="Resource" uid="uid://b78rfnkp272ki" path="res://rooms/lcz/office_corner.tres" id="14_2g623"]
+[ext_resource type="Resource" uid="uid://dructotjdlnse" path="res://rooms/lcz/012.tres" id="15_w13u6"]
+[ext_resource type="Resource" uid="uid://du8me7adp3jyj" path="res://rooms/lcz/elevator2.tres" id="16_4onh8"]
+[ext_resource type="Resource" uid="uid://b3d0nlro1rsjx" path="res://rooms/lcz/pc_room.tres" id="17_1pnew"]
+[ext_resource type="Resource" uid="uid://c2ah4x77qhh7h" path="res://rooms/lcz/hall_two_doors.tres" id="18_onir3"]
+[ext_resource type="Resource" uid="uid://cmlod4vs1ausa" path="res://rooms/lcz/hall_camera_room.tres" id="19_un6cv"]
+
+[resource]
+script = ExtResource("5_n4lv0")
+Collection = Array[Resource]([ExtResource("1_ab8da"), ExtResource("2_pwq41"), ExtResource("3_kjw3b"), ExtResource("4_bm88b"), ExtResource("5_522gs"), ExtResource("6_6404g"), ExtResource("7_t1gp0"), ExtResource("8_dime4"), ExtResource("9_jon3r"), ExtResource("10_ks8rt"), ExtResource("11_a1ik1"), ExtResource("12_fy4g5"), ExtResource("13_f0jmm"), ExtResource("14_2g623"), ExtResource("15_w13u6"), ExtResource("16_4onh8"), ExtResource("17_1pnew"), ExtResource("18_onir3"), ExtResource("19_un6cv")])

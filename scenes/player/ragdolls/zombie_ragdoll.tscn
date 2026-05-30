@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://dcq2yi6dpgphq"]
+
+[ext_resource type="PackedScene" uid="uid://br7jn03b6ax51" path="res://scenes/player/ragdolls/bone_gib.tscn" id="2_0cq71"]
+[ext_resource type="Script" uid="uid://chheuh05475qb" path="res://scripts/map/RagdollMaker.cs" id="2_c4eae"]
+[ext_resource type="PackedScene" uid="uid://bob12oh0lob75" path="res://models/main/human/class_d/ClassDRig.fbx" id="2_cwddp"]
+[ext_resource type="Script" uid="uid://dtkrxwjitc3yx" path="res://scripts/map/Ragdoll.cs" id="2_rlq8a"]
+[ext_resource type="Material" uid="uid://dl2h5yqa22rfq" path="res://models/main/human/class_d/classd_arm.tres" id="3_46fce"]
+[ext_resource type="PackedScene" uid="uid://d16hyuqw2opru" path="res://scenes/player/ragdolls/blood_gib.tscn" id="3_xpm5p"]
+[ext_resource type="Material" uid="uid://das4ij3axo8lv" path="res://models/main/human/zombie/zombie_clothes.tres" id="4_cwddp"]
+[ext_resource type="Material" uid="uid://cfmsk4bpdb5ji" path="res://models/main/human/class_d/classd_hair.tres" id="5_xpm5p"]
+[ext_resource type="Material" uid="uid://dtkvdjy313dm5" path="res://models/main/human/class_d/classd_hair_cardlayer.tres" id="6_mytxu"]
+[ext_resource type="Material" uid="uid://cc2wbq8dkeyi6" path="res://models/main/human/zombie/zombie_body.tres" id="7_46fce"]
+[ext_resource type="Material" uid="uid://duk48ubvfw01o" path="res://models/main/human/zombie/zombie_eyes.tres" id="8_0cq71"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="23_vhwvu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vtir"]
+radius = 0.1
+height = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oef38"]
+radius = 0.1
+height = 0.5
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_17v6q"]
+properties/0/path = NodePath("Ragdoll:roleId")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath("Ragdoll:playerName")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("Ragdoll:TypeId")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0cq71"]
+height = 0.22058105
+radius = 0.28515625
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xpm5p"]
+height = 0.18493652
+radius = 0.26953125
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mytxu"]
+height = 0.24682617
+radius = 0.2006836
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mbpra"]
+radius = 0.075
+height = 0.2200374
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4qdoj"]
+radius = 0.075
+height = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i0w40"]
+radius = 0.075
+height = 0.22005178
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwcoa"]
+radius = 0.075
+height = 0.28716728
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wnmca"]
+radius = 0.075
+height = 0.4381922
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_53hfc"]
+radius = 0.075
+height = 0.45137605
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0cq71"]
+radius = 0.107910156
+height = 0.5031246
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ibv87"]
+radius = 0.075
+height = 0.43859303
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rjc53"]
+radius = 0.075
+height = 0.45058507
+
+[node name="Zombie_Ragdoll" type="RigidBody3D" unique_id=1428851401]
+collision_layer = 4
+collision_mask = 0
+freeze = true
+freeze_mode = 1
+
+[node name="Ragdoll" type="Node" parent="." unique_id=946570128 node_paths=PackedStringArray("skeleton", "boneSim")]
+script = ExtResource("2_rlq8a")
+skeleton = NodePath("../ClassDRig/GeneralSkeleton")
+boneSim = NodePath("../ClassDRig/GeneralSkeleton/RagdollMaker")
+AllowAnimationAdaptation = false
+boneScene = ExtResource("2_0cq71")
+bloodScene = ExtResource("3_xpm5p")
+layer = 256
+mask = 265
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1110971533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_3vtir")
+disabled = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1688385089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CapsuleShape3D_oef38")
+disabled = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1993581171]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_17v6q")
+
+[node name="ClassDRig" parent="." unique_id=1310217309 instance=ExtResource("2_cwddp")]
+transform = Transform3D(-1.375, 0, -1.20206e-07, 0, 1.375, 0, 1.20206e-07, 0, -1.375, 0, 0, 0)
+
+[node name="GeneralSkeleton" parent="ClassDRig" index="1" unique_id=1613725511]
+modifier_callback_mode_process = 0
+
+[node name="Arm" parent="ClassDRig/GeneralSkeleton" index="0" unique_id=1378113922]
+surface_material_override/0 = ExtResource("3_46fce")
+
+[node name="Clothes" parent="ClassDRig/GeneralSkeleton" index="1" unique_id=584013785]
+surface_material_override/0 = ExtResource("4_cwddp")
+
+[node name="Hair" parent="ClassDRig/GeneralSkeleton" index="2" unique_id=651773079]
+visible = false
+surface_material_override/0 = ExtResource("5_xpm5p")
+
+[node name="HairCardlayer" parent="ClassDRig/GeneralSkeleton" index="3" unique_id=1910224255]
+visible = false
+surface_material_override/0 = ExtResource("6_mytxu")
+
+[node name="Mesh" parent="ClassDRig/GeneralSkeleton" index="4" unique_id=1141285312]
+blend_shapes/18_E_L_Blink = 1.0
+blend_shapes/19_E_R_Blink = 1.0
+surface_material_override/0 = ExtResource("7_46fce")
+surface_material_override/2 = ExtResource("8_0cq71")
+
+[node name="RagdollMaker" type="PhysicalBoneSimulator3D" parent="ClassDRig/GeneralSkeleton" index="5" unique_id=903612448]
+script = ExtResource("2_c4eae")
+collisionSize = 0.075
+dampLinear = 0.75
+dampAngular = 0.75
+solverIterations = 50
+metadata/_custom_type_script = "uid://chheuh05475qb"
+
+[node name="Hips" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=1553261013]
+transform = Transform3D(0.7272727, 0.0003925083, 5.9319966e-05, 0, 0.10867896, -0.7191068, -0.0003969655, 0.7191067, 0.10867894, -8.014271e-06, 1.0907354, 0.0018849265)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2920345e-08, -4.004687e-08, 0.060407747)
+body_offset = Transform3D(0.7272727, 0.0003925083, 5.9319966e-05, 0, 0.10867896, -0.71910685, -0.0003969655, 0.7191067, 0.10867894, -3.6509482e-06, 0.043439627, -0.006565021)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "Hips"
+metadata/bone_idx = 0
+metadata/child_bone_idx = 1
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/Hips" unique_id=2102682999]
+transform = Transform3D(0.9999922, 9.895302e-10, -3.3760443e-09, 2.561137e-09, 7.003546e-07, 0.99999297, -1.549779e-09, -0.99999803, 7.599592e-07, -2.728484e-12, 4.4703484e-08, 0.013122559)
+shape = SubResource("CylinderShape3D_0cq71")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/Hips" unique_id=1401420850]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="Chest" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=2023389993]
+transform = Transform3D(0.72727275, -8.7538865e-12, -1.3224977e-12, 0, 0.1086811, -0.71910644, 8.8533625e-12, 0.71910644, 0.1086811, -1.1665219e-05, 1.2934526, -0.028752295)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1041908e-12, -1.5832484e-08, 0.08054339)
+body_offset = Transform3D(0.72727275, -8.7538865e-12, -1.3216095e-12, 0, 0.1086811, -0.71910644, 8.8533625e-12, 0.71910644, 0.1086811, 9.094947e-13, 0.057919264, -0.008753531)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "Chest"
+metadata/bone_idx = 2
+metadata/child_bone_idx = 3
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/Chest" unique_id=1794577549]
+transform = Transform3D(1, 2.6556535e-13, 0, 0, 0, 1, 0, -1, 0, -2.1827873e-11, 0.023254156, 0.064148664)
+shape = SubResource("CylinderShape3D_xpm5p")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/Chest" unique_id=949791241]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/Chest" unique_id=1027952448]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -9.313226e-10, 0.0585769)
+node_a = NodePath("../../Hips")
+node_b = NodePath("..")
+angular_limit/enable = true
+angular_limit/upper = 0.5235988
+angular_limit/lower = -0.5235988
+
+[node name="UpperChest" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=847514172]
+transform = Transform3D(0.72727275, -8.7538865e-12, -1.3233858e-12, 0, 0.108681075, -0.71910644, 8.8533625e-12, 0.71910644, 0.108681075, -1.166522e-05, 1.4165306, -0.04735354)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6477038e-13, -6.519258e-09, 0.09061117)
+body_offset = Transform3D(0.72727275, -8.746781e-12, -1.3224977e-12, 0, 0.10868108, -0.7191065, 8.8533625e-12, 0.7191065, 0.10868108, 0, 0.06515908, -0.0098477155)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "UpperChest"
+metadata/bone_idx = 3
+metadata/child_bone_idx = 4
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/UpperChest" unique_id=1964413377]
+transform = Transform3D(1, -4.973799e-14, 4.2632564e-14, 0, 6.109476e-07, 1.0000076, -8.881784e-15, -1.0000076, 6.109476e-07, -1.8189894e-12, 0.025391042, 0.009767771)
+shape = SubResource("CylinderShape3D_mytxu")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/UpperChest" unique_id=242639433]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/UpperChest" unique_id=2114515362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3552527e-20, 0, 0.06589903)
+node_a = NodePath("../../Chest")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+swing_span = 0.0
+twist_span = 0.17453292
+
+[node name="LeftUpperArm" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=224761624]
+transform = Transform3D(7.9128563e-07, 3.2452053e-07, -0.72727275, 0, -0.72727275, -3.2452053e-07, -0.72727275, 3.5308407e-13, -7.9128563e-07, 0.303475, 1.4206663, -0.054627378)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.800132e-09, -6.750159e-08, 0.1512757)
+body_offset = Transform3D(0.72727275, -3.5308407e-13, 7.9128563e-07, 7.9128563e-07, 3.2452053e-07, -0.72727275, 0, 0.72727275, 3.2452053e-07, -1.15484e-07, 0.110018685, 0)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "LeftUpperArm"
+metadata/bone_idx = 8
+metadata/child_bone_idx = 9
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftUpperArm" unique_id=893055370]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_mbpra")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftUpperArm" unique_id=381386273]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftUpperArm" unique_id=1483931609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1100187)
+node_a = NodePath("../../UpperChest")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+swing_span = 1.3089969
+twist_span = 0.34906584
+
+[node name="LeftLowerArm" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=10888810]
+transform = Transform3D(9.1283505e-07, -7.2632133e-07, -0.72727275, -0.72727275, -9.116408e-13, -9.1283505e-07, 0, 0.72727275, -7.2632133e-07, 0.55701, 1.4206667, -0.054627117)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4405378e-07, 2.4303546e-09, 0.19733492)
+body_offset = Transform3D(0.72727275, 9.116408e-13, 9.1283505e-07, 9.1283505e-07, -7.2632133e-07, -0.72727275, 0, 0.72727275, -7.2632133e-07, -3.5762787e-07, 0.1435163, 1.4156103e-07)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "LeftLowerArm"
+metadata/bone_idx = 9
+metadata/child_bone_idx = 10
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerArm" unique_id=979629564]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_4qdoj")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerArm" unique_id=710444359]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerArm" unique_id=1798551413]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0.1435163)
+node_a = NodePath("../../LeftUpperArm")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+angular_limit/upper = 2.0943952
+angular_limit/lower = 0.038397245
+
+[node name="RightUpperArm" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=1874216324]
+transform = Transform3D(-3.4674207e-07, -1.5491291e-07, 0.72727275, 0, -0.72727275, -1.5491291e-07, 0.72727275, -7.385788e-14, 3.4674207e-07, -0.3035057, 1.4206667, -0.059775013)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6517123e-08, -3.2224634e-08, 0.15128563)
+body_offset = Transform3D(0.72727275, -7.385787e-14, 3.4674207e-07, 3.4674207e-07, 1.5491291e-07, -0.72727275, 0, 0.72727275, 1.5491291e-07, -1.8626451e-08, 0.11002591, 0)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "RightUpperArm"
+metadata/bone_idx = 32
+metadata/child_bone_idx = 33
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightUpperArm" unique_id=1497596591]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_i0w40")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightUpperArm" unique_id=1084441040]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightUpperArm" unique_id=1419165825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11002589)
+node_a = NodePath("../../UpperChest")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+swing_span = 1.3089969
+twist_span = 0.34906584
+
+[node name="RightLowerArm" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=325474265]
+transform = Transform3D(6.826531e-07, -5.307049e-07, 0.72727275, 0.72727275, 4.9814504e-13, -6.826531e-07, 0, 0.72727275, 5.307049e-07, -0.5571152, 1.4206667, -0.059775196)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8531489e-07, -6.429275e-10, 0.19742748)
+body_offset = Transform3D(0.72727275, 4.9814504e-13, -6.826531e-07, -6.826531e-07, 5.307049e-07, -0.72727275, 0, 0.72727275, 5.307049e-07, 0, 0.14358363, -1.0430813e-07)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "RightLowerArm"
+metadata/bone_idx = 33
+metadata/child_bone_idx = 34
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerArm" unique_id=1580764837]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_gwcoa")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerArm" unique_id=121745904]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerArm" unique_id=1657559669]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0.14358364)
+node_a = NodePath("../../RightUpperArm")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+angular_limit/upper = 2.0943952
+angular_limit/lower = 0.038397245
+
+[node name="RightHand" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=580355205]
+transform = Transform3D(0.051162627, 0, 0.7254709, 0, 0.72727275, 0, -0.7254709, 0, 0.051162627, -0.7969724, 1.4301418, -0.057035703)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01307009, -0.013028115, 0.13178314)
+body_offset = Transform3D(-0.7254709, 0, 0.051162627, -0.051162627, 0, -0.7254709, 0, -0.72727275, 0, 0.002739597, 0.09627354, -0.009474993)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "RightHand"
+metadata/bone_idx = 33
+metadata/child_bone_idx = 34
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightHand" unique_id=1839701453]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_gwcoa")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightHand" unique_id=1378037227]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightHand" unique_id=2058473887]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0.14358364)
+node_a = NodePath("../../RightLowerArm")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+angular_limit/upper = 0.87266463
+angular_limit/lower = -0.87266463
+
+[node name="LeftHand" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=938925734]
+transform = Transform3D(0.050732, 0, -0.7255011, 0, 0.72727275, 0, 0.7255011, 0, 0.050732, 0.79700005, 1.43, -0.057)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059983376, -0.012833224, 0.1325559)
+body_offset = Transform3D(-0.7255011, 0, -0.050732, 0.050732, 0, -0.7255011, 0, -0.72727275, 0, 0.0023730248, 0.09647375, -0.009333253)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "LeftHand"
+metadata/bone_idx = 33
+metadata/child_bone_idx = 34
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftHand" unique_id=626582488]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_gwcoa")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftHand" unique_id=397573326]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftHand" unique_id=130270702]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0.14358364)
+node_a = NodePath("../../LeftLowerArm")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+angular_limit/upper = 0.87266463
+angular_limit/lower = -0.87266463
+
+[node name="LeftUpperLeg" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=573951828]
+transform = Transform3D(0.2602573, -0.6783414, -0.032323692, 0, -0.03461605, 0.7264485, -0.679111, -0.25996238, -0.012387483, 0.09842419, 0.7800991, 0.00065329927)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.656613e-10, 1.4400575e-07, 0.30125716)
+body_offset = Transform3D(-0.2602573, 0.67834145, 0.032323692, 0, 0.034616053, -0.72644854, -0.67911106, -0.25996238, -0.012387483, -0.009737842, 0.21884781, 0.003731856)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "LeftUpperLeg"
+metadata/bone_idx = 55
+metadata/child_bone_idx = 56
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftUpperLeg" unique_id=1309947984]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_wnmca")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftUpperLeg" unique_id=2088719948]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftUpperLeg" unique_id=2052980661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0477379e-09, 0.21909612)
+node_a = NodePath("../../Hips")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+swing_span = 1.3089969
+twist_span = 0.17453292
+
+[node name="LeftLowerLeg" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=968197347]
+transform = Transform3D(-0.6224633, 0.37481412, 0.03129805, 0, -0.060518738, 0.7247504, 0.37611857, 0.62030447, 0.0517972, 0.098449565, 0.33634615, -0.011688599)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 3.7252903e-09, 0.31032097)
+body_offset = Transform3D(-0.6224633, 0.37481406, 0.031298056, 0, 0.060518738, -0.7247504, -0.37611857, -0.62030447, -0.051797196, -0.00971245, 0.22490525, 0.016073756)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "LeftLowerLeg"
+metadata/bone_idx = 56
+metadata/child_bone_idx = 57
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerLeg" unique_id=819701698]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_53hfc")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerLeg" unique_id=901916031]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerLeg" unique_id=755309272]
+transform = Transform3D(-4.371139e-08, 0.5, 0.8660254, 0, 0.8660254, -0.5, -1, -2.1855694e-08, -3.7855173e-08, 0, 1.8626451e-09, 0.22568807)
+node_a = NodePath("../../LeftUpperLeg")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+angular_limit/upper = 2.7454028
+angular_limit/lower = 0.16580628
+
+[node name="Shape3" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/LeftLowerLeg" unique_id=1391827295]
+transform = Transform3D(0.8181482, 0.55436635, 0.15266652, -0.57500625, 0.7885262, 0.21814252, 0.0005493161, -0.26625657, 0.9638985, 0.034243077, 0.11021078, -0.3730193)
+shape = SubResource("CapsuleShape3D_0cq71")
+
+[node name="RightUpperLeg" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=715626689]
+transform = Transform3D(-0.115834884, 0.71726215, 0.032294203, 0, -0.032711778, 0.7265367, 0.71798885, 0.11571765, 0.0052101016, -0.09842462, 0.7798574, 0.0013242954)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3283064e-10, 1.1641532e-09, 0.3015327)
+body_offset = Transform3D(0.115834884, -0.71726215, -0.032294203, 0, 0.032711778, -0.72653675, 0.71798885, 0.11571765, 0.005210102, 0.00973776, 0.2190746, -0.0015710163)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "RightUpperLeg"
+metadata/bone_idx = 60
+metadata/child_bone_idx = 61
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightUpperLeg" unique_id=1185914703]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ibv87")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightUpperLeg" unique_id=853671261]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightUpperLeg" unique_id=609534132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1641532e-10, -7.566996e-10, 0.2192965)
+node_a = NodePath("../../Hips")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+swing_span = 1.3089969
+twist_span = 0.17453292
+
+[node name="RightLowerLeg" type="PhysicalBone3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker" unique_id=465819778]
+transform = Transform3D(-0.59413755, -0.41826206, -0.03135338, 0, -0.05436463, 0.725238, -0.41943556, 0.5924753, 0.044412598, -0.09844982, 0.3361206, -0.022727285)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006916954, 0.009770549, 0.31050956)
+body_offset = Transform3D(-0.59413755, -0.41826206, -0.031353384, 0, 0.05436463, -0.725238, 0.41943556, -0.5924753, -0.044412598, 0.0097125545, 0.22466218, 0.022480564)
+linear_damp = 0.75
+angular_damp = 0.75
+bone_name = "RightLowerLeg"
+metadata/bone_idx = 61
+metadata/child_bone_idx = 62
+
+[node name="Shape" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerLeg" unique_id=82394575]
+transform = Transform3D(0.99999964, -1.6018748e-07, 2.9802322e-08, -2.9802322e-08, -7.0780516e-08, 1, 6.7055225e-08, -0.99999547, 3.7252903e-09, -5.5134296e-07, 7.785857e-07, 5.9604645e-08)
+shape = SubResource("CapsuleShape3D_rjc53")
+
+[node name="Shape2" type="CollisionShape3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerLeg" unique_id=583952531]
+transform = Transform3D(0.81850046, -0.55368775, -0.15323924, 0.57450515, 0.78884256, 0.21832114, 4.369067e-07, -0.26673117, 0.96376705, -0.034, 0.11, -0.373)
+shape = SubResource("CapsuleShape3D_0cq71")
+
+[node name="Sync" type="Node" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerLeg" unique_id=1024232362]
+script = ExtResource("23_vhwvu")
+targetNode = NodePath("..")
+
+[node name="ConeTwistJoint3D" type="HingeJoint3D" parent="ClassDRig/GeneralSkeleton/RagdollMaker/RightLowerLeg" unique_id=1754529335]
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, -9.313226e-10, 0, 0.22529253)
+node_a = NodePath("../../RightUpperLeg")
+node_b = NodePath("..")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+angular_limit/upper = 2.7454028
+angular_limit/lower = 0.16580628
+
+[node name="AnimationPlayer" parent="ClassDRig" index="2" unique_id=259085891]
+active = false
+deterministic = true
+
+[editable path="ClassDRig"]

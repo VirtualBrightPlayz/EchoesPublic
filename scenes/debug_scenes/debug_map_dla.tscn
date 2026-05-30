@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8832c8xnhfit"]
+
+[ext_resource type="Script" uid="uid://c8sv1ac6xoti" path="res://scripts/layout_generator/DLAMapGenerator.cs" id="1_v57ty"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("rect")]
+script = ExtResource("1_v57ty")
+startSize = Vector2i(4, 4)
+iterations = 2
+pixelCount = 8
+rect = NodePath("../TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1

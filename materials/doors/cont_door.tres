@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://f1jxb2uglylc"]
+
+[ext_resource type="Texture2D" uid="uid://cegrfo2er6dpa" path="res://models/main/cont_door/Textures/ContainmentDoor_BaseColor.png" id="1_tqa61"]
+[ext_resource type="Texture2D" uid="uid://n24sp682071u" path="res://models/main/cont_door/Textures/ContainmentDoor_Metallic.png" id="2_4xgod"]
+[ext_resource type="Texture2D" uid="uid://di2echqwfv530" path="res://models/main/cont_door/Textures/ContainmentDoor_Normal.png" id="3_yvin2"]
+[ext_resource type="Texture2D" uid="uid://duvxwtsxqgkic" path="res://models/main/cont_door/Textures/ContainmentDoor_Roughness.png" id="4_6jepy"]
+
+[resource]
+albedo_texture = ExtResource("1_tqa61")
+metallic = 0.5
+metallic_texture = ExtResource("2_4xgod")
+roughness_texture = ExtResource("4_6jepy")
+normal_enabled = true
+normal_texture = ExtResource("3_yvin2")

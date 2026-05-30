@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cxypigto8y04n"]
+
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="1_vrpqe"]
+[ext_resource type="Texture2D" uid="uid://fgwk30n0ostu" path="res://textures/custom/roach.png" id="2_oeslj"]
+[ext_resource type="ArrayMesh" uid="uid://c81yklfaocmpq" path="res://models/scpcb/items/cup.obj" id="2_tyq0e"]
+[ext_resource type="Shader" uid="uid://bncyw7rt03c01" path="res://shaders/liquid.gdshader" id="3_oeslj"]
+[ext_resource type="Texture2D" uid="uid://dxw1ilyfclruq" path="res://models/main/items/cola/BubblesNoise.tres" id="4_l1igu"]
+[ext_resource type="Texture2D" uid="uid://djybrvnnpa310" path="res://models/main/items/cola/WaveNoise.tres" id="5_4s6bw"]
+[ext_resource type="ArrayMesh" uid="uid://mvmnj2dnd70l" path="res://models/scpcb/items/cupliquid2.obj" id="6_y8pjs"]
+[ext_resource type="Script" uid="uid://p4jmidqu6du" path="res://scripts/shaders/liquid_sim.gd" id="7_mj8bk"]
+[ext_resource type="Script" uid="uid://b3jrtkmear2gs" path="res://scripts/map/PlayerHitbox.cs" id="9_l1igu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nfd4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_oeslj")
+shader_parameter/liquid_color = Color(0.5986, 0.82, 0.82, 0.568627)
+shader_parameter/foam_color = Color(0.5986, 0.82, 0.82, 0.568627)
+shader_parameter/foam_line = 0.2
+shader_parameter/fill_amount = 1.0
+shader_parameter/size = Vector2(1, 1)
+shader_parameter/glass_thickness = 0.05
+shader_parameter/scale = 1.0
+shader_parameter/wave_intensity = 0.05
+shader_parameter/waves_noise = ExtResource("5_4s6bw")
+shader_parameter/HasBubbles = true
+shader_parameter/AlwaysBubbles = false
+shader_parameter/BubbleStrength = 0.5
+shader_parameter/BubbleMask = 0.5
+shader_parameter/BubbleSpeed = Vector2(3, 3)
+shader_parameter/bubbles_tex = ExtResource("4_l1igu")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oeslj"]
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1igu"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_oeslj")
+texture_filter = 5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oeslj"]
+radius = 0.1
+
+[node name="PlayerModel" type="Node3D" unique_id=1344366656 node_paths=PackedStringArray("disableLocal")]
+script = ExtResource("1_vrpqe")
+disableLocal = [NodePath("Root")]
+metadata/_custom_type_script = "uid://xq2fvvleypij"
+
+[node name="Root" type="Node3D" parent="." unique_id=86159015]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Root" unique_id=1731868365]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = ExtResource("2_tyq0e")
+
+[node name="Liquid" type="MeshInstance3D" parent="Root" unique_id=1650165060]
+unique_name_in_owner = true
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0.105, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_5nfd4")
+gi_mode = 2
+instance_shader_parameters/coeff = Vector2(0, 0)
+instance_shader_parameters/vel = 0.0
+instance_shader_parameters/world_scale = Vector3(0.075, 0.075, 0.075)
+mesh = ExtResource("6_y8pjs")
+script = ExtResource("7_mj8bk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Root" unique_id=750310611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+gi_mode = 2
+mesh = SubResource("PlaneMesh_oeslj")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1igu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root" unique_id=1619183189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root/StaticBody3D" unique_id=301254868]
+shape = SubResource("SphereShape3D_oeslj")
+
+[node name="PlayerHitbox" type="Node" parent="Root/StaticBody3D" unique_id=2121348048]
+script = ExtResource("9_l1igu")
+HealthNode = NodePath("../../..")
+metadata/_custom_type_script = "uid://b3jrtkmear2gs"

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bqtkyc8mymoeg"]
+
+[ext_resource type="Texture2D" uid="uid://dpe011c2hg2vc" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/TeslaGate_T.png" id="1_8orva"]
+[ext_resource type="Texture2D" uid="uid://cc1v22nnpjald" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/TeslaGate_N.png" id="2_uw1ds"]
+[ext_resource type="Texture2D" uid="uid://cx8cwrqsgebvn" path="res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Textures/TeslaGate_ORM.png" id="3_vsfr1"]
+
+[resource]
+albedo_texture = ExtResource("1_8orva")
+orm_texture = ExtResource("3_vsfr1")
+normal_enabled = true
+normal_texture = ExtResource("2_uw1ds")

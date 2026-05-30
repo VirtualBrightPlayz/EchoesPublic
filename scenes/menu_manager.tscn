@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://de1pjb10qrdc0"]
+
+[ext_resource type="Script" uid="uid://l2manjfet16m" path="res://scripts/MenuManager.cs" id="1_qmmce"]
+[ext_resource type="AudioStream" uid="uid://o0pwvx4c244c" path="res://audio/music/Menu_Loop.wav" id="2_y2gk4"]
+[ext_resource type="AudioStream" uid="uid://dssn1ucjpf2fd" path="res://audio/music/Menu_Intense_Loop.wav" id="3_qokhb"]
+[ext_resource type="AudioStream" uid="uid://dccfhli3nfdu5" path="res://audio/music/Old_Main_Menu_Theme.mp3" id="3_tys5x"]
+[ext_resource type="Script" uid="uid://c0ducr2fqd7b4" path="res://scripts/DebugText.cs" id="4_cu570"]
+[ext_resource type="AudioStream" uid="uid://s228w2upsiax" path="res://audio/music/Menu_Intense_Start.wav" id="4_vbt25"]
+[ext_resource type="AudioStream" uid="uid://d1khl08ntyyre" path="res://audio/music/Menu_Intense_End.wav" id="5_teycu"]
+[ext_resource type="AudioStream" uid="uid://3ddvnydasmb7" path="res://audio/music/echoesstandard.ogg" id="6_cxjd5"]
+[ext_resource type="PackedScene" uid="uid://ddpqdibe44j50" path="res://scenes/preloader.tscn" id="7_780jp"]
+[ext_resource type="Script" uid="uid://c20opnilxg01p" path="res://scripts/ui/GameConsole.cs" id="7_ni6wv"]
+[ext_resource type="FontFile" uid="uid://p4ojwy3bi4wm" path="res://fonts/Anton/Anton-Regular.ttf" id="8_4x8i1"]
+[ext_resource type="PackedScene" uid="uid://l5sgci8pnpdq" path="res://scenes/layout_editor.tscn" id="8_83kr6"]
+[ext_resource type="PackedScene" uid="uid://c5fr170uihxxf" path="res://scenes/main_menu.tscn" id="8_cxjd5"]
+[ext_resource type="Script" uid="uid://7x05ib0b4lt2" path="res://scripts/DiscordManager.cs" id="8_j0yx8"]
+[ext_resource type="Script" uid="uid://b6ryphdm06y0l" path="res://scripts/AsyncTools.cs" id="9_clbg3"]
+[ext_resource type="Resource" uid="uid://baqq8fncjdx8r" path="res://game_data.tres" id="9_cxjd5"]
+[ext_resource type="PackedScene" uid="uid://jkm6epr1q1en" path="res://scenes/ui/workshop_update.tscn" id="10_8hg6u"]
+[ext_resource type="FontFile" uid="uid://dvuy7pu0l74rh" path="res://fonts/SourceCodePro/static/SourceCodePro-Regular.ttf" id="11_53d4r"]
+[ext_resource type="Script" uid="uid://b0davirgedn7v" path="res://scripts/SteamManager.cs" id="12_c3k3b"]
+[ext_resource type="FontFile" uid="uid://cmn4ddgcy5xli" path="res://fonts/SourceCodePro/static/SourceCodePro-Italic.ttf" id="12_idbm0"]
+[ext_resource type="FontFile" uid="uid://dkkdqvkvg2o6a" path="res://fonts/SourceCodePro/static/SourceCodePro-Bold.ttf" id="13_g4apc"]
+[ext_resource type="Script" uid="uid://inh4uq2ttyve" path="res://scripts/StatusRpcManager.cs" id="13_kpvu1"]
+[ext_resource type="FontFile" uid="uid://bejstmpti2dik" path="res://fonts/SourceCodePro/static/SourceCodePro-BoldItalic.ttf" id="14_j7gc6"]
+[ext_resource type="Script" uid="uid://bh5r4psso6rwy" path="res://scripts/ui/MainMenuMsgOverlay.cs" id="14_rx52j"]
+[ext_resource type="Script" uid="uid://bk8162k3n8shb" path="res://scripts/ui/glitch_effect.gd" id="14_vq68t"]
+[ext_resource type="Script" uid="uid://mlhrwa4acn1y" path="res://scripts/ui/GameConsoleInput.cs" id="15_2dskd"]
+[ext_resource type="PackedScene" uid="uid://bmuwwwstsjfkb" path="res://scenes/basic_singletons.tscn" id="22_cxjd5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ydy4d"]
+viewport_path = NodePath("MainViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5nfi"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raq5o"]
+bg_color = Color(0, 0, 0, 0.501961)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_7tt2v"]
+script = ExtResource("14_vq68t")
+
+[sub_resource type="Environment" id="Environment_83kr6"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o12jx"]
+
+[node name="MenuManager" type="Node3D" unique_id=437936920 node_paths=PackedStringArray("mapSpawner", "errorTextLabel", "errorTextPanel", "textPanel", "menuMusicPlayer", "musicCuePlayer", "environment", "statusManager", "mainViewport", "mainWorld", "mainViewTexture")]
+script = ExtResource("1_qmmce")
+mapPaths = PackedStringArray("res://scenes/facility_mapgen.tscn", "res://scenes/maps/forest/forest.tscn")
+mapSpawner = NodePath("MainViewport/Main/WorldSync")
+errorTextLabel = NodePath("Panel/Control/ErrorText")
+errorTextPanel = NodePath("Panel")
+textPanel = NodePath("TextPanel")
+menuMusicPlayer = NodePath("MenuMusic")
+musicCuePlayer = NodePath("MenuMusicCue")
+menuMusicPlayerVolumeDb = -8.0
+musicNormal = ExtResource("2_y2gk4")
+musicIntense = ExtResource("3_qokhb")
+musicIntenseStart = ExtResource("4_vbt25")
+musicIntenseEnd = ExtResource("5_teycu")
+oldMenuMusic = ExtResource("6_cxjd5")
+loadingScene = ExtResource("7_780jp")
+menuScene = ExtResource("8_cxjd5")
+environment = NodePath("MainViewport/Main/WorldEnvironment")
+statusManager = NodePath("StatusRpcManager")
+mainViewport = NodePath("MainViewport")
+mainWorld = NodePath("MainViewport/Main")
+mainViewTexture = NodePath("MainView")
+viewTransition = 1
+viewEase = 2
+Data = ExtResource("9_cxjd5")
+layoutEditor = ExtResource("8_83kr6")
+workshopEditor = ExtResource("10_8hg6u")
+metadata/_edit_lock_ = true
+
+[node name="MainView" type="TextureRect" parent="." unique_id=80135256]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_ydy4d")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="AsyncTools" type="Node" parent="." unique_id=677783286]
+script = ExtResource("9_clbg3")
+
+[node name="GameConsole" type="Node" parent="." unique_id=147630605 node_paths=PackedStringArray("consoleRoot")]
+script = ExtResource("7_ni6wv")
+consoleRoot = NodePath("../MarginContainer")
+
+[node name="StatusRpcManager" type="Node" parent="." unique_id=463750660 node_paths=PackedStringArray("discord", "steam")]
+script = ExtResource("13_kpvu1")
+discord = NodePath("../DiscordManager")
+steam = NodePath("../SteamManager")
+metadata/_custom_type_script = "uid://inh4uq2ttyve"
+
+[node name="SteamManager" type="Node" parent="." unique_id=1196581215]
+script = ExtResource("12_c3k3b")
+AppId = "3630170"
+AppIdPlaytest = "3658720"
+metadata/_custom_type_script = "uid://b0davirgedn7v"
+
+[node name="DiscordManager" type="Node" parent="." unique_id=1659273482]
+script = ExtResource("8_j0yx8")
+
+[node name="Panel" type="Panel" parent="." unique_id=164400713]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o5nfi")
+
+[node name="Control" type="Control" parent="Panel" unique_id=697757928]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ErrorText" type="Label" parent="Panel/Control" unique_id=406542695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_4x8i1")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPanel" type="PanelContainer" parent="." unique_id=433267342]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_raq5o")
+
+[node name="Center" type="CenterContainer" parent="TextPanel" unique_id=1686334172]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="TextPanel/Center" unique_id=2014372776 node_paths=PackedStringArray("root")]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("8_4x8i1")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+custom_effects = [SubResource("RichTextEffect_7tt2v")]
+script = ExtResource("14_rx52j")
+root = NodePath("../..")
+placeholderText = "[center][font_size=20]{0}[/font_size][/center]
+
+[center][font_size=16]MAIN_MENU_ESC[/font_size][/center]"
+
+[node name="Label" type="Label" parent="." unique_id=277700404]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
+script = ExtResource("4_cu570")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1716137936]
+stream = ExtResource("3_tys5x")
+volume_db = -6.0
+bus = &"Menu"
+
+[node name="MenuMusicCue" type="AudioStreamPlayer" parent="." unique_id=156153972]
+volume_db = -6.0
+bus = &"Menu"
+
+[node name="MainViewport" type="SubViewport" parent="." unique_id=2102261771]
+own_world_3d = true
+handle_input_locally = false
+use_debanding = true
+use_occlusion_culling = true
+use_hdr_2d = true
+gui_embed_subwindows = true
+render_target_update_mode = 4
+
+[node name="Main" type="Node" parent="MainViewport" unique_id=204580752]
+
+[node name="World" type="Node3D" parent="MainViewport/Main" unique_id=1690069701]
+
+[node name="WorldSync" type="MultiplayerSpawner" parent="MainViewport/Main" unique_id=1620003169]
+_spawnable_scenes = PackedStringArray("uid://brc8yik71a7po", "uid://b0t348801m3qd")
+spawn_path = NodePath("../World")
+spawn_limit = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MainViewport/Main" unique_id=1423836368]
+environment = SubResource("Environment_83kr6")
+camera_attributes = SubResource("CameraAttributesPractical_o12jx")
+
+[node name="BasicSingletons" parent="MainViewport/Main" unique_id=340883406 instance=ExtResource("22_cxjd5")]
+
+[node name="NetworkManager" parent="MainViewport/Main/BasicSingletons/Singletons" parent_id_path=PackedInt32Array(340883406, 1956252552) index="1" unique_id=908792404]
+httpHostAddress = "https://scpechoes.com"
+wsHostAddress = "wss://scpechoes.com"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1637326435]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1468945115]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=860980124]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1745484986]
+layout_mode = 2
+text = "Game Console (Use \"~\" or \"`\" to close this window)"
+
+[node name="Output" type="RichTextLabel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=542655969]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_fonts/normal_font = ExtResource("11_53d4r")
+theme_override_fonts/bold_font = ExtResource("13_g4apc")
+theme_override_fonts/bold_italics_font = ExtResource("14_j7gc6")
+theme_override_fonts/italics_font = ExtResource("12_idbm0")
+theme_override_fonts/mono_font = ExtResource("11_53d4r")
+bbcode_enabled = true
+scroll_following = true
+shortcut_keys_enabled = false
+selection_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=71648344]
+layout_mode = 2
+
+[node name="Input" type="LineEdit" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=97308557]
+layout_mode = 2
+size_flags_horizontal = 3
+keep_editing_on_text_submit = true
+script = ExtResource("15_2dskd")
+
+[node name="Clear" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=256779767]
+layout_mode = 2
+text = "Clear Logs"
+
+[node name="Full" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1848892091]
+layout_mode = 2
+text = "Toggle Fullscreen"
+
+[connection signal="OnCommandRun" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Input" method="clear"]
+[connection signal="OnCommandRun" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Input" method="grab_focus"]
+[connection signal="OnConsoleClosed" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Input" method="release_focus"]
+[connection signal="OnConsoleOpened" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Input" method="grab_focus"]
+[connection signal="OnLogCleared" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/Output" method="clear"]
+[connection signal="OnLogCleared" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Input" method="ClearHistory"]
+[connection signal="OnLogSetText" from="GameConsole" to="MarginContainer/PanelContainer/VBoxContainer/Output" method="set_text"]
+[connection signal="text_submitted" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Input" to="GameConsole" method="OnCommand"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Clear" to="GameConsole" method="ClearLogs"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Full" to="GameConsole" method="ToggleFullscreen"]
+
+[editable path="MainViewport/Main/BasicSingletons"]

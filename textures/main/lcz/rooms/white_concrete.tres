@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cn88umshmick4"]
+
+[ext_resource type="Texture2D" uid="uid://dgi0altap87ub" path="res://textures/main/lcz/rooms/white_concrete/WhiteConcrete_BaseColor.png" id="1_xfc3n"]
+[ext_resource type="Texture2D" uid="uid://drhwn1xfiwp28" path="res://textures/main/lcz/rooms/white_concrete/WhiteConcrete_Metallic-WhiteConcrete_Roughness.png" id="2_psl0l"]
+[ext_resource type="Texture2D" uid="uid://bbf7t2j4mct1u" path="res://textures/main/lcz/rooms/white_concrete/WhiteConcrete_Normal.png" id="3_qrifu"]
+
+[resource]
+albedo_texture = ExtResource("1_xfc3n")
+metallic = 1.0
+metallic_texture = ExtResource("2_psl0l")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_psl0l")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_qrifu")

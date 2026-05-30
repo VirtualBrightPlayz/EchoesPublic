@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://7udq752g408t"]
+
+[ext_resource type="Script" uid="uid://bh760b06egpey" path="res://scripts/items/WorldItem.cs" id="1_lcxu7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aue5s"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_64t37"]
+properties/0/path = NodePath(".:ItemSerial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:ItemPosition")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:ItemRotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iys3a"]
+albedo_color = Color(0.847059, 0.533333, 0.294118, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0sl2u"]
+material = SubResource("StandardMaterial3D_iys3a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4j87"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ddpfr"]
+material = SubResource("StandardMaterial3D_x4j87")
+
+[node name="scp500" type="RigidBody3D" unique_id=421302910 node_paths=PackedStringArray("marker") groups=["snow_body"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_lcxu7")
+marker = NodePath("Marker3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1736426629]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("CylinderShape3D_aue5s")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=588347265]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_64t37")
+
+[node name="Can" type="MeshInstance3D" parent="." unique_id=591248228]
+transform = Transform3D(0.2, 0, 0, 0, 0.16, 0, 0, 0, 0.2, 0, -0.04, 0)
+mesh = SubResource("CylinderMesh_0sl2u")
+
+[node name="Cap" type="MeshInstance3D" parent="." unique_id=1434024321]
+transform = Transform3D(0.2, 0, 0, 0, 0.04, 0, 0, 0, 0.2, 0, 0.158, 0)
+mesh = SubResource("CylinderMesh_ddpfr")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1831489751]

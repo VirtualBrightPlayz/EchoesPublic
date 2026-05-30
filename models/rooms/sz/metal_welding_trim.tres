@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://waql3nge3js0"]
+
+[ext_resource type="Texture2D" uid="uid://dv6r84nse5s1c" path="res://models/rooms/sz/MetalWelding_Trimsheet_Dark_BaseColor.png" id="1_lq8fd"]
+[ext_resource type="Texture2D" uid="uid://cb176dpjw7i8o" path="res://models/rooms/sz/MetalWelding_Trimsheet_Dark_Metallic.png" id="2_rv7ia"]
+[ext_resource type="Texture2D" uid="uid://bdnpdlmp1l6nk" path="res://models/rooms/sz/MetalWelding_Trimsheet_Dark_Normal.png" id="3_kh3gh"]
+[ext_resource type="Texture2D" uid="uid://bokyxrm21j6kq" path="res://models/rooms/sz/MetalWelding_Trimsheet_Dark_Roughness.png" id="4_odavy"]
+
+[resource]
+albedo_texture = ExtResource("1_lq8fd")
+metallic = 1.0
+metallic_texture = ExtResource("2_rv7ia")
+roughness_texture = ExtResource("4_odavy")
+normal_enabled = true
+normal_texture = ExtResource("3_kh3gh")

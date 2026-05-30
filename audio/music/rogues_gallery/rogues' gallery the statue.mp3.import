@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7ou3wqfr3g7o"
+path="res://.godot/imported/rogues' gallery the statue.mp3-6f66233dd8e9c9bf2eaf450ba404cb2d.mp3str"
+
+[deps]
+
+source_file="res://audio/music/rogues_gallery/rogues' gallery the statue.mp3"
+dest_files=["res://.godot/imported/rogues' gallery the statue.mp3-6f66233dd8e9c9bf2eaf450ba404cb2d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

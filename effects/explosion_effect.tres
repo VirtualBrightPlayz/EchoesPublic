@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameEffect" format=3 uid="uid://c16v4o8w0xooh"]
+
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="1_87cp5"]
+[ext_resource type="PackedScene" uid="uid://cfm44g56gudrv" path="res://scenes/misc/explosion.tscn" id="1_d3hmy"]
+
+[resource]
+resource_name = "Explosion"
+script = ExtResource("1_87cp5")
+DisplayName = "Explosion"
+scene = ExtResource("1_d3hmy")
+Lifetime = 15.0

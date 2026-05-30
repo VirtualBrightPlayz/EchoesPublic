@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djvuwg1u7pydj"]
+
+[ext_resource type="PackedScene" uid="uid://bojl0d45d8ows" path="res://scenes/rooms/props/static/lights/lights.fbx" id="1_6xsfh"]
+
+[node name="lights" unique_id=1063179154 instance=ExtResource("1_6xsfh")]
+
+[node name="Bulb" parent="lights/Socket" parent_id_path=PackedInt32Array(1346987592) index="0" unique_id=1942220086]
+visible = false

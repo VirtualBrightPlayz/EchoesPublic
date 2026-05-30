@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEffect" format=3 uid="uid://c6gxou3lgp2gp"]
+
+[ext_resource type="PackedScene" uid="uid://bwyl6cexx273k" path="res://effects/scenes/bullet_hole_laser.tscn" id="1_ocd0m"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_w2bey"]
+
+[resource]
+script = ExtResource("2_w2bey")
+DisplayName = "Bullet Hole Laser"
+scene = ExtResource("1_ocd0m")
+Lifetime = 10.0

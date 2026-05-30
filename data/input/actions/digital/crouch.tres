@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" load_steps=2 format=3 uid="uid://dodfk1oja24cj"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_jyf6q"]
+
+[resource]
+resource_name = "Crouch"
+script = ExtResource("1_jyf6q")
+GodotAction = &"player_sneak"
+LocaleKey = "Action_Crouch"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

@@ -1,0 +1,31 @@
+[gd_resource type="ORMMaterial3D" load_steps=6 format=3 uid="uid://do0o6f0g5oq73"]
+
+[ext_resource type="Texture2D" uid="uid://duq80ifcogxud" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Lab Door/Textures/PS-01 Door_T.png" id="1_4h168"]
+[ext_resource type="Texture2D" uid="uid://76ykoqtmon61" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Lab Door/Textures/PS-01 Door_N.png" id="2_1tk4r"]
+[ext_resource type="Texture2D" uid="uid://bjcgywwugpgew" path="res://textures/scpcb/gravel.jpg" id="2_4nuy2"]
+[ext_resource type="Texture2D" uid="uid://t17qjt8lp3as" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Lab Door/Textures/PS-01 Door_ORM.png" id="3_4nuy2"]
+[ext_resource type="Texture2D" uid="uid://8hkks1cowjhk" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Lab Door/Textures/PS-01 Door_H.png" id="3_w03w5"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_4h168")
+orm_texture = ExtResource("3_4nuy2")
+normal_enabled = true
+normal_texture = ExtResource("2_1tk4r")
+anisotropy_enabled = true
+anisotropy = 1.0
+anisotropy_flowmap = ExtResource("2_4nuy2")
+ao_enabled = true
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_w03w5")
+backlight_enabled = true
+refraction_enabled = true
+refraction_scale = 0.0
+refraction_texture = ExtResource("3_w03w5")
+refraction_texture_channel = 4
+texture_filter = 4
+grow_amount = 8.727
+proximity_fade_distance = 2.0
+distance_fade_min_distance = 10.0
+distance_fade_max_distance = 5.0

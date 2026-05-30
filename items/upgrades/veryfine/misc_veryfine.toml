@@ -1,0 +1,11 @@
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'Medkit'
+output_item = 'SCP-1930'
+fail_chance = 0.8
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'Flashlight'
+output_item = 'SCP-207'
+fail_chance = 0.5

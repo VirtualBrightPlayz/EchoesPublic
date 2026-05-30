@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://bnxx0mkdcchvw"]
+
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="1_tctf6"]
+[ext_resource type="PackedScene" uid="uid://b2ey7qrtj1aay" path="res://scenes/player/controllers_old/player_controller_049.tscn" id="1_ub3bx"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="2_wpfr8"]
+
+[resource]
+resource_name = "SCP049"
+script = ExtResource("1_tctf6")
+RoleColor = Color(1, 0, 0, 1)
+MaxHealth = 2500.0
+DisplayName = "ROLE_NAME_SCP_049"
+Objective = "ROLE_OBJ_SCP_049"
+HintText = "ROLE_HINT_SCP_049"
+HintTime = 5.0
+team = 2
+canUseIntercom = false
+globalTeamChat = true
+mainChatChannel = 1
+listeningChatChannels = PackedInt32Array(0, 1)
+SpawnAudio = ExtResource("2_wpfr8")
+ControllerScene = ExtResource("1_ub3bx")
+SprintStaminaDecreaseRate = 0.3
+SprintStaminaIncreaseRate = 0.3

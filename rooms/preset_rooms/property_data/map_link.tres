@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RoomPropertyData" load_steps=2 format=3 uid="uid://doioxvyh11s28"]
+
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="1_1n0th"]
+
+[resource]
+script = ExtResource("1_1n0th")
+key = "map_link"
+metadata/_custom_type_script = "uid://cyg0oq1tdxtk5"

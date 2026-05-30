@@ -1,0 +1,50 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dgs2rh2f5bga4"
+path="res://.godot/imported/hcz_door_left.glb-03842846fa19fcf0f2c38bab81fabb8f.scn"
+
+[deps]
+
+source_file="res://models/main/hcz_door/hcz_door_left.glb"
+dest_files=["res://.godot/imported/hcz_door_left.glb-03842846fa19fcf0f2c38bab81fabb8f.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"door": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/map/hcz_door.tres",
+"use_external/path": "uid://dn6ilvflbpnvn"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

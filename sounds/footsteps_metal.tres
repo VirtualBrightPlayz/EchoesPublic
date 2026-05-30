@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="GameSound" load_steps=10 format=3 uid="uid://ceicq12236c3j"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_4lcyv"]
+[ext_resource type="AudioStream" uid="uid://b6e5fqbm1t3eg" path="res://audio/scpcb/steps/Step1.ogg" id="2_p7csn"]
+[ext_resource type="AudioStream" uid="uid://x0aov3mh847b" path="res://audio/scpcb/steps/Step2.ogg" id="3_pie47"]
+[ext_resource type="AudioStream" uid="uid://cmsghuenvneib" path="res://audio/scpcb/steps/Step3.ogg" id="4_7loda"]
+[ext_resource type="AudioStream" uid="uid://i0bw88f4768h" path="res://audio/scpcb/steps/Step4.ogg" id="5_hf068"]
+[ext_resource type="AudioStream" uid="uid://fwl1ocaehmno" path="res://audio/scpcb/steps/Step5.ogg" id="6_igh0k"]
+[ext_resource type="AudioStream" uid="uid://dvaqma7sr7ak" path="res://audio/scpcb/steps/Step6.ogg" id="7_5kplw"]
+[ext_resource type="AudioStream" uid="uid://bv2cnudsdfnpa" path="res://audio/scpcb/steps/Step7.ogg" id="8_ff336"]
+[ext_resource type="AudioStream" uid="uid://d1hmhxxwe3sl5" path="res://audio/scpcb/steps/Step8.ogg" id="9_rscpu"]
+
+[resource]
+script = ExtResource("1_4lcyv")
+DisplayName = "Footsteps Metal"
+streams = [ExtResource("2_p7csn"), ExtResource("3_pie47"), ExtResource("4_7loda"), ExtResource("5_hf068"), ExtResource("6_igh0k"), ExtResource("7_5kplw"), ExtResource("8_ff336"), ExtResource("9_rscpu")]
+volumeDb = -2.0
+unitSize = 2.0
+maxDistance = 50.0
+maxDb = -2.0
+pitch = 1.0
+bus = ""

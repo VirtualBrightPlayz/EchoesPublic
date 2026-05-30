@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://ctvl56btwunpr"]
+
+[ext_resource type="Texture2D" uid="uid://qmyuglielgom" path="res://models/rooms/pop_hcz_new/SCP_Sign/Sign_Textures/T_Untitled_Sign_Safe.png" id="1_0dnjq"]
+[ext_resource type="Texture2D" uid="uid://2xl7tk65q5th" path="res://models/rooms/pop_hcz_new/SCP_Sign/Sign_Textures/N_Sign.png" id="2_qanp2"]
+[ext_resource type="Texture2D" uid="uid://drpm2rkpad43" path="res://models/rooms/pop_hcz_new/SCP_Sign/Sign_Textures/ORM_Sign.png" id="3_l4w55"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_0dnjq")
+orm_texture = ExtResource("3_l4w55")
+normal_enabled = true
+normal_texture = ExtResource("2_qanp2")
+ao_enabled = true
+texture_filter = 4

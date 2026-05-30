@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://bqk74a8p7nn3p"
+path.bptc="res://.godot/imported/ez_hall_officerooms_straight.exr-3c57965f36e4fef2017aec161b82e3b5.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://scenes/rooms/ez/New EZ/ez_hall_officerooms_straight/ez_hall_officerooms_straight.exr"
+dest_files=["res://.godot/imported/ez_hall_officerooms_straight.exr-3c57965f36e4fef2017aec161b82e3b5.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=8

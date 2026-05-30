@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bv6ucibaoy3hh"]
+
+[ext_resource type="Texture2D" uid="uid://vxta4ttp3frh" path="res://textures/main/ez/randomprops/T_big_trash_bin_mats.png" id="1_ikq7l"]
+[ext_resource type="Texture2D" uid="uid://orkn2urol1ew" path="res://textures/main/ez/randomprops/ORM_big_trash_bin_mats.png" id="2_i2slg"]
+[ext_resource type="Texture2D" uid="uid://ce4xdfbmrkvvb" path="res://textures/main/ez/randomprops/N_big_trash_bin_mats.png" id="2_utm7t"]
+
+[resource]
+albedo_texture = ExtResource("1_ikq7l")
+orm_texture = ExtResource("2_i2slg")
+normal_enabled = true
+normal_texture = ExtResource("2_utm7t")

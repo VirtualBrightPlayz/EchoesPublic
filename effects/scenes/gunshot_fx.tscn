@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c772akso7k8t3"]
+
+[node name="GunshotFX" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.898039, 0.494118, 0, 1)
+shadow_enabled = true
+distance_fade_enabled = true

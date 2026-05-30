@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://clt4lv2gy6123"]
+
+[ext_resource type="PackedScene" uid="uid://bmuwwwstsjfkb" path="res://scenes/basic_singletons.tscn" id="1_3gwhr"]
+[ext_resource type="Script" uid="uid://c7sx6sv5px2in" path="res://scripts/DebugPlayerModeManager.cs" id="2_evreq"]
+[ext_resource type="Resource" uid="uid://baqq8fncjdx8r" path="res://game_data.tres" id="3_ky70k"]
+[ext_resource type="Script" uid="uid://c20opnilxg01p" path="res://scripts/ui/GameConsole.cs" id="4_sd07k"]
+
+[node name="DebugPlayerMode" type="Node3D"]
+
+[node name="BasicSingletons" parent="." instance=ExtResource("1_3gwhr")]
+
+[node name="DebugPlayerModeManager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("2_evreq")
+Data = ExtResource("3_ky70k")
+metadata/_custom_type_script = "uid://c7sx6sv5px2in"
+
+[node name="GameConsole" type="Node" parent="."]
+script = ExtResource("4_sd07k")
+metadata/_custom_type_script = "uid://c20opnilxg01p"

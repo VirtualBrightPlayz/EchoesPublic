@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bgfdsul2ah4dg"]
+
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="1_61ju6"]
+[ext_resource type="Texture2D" uid="uid://cg8ciqtxq31p3" path="res://models/p90/textures/9smg1_albedo.jpg" id="1_kdnwt"]
+[ext_resource type="Texture2D" uid="uid://dmvkf44627b8k" path="res://models/p90/textures/9smg1_metallic.jpg" id="2_7yrge"]
+[ext_resource type="Texture2D" uid="uid://qagt7cwty5o6" path="res://models/p90/textures/9smg1_normal.png" id="3_hgxcc"]
+[ext_resource type="Texture2D" uid="uid://devvi0bai7bl" path="res://models/p90/textures/9smg1_roughness.jpg" id="4_60oo6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_61ju6")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_kdnwt")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("2_7yrge")
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("4_60oo6")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("3_hgxcc")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

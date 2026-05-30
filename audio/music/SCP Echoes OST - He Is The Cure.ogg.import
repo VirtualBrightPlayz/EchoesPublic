@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://djujgaypthj1q"
+path="res://.godot/imported/SCP Echoes OST - He Is The Cure.ogg-04894641b639080a58abc276ab4cbc18.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/SCP Echoes OST - He Is The Cure.ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - He Is The Cure.ogg-04894641b639080a58abc276ab4cbc18.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

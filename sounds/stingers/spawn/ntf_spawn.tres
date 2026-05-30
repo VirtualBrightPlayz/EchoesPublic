@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://ddo0fa4bmc78l"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_utsnf"]
+[ext_resource type="AudioStream" uid="uid://bpwwmtsj7mdhu" path="res://audio/music/stingers/SCP Echoes OST - NTF Spawn Stinger.ogg" id="2_2xnge"]
+
+[resource]
+resource_name = "ntf_spawn"
+script = ExtResource("1_utsnf")
+streams = [ExtResource("2_2xnge")]
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

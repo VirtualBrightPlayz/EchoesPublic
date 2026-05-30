@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://dxtyfwwimmkw8"]
+
+[ext_resource type="PackedScene" uid="uid://celohoor84kfx" path="res://models/scpcb/props/lamp3.glb" id="1_04nvh"]
+[ext_resource type="Script" uid="uid://d0gr1gjt0kfax" path="res://scripts/CustomRoomLogic/Lamp3.cs" id="1_50t2y"]
+[ext_resource type="Material" uid="uid://ccgjjsffu8rr1" path="res://models/scpcb/props/lamp_3.tres" id="2_q5v4u"]
+[ext_resource type="Material" uid="uid://cu2oebtlhff7m" path="res://models/scpcb/props/lamp_3_clear.tres" id="3_ly2xf"]
+[ext_resource type="Shader" uid="uid://4ay8mpikt3dr" path="res://shaders/glow_color.gdshader" id="4_rle08"]
+[ext_resource type="PackedScene" uid="uid://ccq52ur0wbrsp" path="res://models/rooms/kitbash/kitbash_lamp.glb" id="6_rjqmv"]
+[ext_resource type="Texture2D" uid="uid://wr0mrps64bd8" path="res://models/rooms/kitbash/kitbash_lamp_Lamp30_BaseColor-Lamp30_Alpha.png" id="7_opqmx"]
+[ext_resource type="Texture2D" uid="uid://bycpjckg2mjy8" path="res://models/rooms/kitbash/kitbash_lamp_Lamp30_Emission.png" id="8_xaqpt"]
+[ext_resource type="Texture2D" uid="uid://catbjjrcp8w45" path="res://models/rooms/kitbash/kitbash_lamp_Lamp30_Metallic-Lamp30_Roughness.png" id="9_lglnl"]
+[ext_resource type="Texture2D" uid="uid://bcj3syoll3bgv" path="res://models/rooms/kitbash/kitbash_lamp_Lamp30_Normal.png" id="10_rjli0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xn2m"]
+render_priority = 0
+shader = ExtResource("4_rle08")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpp4f"]
+resource_name = "Lamp30"
+transparency = 1
+albedo_texture = ExtResource("7_opqmx")
+metallic = 1.0
+metallic_texture = ExtResource("9_lglnl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("9_lglnl")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 50.0
+emission_texture = ExtResource("8_xaqpt")
+normal_enabled = true
+normal_texture = ExtResource("10_rjli0")
+
+[node name="Lamp3" type="Node3D" node_paths=PackedStringArray("light", "glowMesh")]
+script = ExtResource("1_50t2y")
+light = NodePath("Light")
+glowMesh = NodePath("lamp3/Object_001")
+multiplier = 10.0
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, 0)
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 30.0
+distance_fade_shadow = 40.0
+omni_range = 10.0
+
+[node name="lamp3" parent="." instance=ExtResource("1_04nvh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.25, 0)
+visible = false
+
+[node name="Object" parent="lamp3" index="0"]
+surface_material_override/0 = ExtResource("2_q5v4u")
+
+[node name="__" parent="lamp3" index="1"]
+surface_material_override/0 = ExtResource("2_q5v4u")
+
+[node name="Object_001" parent="lamp3" index="2"]
+material_override = SubResource("ShaderMaterial_2xn2m")
+instance_shader_parameters/emission = Color(1, 1, 1, 10)
+
+[node name="Object_002" parent="lamp3" index="3"]
+visible = false
+
+[node name="___001" parent="lamp3" index="4"]
+surface_material_override/0 = ExtResource("3_ly2xf")
+
+[node name="kitbash_lamp" parent="." instance=ExtResource("6_rjqmv")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0.25, 0)
+
+[node name="Lamp_30_001" parent="kitbash_lamp" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gpp4f")
+
+[editable path="lamp3"]
+[editable path="kitbash_lamp"]

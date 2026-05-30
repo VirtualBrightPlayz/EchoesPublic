@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://m0475bia0cf4"]
+
+[ext_resource type="PackedScene" uid="uid://b5yvmhulnu4mj" path="res://models/p90/P90.glb" id="1_f1hk8"]
+[ext_resource type="Material" uid="uid://pfvwt4xp4afh" path="res://models/p90/textures/p90_2.tres" id="2_8a300"]
+[ext_resource type="Material" uid="uid://jvhm7gdvkws6" path="res://models/p90/textures/p90_1.tres" id="3_818o7"]
+
+[node name="P90" type="Node3D"]
+
+[node name="P902" parent="." instance=ExtResource("1_f1hk8")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0)
+
+[node name="P90" parent="P902" index="0"]
+surface_material_override/0 = ExtResource("2_8a300")
+surface_material_override/1 = ExtResource("3_818o7")
+
+[node name="P90_001" parent="P902" index="1"]
+surface_material_override/0 = ExtResource("3_818o7")
+
+[node name="P90_002" parent="P902" index="2"]
+surface_material_override/0 = ExtResource("3_818o7")
+
+[node name="P90_003" parent="P902" index="3"]
+surface_material_override/0 = ExtResource("3_818o7")
+
+[editable path="P902"]

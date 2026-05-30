@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://bcck5um2o6s6e"]
+
+[ext_resource type="Environment" uid="uid://bjxyv6fgfkfev" path="res://scenes/facility_hcz_env.tres" id="2_yoka2"]
+[ext_resource type="PackedScene" uid="uid://dvkjy5s6l5006" path="res://scenes/rooms/ez/New EZ/ez_doorway_wall/ez_doorway_wall.tscn" id="3_u4m4c"]
+[ext_resource type="PackedScene" uid="uid://cbcrj3e08l0xt" path="res://scenes/rooms/ez/New EZ/ez_hall_straight/ez_hall_straight.tscn" id="6_emp5k"]
+[ext_resource type="PackedScene" uid="uid://cyrgg6r1hm6vh" path="res://scenes/rooms/ez/New EZ/ez_hall_xroom/ez_hall_xroom.tscn" id="7_eefke"]
+[ext_resource type="PackedScene" uid="uid://c4qdowkuu3o2v" path="res://scenes/rooms/ez/New EZ/ez_hall_troom/ez_hall_troom.tscn" id="8_eefke"]
+[ext_resource type="Script" uid="uid://db7k2im7eryqu" path="res://scripts/DebugDrawManager.cs" id="8_ejdv5"]
+[ext_resource type="Script" uid="uid://6lv6fhdt7dbi" path="res://scripts/projectiles/ProjectileSimulationManager.cs" id="9_ejdv5"]
+[ext_resource type="PackedScene" uid="uid://ds4mofxxwql10" path="res://scenes/rooms/ez/New EZ/ez_hall_curve/ez_hall_curve.tscn" id="10_0gi5v"]
+[ext_resource type="Resource" uid="uid://cmt2nyajfgqco" path="res://projectile_resistance/air_pr.tres" id="10_gonce"]
+[ext_resource type="PackedScene" uid="uid://dfuv3yvsh0thd" path="res://scenes/rooms/ez/New EZ/ez_hall_officerooms_straight/ez_hall_officerooms_straight.tscn" id="10_sh2k7"]
+[ext_resource type="Resource" uid="uid://bru7e2bwprtpc" path="res://projectile_resistance/fallback_pr.tres" id="11_scnkh"]
+[ext_resource type="PackedScene" uid="uid://clt4lv2gy6123" path="res://scenes/debug_player_mode.tscn" id="13_gonce"]
+[ext_resource type="PackedScene" uid="uid://bp8eivtbdg805" path="res://scenes/rooms/props/static/posterpizza.tscn" id="14_2nh5e"]
+[ext_resource type="PackedScene" uid="uid://b7xoqi7asrn2q" path="res://scenes/rooms/props/static/postermedical.tscn" id="15_cj8xg"]
+[ext_resource type="PackedScene" uid="uid://brlfpsp2flub" path="res://scenes/rooms/ez/ez_intercom.tscn" id="15_ljkj1"]
+[ext_resource type="Shader" uid="uid://catjgmyjk12sk" path="res://shaders/457_shader.gdshader" id="17_mdv0w"]
+[ext_resource type="Texture2D" uid="uid://dfld274iicvbf" path="res://textures/3DNOISE_T.png" id="18_1vrpd"]
+[ext_resource type="PackedScene" uid="uid://kpkum8ka445u" path="res://scenes/rooms/doors/lever.tscn" id="18_mdv0w"]
+[ext_resource type="PackedScene" uid="uid://u7hnp4brhrwu" path="res://scenes/rooms/lcz/lcz_914.tscn" id="19_1vrpd"]
+[ext_resource type="PackedScene" uid="uid://cqx3v5r311yvc" path="res://scenes/rooms/lcz/lcz_two_doors.tscn" id="19_jc0th"]
+[ext_resource type="PackedScene" uid="uid://cuftys478nh1k" path="res://scenes/rooms/lcz/lcz_corner.tscn" id="21_58dyh"]
+[ext_resource type="PackedScene" uid="uid://bqs3bgkfnnkr7" path="res://scenes/rooms/props/dynamic/forklift.tscn" id="22_58dyh"]
+[ext_resource type="Script" uid="uid://bq8ankcw5bpow" path="res://scripts/map/AmbientArea.cs" id="23_oayqb"]
+[ext_resource type="Environment" uid="uid://bey68nxo5pnd3" path="res://scenes/facility_surface_env.tres" id="24_jkykl"]
+[ext_resource type="Script" uid="uid://cwcbyds2wtfip" path="res://scripts/map/path_from_nodes.gd" id="25_7dilj"]
+[ext_resource type="Material" uid="uid://dy36tkey4jfpb" path="res://models/rooms/sz/black_dev_texture.tres" id="26_yoka2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p7kqt"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s4ovi"]
+noise = SubResource("FastNoiseLite_p7kqt")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ajecb"]
+render_priority = -1
+shader = ExtResource("17_mdv0w")
+shader_parameter/emission_color = Color(2.055, 1.4383334, 0.575, 1)
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_s4ovi")
+shader_parameter/strength_main = 4.385
+shader_parameter/time_speed = Vector2(0.1, 1)
+shader_parameter/texture_displacement = ExtResource("18_1vrpd")
+shader_parameter/scale_displacement = Vector3(0, 0.435, 0)
+shader_parameter/tile_displacement = Vector2(1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jc0th"]
+material = SubResource("ShaderMaterial_ajecb")
+subdivide_width = 50
+subdivide_depth = 50
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oayqb"]
+radius = 0.2
+height = 2.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_58dyh"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oayqb"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkykl"]
+size = Vector3(100, 25, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_yoka2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0.25, 0, 0, -0.25, 0, 0, 0, 0, 0, 3.87, 0, 0, -3.87, 0, 1.3797443, -14.627493, -7.071068, 0, 7.071068, 7.071068, 0, -7.071068, 0, 4.035472, -30.983686, -2.0250003, 0, -3.507403, 2.0250003, 0, 3.507403, 14.266251, 4.035472, -30.983686, -4.808253e-07, 0, -5.5, 4.808253e-07, 0, 5.5, 24.022154, 9.1120405, -14.085966, -3.2464097e-06, 4.7187067e-14, -21.5, 3.2464097e-06, -4.7187067e-14, 21.5, 23.850803, -1.5409973, 3.776703),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, -0.06536258)
+}
+point_count = 6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7dilj"]
+radius = 10.0
+
+[node name="ez_csg" type="Node3D" unique_id=482692246]
+
+[node name="DebugPlayerMode" parent="." unique_id=1604137242 instance=ExtResource("13_gonce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.41026, -2.670288e-05, -22.7796)
+
+[node name="DebugPlayerModeManager" parent="DebugPlayerMode" index="1"]
+SpawnRole = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1455295925]
+environment = ExtResource("2_yoka2")
+
+[node name="ez_hall_straight4" parent="." unique_id=109641044 instance=ExtResource("6_emp5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 61.44)
+
+[node name="ez_hall_troom" parent="." unique_id=1011827244 instance=ExtResource("8_eefke")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 40.96)
+
+[node name="ez_hall_troom6" parent="." unique_id=1441442043 instance=ExtResource("8_eefke")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.48, 0, -61.44)
+
+[node name="ez_hall_troom5" parent="." unique_id=1158519278 instance=ExtResource("8_eefke")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.48, 0, -40.96)
+
+[node name="ez_hall_troom4" parent="." unique_id=717270986 instance=ExtResource("8_eefke")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.48, 0, -20.48)
+
+[node name="ez_hall_troom3" parent="." unique_id=571659158 instance=ExtResource("8_eefke")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.48, 0, 0)
+
+[node name="ez_hall_troom2" parent="." unique_id=540119326 instance=ExtResource("8_eefke")]
+transform = Transform3D(-4.37112e-08, 0, 1, 0, 1, 0, -1, 0, -4.37112e-08, 0, 0, 20.48)
+
+[node name="EzDoor" parent="." unique_id=1467126038 instance=ExtResource("3_u4m4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.24)
+
+[node name="EzDoor4" parent="." unique_id=32974347 instance=ExtResource("3_u4m4c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.24, 0, 0)
+
+[node name="ez_hall_curve" parent="." unique_id=1678629616 instance=ExtResource("10_0gi5v")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -20.48, 0, 0)
+
+[node name="ez_hall_officerooms_straight" parent="." unique_id=232563358 instance=ExtResource("10_sh2k7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.48, 0, 20.48)
+
+[node name="ez_hall_curve3" parent="." unique_id=1949439594 instance=ExtResource("10_0gi5v")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 20.48, 0, 20.48)
+
+[node name="EzHallXroom4" parent="." unique_id=659682150 instance=ExtResource("7_eefke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -61.44)
+
+[node name="EzHallXroom3" parent="." unique_id=173998439 instance=ExtResource("7_eefke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.96)
+
+[node name="EzHallXroom2" parent="." unique_id=1040826259 instance=ExtResource("7_eefke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.48)
+
+[node name="EzHallXroom" parent="." unique_id=1660316849 instance=ExtResource("7_eefke")]
+
+[node name="DebugDrawManager" type="MeshInstance3D" parent="." unique_id=2029586665]
+script = ExtResource("8_ejdv5")
+metadata/_custom_type_script = "uid://db7k2im7eryqu"
+
+[node name="ProjectileSimulationManager" type="Node3D" parent="." unique_id=1390826997]
+script = ExtResource("9_ejdv5")
+AirMedium = ExtResource("10_gonce")
+FallbackMedium = ExtResource("11_scnkh")
+metadata/_custom_type_script = "uid://6lv6fhdt7dbi"
+
+[node name="EzIntercom" parent="." unique_id=1264076949 instance=ExtResource("15_ljkj1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.48, 0, 40.96)
+
+[node name="Poster_Bob" parent="." unique_id=932385032 instance=ExtResource("14_2nh5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5628643, 2.4898636, -2.595046)
+
+[node name="Poster_Bob2" parent="." unique_id=814319862 instance=ExtResource("15_cj8xg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.5856297, 2.6178174, -3.652369)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1338686936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.314939, 0)
+visible = false
+mesh = SubResource("PlaneMesh_jc0th")
+
+[node name="Lever" parent="." unique_id=418530473 instance=ExtResource("18_mdv0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.012179, 1.8014381, 21.231735)
+
+[node name="lcz_two_doors" parent="." unique_id=1712031475 instance=ExtResource("19_jc0th")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.8, 0, -20.8)
+
+[node name="Lcz914" parent="." unique_id=108300449 node_paths=PackedStringArray("features") instance=ExtResource("19_1vrpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6, 0, -41.6)
+features = {
+"spawnpoint_classd": NodePath("Marker3D2")
+}
+
+[node name="LczCorner" parent="." unique_id=877246718 instance=ExtResource("21_58dyh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -41.6, 0, -20.8)
+
+[node name="Forklift" parent="." unique_id=2113499550 instance=ExtResource("22_58dyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.12359, 0.5, 33.02954)
+
+[node name="Forklift" type="Marker3D" parent="Forklift" unique_id=990349133 groups=["dev_teleport"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=915643464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3049219, 0.37227046)
+visible = false
+mesh = SubResource("CapsuleMesh_oayqb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=843026479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.94019, 0, 34.099953)
+mesh = SubResource("BoxMesh_58dyh")
+surface_material_override/0 = ExtResource("26_yoka2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=738622284]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1076567743]
+shape = SubResource("BoxShape3D_oayqb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D3" unique_id=81237238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.0682583, 0)
+visible = false
+light_volumetric_fog_energy = 0.0
+omni_range = 70.660835
+omni_attenuation = 0.0
+
+[node name="AmbientArea" type="Area3D" parent="MeshInstance3D3" unique_id=489995963]
+collision_layer = 15
+collision_mask = 6
+script = ExtResource("23_oayqb")
+env = ExtResource("24_jkykl")
+FarZ = 1400.0
+metadata/_custom_type_script = "uid://bq8ankcw5bpow"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/AmbientArea" unique_id=562615291]
+shape = SubResource("BoxShape3D_jkykl")
+
+[node name="PathFromNodes" type="Path3D" parent="MeshInstance3D3" unique_id=1563528853]
+curve = SubResource("Curve3D_yoka2")
+script = ExtResource("25_7dilj")
+metadata/_custom_type_script = "uid://cwcbyds2wtfip"
+
+[node name="Marker3D" type="Marker3D" parent="MeshInstance3D3/PathFromNodes" unique_id=2103924078]
+
+[node name="Marker3D2" type="Marker3D" parent="MeshInstance3D3/PathFromNodes" unique_id=1549234747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3797443, -14.627493)
+gizmo_extents = 3.87
+
+[node name="Marker3D3" type="Marker3D" parent="MeshInstance3D3/PathFromNodes" unique_id=1727566328]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 4.035472, -30.983686)
+gizmo_extents = 10.0
+
+[node name="Marker3D4" type="Marker3D" parent="MeshInstance3D3/PathFromNodes" unique_id=398366032]
+transform = Transform3D(-0.8660255, 0, -0.50000006, 0, 1, 0, 0.5000001, 0, -0.8660254, 14.266251, 4.035472, -30.983686)
+gizmo_extents = 4.05
+
+[node name="Marker3D5" type="Marker3D" parent="MeshInstance3D3/PathFromNodes" unique_id=340713161]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.022154, 9.1120405, -14.085966)
+gizmo_extents = 5.5
+
+[node name="Marker3D6" type="Marker3D" parent="MeshInstance3D3/PathFromNodes" unique_id=800993051]
+transform = Transform3D(-0.9978646, 0.065316044, -1.509958e-07, 0.065316044, 0.9978646, 2.1947473e-15, 1.5067337e-07, -9.862447e-09, -1, 23.850803, -1.5409973, 3.776703)
+gizmo_extents = 21.5
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="MeshInstance3D3" unique_id=1231387662]
+use_collision = true
+collision_layer = 9
+collision_mask = 9
+polygon = PackedVector2Array(-5, -1, -5, 0, 5, 0, 5, -1)
+mode = 2
+path_node = NodePath("../PathFromNodes")
+path_interval_type = 0
+path_interval = 0.5
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = true
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("26_yoka2")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D3" unique_id=428879371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.931908, 3.1477416, -6.9955463)
+collision_layer = 9
+collision_mask = 7
+gravity_space_override = 3
+gravity_point_center = Vector3(0, 1, 0)
+gravity_direction = Vector3(0, 1, 0)
+gravity = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/Area3D" unique_id=200296219]
+shape = SubResource("SphereShape3D_7dilj")
+
+[editable path="DebugPlayerMode"]
+[editable path="EzDoor"]
+[editable path="EzDoor/ez_doorway_wall"]
+[editable path="EzDoor4"]
+[editable path="EzDoor4/ez_doorway_wall"]

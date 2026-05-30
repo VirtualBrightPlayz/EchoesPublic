@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://i4f30p2rmc3r"]
+
+[ext_resource type="Texture2D" uid="uid://vb7ho4pu6yo7" path="res://scenes/rooms/props/static/lights/textures/T_light atlas.png" id="1_ra4i7"]
+[ext_resource type="Texture2D" uid="uid://b6kk2wksdpk0s" path="res://scenes/rooms/props/static/lights/textures/N_light atlas.png" id="2_d1sas"]
+[ext_resource type="Texture2D" uid="uid://hsqgfgi43wpj" path="res://scenes/rooms/props/static/lights/textures/ORM_light atlas.png" id="3_um0is"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_ra4i7")
+orm_texture = ExtResource("3_um0is")
+normal_enabled = true
+normal_texture = ExtResource("2_d1sas")

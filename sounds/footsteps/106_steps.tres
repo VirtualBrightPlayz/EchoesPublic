@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://d6efomrvq2xr"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_isb1g"]
+[ext_resource type="AudioStream" uid="uid://cd40tv5xxmfuo" path="res://audio/scpcb/steps/pd_footsteps.tres" id="2_nos3m"]
+
+[resource]
+resource_name = "106"
+script = ExtResource("1_isb1g")
+streams = [ExtResource("2_nos3m")]
+maxDistance = 50.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bmbdgq5efqljb"]
+
+[ext_resource type="PackedScene" uid="uid://cel1uumgpp5eo" path="res://scenes/rooms/vents/vent_long.tscn" id="1_6nafk"]
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_446sx"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="2_4t1b4"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_w18dc"]
+
+[resource]
+script = ExtResource("2_4t1b4")
+RoomScenes = Array[PackedScene]([ExtResource("1_6nafk")])
+RequiredInstances = 0
+MaximumInstances = -1
+SpawnPoolEntries = 10
+Connections = 10
+BlockedNeighbours = 0
+PreSpawnValidatorResources = Array[ExtResource("2_w18dc")]([])
+PostSpawnValidatorResources = Array[ExtResource("2_w18dc")]([])
+Test = false
+Constraints = Array[ExtResource("1_446sx")]([])
+MaxConsecutive = -1

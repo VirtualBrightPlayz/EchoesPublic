@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://pp3d7xbmtbgt"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_usal7"]
+[ext_resource type="AudioStream" uid="uid://bd7dwh333pj85" path="res://audio/music/SCP Echoes OST - D Class Spawn Stinger.ogg" id="2_2cmk6"]
+
+[resource]
+resource_name = "ClassDSpawn"
+script = ExtResource("1_usal7")
+streams = [ExtResource("2_2cmk6")]
+maxDistance = 1.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

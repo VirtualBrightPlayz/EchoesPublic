@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://dl2h5yqa22rfq"]
+
+[ext_resource type="Texture2D" uid="uid://dxuokd4mivp6b" path="res://models/main/human/hands/T_Hand.png" id="1_4huqp"]
+[ext_resource type="Texture2D" uid="uid://cwvmiqds21xjo" path="res://models/main/human/hands/N_Hand.png" id="2_t6tol"]
+[ext_resource type="Texture2D" uid="uid://cf0mwyf7ggcfh" path="res://models/main/human/hands/ORM_Hand.png" id="3_8nxi4"]
+
+[resource]
+albedo_texture = ExtResource("1_4huqp")
+orm_texture = ExtResource("3_8nxi4")
+normal_enabled = true
+normal_texture = ExtResource("2_t6tol")
+subsurf_scatter_strength = 0.21
+subsurf_scatter_skin_mode = true

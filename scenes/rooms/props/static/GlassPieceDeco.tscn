@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://0vk0hvwwx1ri"]
+
+[ext_resource type="PackedScene" uid="uid://5w8cy631yeb0" path="res://scenes/rooms/props/static/GlassPieceDeco.fbx" id="1_2o4ki"]
+
+[node name="GlassPieceDeco" type="Node3D" unique_id=1678783776]
+
+[node name="GlassPieceDeco" parent="." unique_id=1577411544 instance=ExtResource("1_2o4ki")]
+
+[node name="Cube_fracturepart8_0" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="0" unique_id=1410483379]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_1" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="1" unique_id=1772414363]
+cast_shadow = 0
+
+[node name="Cube_fracturepart8_2" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="2" unique_id=1616281046]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_3" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="3" unique_id=1791267094]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_4" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="4" unique_id=1214987816]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_5" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="5" unique_id=1133652231]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_6" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="6" unique_id=308332782]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_7" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="7" unique_id=151986775]
+cast_shadow = 0
+
+[node name="Cube_fracturepart7_8" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="8" unique_id=1982092585]
+cast_shadow = 0
+
+[node name="Cube_fracturepart6_9" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="9" unique_id=968506433]
+cast_shadow = 0
+
+[node name="Cube_fracturepart3_10" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="10" unique_id=173798495]
+cast_shadow = 0
+
+[node name="Cube_fracturepart1_11" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="11" unique_id=1950540779]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_12" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="12" unique_id=1609245947]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_13" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="13" unique_id=1413360193]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_14" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="14" unique_id=914223798]
+cast_shadow = 0
+
+[node name="Cube_fracturepart6_15" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="15" unique_id=1190264970]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_16" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="16" unique_id=1180713584]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_17" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="17" unique_id=991947922]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_18" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="18" unique_id=206188352]
+cast_shadow = 0
+
+[node name="Cube_fracturepart3_19" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="19" unique_id=2004307432]
+cast_shadow = 0
+
+[node name="Cube_fracturepart1_20" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="20" unique_id=1355159781]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_21" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="21" unique_id=105513758]
+cast_shadow = 0
+
+[node name="Cube_fracturepart6_22" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="22" unique_id=1346563210]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_23" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="23" unique_id=1320386159]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_24" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="24" unique_id=669043797]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_25" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="25" unique_id=1081029803]
+cast_shadow = 0
+
+[node name="Cube_fracturepart6_26" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="26" unique_id=871030623]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_27" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="27" unique_id=971313250]
+cast_shadow = 0
+
+[node name="Cube_fracturepart2_28" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="28" unique_id=934575712]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_29" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="29" unique_id=1796968557]
+cast_shadow = 0
+
+[node name="Cube_fracturepart1_30" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="30" unique_id=894308103]
+cast_shadow = 0
+
+[node name="Cube_fracturepart6_31" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="31" unique_id=1836310780]
+cast_shadow = 0
+
+[node name="Cube_fracturepart7_32" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="32" unique_id=44006412]
+cast_shadow = 0
+
+[node name="Cube_fracturepart7_33" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="33" unique_id=1285615251]
+cast_shadow = 0
+
+[node name="Cube_fracturepart5_34" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="34" unique_id=1469950256]
+cast_shadow = 0
+
+[node name="Cube_fracturepart4_35" parent="GlassPieceDeco/GlassPieceDeco" parent_id_path=PackedInt32Array(1577411544, 1151373725) index="35" unique_id=1843549036]
+cast_shadow = 0
+
+[editable path="GlassPieceDeco"]

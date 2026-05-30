@@ -1,0 +1,334 @@
+[gd_scene load_steps=29 format=3 uid="uid://ph0mldijvobn"]
+
+[ext_resource type="Texture2D" uid="uid://bhkxdaug6ikfr" path="res://scenes/misc/electric.png" id="1_cuhtf"]
+[ext_resource type="Script" uid="uid://6yxnykbhd4vi" path="res://scripts/map/LightFlicker.cs" id="2_hl111"]
+[ext_resource type="AudioStream" uid="uid://35fvr8o33ggh" path="res://audio/TeslaGates/TeslaShock.wav" id="4_hl111"]
+
+[sub_resource type="Curve" id="Curve_sf0c1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0526316, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_cr25g"]
+curve = SubResource("Curve_sf0c1")
+
+[sub_resource type="Curve" id="Curve_644yg"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.665072, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8xaha"]
+curve = SubResource("Curve_644yg")
+
+[sub_resource type="Curve" id="Curve_ffkm5"]
+_limits = [0.0, 1024.0, 0.0, 1.0]
+_data = [Vector2(1, 241.618), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_fo3iq"]
+curve = SubResource("Curve_ffkm5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uaotp"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(0.56, 1, 0)
+direction = Vector3(0, 0, 1)
+spread = 0.0
+initial_velocity_min = -0.5
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color = Color(0.13, 0.507, 1, 1)
+alpha_curve = SubResource("CurveTexture_cr25g")
+emission_curve = SubResource("CurveTexture_fo3iq")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_speed_curve = SubResource("CurveTexture_8xaha")
+anim_offset_max = 1.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.5
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_644yg"]
+transparency = 2
+alpha_scissor_threshold = 0.335
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_cuhtf")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 25.25
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 6
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_8xaha"]
+material = SubResource("StandardMaterial3D_644yg")
+
+[sub_resource type="Curve" id="Curve_g4d8g"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.03125, 1), -0.119833, -0.119833, 0, 0, Vector2(0.0568182, 0.483351), 0.0, 0.0, 0, 0, Vector2(0.0909091, 1), 0.0, 0.0, 0, 0, Vector2(0.105114, 0.39957), 0.0, 0.0, 0, 0, Vector2(0.130682, 1), 0.0, 0.0, 0, 0, Vector2(0.167614, 0.35768), 0.0, 0.0, 0, 0, Vector2(0.184659, 1), 0.0, 0.0, 0, 0, Vector2(0.221591, 0.280881), 0.0, 0.0, 0, 0, Vector2(0.23445, 0.988764), 0.0, 0.0, 0, 0, Vector2(0.272727, 0.232009), 0.0, 0.0, 0, 0, Vector2(0.301136, 0.927374), 0.0, 0.0, 0, 0, Vector2(0.332386, 0.183136), 0.0, 0.0, 0, 0, Vector2(0.360795, 0.876536), 0.0, 0.0, 0, 0, Vector2(0.383523, 0.134264), 0.0, 0.0, 0, 0, Vector2(0.409091, 0.874329), 0.0, 0.0, 0, 0, Vector2(0.446023, 0.135754), 0.0, 0.0, 0, 0, Vector2(0.505682, 0.847486), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 19
+
+[sub_resource type="CurveTexture" id="CurveTexture_644yg"]
+curve = SubResource("Curve_g4d8g")
+
+[sub_resource type="Curve" id="Curve_nlsfm"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(1, 200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_htkr5"]
+curve = SubResource("Curve_nlsfm")
+
+[sub_resource type="Curve" id="Curve_8xaha"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.143541, 1), 0.0, 0.0, 0, 0, Vector2(0.894737, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_u2e36"]
+curve = SubResource("Curve_8xaha")
+
+[sub_resource type="Curve" id="Curve_cr25g"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_fo3iq"]
+_limits = [0.0, 1000.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 11.236), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_uaotp"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_g4d8g"]
+curve_x = SubResource("Curve_cr25g")
+curve_y = SubResource("Curve_fo3iq")
+curve_z = SubResource("Curve_uaotp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pngd2"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+emission_shape = 3
+emission_box_extents = Vector3(0.025, 1, 0)
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 0.25
+initial_velocity_max = 2.0
+scale_min = 0.0
+scale_max = 0.01
+scale_curve = SubResource("CurveTexture_u2e36")
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 1.0
+scale_over_velocity_curve = SubResource("CurveXYZTexture_g4d8g")
+color = Color(0.133333, 0.568627, 1, 1)
+alpha_curve = SubResource("CurveTexture_644yg")
+emission_curve = SubResource("CurveTexture_htkr5")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.5
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xaha"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_u2e36"]
+material = SubResource("StandardMaterial3D_8xaha")
+radial_segments = 4
+rings = 1
+
+[sub_resource type="Animation" id="Animation_cr25g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../OmniLight3D/LightFlicker:MaxEnergy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sf0c1"]
+resource_name = "tesla zap"
+length = 5.5
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.966667, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [false, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../GPUParticles3D2:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 1.46667, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [false, true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GPUParticles3D3:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 1.46667, 4.76667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [false, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../GPUParticles3D2:amount_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333337, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GPUParticles3D3:amount_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333337, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../OmniLight3D/LightFlicker:MaxEnergy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.45, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 100.0, 100.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffkm5"]
+_data = {
+&"RESET": SubResource("Animation_cr25g"),
+&"tesla zap": SubResource("Animation_sf0c1")
+}
+
+[node name="ElectricZap" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(2.95103, 0, 0, 0, 2.95103, 0, 0, 0, 2.95103, 0.000351055, 2.81563, -0.362555)
+cast_shadow = 0
+emitting = false
+amount = 150
+lifetime = 2.0
+use_fixed_seed = true
+seed = 585417790
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_uaotp")
+draw_pass_1 = SubResource("QuadMesh_8xaha")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.481749, 0)
+size = Vector3(9.26367, 1.04175, 11.002)
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(-1.20739e-07, 0, 2.76218, 0, 2.76218, 0, -2.76218, 0, -1.20739e-07, -2.14942, 3.20869, 0)
+cast_shadow = 0
+emitting = false
+amount = 100
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_pngd2")
+draw_passes = 2
+draw_pass_1 = SubResource("SphereMesh_u2e36")
+draw_pass_2 = null
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
+transform = Transform3D(3.62216e-07, 0, -2.76218, 0, 2.76218, 0, 2.76218, 0, 3.62216e-07, 2.149, 3.209, 0)
+cast_shadow = 0
+emitting = false
+amount = 100
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_pngd2")
+draw_pass_1 = SubResource("SphereMesh_u2e36")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../GPUParticles3D")
+libraries = {
+&"": SubResource("AnimationLibrary_ffkm5")
+}
+autoplay = "tesla zap"
+speed_scale = 3.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.765, 0)
+light_color = Color(0.584071, 0.842867, 1, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 2.0
+light_size = 0.5
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 50.0
+distance_fade_shadow = 30.0
+omni_range = 50.0
+omni_attenuation = 2.284
+
+[node name="LightFlicker" type="Node" parent="OmniLight3D"]
+script = ExtResource("2_hl111")
+MaxEnergy = 0.0
+metadata/_custom_type_script = "uid://6yxnykbhd4vi"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.765, 0)
+stream = ExtResource("4_hl111")
+volume_db = 3.0
+pitch_scale = 0.49

@@ -1,0 +1,271 @@
+[gd_scene load_steps=30 format=3 uid="uid://bwl71qj2v436q"]
+
+[ext_resource type="Script" uid="uid://bnx2oliktg02p" path="res://scripts/npc/NpcForestMonster.cs" id="1_7iadg"]
+[ext_resource type="AudioStream" uid="uid://basx46oiaj0lx" path="res://audio/scpcb/steps/forest_footsteps.tres" id="2_gigcl"]
+[ext_resource type="Texture2D" uid="uid://bps17s4o0hgqo" path="res://models/scpcb/npc/forestmonster/860_diffuse.jpg" id="5_gigcl"]
+[ext_resource type="Texture2D" uid="uid://dux2oovp0jyif" path="res://models/scpcb/npc/forestmonster/860_glow.jpg" id="6_7iadg"]
+[ext_resource type="AudioStream" uid="uid://corw4nmnqyegm" path="res://audio/scpcb/misc/Slash2.ogg" id="7_1q2n1"]
+[ext_resource type="Texture2D" uid="uid://cqnsyedvi1pcg" path="res://models/scpcb/npc/forestmonster/860_leaf.png" id="7_7iadg"]
+[ext_resource type="Script" uid="uid://b0nuhk3agpjy" path="res://scripts/map/RngTimer.cs" id="7_7wyd1"]
+[ext_resource type="Script" uid="uid://befr1gr2kpiba" path="res://scripts/npc/NpcPlanner.cs" id="9_7wyd1"]
+[ext_resource type="Script" uid="uid://d2ncx64guhygr" path="res://scripts/npc/NpcAction.cs" id="10_a13fn"]
+[ext_resource type="PackedScene" uid="uid://1tf64xc6om8n" path="res://models/scpcb/npc/forestmonster/forestmonster.glb" id="27_xpt0v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_visgn"]
+height = 2.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aeqaw"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xbxp4"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vh3bm"]
+properties/0/path = NodePath(".:animWalkingDirection")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:state")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q2n1"]
+albedo_texture = ExtResource("5_gigcl")
+emission_enabled = true
+emission_texture = ExtResource("6_7iadg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wyd1"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("7_7iadg")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7iadg"]
+animation = &"Attack"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nbtke"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gigcl"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gigcl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7iadg"]
+xfade_time = 0.1
+reset = false
+advance_mode = 2
+advance_expression = "animWalkingDirection.length() > 0.1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1q2n1"]
+xfade_time = 0.1
+reset = false
+advance_mode = 2
+advance_expression = "animWalkingDirection.length() <= 0.1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7wyd1"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a13fn"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7iadg"]
+states/Attack/node = SubResource("AnimationNodeAnimation_7iadg")
+states/Attack/position = Vector2(565, 171)
+states/Idle/node = SubResource("AnimationNodeAnimation_nbtke")
+states/Idle/position = Vector2(480, 74)
+states/Run/node = SubResource("AnimationNodeAnimation_gigcl")
+states/Run/position = Vector2(645, 74)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gigcl"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_7iadg"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_1q2n1"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_7wyd1"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_a13fn")]
+
+[sub_resource type="Resource" id="Resource_bhmji"]
+resource_name = "Stalk"
+script = ExtResource("10_a13fn")
+ActionName = "Stalking"
+PreConditions = Dictionary[String, bool]({
+"near_target": false
+})
+PostEffects = Dictionary[String, bool]({
+"health_low": false
+})
+Cost = 0.5
+metadata/_custom_type_script = "uid://d2ncx64guhygr"
+
+[sub_resource type="Resource" id="Resource_ovxv3"]
+resource_name = "Avoid"
+script = ExtResource("10_a13fn")
+ActionName = "AvoidTarget"
+PreConditions = Dictionary[String, bool]({
+"health_low": true
+})
+PostEffects = Dictionary[String, bool]({
+"near_target": false
+})
+Cost = 0.5
+metadata/_custom_type_script = "uid://d2ncx64guhygr"
+
+[sub_resource type="Resource" id="Resource_bwbin"]
+resource_name = "Follow"
+script = ExtResource("10_a13fn")
+ActionName = "FollowingTarget"
+PreConditions = Dictionary[String, bool]({
+"health_low": false
+})
+PostEffects = Dictionary[String, bool]({
+"near_target": true
+})
+Cost = 2.0
+metadata/_custom_type_script = "uid://d2ncx64guhygr"
+
+[sub_resource type="Resource" id="Resource_a13fn"]
+resource_name = "Attack"
+script = ExtResource("10_a13fn")
+ActionName = "Attack"
+PreConditions = Dictionary[String, bool]({
+"can_attack": true,
+"health_low": false,
+"near_target": true,
+"should_attack": true
+})
+PostEffects = Dictionary[String, bool]({
+"health_low": true,
+"target_dead": true
+})
+Cost = 5.0
+metadata/_custom_type_script = "uid://d2ncx64guhygr"
+
+[node name="ForestMonsterNpc" type="CharacterBody3D" node_paths=PackedStringArray("planner", "view", "agent", "doorFinder", "attackFinder", "attackArea", "footstepsAudio", "attackAudio", "animTree")]
+collision_layer = 18
+collision_mask = 35
+floor_max_angle = 0.872665
+floor_snap_length = 0.5
+script = ExtResource("1_7iadg")
+planner = NodePath("NpcPlanner")
+stateOrders = Array[int]([2, 3, 1])
+stateConditions = PackedStringArray("!is_seen || target_distance < 10 || stalk_timer > 15 || stalk_count > 5 || is_horde", "is_seen && stalk_timer > 5 && (state == 1 || last_state == 1)", "true")
+view = NodePath("View")
+visLayers = 137
+agent = NodePath("NavigationAgent3D")
+doorFinder = NodePath("Door")
+attackFinder = NodePath("Attack2")
+attackArea = NodePath("Attack2")
+walkSpeedRange = Vector2(6, 10)
+walkSpeed = 6.0
+rotationLerpSpeed = 4.0
+footstepInterval = 0.5
+footstepsAudio = NodePath("Footsteps")
+attackWarmupTime = 0.1
+attackAudio = NodePath("Attack")
+damageAmount = 7.0
+maxRange = 40.0
+timeToStalk = 5.0
+canAttack = true
+animTree = NodePath("AnimationTree2")
+animStatePath = "parameters/playback"
+animAttackPath = "Attack"
+animLerpSpeed = 5.0
+walkAnimSpeed = 0.5
+Health = 100.0
+MaxHealth = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_visgn")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.25
+avoidance_enabled = true
+height = 2.5
+time_horizon_agents = 5.0
+
+[node name="Attack2" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+enabled = false
+shape = SubResource("SphereShape3D_aeqaw")
+target_position = Vector3(0, 0, -2)
+max_results = 8
+collision_mask = 283
+
+[node name="Door" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+enabled = false
+shape = SubResource("SphereShape3D_xbxp4")
+target_position = Vector3(0, 0, -2)
+max_results = 1
+collision_mask = 271
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_gigcl")
+volume_db = -2.0
+unit_size = 2.0
+max_distance = 50.0
+max_polyphony = 16
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_vh3bm")
+
+[node name="TransformSyncNative" type="TransformSyncNative" parent="."]
+target_node = NodePath("..")
+
+[node name="forestmonster" parent="." instance=ExtResource("27_xpt0v")]
+transform = Transform3D(-0.05, 0, -4.371139e-09, 0, 0.05, 0, 4.371139e-09, 0, -0.05, 0, 0, 0)
+
+[node name="Mesh_0" parent="forestmonster/regalis\'_mom_lol/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1q2n1")
+
+[node name="Mesh_1" parent="forestmonster/regalis\'_mom_lol/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7wyd1")
+
+[node name="AnimationTree2" type="AnimationTree" parent="."]
+active = false
+root_node = NodePath("../forestmonster")
+tree_root = SubResource("AnimationNodeStateMachine_7iadg")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../forestmonster/AnimationPlayer")
+
+[node name="RngTimer" type="Timer" parent="AnimationTree2"]
+one_shot = true
+autostart = true
+script = ExtResource("7_7wyd1")
+MinValue = 0.1
+MaxValue = 1.5
+metadata/_custom_type_script = "uid://b0nuhk3agpjy"
+
+[node name="Attack" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("7_1q2n1")
+max_distance = 10.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="View" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+
+[node name="NpcPlanner" type="Node" parent="."]
+script = ExtResource("9_7wyd1")
+StateNames = PackedStringArray("target_dead", "near_target", "health_low", "can_attack")
+Actions = Array[ExtResource("10_a13fn")]([SubResource("Resource_bhmji"), SubResource("Resource_ovxv3"), SubResource("Resource_bwbin"), SubResource("Resource_a13fn")])
+CurrentWorldState = Dictionary[String, bool]({
+"health_low": false,
+"near_target": false,
+"target_dead": false
+})
+DesiredWorldState = Dictionary[String, bool]({
+"health_low": false,
+"target_dead": true
+})
+metadata/_custom_type_script = "uid://befr1gr2kpiba"
+
+[connection signal="timeout" from="AnimationTree2/RngTimer" to="AnimationTree2" method="set_active" binds= [true]]
+
+[editable path="forestmonster"]

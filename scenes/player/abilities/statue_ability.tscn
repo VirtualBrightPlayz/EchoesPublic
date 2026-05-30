@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dxqxw6a3hypt3"]
+
+[ext_resource type="Script" uid="uid://dti033xdx8wu0" path="res://scripts/player/controllers/ability/StatueAbility.cs" id="1_nkywk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dshtu"]
+radius = 25.0
+
+[node name="StatueAbility" type="Node" unique_id=738377070 node_paths=PackedStringArray("area", "footstepsAudio")]
+script = ExtResource("1_nkywk")
+area = NodePath("Area3D")
+audioLerpSpeed = 5.0
+footstepsAudio = NodePath("Area3D/Footsteps")
+metadata/_custom_type_script = "uid://dti033xdx8wu0"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=107971663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+collision_layer = 7
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1700671415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SphereShape3D_dshtu")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Area3D" unique_id=1179796406]
+volume_db = -2.0
+unit_size = 2.0
+max_db = 0.0
+max_distance = 50.0
+bus = &"World"
+attenuation_filter_db = 0.0

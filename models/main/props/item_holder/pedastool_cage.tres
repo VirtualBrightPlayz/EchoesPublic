@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b8fbjfbsmtx5u"]
+
+[ext_resource type="Texture2D" uid="uid://bqghan4suk441" path="res://models/main/props/item_holder/M_PedestalCage_BaseColor.png" id="1_dlr1v"]
+[ext_resource type="Texture2D" uid="uid://bwqd4ojdhov88" path="res://models/main/props/item_holder/M_PedestalCage_Metallic.png" id="2_dvjmc"]
+[ext_resource type="Texture2D" uid="uid://5aw3vpj8p8t7" path="res://models/main/props/item_holder/M_PedestalCage_Normal.png" id="3_ycoh2"]
+[ext_resource type="Texture2D" uid="uid://dbtacrj6o6epd" path="res://models/main/props/item_holder/M_PedestalCage_Roughness.png" id="4_x5ncx"]
+
+[resource]
+transparency = 4
+albedo_texture = ExtResource("1_dlr1v")
+metallic = 1.0
+metallic_texture = ExtResource("2_dvjmc")
+roughness_texture = ExtResource("4_x5ncx")
+normal_enabled = true
+normal_texture = ExtResource("3_ycoh2")

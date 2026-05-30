@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhcs8kco2qjrd"
+path="res://.godot/imported/SCP Echoes OST - Don_t Blink (Post-Chase).ogg-259ca72ba560b144f0c7273000abfbfe.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/173/SCP Echoes OST - Don_t Blink (Post-Chase).ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - Don_t Blink (Post-Chase).ogg-259ca72ba560b144f0c7273000abfbfe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

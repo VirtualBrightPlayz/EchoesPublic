@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dhh84jvdpgu67"]
+
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="1_uu05s"]
+[ext_resource type="Texture2D" uid="uid://du61feb4rmdwo" path="res://models/main/items/sticky_grenade/GernadeStemtex_BaseColor.png" id="2_4svi6"]
+[ext_resource type="Texture2D" uid="uid://qy4i5qq5wqks" path="res://models/main/items/sticky_grenade/GernadeStemtex_Emission.png" id="3_gweh6"]
+[ext_resource type="Texture2D" uid="uid://cbp3efkdpd08k" path="res://models/main/items/sticky_grenade/GernadeStemtex_Metallic.png" id="4_kh44v"]
+[ext_resource type="Texture2D" uid="uid://j4yryyc0mv1x" path="res://models/main/items/sticky_grenade/GernadeStemtex_Normal.png" id="5_2c0pf"]
+[ext_resource type="Texture2D" uid="uid://bu3kuifvefv8k" path="res://models/main/items/sticky_grenade/GernadeStemtex_Roughness.png" id="6_c2s3b"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_uu05s")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_4svi6")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("4_kh44v")
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_c2s3b")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("5_2c0pf")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/texture_emissive = ExtResource("3_gweh6")
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)

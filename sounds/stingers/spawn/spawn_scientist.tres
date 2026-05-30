@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://bvaiuhga5a52r"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_jp2rv"]
+[ext_resource type="AudioStream" uid="uid://4rxobejllv8k" path="res://audio/music/SCP Echoes OST - Scientist Spawn Stinger.ogg" id="2_u84vs"]
+
+[resource]
+resource_name = "ScientistSpawn"
+script = ExtResource("1_jp2rv")
+streams = [ExtResource("2_u84vs")]
+maxDistance = 1.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

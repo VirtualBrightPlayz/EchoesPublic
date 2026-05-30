@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ProjectileResistanceMedium" load_steps=2 format=3 uid="uid://bru7e2bwprtpc"]
+
+[ext_resource type="Script" uid="uid://b3qidhfd7iu0l" path="res://scripts/projectiles/ProjectileResistanceMedium.cs" id="1_hjp8f"]
+
+[resource]
+script = ExtResource("1_hjp8f")
+PenetrationCost = 1e+08
+DamageMultiplier = 0.0
+GravityMultiplier = 0.0
+DebugName = "Fallback"
+DebugColor = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://b3qidhfd7iu0l"

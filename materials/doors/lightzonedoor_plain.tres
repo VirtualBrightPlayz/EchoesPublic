@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://3e7hcykqpydt"]
+
+[ext_resource type="Texture2D" uid="uid://qviwvamxjswh" path="res://textures/main/lcz_door/Not Scratchy/LightZoneDoor_occlusionRoughnessMetallic.png" id="1_jd8t7"]
+[ext_resource type="Texture2D" uid="uid://7jtxbqqk7qq8" path="res://textures/main/lcz_door/Not Scratchy/LightZoneDoor_baseColor.png" id="1_v8gye"]
+[ext_resource type="Texture2D" uid="uid://cbtsrjb1706gc" path="res://textures/main/lcz_door/Not Scratchy/LightZoneDoor_normal.png" id="2_38wmy"]
+
+[resource]
+albedo_texture = ExtResource("1_v8gye")
+orm_texture = ExtResource("1_jd8t7")
+normal_enabled = true
+normal_texture = ExtResource("2_38wmy")

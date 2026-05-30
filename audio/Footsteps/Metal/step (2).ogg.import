@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://mt2eswrvoh57"
+path="res://.godot/imported/step (2).ogg-692cb478e06b14a27c9a14edf84ce4db.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Footsteps/Metal/step (2).ogg"
+dest_files=["res://.godot/imported/step (2).ogg-692cb478e06b14a27c9a14edf84ce4db.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

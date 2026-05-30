@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://c8kx158pflubj"]
+
+[ext_resource type="Script" uid="uid://bgppldp6cwd1p" path="res://scripts/items/ItemObject.cs" id="1_7qwfo"]
+[ext_resource type="Script" uid="uid://dmjghdqeh1x10" path="res://scripts/items/Flashlight.cs" id="2_vw010"]
+[ext_resource type="Script" uid="uid://cnnnnu62sw6be" path="res://scripts/items/ItemGrip.cs" id="3_2d5re"]
+[ext_resource type="PackedScene" uid="uid://bybbgda2ti0ae" path="res://models/main/items/flashlight_2/flashlightl.fbx" id="3_l8b2e"]
+[ext_resource type="Shader" uid="uid://brab1be70lj5g" path="res://shaders/glass_shader.gdshader" id="4_dlg56"]
+[ext_resource type="Texture2D" uid="uid://dasm00licakxb" path="res://models/main/items/flashlight_2/T_Flashlight.png" id="5_5hv17"]
+[ext_resource type="Texture2D" uid="uid://ivulubojsonh" path="res://models/main/items/flashlight_2/E_Flashlight.png" id="6_8gcvw"]
+[ext_resource type="Texture2D" uid="uid://c7s62hlbhnmcp" path="res://models/main/items/flashlight_2/N_Flashlight.png" id="6_l8b2e"]
+[ext_resource type="Texture2D" uid="uid://cogcxdmshqw6l" path="res://models/main/items/flashlight_2/ORM_Flashlight.png" id="7_rt0jc"]
+[ext_resource type="PackedScene" uid="uid://cygd5cqvijh54" path="res://scenes/viewmodels/flashlight.tscn" id="10_pn17b"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="14_5hv17"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fmwo"]
+radius = 0.06
+height = 0.4
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_pkn1d"]
+albedo_texture = ExtResource("5_5hv17")
+orm_texture = ExtResource("7_rt0jc")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("6_8gcvw")
+normal_enabled = true
+normal_texture = ExtResource("6_l8b2e")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vw010"]
+load_path = "res://.godot/imported/T_Fracture_Voronoi.png-a88b5e7f8bdaa3fb56992630c747ac15.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dfim"]
+render_priority = 0
+shader = ExtResource("4_dlg56")
+shader_parameter/uvgen_scale = Vector2(1, 1)
+shader_parameter/uvgen_offset = Vector2(0, 0)
+shader_parameter/uvorm_scale = Vector2(1, 1)
+shader_parameter/uvorm_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/orm_texture = SubResource("CompressedTexture2D_vw010")
+shader_parameter/roughness_brightness = 0.09
+shader_parameter/roughness_contrast = -0.465
+shader_parameter/normal_strength = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_j7ybc"]
+resource_name = "CINEMA_4D_Main"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mlpn"]
+_data = {
+&"CINEMA_4D_Main": SubResource("Animation_j7ybc")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vw010"]
+properties/0/path = NodePath(".:Serial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:Id")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:ModelEnabled")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:playerPath")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ItemGrip:holderPath")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("Model:isOn")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+
+[node name="Flashlight" type="Node" unique_id=442554110 node_paths=PackedStringArray("model", "viewModel", "grips")]
+script = ExtResource("1_7qwfo")
+model = NodePath("Model")
+viewModel = NodePath("ViewmodelFlashlight")
+grips = [NodePath("ItemGrip")]
+metadata/_custom_type_script = "uid://bgppldp6cwd1p"
+
+[node name="Model" type="RigidBody3D" parent="." unique_id=721156262 node_paths=PackedStringArray("light", "marker", "xformSync")]
+collision_layer = 4
+collision_mask = 5
+mass = 2.0
+continuous_cd = true
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("2_vw010")
+light = NodePath("SpotLight3D")
+marker = NodePath("Marker3D")
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" unique_id=414826060]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_8fmwo")
+
+[node name="Marker3D" type="Marker3D" parent="Model" unique_id=545632728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0661445)
+
+[node name="HandMarker" type="Marker3D" parent="Model" unique_id=1734732809]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.108767, 0.0661445)
+
+[node name="flashlightl" parent="Model" unique_id=543954935 instance=ExtResource("3_l8b2e")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
+
+[node name="Body_low_1" parent="Model/flashlightl" index="0" unique_id=149628445]
+surface_material_override/0 = SubResource("ORMMaterial3D_pkn1d")
+surface_material_override/1 = SubResource("ShaderMaterial_6dfim")
+
+[node name="AnimationPlayer" parent="Model/flashlightl" index="1" unique_id=502360251]
+libraries/ = SubResource("AnimationLibrary_7mlpn")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Model" unique_id=943848407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24971)
+remote_path = NodePath("../SpotLight3D")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Model" unique_id=1630939842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24971)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 20.0
+
+[node name="TransformSync" type="Node" parent="Model" unique_id=912469185]
+script = ExtResource("14_5hv17")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="ItemGrip" type="Node" parent="." unique_id=784817101 node_paths=PackedStringArray("item", "marker", "leftMarker", "rightMarker")]
+script = ExtResource("3_2d5re")
+item = NodePath("..")
+marker = NodePath("../Model/Marker3D")
+leftMarker = NodePath("../Model/HandMarker")
+rightMarker = NodePath("../Model/HandMarker")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=611609364]
+replication_interval = 5.0
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_vw010")
+
+[node name="ViewmodelFlashlight" parent="." unique_id=1701314947 instance=ExtResource("10_pn17b")]
+
+[connection signal="OnHeld" from="ItemGrip" to="Model" method="OnEquipChange"]
+[connection signal="OnUnHeld" from="ItemGrip" to="Model" method="OnEquipChange"]
+
+[editable path="Model/flashlightl"]

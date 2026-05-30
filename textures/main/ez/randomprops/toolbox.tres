@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://iiuqmuokt3k"]
+
+[ext_resource type="Texture2D" uid="uid://dfie0ynum00cy" path="res://textures/main/ez/randomprops/T_toolbox.png" id="1_u4vmy"]
+[ext_resource type="Texture2D" uid="uid://dxg44p0smcpxq" path="res://textures/main/ez/randomprops/N_toolbox.png" id="2_nvddu"]
+[ext_resource type="Texture2D" uid="uid://c12otpi2bfpka" path="res://textures/main/ez/randomprops/ORM_toolbox.png" id="3_knk66"]
+
+[resource]
+albedo_texture = ExtResource("1_u4vmy")
+orm_texture = ExtResource("3_knk66")
+normal_enabled = true
+normal_texture = ExtResource("2_nvddu")
+ao_enabled = true

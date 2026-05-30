@@ -1,0 +1,643 @@
+[gd_scene format=3 uid="uid://833w0hw37lmq"]
+
+[ext_resource type="Script" uid="uid://btx74i5nt8ylr" path="res://scripts/player/role_ui/Viewmodel.cs" id="1_eme1v"]
+[ext_resource type="Resource" uid="uid://dsu7w0yjs3t65" path="res://sounds/gunshot.tres" id="2_sreag"]
+[ext_resource type="Script" uid="uid://pesq73gi47v3" path="res://addons/FastIK/FastIKFabric2.cs" id="3_qdxwa"]
+[ext_resource type="PackedScene" uid="uid://xu7g8bpi4pp1" path="res://models/pistol/9mm.glb" id="4_80ew7"]
+[ext_resource type="Material" uid="uid://djhrnios4cewo" path="res://models/pistol/pistol_viewmodel.tres" id="6_ggerg"]
+[ext_resource type="AudioStream" uid="uid://bxv1sgbk0kh68" path="res://audio/edited/pistol_click.wav" id="7_m3qlg"]
+[ext_resource type="Shader" uid="uid://ca1mlv0uksfjt" path="res://shaders/fp_pov_alpha.gdshader" id="8_aohl6"]
+[ext_resource type="AudioStream" uid="uid://bwhwr2jdwothi" path="res://audio/edited/pistol_ammo_pop.wav" id="8_d5jns"]
+[ext_resource type="Texture2D" uid="uid://b3c5m7pym4dfc" path="res://textures/flare_01.png" id="8_ktkxb"]
+[ext_resource type="AudioStream" uid="uid://bv5llojwmpsgr" path="res://audio/edited/pistol_ammo_click.wav" id="9_ei2cx"]
+[ext_resource type="AudioStream" uid="uid://btchjafudfm23" path="res://audio/edited/pistol_snap.wav" id="10_c574h"]
+[ext_resource type="PackedScene" uid="uid://bd260v3ghsw5b" path="res://models/pistol/GlockAnims.glb" id="14_qwn1e"]
+[ext_resource type="Material" uid="uid://bmjrrob7hinpq" path="res://models/main/human/class_d/hands_pov.tres" id="15_ktkxb"]
+[ext_resource type="PackedScene" uid="uid://bfy2psng0mla" path="res://models/main/fps_arms/fps_arms.glb" id="16_20v2g"]
+[ext_resource type="Script" uid="uid://cgon41wv5dcm3" path="res://scripts/map/LoopAudio3D.cs" id="16_ktkxb"]
+[ext_resource type="Material" uid="uid://dh13r3li86aj1" path="res://materials/roles/viewmodel/fps_arms.tres" id="17_exgvl"]
+[ext_resource type="AudioStream" uid="uid://dm5eew8d3srig" path="res://audio/gunshots/GlockShot3Test.wav" id="18_sreag"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j255n"]
+render_priority = 0
+shader = ExtResource("8_aohl6")
+shader_parameter/albedo = Color(1, 1, 0, 1)
+shader_parameter/texture_albedo = ExtResource("8_ktkxb")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissions = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_8a5lc"]
+material = SubResource("ShaderMaterial_j255n")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tnexk"]
+random_pitch = 1.04
+streams_count = 1
+stream_0/stream = ExtResource("18_sreag")
+
+[sub_resource type="Animation" id="Animation_h26tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.297, -0.13, 0.281)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 1.5708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/GunshotFX/OmniLight3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fxd7r"]
+resource_name = "aim"
+
+[sub_resource type="Animation" id="Animation_bti5l"]
+resource_name = "fire"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/GunshotFX/OmniLight3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/GunshotFX/AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l5q61"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.297, -0.13, 0.281), Vector3(-0.297, -0.178406, 0.281), Vector3(-0.297, -0.13, 0.281)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 1.5708), Vector3(-2.68302e-15, 1.5708, 1.70723), Vector3(0, 1.5708, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_jfjw0"]
+resource_name = "reload"
+length = 3.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm/AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_m3qlg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_d5jns")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_ei2cx")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_c574h")
+}],
+"times": PackedFloat32Array(0.133333, 0.633333, 1.56667, 2.03333)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.297, -0.13, 0.281), Vector3(-0.233498, -0.295258, 0.257341), Vector3(-0.269007, -0.126661, 0.31446), Vector3(-0.297, -0.13, 0.281)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Targets/RTarget:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 1.5708), Vector3(-2.98023e-08, 2.3268, 1.89927), Vector3(-0.247113, 1.69921, 1.86193), Vector3(0, 1.5708, 1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brrxj"]
+_data = {
+&"RESET": SubResource("Animation_h26tt"),
+&"aim": SubResource("Animation_fxd7r"),
+&"fire": SubResource("Animation_bti5l"),
+&"idle": SubResource("Animation_l5q61"),
+&"reload": SubResource("Animation_jfjw0")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2xuyi"]
+animation = &"aim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hg8qt"]
+animation = &"fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gb11y"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3kqtb"]
+animation = &"reload"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aqojx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yv2go"]
+advance_mode = 2
+advance_condition = &"aim"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nw3ag"]
+advance_mode = 2
+advance_expression = "not get(\"parameters/conditions/aim\")"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jfl33"]
+xfade_time = 1.0
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1wrc7"]
+xfade_time = 1.0
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"aim"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ortce"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mm5vd"]
+states/Aim/node = SubResource("AnimationNodeAnimation_2xuyi")
+states/Aim/position = Vector2(699, 106)
+states/Fire/node = SubResource("AnimationNodeAnimation_hg8qt")
+states/Fire/position = Vector2(428, 193)
+states/Idle/node = SubResource("AnimationNodeAnimation_gb11y")
+states/Idle/position = Vector2(316, 38)
+states/Reload/node = SubResource("AnimationNodeAnimation_3kqtb")
+states/Reload/position = Vector2(485, 4)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_aqojx"), "Idle", "Aim", SubResource("AnimationNodeStateMachineTransition_yv2go"), "Aim", "Idle", SubResource("AnimationNodeStateMachineTransition_nw3ag"), "Fire", "Idle", SubResource("AnimationNodeStateMachineTransition_jfl33"), "Fire", "Aim", SubResource("AnimationNodeStateMachineTransition_1wrc7"), "Reload", "Aim", SubResource("AnimationNodeStateMachineTransition_ortce")]
+graph_offset = Vector2(-36, -14)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8c3pe"]
+animation = &"Aim fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m2y0o"]
+animation = &"Aim In"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tnexk"]
+animation = &"Aim out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cskiv"]
+animation = &"Equip - Pull Out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sreag"]
+animation = &"Fire - Normal"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ktkxb"]
+animation = &"Idle - Normal (500 Frames)"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o7koy"]
+animation = &"Reload - Slide"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ktkxb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sreag"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o7koy"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m2y0o"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tnexk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8c3pe"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4hxuk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ryehd"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fhpkr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2y1ae"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_osofn"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cskiv"]
+states/Aim/node = SubResource("AnimationNodeAnimation_m2y0o")
+states/Aim/position = Vector2(593, 135)
+"states/Aim Fire/node" = SubResource("AnimationNodeAnimation_8c3pe")
+"states/Aim Fire/position" = Vector2(531, 197)
+states/AimStop/node = SubResource("AnimationNodeAnimation_tnexk")
+states/AimStop/position = Vector2(361, 116)
+states/Equip/node = SubResource("AnimationNodeAnimation_cskiv")
+states/Equip/position = Vector2(429, 60)
+states/Fire/node = SubResource("AnimationNodeAnimation_sreag")
+states/Fire/position = Vector2(768, 27)
+states/Idle/node = SubResource("AnimationNodeAnimation_ktkxb")
+states/Idle/position = Vector2(644, 70)
+states/Reload/node = SubResource("AnimationNodeAnimation_o7koy")
+states/Reload/position = Vector2(766, 155)
+transitions = ["Start", "Equip", SubResource("AnimationNodeStateMachineTransition_ktkxb"), "Equip", "Idle", SubResource("AnimationNodeStateMachineTransition_sreag"), "Idle", "Fire", SubResource("AnimationNodeStateMachineTransition_o7koy"), "Fire", "Idle", SubResource("AnimationNodeStateMachineTransition_m2y0o"), "Idle", "Reload", SubResource("AnimationNodeStateMachineTransition_tnexk"), "Reload", "Idle", SubResource("AnimationNodeStateMachineTransition_8c3pe"), "Idle", "Aim", SubResource("AnimationNodeStateMachineTransition_4hxuk"), "Aim", "AimStop", SubResource("AnimationNodeStateMachineTransition_ryehd"), "AimStop", "Idle", SubResource("AnimationNodeStateMachineTransition_fhpkr"), "Aim", "Aim Fire", SubResource("AnimationNodeStateMachineTransition_2y1ae"), "Aim Fire", "AimStop", SubResource("AnimationNodeStateMachineTransition_osofn")]
+graph_offset = Vector2(-220, -25)
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_sreag"]
+polyphony = 64
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_ktkxb"]
+
+[node name="ViewmodelPistol" type="Node3D" unique_id=665715007 node_paths=PackedStringArray("tree", "root", "viewCamBone", "viewCam", "audio")]
+script = ExtResource("1_eme1v")
+tree = NodePath("GlockAnims/AnimationTree")
+root = NodePath("GlockAnims")
+viewCamBone = NodePath("GlockAnims/Skel_Arm/Skeleton3D/Cam")
+viewCam = NodePath("GlockAnims/Skel_Arm/Skeleton3D/Cam/Camera")
+aimLerpSpeed = 10.0
+gunReloadPath = "Reload"
+gunAimPath = "Aim"
+gunIdlePath = "Idle"
+gunWalkPath = ""
+gunFirePath = PackedStringArray("Fire")
+gunAimFirePath = "Aim Fire"
+gunInspectPath = "Inspect"
+gunAimCondPath = ""
+gunStateSwitchPaths = PackedStringArray("Aim", "Equip", "AimStop")
+audio = NodePath("GlockAnims/Audio")
+fireAudio = ExtResource("2_sreag")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1844952501]
+fov = 70.0
+
+[node name="fps_arms" parent="." unique_id=470424362 instance=ExtResource("16_20v2g")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="caucasian_male_1" parent="fps_arms" index="0" unique_id=520485217]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, 0)
+
+[node name="caucasian_male_1_Body" parent="fps_arms/caucasian_male_1/Skeleton3D" parent_id_path=PackedInt32Array(470424362, 1863972146) index="0" unique_id=1512850601]
+layers = 16
+cast_shadow = 0
+gi_mode = 0
+surface_material_override/0 = ExtResource("17_exgvl")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="fps_arms/caucasian_male_1/Skeleton3D" parent_id_path=PackedInt32Array(470424362, 1863972146) index="1" unique_id=2113597059]
+transform = Transform3D(0.550801, -0.33849284, 0.7629169, 0.5321243, -0.56179065, -0.63343155, 0.643011, 0.7548608, -0.12931392, -4.97711, -3.0849326, 2.1080213)
+bone_name = "hand.R"
+bone_idx = 5
+
+[node name="9mm" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D" unique_id=71606077 instance=ExtResource("4_80ew7")]
+transform = Transform3D(-4.37114e-07, 10, -8.74228e-07, 10, 4.37114e-07, -3.82137e-14, 0, -8.74228e-07, -10, 0.327022, 1.39739, 0.127007)
+
+[node name="Pistol" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm" index="0" unique_id=1978839807]
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="Pistol_001" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm" index="1" unique_id=1336233960]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, -1, 0, 1, -3.61999e-06, 0, 0, 0)
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="Pistol_002" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm" index="2" unique_id=411522405]
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="Pistol_003" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm" index="3" unique_id=1223448163]
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm" unique_id=1749062201]
+attenuation_model = 3
+volume_db = -4.0
+panning_strength = 0.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Marker3D" type="Marker3D" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm" unique_id=838586109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1771, 0.0487819, 2.75704e-14)
+
+[node name="GunshotFX" type="Node3D" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D" unique_id=1992966307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672125, 2.55246, 0.130651)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/GunshotFX" unique_id=729865944]
+visible = false
+layers = 16
+light_color = Color(0.898039, 0.494118, 0, 1)
+distance_fade_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/GunshotFX/OmniLight3D" unique_id=1152368029]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 3.82137e-15, 4.37114e-08, -1, -1, 1.31134e-07, 1.91069e-15, 0, 0, 0)
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+mesh = SubResource("QuadMesh_8a5lc")
+skeleton = NodePath("../..")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/GunshotFX" unique_id=289776487]
+stream = SubResource("AudioStreamRandomizer_tnexk")
+attenuation_model = 3
+volume_db = -4.0
+max_polyphony = 32
+panning_strength = 0.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="RightHand" type="SkeletonModifier3D" parent="fps_arms/caucasian_male_1/Skeleton3D" parent_id_path=PackedInt32Array(470424362, 1863972146) index="2" unique_id=1452031827 node_paths=PackedStringArray("Target")]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+active = true
+influence = 1.0
+script = ExtResource("3_qdxwa")
+ChainLength = 4
+TargetBone = "hand.R"
+Target = NodePath("../../../Targets/RTarget")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fps_arms" unique_id=1977640993]
+libraries/ = SubResource("AnimationLibrary_brrxj")
+
+[node name="AnimationTree" type="AnimationTree" parent="fps_arms" unique_id=1141764432]
+tree_root = SubResource("AnimationNodeStateMachine_mm5vd")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/aim = false
+
+[node name="Targets" type="Node3D" parent="fps_arms" unique_id=541205965]
+
+[node name="RTarget" type="Marker3D" parent="fps_arms/Targets" unique_id=780877766]
+transform = Transform3D(1.3104328e-11, 3.6199901e-06, 1, 1, -3.6199901e-06, 0, 3.6199901e-06, 1, -3.6199901e-06, -0.297, -0.13, 0.281)
+
+[node name="GlockAnims" parent="." unique_id=1039170287 instance=ExtResource("14_qwn1e")]
+
+[node name="Skeleton3D" parent="GlockAnims/Skel_Arm" parent_id_path=PackedInt32Array(1039170287, 381963207) index="0" unique_id=283417646]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+bones/0/position = Vector3(0, 0.24939877, 0)
+bones/1/position = Vector3(-0.062414832, 0.34787157, 0.3608214)
+bones/1/rotation = Quaternion(-0.39736483, -0.5975638, 0.47700804, 0.50742704)
+bones/2/rotation = Quaternion(-6.725564e-07, 2.1322924e-07, 0.20378917, 0.9790148)
+bones/3/rotation = Quaternion(0.06435096, -0.08425411, 0.063568726, 0.9923302)
+bones/4/scale = Vector3(0.99999994, 1, 1)
+bones/5/position = Vector3(-0.025422938, 0.03295928, -0.004067652)
+bones/5/rotation = Quaternion(-0.20489341, 0.039434098, 0.13805768, 0.96819615)
+bones/6/rotation = Quaternion(0.13403119, 0.071969375, -0.09512709, 0.98377186)
+bones/7/rotation = Quaternion(0.22701755, 0.09606443, -0.18782473, 0.9507663)
+bones/8/rotation = Quaternion(0.121240824, 0.06740753, -0.12144212, 0.98285747)
+bones/9/rotation = Quaternion(-0.10031241, -0.15529972, -0.028029533, 0.9823614)
+bones/10/rotation = Quaternion(-0.650083, 0.10081199, 0.053338546, 0.75125504)
+bones/11/rotation = Quaternion(-0.4435419, 0.20597507, -0.29249886, 0.8217599)
+bones/12/position = Vector3(-0.0011340547, 0.06428365, 0.010973192)
+bones/12/rotation = Quaternion(-0.08389526, -0.069202185, -0.090849765, 0.98990864)
+bones/13/rotation = Quaternion(-0.41774842, 0.12681195, 0.038879525, 0.8988289)
+bones/14/rotation = Quaternion(-0.79747057, 0.040925294, 0.030966062, 0.6011713)
+bones/15/rotation = Quaternion(-0.40173513, 0.13702478, -0.010845121, 0.90538144)
+bones/16/position = Vector3(0.016731758, 0.05408871, 0.00836284)
+bones/16/rotation = Quaternion(-0.062464815, -0.025726696, -0.10459939, 0.99221736)
+bones/17/rotation = Quaternion(-0.41353333, 0.13655335, -0.0116359405, 0.90011555)
+bones/18/rotation = Quaternion(-0.81597126, 0.012505905, -0.021669282, 0.57755077)
+bones/19/rotation = Quaternion(-0.39211, 0.19350284, -0.077489175, 0.8959921)
+bones/20/position = Vector3(0.02962935, 0.048446212, 0.0069485917)
+bones/20/rotation = Quaternion(-0.112455815, 0.053612493, -0.21672721, 0.9682504)
+bones/21/rotation = Quaternion(-0.5077099, 0.061868366, 0.034335125, 0.8586176)
+bones/22/rotation = Quaternion(-0.597767, 0.25959265, -0.20729262, 0.72959995)
+bones/23/rotation = Quaternion(-0.35171884, -0.015904155, -0.40301946, 0.84475815)
+bones/24/rotation = Quaternion(-0.0015032314, -0.04531271, -0.033128463, 0.99842227)
+bones/25/rotation = Quaternion(4.3887138e-07, -0.045337833, -6.256419e-08, 0.9989717)
+bones/26/position = Vector3(0.1566429, 0.32160708, 0.2859863)
+bones/26/rotation = Quaternion(-0.24707364, 0.76985514, -0.5235949, 0.2685628)
+bones/27/rotation = Quaternion(-1.1204013e-06, -2.1743767e-07, -0.33927286, 0.940688)
+bones/28/rotation = Quaternion(0.1439907, -0.46066937, 0.13675004, 0.86507213)
+bones/29/scale = Vector3(0.99999994, 1, 1.0000001)
+bones/30/position = Vector3(0.031924985, 0.027934443, -0.0009836911)
+bones/30/rotation = Quaternion(0.014180176, -0.013773597, -0.25772506, 0.9660161)
+bones/31/rotation = Quaternion(0.021944847, -0.32193133, 0.1179671, 0.9391286)
+bones/32/rotation = Quaternion(0.16689265, -0.29749572, 0.04709743, 0.93884236)
+bones/33/position = Vector3(0.01848497, 0.06821911, 0.013053976)
+bones/33/rotation = Quaternion(-0.008425564, 0.07994216, 0.044192746, 0.9957838)
+bones/34/rotation = Quaternion(-0.6127635, -0.06893505, -0.017396487, 0.7870617)
+bones/35/rotation = Quaternion(-0.37916118, -0.11250565, -0.018722564, 0.9182748)
+bones/36/rotation = Quaternion(-0.43835473, -0.21870343, 0.008346028, 0.8717478)
+bones/37/position = Vector3(-0.0005695849, 0.06433843, 0.014576125)
+bones/37/rotation = Quaternion(-0.011927828, 0.09336686, 0.009460087, 0.9955154)
+bones/38/rotation = Quaternion(-0.58077353, -0.11712588, -0.062244754, 0.8031869)
+bones/39/rotation = Quaternion(-0.41627634, -0.05072197, -0.007814055, 0.9077887)
+bones/40/rotation = Quaternion(-0.4790588, -0.13744862, -0.0011296384, 0.866954)
+bones/41/position = Vector3(-0.018386923, 0.05842582, 0.015813204)
+bones/41/rotation = Quaternion(-0.10789647, 0.04665287, 0.0112663945, 0.993003)
+bones/42/rotation = Quaternion(-0.4689249, -0.122098036, -0.040783174, 0.87380683)
+bones/43/rotation = Quaternion(-0.5460911, -0.11383998, -0.0046058185, 0.8299421)
+bones/44/rotation = Quaternion(-0.390033, -0.19332281, 0.07793732, 0.89689827)
+bones/45/position = Vector3(-0.028353238, 0.04930031, 0.012486285)
+bones/45/rotation = Quaternion(-0.09843664, -0.040646523, 0.10497869, 0.98875564)
+bones/46/rotation = Quaternion(-0.5098903, -0.11398049, -0.017548246, 0.8524743)
+bones/47/rotation = Quaternion(-0.4210061, -0.09490718, 0.030798474, 0.90155315)
+bones/48/rotation = Quaternion(-0.26590106, -0.11906342, 0.08711598, 0.95264435)
+bones/49/rotation = Quaternion(0.005038149, -0.15183112, 0.03277752, 0.98784995)
+bones/50/rotation = Quaternion(4.24728e-07, -0.15191448, -9.679707e-08, 0.9883937)
+bones/51/position = Vector3(-0.049307644, -0.10992907, 0.13408098)
+bones/51/rotation = Quaternion(-0.35064757, 0.66690385, 0.46466744, -0.4651556)
+bones/52/position = Vector3(-0.009343326, -0.109392166, 0.15840155)
+bones/52/rotation = Quaternion(0.51076204, 0.3594639, 0.50287914, 0.59751195)
+bones/53/position = Vector3(-0.10437313, -0.35824552, -0.29462245)
+bones/56/position = Vector3(-0.038020194, -0.055749476, 0.23844095)
+bones/56/rotation = Quaternion(0.49862957, -0.5017309, -0.49888605, 0.50074685)
+bones/57/position = Vector3(0.08815556, -0.045584116, 0.00091218355)
+bones/57/rotation = Quaternion(-0.0060437145, 3.0060191e-05, 0.5894144, 0.8078082)
+bones/58/position = Vector3(-0.018898353, -0.052178513, -0.00019555513)
+bones/59/position = Vector3(0.0041335532, 0.013219758, -8.227981e-05)
+bones/59/rotation = Quaternion(0.010883837, -0.0049564415, -0.5488058, 0.83586437)
+
+[node name="Mag_2" parent="GlockAnims/Skel_Arm/Skeleton3D" index="1" unique_id=1209249718]
+transform = Transform3D(0.0061040292, 0.010690811, -0.9999241, -0.30046028, 0.9537575, 0.008363122, 0.95377463, 0.3003866, 0.009033948, -0.039008863, -0.14412896, 0.19329414)
+
+[node name="Mag" parent="GlockAnims/Skel_Arm/Skeleton3D/Mag_2" index="0" unique_id=1332485018]
+layers = 16
+gi_mode = 2
+instance_shader_parameters/debug_disable_fov = false
+instance_shader_parameters/fov = 46.70000126825
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="Slide_2" parent="GlockAnims/Skel_Arm/Skeleton3D" index="2" unique_id=1752236631]
+transform = Transform3D(-0.001242995, -0.00072449975, -0.99999887, -0.9999868, 0.004962329, 0.0012394488, 0.004961315, 0.99998736, -0.0007306421, -0.037763357, -0.03711056, 0.18616948)
+
+[node name="Slide" parent="GlockAnims/Skel_Arm/Skeleton3D/Slide_2" index="0" unique_id=1578913165]
+layers = 16
+gi_mode = 2
+instance_shader_parameters/debug_disable_fov = false
+instance_shader_parameters/fov = 46.70000126825
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="Trigger_2" parent="GlockAnims/Skel_Arm/Skeleton3D" index="3" unique_id=267995825]
+transform = Transform3D(0.003831265, -0.02506255, -0.99967843, -0.40212816, -0.915333, 0.021406868, -0.9155753, 0.40191677, -0.013585224, -0.037952628, -0.05981747, 0.25168112)
+
+[node name="Trigger" parent="GlockAnims/Skel_Arm/Skeleton3D/Trigger_2" index="0" unique_id=1297234822]
+layers = 16
+gi_mode = 2
+instance_shader_parameters/debug_disable_fov = false
+instance_shader_parameters/fov = 46.70000126825
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="Grip_2" parent="GlockAnims/Skel_Arm/Skeleton3D" index="4" unique_id=1728105466]
+transform = Transform3D(-0.00124228, -0.00072449446, -0.99999887, -0.9999868, 0.0049626827, 0.0012387335, 0.0049616694, 0.99998736, -0.00073063374, -0.038020194, -0.055749476, 0.23844095)
+
+[node name="Grip" parent="GlockAnims/Skel_Arm/Skeleton3D/Grip_2" index="0" unique_id=758822422]
+layers = 16
+gi_mode = 2
+instance_shader_parameters/debug_disable_fov = false
+instance_shader_parameters/fov = 46.70000126825
+surface_material_override/0 = ExtResource("6_ggerg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="GlockAnims/Skel_Arm/Skeleton3D/Grip_2" index="1" unique_id=1364784936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017961677, 0.1301477, 5.6417093e-11)
+visible = false
+layers = 16
+light_color = Color(0.898039, 0.494118, 0, 1)
+distance_fade_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="GlockAnims/Skel_Arm/Skeleton3D/Grip_2/OmniLight3D" unique_id=198066198]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 3.82137e-15, 4.37114e-08, -1, -1, 1.31134e-07, 1.91069e-15, 0, 0, 0)
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 2
+instance_shader_parameters/fov = 46.70000126825
+mesh = SubResource("QuadMesh_8a5lc")
+skeleton = NodePath("../..")
+
+[node name="Arm" parent="GlockAnims/Skel_Arm/Skeleton3D" index="5" unique_id=767160068]
+layers = 16
+gi_mode = 2
+instance_shader_parameters/fov = 46.70000126825
+surface_material_override/0 = ExtResource("15_ktkxb")
+
+[node name="AnimationTree" type="AnimationTree" parent="GlockAnims" unique_id=651342997]
+tree_root = SubResource("AnimationNodeStateMachine_cskiv")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="GlockAnims" unique_id=1756036072]
+stream = SubResource("AudioStreamPolyphonic_sreag")
+attenuation_model = 3
+autoplay = true
+panning_strength = 0.0
+bus = &"World"
+script = ExtResource("16_ktkxb")
+metadata/_custom_type_script = "uid://cgon41wv5dcm3"
+
+[node name="Reload" type="AudioStreamPlayer3D" parent="GlockAnims" unique_id=1867415081]
+stream = SubResource("AudioStreamPolyphonic_ktkxb")
+attenuation_model = 3
+max_polyphony = 32
+panning_strength = 0.0
+bus = &"World"
+
+[editable path="fps_arms"]
+[editable path="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm"]
+[editable path="GlockAnims"]

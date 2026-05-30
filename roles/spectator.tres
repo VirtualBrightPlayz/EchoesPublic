@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://eeyy1gufq71y"]
+
+[ext_resource type="PackedScene" uid="uid://vlgoqfwu8gbb" path="res://scenes/player/controllers/spectator_controller.tscn" id="1_6iyyd"]
+[ext_resource type="Script" uid="uid://brb00nufs5ako" path="res://scripts/map/AmbientProfile.cs" id="1_6lruy"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="1_ninyi"]
+
+[sub_resource type="Resource" id="Resource_8a5ko"]
+script = ExtResource("1_6lruy")
+HasAdjustments = true
+Saturation = 0.8
+metadata/_custom_type_script = "uid://brb00nufs5ako"
+
+[resource]
+resource_name = "Spectator"
+script = ExtResource("1_ninyi")
+DisplayName = "ROLE_NAME_SPECTATOR"
+Objective = "ROLE_OBJ_SPECTATOR"
+canUseIntercom = false
+proxChat = false
+globalTeamChat = true
+mainChatChannel = 2
+altChatChannel = 2
+listeningChatChannels = PackedInt32Array(0, 2)
+ControllerScene = ExtResource("1_6iyyd")
+Ambient = SubResource("Resource_8a5ko")
+SprintStaminaDecreaseRate = 0.3
+SprintStaminaIncreaseRate = 0.3

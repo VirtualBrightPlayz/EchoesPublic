@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://by8fg2dj7offe"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_jjak8"]
+[ext_resource type="PackedScene" uid="uid://d2ic2bj2bsv61" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Lab_Flask_003.fbx" id="2_jjak8"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_gqfle"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvun3"]
+size = Vector3(0.14550781, 0.14001465, 0.14648438)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqfle"]
+size = Vector3(0.19140625, 0.01171875, 0.19140625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8p0ay"]
+size = Vector3(1, 1.888794, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2stdv"]
+height = 0.18243408
+radius = 0.036132813
+
+[node name="Lab_Flask003_Prop" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 1.5
+script = ExtResource("1_jjak8")
+Category = 6
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16565585, 0)
+shape = SubResource("BoxShape3D_uvun3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17695163, 0)
+shape = SubResource("BoxShape3D_gqfle")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0.103781685, 0)
+shape = SubResource("BoxShape3D_8p0ay")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27371216, 0)
+shape = SubResource("CylinderShape3D_2stdv")
+
+[node name="Lab_Flask_003" type="Node3D" parent="." instance=ExtResource("2_jjak8")]
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_gqfle")
+targetNode = NodePath("..")
+CanClaim = true

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://x3cm61idhx8r"]
+
+[ext_resource type="Texture2D" uid="uid://cjup7bvjy0xxv" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Concrete Double/Tile_HCZConcrete_Double_Albedo.png" id="1_xqt7a"]
+[ext_resource type="Texture2D" uid="uid://be5rfw7y6ouph" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Concrete Double/Tile_HCZConcrete_Double_Normal.png" id="2_ub31s"]
+[ext_resource type="Texture2D" uid="uid://bv2jia45r0lcd" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Concrete Double/Tile_HCZConcrete_Double_Mask_ORM.png" id="3_jfcah"]
+
+[resource]
+albedo_texture = ExtResource("1_xqt7a")
+orm_texture = ExtResource("3_jfcah")
+normal_enabled = true
+normal_texture = ExtResource("2_ub31s")

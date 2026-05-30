@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://087vrfdkp53o"]
+
+[ext_resource type="Script" uid="uid://ugwsmffdwefa" path="res://scripts/player/controllers/ability/GrabbingAbility.cs" id="1_c0m7i"]
+[ext_resource type="Script" uid="uid://d0tdkjti3a6tf" path="res://scripts/PIDController.cs" id="2_tlrmh"]
+
+[node name="GrabbingAbility" type="Node" unique_id=1726298647 node_paths=PackedStringArray("pidController", "rayCast")]
+script = ExtResource("1_c0m7i")
+pidController = NodePath("PIDController")
+rayCast = NodePath("RayCast3D")
+metadata/_custom_type_script = "uid://ugwsmffdwefa"
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1170859172]
+enabled = false
+target_position = Vector3(0, 0, -3)
+collision_mask = 268
+hit_from_inside = true
+
+[node name="PIDController" type="Node3D" parent="." unique_id=364969096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+script = ExtResource("2_tlrmh")
+maxForce = 120.0
+Kp = 80.0
+Ki = 10.0
+Kd = 10.0
+maxRotationForce = 31.4
+KRp = 80.0
+KRi = 10.0
+KRd = 10.0
+metadata/_custom_type_script = "uid://d0tdkjti3a6tf"

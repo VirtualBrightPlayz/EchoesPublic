@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://sscpn7jn22y4"]
+
+[ext_resource type="Shader" path="res://shaders/menu_ui.gdshader" id="1_rw8k7"]
+[ext_resource type="Texture2D" uid="uid://gdr5cp77px6" path="res://textures/Fingerprints003_1K-JPG_Color_Inverted.jpg" id="2_irvro"]
+
+[resource]
+shader = ExtResource("1_rw8k7")
+shader_parameter/mul = 0.8
+shader_parameter/add = 0.2
+shader_parameter/main_tex = ExtResource("2_irvro")

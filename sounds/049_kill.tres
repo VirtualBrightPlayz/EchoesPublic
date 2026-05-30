@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://cfykqq0du5nql"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_5mg8k"]
+[ext_resource type="AudioStream" uid="uid://cvmxybewefg6n" path="res://audio/scpcb/049/Horror13.ogg" id="2_5nqmt"]
+
+[resource]
+resource_name = "049_kill"
+script = ExtResource("1_5mg8k")
+DisplayName = "SCP-049 Claims a Victim"
+streams = [ExtResource("2_5nqmt")]
+maxDistance = 50.0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dum2xgvsfcua"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_jsqt3"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_17wew"]
+
+[resource]
+resource_name = "Checkpoint Core-LC"
+script = ExtResource("2_jsqt3")
+type = 2
+scenes = []
+sceneFile = "uid://6mk58jadds60"
+category = "Misc."

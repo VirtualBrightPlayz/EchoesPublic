@@ -1,0 +1,59 @@
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://dxiktgdx3nlqb"]
+
+[ext_resource type="FontFile" uid="uid://dw3qq6fgpqnw2" path="res://fonts/Roboto/Roboto-Bold.ttf" id="1_0ediq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sul36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdq7t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpet1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3jsu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsq3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk67p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_44533"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10v3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6ox2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbr1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bu76i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tftag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3xgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhbpc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obdwo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj7ux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xotk0"]
+
+[resource]
+default_font = ExtResource("1_0ediq")
+Button/styles/disabled = SubResource("StyleBoxEmpty_sul36")
+Button/styles/focus = SubResource("StyleBoxEmpty_bdq7t")
+Button/styles/hover = SubResource("StyleBoxEmpty_bpet1")
+Button/styles/normal = SubResource("StyleBoxEmpty_o3jsu")
+Button/styles/pressed = SubResource("StyleBoxEmpty_xsq3s")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_kk67p")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_44533")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_10v3t")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_w6ox2")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_bbr1x")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_bu76i")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_tftag")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_h3xgx")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_lhbpc")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_obdwo")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_hj7ux")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_xotk0")
+Header/base_type = &"RichTextLabel"
+Text/base_type = &"RichTextLabel"

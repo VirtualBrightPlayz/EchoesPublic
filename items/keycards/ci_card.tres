@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://phmr4lpqy6tv"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_sdvd3"]
+[ext_resource type="PackedScene" uid="uid://8a5iwyoxb2y2" path="res://scenes/items/keycard_ci.tscn" id="2_culd4"]
+[ext_resource type="Texture2D" uid="uid://cm7cskftk0x5p" path="res://textures/inv_icons/ChaosAccessDevice_Icon.png" id="2_sdvd3"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_7n4bq"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_v8rsw"]
+[ext_resource type="Texture2D" uid="uid://2vltqd8blhal" path="res://textures/main/cards/insurgent/T_insurgencyaccess.png" id="6_rxbo7"]
+[ext_resource type="Texture2D" uid="uid://bysk3jwdlsdry" path="res://textures/main/cards/insurgent/ORM_insurgencyaccess.png" id="7_sdvd3"]
+[ext_resource type="Texture2D" uid="uid://dsgdakafl0ooi" path="res://textures/main/cards/insurgent/N_insurgencyaccess.png" id="8_rxbo7"]
+
+[sub_resource type="Resource" id="Resource_sdvd3"]
+script = ExtResource("1_sdvd3")
+level = 3
+cardType = 3
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="Resource" id="Resource_rxbo7"]
+script = ExtResource("1_sdvd3")
+level = 2
+cardType = 4
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="Resource" id="Resource_gmajy"]
+script = ExtResource("1_sdvd3")
+level = 3
+cardType = 1
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="Resource" id="Resource_7n4bq"]
+script = ExtResource("1_sdvd3")
+level = 3
+cardType = 2
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8rsw"]
+render_priority = 0
+shader = ExtResource("5_v8rsw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_rxbo7")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("7_sdvd3")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("7_sdvd3")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("8_rxbo7")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_l3cde"]
+albedo_texture = ExtResource("6_rxbo7")
+orm_texture = ExtResource("7_sdvd3")
+normal_enabled = true
+normal_texture = ExtResource("8_rxbo7")
+
+[resource]
+resource_name = "Chaos Access Device"
+script = ExtResource("4_7n4bq")
+Access = [SubResource("Resource_sdvd3"), SubResource("Resource_rxbo7"), SubResource("Resource_gmajy"), SubResource("Resource_7n4bq")]
+worldMaterial = SubResource("ORMMaterial3D_l3cde")
+viewMaterial = SubResource("ShaderMaterial_v8rsw")
+ItemScene = ExtResource("2_culd4")
+Icon = ExtResource("2_sdvd3")
+Description = "A confusing device capable of accessing any Foundation locks."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

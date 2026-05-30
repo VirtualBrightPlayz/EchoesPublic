@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://scp2dgsc4icp"]
+
+[ext_resource type="AudioStream" uid="uid://cgxtsuh4fxn8u" path="res://audio/music/Melancholy.wav" id="1_8sjyt"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_en65e"]
+
+[resource]
+script = ExtResource("2_en65e")
+audio = ExtResource("1_8sjyt")
+volumeDb = -20.0
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

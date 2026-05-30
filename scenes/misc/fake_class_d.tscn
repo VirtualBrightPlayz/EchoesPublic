@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://xjjsu2u3d15e"]
+
+[ext_resource type="PackedScene" uid="uid://d0kjurl0ehcoa" path="res://scenes/player/controllers_old/player_controller_classd.tscn" id="1_3km36"]
+[ext_resource type="Script" uid="uid://dqaclgnfa2l2f" path="res://scripts/map/FakePlayer.cs" id="2_w40pf"]
+
+[node name="FakeClassD" type="Node3D"]
+
+[node name="PlayerController" parent="." node_paths=PackedStringArray("currentHealthLabel", "labelStart") instance=ExtResource("1_3km36")]
+script = ExtResource("2_w40pf")
+Health = 0.0
+MaxHealth = 100.0
+currentHealthLabel = NodePath("../Marker3D/Label3D")
+labelStart = NodePath("../Marker3D")
+canHeal = true
+healAmount = 10.0
+
+[node name="GeneralSkeleton" parent="PlayerController/CollisionShape3D/classd2/ClassD_Male_1/mixamorig_Hips" index="0"]
+bones/0/rotation = Quaternion(0.079739, 0.0931552, 0.98331, 0.13441)
+bones/1/rotation = Quaternion(0.00804557, 0.993675, -0.105086, 0.0387587)
+bones/2/rotation = Quaternion(-0.0504523, 0.728927, -0.681351, -0.0433648)
+bones/5/rotation = Quaternion(0.0218618, 0.0110269, 0.995321, -0.0934667)
+bones/6/rotation = Quaternion(-0.0829212, 0.993206, -0.073599, -0.0353393)
+bones/7/rotation = Quaternion(0.0293822, 0.691271, -0.721959, 0.00750555)
+bones/10/rotation = Quaternion(0.0297221, 0.0251335, -0.0156539, 0.99912)
+
+[node name="Camera3D" parent="PlayerController/Head" index="0"]
+visible = false
+
+[node name="SpotLight3D" parent="PlayerController/Head" index="2"]
+visible = false
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, -0.25)
+
+[node name="Label3D" type="Label3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+font_size = 12
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="PlayerController" method="HealOverTime"]
+
+[editable path="PlayerController"]
+[editable path="PlayerController/CollisionShape3D/classd2"]

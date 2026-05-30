@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://6akvi8upvn5a"]
+
+[ext_resource type="Resource" uid="uid://cseg2afemf5an" path="res://items/keycards/research_lvl_1.tres" id="1_j5qw4"]
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="1_xykvw"]
+
+[resource]
+script = ExtResource("1_xykvw")
+Items = [ExtResource("1_j5qw4")]
+RemoveUsedItem = true

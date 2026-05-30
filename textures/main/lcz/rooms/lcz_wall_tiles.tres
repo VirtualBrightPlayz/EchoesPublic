@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://do4ttpke7q5eg"]
+
+[ext_resource type="Texture2D" uid="uid://dow4y0pdg681y" path="res://textures/main/lcz/rooms/lcz_wall_tiles/T_light_concrete_hotspot.png" id="1_ofywb"]
+[ext_resource type="Texture2D" uid="uid://cbgh07o27xyik" path="res://textures/main/lcz/rooms/lcz_wall_tiles/N_light_concrete_hotspot.png" id="2_ehuhh"]
+[ext_resource type="Texture2D" uid="uid://ctti1or4upxof" path="res://textures/main/lcz/rooms/lcz_wall_tiles/ORM_light_concrete_hotspot.png" id="3_m1ttw"]
+
+[resource]
+albedo_texture = ExtResource("1_ofywb")
+orm_texture = ExtResource("3_m1ttw")
+normal_enabled = true
+normal_texture = ExtResource("2_ehuhh")

@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://b87xodfm543u5"
+path.bptc="res://.godot/imported/SLm HCZ 079 EndRoom.exr-d2cf2c09b97a6c984a54902daca722f3.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/^Room Scenes/Light Maps/SLm HCZ 079 EndRoom.exr"
+dest_files=["res://.godot/imported/SLm HCZ 079 EndRoom.exr-d2cf2c09b97a6c984a54902daca722f3.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=8

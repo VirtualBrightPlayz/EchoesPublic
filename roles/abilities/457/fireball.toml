@@ -1,0 +1,5 @@
+# [ability]
+# name = 'FireBall'
+# base_name = 'GrenadeThrow'
+
+# [ability.data]

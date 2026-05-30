@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tirqml0fwmxr"
+path="res://.godot/imported/SCP Echoes OST - Don_t Blink (Pre-Chase Drums).ogg-676c791873d218a59f594c87f4134076.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/173/SCP Echoes OST - Don_t Blink (Pre-Chase Drums).ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - Don_t Blink (Pre-Chase Drums).ogg-676c791873d218a59f594c87f4134076.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

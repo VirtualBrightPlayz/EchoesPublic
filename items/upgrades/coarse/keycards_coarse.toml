@@ -1,0 +1,29 @@
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'T3 Admin Keycard'
+output_item = 'T2 Admin Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'T2 Maintenance Keycard'
+output_item = 'T1 Maintenance Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'T2 Research Keycard'
+output_item = 'T1 Research Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'T3 Research Keycard'
+output_item = 'T2 Research Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'T2 Security Keycard'
+output_item = 'T1 Security Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'T3 Security Keycard'
+output_item = 'T2 Security Keycard'

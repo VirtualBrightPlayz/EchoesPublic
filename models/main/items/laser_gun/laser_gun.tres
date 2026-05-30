@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dborueho8xqom"]
+
+[ext_resource type="Texture2D" uid="uid://cq6778q5rhwbi" path="res://models/main/items/laser_gun/Textures/Variation 01/Pistol_01_Albedo.png" id="1_4mits"]
+[ext_resource type="Texture2D" uid="uid://j3lxfsffucu6" path="res://models/main/items/laser_gun/Textures/Shared/Pistol_Occlusion.png" id="2_fajxw"]
+[ext_resource type="Texture2D" uid="uid://cyratglphah0n" path="res://models/main/items/laser_gun/Textures/Shared/Pistol_Emission.png" id="3_vblov"]
+[ext_resource type="Texture2D" uid="uid://dk4p5y8wrlakl" path="res://models/main/items/laser_gun/Textures/Variation 01/Pistol_01_Metallic.png" id="4_awdsi"]
+[ext_resource type="Texture2D" uid="uid://cl5n58u2jkgef" path="res://models/main/items/laser_gun/Textures/Shared/Pistol_Normal.png" id="5_ql7qs"]
+
+[resource]
+albedo_texture = ExtResource("1_4mits")
+metallic = 1.0
+metallic_texture = ExtResource("4_awdsi")
+emission_enabled = true
+emission_texture = ExtResource("3_vblov")
+normal_enabled = true
+normal_texture = ExtResource("5_ql7qs")
+ao_enabled = true
+ao_texture = ExtResource("2_fajxw")

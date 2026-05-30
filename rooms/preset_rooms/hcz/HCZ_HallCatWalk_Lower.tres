@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bmvtd1bkjk2kh"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_wxaoo"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_wxaoo"]
+
+[resource]
+resource_name = "Heavy Catwalk Lower 1"
+script = ExtResource("2_wxaoo")
+type = 2
+scenes = []
+sceneFile = "uid://cq3pg6ikrf660"
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

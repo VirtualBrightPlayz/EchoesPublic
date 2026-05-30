@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://dvkyxnq02n1sf"]
+
+[ext_resource type="Texture2D" uid="uid://dksafp1uit3f2" path="res://textures/main/ez/randomprops/T_fire_extinguisher.png" id="1_i6imc"]
+[ext_resource type="Texture2D" uid="uid://bywlgv6ks18ln" path="res://textures/main/ez/randomprops/N_fire_extinguisher.png" id="2_g6k3b"]
+[ext_resource type="Texture2D" uid="uid://db7grqqkk054k" path="res://textures/main/ez/randomprops/ORM_fire_extinguisher.png" id="3_eiul4"]
+
+[resource]
+albedo_texture = ExtResource("1_i6imc")
+orm_texture = ExtResource("3_eiul4")
+normal_enabled = true
+normal_texture = ExtResource("2_g6k3b")
+ao_enabled = true

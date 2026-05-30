@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bdaig3uf7yddf"]
+
+[ext_resource type="Texture2D" uid="uid://sv1w7w47d2c" path="res://textures/scpcb/officeseat_a.jpg" id="1_e7c6w"]
+[ext_resource type="Texture2D" uid="uid://c105pf5a6nsun" path="res://textures/scpcb/dirtymetalbump.jpg" id="2_8rwwq"]
+
+[resource]
+albedo_texture = ExtResource("1_e7c6w")
+roughness_texture = ExtResource("2_8rwwq")

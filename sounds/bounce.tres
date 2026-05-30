@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://bycod81tjjig4"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_w3ct7"]
+[ext_resource type="AudioStream" uid="uid://d3xl6dvowiq0w" path="res://audio/edited/018bounce.wav" id="2_w3ct7"]
+
+[resource]
+script = ExtResource("1_w3ct7")
+DisplayName = "Bounce"
+streams = [ExtResource("2_w3ct7")]
+maxDistance = 50.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

@@ -1,0 +1,103 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://21kpgn5koawr"
+path="res://.godot/imported/Brig_HoldingCellsRoom.fbx-106c240790450b4bdadc103fa39ffa83.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/PS-01/Meshes/HoldingCells/Brig_HoldingCellsRoom.fbx"
+dest_files=["res://.godot/imported/Brig_HoldingCellsRoom.fbx-106c240790450b4bdadc103fa39ffa83.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Catwalk_TrimSheet": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/CatwalkTrim.tres",
+"use_external/path": "uid://spv6oc7doiy0"
+},
+"Catwalk_TrimSheet.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/CatwalkTrim.tres",
+"use_external/path": "uid://spv6oc7doiy0"
+},
+"Catwalk_TrimSheet_LightGrey": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/Catwalk_Colorize_Grey.tres",
+"use_external/path": "uid://dl4636ci4oseh"
+},
+"ConcretPlaster": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcretePlaster.tres",
+"use_external/path": "uid://dj7268kgty7ye"
+},
+"Concrete_Inset_Trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteTrim_Inset.tres",
+"use_external/path": "uid://btl8ifk3fa5sp"
+},
+"Grate_Tile": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/Grate.tres",
+"use_external/path": "uid://clus0krfaeefr"
+},
+"HCZ_Metal_Trimming_2.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/MetalPanels.tres",
+"use_external/path": "uid://dw24wtj061255"
+},
+"PZ-01_Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/PZ-01_Wall_CM_DarkBlue.tres",
+"use_external/path": "uid://ctfduv42tsi1y"
+},
+"TileFloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/M_TileFloor_PZ-01.tres",
+"use_external/path": "uid://cqwqauxxwdrq4"
+}
+},
+"nodes": {
+"PATH:Brig_Catwalks_001": {
+"mesh_instance/layers": 9
+},
+"PATH:Brig_Floor": {
+"mesh_instance/layers": 9
+},
+"PATH:Brig_Walls": {
+"mesh_instance/layers": 9
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

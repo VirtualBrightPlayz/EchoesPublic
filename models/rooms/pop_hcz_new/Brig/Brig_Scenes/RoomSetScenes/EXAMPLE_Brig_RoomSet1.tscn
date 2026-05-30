@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://du2l80beqhmv5"]
+
+[ext_resource type="PackedScene" uid="uid://c2whce6u2g482" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/BottomBrig.tscn" id="1_7kckf"]
+[ext_resource type="PackedScene" uid="uid://2v02qxmofiuj" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Room_SmallRoom_Brig.tscn" id="2_2uuk1"]
+[ext_resource type="PackedScene" uid="uid://bjxcqc2ycdbu5" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Middle_wideFloor_Brig.tscn" id="3_10ujk"]
+[ext_resource type="PackedScene" uid="uid://d3vhfj6mec3c" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Middle_Catwalk_Brig.tscn" id="4_k5gnd"]
+[ext_resource type="PackedScene" uid="uid://d2uovk5eygxfp" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Middle_HalfMissingFloor_Brig.tscn" id="5_usi1n"]
+[ext_resource type="PackedScene" uid="uid://d1br2uwi5jkdt" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Middle_FilledFloor_(Top)_Brig.tscn" id="6_wevxd"]
+[ext_resource type="PackedScene" uid="uid://bi6dgbgpmwcvr" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Room_Wall_Brig.tscn" id="7_3aw8i"]
+[ext_resource type="PackedScene" uid="uid://c5posiyeqmib6" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Room_Inset_Brig.tscn" id="8_7yg17"]
+[ext_resource type="PackedScene" uid="uid://26nlvqs0q35w" path="res://models/rooms/pop_hcz_new/Brig/Brig_Scenes/Top_Basic_Brig.tscn" id="9_5dq6r"]
+
+[node name="BrigRoomSet1" type="Node3D"]
+
+[node name="BottomBrig" parent="." instance=ExtResource("1_7kckf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.675, 0)
+
+[node name="BottomBrig2" parent="." instance=ExtResource("2_2uuk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.644, -34.675, 0)
+
+[node name="BottomBrig3" parent="." instance=ExtResource("2_2uuk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -34.675, 16.644)
+
+[node name="BottomBrig4" parent="." instance=ExtResource("2_2uuk1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.644, -34.675, 0)
+
+[node name="BottomBrig5" parent="." instance=ExtResource("2_2uuk1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -34.675, -16.644)
+
+[node name="BottomBrig6" parent="." instance=ExtResource("3_10ujk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.74, 0)
+
+[node name="BottomBrig7" parent="." instance=ExtResource("4_k5gnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.805, 0)
+
+[node name="BottomBrig8" parent="." instance=ExtResource("5_usi1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.869999, 0)
+
+[node name="BottomBrig9" parent="." instance=ExtResource("6_wevxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.935, -4.7683716e-07)
+
+[node name="BottomBrig10" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -27.74, -16.644)
+
+[node name="BottomBrig11" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.644, -27.74, 0)
+
+[node name="BottomBrig12" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -27.74, 16.644)
+
+[node name="BottomBrig13" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.644, -27.74, 0)
+
+[node name="BottomBrig14" parent="." instance=ExtResource("8_7yg17")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -20.805, 16.644)
+
+[node name="BottomBrig15" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.644, -20.805, 0)
+
+[node name="BottomBrig16" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -20.805, -16.644)
+
+[node name="BottomBrig17" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.644, -20.805, 0)
+
+[node name="BottomBrig18" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.644, -13.869999, 0)
+
+[node name="BottomBrig19" parent="." instance=ExtResource("8_7yg17")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -13.869999, -16.644)
+
+[node name="BottomBrig20" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -13.869999, 16.644)
+
+[node name="BottomBrig21" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.644, -13.869999, 0)
+
+[node name="BottomBrig22" parent="." instance=ExtResource("2_2uuk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.644, -6.935, 0)
+
+[node name="BottomBrig23" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -6.935, -16.644)
+
+[node name="BottomBrig24" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.644, -6.935, 0)
+
+[node name="BottomBrig25" parent="." instance=ExtResource("8_7yg17")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -6.935, 16.644)
+
+[node name="BottomBrig26" parent="." instance=ExtResource("9_5dq6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.7683716e-07, 0)
+
+[node name="BottomBrig27" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.644, -4.7683716e-07, 0)
+
+[node name="BottomBrig28" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.644, -4.7683716e-07, 0)
+
+[node name="BottomBrig29" parent="." instance=ExtResource("7_3aw8i")]
+transform = Transform3D(-1.4901161e-08, 0, 1, 0, 1, 0, -1, 0, -1.4901161e-08, 0, -4.7683716e-07, 16.644)

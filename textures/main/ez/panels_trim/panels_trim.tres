@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c0gsybkj28dio"]
+
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_odklr"]
+[ext_resource type="Texture2D" uid="uid://bk6d30m5f6yq7" path="res://textures/main/ez/panels_trim/Panels_Trim_T.png" id="2_0qjtq"]
+[ext_resource type="Texture2D" uid="uid://cmi3uwpv5g4e3" path="res://textures/main/ez/panels_trim/Panels_Trim_User0.png" id="3_7kq4d"]
+[ext_resource type="Texture2D" uid="uid://iarqmuhggcex" path="res://textures/main/ez/panels_trim/Panels_Trim_N.png" id="4_ne3lt"]
+[ext_resource type="Texture2D" uid="uid://dqurlk5et1p2m" path="res://textures/main/ez/panels_trim/Panels_Trim_ORM.png" id="5_0d1ff"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_odklr")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("2_0qjtq")
+shader_parameter/mask_color = Color(0.40392157, 0.44313726, 0.47058824, 1)
+shader_parameter/texture_mask = ExtResource("3_7kq4d")
+shader_parameter/texture_orm = ExtResource("5_0d1ff")
+shader_parameter/texture_normal = ExtResource("4_ne3lt")
+shader_parameter/normal_scale = 1.000000807500001
+shader_parameter/uv1_scale = Vector3(1, 1, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

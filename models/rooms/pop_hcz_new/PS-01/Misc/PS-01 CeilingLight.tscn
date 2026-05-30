@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1e5u88s8c47m"]
+
+[ext_resource type="PackedScene" uid="uid://5vtr81cpieqh" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Meshes/^PZ_LightCeiling_Mesh.fbx" id="1_ga5w3"]
+[ext_resource type="Material" path="res://models/rooms/pop_hcz_new/PS-01/Materials/M_Ceiling_PZ-01.tres" id="2_45fno"]
+[ext_resource type="Material" uid="uid://cg56fli8402hm" path="res://materials/scpcb_map/plain_grey.tres" id="3_ga5w3"]
+
+[node name="Ps01CeilingLight" type="Node3D"]
+transform = Transform3D(1.275, 0, 0, 0, 1.275, 0, 0, 0, 1.275, 0, 0, 0)
+
+[node name="PZ_LightCeiling_Mesh" parent="." instance=ExtResource("1_ga5w3")]
+
+[node name="Cube_005" parent="PZ_LightCeiling_Mesh" index="0"]
+surface_material_override/0 = ExtResource("2_45fno")
+surface_material_override/1 = ExtResource("3_ga5w3")
+
+[editable path="PZ_LightCeiling_Mesh"]

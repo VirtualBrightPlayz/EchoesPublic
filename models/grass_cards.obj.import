@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://die585vimhkam"
+path="res://.godot/imported/grass_cards.obj-f00d5c1e150aee782dc0b41f6e7f3a57.mesh"
+
+[deps]
+
+files=["res://.godot/imported/grass_cards.obj-f00d5c1e150aee782dc0b41f6e7f3a57.mesh"]
+
+source_file="res://models/grass_cards.obj"
+dest_files=["res://.godot/imported/grass_cards.obj-f00d5c1e150aee782dc0b41f6e7f3a57.mesh", "res://.godot/imported/grass_cards.obj-f00d5c1e150aee782dc0b41f6e7f3a57.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

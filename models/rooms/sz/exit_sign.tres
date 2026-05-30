@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bhkgg4dnbwsyx"]
+
+[ext_resource type="Texture2D" uid="uid://bhf2yjy1bhyk1" path="res://models/rooms/sz/ExitSign_BaseColor.png" id="1_oaxeq"]
+[ext_resource type="Texture2D" uid="uid://c63u3dmid2f80" path="res://models/rooms/sz/ExitSign_Normal.png" id="2_c4hjb"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_oaxeq")
+normal_enabled = true
+normal_texture = ExtResource("2_c4hjb")

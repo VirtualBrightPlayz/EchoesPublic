@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" format=3 uid="uid://c5eo63dp03lra"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_glqhr"]
+
+[resource]
+resource_name = "ExitLockMenu"
+script = ExtResource("1_glqhr")
+GodotAction = &"player_secondary"
+LocaleKey = "Action_ExitLockMenu"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

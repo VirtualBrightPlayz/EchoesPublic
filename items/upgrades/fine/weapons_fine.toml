@@ -1,0 +1,19 @@
+[[item_upgrades]]
+scp_914_setting = 'Fine'
+input_item = 'Pistol'
+output_item = 'Short-Range SMG'
+
+[[item_upgrades]]
+scp_914_setting = 'Fine'
+input_item = 'Short-Range SMG'
+output_item = 'Shotgun'
+
+[[item_upgrades]]
+scp_914_setting = 'Fine'
+input_item = 'Pistol Ammo'
+output_item = 'SMG Ammo'
+
+[[item_upgrades]]
+scp_914_setting = 'Fine'
+input_item = 'SMG Ammo'
+output_item = 'Rifle Ammo'

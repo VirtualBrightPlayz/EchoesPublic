@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ccdma1miw0hmu"]
+
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_62vdk"]
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="3_jagwj"]
+
+[resource]
+resource_name = "Light Bathroom"
+script = ExtResource("3_jagwj")
+type = 2
+stage = 1
+scenes = []
+sceneFile = "uid://cgw4kiiepf13y"
+isInterest = true
+category = "Light Containment"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhrenm4e3e7ee"]
+
+[ext_resource type="Script" uid="uid://cil7aahcaqqsm" path="res://scripts/layout_generator/Layout.cs" id="1_55htt"]
+[ext_resource type="Script" uid="uid://cpsmk65rgsor4" path="res://scripts/layout_generator/LayoutDebugDraw.cs" id="3_hh6rv"]
+[ext_resource type="Script" uid="uid://dphmracemea5g" path="res://scripts/layout_generator/ExampleGeneratorManager.cs" id="3_ioenw"]
+[ext_resource type="Resource" uid="uid://csuyyslttnkys" path="res://scripts/layout_generator/example_rooms/GenCollection.tres" id="4_sr7lr"]
+[ext_resource type="Script" uid="uid://cacio784iugsx" path="res://scripts/player/FreeCam.cs" id="5_j385h"]
+
+[node name="Root" type="Node3D"]
+
+[node name="Layout" type="Node3D" parent="."]
+script = ExtResource("1_55htt")
+GridSize = Vector2i(19, 19)
+CellSize = 20.8
+
+[node name="ExampleGeneratorManager" type="Node3D" parent="." node_paths=PackedStringArray("TargetLayout")]
+script = ExtResource("3_ioenw")
+TargetLayout = NodePath("../Layout")
+RoomGenerationSettingsCollection = ExtResource("4_sr7lr")
+Seed = 1845
+
+[node name="LayoutDebugDraw" type="Node" parent="." node_paths=PackedStringArray("TargetLayout")]
+script = ExtResource("3_hh6rv")
+TargetLayout = NodePath("../Layout")
+
+[node name="FreeCam" type="Node3D" parent="."]
+script = ExtResource("5_j385h")
+SprintMultiplier = 5.0

@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://sruikpejfij5"]
+
+[ext_resource type="Texture2D" uid="uid://dkym1dgavl43s" path="res://textures/main/ez/randomprops/T_vending_machine_v2.png" id="1_fgbev"]
+[ext_resource type="Texture2D" uid="uid://dubx5w7mbli17" path="res://textures/main/ez/randomprops/E_vending_machine_v2.png" id="2_58clw"]
+[ext_resource type="Texture2D" uid="uid://734jykux55gw" path="res://textures/main/ez/randomprops/N_vending_machine_v2.png" id="2_76ab6"]
+[ext_resource type="Texture2D" uid="uid://cw1uqxjololrw" path="res://textures/main/ez/randomprops/ORM_vending_machine_v2.png" id="3_58clw"]
+
+[resource]
+albedo_texture = ExtResource("1_fgbev")
+orm_texture = ExtResource("3_58clw")
+emission_enabled = true
+emission_texture = ExtResource("2_58clw")
+normal_enabled = true
+normal_texture = ExtResource("2_76ab6")
+ao_enabled = true

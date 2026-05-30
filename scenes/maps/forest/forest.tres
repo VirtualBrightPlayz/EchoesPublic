@@ -1,0 +1,29 @@
+[gd_resource type="Environment" load_steps=5 format=3 uid="uid://c7qvvtddc65ko"]
+
+[ext_resource type="Texture2D" uid="uid://dgwgpf0c2k24" path="res://textures/lens_dirt.png" id="1_lpt7x"]
+[ext_resource type="Texture2D" uid="uid://bwso5e84ul12f" path="res://textures/scpcb/sky/skybox.png" id="2_qdqwv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1kw7y"]
+panorama = ExtResource("2_qdqwv")
+
+[sub_resource type="Sky" id="Sky_isjeg"]
+sky_material = SubResource("PanoramaSkyMaterial_1kw7y")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_isjeg")
+sky_rotation = Vector3(0, 1.9198622, 0)
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 3
+ssao_enabled = true
+glow_enabled = true
+glow_map = ExtResource("1_lpt7x")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0.63529414, 0.78039217, 1)
+fog_density = 1.0
+fog_depth_begin = 20.0
+fog_depth_end = 50.0
+volumetric_fog_enabled = true
+volumetric_fog_emission = Color(0, 0.27766666, 0.34, 1)
+adjustment_enabled = true

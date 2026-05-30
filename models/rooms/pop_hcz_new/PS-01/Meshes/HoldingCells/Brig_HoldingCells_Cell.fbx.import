@@ -1,0 +1,69 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dwcors6a1qrpi"
+path="res://.godot/imported/Brig_HoldingCells_Cell.fbx-22e7aed17acdbe50c2ac404b38ca5975.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/PS-01/Meshes/HoldingCells/Brig_HoldingCells_Cell.fbx"
+dest_files=["res://.godot/imported/Brig_HoldingCells_Cell.fbx-22e7aed17acdbe50c2ac404b38ca5975.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"ConcretPlaster": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcretePlaster.tres",
+"use_external/path": "uid://dj7268kgty7ye"
+},
+"PZ-01_Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/PZ-01_Wall_CM_DarkBlue.tres",
+"use_external/path": "uid://ctfduv42tsi1y"
+},
+"TileFloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/M_TileFloor_PZ-01.tres",
+"use_external/path": "uid://cqwqauxxwdrq4"
+}
+},
+"nodes": {
+"PATH:CD_Cell_Base": {
+"generate/physics": true,
+"mesh_instance/layers": 9,
+"physics/layer": 9
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

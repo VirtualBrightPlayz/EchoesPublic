@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bcebeho1xeh25"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_eyfyr"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_eyfyr"]
+
+[resource]
+resource_name = "Office Hall 4"
+script = ExtResource("2_eyfyr")
+type = 2
+size = 1
+stage = 3
+scenes = []
+sceneFile = "uid://dfuv3yvsh0thd"
+category = "Entrance"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

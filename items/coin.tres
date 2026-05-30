@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://c8byc7ufeqof5"]
+
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="1_2jpt2"]
+[ext_resource type="Texture2D" uid="uid://ka5acmkprgjs" path="res://models/main/items/coin/coin.png" id="1_527q1"]
+[ext_resource type="PackedScene" uid="uid://bu2uvo3qumtiv" path="res://scenes/items/coin.tscn" id="2_o3dv7"]
+
+[resource]
+resource_name = "Coin"
+script = ExtResource("1_2jpt2")
+ItemScene = ExtResource("2_o3dv7")
+Icon = ExtResource("1_527q1")
+Description = "It's shiny."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ci4srol523fsy"]
+
+[ext_resource type="Texture2D" uid="uid://262woxilgvdp" path="res://textures/scpcb/icons/room2C_intercom.png" id="1_em5qo"]
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_em5qo"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="4_g353p"]
+
+[resource]
+resource_name = "Intercom"
+script = ExtResource("2_em5qo")
+type = 1
+size = 2
+stage = 3
+scenes = []
+sceneFile = "uid://brlfpsp2flub"
+isInterest = true
+gridRect = Rect2i(-1, -1, 2, 2)
+layoutIconOverride = ExtResource("1_em5qo")
+category = "Entrance"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://by3827cbtgep4"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_uus82"]
+[ext_resource type="AudioStream" uid="uid://dwaj5f3w4t1a3" path="res://audio/Footsteps/Metal/metal_rng.tres" id="2_uus82"]
+
+[resource]
+resource_name = "metal"
+script = ExtResource("1_uus82")
+streams = [ExtResource("2_uus82")]
+volumeDb = -2.0
+unitSize = 2.0
+maxDistance = 50.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

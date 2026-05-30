@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://bgv81ef6ash3t"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_jt5wn"]
+[ext_resource type="AudioStream" uid="uid://7hnida0twfee" path="res://audio/scpcb/106/StepPD1.ogg" id="2_lwi14"]
+[ext_resource type="AudioStream" uid="uid://b6hjakuspjuby" path="res://audio/scpcb/106/StepPD2.ogg" id="3_vhbk4"]
+[ext_resource type="AudioStream" uid="uid://cftgovoeveqpi" path="res://audio/scpcb/106/StepPD3.ogg" id="4_n4j5r"]
+
+[resource]
+script = ExtResource("1_jt5wn")
+DisplayName = "Footsteps 106"
+streams = [ExtResource("2_lwi14"), ExtResource("3_vhbk4"), ExtResource("4_n4j5r")]
+volumeDb = -2.0
+unitSize = 15.0
+maxDistance = 50.0

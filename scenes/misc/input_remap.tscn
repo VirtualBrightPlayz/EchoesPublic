@@ -1,0 +1,172 @@
+[gd_scene load_steps=2 format=3 uid="uid://c08bp68elerq"]
+
+[ext_resource type="Script" uid="uid://npwc8mwh1jg3" path="res://scripts/ui/InputRemapButton.cs" id="1_612ya"]
+
+[node name="InputRemap" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Container" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="RESET" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Reset All Mappings"
+script = ExtResource("1_612ya")
+
+[node name="player_forward" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_backward" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_left" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_right" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_jump" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_sprint" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_sneak" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_primary" type="Button" parent="Margin/Container"]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_secondary" type="Button" parent="Margin/Container"]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_use" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_reload" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_throw" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_inventory" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_voice_chat" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_voice_chat_alt" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_list" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="admin_menu" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")
+
+[node name="player_spray" type="Button" parent="Margin/Container"]
+layout_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "RemapButton"
+script = ExtResource("1_612ya")

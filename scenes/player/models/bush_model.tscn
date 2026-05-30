@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dytdyh3sur4th"]
+
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="2_wik2d"]
+[ext_resource type="ArrayMesh" uid="uid://die585vimhkam" path="res://models/grass_cards.obj" id="3_q7hi1"]
+[ext_resource type="Texture2D" uid="uid://etfkexhcjfin" path="res://textures/scpcb/forest/tree1.dds" id="4_p705b"]
+[ext_resource type="Texture2D" uid="uid://bfeykeabcux3r" path="res://textures/scpcb/forest/tree1_mask.png" id="5_5ie35"]
+[ext_resource type="Script" uid="uid://c34u348ok0smv" path="res://scripts/map/HitboxMaker.cs" id="8_lgc73"]
+[ext_resource type="Script" uid="uid://b3jrtkmear2gs" path="res://scripts/map/PlayerHitbox.cs" id="11_m1vxt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx4ed"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("4_p705b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22vrn"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("5_5ie35")
+stencil_flags = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrkwc"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("5_5ie35")
+stencil_flags = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhibx"]
+radius = 0.75
+height = 2.5
+
+[node name="Model" type="Node3D" unique_id=1884523196 node_paths=PackedStringArray("disableLocal")]
+script = ExtResource("2_wik2d")
+disableLocal = [NodePath("Root")]
+headAxis = Vector3(-1, 0, 0)
+metadata/_custom_type_script = "uid://xq2fvvleypij"
+
+[node name="Root" type="Node3D" parent="." unique_id=276894356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="Bush" type="MeshInstance3D" parent="Root" unique_id=1723692171]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -1.25, 0)
+gi_mode = 2
+mesh = ExtResource("3_q7hi1")
+surface_material_override/0 = SubResource("StandardMaterial3D_mx4ed")
+
+[node name="BushSeen" type="MeshInstance3D" parent="Root" unique_id=942586204]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -1.25, 0)
+visible = false
+transparency = 0.25
+mesh = ExtResource("3_q7hi1")
+surface_material_override/0 = SubResource("StandardMaterial3D_22vrn")
+
+[node name="BushNotSeen" type="MeshInstance3D" parent="Root" unique_id=875308713]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -1.25, 0)
+visible = false
+transparency = 0.6
+mesh = ExtResource("3_q7hi1")
+surface_material_override/0 = SubResource("StandardMaterial3D_lrkwc")
+
+[node name="HitboxMaker" type="Node3D" parent="Root" unique_id=1347312003 node_paths=PackedStringArray("playerController")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
+script = ExtResource("8_lgc73")
+playerController = NodePath("../..")
+collisionSize = 0.075
+headSize = 0.175
+layer = 16
+metadata/_custom_type_script = "uid://c34u348ok0smv"
+
+[node name="PlayerHitbox" type="StaticBody3D" parent="Root" unique_id=832135592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root/PlayerHitbox" unique_id=158990125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_xhibx")
+
+[node name="PlayerHitbox" type="Node" parent="Root/PlayerHitbox" unique_id=1221291261]
+script = ExtResource("11_m1vxt")
+HealthNode = NodePath("../../..")
+metadata/_custom_type_script = "uid://b3jrtkmear2gs"

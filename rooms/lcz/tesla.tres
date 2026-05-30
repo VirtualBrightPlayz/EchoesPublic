@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cfv8ngmujefj"]
+
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="2_5luxy"]
+
+[resource]
+script = ExtResource("2_5luxy")
+RoomScenes = Array[PackedScene]([])
+RequiredInstances = 0
+MaximumInstances = 2
+SpawnPoolEntries = 15
+Connections = 10
+BlockedNeighbours = 5
+PreSpawnValidatorResources = []
+PostSpawnValidatorResources = []
+Test = false
+Constraints = []
+MaxConsecutive = 0

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=4 uid="uid://dchbdr12tb628"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_12d41"]
+[ext_resource type="Material" uid="uid://bj0t55ieqlsyr" path="res://textures/main/ez/randomprops/small_props.tres" id="2_8y0ho"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_vm8ov"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4uj7f"]
+_surfaces = [{
+"aabb": AABB(-0.015, -0.01, -0.0630895, 0.03, 0.02, 0.10845),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAABQADAAAAAAAEAAUABgADAAUAAwAGAAEABwAFAAQABAACAAcABQAHAAYAAgABAAgABwACAAkACAAJAAIABgAHAAoACQAKAAcAAQAGAAsACgALAAYACwAIAAEACwAKAAwACQAIAA0ACAALAA4ADAAOAAsADgANAAgADwAMAAoADgAMAA8ACgAJAA8ADwANAA4ADQAPAAkA"),
+"name": "smallprops",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("j8J1vArXIzxoyzk9j8J1vArXIzxoyzm9j8J1PArXIzxoyzm9j8J1vArXI7xoyzk9j8J1PArXIzxoyzk9j8J1PArXI7xoyzk9j8J1vArXI7xoyzm9j8J1PArXI7xoyzm91T8IvE0uRjtpyzm91T8IPE0uRjtpyzm91T8IPE0uRrtpyzm91T8IvE0uRrtpyzm91T8IPE0uRrsSNYG91T8IvE0uRjsSNYG91T8IvE0uRrsSNYG91T8IPE0uRjsSNYG9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vm8ov"]
+resource_name = "usb"
+_surfaces = [{
+"aabb": AABB(-0.015, -0.01, -0.0630895, 0.03, 0.02, 0.10845),
+"attribute_data": PackedByteArray("GWyTOrrulj4ZbJM6wLGDPgY4ezzAsYM+Bjh7PLrulj72zB89wLGDPvbMHz267pY+zTTLPLrulj7NNMs8wLGDPvbMHz18LJs+zTTLPHwsmz7NNMs8uu6WPvbMHz267pY+zTTLPMCxgz7NNMs8uu6WPgY4ezy67pY+Bjh7PMCxgz799HE/jF8qP7/Xcz+MXyo/v9dzPxgPKz/99HE/GA8rP/bMHz267pY+9swfPcCxgz5bmUY9wLGDPluZRj267pY+TYd0P+5cKD8PanY/7lwoPw9qdj+MXyo/TYd0P4xfKj+/13M/7lwoP02HdD/uXCg/TYd0P4xfKj+/13M/jF8qP/30cT/uXCg/v9dzP+5cKD+/13M/jF8qP/30cT+MXyo/D2p2P+5cKD+cGXc/7lwoP5wZdz+MXyo/D2p2P4xfKj/2zB89wLGDPs00yzzAsYM+jCPlPAo3gj6MI+U8tu6APoXVEj0KN4I+zTTLPADofj72zB89AOh+PoXVEj227oA+"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKwAqACkAKgAsACgAKQAtACsALgAoACwALwArAC0ALQAuAC8ALAAvAC4A"),
+"material": ExtResource("2_8y0ho"),
+"name": "smallprops",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("j8J1vArXIzxoyzk9j8J1vArXIzxoyzm9j8J1PArXIzxoyzm9j8J1PArXIzxoyzk9j8J1vArXI7xoyzm9j8J1vArXI7xoyzk9j8J1PArXI7xoyzk9j8J1PArXI7xoyzm9j8J1vArXIzxoyzk9j8J1PArXIzxoyzk9j8J1PArXI7xoyzk9j8J1vArXI7xoyzk9j8J1PArXI7xoyzm9j8J1PArXI7xoyzk9j8J1PArXIzxoyzk9j8J1PArXIzxoyzm91T8IPE0uRjsSNYG91T8IvE0uRjsSNYG91T8IvE0uRrsSNYG91T8IPE0uRrsSNYG9j8J1vArXI7xoyzk9j8J1vArXI7xoyzm9j8J1vArXIzxoyzm9j8J1vArXIzxoyzk91T8IvE0uRrtpyzm91T8IPE0uRrtpyzm91T8IPE0uRrsSNYG91T8IvE0uRrsSNYG91T8IvE0uRjtpyzm91T8IvE0uRrtpyzm91T8IvE0uRrsSNYG91T8IvE0uRjsSNYG91T8IPE0uRjtpyzm91T8IvE0uRjtpyzm91T8IvE0uRjsSNYG91T8IPE0uRjsSNYG91T8IPE0uRrtpyzm91T8IPE0uRjtpyzm91T8IPE0uRjsSNYG91T8IPE0uRrsSNYG9j8J1vArXI7xoyzm9j8J1PArXI7xoyzm91T8IPE0uRrtpyzm91T8IPE0uRjtpyzm91T8IvE0uRrtpyzm9j8J1PArXIzxoyzm9j8J1vArXIzxoyzm91T8IvE0uRjtpyzm9/3///////7//f///////v/9///////+//3///////7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+/////f/9/AID///9//38AgP///3//fwCA////f/9/AID/////AAD/v/////8AAP+//////wAA/7//////AAD/vwAA/3//f///AAD/f/9///8AAP9//3///wAA/3//f////38AAP///7//fwAA////v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+/////f/9///////9//3///////3//f///////f/9///8AAAAAAAD/v/7/AAAAAP+//v8AAAAA/7/+//7/AAD/vwAAAAAAAP+//v/+/wAA/78AAP7/AAD/vwAA/v8AAP+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4uj7f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vm8ov"]
+size = Vector3(0.0605469, 0.0371094, 0.135742)
+
+[node name="Usb" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 384
+collision_mask = 129
+mass = 0.35
+continuous_cd = true
+script = ExtResource("1_12d41")
+Category = 3
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="usb" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_vm8ov")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00836731)
+shape = SubResource("BoxShape3D_vm8ov")
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_vm8ov")
+targetNode = NodePath("..")
+CanClaim = true

@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://duyuoegeasitq"]
+
+[ext_resource type="Shader" uid="uid://b1d0qxprhoa4q" path="res://shaders/anim_texture.gdshader" id="1_e1onq"]
+[ext_resource type="Texture2D" uid="uid://b3c3yc04plns4" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/PleaseWaitIcon_Anim.png" id="2_e1onq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_e1onq")
+shader_parameter/albedo_tint = Color(0, 0, 0, 1)
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.4
+shader_parameter/emission = ExtResource("2_e1onq")
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/fb_size = Vector2(14, 1)
+shader_parameter/fb_speed = 15.0

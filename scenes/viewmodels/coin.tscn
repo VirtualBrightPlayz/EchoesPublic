@@ -1,0 +1,323 @@
+[gd_scene load_steps=20 format=3 uid="uid://bn13yw31jsqvp"]
+
+[ext_resource type="Script" uid="uid://bcmy5wb6kqb66" path="res://scripts/player/role_ui/ViewmodelCup.cs" id="1_i8gnk"]
+[ext_resource type="PackedScene" uid="uid://bfy2psng0mla" path="res://models/main/fps_arms/fps_arms.glb" id="2_2i58e"]
+[ext_resource type="Material" uid="uid://dh13r3li86aj1" path="res://materials/roles/viewmodel/fps_arms.tres" id="3_irta1"]
+[ext_resource type="PackedScene" uid="uid://ck4ectnpob3a3" path="res://models/main/items/coin/coin.glb" id="4_cp0xn"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_62hif"]
+[ext_resource type="Texture2D" uid="uid://ka5acmkprgjs" path="res://models/main/items/coin/coin.png" id="6_l1l18"]
+[ext_resource type="Script" uid="uid://pesq73gi47v3" path="res://addons/FastIK/FastIKFabric2.cs" id="8_2kp4p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8gnk"]
+render_priority = 0
+shader = ExtResource("5_62hif")
+shader_parameter/fov = 70.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_l1l18")
+shader_parameter/roughness = 0.35
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.1
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_p1bl8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.961061, 3.02045, 2.83776)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.183993, -0.263354, 0.268553)]
+}
+
+[sub_resource type="Animation" id="Animation_efgqc"]
+resource_name = "drink"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.26529, 1.83958, 1.17461), Vector3(0.460904, 2.31254, 0.942835), Vector3(0.817263, 1.83569, 0.180044)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.733333, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.22, -0.138, 0.233), Vector3(-0.104687, -0.0993024, 0.204813), Vector3(-0.104687, -0.0993024, 0.204813), Vector3(-0.104687, -0.251518, 0.204813)]
+}
+
+[sub_resource type="Animation" id="Animation_uxuu6"]
+resource_name = "equip"
+length = 0.4
+
+[sub_resource type="Animation" id="Animation_kdp4l"]
+resource_name = "equip_2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.26529, 1.83958, 1.75305), Vector3(0.26529, 1.83958, 1.17461)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.264944, -0.281749, 0.216905), Vector3(-0.22, -0.138, 0.233)]
+}
+
+[sub_resource type="Animation" id="Animation_k5688"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.26529, 1.83958, 1.17461)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.22, -0.138, 0.233)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gcfv"]
+_data = {
+&"RESET": SubResource("Animation_p1bl8"),
+&"drink": SubResource("Animation_efgqc"),
+&"equip": SubResource("Animation_uxuu6"),
+&"equip_2": SubResource("Animation_kdp4l"),
+&"idle": SubResource("Animation_k5688")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ysdhr"]
+animation = &"equip_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_07uk5"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5pd1p"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d3cpc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ok1lk"]
+states/End/position = Vector2(761, 94)
+states/Start/position = Vector2(172, 94)
+states/equip/node = SubResource("AnimationNodeAnimation_ysdhr")
+states/equip/position = Vector2(307, 68)
+states/idle/node = SubResource("AnimationNodeAnimation_07uk5")
+states/idle/position = Vector2(426, 68)
+transitions = ["Start", "equip", SubResource("AnimationNodeStateMachineTransition_5pd1p"), "equip", "idle", SubResource("AnimationNodeStateMachineTransition_d3cpc")]
+
+[node name="ViewmodelCup" type="Node3D" node_paths=PackedStringArray("tree")]
+script = ExtResource("1_i8gnk")
+tree = NodePath("fps_arms/AnimationTree")
+gunWalkPath = ""
+gunFirePath = "parameters/conditions/drink"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+fov = 70.0
+
+[node name="fps_arms" parent="." instance=ExtResource("2_2i58e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="caucasian_male_1" parent="fps_arms" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, 0)
+
+[node name="Skeleton3D" parent="fps_arms/caucasian_male_1" index="0"]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0)
+bones/0/rotation = Quaternion(-0.422754, 0.476007, 0.476007, 0.606725)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(-0.389953, 0.316543, -0.24659, 0.828813)
+bones/2/rotation = Quaternion(-0.0126078, 0.88696, -0.177494, -0.426191)
+bones/4/rotation = Quaternion(0.269385, 0.137858, 0.896211, -0.324397)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.881152, -0.0859211, 0.388472, 0.255495)
+bones/7/rotation = Quaternion(0.792301, -0.0482795, -0.117475, 0.596764)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.304269, 0.00257864, -0.00736871, 0.952554)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.24306, -0.00389407, 0.0133361, 0.969912)
+bones/9/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.693348, 0.0626971, 0.0468077, 0.716343)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.486123, -0.0660734, 0.123289, 0.862623)
+bones/12/scale = Vector3(1, 1, 0.999999)
+bones/13/rotation = Quaternion(0.300771, -0.000578421, 0.013105, 0.953606)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.0379123, -0.0639231, 0.0435517, 0.996283)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0.685999, 0.0962366, 0.064359, 0.718333)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/rotation = Quaternion(0.463391, -0.000789763, -0.0133659, 0.886053)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.253671, 0.00186909, 0.0261948, 0.966934)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.215573, -0.623174, -0.541402, 0.5216)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.0936308, -0.130183, 0.160864, 0.973863)
+bones/19/scale = Vector3(0.999999, 1, 1)
+bones/20/rotation = Quaternion(0.361716, 0.00808198, -0.00648288, 0.932231)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.0251506, 0.0640892, -0.111101, 0.991422)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/rotation = Quaternion(0.372524, -0.00506521, 0.00883039, 0.927967)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(0.461272, -0.00315145, 0.00288454, 0.887248)
+bones/23/scale = Vector3(1, 1, 1)
+bones/24/rotation = Quaternion(0.310436, 0.00601432, -0.00588048, 0.950557)
+bones/25/rotation = Quaternion(-0.422754, -0.476007, -0.476007, 0.606725)
+bones/25/scale = Vector3(1, 1, 1)
+bones/27/rotation = Quaternion(0.012608, 0.88696, -0.177494, 0.426191)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/rotation = Quaternion(0.394734, 1.99382e-06, 3.01651e-07, 0.918795)
+bones/29/rotation = Quaternion(-0.206742, 0.108818, 0.909603, 0.343567)
+bones/29/scale = Vector3(0.999999, 1, 1)
+bones/30/rotation = Quaternion(0.855558, 0.109686, -0.432427, 0.262671)
+bones/30/scale = Vector3(1, 1, 1)
+bones/31/scale = Vector3(1, 1, 1)
+bones/32/scale = Vector3(1, 1, 1)
+bones/33/rotation = Quaternion(0.067539, -0.0042692, 0.00654106, 0.997686)
+bones/34/rotation = Quaternion(0.013686, 0.00685341, -0.012089, 0.99981)
+bones/35/rotation = Quaternion(-0.0332933, 0.0644771, 0.0921443, 0.993098)
+bones/35/scale = Vector3(1, 1, 1)
+bones/36/rotation = Quaternion(0.0960064, 0.00734819, -0.00704507, 0.995329)
+bones/37/rotation = Quaternion(0.100145, 0.00399469, -0.00151391, 0.994964)
+bones/38/rotation = Quaternion(0.0163358, -0.00748326, 0.00384831, 0.999831)
+bones/38/scale = Vector3(1, 1, 1)
+bones/39/rotation = Quaternion(-0.0289363, -0.104267, -0.0753077, 0.991272)
+bones/39/scale = Vector3(1, 1, 1)
+bones/40/rotation = Quaternion(0.0553301, -0.0226092, -0.0883893, 0.994291)
+bones/41/rotation = Quaternion(0.10886, -0.00412612, 0.0127331, 0.993967)
+bones/41/scale = Vector3(1, 1, 1)
+bones/42/rotation = Quaternion(-0.00837809, 0.00504718, -0.025765, 0.99962)
+bones/42/scale = Vector3(1, 1, 1)
+bones/43/scale = Vector3(1, 1, 1)
+bones/44/rotation = Quaternion(0.0331026, -0.015048, -0.0767793, 0.996385)
+bones/44/scale = Vector3(1, 1, 1)
+bones/45/scale = Vector3(1, 1, 1)
+bones/46/rotation = Quaternion(-0.00313425, 0.00453462, -0.0123084, 0.999909)
+bones/46/scale = Vector3(1, 1, 1)
+bones/47/rotation = Quaternion(0.128419, 0.425446, 0.48864, 0.750823)
+bones/47/scale = Vector3(1, 1, 1)
+bones/48/rotation = Quaternion(0.0416979, 0.139875, -0.192096, 0.970461)
+bones/48/scale = Vector3(1, 1, 1)
+
+[node name="caucasian_male_1_Body" parent="fps_arms/caucasian_male_1/Skeleton3D" index="0"]
+layers = 16
+cast_shadow = 0
+gi_mode = 0
+surface_material_override/0 = ExtResource("3_irta1")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="fps_arms/caucasian_male_1/Skeleton3D" index="1"]
+transform = Transform3D(0.130715, 0.342536, 0.930368, 0.890266, 0.372403, -0.262189, -0.43628, 0.862547, -0.256269, -2.20243, -0.382467, 2.32667)
+bone_name = "hand.R"
+bone_idx = 5
+
+[node name="coin" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D" instance=ExtResource("4_cp0xn")]
+transform = Transform3D(2, -9.53675e-08, -7.74861e-08, 9.53675e-08, 2, -4.76838e-08, 7.74861e-08, 4.76838e-08, 2, 0.361138, 1.06565, 0.725108)
+
+[node name="Cylinder" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/coin" index="0"]
+cast_shadow = 0
+gi_mode = 0
+surface_material_override/0 = SubResource("ShaderMaterial_i8gnk")
+
+[node name="RightHand" type="SkeletonModifier3D" parent="fps_arms/caucasian_male_1/Skeleton3D" index="2" node_paths=PackedStringArray("Target")]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+active = true
+influence = 1.0
+script = ExtResource("8_2kp4p")
+ChainLength = 4
+TargetBone = "hand.R"
+Target = NodePath("../../../Targets/RTarget")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fps_arms"]
+libraries = {
+&"": SubResource("AnimationLibrary_7gcfv")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="fps_arms"]
+tree_root = SubResource("AnimationNodeStateMachine_ok1lk")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Targets" type="Node3D" parent="fps_arms"]
+
+[node name="RTarget" type="Marker3D" parent="fps_arms/Targets"]
+transform = Transform3D(0.976843, 0.202455, 0.0692028, 0.171325, -0.546421, -0.8198, -0.128158, 0.812672, -0.568454, -0.183993, -0.263354, 0.268553)
+
+[editable path="fps_arms"]
+[editable path="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/coin"]

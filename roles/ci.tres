@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://cve7ukai5oxvr"]
+
+[ext_resource type="Resource" uid="uid://dlps6uir1t7af" path="res://roles/ambient/human.tres" id="1_0qvwx"]
+[ext_resource type="PackedScene" uid="uid://dw30eaivurhuj" path="res://scenes/player/controllers_old/player_controller_ci.tscn" id="1_l8w1a"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="2_8oloi"]
+[ext_resource type="Resource" uid="uid://chswf18obx3g2" path="res://items/p90.tres" id="3_cvce1"]
+[ext_resource type="Resource" uid="uid://phmr4lpqy6tv" path="res://items/keycards/ci_card.tres" id="5_0qvwx"]
+[ext_resource type="Resource" uid="uid://by5npy04t6f23" path="res://items/medkit.tres" id="5_bcas0"]
+[ext_resource type="Resource" uid="uid://djx75o3eoid8t" path="res://items/grenade_frag.tres" id="6_aoai7"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="6_tvmj4"]
+
+[resource]
+resource_name = "Chaos"
+script = ExtResource("6_tvmj4")
+RoleColor = Color(0.211765, 0.341176, 0.188235, 1)
+MaxHealth = 100.0
+DisplayName = "ROLE_NAME_CI"
+Objective = "ROLE_OBJ_CI"
+team = 1
+spawnStage = 1
+StartItems = [ExtResource("3_cvce1"), ExtResource("5_0qvwx"), ExtResource("5_bcas0"), ExtResource("6_aoai7")]
+StartAmmo = PackedInt32Array(0, 0, 250)
+SpawnAudio = ExtResource("2_8oloi")
+ControllerScene = ExtResource("1_l8w1a")
+Ambient = ExtResource("1_0qvwx")
+SprintStaminaDecreaseRate = 0.3
+SprintStaminaIncreaseRate = 0.3
+SkillFlags = 14
+CanCapturePoints = true

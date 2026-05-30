@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEffect" load_steps=3 format=3 uid="uid://bv32wx1bogk3n"]
+
+[ext_resource type="PackedScene" uid="uid://c772akso7k8t3" path="res://effects/scenes/gunshot_fx.tscn" id="1_p8lck"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="1_qktn0"]
+
+[resource]
+script = ExtResource("1_qktn0")
+DisplayName = "Gunshot FX"
+scene = ExtResource("1_p8lck")
+Lifetime = 0.05

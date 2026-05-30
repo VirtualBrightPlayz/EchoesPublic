@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://f4nsrgpf4ci0"]
+
+[ext_resource type="Texture2D" uid="uid://cr3fnke4hwtkl" path="res://models/main/items/Grenade_New/T_GrenadeM35_BLUE.png" id="1_ijkrb"]
+[ext_resource type="Texture2D" uid="uid://t66gt1pmhml2" path="res://models/main/items/Grenade_New/N_GrenadeM69.png" id="2_yiw32"]
+[ext_resource type="Texture2D" uid="uid://budmhrgx3jddn" path="res://models/main/items/Grenade_New/ORM_GrenadeM69.png" id="3_m6q3f"]
+
+[resource]
+albedo_texture = ExtResource("1_ijkrb")
+orm_texture = ExtResource("3_m6q3f")
+normal_enabled = true
+normal_texture = ExtResource("2_yiw32")

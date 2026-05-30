@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://1w8es38xh6oc"]
+
+[ext_resource type="Texture2D" uid="uid://br5birwjjt58e" path="res://models/main/human/class_d/T_ClassD_Body.png" id="1_300xe"]
+[ext_resource type="Texture2D" uid="uid://bqsn24u21rren" path="res://models/main/human/class_d/N_ClassD_Body.png" id="2_cvrlf"]
+[ext_resource type="Texture2D" uid="uid://d1xc3fctneojh" path="res://models/main/human/class_d/ORM_ClassD_Body.png" id="3_lq81t"]
+
+[resource]
+albedo_texture = ExtResource("1_300xe")
+orm_texture = ExtResource("3_lq81t")
+normal_enabled = true
+normal_texture = ExtResource("2_cvrlf")

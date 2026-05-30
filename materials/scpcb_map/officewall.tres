@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bly3eufg3tewb"]
+
+[ext_resource type="Texture2D" uid="uid://bvju0xom75ujq" path="res://textures/scpcb_pbr/office_wall/OfficeWall_BaseColor.png" id="1_j1444"]
+[ext_resource type="Texture2D" uid="uid://c8yk4wjm86i5a" path="res://textures/scpcb_pbr/office_wall/OfficeWall_Metallic.png" id="2_dvu7q"]
+[ext_resource type="Texture2D" uid="uid://5stg3km06lt0" path="res://textures/scpcb_pbr/office_wall/OfficeWall_Normal.png" id="3_hjxgi"]
+[ext_resource type="Texture2D" uid="uid://emec1u73m6cs" path="res://textures/scpcb_pbr/office_wall/OfficeWall_Roughness.png" id="4_mwsht"]
+
+[resource]
+albedo_texture = ExtResource("1_j1444")
+metallic = 1.0
+metallic_texture = ExtResource("2_dvu7q")
+roughness_texture = ExtResource("4_mwsht")
+normal_enabled = true
+normal_texture = ExtResource("3_hjxgi")
+texture_filter = 5

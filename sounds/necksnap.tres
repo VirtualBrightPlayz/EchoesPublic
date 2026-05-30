@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://bjf02bsy8i3xs"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_q7884"]
+[ext_resource type="AudioStream" uid="uid://dp1i2y213t2ga" path="res://audio/SCP/Sentient/173/Neck snap 1.ogg" id="2_f8v3u"]
+[ext_resource type="AudioStream" uid="uid://d2v52k30w6f0c" path="res://audio/SCP/Sentient/173/Neck snap 2.ogg" id="3_2u03o"]
+[ext_resource type="AudioStream" uid="uid://brle66sou3l2t" path="res://audio/SCP/Sentient/173/Neck snap 3.ogg" id="4_w80t2"]
+[ext_resource type="AudioStream" uid="uid://gq5avflr776w" path="res://audio/SCP/Sentient/173/Neck snap 4.ogg" id="5_ifyqm"]
+
+[resource]
+resource_name = "neck_snap"
+script = ExtResource("1_q7884")
+DisplayName = "Neck Snap"
+streams = [ExtResource("2_f8v3u"), ExtResource("3_2u03o"), ExtResource("4_w80t2"), ExtResource("5_ifyqm")]
+maxDistance = 50.0

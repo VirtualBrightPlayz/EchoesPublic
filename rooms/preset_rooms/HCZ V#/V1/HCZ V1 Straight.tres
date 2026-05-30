@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bjnko2m55axk3"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_ts0tf"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_uq0ka"]
+
+[resource]
+resource_name = "Straight - HCZ V1"
+script = ExtResource("2_ts0tf")
+type = 2
+scenes = []
+sceneFile = "uid://dd4akx4564suf"
+zone = 2
+category = "HCZ V1 (Metal Tubes) (Echoes)"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

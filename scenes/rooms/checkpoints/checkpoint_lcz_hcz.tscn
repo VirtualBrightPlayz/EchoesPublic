@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://q5de8x03ftbp"]
+
+[ext_resource type="PackedScene" uid="uid://6mk58jadds60" path="res://scenes/rooms/checkpoints/checkpoint_1.tscn" id="1_kq85a"]
+[ext_resource type="PackedScene" uid="uid://0y5ywcplk8ia" path="res://scenes/rooms/hcz/hcz_elevator.tscn" id="2_jnona"]
+[ext_resource type="PackedScene" uid="uid://64mbuw68oxh3" path="res://scenes/rooms/doors/lcz_door.tscn" id="3_ppm45"]
+[ext_resource type="Script" uid="uid://cskyg1sfrd3eo" path="res://scripts/map/ZoneArea.cs" id="4_det5g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12inw"]
+size = Vector3(21.7368, 11, 21)
+
+[node name="CheckpointLczHcz" type="Node3D"]
+
+[node name="Checkpoint1" parent="." instance=ExtResource("1_kq85a")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="HczElevator" parent="." instance=ExtResource("2_jnona")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.8)
+
+[node name="MeshInstance3D2" parent="HczElevator" index="6"]
+visible = false
+
+[node name="ZoneArea" parent="HczElevator" index="7"]
+zone = 1
+
+[node name="Marker3D4" parent="HczElevator/Doors" index="3"]
+visible = false
+
+[node name="LczDoor" parent="." instance=ExtResource("3_ppm45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.45)
+
+[node name="ZoneArea" type="Area3D" parent="."]
+script = ExtResource("4_det5g")
+zone = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.368408, 5, 0)
+shape = SubResource("BoxShape3D_12inw")
+
+[editable path="HczElevator"]
+[editable path="HczElevator/room2tunnel2_opt_rmesh"]
+[editable path="HczElevator/Elevator"]
+[editable path="HczElevator/Elevator/LczDoor/doorframe"]

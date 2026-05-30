@@ -1,0 +1,247 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dn4dmi3oao7rl"
+path="res://.godot/imported/EZ_Intercom.fbx-51cc73b6e6f5bf980caa2dc323946051.scn"
+
+[deps]
+
+source_file="res://scenes/rooms/ez/New EZ/ez_intercom/EZ_Intercom.fbx"
+dest_files=["res://.godot/imported/EZ_Intercom.fbx-51cc73b6e6f5bf980caa2dc323946051.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Flashing1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/pan1.tres",
+"use_external/path": "uid://dv1vn3ob21wdu"
+},
+"Flashing2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/pan2.tres",
+"use_external/path": "uid://jcxp5ju77pwm"
+},
+"Flashing3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/pan3.tres",
+"use_external/path": "uid://b1qfk8xxvwrti"
+},
+"Panels_Trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/panels_trim/panels_trim.tres",
+"use_external/path": "uid://c0gsybkj28dio"
+},
+"PipeTrim_T": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/pipe_trim_panel.tres",
+"use_external/path": "uid://c8pjd7ocqnpk5"
+},
+"T_Blender": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/random_textures/walltext_ez.tres",
+"use_external/path": "uid://n2n4okw4mvnu"
+},
+"T_Gradient3ge": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/T_Gradient3ge.tres",
+"use_external/path": "uid://c5ocj224vpbt7"
+},
+"T_Gradient3gne": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/T_Gradient3gne.tres",
+"use_external/path": "uid://dv2wo56vl0ykl"
+},
+"T_Gradient3oe": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/T_Gradient3oe.tres",
+"use_external/path": "uid://cqq7edywnc555"
+},
+"T_Gradient3re": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/T_Gradient3re.tres",
+"use_external/path": "uid://b622bjnhrr2e2"
+},
+"T_Gradient3rne": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/T_Gradient3rne.tres",
+"use_external/path": "uid://dtcd6otr072ua"
+},
+"T_Trim_Table": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/randomprops/table_trim.tres",
+"use_external/path": "uid://cqtysau1woq7t"
+},
+"T_light_trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/lights/textures/light_trim.tres",
+"use_external/path": "uid://by2uww285i4lb"
+},
+"T_light_trim_black": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/lights/textures/light_trim_black.tres",
+"use_external/path": "uid://cat65mqxj5bcu"
+},
+"T_vents": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/vents.tres",
+"use_external/path": "uid://6e5aeyomnu3g"
+},
+"brokenglass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/misc/brokenglass.tres",
+"use_external/path": "uid://b066akiwx4iiv"
+},
+"carpet": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/carpet/carpet.tres",
+"use_external/path": "uid://cem7y30r4mghv"
+},
+"ceiling": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/officeceiling/officeceiling.tres",
+"use_external/path": "uid://c13pkjq4x0his"
+},
+"ceiling2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/officeceiling/officeceiling_2x1.tres",
+"use_external/path": "uid://dljmifbvx1i5w"
+},
+"ceiling3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/officeceiling/officeceiling_2x1_e.tres",
+"use_external/path": "uid://cbuvfvaf5oibs"
+},
+"computer": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/randomprops/computer.tres",
+"use_external/path": "uid://bynsr54uo6en"
+},
+"concrete": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/concrete/concrete1.tres",
+"use_external/path": "uid://de35yukh73612"
+},
+"concrete2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/concrete/concrete2.tres",
+"use_external/path": "uid://clqubh46ao5pt"
+},
+"concrete3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/concrete/concrete2.tres",
+"use_external/path": "uid://clqubh46ao5pt"
+},
+"concretewall": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/walltrim/wall_concrete.tres",
+"use_external/path": "uid://b2512mgd2r3yi"
+},
+"diodes": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/squarediodes.tres",
+"use_external/path": "uid://b6v0uaeytdawm"
+},
+"floor1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/floortiles/floortiles1.tres",
+"use_external/path": "uid://dqgljyex83eau"
+},
+"floor2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/floortiles/floortiles2.tres",
+"use_external/path": "uid://cs4noa4e0gchs"
+},
+"glass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/random_textures/glass.tres",
+"use_external/path": "uid://bx3f25qesl7cy"
+},
+"panels_atlas_T": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/panels_atlas.tres",
+"use_external/path": "uid://dntip7mjuh7an"
+},
+"panelstex_T": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/panels_tex.tres",
+"use_external/path": "uid://4cvd8nbrqkyh"
+},
+"screen": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/screen.tres",
+"use_external/path": "uid://d1n31xs2cpvm1"
+},
+"supports": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/concrete/concrete1.tres",
+"use_external/path": "uid://de35yukh73612"
+},
+"tv_arm_T": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/tv_arm.tres",
+"use_external/path": "uid://eifgydefjogm"
+},
+"tv_trim_T": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://scenes/rooms/props/static/panels/tv_trim.tres",
+"use_external/path": "uid://df7froqobi4hx"
+},
+"ubglass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/UnbreakableGlass.tres",
+"use_external/path": "uid://brholynkwpy6e"
+},
+"wall": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/walltrim/wall_trim.tres",
+"use_external/path": "uid://iqduofytdyqr"
+},
+"wall2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/walltrim/wall_trim2.tres",
+"use_external/path": "uid://bxx1xbdsnvoxh"
+},
+"walltile": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/wall/ez_wall_tile.tres",
+"use_external/path": "uid://cowd32nky8lgm"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"import/skip_import": true
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=0
+fbx/naming_version=1

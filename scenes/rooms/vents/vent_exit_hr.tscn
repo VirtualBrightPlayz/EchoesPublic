@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbvsu8sw1rlg1"]
+
+[ext_resource type="PackedScene" uid="uid://dur1l6glxtm0a" path="res://models/main/vents/VentExitH.glb" id="1_ulmca"]
+[ext_resource type="Material" uid="uid://kwlo5nklci7r" path="res://materials/scpcb_map/metalpanel.tres" id="2_iya03"]
+[ext_resource type="Script" uid="uid://dj5hgaaw4y2et" path="res://scripts/map/VentTeleporter.cs" id="3_0sr8q"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c3dj4cv1cghrq" path="res://scenes/rooms/vents/vent_exit_hr.occ" id="4_mph4k"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u0s21"]
+data = PackedVector3Array(-1, 1, 3, 1, 1, 1, -1, 1, 1, -1, 1, 3, 1, 1, 3, 1, 1, 1, -1, 1, 1, -1, -1, 3, -1, 1, 3, -1, 1, 1, -1, -1, 1, -1, -1, 3, 1, -1, 7, -1, 1, 7, -1, -1, 7, 1, -1, 7, 1, 1, 7, -1, 1, 7, 1, 1, -1, 2.9, -1, -1, 2.9, 1, -1, 1, 1, -1, 1, -1, -1, 2.9, -1, -1, 1, 1, 7, 3, -1, 7, 3, 1, 7, 1, 1, 7, 1, -1, 7, 3, -1, 7, 1, 1, 5, 1, -1, 3, 1, 1, 3, 1, 1, 5, 1, -1, 5, 1, -1, 3, 3, 1, 5, 1, -1, 5, 1, 1, 5, 3, 1, 5, 3, -1, 5, 1, -1, 5, 1, -1, 7, 3, -1, 5, 3, -1, 7, 1, -1, 7, 1, -1, 5, 3, -1, 5, 1, -1, 5, -1, -1, 7, -1, -1, 5, 1, -1, 5, 1, -1, 7, -1, -1, 7, 1, -1, 5, -1, -1, 3, 1, -1, 3, 1, -1, 5, -1, -1, 5, -1, -1, 3, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, 1, 2.9, 1, -3, 1, -1, -3, 1, 1, -3, 2.9, 1, -3, 2.9, -1, -3, 1, -1, -3, 1, -1, -1, 2.9, -1, -3, 2.9, -1, -1, 1, -1, -1, 1, -1, -3, 2.9, -1, -3, -1, -1, -3, 1, 1, -3, 1, -1, -3, -1, -1, -3, -1, 1, -3, 1, 1, -3, 1, 1, -3, 2.9, 1, -1, 2.9, 1, -3, 1, 1, -3, 1, 1, -1, 2.9, 1, -1, 1, 1, 7, -1, 1, 5, -1, 1, 7, 1, 1, 7, 1, 1, 5, -1, 1, 5, -1, -1, 7, -1, 1, 5, -1, -1, 5, -1, -1, 7, -1, 1, 7, -1, 1, 5, 1, -1, 3, -1, -1, 1, 1, -1, 1, 1, -1, 3, -1, -1, 3, -1, -1, 1, 1, 1, 3, 1, -1, 1, 1, 1, 1, 1, 1, 3, 1, -1, 3, 1, -1, 1, -1, 1, -1, 1, 1, -3, -1, 1, -3, -1, 1, -1, 1, 1, -1, 1, 1, -3, 1, -1, -1, -1, -1, -3, 1, -1, -3, 1, -1, -1, -1, -1, -1, -1, -1, -3, -1, -1, -1, -1, 1, -3, -1, -1, -3, -1, -1, -1, -1, 1, -1, -1, 1, -3, -1, 1, 1, 1, 1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 5, 1, 1, 3, -1, 1, 3, -1, 1, 5, 1, 1, 5, 1, 1, 3, -1, 1, 3, -1, -1, 5, -1, 1, 5, -1, 1, 3, -1, -1, 3, -1, -1, 5, 1, -1, 1, -1, -1, -1, 1, -1, -1, 1, -1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 5, 3, 1, 7, 3, 1, 5, 1, 1, 5, 1, 1, 7, 3, 1, 7, 3, -1, 5, 3, 1, 7, 3, -1, 7, 3, -1, 5, 3, 1, 5, 3, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25gis"]
+size = Vector3(1.9967, 2.03271, 2.04395)
+
+[node name="VentExitHR" type="Node3D"]
+
+[node name="VentExitH" parent="." instance=ExtResource("1_ulmca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6.1)
+
+[node name="Cube_006" parent="VentExitH" index="0"]
+layers = 9
+material_override = ExtResource("2_iya03")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="VentExitH/Cube_006" index="0"]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VentExitH/Cube_006/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_u0s21")
+
+[node name="Teleporter" type="Area3D" parent="." node_paths=PackedStringArray("Forward")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.1)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("3_0sr8q")
+Forward = NodePath("Forward")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleporter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00701904, -0.0012207, -0.00244141)
+shape = SubResource("BoxShape3D_25gis")
+
+[node name="Forward" type="Node3D" parent="Teleporter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3.1)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.2
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_shadow = 5.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.1)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.2
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_shadow = 5.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.1)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.2
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_shadow = 5.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6.1)
+occluder = ExtResource("4_mph4k")
+
+[editable path="VentExitH"]

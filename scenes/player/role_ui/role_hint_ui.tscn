@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://bbb5ay13txg4g"]
+
+[ext_resource type="Theme" uid="uid://cw5ui36b46hka" path="res://ui_themes/inventory_theme.tres" id="1_jnqfp"]
+[ext_resource type="Script" uid="uid://cudjjktagyg0k" path="res://scripts/player/RoleHintUI.cs" id="1_w0faa"]
+[ext_resource type="FontFile" uid="uid://bh7pr76diq664" path="res://fonts/AlfaSlabOne/AlfaSlabOne-Regular.ttf" id="3_rq111"]
+[ext_resource type="Texture2D" uid="uid://bvm4nt3quw6sr" path="res://textures/scpcb/icons/handsymbol.png" id="3_yrci5"]
+[ext_resource type="FontFile" uid="uid://bwosv85e3kmyr" path="res://fonts/CourierPrime/CourierPrime-Regular.ttf" id="4_rq111"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnqfp"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sde2n"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="RoleHintUI" type="Control" unique_id=1218776555]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_jnqfp")
+metadata/_edit_lock_ = true
+
+[node name="RoleHintUI" type="Node" parent="." unique_id=919988465 node_paths=PackedStringArray("root", "keyRoot", "keyLabel", "iconRect", "hintLabel")]
+script = ExtResource("1_w0faa")
+root = NodePath("../MarginContainer")
+keyRoot = NodePath("../MarginContainer/PanelContainer/HBoxContainer/PanelContainer")
+keyLabel = NodePath("../MarginContainer/PanelContainer/HBoxContainer/PanelContainer/Key")
+iconRect = NodePath("../MarginContainer/PanelContainer/HBoxContainer/Icon")
+hintLabel = NodePath("../MarginContainer/PanelContainer/HBoxContainer/Text")
+metadata/_custom_type_script = "uid://cudjjktagyg0k"
+
+[node name="Hint" type="PanelContainer" parent="." unique_id=1220346734]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_bottom = 101.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnqfp")
+
+[node name="MarginContainer" type="MarginContainer" parent="Hint" unique_id=1429807671]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hint/MarginContainer" unique_id=365427243]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hint/MarginContainer/VBoxContainer" unique_id=99105228]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="Hint/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1449956154]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_yrci5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="Hint/MarginContainer/VBoxContainer/HBoxContainer" unique_id=250217794]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_sde2n")
+
+[node name="Key" type="Label" parent="Hint/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=2113456848]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rq111")
+theme_override_font_sizes/font_size = 32
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="Hint/MarginContainer/VBoxContainer/HBoxContainer" unique_id=48316510]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_rq111")
+bbcode_enabled = true
+text = "Use"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=208452995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 150
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1963700590]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"UIPanel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1973433447]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=918653549]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_yrci5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=299253917]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"InventoryPanel"
+
+[node name="Key" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/PanelContainer" unique_id=804719992]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4_rq111")
+theme_override_font_sizes/font_size = 32
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=666746851]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/normal_font = ExtResource("4_rq111")
+bbcode_enabled = true
+text = "Use"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1

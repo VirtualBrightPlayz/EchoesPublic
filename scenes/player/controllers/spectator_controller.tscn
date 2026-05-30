@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://vlgoqfwu8gbb"]
+
+[ext_resource type="Script" uid="uid://c0f57tc2ajpv8" path="res://scripts/player/controllers/SpectatorController.cs" id="1_pvg4x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hba6v"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vr7h0"]
+
+[node name="SpectatorController" type="CharacterBody3D" unique_id=2070447196 node_paths=PackedStringArray("head", "camera", "label", "textTimer", "area")]
+collision_layer = 0
+collision_mask = 40
+motion_mode = 1
+script = ExtResource("1_pvg4x")
+head = NodePath("View")
+camera = NodePath("View/Camera3D")
+label = NodePath("Control/Label")
+Speed = 15.0
+Accel = 150.0
+textTimer = NodePath("TextTimer")
+viewOffset = -0.35
+area = NodePath("View/Camera3D/Area3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=530112685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_hba6v")
+
+[node name="View" type="Node3D" parent="." unique_id=1284239467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="View" unique_id=972365415]
+cull_mask = 1048543
+fov = 70.0
+far = 100.0
+
+[node name="Area3D" type="Area3D" parent="View/Camera3D" unique_id=788898647]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/Camera3D/Area3D" unique_id=396975879]
+shape = SubResource("SphereShape3D_vr7h0")
+
+[node name="Control" type="Control" parent="." unique_id=1880018559]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="Control" unique_id=301554031]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -155.0
+offset_right = 107.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1267498457]
+wait_time = 10.0
+autostart = true
+
+[node name="TextTimer" type="Timer" parent="." unique_id=703012919]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="NextCamera"]

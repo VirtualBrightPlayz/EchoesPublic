@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://duhav70bysr6g"]
+
+[ext_resource type="PackedScene" uid="uid://dwcors6a1qrpi" path="res://models/rooms/pop_hcz_new/PS-01/Meshes/HoldingCells/Brig_HoldingCells_Cell.fbx" id="1_i3wl1"]
+[ext_resource type="PackedScene" uid="uid://cguk5j0xc23df" path="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/PrisGate_CD.fbx" id="2_6ont2"]
+[ext_resource type="PackedScene" uid="uid://dh4bsx8ecsh2f" path="res://scenes/rooms/props/static/lights/square_wall_light1.tscn" id="2_b5qp7"]
+[ext_resource type="PackedScene" uid="uid://bu4ivwbnbxjmc" path="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/PrisGateDoor_1.fbx" id="3_aglln"]
+[ext_resource type="PackedScene" uid="uid://cm3hoy4rpgbp6" path="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/PrisGateDoor_2.fbx" id="4_muhe1"]
+[ext_resource type="PackedScene" uid="uid://cpmcrioifehx4" path="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/CD_Cell Bed.fbx" id="5_muhe1"]
+[ext_resource type="PackedScene" uid="uid://bxoho8vgse5e1" path="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/CD_Cell Sink.fbx" id="7_gqybv"]
+[ext_resource type="PackedScene" uid="uid://c76u4mwqlaw6q" path="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/CD_Cell Toilet.fbx" id="8_7winm"]
+[ext_resource type="LightmapGIData" uid="uid://dspsx66hqtita" path="res://scenes/rooms/PS-01/LightMaps/CD_Cell_Base.lmbake" id="9_jimcn"]
+[ext_resource type="Script" uid="uid://2trsa1hkp42c" path="res://scripts/player/PlayerSpawnpoint.cs" id="10_d0nra"]
+[ext_resource type="Resource" uid="uid://6u7ww578qw11" path="res://roles/classd.tres" id="11_jqvv2"]
+
+[node name="CdCellBase" type="Node3D" unique_id=2074133463]
+
+[node name="Brig_HoldingCells_Cell" parent="." unique_id=1499146693 instance=ExtResource("1_i3wl1")]
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Brig_HoldingCells_Cell" unique_id=1496531326]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.4280818, -2.774)
+light_color = Color(0.6686706, 0.572234, 0.44941247, 1)
+light_energy = 0.5
+light_indirect_energy = 1.418
+light_volumetric_fog_energy = 0.025
+
+[node name="SquareWallLight1" parent="Brig_HoldingCells_Cell" unique_id=5028945 instance=ExtResource("2_b5qp7")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 5.2020826, -2.774)
+Color = Color(0.83, 0.76774997, 0.7055, 1)
+PrimaryVolumetricFogEnergy = 0.05
+SecondaryVolumetricFogEnergy = 0.05
+
+[node name="PrisGate_CD" parent="." unique_id=482709910 instance=ExtResource("2_6ont2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.069)
+
+[node name="PrisGateDoor_1" parent="PrisGate_CD" unique_id=555369645 instance=ExtResource("3_aglln")]
+visible = false
+
+[node name="PrisGateDoor_2" parent="PrisGate_CD" unique_id=573319453 instance=ExtResource("4_muhe1")]
+visible = false
+
+[node name="CD_Cell Bed" parent="." unique_id=1909445565 instance=ExtResource("5_muhe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4273999, 0, -4.164)
+
+[node name="CD_Cell Sink" parent="." unique_id=32746415 instance=ExtResource("7_gqybv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.427, 0, -2.0805)
+
+[node name="CD_Cell Toilet" parent="." unique_id=1863437651 instance=ExtResource("8_7winm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.427, 0, -4.5078998)
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=437006276]
+visible = false
+quality = 3
+supersampling = true
+supersampling_factor = 7.0
+bounces = 16
+directional = true
+specular_intensity = 0.75
+interior = true
+use_denoiser = false
+environment_mode = 0
+generate_probes_subdiv = 1
+light_data = ExtResource("9_jimcn")
+
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=758470639 groups=["spawn"]]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -3)
+script = ExtResource("10_d0nra")
+role = ExtResource("11_jqvv2")
+
+[editable path="CD_Cell Sink"]

@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://clus0krfaeefr"]
+
+[ext_resource type="Texture2D" uid="uid://bp3w08aw3y1w8" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Grate_T.png" id="1_rriet"]
+[ext_resource type="Texture2D" uid="uid://wfuchpygrlou" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Grate_N.png" id="2_m4y67"]
+[ext_resource type="Texture2D" uid="uid://rj7bp5gletrp" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Grate_ORM.png" id="3_ohxok"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_rriet")
+orm_texture = ExtResource("3_ohxok")
+normal_enabled = true
+normal_texture = ExtResource("2_m4y67")
+ao_light_affect = 1.0

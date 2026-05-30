@@ -1,0 +1,414 @@
+[gd_scene load_steps=53 format=3 uid="uid://spkr2qd8w5qy"]
+
+[ext_resource type="Script" uid="uid://da86eibotcs63" path="res://scripts/MainMenu.cs" id="1_v2rb5"]
+[ext_resource type="Environment" uid="uid://bspkrusdvgkk7" path="res://scenes/main_menu_env.tres" id="2_opg34"]
+[ext_resource type="Shader" uid="uid://be10itguesm4h" path="res://shaders/laser.gdshader" id="5_slo6o"]
+[ext_resource type="Material" uid="uid://cliu7e0dpitao" path="res://materials/scpcb_map/whitewall.tres" id="7_86qjt"]
+[ext_resource type="Material" uid="uid://dvi2xxnxvdug8" path="res://materials/scpcb_map/metal.tres" id="8_2oqk8"]
+[ext_resource type="Material" uid="uid://daanv7kmvsedh" path="res://materials/scpcb_map/tilefloor.tres" id="10_7crtb"]
+[ext_resource type="Script" uid="uid://6yxnykbhd4vi" path="res://scripts/map/LightFlicker.cs" id="17_g03p6"]
+[ext_resource type="AudioStream" uid="uid://bhrlchk0mutnu" path="res://audio/cc0/400862__bobv2__film_01.wav" id="19_ekfyh"]
+[ext_resource type="Script" uid="uid://cgon41wv5dcm3" path="res://scripts/map/LoopAudio3D.cs" id="20_fshf7"]
+[ext_resource type="Script" uid="uid://h3lfnrxa6tu0" path="res://scripts/MenuCamera.cs" id="22_oeypf"]
+[ext_resource type="Shader" uid="uid://dyxeystxqfvaa" path="res://shaders/depth_of_field.gdshader" id="23_emtg4"]
+[ext_resource type="Texture2D" uid="uid://f8e3ns4x8udw" path="res://textures/Fingerprints003_1K-JPG_Color.jpg" id="24_le7js"]
+[ext_resource type="Shader" uid="uid://bv6vxo5lcdt8w" path="res://shaders/depth_of_field_two.gdshader" id="25_00lw5"]
+[ext_resource type="Shader" uid="uid://crdn1h0du3tfx" path="res://shaders/blur_post.gdshader" id="26_13wvs"]
+[ext_resource type="PackedScene" uid="uid://hlxqk4xv86v1" path="res://scenes/back_buffer_blur.tscn" id="27_0k4c8"]
+[ext_resource type="Script" uid="uid://8q4o3t4qnt50" path="res://scripts/ui/vr/MainMenuVRHand.cs" id="28_raoro"]
+[ext_resource type="Shader" uid="uid://d28hygoo7o6dd" path="res://shaders/main_menu_ui.gdshader" id="31_rind2"]
+[ext_resource type="Shader" uid="uid://bbqmuu2a8v153" path="res://shaders/show_uv.gdshader" id="34_8by2h"]
+[ext_resource type="Texture2D" uid="uid://clpm1ap5537x0" path="res://icons/projector_screen.tres" id="35_5ly8j"]
+[ext_resource type="PackedScene" uid="uid://cbk4aq6toes80" path="res://scenes/menu_ui.tscn" id="36_2wnnf"]
+[ext_resource type="PackedScene" uid="uid://8fpt2m03y4gb" path="res://models/rooms/menu2.fbx" id="37_0exyf"]
+[ext_resource type="Texture2D" uid="uid://x3aalvvoc6i1" path="res://textures/EBU_Colorbars_75_0_75_0.png" id="37_6qbei"]
+[ext_resource type="Shader" uid="uid://c4u4lixr7o4q4" path="res://shaders/glitch_blur.gdshader" id="38_pa2mu"]
+[ext_resource type="FontFile" uid="uid://p4ojwy3bi4wm" path="res://fonts/Anton/Anton-Regular.ttf" id="39_nsrbe"]
+[ext_resource type="Script" uid="uid://b8vu6svo26dmh" path="res://scripts/player/input/LocalPlayerInput.cs" id="40_722my"]
+[ext_resource type="Material" uid="uid://dyxpur77c60pp" path="res://materials/scpcb_map/ceiling.tres" id="40_xvxk1"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_surt1"]
+radius = 0.01
+section_length = 5.0
+
+[sub_resource type="Gradient" id="Gradient_yq3qq"]
+offsets = PackedFloat32Array(0.7, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mxngt"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dqciu"]
+noise = SubResource("FastNoiseLite_mxngt")
+color_ramp = SubResource("Gradient_yq3qq")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrg57"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = SubResource("NoiseTexture2D_dqciu")
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_dojoh"]
+add_uv2 = true
+radius = 0.01
+section_length = 5.0
+
+[sub_resource type="Gradient" id="Gradient_6tjs1"]
+offsets = PackedFloat32Array(0, 0.25)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1i0pp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rpg2x"]
+noise = SubResource("FastNoiseLite_1i0pp")
+color_ramp = SubResource("Gradient_6tjs1")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wurdf"]
+render_priority = 0
+shader = ExtResource("5_slo6o")
+shader_parameter/noise = SubResource("NoiseTexture2D_rpg2x")
+shader_parameter/emission = 2.0
+shader_parameter/speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2j7ya"]
+shader = ExtResource("38_pa2mu")
+shader_parameter/amount = 1.0
+shader_parameter/frequency_0 = 25.0
+shader_parameter/frequency_1 = 200.0
+shader_parameter/speed = -10.0
+shader_parameter/steps_0 = 255.0
+shader_parameter/steps_1 = 255.0
+shader_parameter/noise_steps = 255.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_glbe0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bnwx"]
+emission_enabled = true
+emission_energy_multiplier = 0.05
+emission_texture = ExtResource("35_5ly8j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0ani"]
+render_priority = 0
+shader = ExtResource("31_rind2")
+shader_parameter/albedo_uv_offset = Vector2(0, 0)
+shader_parameter/albedo_color = Color(1, 1, 1, 0.501961)
+shader_parameter/screen_uv_amount = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_bv7io"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hftao"]
+render_priority = 0
+shader = ExtResource("34_8by2h")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wwi07"]
+size = Vector2(1, 0.562)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kiqpg"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hq0af"]
+render_priority = -128
+shader = ExtResource("23_emtg4")
+shader_parameter/color_samples = 4
+shader_parameter/overlay_depth_samples = 0
+shader_parameter/overlay_texture = ExtResource("24_le7js")
+shader_parameter/debug_amount = 0.0
+shader_parameter/multi = 1.0
+shader_parameter/depth_add = -0.5
+shader_parameter/depth_multi = 1.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_de2dt"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gu5c4"]
+render_priority = -128
+shader = ExtResource("25_00lw5")
+shader_parameter/color_samples = 4
+shader_parameter/overlay_depth_samples = 0
+shader_parameter/overlay_texture = ExtResource("24_le7js")
+shader_parameter/debug_amount = 0.0
+shader_parameter/multi = 16.0
+shader_parameter/blur_multi = 1.0
+shader_parameter/depth_add = 0.0
+shader_parameter/depth_multi = 1.5
+shader_parameter/sigma = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18my3"]
+shader = ExtResource("26_13wvs")
+shader_parameter/count = 0
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_ebpcf"]
+radius = 0.01
+section_length = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24770"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.501961)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_0sk10"]
+radius = 0.01
+section_length = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uuc0"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.501961)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.5
+
+[node name="MainMenu2" type="Node3D" node_paths=PackedStringArray("viewport", "meshInst", "laser", "testScreen", "glitchEffect", "okLabel", "ui", "camera", "xrCamera")]
+script = ExtResource("1_v2rb5")
+viewport = NodePath("SubViewport")
+meshInst = NodePath("Screen/ScreenRig/MeshInstance3D")
+environment = ExtResource("2_opg34")
+laser = NodePath("SpotLight3D")
+laserSize = 0.75
+testScreen = NodePath("SubViewport/TestScreen")
+glitchEffect = NodePath("SubViewport/Glitch")
+okLabel = NodePath("SubViewport/Label")
+ui = NodePath("SubViewport/MenuUI/Real")
+camera = NodePath("Camera3D")
+xrCamera = NodePath("XROrigin3D/Head")
+inputPath = NodePath("Inputs")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000004, 0, 0, 0, 0.99999976, -0.6851883, 2.560925, -4.5666323)
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 3.0
+spot_range = 10.0
+spot_attenuation = 0.01
+spot_angle = 0.5
+spot_angle_attenuation = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLight3D"]
+transform = Transform3D(1, 7.45058e-09, 2.32831e-10, 0, -3.89991e-08, 1, 1.49012e-08, -1, -4.72937e-08, 0, 0, -5)
+visible = false
+mesh = SubResource("TubeTrailMesh_surt1")
+surface_material_override/0 = SubResource("StandardMaterial3D_lrg57")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpotLight3D"]
+transform = Transform3D(1, 7.45058e-09, 2.32831e-10, 0, -3.89991e-08, 1, 1.49012e-08, -1, -4.72937e-08, 0, 0, -5)
+visible = false
+mesh = SubResource("TubeTrailMesh_dojoh")
+surface_material_override/0 = SubResource("ShaderMaterial_wurdf")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+gui_embed_subwindows = true
+render_target_update_mode = 4
+
+[node name="MenuUI" parent="SubViewport" instance=ExtResource("36_2wnnf")]
+
+[node name="TestScreen" type="TextureRect" parent="SubViewport"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("37_6qbei")
+expand_mode = 1
+
+[node name="Glitch" type="ColorRect" parent="SubViewport"]
+visible = false
+material = SubResource("ShaderMaterial_2j7ya")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="SubViewport"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 75.0
+offset_right = -65.0
+offset_bottom = 150.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("39_nsrbe")
+theme_override_font_sizes/font_size = 25
+text = "INPUT OK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inputs" type="Node" parent="."]
+script = ExtResource("40_722my")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_opg34")
+
+[node name="Screen" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -13)
+
+[node name="ScreenRig" type="Node3D" parent="Screen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="ProjectorScreen" type="MeshInstance3D" parent="Screen/ScreenRig"]
+transform = Transform3D(7.7, 0, 0, 0, 6.05, 0, 0, 0, 1.1, 0, 0, 0)
+gi_mode = 2
+mesh = SubResource("QuadMesh_glbe0")
+surface_material_override/0 = SubResource("StandardMaterial3D_2bnwx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen/ScreenRig"]
+transform = Transform3D(5.0000005, 0, 0, 0, 5.0000005, 0, 0, 0, 1.0000001, 0, 0, 0.05)
+material_override = SubResource("ShaderMaterial_g0ani")
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("QuadMesh_bv7io")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen/ScreenRig/MeshInstance3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 2, 0, 0, 0.1)
+visible = false
+material_override = SubResource("ShaderMaterial_hftao")
+transparency = 0.5
+mesh = SubResource("QuadMesh_wwi07")
+
+[node name="CameraPoints" type="Node3D" parent="."]
+
+[node name="Main" type="Marker3D" parent="CameraPoints"]
+transform = Transform3D(0.9583279, -0.011725657, -0.2854296, 0, 0.99915713, -0.04104611, 0.28567037, 0.039335635, 0.9575203, -2.5928633, 2.1904404, -6.22213)
+metadata/fov = 60.0
+
+[node name="Zoomed" type="Marker3D" parent="CameraPoints"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 3, -6.1)
+metadata/fov = 60.0
+
+[node name="Rig" type="Node3D" parent="CameraPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -13)
+
+[node name="Zoomed2" type="Marker3D" parent="CameraPoints/Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("points", "menu", "disableAndroid")]
+transform = Transform3D(0.22752178, 0.23388761, -0.94526744, 0, 0.97072667, 0.24018699, 0.973773, -0.05464777, 0.22086145, -3.866615, 2.2318666, -5.2256904)
+fov = 60.0
+script = ExtResource("22_oeypf")
+points = [NodePath("../CameraPoints/Main"), NodePath("../CameraPoints/Zoomed"), NodePath("../CameraPoints/Rig/Zoomed2")]
+Speed = 2.0
+UnitSpeed = 2.5
+MoveTime = 10.0
+timeToMain = 0.0
+menu = NodePath("../SubViewport/MenuUI/Real")
+disableAndroid = NodePath("BlurNotFixed")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+visible = false
+mesh = SubResource("QuadMesh_kiqpg")
+surface_material_override/0 = SubResource("ShaderMaterial_hq0af")
+
+[node name="BlurNotFixed" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+visible = false
+mesh = SubResource("QuadMesh_de2dt")
+surface_material_override/0 = SubResource("ShaderMaterial_gu5c4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+visible = false
+mesh = SubResource("QuadMesh_kiqpg")
+surface_material_override/0 = SubResource("ShaderMaterial_hq0af")
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D"]
+visible = false
+material = SubResource("ShaderMaterial_18my3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferBlur" parent="Camera3D" node_paths=PackedStringArray("cam") instance=ExtResource("27_0k4c8")]
+cam = NodePath("..")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Head" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="Left" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="Hand" type="Node3D" parent="XROrigin3D/Left" node_paths=PackedStringArray("hand", "menu")]
+script = ExtResource("28_raoro")
+hand = NodePath("..")
+menu = NodePath("../../..")
+
+[node name="Laser" type="MeshInstance3D" parent="XROrigin3D/Left/Hand"]
+transform = Transform3D(1, 7.45058e-09, 2.32831e-10, 0, -3.89991e-08, 1, 1.49012e-08, -1, -4.72937e-08, 0, 0, -12.5)
+mesh = SubResource("TubeTrailMesh_ebpcf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_24770")
+
+[node name="Right" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="Hand" type="Node3D" parent="XROrigin3D/Right" node_paths=PackedStringArray("hand", "menu")]
+script = ExtResource("28_raoro")
+hand = NodePath("..")
+menu = NodePath("../../..")
+
+[node name="Laser" type="MeshInstance3D" parent="XROrigin3D/Right/Hand"]
+transform = Transform3D(1, 7.45058e-09, 2.32831e-10, 0, -3.89991e-08, 1, 1.49012e-08, -1, -4.72937e-08, 0, 0, -12.5)
+mesh = SubResource("TubeTrailMesh_0sk10")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3uuc0")
+
+[node name="menu2" parent="." instance=ExtResource("37_0exyf")]
+
+[node name="Building" parent="menu2" index="0"]
+surface_material_override/0 = ExtResource("7_86qjt")
+surface_material_override/1 = ExtResource("10_7crtb")
+surface_material_override/2 = ExtResource("40_xvxk1")
+
+[node name="Camera" parent="menu2" index="1"]
+visible = false
+
+[node name="Table" parent="menu2" index="3"]
+surface_material_override/0 = ExtResource("8_2oqk8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+light_color = Color(0.34901962, 0.627451, 1, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.7
+light_size = 0.1
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="LightFlicker" type="Node" parent="OmniLight3D"]
+script = ExtResource("17_g03p6")
+MinEnergy = 0.2
+MaxEnergy = 0.5
+metadata/_custom_type_script = "uid://6yxnykbhd4vi"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3378572e-06, 5.089412, -6.1663003)
+stream = ExtResource("19_ekfyh")
+volume_db = -24.0
+max_distance = 15.0
+panning_strength = 0.25
+bus = &"Menu"
+attenuation_filter_db = 0.0
+script = ExtResource("20_fshf7")
+
+[editable path="SubViewport/MenuUI"]
+[editable path="menu2"]

@@ -1,0 +1,921 @@
+[gd_scene format=4 uid="uid://brlfpsp2flub"]
+
+[ext_resource type="PackedScene" uid="uid://bqxl4lbmhbldu" path="res://scenes/rooms/doors/ez_swing_door.tscn" id="5_hoi0w"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="5_w3g6w"]
+[ext_resource type="Resource" uid="uid://brjxp8712l8em" path="res://projectile_resistance/concrete_pr.tres" id="6_j3an5"]
+[ext_resource type="PackedScene" uid="uid://dawmxpv0uae1s" path="res://scenes/rooms/doors/door_button.tscn" id="12_mwmsh"]
+[ext_resource type="PackedScene" uid="uid://cbnoe4vlxe466" path="res://scenes/rooms/doors/vertical_door.tscn" id="14_v54s8"]
+[ext_resource type="Script" uid="uid://y0rao11t6xcn" path="res://scripts/map/Intercom.cs" id="15_ob8ew"]
+[ext_resource type="AudioStream" uid="uid://pxjrfgmhegqc" path="res://audio/scpcb/edited/intercom_on.wav" id="16_dl7rv"]
+[ext_resource type="AudioStream" uid="uid://cn15068yffkyp" path="res://audio/scpcb/Alarm5.ogg" id="17_bqfky"]
+[ext_resource type="AudioStream" uid="uid://ywkjst3vm3ku" path="res://audio/scpcb/edited/intercom_off.wav" id="17_r2m1t"]
+[ext_resource type="Script" uid="uid://duuwundrtx7l3" path="res://scripts/CustomRoomLogic/ControlPoint.cs" id="17_txhbi"]
+[ext_resource type="PackedScene" uid="uid://c4wufvqh8f7e3" path="res://scenes/rooms/props/static/monitor_old.tscn" id="18_bqfky"]
+[ext_resource type="Script" uid="uid://dusxf7psowc16" path="res://scripts/CustomRoomLogic/ControlPointLabel.cs" id="19_w3g6w"]
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="21_rmskn"]
+[ext_resource type="AudioStream" uid="uid://cv54v68y25wfl" path="res://audio/scpcb/intercom/hzzz.wav" id="21_ryg6n"]
+[ext_resource type="Script" uid="uid://cskyg1sfrd3eo" path="res://scripts/map/ZoneArea.cs" id="21_xprvo"]
+[ext_resource type="PackedScene" uid="uid://fc1q46c7i83b" path="res://scenes/rooms/props/static/fuel_457_1.tscn" id="22_33dbj"]
+[ext_resource type="Script" uid="uid://b0nuhk3agpjy" path="res://scripts/map/RngTimer.cs" id="22_d6jic"]
+[ext_resource type="PackedScene" uid="uid://ckl1s83ccvfkd" path="res://models/rooms/pop_hcz_new/DoorAccessRequirement/DAR_Custom.tscn" id="22_j3an5"]
+[ext_resource type="AudioStream" uid="uid://dpmu6hhe4b2fs" path="res://audio/scpcb/intercom/buzz.wav" id="22_thnq3"]
+[ext_resource type="Script" uid="uid://dh204rpcqcova" path="res://scripts/items/ItemSpawnpoint.cs" id="24_bca6g"]
+[ext_resource type="Material" uid="uid://cq3fee6lm58do" path="res://models/rooms/pop_hcz_new/DoorAccessRequirement/Materials/M_DoorAccessRequirement.tres" id="24_tdm72"]
+[ext_resource type="PackedScene" uid="uid://cs242d8jwkwvo" path="res://models/rooms/pop_hcz_new/Pop_Props/Cubical + Desk/pop_OfficeDesk.tscn" id="26_6obvx"]
+[ext_resource type="Resource" uid="uid://iugux4fv7h10" path="res://items/spawn_groups/healing_item_non_scp.tres" id="27_6obvx"]
+[ext_resource type="Resource" uid="uid://c8k88a2du420t" path="res://items/spawn_groups/entrance_keycards.tres" id="27_yhccu"]
+[ext_resource type="PackedScene" uid="uid://dn0vi678rmfmq" path="res://scenes/rooms/props/dynamic/monitor.tscn" id="28_pxdyl"]
+[ext_resource type="PackedScene" uid="uid://bu4iaohmyodsh" path="res://scenes/rooms/props/dynamic/keyboard.tscn" id="29_mxb1r"]
+[ext_resource type="PackedScene" uid="uid://ddthh33of1orm" path="res://scenes/rooms/props/dynamic/mouse.tscn" id="30_bod0e"]
+[ext_resource type="PackedScene" uid="uid://cx7hjyyc21ges" path="res://scenes/rooms/props/dynamic/computer.tscn" id="31_1kqo5"]
+[ext_resource type="PackedScene" uid="uid://ttj6vn4s8y0i" path="res://scenes/rooms/props/dynamic/bookshelf.tscn" id="32_tqsq6"]
+[ext_resource type="PackedScene" uid="uid://g55f8w66q26k" path="res://scenes/rooms/props/dynamic/book_5.tscn" id="33_yr3rx"]
+[ext_resource type="PackedScene" uid="uid://bqwarocf00ueh" path="res://scenes/rooms/props/dynamic/book_7.tscn" id="34_no2iw"]
+[ext_resource type="PackedScene" uid="uid://bdx7uxhk8ragp" path="res://scenes/rooms/props/dynamic/book_9.tscn" id="35_c8cys"]
+[ext_resource type="PackedScene" uid="uid://30yt5kwcfgfn" path="res://scenes/rooms/props/dynamic/swivel_chair_2.tscn" id="36_j3wd5"]
+[ext_resource type="PackedScene" uid="uid://ejucyveb1tu7" path="res://scenes/rooms/props/dynamic/mug.tscn" id="37_3fwff"]
+[ext_resource type="PackedScene" uid="uid://crxgtd5t6y8i6" path="res://scenes/rooms/props/static/posterabnormal.tscn" id="38_6x8pk"]
+[ext_resource type="PackedScene" uid="uid://t3vdpts2ssfm" path="res://scenes/rooms/props/dynamic/bin.tscn" id="39_o7mrs"]
+[ext_resource type="PackedScene" uid="uid://bu17vg3buwydl" path="res://scenes/rooms/ez/New EZ/ez_intercom/ez_intercom.tscn" id="40_no2iw"]
+[ext_resource type="PackedScene" uid="uid://d2fphyc14i0on" path="res://scenes/rooms/props/dynamic/binder_file_folder.tscn" id="40_x6dft"]
+[ext_resource type="PackedScene" uid="uid://bnw4vk1awmci7" path="res://scenes/rooms/props/dynamic/bind_file_1.tscn" id="41_m5hly"]
+[ext_resource type="PackedScene" uid="uid://citwgdrw3d3jd" path="res://scenes/rooms/props/static/socket.tscn" id="42_jbr38"]
+[ext_resource type="PackedScene" uid="uid://dpenaoofsopwu" path="res://scenes/rooms/props/dynamic/Crates & Boxes/Wood Box 4.tscn" id="45_6x8pk"]
+[ext_resource type="PackedScene" uid="uid://fngyyl2a5hco" path="res://scenes/rooms/props/dynamic/vending_machine_v1.tscn" id="45_m5hly"]
+[ext_resource type="PackedScene" uid="uid://b5ucfaw4s4wrw" path="res://scenes/rooms/props/dynamic/mousepad.tscn" id="45_o7mrs"]
+[ext_resource type="PackedScene" uid="uid://wdudq0xotgxs" path="res://scenes/rooms/props/dynamic/bench.tscn" id="46_jbr38"]
+[ext_resource type="PackedScene" uid="uid://cpxp5d4dwqwsb" path="res://scenes/rooms/props/dynamic/Crates & Boxes/Wood Box 2.tscn" id="46_o7mrs"]
+
+[sub_resource type="Resource" id="Resource_wwdk8"]
+script = ExtResource("21_rmskn")
+level = 2
+cardType = 4
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yskmd"]
+size = Vector3(12.3511, 9.13232, 12.5249)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6m08o"]
+size = Vector3(6, 10, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqfky"]
+size = Vector3(19, 10, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3g6w"]
+size = Vector3(14, 10, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txhbi"]
+size = Vector3(27.9075, 11.6034, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwscy"]
+size = Vector3(1.8500824, 5, 2.437622)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_k1qbl"]
+properties/0/path = NodePath(".:PlayerAuthorityId")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:state")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j3an5"]
+size = Vector3(0.599609, 0.679199, 0.3125)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6m08o"]
+properties/0/path = NodePath(".:state")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:owningTeam")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:capturingTeam")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:areaLocked")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:ableToCapture")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="Resource" id="Resource_txhbi"]
+script = ExtResource("21_rmskn")
+level = 3
+cardType = 3
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_idt3q"]
+_surfaces = [{
+"aabb": AABB(-0.013869999, -0.0052706003, 0, 0.027739998, 0.0191406, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("/j5jvP+0rLsAAAAA/j5jvP4+YzwAAAAA/j5jPP4+YzwAAAAA/j5jPAC1rLsAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rds2u"]
+resource_name = "Plane"
+_surfaces = [{
+"aabb": AABB(-0.013869999, -0.0052706003, 0, 0.027739998, 0.0191406, 1e-05),
+"attribute_data": PackedByteArray("AAAAANejMD8AAAAAAAAAAAAAgD8AAAAAAACAP9ejMD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("/j5jvP+0rLsAAAAA/j5jvP4+YzwAAAAA/j5jPP4+YzwAAAAA/j5jPAC1rLsAAAAA/3//f////7//f/9/////v/9//3////+//3//f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_idt3q")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pk100"]
+_surfaces = [{
+"aabb": AABB(0.00049654604, -0.00073511, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOpYRPbkzs2g3Uc2JOma0QLozs2g3pCoCOma0QLozs2g3pCoCOpYRPbkzs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4ebna"]
+resource_name = "Plane_011"
+_surfaces = [{
+"aabb": AABB(0.00049654604, -0.00073511, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("imAnP7SMOD+FYCc/htFRP8MbDj+G0VE/zBsOP6+MOD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOpYRPbkzs2g3Uc2JOma0QLozs2g3pCoCOma0QLozs2g3pCoCOpYRPbkzs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pk100")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0fst2"]
+_surfaces = [{
+"aabb": AABB(0.0011900461, -0.00073511, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOpYRPbkzs2g3UbPkOma0QLozs2g3UvubOma0QLozs2g3UvubOpYRPbkzs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_flfrv"]
+resource_name = "Plane_012"
+_surfaces = [{
+"aabb": AABB(0.0011900461, -0.00073511, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("+mXkPrSMOD/wZeQ+htFRP2zcsT6G0VE/gNyxPq+MOD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOpYRPbkzs2g3UbPkOma0QLozs2g3UvubOma0QLozs2g3UvubOpYRPbkzs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0fst2")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ap0ab"]
+_surfaces = [{
+"aabb": AABB(0.0018807722, -0.00073511, 1.3870001e-05, 0.0005547998, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO5YRPbkzs2g3Hp4fO2a0QLozs2g3PoT2Oma0QLozs2g3PoT2OpYRPbkzs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x1wgj"]
+resource_name = "Plane_013"
+_surfaces = [{
+"aabb": AABB(0.0018807722, -0.00073511, 1.3870001e-05, 0.0005547998, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("xMkMP7SMOD++yQw/htFRP/kJ5z6G0VE/DArnPq+MOD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO5YRPbkzs2g3Hp4fO2a0QLozs2g3PoT2Oma0QLozs2g3PoT2OpYRPbkzs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ap0ab")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nkcu4"]
+_surfaces = [{
+"aabb": AABB(0.00049654604, 0.0013453901, 1.3870001e-05, 0.0005547999, 0.0005547999, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOswP+Tozs2g3Uc2JOs1XsDozs2g3pCoCOs1XsDozs2g3pCoCOswP+Tozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g1err"]
+resource_name = "Plane_002"
+_surfaces = [{
+"aabb": AABB(0.00049654604, 0.0013453901, 1.3870001e-05, 0.0005547999, 0.0005547999, 1e-05),
+"attribute_data": PackedByteArray("h6d6PoDRUT+bp3o+sIw4P1Ldrz6vjDg/Pt2vPobRUT8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOswP+Tozs2g3Uc2JOs1XsDozs2g3pCoCOs1XsDozs2g3pCoCOswP+Tozs2g3/3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nkcu4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s8xiv"]
+_surfaces = [{
+"aabb": AABB(0.0011900461, 0.0013453901, 1.3870001e-05, 0.0005547999, 0.0005547999, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOswP+Tozs2g3UbPkOs1XsDozs2g3UvubOs1XsDozs2g3UvubOswP+Tozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tfjnc"]
+resource_name = "Plane_003"
+_surfaces = [{
+"aabb": AABB(0.0011900461, 0.0013453901, 1.3870001e-05, 0.0005547999, 0.0005547999, 1e-05),
+"attribute_data": PackedByteArray("3q7nPoDRUT/mruc+r4w4PzUcDT+ujDg/LBwNP4XRUT8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOswP+Tozs2g3UbPkOs1XsDozs2g3UvubOs1XsDozs2g3UvubOswP+Tozs2g3/3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_s8xiv")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7v4m8"]
+_surfaces = [{
+"aabb": AABB(0.0018807722, 0.0013453901, 1.3870001e-05, 0.0005547998, 0.0005547999, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO8wP+Tozs2g3Hp4fO81XsDozs2g3PoT2Os1XsDozs2g3PoT2OswP+Tozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vkldh"]
+resource_name = "Plane_004"
+_surfaces = [{
+"aabb": AABB(0.0018807722, 0.0013453901, 1.3870001e-05, 0.0005547998, 0.0005547999, 1e-05),
+"attribute_data": PackedByteArray("UIGyPoDRUT9agbI+r4w4P94K5T6vjDg/zArlPobRUT8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO8wP+Tozs2g3Hp4fO81XsDozs2g3PoT2Os1XsDozs2g3PoT2OswP+Tozs2g3/3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7v4m8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sinrp"]
+_surfaces = [{
+"aabb": AABB(0.00049654604, 0.00065189006, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOs0pnjozs2g3Uc2JOprjKjozs2g3pCoCOprjKjozs2g3pCoCOs0pnjozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_28025"]
+resource_name = "Plane_005"
+_surfaces = [{
+"aabb": AABB(0.00049654604, 0.00065189006, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("rVl2P+xbNz+oWXY/vqBQP+YUXT++oFA/7xRdP+dbNz8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOs0pnjozs2g3Uc2JOprjKjozs2g3pCoCOprjKjozs2g3pCoCOs0pnjozs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sinrp")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ojta1"]
+_surfaces = [{
+"aabb": AABB(0.0011900461, 0.00065189006, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOs0pnjozs2g3UbPkOprjKjozs2g3UvubOprjKjozs2g3UvubOs0pnjozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_17ps3"]
+resource_name = "Plane_006"
+_surfaces = [{
+"aabb": AABB(0.0011900461, 0.00065189006, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("ICxBP+xbNz8bLEE/vqBQP1nnJz++oFA/Y+cnP+dbNz8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOs0pnjozs2g3UbPkOprjKjozs2g3UvubOprjKjozs2g3UvubOs0pnjozs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ojta1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nlg04"]
+_surfaces = [{
+"aabb": AABB(0.0018807722, 0.00065189006, 1.3870001e-05, 0.0005547998, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO80pnjozs2g3Hp4fO5rjKjozs2g3PoT2OprjKjozs2g3PoT2Os0pnjozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_45his"]
+resource_name = "Plane_007"
+_surfaces = [{
+"aabb": AABB(0.0018807722, 0.00065189006, 1.3870001e-05, 0.0005547998, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("58JbP+xbNz/hwls/vqBQPyB+Qj++oFA/KX5CP+dbNz8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO80pnjozs2g3Hp4fO5rjKjozs2g3PoT2OprjKjozs2g3PoT2Os0pnjozs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nlg04")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_37258"]
+_surfaces = [{
+"aabb": AABB(0.00049654604, -4.1610005e-05, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOpqHBjozs2g3Uc2JOmeGLrgzs2g3pCoCOmeGLrgzs2g3pCoCOpqHBjozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_15oaq"]
+resource_name = "Plane_008"
+_surfaces = [{
+"aabb": AABB(0.00049654604, -4.1610005e-05, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("bTivPrSMOD9jOK8+htFRP75deT6G0VE/5F15Pq+MOD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Uc2JOpqHBjozs2g3Uc2JOmeGLrgzs2g3pCoCOmeGLrgzs2g3pCoCOpqHBjozs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_37258")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t1qch"]
+_surfaces = [{
+"aabb": AABB(0.0011900461, -4.1610005e-05, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOpqHBjozs2g3UbPkOmeGLrgzs2g3UvubOmeGLrgzs2g3UvubOpqHBjozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nqawr"]
+resource_name = "Plane_009"
+_surfaces = [{
+"aabb": AABB(0.0011900461, -4.1610005e-05, 1.3870001e-05, 0.0005547999, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("p7oJPrSMOD+Tugk+htFRPyyeEj2G0VE/xJ4SPa+MOD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("UbPkOpqHBjozs2g3UbPkOmeGLrgzs2g3UvubOmeGLrgzs2g3UvubOpqHBjozs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_t1qch")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vw2ol"]
+_surfaces = [{
+"aabb": AABB(0.0018807722, -4.1610005e-05, 1.3870001e-05, 0.0005547998, 0.00055480003, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO5qHBjozs2g3Hp4fO2eGLrgzs2g3PoT2OmeGLrgzs2g3PoT2OpqHBjozs2g3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wns1a"]
+resource_name = "Plane_010"
+_surfaces = [{
+"aabb": AABB(0.0018807722, -4.1610005e-05, 1.3870001e-05, 0.0005547998, 0.00055480003, 1e-05),
+"attribute_data": PackedByteArray("wBV0PrSMOD+sFXQ+htFRP6QCDz6G0VE/ygIPPq+MOD8="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("24_tdm72"),
+"name": "Door Access Requirements",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Hp4fO5qHBjozs2g3Hp4fO2eGLrgzs2g3PoT2OmeGLrgzs2g3PoT2OpqHBjozs2g3/3//f/7//7//f/9/////v/9//3/+//+//3//f/7//78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vw2ol")
+
+[node name="EzIntercom" type="Node3D" unique_id=1264076949]
+
+[node name="EzIntercom" parent="." unique_id=13658942 instance=ExtResource("40_no2iw")]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0, 0, 0)
+
+[node name="GlassPieceDeco13" parent="EzIntercom" index="33" unique_id=1094356675]
+transform = Transform3D(0.3068415, 0, -0.9517606, 0, 3, 0, 0.9517606, 0, 0.3068415, -18.607908, 3.9810395, 2.5092816)
+
+[node name="VerticalDoor" parent="EzIntercom" unique_id=1067454808 instance=ExtResource("14_v54s8")]
+transform = Transform3D(0.9282886, 0, 0, 0, 1.0144488, 0, 0, 0, 0.984252, -5.27, 4, -1.2100002)
+validCardTypes = Array[ExtResource("21_rmskn")]([SubResource("Resource_wwdk8")])
+
+[node name="DoorButton5" parent="EzIntercom" unique_id=1697148759 instance=ExtResource("12_mwmsh")]
+transform = Transform3D(-0.984252, 0, 1.4861811e-07, 0, 0.984252, 0, -1.4861811e-07, 0, -0.984252, -6.7818108, 6.024036, -1.3605407)
+target = NodePath("../VerticalDoor")
+
+[node name="DoorButton6" parent="EzIntercom" unique_id=1869693268 instance=ExtResource("12_mwmsh")]
+transform = Transform3D(0.984252, 0, -1.824676e-07, 0, 0.984252, 0, 1.824676e-07, 0, 0.984252, -3.758189, 6.024, -1.0680002)
+target = NodePath("../VerticalDoor")
+
+[node name="EzSwingDoor2" parent="EzIntercom" unique_id=1018944326 instance=ExtResource("5_hoi0w")]
+transform = Transform3D(1.0250798, 0, 0, 0, 0.9628522, 0, 0, 0, 1, -11.558743, 4, 3.71)
+
+[node name="ProjectileSettings" type="Node" parent="EzIntercom" unique_id=1791709479]
+script = ExtResource("5_w3g6w")
+Medium = ExtResource("6_j3an5")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="Doors" type="Node3D" parent="." unique_id=1058315522]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Doors" unique_id=772552093 groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.24, 0, 0)
+gizmo_extents = 5.0
+metadata/optional = true
+metadata/door_type = 3
+
+[node name="Marker3D2" type="Marker3D" parent="Doors" unique_id=495307113 groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.24, 0, 0)
+visible = false
+gizmo_extents = 5.0
+metadata/optional = false
+
+[node name="Marker3D3" type="Marker3D" parent="Doors" unique_id=565670941 groups=["map_door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.24)
+visible = false
+gizmo_extents = 5.0
+metadata/optional = false
+
+[node name="Marker3D4" type="Marker3D" parent="Doors" unique_id=387717984 groups=["map_door"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 10.24)
+gizmo_extents = 5.0
+metadata/optional = true
+metadata/door_type = 3
+
+[node name="Items" type="Node3D" parent="." unique_id=1988872872]
+
+[node name="ItemSpawnpoint" type="Marker3D" parent="Items" unique_id=291529132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3119, 4.61904, 0.467317)
+script = ExtResource("24_bca6g")
+SpawnGroup = ExtResource("27_6obvx")
+metadata/_custom_type_script = "uid://dh204rpcqcova"
+
+[node name="ZoneArea" type="Area3D" parent="." unique_id=1325194803]
+script = ExtResource("21_xprvo")
+zone = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneArea" unique_id=464675797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46018, 4.06616, 3.36255)
+shape = SubResource("BoxShape3D_yskmd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ZoneArea" unique_id=476203963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9186, 8.50001, 9.16697)
+shape = SubResource("BoxShape3D_6m08o")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="ZoneArea" unique_id=552529864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4186, 8.50001, 5.66697)
+shape = SubResource("BoxShape3D_bqfky")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="ZoneArea" unique_id=828292702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9186, 8.50001, 11.167)
+shape = SubResource("BoxShape3D_w3g6w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ZoneArea" unique_id=2128044759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9649, 7.69831, -7.33303)
+shape = SubResource("BoxShape3D_txhbi")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1312348694 node_paths=PackedStringArray("audio", "audioFx", "audioFxArray", "onDelay")]
+collision_layer = 15
+collision_mask = 6
+script = ExtResource("15_ob8ew")
+audio = NodePath("Audio")
+audioFx = NodePath("AudioFX")
+audioFxArray = [NodePath("AudioFX2"), NodePath("AudioFX3")]
+onSound = ExtResource("16_dl7rv")
+offSound = ExtResource("17_r2m1t")
+onTime = 2
+offTime = 32
+onDelay = NodePath("Timer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=567708257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.894461, 5.50738, 9.035527)
+shape = SubResource("BoxShape3D_mwscy")
+
+[node name="Audio" type="AudioStreamPlayer" parent="Area3D" unique_id=810747223]
+bus = &"IntercomVoice"
+metadata/VoiceBus = "Intercom"
+metadata/Intercom = true
+
+[node name="AudioFX" type="AudioStreamPlayer3D" parent="Area3D" unique_id=1684741577]
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"Intercom"
+area_mask = 0
+attenuation_filter_db = 0.0
+
+[node name="AudioFX2" type="AudioStreamPlayer3D" parent="Area3D" unique_id=1435588868]
+stream = ExtResource("21_ryg6n")
+attenuation_model = 3
+volume_db = -8.0
+panning_strength = 0.0
+bus = &"Intercom"
+area_mask = 0
+attenuation_filter_db = 0.0
+
+[node name="AudioFX3" type="AudioStreamPlayer3D" parent="Area3D" unique_id=1598506886]
+stream = ExtResource("22_thnq3")
+attenuation_model = 3
+volume_db = -8.0
+panning_strength = 0.0
+bus = &"Intercom"
+area_mask = 0
+attenuation_filter_db = 0.0
+
+[node name="Timer" type="Timer" parent="Area3D" unique_id=662921367]
+one_shot = true
+ignore_time_scale = true
+script = ExtResource("22_d6jic")
+MinValue = 0.4
+MaxValue = 2.3
+metadata/_custom_type_script = "uid://b0nuhk3agpjy"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="Area3D" unique_id=183044431]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_k1qbl")
+
+[node name="Fuel457_1" parent="." unique_id=1814448119 instance=ExtResource("22_33dbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3660827, 2.111308, -10.199605)
+MaxFuelAmount = 100.0
+FuelCooldown = 25.0
+
+[node name="Intercom" type="Marker3D" parent="." unique_id=548969273 groups=["dev_teleport"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.634647, -4.76837e-07, 0.937585)
+
+[node name="PDExit" type="Marker3D" parent="." unique_id=1504651689 groups=["pd_exit"]]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1.05546, 1, 0.992644)
+gizmo_extents = 1.0
+
+[node name="ControlPoint" type="StaticBody3D" parent="." unique_id=1498645168 node_paths=PackedStringArray("audioAlarm")]
+transform = Transform3D(-0.91326135, 0, 0.4073742, 0, 1, 0, -0.4073742, 0, -0.91326135, -16.5311, 5.393548, 9.765518)
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("17_txhbi")
+zone = 3
+timeToUse = 2.0
+audioAlarm = NodePath("Alarm")
+metadata/_custom_type_script = "uid://duuwundrtx7l3"
+
+[node name="monitor_obj" parent="ControlPoint" unique_id=473526649 instance=ExtResource("18_bqfky")]
+transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0, 0, -0.18446922)
+layers = 1
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ControlPoint" unique_id=1335594384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.321606, 0)
+shape = SubResource("BoxShape3D_j3an5")
+
+[node name="Label3D" type="Label3D" parent="ControlPoint" unique_id=1175990475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32831e-10, 0.31204, 0.115062)
+alpha_cut = 1
+script = ExtResource("19_w3g6w")
+zone = 3
+metadata/_custom_type_script = "uid://dusxf7psowc16"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="ControlPoint" unique_id=194150731]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_6m08o")
+
+[node name="Alarm" type="AudioStreamPlayer3D" parent="ControlPoint" unique_id=202451930]
+stream = ExtResource("17_bqfky")
+max_distance = 1000.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Keyboard" parent="ControlPoint" unique_id=1814906550 instance=ExtResource("29_mxb1r")]
+transform = Transform3D(0.98051566, 0, 0.19644243, 0, 1, 0, -0.19644243, 0, 0.98051566, -0.10995865, -0.00871563, 0.20539474)
+
+[node name="VerticalDoor3" parent="." unique_id=591070266 instance=ExtResource("14_v54s8")]
+transform = Transform3D(-1.78821, 0, -8.74228e-08, 0, 1.56665, 0, 1.5633e-07, 0, -1, -23.4259, 4.0562706, -1.7341135)
+validCardTypes = Array[ExtResource("21_rmskn")]([SubResource("Resource_txhbi")])
+
+[node name="DoorButton3" parent="." unique_id=1794534294 instance=ExtResource("12_mwmsh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.3923, 6.008767, -2.4826868)
+target = NodePath("../VerticalDoor3")
+
+[node name="DoorButton4" parent="." unique_id=1791821858 instance=ExtResource("12_mwmsh")]
+transform = Transform3D(1, 0, 2.3841838e-07, 0, 1, 0, -2.3841838e-07, 0, 1, -21.083035, 6.3237495, -1.0847229)
+target = NodePath("../VerticalDoor3")
+
+[node name="DarCustom" parent="." unique_id=2076504892 instance=ExtResource("22_j3an5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.9216714, 6.6940455, -1.383227)
+
+[node name="AC_Admin_2" parent="DarCustom/DoorAccessRequirements_Base" index="1"]
+visible = true
+
+[node name="DarCustom2" parent="." unique_id=62650732 instance=ExtResource("22_j3an5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.379774, 4.7787175, -8.744284)
+
+[node name="DoorAccessRequirements_Base" parent="DarCustom2" index="0"]
+transform = Transform3D(20, 0, 0, 0, 19.999996, 1.5099577e-06, 0, -1.5099577e-06, 19.999996, -6.2290516, 1.7511272, 0.004840851)
+
+[node name="AC_Maintenance_2" parent="DarCustom2/DoorAccessRequirements_Base" index="4"]
+visible = true
+
+[node name="DoorAccessRequirements_Base2" type="MeshInstance3D" parent="DarCustom2" unique_id=1165175322]
+transform = Transform3D(-8.742277e-07, 1.5099579e-06, -19.999996, 3.9531923e-21, 19.999996, 1.5099579e-06, 20, 6.600234e-14, -8.742273e-07, -7.6718864, 2.0352173, 4.314905)
+gi_mode = 2
+mesh = SubResource("ArrayMesh_rds2u")
+
+[node name="AC_Admin_1" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=1486032540]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_4ebna")
+
+[node name="AC_Admin_2" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=492911673]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_flfrv")
+
+[node name="AC_Admin_3" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=2121572305]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_x1wgj")
+
+[node name="AC_Maintenance_1" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=2089528433]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_g1err")
+
+[node name="AC_Maintenance_2" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=1354449351]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+gi_mode = 2
+mesh = SubResource("ArrayMesh_tfjnc")
+
+[node name="AC_Maintenance_3" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=870749893]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_vkldh")
+
+[node name="AC_Research_1" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=95938593]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_28025")
+
+[node name="AC_Research_2" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=1415325985]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_17ps3")
+
+[node name="AC_Research_3" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=234937716]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_45his")
+
+[node name="AC_Security_1" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=1633068552]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_15oaq")
+
+[node name="AC_Security_2" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=443028939]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_nqawr")
+
+[node name="AC_Security_3" type="MeshInstance3D" parent="DarCustom2/DoorAccessRequirements_Base2" unique_id=2071221976]
+transform = Transform3D(5.000001, 0, 0, 0, 5.0000014, 2.842171e-14, 0, -2.842171e-14, 5.0000014, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = SubResource("ArrayMesh_wns1a")
+
+[node name="PopOfficeDesk" parent="." unique_id=40740181 instance=ExtResource("26_6obvx")]
+transform = Transform3D(-8.940697e-08, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -8.940697e-08, 10.143864, -2.3841858e-07, 2.844633)
+
+[node name="ItemSpawnpoint" type="Marker3D" parent="." unique_id=591141401]
+transform = Transform3D(0.96152586, 0, -0.27471447, 0, 1, 0, 0.27471447, 0, 0.96152586, 3.448193, 1.3890098, 3.7104654)
+script = ExtResource("24_bca6g")
+SpawnGroup = ExtResource("27_yhccu")
+metadata/_custom_type_script = "uid://dh204rpcqcova"
+
+[node name="Monitor" parent="." unique_id=1305179724 instance=ExtResource("28_pxdyl")]
+transform = Transform3D(0.95119125, 0, -0.30860192, 0, 1, 0, 0.30860192, 0, 0.95119125, 8.734474, 1.2442226, 3.3831546)
+
+[node name="Monitor2" parent="." unique_id=1964347794 instance=ExtResource("28_pxdyl")]
+transform = Transform3D(0.43585962, 0, -0.90001464, 0, 1, 0, 0.90001464, 0, 0.43585962, 9.652607, 1.2442228, 4.1494355)
+
+[node name="Keyboard" parent="." unique_id=2107813534 instance=ExtResource("29_mxb1r")]
+transform = Transform3D(0.72649074, 0, -0.6871763, 0, 1, 0, 0.6871763, 0, 0.72649074, 8.95271, 1.2492769, 4.02684)
+
+[node name="Mouse" parent="." unique_id=1498852230 instance=ExtResource("30_bod0e")]
+transform = Transform3D(0.89089555, 0, -0.4542082, 0, 1, 0, 0.4542082, 0, 0.89089555, 9.394359, 1.2410979, 4.671045)
+
+[node name="Computer" parent="." unique_id=53133306 instance=ExtResource("31_1kqo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7467923, 1.2506803, 3.3991587)
+
+[node name="Bookshelf" parent="." unique_id=371757806 instance=ExtResource("32_tqsq6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.018612, 0, 7.242153)
+
+[node name="Book5" parent="." unique_id=355138307 instance=ExtResource("33_yr3rx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.750592, 0.497593, 6.4015856)
+
+[node name="Book7" parent="." unique_id=301758678 instance=ExtResource("34_no2iw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.789728, 0.49811596, 6.524564)
+
+[node name="Book8" parent="." unique_id=1543145466 instance=ExtResource("34_no2iw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.789728, 0.49811596, 6.5951905)
+
+[node name="Book9" parent="." unique_id=891316443 instance=ExtResource("35_c8cys")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.762916, 1.8576902, 7.8033195)
+
+[node name="SwivelChair2" parent="." unique_id=1162818971 instance=ExtResource("36_j3wd5")]
+transform = Transform3D(-0.9712715, 0, -0.2379742, 0, 1, 0, 0.2379742, 0, -0.9712715, 5.6677256, 0, 4.99158)
+
+[node name="Mug" parent="." unique_id=1615876724 instance=ExtResource("37_3fwff")]
+transform = Transform3D(0.96053195, 0, -0.27816975, 0, 1, 0, 0.27816975, 0, 0.96053195, 4.153011, 1.2782393, 3.2541676)
+
+[node name="Poster_Bob" parent="." unique_id=1418417751 instance=ExtResource("38_6x8pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.016894, 2.2071433, 2.810973)
+
+[node name="Bin" parent="." unique_id=846052008 instance=ExtResource("39_o7mrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2337732, 0.0034178346, 5.282848)
+
+[node name="BinderFileFolder" parent="." unique_id=1085577081 instance=ExtResource("40_x6dft")]
+transform = Transform3D(0.00568977, 0, -0.99998385, 0, 1, 0, 0.99998385, 0, 0.00568977, 9.77132, 1.245191, 5.974489)
+
+[node name="BindFile1" parent="." unique_id=896020180 instance=ExtResource("41_m5hly")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.770247, 1.4998442, 6.0561285)
+
+[node name="BindFile2" parent="." unique_id=28143797 instance=ExtResource("41_m5hly")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.770247, 1.4998442, 5.9544845)
+
+[node name="Socket" parent="." unique_id=844363162 instance=ExtResource("42_jbr38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.511403, 0.5, 2.8044977)
+
+[node name="VendingMachineV1" parent="." unique_id=976233175 instance=ExtResource("45_m5hly")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4725611, 4.0705714, 3.0056577)
+
+[node name="Bench" parent="." unique_id=629189188 instance=ExtResource("46_jbr38")]
+transform = Transform3D(-0.8749157, 0, -0.48427525, 0, 1, 0, 0.48427525, 0, -0.8749157, -7.3697815, 4.0643253, 0.5091555)
+
+[node name="Bench2" parent="." unique_id=411602677 instance=ExtResource("46_jbr38")]
+transform = Transform3D(-2.6426235e-09, -0.99817085, 0.06045618, -4.3631434e-08, 0.06045618, 0.99817085, -1, 0, -4.371139e-08, -3.2950883, 4.3388877, 0.75419223)
+
+[node name="wood_box_1" parent="." unique_id=2128407703 instance=ExtResource("45_6x8pk")]
+transform = Transform3D(3.620749e-15, -1.895, -8.283308e-08, -8.283307e-08, -8.283308e-08, 1.895, -1.895, 0, -8.283307e-08, -12.14424, 2.825904, -12.870288)
+
+[node name="wood_box_2" parent="." unique_id=1015551260 instance=ExtResource("45_6x8pk")]
+transform = Transform3D(-8.28331e-08, 0, -1.895, 0, 1.895, 0, 1.895, 0, -8.28331e-08, -17.847261, 2.0367253, -8.886661)
+
+[node name="wood_box_3" parent="." unique_id=379764655 instance=ExtResource("46_o7mrs")]
+transform = Transform3D(-8.1303185e-08, 0, 1.86, 0, 1.86, 0, -1.86, 0, -8.1303185e-08, -13.015037, 3.6456885, -13.013663)
+
+[node name="Mouse2" parent="." unique_id=496498542 instance=ExtResource("30_bod0e")]
+transform = Transform3D(-0.87146217, 0, 0.4904627, 0, 1, 0, -0.4904627, 0, -0.87146217, -16.99485, 5.399141, 9.47213)
+
+[node name="Mousepad" parent="." unique_id=2015965859 instance=ExtResource("45_o7mrs")]
+transform = Transform3D(0.92487156, 0, -0.38027954, 0, 1, 0, 0.38027954, 0, 0.92487156, -17.042099, 5.381976, 9.449666)
+
+[editable path="EzIntercom"]
+[editable path="EzIntercom/StaticBody3D/EZ_Intercom"]
+[editable path="EzIntercom/Spot_Base"]
+[editable path="EzIntercom/Spot_Base2"]
+[editable path="EzIntercom/Spot_Base3"]
+[editable path="EzIntercom/Spot_Base4"]
+[editable path="EzIntercom/Spot_Base4/Spot_Base/Highbay_Start"]
+[editable path="EzIntercom/Wall_Floodlights"]
+[editable path="DarCustom"]
+[editable path="DarCustom2"]

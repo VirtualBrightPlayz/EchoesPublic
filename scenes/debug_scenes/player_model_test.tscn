@@ -1,0 +1,754 @@
+[gd_scene format=3 uid="uid://bb7m8y20d6tg3"]
+
+[ext_resource type="PackedScene" uid="uid://d0kjurl0ehcoa" path="res://scenes/player/controllers_old/player_controller_classd.tscn" id="1_ju63g"]
+[ext_resource type="Script" uid="uid://bxa50vnqj5e0" path="res://scripts/player/PlayerModelTest.cs" id="2_jw1x6"]
+[ext_resource type="PackedScene" path="res://scenes/player/controllers/player_controller_ntf.tscn" id="2_remjs"]
+[ext_resource type="PackedScene" uid="uid://bikuypqxlrnb1" path="res://scenes/player/controllers_old/player_controller_scientist.tscn" id="4_7t1uy"]
+[ext_resource type="PackedScene" uid="uid://b2ey7qrtj1aay" path="res://scenes/player/controllers_old/player_controller_049.tscn" id="4_o0rmp"]
+[ext_resource type="PackedScene" uid="uid://dw30eaivurhuj" path="res://scenes/player/controllers_old/player_controller_ci.tscn" id="5_7flqg"]
+[ext_resource type="Script" uid="uid://dbhqoleundy78" path="res://scripts/map/AmbientCalculator.cs" id="7_lvfvm"]
+[ext_resource type="Script" uid="uid://brb00nufs5ako" path="res://scripts/map/AmbientProfile.cs" id="8_pf14n"]
+[ext_resource type="Shader" uid="uid://4hdas1op8kgu" path="res://shaders/vignette_post.gdshader" id="9_pf14n"]
+[ext_resource type="Shader" uid="uid://de6nphs7s1jeb" path="res://shaders/film_grain.gdshader" id="10_ubn6t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_peyjr"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_2xdmo"]
+sky_material = SubResource("ProceduralSkyMaterial_peyjr")
+
+[sub_resource type="Environment" id="Environment_43fyx"]
+background_mode = 2
+sky = SubResource("Sky_2xdmo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Environment" id="Environment_pf14n"]
+
+[sub_resource type="Resource" id="Resource_lvfvm"]
+script = ExtResource("8_pf14n")
+HasAdjustments = false
+Brightness = 1.0
+Saturation = 1.0
+Contrast = 1.0
+HasDepthFog = false
+DepthFogNear = 10.0
+DepthFogFar = 100.0
+HasDepthFogColor = false
+DepthFogColor = Color(0, 0, 0, 1)
+HasVignette = true
+VignetteAmount = 0.5
+HasVignetteColor = false
+VignetteColor = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://brb00nufs5ako"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7y324"]
+render_priority = 127
+shader = ExtResource("9_pf14n")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ubn6t"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Gradient" id="Gradient_ubn6t"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ubn6t"]
+frequency = 0.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7y324"]
+seamless = true
+color_ramp = SubResource("Gradient_ubn6t")
+noise = SubResource("FastNoiseLite_ubn6t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1valp"]
+render_priority = 127
+shader = ExtResource("10_ubn6t")
+shader_parameter/noise = SubResource("NoiseTexture2D_7y324")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_43fyx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.00253515, -0.107093, 0.994245, 0, 0.994248, 0.107094, -0.999996, 0.000271499, -0.00252057, 2.23907, 1.55476, -0.115346)
+environment = SubResource("Environment_pf14n")
+current = true
+fov = 90.0
+
+[node name="Hands" type="Marker3D" parent="." node_paths=PackedStringArray("model", "head", "leftHand", "rightHand", "raycast")]
+script = ExtResource("2_jw1x6")
+model = NodePath("../PlayerController4/Model")
+head = NodePath("Head")
+leftHand = NodePath("Left")
+rightHand = NodePath("Right")
+raycast = NodePath("Head/RayCast3D")
+
+[node name="Head" type="Marker3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04997, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Hands/Head"]
+target_position = Vector3(0, -2.5, 0)
+collision_mask = 41
+
+[node name="Left" type="Marker3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225525, 1.36791, -0.223355)
+
+[node name="Right" type="Marker3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233303, 1.33133, -0.52912)
+
+[node name="PlayerController2" parent="." instance=ExtResource("2_remjs")]
+visible = false
+
+[node name="GeneralSkeleton" parent="PlayerController2/CollisionShape3D/Guard/guard/Scene_Root" index="0"]
+bones/1/position = Vector3(-0.0287749, 5.73319, -0.0102898)
+bones/1/rotation = Quaternion(-0.0373239, -0.0419277, -0.0240755, 0.998133)
+bones/2/rotation = Quaternion(0.136626, 0.071335, 0.985083, -0.0765202)
+bones/3/rotation = Quaternion(-0.0384885, 0.993434, -0.107506, 0.0070989)
+bones/4/rotation = Quaternion(-0.0437529, 0.711757, -0.699152, 0.051703)
+bones/5/rotation = Quaternion(-9.21962e-08, 0.999075, 0.0429962, -3.95127e-08)
+bones/7/rotation = Quaternion(-0.0934752, -0.0155377, 0.995131, -0.0271065)
+bones/8/rotation = Quaternion(0.0344074, 0.993792, -0.0652447, -0.0832834)
+bones/9/rotation = Quaternion(0.00754179, 0.676691, -0.735628, -0.0297322)
+bones/10/rotation = Quaternion(-1.11154e-07, 0.998105, 0.0615297, -1.24242e-08)
+bones/11/rotation = Quaternion(0.0295716, 0.0154279, 0.0246371, 0.99914)
+bones/12/rotation = Quaternion(0.475233, -0.479528, -0.636566, -0.372813)
+bones/13/rotation = Quaternion(-0.148236, 0.828265, -0.496162, 0.214069)
+bones/14/rotation = Quaternion(0.0412814, 0.705901, -0.0412813, 0.705901)
+bones/15/rotation = Quaternion(0.0418983, -0.570955, 0.0351161, 0.81916)
+bones/18/rotation = Quaternion(-0.00274978, -0.599115, -0.443587, 0.666547)
+bones/20/rotation = Quaternion(0.457703, 0.500483, 0.629257, -0.379552)
+bones/21/rotation = Quaternion(0.125621, 0.799675, -0.573859, -0.124197)
+bones/22/rotation = Quaternion(0.00960447, -0.707042, 0.00960459, 0.707042)
+bones/23/rotation = Quaternion(0.0541768, 0.476993, -0.0164658, 0.877081)
+bones/26/rotation = Quaternion(-0.00274866, 0.599114, 0.443588, 0.666547)
+bones/28/rotation = Quaternion(0.190922, 0.00273237, -0.0166851, 0.98146)
+bones/29/rotation = Quaternion(-0.0700452, 0.00445536, -0.00315327, 0.997529)
+
+[node name="BoneAttachment3D" parent="PlayerController2/CollisionShape3D/Guard/guard/Scene_Root/GeneralSkeleton" index="2"]
+transform = Transform3D(0.403764, -0.0296994, 0.914381, 0.090326, -0.993295, -0.0721482, 0.910393, 0.111723, -0.398375, -2.15068, 6.54612, 0.687992)
+
+[node name="GodotIK" parent="PlayerController2/CollisionShape3D/Guard/guard/Scene_Root/GeneralSkeleton" index="3"]
+active = true
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="PlayerController2/CollisionShape3D/Guard/guard/Scene_Root/GeneralSkeleton" index="4"]
+transform = Transform3D(-0.892381, -0.451282, 0.000853863, -0.000689315, 0.00325517, 0.999995, -0.451282, 0.892376, -0.0032159, -1.28187, 1.20107, -0.260623)
+bone_name = "RightFoot"
+bone_idx = 9
+
+[node name="Marker3D" type="Marker3D" parent="PlayerController2/CollisionShape3D/Guard/guard/Scene_Root/GeneralSkeleton/BoneAttachment3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="LeftUpperLeg" parent="PlayerController2/HitboxMaker" index="0"]
+transform = Transform3D(-0.199065, -0.0102382, 0.0163803, -0.00898626, 0.199211, 0.0153055, -0.0170992, 0.0144979, -0.19874, 0.00575497, 1.18164, 0.00205796)
+
+[node name="Torso_001" parent="PlayerController2/HitboxMaker" index="1"]
+transform = Transform3D(-0.199065, -0.0102382, 0.0163803, -0.00898626, 0.199211, 0.0153055, -0.0170992, 0.0144979, -0.19874, 0.00575497, 1.18164, 0.00205796)
+
+[node name="RightUpperLeg" parent="PlayerController2/HitboxMaker" index="2"]
+transform = Transform3D(-0.199065, -0.0102382, 0.0163803, -0.00898626, 0.199211, 0.0153055, -0.0170992, 0.0144979, -0.19874, 0.00575497, 1.18164, 0.00205796)
+
+[node name="Spine" parent="PlayerController2/HitboxMaker" index="3"]
+transform = Transform3D(-0.199065, -0.0102382, 0.0163803, -0.00898626, 0.199211, 0.0153055, -0.0170992, 0.0144979, -0.19874, 0.00575497, 1.18164, 0.00205796)
+
+[node name="LeftLowerLeg" parent="PlayerController2/HitboxMaker" index="4"]
+transform = Transform3D(0.195234, -0.0219171, -0.037461, -0.013317, -0.194549, 0.0444204, -0.0413079, -0.0408675, -0.191373, -0.186163, 1.37522, -0.0499617)
+
+[node name="LeftFoot" parent="PlayerController2/HitboxMaker" index="5"]
+transform = Transform3D(-0.192708, -0.0279553, 0.0456302, 0.0281917, -0.19799, -0.00223781, 0.0454845, 0.00427574, 0.194712, -0.288456, 0.814468, -0.187432)
+
+[node name="LeftToes" parent="PlayerController2/HitboxMaker" index="6"]
+transform = Transform3D(0.194135, -0.0480681, 0.000946063, -0.00125979, -0.0011518, 0.199993, -0.0480609, -0.194134, -0.00142079, -0.407393, 0.250199, -0.115564)
+
+[node name="RightLowerLeg" parent="PlayerController2/HitboxMaker" index="7"]
+transform = Transform3D(0.192755, -0.00152297, 0.0533211, -0.00421291, -0.199729, 0.00952492, 0.0531762, -0.0103031, -0.192526, 0.18234, 1.35399, -0.0161285)
+
+[node name="RightFoot" parent="PlayerController2/HitboxMaker" index="8"]
+transform = Transform3D(-0.181159, 0.00236066, -0.0847114, -0.0101511, -0.199087, 0.0161606, -0.0841341, 0.0189378, 0.180452, 0.217749, 0.770545, -0.0623588)
+
+[node name="RightToes" parent="PlayerController2/HitboxMaker" index="9"]
+transform = Transform3D(0.178476, 0.0902563, -0.000170772, -0.000137863, 0.000651035, 0.199999, 0.0902564, -0.178475, 0.00064318, 0.256373, 0.240214, 0.0521245)
+
+[node name="RightShoulder" parent="PlayerController2/HitboxMaker" index="10"]
+transform = Transform3D(-0.199723, 0.000391245, 0.010514, 0.000568659, 0.199971, 0.00336089, -0.0105059, 0.00338613, -0.199695, -0.0167964, 1.67588, 0.0048573)
+
+[node name="LeftShoulder" parent="PlayerController2/HitboxMaker" index="11"]
+transform = Transform3D(-0.199723, 0.000391245, 0.010514, 0.000568659, 0.199971, 0.00336089, -0.0105059, 0.00338613, -0.199695, -0.0167964, 1.67588, 0.0048573)
+
+[node name="Neck" parent="PlayerController2/HitboxMaker" index="12"]
+transform = Transform3D(-0.199723, 0.000391245, 0.010514, 0.000568659, 0.199971, 0.00336089, -0.0105059, 0.00338613, -0.199695, -0.0167964, 1.67588, 0.0048573)
+
+[node name="RightUpperArm" parent="PlayerController2/HitboxMaker" index="13"]
+transform = Transform3D(0.0438775, 0.188416, 0.0507358, 0.000383551, -0.0520859, 0.193098, 0.195127, -0.042266, -0.0117883, 0.184632, 2.13304, -0.0175466)
+
+[node name="RightLowerArm" parent="PlayerController2/HitboxMaker" index="14"]
+transform = Transform3D(-0.134748, 0.0409944, -0.141995, -0.0165476, -0.195129, -0.0406314, -0.146865, -0.0156266, 0.134858, 0.332208, 2.09036, -0.0540097)
+
+[node name="RightHand" parent="PlayerController2/HitboxMaker" index="15"]
+transform = Transform3D(0.141995, 0.0250085, -0.138608, 0.0406314, -0.195728, 0.00630987, -0.134858, -0.032639, -0.144042, 0.405365, 1.70033, -0.0884498)
+
+[node name="Fingers01_R" parent="PlayerController2/HitboxMaker" index="16"]
+transform = Transform3D(-0.0807529, 0.00593987, -0.182876, 0.0180652, -0.198659, -0.0144296, -0.182079, -0.0223446, 0.079675, 0.430135, 1.30922, -0.137598)
+
+[node name="Thumb01_R" parent="PlayerController2/HitboxMaker" index="17"]
+transform = Transform3D(-0.0807529, 0.00593987, -0.182876, 0.0180652, -0.198659, -0.0144296, -0.182079, -0.0223446, 0.079675, 0.430135, 1.30922, -0.137598)
+
+[node name="LeftUpperArm" parent="PlayerController2/HitboxMaker" index="18"]
+transform = Transform3D(0.0685413, -0.184017, -0.0379431, -0.000858394, -0.0406952, 0.195814, -0.187887, -0.0669439, -0.0147363, -0.212164, 2.13417, -0.0384191)
+
+[node name="LeftLowerArm" parent="PlayerController2/HitboxMaker" index="19"]
+transform = Transform3D(-0.129531, -0.0170017, 0.151435, -0.00250862, -0.198486, -0.0244301, 0.152366, -0.0177218, 0.128338, -0.355968, 2.10045, -0.0942166)
+
+[node name="LeftHand" parent="PlayerController2/HitboxMaker" index="20"]
+transform = Transform3D(0.151435, -0.013477, 0.129945, -0.0244301, -0.198345, 0.00789922, 0.128338, -0.021854, -0.151828, -0.381373, 1.70485, -0.13319)
+
+[node name="Fingers01_L" parent="PlayerController2/HitboxMaker" index="21"]
+transform = Transform3D(-0.0268243, 0.00911831, 0.197983, -0.0244459, -0.198415, 0.00582606, 0.19668, -0.023418, 0.0277262, -0.382332, 1.31096, -0.162266)
+
+[node name="Thumb01_L" parent="PlayerController2/HitboxMaker" index="22"]
+transform = Transform3D(-0.0268243, 0.00911831, 0.197983, -0.0244459, -0.198415, 0.00582606, 0.19668, -0.023418, 0.0277262, -0.382332, 1.31096, -0.162266)
+
+[node name="Head" parent="PlayerController2/HitboxMaker" index="23"]
+transform = Transform3D(-0.199745, -0.00244778, 0.00980195, -0.00581181, 0.18656, -0.0718452, -0.00826394, -0.0720383, -0.186393, -0.0151801, 2.23567, 0.00442916)
+
+[node name="HeadOther" parent="PlayerController2/HitboxMaker" index="24"]
+transform = Transform3D(-0.199799, -0.00492567, 0.00749968, -0.00649468, 0.194734, -0.0451261, -0.00619084, -0.0453242, -0.194698, -0.0150064, 2.32173, -0.0602915)
+
+[node name="PlayerController3" parent="." instance=ExtResource("1_ju63g")]
+visible = false
+
+[node name="GeneralSkeleton" parent="PlayerController3/CollisionShape3D/classd2/ClassD_Male_1/mixamorig_Hips" index="0"]
+bones/0/position = Vector3(-5.76719e-05, 0.0114907, -2.06232e-05)
+bones/0/rotation = Quaternion(-0.0373239, -0.0419277, -0.0240755, 0.998133)
+bones/1/rotation = Quaternion(0.136626, 0.071335, 0.985083, -0.0765202)
+bones/2/rotation = Quaternion(-0.0384885, 0.993434, -0.107506, 0.0070989)
+bones/3/rotation = Quaternion(-0.0437529, 0.711757, -0.699152, 0.051703)
+bones/4/rotation = Quaternion(-9.21962e-08, 0.999075, 0.0429962, -3.95127e-08)
+bones/6/rotation = Quaternion(-0.0934752, -0.0155377, 0.995131, -0.0271065)
+bones/7/rotation = Quaternion(0.0344074, 0.993792, -0.0652447, -0.0832834)
+bones/8/rotation = Quaternion(0.00754179, 0.676691, -0.735628, -0.0297322)
+bones/9/rotation = Quaternion(-1.11154e-07, 0.998105, 0.0615297, -1.24242e-08)
+bones/11/rotation = Quaternion(0.0295716, 0.0154279, 0.0246371, 0.99914)
+bones/12/rotation = Quaternion(0.00937258, 0.0038484, 0.0142086, 0.999848)
+bones/13/rotation = Quaternion(0.457703, 0.500483, 0.629257, -0.379552)
+bones/14/rotation = Quaternion(0.125621, 0.799675, -0.573859, -0.124197)
+bones/15/rotation = Quaternion(0.00960447, -0.707042, 0.00960459, 0.707042)
+bones/16/rotation = Quaternion(0.0541768, 0.476993, -0.0164658, 0.877081)
+bones/17/position = Vector3(-0.0325176, 0.116018, 0.0170398)
+bones/17/rotation = Quaternion(0.0892871, -0.004339, -0.0142279, 0.995895)
+bones/18/position = Vector3(-0.000496011, 0.0314638, -8.21351e-07)
+bones/19/position = Vector3(0.000200536, 0.0303847, 6.02603e-07)
+bones/19/rotation = Quaternion(0.024491, 5.68604e-07, -1.38765e-07, 0.9997)
+bones/21/position = Vector3(-0.00789874, 0.119163, 0.0163033)
+bones/21/rotation = Quaternion(0.0208248, -0.00578959, 0.00555066, 0.999751)
+bones/22/rotation = Quaternion(0.0663438, 1.72283e-07, 1.83621e-07, 0.997797)
+bones/23/position = Vector3(0.0002034, 0.0309824, -2.45109e-07)
+bones/23/rotation = Quaternion(0.00498813, -4.92338e-07, 6.76493e-08, 0.999988)
+bones/25/position = Vector3(0.0355463, 0.106527, 0.0164292)
+bones/25/rotation = Quaternion(0.048998, -0.00590099, 0.00861666, 0.998744)
+bones/26/position = Vector3(-0.000153788, 0.0349279, -7.54288e-09)
+bones/26/rotation = Quaternion(-0.0017476, 6.45885e-09, -2.31888e-07, 0.999998)
+bones/27/position = Vector3(-0.000210572, 0.0232991, -7.74915e-07)
+bones/27/rotation = Quaternion(0.0143245, 2.21927e-07, 3.74976e-07, 0.999897)
+bones/28/position = Vector3(0.000363733, 0.026375, 3.54189e-08)
+bones/29/position = Vector3(0.0120827, 0.114868, 0.0158111)
+bones/29/rotation = Quaternion(0.0326081, -0.00312193, -0.018118, 0.999299)
+bones/30/position = Vector3(-8.76949e-05, 0.0317315, 3.98632e-07)
+bones/30/rotation = Quaternion(0.00798876, 2.12742e-07, -4.17083e-07, 0.999968)
+bones/31/position = Vector3(-0.000165327, 0.0290351, 6.06846e-09)
+bones/31/rotation = Quaternion(0.0841405, -7.52401e-08, 8.29935e-08, 0.996454)
+bones/32/position = Vector3(0.000253968, 0.0335618, 2.53224e-07)
+bones/33/position = Vector3(-0.0301387, 0.035464, 0.02089)
+bones/33/rotation = Quaternion(0.240466, 0.0245771, 0.263139, 0.933986)
+bones/34/position = Vector3(-0.00269018, 0.0434446, -1.67361e-07)
+bones/34/rotation = Quaternion(0.0144088, -4.7555e-08, -7.14645e-07, 0.999896)
+bones/35/position = Vector3(0.00207868, 0.0395205, -5.4454e-07)
+bones/35/rotation = Quaternion(-0.0467158, 1.32632e-07, -1.56013e-06, 0.998908)
+bones/37/rotation = Quaternion(0.190922, 0.00273237, -0.0166851, 0.98146)
+bones/38/rotation = Quaternion(-0.0700452, 0.00445536, -0.00315327, 0.997529)
+bones/42/rotation = Quaternion(0.475233, -0.479528, -0.636566, -0.372813)
+bones/43/rotation = Quaternion(-0.148236, 0.828265, -0.496162, 0.214069)
+bones/44/rotation = Quaternion(0.0412814, 0.705901, -0.0412813, 0.705901)
+bones/45/rotation = Quaternion(0.0418983, -0.570955, 0.0351161, 0.81916)
+bones/46/position = Vector3(0.0315385, 0.116406, 0.0168957)
+bones/46/rotation = Quaternion(0.0881072, 0.00532486, 0.0170809, 0.99595)
+bones/47/position = Vector3(0.000507679, 0.030993, 4.58706e-07)
+bones/47/rotation = Quaternion(0.017272, -4.50412e-07, -2.45577e-07, 0.999851)
+bones/48/position = Vector3(-0.000191285, 0.0311362, 2.20537e-07)
+bones/48/rotation = Quaternion(0.0234677, 2.73071e-07, 1.83632e-07, 0.999725)
+bones/49/position = Vector3(-0.000316043, 0.0274499, -2.94605e-08)
+bones/50/position = Vector3(0.00718219, 0.119124, 0.0161507)
+bones/50/rotation = Quaternion(0.0212488, 0.00650769, -0.00206599, 0.999751)
+bones/51/position = Vector3(0.000299715, 0.0322779, -1.53069e-07)
+bones/51/rotation = Quaternion(0.0680655, -6.32967e-08, -1.88914e-07, 0.997681)
+bones/52/position = Vector3(-0.000106784, 0.0309257, 6.67572e-07)
+bones/52/rotation = Quaternion(-0.000907798, -5.41936e-08, 1.9483e-07, 1)
+bones/53/position = Vector3(-0.000193346, 0.0330008, 3.86946e-07)
+bones/54/position = Vector3(-0.035932, 0.106176, 0.0163241)
+bones/54/rotation = Quaternion(0.0477486, 0.00707081, -0.00890234, 0.998795)
+bones/55/position = Vector3(-0.000149164, 0.034904, -3.48481e-07)
+bones/55/rotation = Quaternion(-3.13112e-05, -2.84514e-07, -1.6299e-07, 1)
+bones/56/position = Vector3(5.51807e-05, 0.0233002, -1.10922e-07)
+bones/56/rotation = Quaternion(0.00908521, 1.05133e-07, 1.41543e-07, 0.999959)
+bones/57/position = Vector3(9.36985e-05, 0.0263068, -2.93549e-07)
+bones/58/position = Vector3(-0.0126655, 0.114743, 0.0157404)
+bones/59/position = Vector3(3.66522e-05, 0.0317291, 6.51602e-07)
+bones/59/rotation = Quaternion(0.00992177, 2.44497e-07, -2.33405e-07, 0.999951)
+bones/60/position = Vector3(0.000192778, 0.0303307, -5.63109e-08)
+bones/60/rotation = Quaternion(0.08268, -3.9174e-07, -2.04868e-07, 0.996576)
+bones/61/position = Vector3(-0.000229406, 0.032272, 4.91603e-07)
+bones/62/position = Vector3(0.0297302, 0.0356344, 0.0207447)
+bones/62/rotation = Quaternion(0.23975, -0.0230613, -0.258943, 0.93538)
+bones/63/position = Vector3(0.00268708, 0.0433162, -1.77019e-08)
+bones/63/rotation = Quaternion(0.0137202, -2.07511e-06, 1.9062e-06, 0.999906)
+bones/64/position = Vector3(-0.00209301, 0.0393939, 1.59576e-07)
+bones/64/rotation = Quaternion(-0.0465334, 2.20922e-06, -3.13418e-08, 0.998917)
+
+[node name="BoneAttachment3D" parent="PlayerController3/CollisionShape3D/classd2/ClassD_Male_1/mixamorig_Hips/GeneralSkeleton" index="6"]
+transform = Transform3D(0.408662, 0.000218946, 0.912686, 0.0865459, -0.995503, -0.0385129, 0.908573, 0.094728, -0.406843, -0.229932, -0.244429, 0.0241234)
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="PlayerController3/CollisionShape3D/classd2/ClassD_Male_1/mixamorig_Hips/GeneralSkeleton" index="8"]
+transform = Transform3D(-0.970677, 0.240341, -0.00473032, -0.00629897, -0.00575898, 0.999964, 0.240305, 0.970671, 0.00710397, 0.141964, -0.989158, -0.097814)
+bone_name = "LeftFoot"
+bone_idx = 3
+
+[node name="Marker3D" type="Marker3D" parent="PlayerController3/CollisionShape3D/classd2/ClassD_Male_1/mixamorig_Hips/GeneralSkeleton/BoneAttachment3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="LeftUpperLeg" parent="PlayerController3/HitboxMaker" index="0"]
+transform = Transform3D(-1.39345, -0.0716673, 0.114663, -0.0522324, 1.38033, 0.22798, -0.124722, 0.222636, -1.37655, 8.07404e-05, 1.55602, 0.00143084)
+
+[node name="RightUpperLeg" parent="PlayerController3/HitboxMaker" index="1"]
+transform = Transform3D(-1.39345, -0.0716673, 0.114663, -0.0522324, 1.38033, 0.22798, -0.124722, 0.222636, -1.37655, 8.07404e-05, 1.55602, 0.00143084)
+
+[node name="Spine" parent="PlayerController3/HitboxMaker" index="2"]
+transform = Transform3D(-1.39345, -0.0716673, 0.114663, -0.0522324, 1.38033, 0.22798, -0.124722, 0.222636, -1.37655, 8.07404e-05, 1.55602, 0.00143084)
+
+[node name="LeftLowerLeg" parent="PlayerController3/HitboxMaker" index="3"]
+transform = Transform3D(1.36664, -0.15342, -0.262227, -0.0676627, -1.33173, 0.426514, -0.296179, -0.403677, -1.30741, -0.111158, 1.32505, -0.0292622)
+
+[node name="LeftFoot" parent="PlayerController3/HitboxMaker" index="4"]
+transform = Transform3D(-1.34896, -0.195687, 0.319411, 0.168842, -1.38327, -0.134397, 0.334379, -0.0909757, 1.35643, -0.157765, 0.73003, -0.0800264)
+
+[node name="LeftToes" parent="PlayerController3/HitboxMaker" index="5"]
+transform = Transform3D(1.35895, -0.336477, 0.00662243, 0.0205365, 0.110407, 1.39549, -0.335915, -1.35447, 0.112106, -0.198749, 0.148512, 0.0157234)
+
+[node name="RightLowerLeg" parent="PlayerController3/HitboxMaker" index="6"]
+transform = Transform3D(1.34929, -0.0106607, 0.373248, -0.0618204, -1.38649, 0.183879, 0.368247, -0.1937, -1.33674, 0.131842, 1.33248, -0.00727305)
+
+[node name="RightFoot" parent="PlayerController3/HitboxMaker" index="7"]
+transform = Transform3D(-1.26811, 0.0165246, -0.59298, -0.0194583, -1.39986, 0.00260211, -0.592891, 0.0105986, 1.26821, 0.0991563, 0.731076, 0.0327816)
+
+[node name="RightToes" parent="PlayerController3/HitboxMaker" index="8"]
+transform = Transform3D(1.24933, 0.631795, -0.00119543, -0.0560259, 0.113426, 1.39427, 0.629307, -1.24418, 0.126502, 0.0396119, 0.162422, 0.158678)
+
+[node name="Chest" parent="PlayerController3/HitboxMaker" index="9"]
+transform = Transform3D(-1.39806, 0.00273869, 0.0735984, 0.010375, 1.3924, 0.145269, -0.0729149, 0.145613, -1.3905, -0.00770132, 1.70591, 0.025606)
+
+[node name="LeftShoulder" parent="PlayerController3/HitboxMaker" index="10"]
+transform = Transform3D(-1.39792, 0.0437467, 0.0624009, 0.048954, 1.39404, 0.119377, -0.0584051, 0.121382, -1.39351, -0.00756749, 1.88303, 0.0489461)
+
+[node name="Neck" parent="PlayerController3/HitboxMaker" index="11"]
+transform = Transform3D(-1.39792, 0.0437467, 0.0624009, 0.048954, 1.39404, 0.119377, -0.0584051, 0.121382, -1.39351, -0.00756749, 1.88303, 0.0489461)
+
+[node name="RightShoulder" parent="PlayerController3/HitboxMaker" index="12"]
+transform = Transform3D(-1.39792, 0.0437467, 0.0624009, 0.048954, 1.39404, 0.119377, -0.0584051, 0.121382, -1.39351, -0.00756749, 1.88303, 0.0489461)
+
+[node name="LeftUpperArm" parent="PlayerController3/HitboxMaker" index="13"]
+transform = Transform3D(0.468244, -1.2998, -0.226394, 0.072559, -0.214496, 1.38157, -1.31738, -0.473813, -0.00437421, -0.0798769, 2.00567, 0.0356906)
+
+[node name="LeftLowerArm" parent="PlayerController3/HitboxMaker" index="14"]
+transform = Transform3D(-0.897773, -0.160514, 1.06219, -0.0664636, -1.37333, -0.26371, 1.07219, -0.219534, 0.873052, -0.241119, 1.98184, 0.0176486)
+
+[node name="LeftHand" parent="PlayerController3/HitboxMaker" index="15"]
+transform = Transform3D(1.06219, -0.136069, 0.901802, -0.26371, -1.37102, 0.103743, 0.873052, -0.248578, -1.06583, -0.297605, 1.57697, -0.0177825)
+
+[node name="mixamorig_LeftHandIndex1" parent="PlayerController3/HitboxMaker" index="16"]
+transform = Transform3D(-0.181002, 0.0219185, 1.38808, -0.261816, -1.37525, -0.0124245, 1.36334, -0.261193, 0.181901, -0.307809, 1.22477, -0.0834009)
+
+[node name="mixamorig_LeftHandMiddle1" parent="PlayerController3/HitboxMaker" index="17"]
+transform = Transform3D(-0.181002, 0.0219185, 1.38808, -0.261816, -1.37525, -0.0124245, 1.36334, -0.261193, 0.181901, -0.307809, 1.22477, -0.0834009)
+
+[node name="mixamorig_LeftHandPinky1" parent="PlayerController3/HitboxMaker" index="18"]
+transform = Transform3D(-0.181002, 0.0219185, 1.38808, -0.261816, -1.37525, -0.0124245, 1.36334, -0.261193, 0.181901, -0.307809, 1.22477, -0.0834009)
+
+[node name="mixamorig_LeftHandRing1" parent="PlayerController3/HitboxMaker" index="19"]
+transform = Transform3D(-0.181002, 0.0219185, 1.38808, -0.261816, -1.37525, -0.0124245, 1.36334, -0.261193, 0.181901, -0.307809, 1.22477, -0.0834009)
+
+[node name="mixamorig_LeftHandThumb1" parent="PlayerController3/HitboxMaker" index="20"]
+transform = Transform3D(-0.181002, 0.0219185, 1.38808, -0.261816, -1.37525, -0.0124245, 1.36334, -0.261193, 0.181901, -0.307809, 1.22477, -0.0834009)
+
+[node name="Head" parent="PlayerController3/HitboxMaker" index="21"]
+transform = Transform3D(-1.39924, 0.0166705, 0.0428608, 0.00332267, 1.33802, -0.411943, -0.0458684, -0.411619, -1.33734, 0.000284293, 2.08385, 0.0308567)
+
+[node name="mixamorig_LeftEye" parent="PlayerController3/HitboxMaker" index="22"]
+transform = Transform3D(-1.39964, 0.00258655, 0.0317121, -0.00245042, 1.38246, -0.22091, -0.0317229, -0.220909, -1.3821, 0.00205674, 2.22611, -0.0129077)
+
+[node name="mixamorig_RightEye" parent="PlayerController3/HitboxMaker" index="23"]
+transform = Transform3D(-1.39964, 0.00258655, 0.0317121, -0.00245042, 1.38246, -0.22091, -0.0317229, -0.220909, -1.3821, 0.00205674, 2.22611, -0.0129077)
+
+[node name="mixamorig_HeadTop_End" parent="PlayerController3/HitboxMaker" index="24"]
+transform = Transform3D(-1.39964, 0.00258655, 0.0317121, -0.00245042, 1.38246, -0.22091, -0.0317229, -0.220909, -1.3821, 0.00205674, 2.22611, -0.0129077)
+
+[node name="RightUpperArm" parent="PlayerController3/HitboxMaker" index="25"]
+transform = Transform3D(0.318657, 1.30517, 0.393693, -0.101846, -0.380384, 1.34348, 1.35944, -0.334432, 0.00836672, 0.0740237, 1.99985, 0.0421601)
+
+[node name="RightLowerArm" parent="PlayerController3/HitboxMaker" index="26"]
+transform = Transform3D(-0.95489, 0.246081, -0.993795, -0.0165453, -1.36249, -0.321479, -1.02368, -0.207525, 0.932214, 0.231074, 1.9526, 0.0421311)
+
+[node name="RightHand" parent="PlayerController3/HitboxMaker" index="27"]
+transform = Transform3D(0.993795, 0.133099, -0.977065, 0.321479, -1.35513, 0.142382, -0.932215, -0.325432, -0.992508, 0.310722, 1.5507, 0.0187064)
+
+[node name="mixamorig_RightHandIndex1" parent="PlayerController3/HitboxMaker" index="28"]
+transform = Transform3D(-0.572127, -0.000306487, -1.27776, 0.231566, -1.37684, -0.103355, -1.2566, -0.253584, 0.562714, 0.321904, 1.20205, -0.0634689)
+
+[node name="mixamorig_RightHandMiddle1" parent="PlayerController3/HitboxMaker" index="29"]
+transform = Transform3D(-0.572127, -0.000306487, -1.27776, 0.231566, -1.37684, -0.103355, -1.2566, -0.253584, 0.562714, 0.321904, 1.20205, -0.0634689)
+
+[node name="mixamorig_RightHandPinky1" parent="PlayerController3/HitboxMaker" index="30"]
+transform = Transform3D(-0.572127, -0.000306487, -1.27776, 0.231566, -1.37684, -0.103355, -1.2566, -0.253584, 0.562714, 0.321904, 1.20205, -0.0634689)
+
+[node name="mixamorig_RightHandRing1" parent="PlayerController3/HitboxMaker" index="31"]
+transform = Transform3D(-0.572127, -0.000306487, -1.27776, 0.231566, -1.37684, -0.103355, -1.2566, -0.253584, 0.562714, 0.321904, 1.20205, -0.0634689)
+
+[node name="mixamorig_RightHandThumb1" parent="PlayerController3/HitboxMaker" index="32"]
+transform = Transform3D(-0.572127, -0.000306487, -1.27776, 0.231566, -1.37684, -0.103355, -1.2566, -0.253584, 0.562714, 0.321904, 1.20205, -0.0634689)
+
+[node name="PlayerController5" parent="." instance=ExtResource("4_7t1uy")]
+visible = false
+
+[node name="GeneralSkeleton" parent="PlayerController5/CollisionShape3D/Scientist/scientist/Armature" index="0"]
+bones/0/position = Vector3(-0.00513106, 1.02233, -0.00183485)
+bones/0/rotation = Quaternion(-0.0373239, -0.0419277, -0.0240755, 0.998133)
+bones/1/rotation = Quaternion(0.0295716, 0.0154279, 0.0246371, 0.99914)
+bones/2/rotation = Quaternion(0.00937258, 0.0038484, 0.0142086, 0.999848)
+bones/3/rotation = Quaternion(0.00918872, 0.00408403, 0.0142516, 0.999848)
+bones/4/rotation = Quaternion(0.190922, 0.00273237, -0.0166851, 0.98146)
+bones/5/rotation = Quaternion(-0.0700452, 0.00445536, -0.00315327, 0.997529)
+bones/9/rotation = Quaternion(0.457703, 0.500483, 0.629257, -0.379552)
+bones/10/rotation = Quaternion(0.125621, 0.799675, -0.573859, -0.124197)
+bones/11/rotation = Quaternion(0.00960447, -0.707042, 0.00960459, 0.707042)
+bones/12/rotation = Quaternion(0.0541768, 0.476993, -0.0164658, 0.877081)
+bones/13/position = Vector3(-0.010162, 0.119161, 0.0150279)
+bones/13/rotation = Quaternion(0.0204903, -0.0777429, 0.00704334, 0.996738)
+bones/17/position = Vector3(-0.0328272, 0.0354598, 0.0163534)
+bones/17/rotation = Quaternion(0.221007, -0.042751, 0.279774, 0.933303)
+bones/21/rotation = Quaternion(0.0901979, -0.0760155, -0.00775553, 0.992988)
+bones/25/rotation = Quaternion(0.033947, -0.0750465, -0.0157154, 0.996478)
+bones/29/position = Vector3(0.0328152, 0.106525, 0.0213882)
+bones/29/rotation = Quaternion(0.0483677, -0.0777813, 0.0121292, 0.995723)
+bones/33/rotation = Quaternion(0.475233, -0.479528, -0.636566, -0.372813)
+bones/34/rotation = Quaternion(-0.148236, 0.828265, -0.496162, 0.214069)
+bones/35/rotation = Quaternion(0.0412814, 0.705901, -0.0412813, 0.705901)
+bones/36/rotation = Quaternion(0.0418983, -0.570955, 0.0351161, 0.81916)
+bones/37/position = Vector3(0.00942291, 0.119129, 0.0149242)
+bones/37/rotation = Quaternion(0.0209275, 0.0784591, -0.00358262, 0.996691)
+bones/41/position = Vector3(0.0323999, 0.0356396, 0.0162522)
+bones/41/rotation = Quaternion(0.220376, 0.044304, -0.275517, 0.934645)
+bones/45/position = Vector3(0.033634, 0.116411, 0.0121651)
+bones/45/rotation = Quaternion(0.0889898, 0.0770086, 0.0107018, 0.992993)
+bones/49/position = Vector3(-0.0102777, 0.114748, 0.0173693)
+bones/49/rotation = Quaternion(0.0329526, 0.0758488, 0.0189221, 0.996395)
+bones/53/position = Vector3(-0.033219, 0.106181, 0.0212898)
+bones/53/rotation = Quaternion(0.0468654, 0.0789512, -0.0123087, 0.9957)
+bones/57/rotation = Quaternion(-0.0934752, -0.0155377, 0.995131, -0.0271065)
+bones/58/rotation = Quaternion(0.0344074, 0.993792, -0.0652447, -0.0832834)
+bones/59/rotation = Quaternion(0.00754179, 0.676691, -0.735628, -0.0297322)
+bones/60/rotation = Quaternion(-1.11154e-07, 0.998105, 0.0615297, -1.24242e-08)
+bones/62/rotation = Quaternion(0.136626, 0.071335, 0.985083, -0.0765202)
+bones/63/rotation = Quaternion(-0.0384885, 0.993434, -0.107506, 0.0070989)
+bones/64/rotation = Quaternion(-0.0437529, 0.711757, -0.699152, 0.051703)
+bones/65/rotation = Quaternion(-9.21962e-08, 0.999075, 0.0429962, -3.95127e-08)
+
+[node name="BoneAttachment3D" parent="PlayerController5/CollisionShape3D/Scientist/scientist/Armature/GeneralSkeleton" index="9"]
+transform = Transform3D(0.414057, 0.0301538, 0.909751, 0.0833291, -0.99651, -0.00489647, 0.906429, 0.0778362, -0.415125, -0.21677, 0.848888, -0.0384171)
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="PlayerController5/CollisionShape3D/Scientist/scientist/Armature/GeneralSkeleton" index="11"]
+transform = Transform3D(0.414057, 0.0301538, 0.909751, 0.0833291, -0.99651, -0.00489647, 0.906429, 0.0778362, -0.415125, -0.21677, 0.848888, -0.0384171)
+bone_name = "RightHand"
+bone_idx = 36
+
+[node name="Marker3D" type="Marker3D" parent="PlayerController5/CollisionShape3D/Scientist/scientist/Armature/GeneralSkeleton/BoneAttachment3D2"]
+transform = Transform3D(3.55271e-15, 4.37114e-08, -1, 0.999999, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.0100727, -0.00468028, 0.00945474)
+
+[node name="CSGSphere3D" type="CSGCylinder3D" parent="PlayerController5/CollisionShape3D/Scientist/scientist/Armature/GeneralSkeleton/BoneAttachment3D2"]
+radius = 0.05
+height = 0.5
+
+[node name="AnimationTree" parent="PlayerController5/CollisionShape3D" index="3"]
+walking = 1.0
+walkingDirection = Vector2(0, -1)
+
+[node name="Spine" parent="PlayerController5/HitboxMaker" index="0"]
+transform = Transform3D(-1.39345, -0.0716673, 0.114662, -0.0629038, 1.39448, 0.107138, -0.119694, 0.101486, -1.39118, 0.00718349, 1.43126, 0.00256879)
+
+[node name="RightUpperLeg" parent="PlayerController5/HitboxMaker" index="1"]
+transform = Transform3D(-1.39345, -0.0716673, 0.114662, -0.0629038, 1.39448, 0.107138, -0.119694, 0.101486, -1.39118, 0.00718349, 1.43126, 0.00256879)
+
+[node name="LeftUpperLeg" parent="PlayerController5/HitboxMaker" index="2"]
+transform = Transform3D(-1.39345, -0.0716673, 0.114662, -0.0629038, 1.39448, 0.107138, -0.119694, 0.101486, -1.39118, 0.00718349, 1.43126, 0.00256879)
+
+[node name="Chest" parent="PlayerController5/HitboxMaker" index="3"]
+transform = Transform3D(-1.39806, 0.00273872, 0.0735981, 0.00398061, 1.3998, 0.0235262, -0.0735414, 0.0237029, -1.39787, -0.00102555, 1.563, 0.0283663)
+
+[node name="UpperChest" parent="PlayerController5/HitboxMaker" index="4"]
+transform = Transform3D(-1.39792, 0.0437467, 0.0624006, 0.0436774, 1.39932, -0.00252923, -0.0624492, -0.000578703, -1.39861, -0.00191641, 1.71371, 0.052742)
+
+[node name="Neck" parent="PlayerController5/HitboxMaker" index="5"]
+transform = Transform3D(-1.39655, 0.0846096, 0.0498065, 0.083662, 1.39722, -0.0277096, -0.0513824, -0.024665, -1.39884, 0.0022382, 1.89016, 0.0829981)
+
+[node name="LeftShoulder" parent="PlayerController5/HitboxMaker" index="6"]
+transform = Transform3D(-1.39655, 0.0846096, 0.0498065, 0.083662, 1.39722, -0.0277096, -0.0513824, -0.024665, -1.39884, 0.0022382, 1.89016, 0.0829981)
+
+[node name="RightShoulder" parent="PlayerController5/HitboxMaker" index="7"]
+transform = Transform3D(-1.39655, 0.0846096, 0.0498065, 0.083662, 1.39722, -0.0277096, -0.0513824, -0.024665, -1.39884, 0.0022382, 1.89016, 0.0829981)
+
+[node name="Head" parent="PlayerController5/HitboxMaker" index="8"]
+transform = Transform3D(-1.39902, 0.0498592, 0.0158656, 0.039636, 1.28703, -0.549532, -0.0341562, -0.548698, -1.28754, 0.0146909, 2.09145, 0.072884)
+
+[node name="mixamorig_HeadTop_End" parent="PlayerController5/HitboxMaker" index="9"]
+transform = Transform3D(-1.39942, 0.0392234, 0.00962193, 0.0353755, 1.35141, -0.363929, -0.019484, -0.363534, -1.35184, 0.0202504, 2.21027, -0.0166311)
+
+[node name="mixamorig_RightEye" parent="PlayerController5/HitboxMaker" index="10"]
+transform = Transform3D(-1.39942, 0.0392234, 0.00962193, 0.0353755, 1.35141, -0.363929, -0.019484, -0.363534, -1.35184, 0.0202504, 2.21027, -0.0166311)
+
+[node name="mixamorig_LeftEye" parent="PlayerController5/HitboxMaker" index="11"]
+transform = Transform3D(-1.39942, 0.0392234, 0.00962193, 0.0353755, 1.35141, -0.363929, -0.019484, -0.363534, -1.35184, 0.0202504, 2.21027, -0.0166311)
+
+[node name="LeftUpperArm" parent="PlayerController5/HitboxMaker" index="12"]
+transform = Transform3D(0.455005, -1.3107, -0.187197, -0.0782755, -0.224227, 1.37971, -1.32168, -0.437944, -0.146157, -0.0673729, 2.01499, 0.0748894)
+
+[node name="LeftLowerArm" parent="PlayerController5/HitboxMaker" index="13"]
+transform = Transform3D(-0.886967, -0.201859, 1.06421, 0.0715139, -1.38339, -0.202798, 1.08082, -0.0741205, 0.886753, -0.228645, 1.98872, 0.0613534)
+
+[node name="LeftHand" parent="PlayerController5/HitboxMaker" index="14"]
+transform = Transform3D(1.06421, -0.177692, 0.892123, -0.202798, -1.38482, -0.0339103, 0.886753, -0.103452, -1.07841, -0.292683, 1.58364, 0.0697736)
+
+[node name="mixamorig_LeftHandMiddle1" parent="PlayerController5/HitboxMaker" index="15"]
+transform = Transform3D(-0.172733, -0.0200426, 1.38916, -0.113546, -1.39497, -0.0342452, 1.38466, -0.116892, 0.170486, -0.314064, 1.22729, 0.0377742)
+
+[node name="mixamorig_LeftHandThumb1" parent="PlayerController5/HitboxMaker" index="16"]
+transform = Transform3D(-0.172733, -0.0200426, 1.38916, -0.113546, -1.39497, -0.0342452, 1.38466, -0.116892, 0.170486, -0.314064, 1.22729, 0.0377742)
+
+[node name="mixamorig_LeftHandIndex1" parent="PlayerController5/HitboxMaker" index="17"]
+transform = Transform3D(-0.172733, -0.0200426, 1.38916, -0.113546, -1.39497, -0.0342452, 1.38466, -0.116892, 0.170486, -0.314064, 1.22729, 0.0377742)
+
+[node name="mixamorig_LeftHandRing1" parent="PlayerController5/HitboxMaker" index="18"]
+transform = Transform3D(-0.172733, -0.0200426, 1.38916, -0.113546, -1.39497, -0.0342452, 1.38466, -0.116892, 0.170486, -0.314064, 1.22729, 0.0377742)
+
+[node name="mixamorig_LeftHandPinky1" parent="PlayerController5/HitboxMaker" index="19"]
+transform = Transform3D(-0.172733, -0.0200426, 1.38916, -0.113546, -1.39497, -0.0342452, 1.38466, -0.116892, 0.170486, -0.314064, 1.22729, 0.0377742)
+
+[node name="RightUpperArm" parent="PlayerController5/HitboxMaker" index="20"]
+transform = Transform3D(0.33118, 1.28995, 0.431667, 0.030415, -0.451188, 1.32495, 1.35992, -0.30405, -0.134756, 0.0866266, 2.00536, 0.080582)
+
+[node name="RightLowerArm" parent="PlayerController5/HitboxMaker" index="21"]
+transform = Transform3D(-0.966628, 0.204991, -0.99177, -0.0946001, -1.3833, -0.193716, -1.00831, -0.0667353, 0.968951, 0.240392, 1.94853, 0.0841372)
+
+[node name="RightHand" parent="PlayerController5/HitboxMaker" index="22"]
+transform = Transform3D(0.99177, 0.0909212, -0.983933, 0.193716, -1.3849, 0.0672854, -0.968951, -0.183811, -0.993654, 0.303045, 1.5435, 0.102666)
+
+[node name="mixamorig_RightHandMiddle1" parent="PlayerController5/HitboxMaker" index="23"]
+transform = Transform3D(-0.579679, -0.0422154, -1.27365, 0.116661, -1.39511, -0.00685506, -1.269, -0.108971, 0.581174, 0.303478, 1.18844, 0.0537839)
+
+[node name="mixamorig_RightHandThumb1" parent="PlayerController5/HitboxMaker" index="24"]
+transform = Transform3D(-0.579679, -0.0422154, -1.27365, 0.116661, -1.39511, -0.00685506, -1.269, -0.108971, 0.581174, 0.303478, 1.18844, 0.0537839)
+
+[node name="mixamorig_RightHandIndex1" parent="PlayerController5/HitboxMaker" index="25"]
+transform = Transform3D(-0.579679, -0.0422154, -1.27365, 0.116661, -1.39511, -0.00685506, -1.269, -0.108971, 0.581174, 0.303478, 1.18844, 0.0537839)
+
+[node name="mixamorig_RightHandRing1" parent="PlayerController5/HitboxMaker" index="26"]
+transform = Transform3D(-0.579679, -0.0422154, -1.27365, 0.116661, -1.39511, -0.00685506, -1.269, -0.108971, 0.581174, 0.303478, 1.18844, 0.0537839)
+
+[node name="mixamorig_RightHandPinky1" parent="PlayerController5/HitboxMaker" index="27"]
+transform = Transform3D(-0.579679, -0.0422154, -1.27365, 0.116661, -1.39511, -0.00685506, -1.269, -0.108971, 0.581174, 0.303478, 1.18844, 0.0537839)
+
+[node name="RightLowerLeg" parent="PlayerController5/HitboxMaker" index="28"]
+transform = Transform3D(1.34929, -0.0106608, 0.373247, -0.0294904, -1.3981, 0.0666744, 0.372233, -0.0721215, -1.34768, 0.12743, 1.34077, 0.00581776)
+
+[node name="RightFoot" parent="PlayerController5/HitboxMaker" index="29"]
+transform = Transform3D(-1.26811, 0.0165246, -0.59298, -0.071058, -1.39361, 0.113124, -0.588939, 0.132564, 1.26316, 0.123618, 0.739373, 0.0164338)
+
+[node name="RightToes" parent="PlayerController5/HitboxMaker" index="30"]
+transform = Transform3D(1.24933, 0.631794, -0.00119541, -0.000965041, 0.00455724, 1.39999, 0.631795, -1.24933, 0.00450226, 0.0996177, 0.163287, 0.117818)
+
+[node name="LeftLowerLeg" parent="PlayerController5/HitboxMaker" index="31"]
+transform = Transform3D(1.36664, -0.15342, -0.262227, -0.0932189, -1.36185, 0.310942, -0.289155, -0.286072, -1.33961, -0.103356, 1.33198, -0.0141618)
+
+[node name="LeftFoot" parent="PlayerController5/HitboxMaker" index="32"]
+transform = Transform3D(-1.34896, -0.195687, 0.319411, 0.197342, -1.38593, -0.0156647, 0.318391, 0.0299302, 1.36299, -0.17283, 0.744748, -0.0953476)
+
+[node name="LeftToes" parent="PlayerController5/HitboxMaker" index="33"]
+transform = Transform3D(1.35895, -0.336477, 0.00662244, -0.00881856, -0.00806257, 1.39995, -0.336426, -1.35894, -0.00994556, -0.234833, 0.16084, -0.03066)
+
+[node name="PlayerController049" parent="." instance=ExtResource("4_o0rmp")]
+visible = false
+
+[node name="GeneralSkeleton" parent="PlayerController049/CollisionShape3D/default/Scene_Root" index="0"]
+bones/6/rotation = Quaternion(1.89163e-09, -7.64398e-08, -4.55159e-08, 1)
+bones/7/rotation = Quaternion(0.0244862, 9.50216e-06, 1.93586e-06, 0.9997)
+bones/8/rotation = Quaternion(0.43811, -0.568103, -0.42102, -0.555031)
+bones/9/rotation = Quaternion(2.98023e-08, 0.834774, 0.550593, -8.9407e-08)
+bones/10/rotation = Quaternion(0, 0.707107, -4.21468e-08, 0.707107)
+bones/11/rotation = Quaternion(5.7048e-08, -0.707107, 2.72457e-08, 0.707107)
+bones/15/rotation = Quaternion(-0.288732, 0.171483, 0.872029, 0.35608)
+bones/16/rotation = Quaternion(-0.209438, 0.357689, 0.236527, 0.878777)
+bones/18/rotation = Quaternion(-0.273766, 0.0733603, 0.951117, 0.122668)
+bones/21/rotation = Quaternion(-0.0365729, 0.0534126, 0.992705, -0.101721)
+bones/22/rotation = Quaternion(0.184054, 0.165446, -0.143661, 0.958182)
+bones/24/rotation = Quaternion(-0.0465686, 0.171173, 0.936152, -0.303563)
+bones/25/rotation = Quaternion(0.0542606, 0.00740598, -0.34768, 0.936013)
+bones/27/rotation = Quaternion(0.450938, 0.558128, 0.434158, -0.54466)
+bones/28/rotation = Quaternion(5.96046e-08, 0.813244, 0.581923, -5.96046e-08)
+bones/29/rotation = Quaternion(0, -0.707107, 0, 0.707107)
+bones/30/rotation = Quaternion(3.46963e-08, 0.707107, -4.95974e-08, 0.707107)
+bones/46/rotation = Quaternion(-8.19564e-08, -3.08501e-08, 0, 1)
+bones/47/rotation = Quaternion(-0.020068, 6.38719e-09, 3.43108e-08, 0.999799)
+bones/48/position = Vector3(-0.000305383, 0.406544, 0.0134696)
+bones/48/rotation = Quaternion(-2.79285e-08, -2.65654e-08, -1.93742e-07, 1)
+bones/49/rotation = Quaternion(1.19209e-07, 1.04308e-07, 1, 1.19209e-07)
+bones/50/rotation = Quaternion(-3.72529e-09, 1, 1.49012e-08, -5.26197e-08)
+bones/51/rotation = Quaternion(-2.8976e-08, 0.707107, -0.707107, -1.31709e-08)
+bones/52/rotation = Quaternion(7.57326e-09, 1, 0, 3.45736e-08)
+bones/53/position = Vector3(-0.000305479, 0.406544, 0.0134697)
+bones/53/rotation = Quaternion(8.94517e-08, -1.22022e-07, 1.73494e-07, 1)
+bones/54/rotation = Quaternion(-1.49012e-07, 1.41561e-07, 1, -7.07805e-08)
+bones/55/rotation = Quaternion(-1.11759e-08, 1, 2.98023e-08, -8.28877e-08)
+bones/56/rotation = Quaternion(4.21468e-08, 0.707107, -0.707107, 4.21468e-08)
+bones/57/rotation = Quaternion(-7.90253e-09, 1, 3.27826e-07, 5.00494e-08)
+
+[node name="Camera3D" parent="PlayerController049/Head" index="0"]
+visible = false
+
+[node name="PlayerController4" parent="." instance=ExtResource("5_7flqg")]
+
+[node name="GeneralSkeleton" parent="PlayerController4/CollisionShape3D/forest_soldier_outdated/Sketchfab_model/Root/Rig" index="1"]
+bones/1/position = Vector3(-0.00497236, 0.990709, -0.0017781)
+bones/1/rotation = Quaternion(-0.0373239, -0.0419277, -0.0240755, 0.998133)
+bones/3/rotation = Quaternion(0.136626, 0.071335, 0.985083, -0.0765202)
+bones/4/rotation = Quaternion(-0.0384885, 0.993434, -0.107506, 0.0070989)
+bones/5/rotation = Quaternion(-0.0437529, 0.711757, -0.699152, 0.051703)
+bones/6/rotation = Quaternion(-0.0934752, -0.0155377, 0.995131, -0.0271065)
+bones/7/rotation = Quaternion(0.0344074, 0.993792, -0.0652447, -0.0832834)
+bones/8/rotation = Quaternion(0.00754179, 0.676691, -0.735628, -0.0297322)
+bones/9/rotation = Quaternion(0.0295716, 0.0154279, 0.0246371, 0.99914)
+bones/10/rotation = Quaternion(0.00937258, 0.0038484, 0.0142086, 0.999848)
+bones/11/rotation = Quaternion(0.190922, 0.00273237, -0.0166851, 0.98146)
+bones/12/rotation = Quaternion(-0.0700452, 0.00445536, -0.00315327, 0.997529)
+bones/13/rotation = Quaternion(0.457703, 0.500483, 0.629257, -0.379552)
+bones/14/rotation = Quaternion(0.125621, 0.799675, -0.573859, -0.124197)
+bones/15/rotation = Quaternion(0.00960447, -0.707042, 0.00960459, 0.707042)
+bones/16/rotation = Quaternion(0.0541768, 0.476993, -0.0164658, 0.877081)
+bones/36/rotation = Quaternion(0.475233, -0.479528, -0.636566, -0.372813)
+bones/37/rotation = Quaternion(-0.148236, 0.828265, -0.496162, 0.214069)
+bones/38/rotation = Quaternion(0.0412814, 0.705901, -0.0412813, 0.705901)
+bones/39/rotation = Quaternion(0.0418983, -0.570955, 0.0351161, 0.81916)
+
+[node name="BoneAttachment3D" parent="PlayerController4/CollisionShape3D/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="3"]
+transform = Transform3D(0.408662, 0.000218946, 0.912686, 0.0865459, -0.995503, -0.0385129, 0.908573, 0.094728, -0.406843, -0.328501, 0.8176, 0.370337)
+
+[node name="LeftUpperLeg" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="0"]
+transform = Transform3D(-1.29392, -0.0665482, 0.106472, -0.0584107, 1.29487, 0.0994856, -0.111145, 0.0942365, -1.29181, 0.0422119, 0.311778, -0.00663215)
+
+[node name="LeftLowerLeg" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="1"]
+transform = Transform3D(1.26902, -0.142461, -0.243497, -0.0865604, -1.26457, 0.288732, -0.268502, -0.265639, -1.24392, -0.0886085, 0.00990498, -0.091867)
+
+[node name="LeftFoot" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="2"]
+transform = Transform3D(-1.2526, -0.181709, 0.296596, 0.183246, -1.28694, -0.0145458, 0.295649, 0.0277923, 1.26563, -0.181412, -0.474058, -0.153146)
+
+[node name="RightUpperLeg" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="3"]
+transform = Transform3D(-1.29392, -0.0665482, 0.106472, -0.0584107, 1.29487, 0.0994856, -0.111145, 0.0942365, -1.29181, 0.0422119, 0.311778, -0.00663215)
+
+[node name="RightLowerLeg" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="4"]
+transform = Transform3D(1.25291, -0.0098993, 0.346587, -0.0273839, -1.29824, 0.061912, 0.345645, -0.06697, -1.25142, 0.212092, 0.0234786, -0.0660394)
+
+[node name="RightFoot" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="5"]
+transform = Transform3D(-1.17753, 0.0153443, -0.550624, -0.0659824, -1.29407, 0.105044, -0.546872, 0.123095, 1.17294, 0.244012, -0.471779, -0.0490198)
+
+[node name="Spine" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="6"]
+transform = Transform3D(-1.29392, -0.0665482, 0.106472, -0.0584107, 1.29487, 0.0994856, -0.111145, 0.0942365, -1.29181, 0.00646414, 0.278382, 0.427087)
+
+[node name="Chest" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="7"]
+transform = Transform3D(-1.2982, 0.0025431, 0.068341, 0.00369628, 1.29981, 0.0218458, -0.0682883, 0.0220099, -1.29802, 0.0422113, 0.311783, -0.00662762)
+
+[node name="Neck" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="8"]
+transform = Transform3D(-1.29807, 0.0406219, 0.0579433, 0.0405576, 1.29936, -0.00234857, -0.0579884, -0.000537369, -1.29871, 0.0391207, 0.548265, 0.0649266)
+
+[node name="Head" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="9"]
+transform = Transform3D(-1.2993, 0.0154796, 0.0397989, -0.000638535, 1.2044, -0.489294, -0.0426985, -0.489049, -1.20375, 0.0455827, 0.738929, 0.0536273)
+
+[node name="LeftShoulder" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="10"]
+transform = Transform3D(-1.29807, 0.0406219, 0.0579433, 0.0405576, 1.29936, -0.00234857, -0.0579884, -0.000537369, -1.29871, 0.0391207, 0.548265, 0.0649266)
+
+[node name="LeftUpperArm" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="11"]
+transform = Transform3D(0.434798, -1.20696, -0.210223, -0.0394959, -0.236762, 1.27765, -1.2245, -0.420935, -0.115857, -0.0638264, 0.731068, 0.0472628)
+
+[node name="LeftLowerArm" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="12"]
+transform = Transform3D(-0.833646, -0.149049, 0.986315, 0.0252911, -1.28815, -0.173285, 0.997193, -0.0919335, 0.828948, -0.252218, 0.693491, -0.0216026)
+
+[node name="LeftHand" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="13"]
+transform = Transform3D(0.986315, -0.12635, 0.837387, -0.173286, -1.28836, 0.00970856, 0.828948, -0.118987, -0.994328, -0.287773, 0.372917, -0.0467024)
+
+[node name="RightShoulder" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="14"]
+transform = Transform3D(-1.29807, 0.0406219, 0.0579433, 0.0405576, 1.29936, -0.00234857, -0.0579884, -0.000537369, -1.29871, 0.0391207, 0.548265, 0.0649266)
+
+[node name="RightUpperArm" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="15"]
+transform = Transform3D(0.295896, 1.21194, 0.365572, 0.0158091, -0.378935, 1.24345, 1.26578, -0.278578, -0.100989, 0.154416, 0.724243, 0.0570172)
+
+[node name="RightLowerArm" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="16"]
+transform = Transform3D(-0.886684, 0.228504, -0.922809, -0.0981513, -1.27715, -0.221936, -0.945599, -0.0817017, 0.888351, 0.343815, 0.66474, 0.00975382)
+
+[node name="RightHand" parent="PlayerController4/CollisionShape3D/HitboxMaker" index="17"]
+transform = Transform3D(0.922809, 0.123592, -0.907275, 0.221936, -1.27988, 0.0513851, -0.888351, -0.191366, -0.92963, 0.399651, 0.346797, -0.0116478)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+collision_layer = 41
+collision_mask = 41
+size = Vector3(10, 1, 10)
+
+[node name="AmbientCalculator" type="Node" parent="."]
+script = ExtResource("7_lvfvm")
+Target = NodePath("../Camera3D")
+VignetteOverlayTarget = NodePath("../Vignette")
+Profiles = Array[ExtResource("8_pf14n")]([SubResource("Resource_lvfvm")])
+metadata/_custom_type_script = "uid://dbhqoleundy78"
+
+[node name="Vignette" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_7y324")
+cast_shadow = 0
+extra_cull_margin = 16384.0
+ignore_occlusion_culling = true
+instance_shader_parameters/amount = 0.0
+instance_shader_parameters/main_color = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_ubn6t")
+
+[node name="FilmGrain" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_1valp")
+cast_shadow = 0
+extra_cull_margin = 16384.0
+ignore_occlusion_culling = true
+instance_shader_parameters/amount = 0.0
+mesh = SubResource("QuadMesh_ubn6t")
+
+[connection signal="ready" from="Camera3D" to="Camera3D" method="make_current" flags=3]
+
+[editable path="PlayerController2"]
+[editable path="PlayerController2/CollisionShape3D/Guard"]
+[editable path="PlayerController2/CollisionShape3D/Guard/guard"]
+[editable path="PlayerController3"]
+[editable path="PlayerController3/CollisionShape3D/classd2"]
+[editable path="PlayerController5"]
+[editable path="PlayerController5/CollisionShape3D/Scientist"]
+[editable path="PlayerController5/CollisionShape3D/Scientist/scientist"]
+[editable path="PlayerController049"]
+[editable path="PlayerController049/CollisionShape3D/default"]
+[editable path="PlayerController4"]
+[editable path="PlayerController4/CollisionShape3D/forest_soldier_outdated"]

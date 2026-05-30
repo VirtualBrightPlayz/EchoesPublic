@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://d16hyuqw2opru"]
+
+[ext_resource type="Script" uid="uid://b0veqqnbntf4v" path="res://scripts/CustomRoomLogic/BloodGib.cs" id="1_w7v7f"]
+[ext_resource type="Texture2D" uid="uid://b61icx64o7byh" path="res://textures/main/decals/BloodDecal11_T.png" id="2_fuyuq"]
+[ext_resource type="Texture2D" uid="uid://dblonciy06lb0" path="res://textures/main/decals/BloodDecal11_N.png" id="3_h8cdw"]
+[ext_resource type="Texture2D" uid="uid://cknyh5aq0ulbj" path="res://textures/main/decals/BloodDecal11_ORM.png" id="4_4ypsq"]
+[ext_resource type="Shader" path="res://shaders/plane_decal.gdshader" id="6_h8cdw"]
+[ext_resource type="Texture2D" uid="uid://dn4i7fwxitdbl" path="res://textures/main/ez/random_textures/T_Cloud.png" id="7_4ypsq"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xknr2"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ypsq"]
+render_priority = 0
+shader = ExtResource("6_h8cdw")
+shader_parameter/texture_albedo = ExtResource("2_fuyuq")
+shader_parameter/albedo = Color(0, 0, 0, 60)
+shader_parameter/texture_normal = ExtResource("3_h8cdw")
+shader_parameter/normal_scale = 1.000000807500001
+shader_parameter/texture_orm = ExtResource("4_4ypsq")
+shader_parameter/specular_intensity = 0.5
+shader_parameter/noise_texture = ExtResource("7_4ypsq")
+shader_parameter/noise_brightness = 0.0
+shader_parameter/noise_contrast = 15.0
+shader_parameter/uvnoise_scale = Vector2(0.5, 0.5)
+shader_parameter/uvnoise_offset = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_fuyuq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Decal2:surface_material_override/0")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_4ypsq")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Decal2:surface_material_override/0:shader_parameter/noise_brightness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Decal2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Decal2:surface_material_override/0:shader_parameter/albedo:r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Decal2:surface_material_override/0:shader_parameter/albedo:g")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Decal2:surface_material_override/0:shader_parameter/albedo:b")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_w7v7f"]
+resource_name = "bleed"
+length = 60.0
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Decal2")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.2, 0.2, 0.2, 19.833334, 1, 0.5, 0.5, 0.5, 60, 1, 0.75, 0.75, 0.75)
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Decal2:surface_material_override/0:shader_parameter/noise_brightness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4.1, 0, 0, 0.15877788, 0, 7.92, -1.7189999, 0, 0, 0),
+"times": PackedFloat32Array(0, 18.433332)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Decal2:surface_material_override/0:shader_parameter/albedo:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -3.569179, 0.16666667, 0, 0),
+"times": PackedFloat32Array(28.566668, 60)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Decal2:surface_material_override/0:shader_parameter/albedo:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -3.308068, 0.16666667, 0, 0),
+"times": PackedFloat32Array(28.566668, 60)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Decal2:surface_material_override/0:shader_parameter/albedo:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -3.519179, 0.16666667, 0, 0),
+"times": PackedFloat32Array(28.566668, 60)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h8cdw"]
+_data = {
+&"RESET": SubResource("Animation_fuyuq"),
+&"bleed": SubResource("Animation_w7v7f")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w7v7f"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fuyuq"]
+
+[node name="BloodGib" type="Node3D" unique_id=1159421624 node_paths=PackedStringArray("anim")]
+script = ExtResource("1_w7v7f")
+anim = NodePath("AnimationPlayer")
+
+[node name="Decal" type="Decal" parent="." unique_id=1945298809]
+visible = false
+size = Vector3(1.839294, 0.100000024, 1.839294)
+texture_albedo = ExtResource("2_fuyuq")
+texture_normal = ExtResource("3_h8cdw")
+texture_orm = ExtResource("4_4ypsq")
+modulate = Color(0.39999998, 0.39999998, 0.39999998, 1)
+distance_fade_enabled = true
+cull_mask = 1047560
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1394416445]
+replication_interval = 0.033
+delta_interval = 0.033
+replication_config = SubResource("SceneReplicationConfig_xknr2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1292941295]
+libraries/ = SubResource("AnimationLibrary_h8cdw")
+autoplay = &"bleed"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=127963488]
+visible = false
+layers = 9
+mesh = SubResource("PlaneMesh_w7v7f")
+
+[node name="Decal2" type="MeshInstance3D" parent="." unique_id=1968480117]
+mesh = SubResource("PlaneMesh_fuyuq")
+surface_material_override/0 = SubResource("ShaderMaterial_4ypsq")

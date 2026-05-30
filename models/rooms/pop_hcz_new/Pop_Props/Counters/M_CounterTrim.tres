@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://d30yg5571u22n"]
+
+[ext_resource type="Texture2D" uid="uid://cvkaewh65prss" path="res://models/rooms/pop_hcz_new/Pop_Props/Counters/T_Echoes_CounterTop_Echoes_Counter_Trim.png" id="1_sw64c"]
+[ext_resource type="Texture2D" uid="uid://p2fqcke4oehe" path="res://models/rooms/pop_hcz_new/Pop_Props/Counters/N_Echoes_CounterTop_Echoes_Counter_Trim.png" id="2_8fr65"]
+[ext_resource type="Texture2D" uid="uid://dyof0grvyqwr0" path="res://models/rooms/pop_hcz_new/Pop_Props/Counters/ORM_Echoes_CounterTop_Echoes_Counter_Trim.png" id="3_e0ee5"]
+
+[resource]
+albedo_texture = ExtResource("1_sw64c")
+orm_texture = ExtResource("3_e0ee5")
+normal_enabled = true
+normal_texture = ExtResource("2_8fr65")
+ao_enabled = true
+ao_light_affect = 1.0
+texture_filter = 4

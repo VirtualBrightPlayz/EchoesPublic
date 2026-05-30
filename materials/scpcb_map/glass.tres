@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dp7puqpu8yd0t"]
+
+[ext_resource type="Texture2D" uid="uid://d2hlavqjvy3no" path="res://textures/scpcb/glass_solid.png" id="1_au7ns"]
+[ext_resource type="Texture2D" uid="uid://c105pf5a6nsun" path="res://textures/scpcb/dirtymetalbump.jpg" id="2_yemui"]
+
+[resource]
+transparency = 1
+blend_mode = 4
+albedo_color = Color(1, 1, 1, 0.47451)
+albedo_texture = ExtResource("1_au7ns")
+metallic = 1.0
+roughness = 0.15
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("2_yemui")

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://dn8s52ibggcmk"]
+
+[ext_resource type="Texture2D" uid="uid://6u2a45y8axn8" path="res://models/main/scp/scp_049/T_classd_head.png" id="1_e3jmm"]
+[ext_resource type="Texture2D" uid="uid://bpuygkprob48s" path="res://models/main/scp/scp_049/N_classd_head.png" id="2_1esyi"]
+[ext_resource type="Texture2D" uid="uid://cal7r4gg6yhgi" path="res://models/main/scp/scp_049/ORM_classd_head.png" id="3_5r1yu"]
+
+[resource]
+albedo_texture = ExtResource("1_e3jmm")
+orm_texture = ExtResource("3_5r1yu")
+normal_enabled = true
+normal_texture = ExtResource("2_1esyi")

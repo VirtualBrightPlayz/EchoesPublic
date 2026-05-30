@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicClip" format=3 uid="uid://c85a0bqeva1ba"]
+
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="1_0lr6p"]
+[ext_resource type="AudioStream" uid="uid://cswujfwltj3a8" path="res://audio/music/SCP Echoes OST - Light Fright.ogg" id="1_8dyrb"]
+
+[resource]
+script = ExtResource("1_0lr6p")
+audio = ExtResource("1_8dyrb")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

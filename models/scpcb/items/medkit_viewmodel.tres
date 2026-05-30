@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bqkv5vt35epla"]
+
+[ext_resource type="Shader" path="res://shaders/fp_pov.gdshader" id="1_o1tkk"]
+[ext_resource type="Texture2D" uid="uid://cb5jgpwd5d358" path="res://models/scpcb/items/medkit_firstaidkit.jpg" id="2_3m44l"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_o1tkk")
+shader_parameter/fov = 70.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_3m44l")

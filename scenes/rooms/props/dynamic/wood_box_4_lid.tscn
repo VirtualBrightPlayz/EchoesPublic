@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://x3xldeb2ppo2"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_xgbi5"]
+[ext_resource type="PackedScene" uid="uid://drglphvbuevlm" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/SM_Wood_Box_4_cap.fbx" id="2_lgmu6"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="4_pkaiy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ap0ev"]
+size = Vector3(0.73461914, 0.051513672, 1.0596924)
+
+[node name="wood_box_4_lid" type="RigidBody3D" unique_id=13119006 node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 2.5
+script = ExtResource("1_xgbi5")
+Category = 6
+DestroyOnDeath = []
+xformSync = NodePath("TransformSyncNative")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="SM_Wood_Box_4_cap" parent="." unique_id=1109488122 instance=ExtResource("2_lgmu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8012364, -0.66816163, -0.60321933)
+
+[node name="SM_Wood_Box_4_cap" parent="SM_Wood_Box_4_cap" index="0" unique_id=962065482]
+gi_mode = 2
+
+[node name="TransformSyncNative" type="Node" parent="." unique_id=1967054976]
+script = ExtResource("4_pkaiy")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=678251444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04675293, 0.021362305, -0.0010375977)
+shape = SubResource("BoxShape3D_ap0ev")
+
+[editable path="SM_Wood_Box_4_cap"]

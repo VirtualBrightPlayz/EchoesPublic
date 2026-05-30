@@ -1,0 +1,39 @@
+[role]
+name = 'Scientist'
+display_name = 'ROLE_NAME_SCIENTIST'
+team = 'NTF'
+ui_color = '#ffff55'
+controller = 'Humanoid'
+model = 'Scientist'
+abilities = ['Inventory', 'Use', 'Grab', 'Sanity', 'Stamina']
+ragdoll_effect = 'Zombie Ragdoll'
+
+[role.stats]
+max_health = 100.0
+spawn_stage = 0
+can_capture_points = false
+start_items = ['T1 Research Keycard']
+immune_damage_types = ['Water']
+
+[role.stats.movement]
+speed = 4.0
+acceleration = 70.0
+sprint_speed_multiplier = 1.8
+crouch_speed_multiplier = 0.5
+jump_velocity = 5.0
+gravity_multiplier = 1.9
+
+[role.voice]
+can_use_intercom = true
+proximity_chat = true
+global_team_chat = false
+main_chat_channel = 0
+alt_chat_channel = 0
+proximity_chat_channel = 0
+listening_chat_channels = [0]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_SCIENTIST'
+hint_text = ''
+hint_time = 0.0
+spawn_audio = 'ScientistSpawn'

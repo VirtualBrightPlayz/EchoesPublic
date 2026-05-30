@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEffect" load_steps=3 format=3 uid="uid://b5ekf70hdycf0"]
+
+[ext_resource type="PackedScene" uid="uid://bsrikhk17d431" path="res://effects/scenes/bullet_hole.tscn" id="1_4ehna"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_gm6lp"]
+
+[resource]
+script = ExtResource("2_gm6lp")
+DisplayName = "Bullet Hole"
+scene = ExtResource("1_4ehna")
+Lifetime = 10.0

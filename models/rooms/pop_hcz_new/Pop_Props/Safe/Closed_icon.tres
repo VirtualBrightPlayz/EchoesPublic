@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dgmtg7vm11nmr"]
+
+[ext_resource type="Shader" uid="uid://b1d0qxprhoa4q" path="res://shaders/anim_texture.gdshader" id="1_0n8yc"]
+[ext_resource type="Texture2D" uid="uid://ytfhy0wpdssb" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Closed_Icon.png" id="2_0n8yc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0n8yc")
+shader_parameter/albedo_tint = Color(0, 0, 0, 1)
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.4
+shader_parameter/emission = ExtResource("2_0n8yc")
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/fb_size = Vector2(6, 1)
+shader_parameter/fb_speed = 15.0

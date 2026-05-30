@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://be5d54oook4jq"]
+
+[ext_resource type="Script" uid="uid://bgppldp6cwd1p" path="res://scripts/items/ItemObject.cs" id="1_qov15"]
+[ext_resource type="Script" uid="uid://hh1yhpfmcjst" path="res://scripts/items/Pistol.cs" id="2_gfrc8"]
+[ext_resource type="Resource" uid="uid://dsu7w0yjs3t65" path="res://sounds/gunshot.tres" id="3_teirf"]
+[ext_resource type="Resource" uid="uid://bv32wx1bogk3n" path="res://effects/gunshot_fx.tres" id="4_gxtj7"]
+[ext_resource type="Resource" uid="uid://b5ekf70hdycf0" path="res://effects/bullet_hole.tres" id="5_njotp"]
+[ext_resource type="Resource" uid="uid://c3xr1kui4dlgm" path="res://effects/pistol_reload.tres" id="7_30vr8"]
+[ext_resource type="Texture2D" uid="uid://6jea2esk43lg" path="res://models/main/items/shotgun/870_Shotgun_Albedo.png" id="9_gfrc8"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="10_kw6iw"]
+[ext_resource type="PackedScene" uid="uid://dn02jt0dpf8cr" path="res://models/main/items/shotgun/870_Shotgun.fbx" id="10_qov15"]
+[ext_resource type="Texture2D" uid="uid://bcwvtrn57kawh" path="res://models/main/items/shotgun/870_Shotgun_Metallic.tga" id="10_teirf"]
+[ext_resource type="Texture2D" uid="uid://c4b5baxyumukl" path="res://models/main/items/shotgun/870_Shotgun_Normal.png" id="11_gxtj7"]
+[ext_resource type="PackedScene" uid="uid://833w0hw37lmq" path="res://scenes/viewmodels/pistol.tscn" id="11_ykv6s"]
+[ext_resource type="Script" uid="uid://cnnnnu62sw6be" path="res://scripts/items/ItemGrip.cs" id="12_q4oth"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="13_teirf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fpmph"]
+size = Vector3(0.043945313, 0.040203106, 0.67463684)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnkk6"]
+size = Vector3(0.043945313, 0.08295727, 0.34273148)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7pd0"]
+size = Vector3(0.043945313, 0.06003332, 0.24328089)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njotp"]
+albedo_texture = ExtResource("9_gfrc8")
+metallic = 1.0
+metallic_texture = ExtResource("10_teirf")
+normal_enabled = true
+normal_texture = ExtResource("11_gxtj7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxtj7"]
+render_priority = 0
+shader = ExtResource("13_teirf")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("9_gfrc8")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("10_teirf")
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("11_gxtj7")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7holw"]
+properties/0/path = NodePath(".:Serial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:Id")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:playerPath")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:ModelEnabled")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ItemGrip:holderPath")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("Model:Meta")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath("Model:IsReloading")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+
+[node name="Shotgun" type="Node" unique_id=109861391 node_paths=PackedStringArray("model", "viewModel", "grips")]
+script = ExtResource("1_qov15")
+model = NodePath("Model")
+viewModel = NodePath("ViewmodelPistol")
+grips = [NodePath("ItemGrip")]
+metadata/_custom_type_script = "uid://bgppldp6cwd1p"
+
+[node name="Model" type="RigidBody3D" parent="." unique_id=227409148 node_paths=PackedStringArray("fireEffectPoint", "marker", "xformSync")]
+collision_layer = 4
+collision_mask = 5
+mass = 5.0
+continuous_cd = true
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("2_gfrc8")
+gunshotSound = ExtResource("3_teirf")
+gunshotEffect = ExtResource("4_gxtj7")
+bulletHoleEffect = ExtResource("5_njotp")
+reloadEffect = ExtResource("7_30vr8")
+holdType = 2
+fireEffectPoint = NodePath("FirePoint")
+Spread = Vector2(0.2, 0.2)
+SpreadAiming = Vector2(0.1, 0.1)
+Recoil = Rect2(-2, 10, 2, 10)
+TimedRecoil = Rect2(-5, 5, 5, 10)
+MaxAmmo = 8
+ReloadTime = 1.0
+FireRate = 0.3
+GunDamage = 20.0
+MaxRange = 5000.0
+HoldFire = false
+TypeOfDamage = 5
+useAimFov = false
+PelletsPerShot = 10
+AmmoPerReload = 1
+PenetrationBudget = 250.0
+BulletSpeed = 75.0
+marker = NodePath("Marker3D")
+type = 2
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" unique_id=1656430652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050920554, -0.30339816)
+shape = SubResource("BoxShape3D_fpmph")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Model" unique_id=1771446562]
+transform = Transform3D(1, 0, 0, 0, 0.95035833, -0.3111575, 0, 0.3111575, 0.95035833, 0, -0.030926451, 0.18440033)
+shape = SubResource("BoxShape3D_jnkk6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Model" unique_id=766999347]
+transform = Transform3D(1, 0, 0, 0, 0.99437314, -0.10593434, 0, 0.10593434, 0.99437314, 0, -0.0073953993, 0.23393907)
+shape = SubResource("BoxShape3D_d7pd0")
+
+[node name="Marker3D" type="Marker3D" parent="Model" unique_id=1671571858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00999865, 0.0114127)
+
+[node name="FirePoint" type="Marker3D" parent="Model" unique_id=1608320358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.052274548, -0.6523891)
+
+[node name="TransformSync" type="Node" parent="Model" unique_id=1450889952]
+script = ExtResource("10_kw6iw")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="870_Shotgun" parent="Model" unique_id=2020595917 instance=ExtResource("10_qov15")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="870_Rifle" parent="Model/870_Shotgun" index="0" unique_id=1001429637]
+surface_material_override/0 = SubResource("StandardMaterial3D_njotp")
+
+[node name="ViewmodelPistol" parent="." unique_id=812698442 instance=ExtResource("11_ykv6s")]
+
+[node name="Skeleton3D" parent="ViewmodelPistol/GlockAnims/Skel_Arm" parent_id_path=PackedInt32Array(812698442, 1039170287, 2099530379) index="0" unique_id=1704849626]
+bones/1/rotation = Quaternion(-0.3965448, -0.5977175, 0.4765744, 0.50829405)
+bones/2/rotation = Quaternion(-6.796373e-07, 2.200282e-07, 0.20628035, 0.978493)
+bones/3/rotation = Quaternion(0.06379117, -0.08534837, 0.06160019, 0.99239695)
+bones/5/rotation = Quaternion(-0.20489338, 0.039434094, 0.13805766, 0.96819615)
+bones/6/rotation = Quaternion(0.13403124, 0.07196938, -0.09512709, 0.98377186)
+bones/7/rotation = Quaternion(0.22701752, 0.096064426, -0.1878247, 0.9507663)
+bones/24/rotation = Quaternion(-0.0015118149, -0.045571905, -0.03312811, 0.99841046)
+bones/25/rotation = Quaternion(4.5927115e-07, -0.04559724, -2.8449598e-08, 0.9989599)
+bones/26/rotation = Quaternion(-0.2474209, 0.7699591, -0.523388, 0.26834846)
+bones/27/rotation = Quaternion(-1.1098176e-06, -1.9949042e-07, -0.3395199, 0.9405989)
+bones/28/rotation = Quaternion(0.14411105, -0.4614183, 0.1371927, 0.8645827)
+bones/30/rotation = Quaternion(0.01418019, -0.013773556, -0.2577251, 0.96601605)
+bones/31/rotation = Quaternion(0.021944841, -0.32193133, 0.1179671, 0.93912864)
+bones/32/rotation = Quaternion(0.16689268, -0.29749575, 0.047097407, 0.93884236)
+bones/49/rotation = Quaternion(0.005048625, -0.15214609, 0.03277597, 0.98780155)
+bones/50/rotation = Quaternion(4.2424125e-07, -0.1522296, -7.891828e-08, 0.98834515)
+bones/51/position = Vector3(-0.049747705, -0.109724164, 0.13383314)
+bones/51/rotation = Quaternion(-0.35051745, 0.6671452, 0.46536398, -0.4642104)
+bones/52/position = Vector3(-0.009803832, -0.10929227, 0.15818933)
+bones/52/rotation = Quaternion(0.5112498, 0.35841128, 0.502768, 0.5978205)
+bones/56/position = Vector3(-0.038450547, -0.055695802, 0.23827046)
+bones/56/rotation = Quaternion(0.49869072, -0.50210494, -0.49944806, 0.4997499)
+
+[node name="Mag_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="1" unique_id=1344030898]
+transform = Transform3D(0.0047062975, 0.0122098215, -0.9999144, -0.30165896, 0.95336103, 0.010221465, 0.9534043, 0.301585, 0.0081700375, -0.0395648, -0.144017, 0.19301262)
+
+[node name="Mag" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Mag_2" index="0" unique_id=516221375]
+visible = false
+
+[node name="Slide_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="2" unique_id=840779926]
+transform = Transform3D(-0.0031161304, -0.0015919566, -0.9999939, -0.9999883, 0.0037181412, 0.0031101108, 0.003713163, 0.99999183, -0.0016034916, -0.03811305, -0.036992304, 0.1860225)
+
+[node name="Slide" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Slide_2" index="0" unique_id=980223701]
+visible = false
+
+[node name="Trigger_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="3" unique_id=616701532]
+transform = Transform3D(0.0038824794, -0.027125463, -0.99962455, -0.400994, -0.91578454, 0.023292892, -0.9160725, 0.4007529, -0.014432628, -0.03840219, -0.059780404, 0.25150558)
+
+[node name="Trigger" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Trigger_2" index="0" unique_id=2140762898]
+visible = false
+
+[node name="Grip_2" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D" index="4" unique_id=1375345096]
+transform = Transform3D(-0.0031154156, -0.0015919507, -0.9999939, -0.9999883, 0.0037184954, 0.0031093955, 0.0037135184, 0.99999183, -0.0016034842, -0.038450547, -0.055695802, 0.23827046)
+
+[node name="Grip" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Grip_2" index="0" unique_id=1819906412]
+visible = false
+
+[node name="870_Shotgun" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Grip_2" index="2" unique_id=749073824 instance=ExtResource("10_qov15")]
+transform = Transform3D(-4.3711385e-08, -1, 4.371139e-08, 1, -4.3711385e-08, -4.3711385e-08, 4.371139e-08, 4.3711385e-08, 1, 0.05892153, 2.5755418e-09, -2.6682676e-09)
+
+[node name="870_Rifle" parent="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Grip_2/870_Shotgun" index="0" unique_id=1001429637]
+instance_shader_parameters/debug_disable_fov = false
+instance_shader_parameters/fov = 46.70000126825
+surface_material_override/0 = SubResource("ShaderMaterial_gxtj7")
+
+[node name="ItemGrip" type="Node" parent="." unique_id=1627425085 node_paths=PackedStringArray("item", "marker")]
+script = ExtResource("12_q4oth")
+item = NodePath("..")
+marker = NodePath("../Model/Marker3D")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=1910676842]
+replication_interval = 5.0
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_7holw")
+
+[connection signal="OnHeld" from="ItemGrip" to="Model" method="OnEquipChange"]
+[connection signal="OnUnHeld" from="ItemGrip" to="Model" method="OnEquipChange"]
+
+[editable path="Model/870_Shotgun"]
+[editable path="ViewmodelPistol"]
+[editable path="ViewmodelPistol/fps_arms"]
+[editable path="ViewmodelPistol/fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/9mm"]
+[editable path="ViewmodelPistol/GlockAnims"]
+[editable path="ViewmodelPistol/GlockAnims/Skel_Arm/Skeleton3D/Grip_2/870_Shotgun"]

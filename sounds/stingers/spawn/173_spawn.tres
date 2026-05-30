@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://s40h5bufw8nu"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_xlgel"]
+[ext_resource type="AudioStream" uid="uid://deh8decsodqu5" path="res://audio/music/stingers/SCP-173 Spawn Stinger.ogg" id="2_xlgel"]
+
+[resource]
+resource_name = "173_spawn"
+script = ExtResource("1_xlgel")
+streams = [ExtResource("2_xlgel")]
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

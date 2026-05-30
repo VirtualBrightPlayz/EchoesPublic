@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://qlw3n1g002o1"]
+
+[ext_resource type="ArrayMesh" uid="uid://dj0gasielmg3x" path="res://models/scpcb/props/mug.obj" id="1_13sok"]
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_jbgno"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_4dfnw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_friyc"]
+height = 0.193649
+radius = 0.0766602
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1dqbm"]
+size = Vector3(0.0655251, 0.118637, 0.0453186)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mxef"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Mug" type="RigidBody3D" node_paths=PackedStringArray("PropAudio", "Mesh", "DestroyOnDeath", "xformSync")]
+collision_layer = 257
+collision_mask = 257
+continuous_cd = true
+script = ExtResource("1_jbgno")
+Category = 1
+PropAudio = NodePath("AudioStreamPlayer3D")
+Mesh = NodePath("Mesh")
+DestroyOnDeath = []
+xformSync = NodePath("Sync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="Mug" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108651, 0.0129471, 0.0125098)
+shape = SubResource("CylinderShape3D_friyc")
+
+[node name="Handle" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.638956, 0, -0.769243, 0, 1, 0, 0.769243, 0, -0.638956, 0.0627513, 0.0201645, -0.0700564)
+shape = SubResource("BoxShape3D_1dqbm")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0595358, 0, 0, 0, 0.0595358, 0, 0, 0, 0.0595358, 0, 0, 0)
+mesh = ExtResource("1_13sok")
+surface_material_override/0 = SubResource("StandardMaterial3D_4mxef")
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("3_4dfnw")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

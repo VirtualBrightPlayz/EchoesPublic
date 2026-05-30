@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bprhci2swcyn"]
+
+[ext_resource type="Script" uid="uid://ch4frgoig07n7" path="res://scripts/VoiceChat.cs" id="1_eeyht"]
+
+[node name="TestVoiceChat" type="Node3D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_eeyht")
+Recording = true
+Listen = true
+BufferLength = 0.3

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cd0pg0pm1gsye"]
+
+[ext_resource type="Texture2D" uid="uid://c3p4s3n0a3631" path="res://models/rooms/bunglow_lcz_new/LCZ_V5/Textures/T_light_concrete_trimsheet.png" id="1_mx3rl"]
+[ext_resource type="Texture2D" uid="uid://csmiw876o2ffa" path="res://models/rooms/bunglow_lcz_new/LCZ_V5/Textures/N_light_concrete_trimsheet.png" id="2_5x1ye"]
+[ext_resource type="Texture2D" uid="uid://dbvuywo8p2ka6" path="res://models/rooms/bunglow_lcz_new/LCZ_V5/Textures/ORM_light_concrete_trimsheet.png" id="3_qfjdd"]
+
+[resource]
+albedo_texture = ExtResource("1_mx3rl")
+orm_texture = ExtResource("3_qfjdd")
+normal_enabled = true
+normal_texture = ExtResource("2_5x1ye")

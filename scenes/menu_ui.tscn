@@ -1,0 +1,1459 @@
+[gd_scene format=3 uid="uid://cbk4aq6toes80"]
+
+[ext_resource type="Theme" uid="uid://dxiktgdx3nlqb" path="res://ui_themes/menu_theme.tres" id="1_fvg76"]
+[ext_resource type="Script" uid="uid://cb61kavyl3c5n" path="res://scripts/ui/MainMenuUI.cs" id="2_mjwkm"]
+[ext_resource type="Material" uid="uid://sscpn7jn22y4" path="res://materials/ui/menu_ui.tres" id="2_pyoh2"]
+[ext_resource type="Script" uid="uid://bk8162k3n8shb" path="res://scripts/ui/glitch_effect.gd" id="4_c7epo"]
+[ext_resource type="Texture2D" uid="uid://bb1e5ev4dnsiu" path="res://icons/discord-mark-white.svg" id="5_c8ovb"]
+[ext_resource type="Script" uid="uid://dpmd42luag8an" path="res://scripts/ui/VolumeSlider.cs" id="5_edy3l"]
+[ext_resource type="FontFile" uid="uid://dw3qq6fgpqnw2" path="res://fonts/Roboto/Roboto-Bold.ttf" id="6_2cnhd"]
+[ext_resource type="Script" uid="uid://2utob5hlxih1" path="res://scripts/ui/TexturedLinkButton.cs" id="6_rr7yb"]
+[ext_resource type="Script" uid="uid://d3mw3ulhaqqto" path="res://scripts/ui/UsernameEdit.cs" id="7_bvka3"]
+[ext_resource type="PackedScene" uid="uid://chsl7e0rmm01e" path="res://scenes/ui/settings/settings_ui.tscn" id="7_l7da0"]
+[ext_resource type="Script" uid="uid://hc3u3ce7j4wp" path="res://scripts/ui/MouseSensSlider.cs" id="7_pgg57"]
+[ext_resource type="Script" uid="uid://dj7fwj28tr4qm" path="res://scripts/ui/MenuMusicEdit.cs" id="8_1bxl7"]
+[ext_resource type="Script" uid="uid://bkdl3y4aufuvj" path="res://scripts/ui/ServerListUI.cs" id="9_bds8f"]
+[ext_resource type="Script" uid="uid://cv3codty4rp8w" path="res://scripts/ui/MainMenuMsgUI.cs" id="9_ufl6j"]
+[ext_resource type="Shader" uid="uid://c4u4lixr7o4q4" path="res://shaders/glitch_blur.gdshader" id="10_7gudm"]
+[ext_resource type="Texture2D" uid="uid://x3aalvvoc6i1" path="res://textures/EBU_Colorbars_75_0_75_0.png" id="10_la2g6"]
+[ext_resource type="Script" uid="uid://cdj3ojkufwykg" path="res://scripts/ui/ShadowsEdit.cs" id="10_vnc3b"]
+[ext_resource type="Script" uid="uid://crncf6thdf2j5" path="res://scripts/ui/ResolutionEdit.cs" id="10_wodbi"]
+[ext_resource type="Script" uid="uid://c21q86emfbrdp" path="res://scripts/ui/VSyncSelect.cs" id="13_k5t6y"]
+[ext_resource type="Script" uid="uid://c0pac3pfydndv" path="res://scripts/ui/ServerSettingsUI.cs" id="13_mtqtc"]
+[ext_resource type="PackedScene" uid="uid://b4aolylk0arph" path="res://scenes/ui/settings/parts/text.tscn" id="14_ur154"]
+[ext_resource type="Script" uid="uid://ckgcywtfrwxub" path="res://scripts/ui/LangSelect.cs" id="15_8km44"]
+[ext_resource type="Script" uid="uid://bpo4o851g4nag" path="res://scripts/ui/ShadowQualityEdit.cs" id="15_76gf6"]
+[ext_resource type="Script" uid="uid://dqkt8vaf3fc0y" path="res://scripts/ui/TextureLimitEdit.cs" id="15_f2b8n"]
+[ext_resource type="Script" uid="uid://b3qjkbdb5iw7g" path="res://scripts/settings/classes/CSlider.cs" id="15_mo43o"]
+[ext_resource type="Script" uid="uid://d33ehgwh63nxa" path="res://scripts/ui/ScalingMode.cs" id="15_n3n6a"]
+[ext_resource type="Script" uid="uid://bd46eaui65ef" path="res://scripts/ui/MsaaEdit.cs" id="16_8onq5"]
+[ext_resource type="Script" uid="uid://boam2h5mftjul" path="res://scripts/settings/classes/Dropdown.cs" id="16_85hah"]
+[ext_resource type="Script" uid="uid://b2mok3vmhplc5" path="res://scripts/ui/FsrScale.cs" id="16_bbl03"]
+[ext_resource type="Script" uid="uid://cm1wf13h0fqsj" path="res://scripts/ui/CreditsViewer.cs" id="16_ygboc"]
+[ext_resource type="Script" uid="uid://b2y2886ya3rde" path="res://scripts/settings/classes/Checkbox.cs" id="17_8kxst"]
+[ext_resource type="Script" uid="uid://c33s73x88hjas" path="res://scripts/ui/FsrSharpness.cs" id="17_p3ok0"]
+[ext_resource type="Script" uid="uid://cln51kxulpkgo" path="res://scripts/settings/classes/MonitorHardwareSelector.cs" id="18_b4ovl"]
+[ext_resource type="Script" uid="uid://yfxnobnmij6d" path="res://scripts/settings/classes/MicrophoneHardwareSelector.cs" id="19_u5wv6"]
+[ext_resource type="PackedScene" uid="uid://c08bp68elerq" path="res://scenes/misc/input_remap.tscn" id="22_seami"]
+[ext_resource type="Script" uid="uid://yse7fmdh6sqs" path="res://scripts/ui/LobbyListUI.cs" id="26_fkpwb"]
+[ext_resource type="PackedScene" uid="uid://bgd2hlc7rmh5u" path="res://scenes/ui/server_listing.tscn" id="27_tst7x"]
+[ext_resource type="PackedScene" uid="uid://dsu7hk4ns6lnw" path="res://scenes/ui/lobby_listing.tscn" id="28_8yinm"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ixeow"]
+script = ExtResource("4_c7epo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7da0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3p2d"]
+font_size = 14
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_ur154"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Slider", "Control", "custom_minimum_size", "layout_mode", "anchors_preset", "anchor_right", "grow_horizontal", "size_flags_vertical", "script", "SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel", "metadata/_custom_type_script", "HBoxContainer", "HBoxContainer", "layout_mode", "anchors_preset", "anchor_right", "offset_bottom", "grow_horizontal", "Label", "Label", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "HSeparator", "HSeparator", "layout_mode", "VBoxContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "HBoxContainer", "HBoxContainer", "layout_mode", "SpinBox", "SpinBox", "custom_minimum_size", "layout_mode", "size_flags_vertical", "Min", "Label", "visible", "layout_mode", "size_flags_horizontal", "HSlider", "HSlider", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "Max", "Label", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "theme_override_font_sizes/font_size", "label_settings"),
+"node_count": 11,
+"node_ids": PackedInt32Array(),
+"node_paths": [NodePath("."), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer"), NodePath("./HBoxContainer/VBoxContainer/HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer/HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer/HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer/HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 14, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 1073741833, 7, 1073741834, 8, 1073741835, 9, 1073741836, 10, 1073741837, 11, 1073741838, 12, 15, 13, 0, 1073741824, 0, 17, 16, -1, 5, 18, 14, 19, 15, 20, 16, 21, 17, 22, 18, 0, 1073741825, 0, 24, 23, -1, 3, 25, 19, 26, 20, 27, 21, 0, 1073741826, 0, 29, 28, -1, 1, 30, 22, 0, 1073741827, 0, 32, 31, -1, 3, 33, 23, 34, 24, 35, 25, 0, 1073741828, 0, 37, 36, -1, 1, 38, 26, 0, 1073741829, 0, 40, 39, -1, 3, 41, 27, 42, 28, 43, 29, 0, 1073741830, 0, 45, 44, -1, 3, 46, 30, 47, 31, 48, 32, 0, 1073741831, 0, 50, 49, -1, 3, 51, 33, 52, 34, 53, 35, 0, 1073741832, 0, 55, 54, -1, 3, 56, 36, 57, 37, 58, 38, 0, 1073741833, 0, 60, 59, -1, 3, 61, 39, 62, 40, 63, 41, 0),
+"variants": [Vector2(0, 40), 3, 10, 1.0, 2, 3, ExtResource("15_mo43o"), NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider"), NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min"), NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max"), NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox"), NodePath("HBoxContainer/Label"), NodePath("HBoxContainer/VBoxContainer/Label"), "uid://b3qjkbdb5iw7g", 1, 10, 1.0, 23.0, 2, 2, 3, 0, 2, 2, 3, 0, 2, Vector2(30, 0), 2, 0, false, 2, 8, 2, 3, 4, Vector2(30, 0), 2, 0, 2, 14, SubResource("LabelSettings_o3p2d")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_mo43o"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Dropdown", "Control", "custom_minimum_size", "layout_mode", "anchors_preset", "anchor_right", "grow_horizontal", "size_flags_vertical", "script", "DropdownControl", "Label", "MessageLabel", "metadata/_custom_type_script", "HBoxContainer", "HBoxContainer", "layout_mode", "anchors_preset", "anchor_right", "offset_bottom", "grow_horizontal", "Label", "Label", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "HSeparator", "HSeparator", "layout_mode", "VBoxContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "OptionButton", "OptionButton", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "theme_override_font_sizes/font_size"),
+"node_count": 7,
+"node_ids": PackedInt32Array(),
+"node_paths": [NodePath("."), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer"), NodePath("./HBoxContainer/VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 11, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 1073741833, 7, 1073741834, 8, 1073741835, 9, 12, 10, 0, 1073741824, 0, 14, 13, -1, 5, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 0, 1073741825, 0, 21, 20, -1, 3, 22, 16, 23, 17, 24, 18, 0, 1073741826, 0, 26, 25, -1, 1, 27, 19, 0, 1073741827, 0, 29, 28, -1, 3, 30, 20, 31, 21, 32, 22, 0, 1073741828, 0, 34, 33, -1, 2, 35, 23, 36, 24, 0, 1073741829, 0, 38, 37, -1, 2, 39, 25, 40, 26, 0),
+"variants": [Vector2(0, 40), 3, 10, 1.0, 2, 3, ExtResource("16_85hah"), NodePath("HBoxContainer/VBoxContainer/OptionButton"), NodePath("HBoxContainer/Label"), NodePath("HBoxContainer/VBoxContainer/Label"), "uid://boam2h5mftjul", 1, 10, 1.0, 23.0, 2, 2, 3, 0, 2, 2, 3, 0, 2, 3, 2, 14],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_85hah"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Checkbox", "Control", "custom_minimum_size", "layout_mode", "anchors_preset", "anchor_right", "grow_horizontal", "size_flags_vertical", "script", "CheckboxControl", "Label", "MessageLabel", "metadata/_custom_type_script", "HBoxContainer", "HBoxContainer", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "Label", "Label", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "HSeparator", "HSeparator", "layout_mode", "size_flags_vertical", "HBoxContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "CheckBox", "CheckBox", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "Label", "Label", "layout_mode", "theme_override_font_sizes/font_size"),
+"node_count": 7,
+"node_ids": PackedInt32Array(),
+"node_paths": [NodePath("."), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer/HBoxContainer"), NodePath("./HBoxContainer/HBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 11, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 1073741833, 7, 1073741834, 8, 1073741835, 9, 12, 10, 0, 1073741824, 0, 14, 13, -1, 6, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 20, 16, 0, 1073741825, 0, 22, 21, -1, 3, 23, 17, 24, 18, 25, 19, 0, 1073741826, 0, 27, 26, -1, 2, 28, 20, 29, 21, 0, 1073741827, 0, 31, 30, -1, 3, 32, 22, 33, 23, 34, 24, 0, 1073741828, 0, 36, 35, -1, 3, 37, 25, 38, 26, 39, 27, 0, 1073741829, 0, 41, 40, -1, 2, 42, 28, 43, 29, 0),
+"variants": [Vector2(0, 40), 3, 10, 1.0, 2, 3, ExtResource("17_8kxst"), NodePath("HBoxContainer/HBoxContainer/CheckBox"), NodePath("HBoxContainer/Label"), NodePath("HBoxContainer/HBoxContainer/Label"), "uid://b2y2886ya3rde", 1, 15, 1.0, 1.0, 2, 2, 2, 3, 0, 2, 0, 2, 3, 0, 2, 3, 0, 2, 14],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_8kxst"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("ScreenHardwareSelector", "Control", "custom_minimum_size", "layout_mode", "anchors_preset", "anchor_right", "grow_horizontal", "size_flags_vertical", "script", "DropdownControl", "Label", "MessageLabel", "metadata/_custom_type_script", "HBoxContainer", "HBoxContainer", "layout_mode", "anchors_preset", "anchor_right", "offset_bottom", "grow_horizontal", "Label", "Label", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "HSeparator", "HSeparator", "layout_mode", "VBoxContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "OptionButton", "OptionButton", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "theme_override_font_sizes/font_size"),
+"node_count": 7,
+"node_ids": PackedInt32Array(),
+"node_paths": [NodePath("."), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer"), NodePath("./HBoxContainer/VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 11, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 1073741833, 7, 1073741834, 8, 1073741835, 9, 12, 10, 0, 1073741824, 0, 14, 13, -1, 5, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 0, 1073741825, 0, 21, 20, -1, 3, 22, 16, 23, 17, 24, 18, 0, 1073741826, 0, 26, 25, -1, 1, 27, 19, 0, 1073741827, 0, 29, 28, -1, 2, 30, 20, 31, 21, 0, 1073741828, 0, 33, 32, -1, 2, 34, 22, 35, 23, 0, 1073741829, 0, 37, 36, -1, 2, 38, 24, 39, 25, 0),
+"variants": [Vector2(0, 50), 3, 10, 1.0, 2, 3, ExtResource("18_b4ovl"), NodePath("HBoxContainer/VBoxContainer/OptionButton"), NodePath("HBoxContainer/Label"), NodePath("HBoxContainer/VBoxContainer/Label"), "uid://cln51kxulpkgo", 1, 10, 1.0, 23.0, 2, 2, 3, 0, 2, 2, 3, 2, 3, 2, 14],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_b4ovl"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("MicrophoneHardwareDetect", "Control", "custom_minimum_size", "layout_mode", "anchors_preset", "anchor_right", "grow_horizontal", "size_flags_vertical", "script", "DropdownControl", "Label", "MessageLabel", "metadata/_custom_type_script", "HBoxContainer", "HBoxContainer", "layout_mode", "anchors_preset", "anchor_right", "offset_bottom", "grow_horizontal", "Label", "Label", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "HSeparator", "HSeparator", "layout_mode", "VBoxContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "OptionButton", "OptionButton", "layout_mode", "size_flags_horizontal", "Label", "Label", "layout_mode", "theme_override_font_sizes/font_size"),
+"node_count": 7,
+"node_ids": PackedInt32Array(),
+"node_paths": [NodePath("."), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer"), NodePath("./HBoxContainer/VBoxContainer"), NodePath("./HBoxContainer/VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 11, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 1073741833, 7, 1073741834, 8, 1073741835, 9, 12, 10, 0, 1073741824, 0, 14, 13, -1, 5, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 0, 1073741825, 0, 21, 20, -1, 3, 22, 16, 23, 17, 24, 18, 0, 1073741826, 0, 26, 25, -1, 1, 27, 19, 0, 1073741827, 0, 29, 28, -1, 2, 30, 20, 31, 21, 0, 1073741828, 0, 33, 32, -1, 2, 34, 22, 35, 23, 0, 1073741829, 0, 37, 36, -1, 2, 38, 24, 39, 25, 0),
+"variants": [Vector2(0, 50), 3, 10, 1.0, 2, 3, ExtResource("19_u5wv6"), NodePath("HBoxContainer/VBoxContainer/OptionButton"), NodePath("HBoxContainer/Label"), NodePath("HBoxContainer/VBoxContainer/Label"), "uid://yfxnobnmij6d", 1, 10, 1.0, 23.0, 2, 2, 3, 0, 2, 2, 3, 2, 3, 2, 14],
+"version": 3
+}
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_t6uey"]
+script = ExtResource("4_c7epo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_skc0n"]
+shader = ExtResource("10_7gudm")
+shader_parameter/amount = 0.005
+shader_parameter/frequency_0 = 25.0
+shader_parameter/frequency_1 = 200.0
+shader_parameter/speed = -1.0
+shader_parameter/steps_0 = 255.0
+shader_parameter/steps_1 = 255.0
+shader_parameter/noise_steps = 255.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mo43o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ur154"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_mo43o"]
+font_size = 48
+
+[node name="UI" type="Control" unique_id=10968031]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fvg76")
+metadata/_edit_lock_ = true
+
+[node name="Debug" type="VBoxContainer" parent="." unique_id=360779504]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fvg76")
+
+[node name="Title" type="Label" parent="Debug" unique_id=474376109]
+layout_mode = 2
+text = "SL Two"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Username" type="LineEdit" parent="Debug" unique_id=253358717]
+layout_mode = 2
+placeholder_text = "Username"
+alignment = 1
+
+[node name="Host" type="Button" parent="Debug" unique_id=1643957054]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="Debug" unique_id=1024602493]
+layout_mode = 2
+text = "Join"
+
+[node name="LineEdit" type="LineEdit" parent="Debug" unique_id=1517496526]
+layout_mode = 2
+placeholder_text = "Address"
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Debug" unique_id=1868735065]
+layout_mode = 2
+text = "Old Music"
+
+[node name="Label" type="Label" parent="Debug" unique_id=1882122765]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="Debug" unique_id=2122727928]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+scrollable = false
+
+[node name="Real" type="Control" parent="." unique_id=1935846763 node_paths=PackedStringArray("menus", "extraMenus", "messagePopup")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mjwkm")
+menus = [NodePath("Main"), NodePath("Play"), NodePath("Connect"), NodePath("Settings"), NodePath("ServerList"), NodePath("Credits"), NodePath("InputSettings"), NodePath("GraphicsSettings"), NodePath("ServerSettings"), NodePath("LobbyList")]
+extraMenus = [NodePath("Connect/RichTextLabel"), NodePath("Connect/Control/RichTextLabel"), NodePath("Settings/VBoxContainer/RichTextLabel"), NodePath("ServerList/RichTextLabel"), NodePath("ServerList/Refresh"), NodePath("Credits/MarginContainer/VBoxContainer/RichTextLabel"), NodePath("InputSettings/RichTextLabel"), NodePath("GraphicsSettings/VBoxContainer/RichTextLabel"), NodePath("ServerSettings/VBoxContainer/RichTextLabel"), NodePath("LobbyList/RichTextLabel"), NodePath("LobbyList/Refresh")]
+messagePopup = NodePath("Message")
+IssuesLink = "https://steamcommunity.com/app/3630170/discussions/1/"
+metadata/_edit_lock_ = true
+
+[node name="Main" type="RichTextLabel" parent="Real" unique_id=286288732]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]MAIN_MENU_LABEL[/font_size][/u][/center][/glitch]
+
+
+
+[url=Play][center][font_size=32]MAIN_MENU_PLAY[/font_size][/center][/url]
+
+[url=Settings][center][font_size=24]MAIN_MENU_SETTINGS[/font_size][/center][/url]
+
+[url=Credits][center][font_size=18]MAIN_MENU_CREDITS[/font_size][/center][/url]
+
+[url=_OpenIssueTracker][center][font_size=18]MAIN_MENU_ISSUES[/font_size][/center][/url]
+
+[url=_Quit][center][font_size=18]MAIN_MENU_QUIT[/font_size][/center][/url]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_ixeow")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="DiscordButton" type="TextureButton" parent="Real/Main" unique_id=1587370086]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_c8ovb")
+script = ExtResource("6_rr7yb")
+uri = "https://discord.gg/b3CUz9dtm2"
+
+[node name="Settings" type="RichTextLabel" parent="Real" unique_id=1426633690]
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]MAIN_MENU_SETTINGS[/font_size][/u][/center][/glitch]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_ixeow")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Real/Settings" unique_id=1346750688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeLabel" type="Label" parent="Real/Settings/VBoxContainer" unique_id=1022176692]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2cnhd")
+text = "SETTINGS_MENU_VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume" type="HSlider" parent="Real/Settings/VBoxContainer" unique_id=371803372 node_paths=PackedStringArray("label")]
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+scrollable = false
+script = ExtResource("5_edy3l")
+label = NodePath("Label")
+rawLabel = false
+
+[node name="Label" type="Label" parent="Real/Settings/VBoxContainer/Volume" unique_id=1044946312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SenseLabel" type="Label" parent="Real/Settings/VBoxContainer" unique_id=84178293]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2cnhd")
+text = "SETTINGS_MENU_SENS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sense" type="HSlider" parent="Real/Settings/VBoxContainer" unique_id=1920770755 node_paths=PackedStringArray("label")]
+visible = false
+layout_mode = 2
+min_value = 0.5
+max_value = 5.0
+step = 0.0
+value = 0.5
+scrollable = false
+script = ExtResource("7_pgg57")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Real/Settings/VBoxContainer/Sense" unique_id=631210856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Real/Settings/VBoxContainer" unique_id=1622595208]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2cnhd")
+text = "SETTINGS_MENU_USERNAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Real/Settings/VBoxContainer" unique_id=991623791 node_paths=PackedStringArray("label")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "SETTINGS_MENU_USERNAME"
+expand_to_text_length = true
+script = ExtResource("7_bvka3")
+label = NodePath("../NameLabel")
+
+[node name="Music" type="CheckBox" parent="Real/Settings/VBoxContainer" unique_id=969927010]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SETTINGS_MENU_OLD_MUSIC"
+script = ExtResource("8_1bxl7")
+
+[node name="LanguageLabel" type="Label" parent="Real/Settings/VBoxContainer" unique_id=1981815972]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2cnhd")
+text = "SETTINGS_MENU_LANGUAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lang" type="OptionButton" parent="Real/Settings/VBoxContainer" unique_id=1393393356]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "Default English"
+popup/item_0/id = 0
+script = ExtResource("15_8km44")
+
+[node name="Filler" type="PanelContainer" parent="Real/Settings/VBoxContainer" unique_id=740678723]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l7da0")
+
+[node name="SettingsUi" parent="Real/Settings/VBoxContainer" unique_id=403523130 instance=ExtResource("7_l7da0")]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Generator" parent="Real/Settings/VBoxContainer/SettingsUi" index="0" unique_id=810303931]
+TypeToScene = Dictionary[int, PackedScene]({
+0: ExtResource("14_ur154"),
+1: SubResource("PackedScene_ur154"),
+2: SubResource("PackedScene_mo43o"),
+3: SubResource("PackedScene_85hah")
+})
+HardwareTypeToScene = Dictionary[int, PackedScene]({
+0: SubResource("PackedScene_8kxst"),
+2: SubResource("PackedScene_b4ovl")
+})
+
+[node name="Label" parent="Real/Settings/VBoxContainer/SettingsUi/SettingsPane/VBoxContainer/SrollContainer/VBoxContainer/UserName/HBoxContainer/VBoxContainer" parent_id_path=PackedInt32Array(403523130, 1724612574) index="1" unique_id=526821707]
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Too long or too short!"
+
+[node name="Cancel" parent="Real/Settings/VBoxContainer/SettingsUi/SettingsPane/VBoxContainer/Actions/HBoxContainer" parent_id_path=PackedInt32Array(403523130, 2068273153) index="3" unique_id=132669177]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/Settings/VBoxContainer" unique_id=125592600]
+material = ExtResource("2_pyoh2")
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=Main][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]
+
+[url=_OpenUserFolder][center][font_size=12]SETTINGS_MENU_OPEN_USER_FOLDER[/font_size][/center][/url]
+
+[url=_Editor][center][font_size=12]SETTINGS_MENU_OPEN_EDITOR[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+
+[node name="ServerSettings" type="RichTextLabel" parent="Real" unique_id=30046960]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 720.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]MAIN_MENU_SETTINGS[/font_size][/u][/center][/glitch]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_ixeow")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Real/ServerSettings" unique_id=73661653]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.280469
+anchor_top = 0.0944444
+anchor_right = 0.719531
+anchor_bottom = 0.905556
+offset_left = -19.0003
+offset_top = 3.05176e-05
+offset_right = 19.0003
+offset_bottom = -0.000366211
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ServerName" type="HBoxContainer" parent="Real/ServerSettings/VBoxContainer" unique_id=437191656]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Real/ServerSettings/VBoxContainer/ServerName" unique_id=346008815]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAIN_MENU_SERVER_SETTING_NAME"
+
+[node name="LineEdit" type="LineEdit" parent="Real/ServerSettings/VBoxContainer/ServerName" unique_id=2038876034]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Controller" type="Node" parent="Real/ServerSettings/VBoxContainer/ServerName/LineEdit" unique_id=1726151886]
+script = ExtResource("13_mtqtc")
+
+[node name="MinPlayers" type="SpinBox" parent="Real/ServerSettings/VBoxContainer" unique_id=2087659566]
+layout_mode = 2
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+update_on_text_changed = true
+prefix = "Min"
+suffix = "Players"
+
+[node name="Controller" type="Node" parent="Real/ServerSettings/VBoxContainer/MinPlayers" unique_id=1723605760]
+script = ExtResource("13_mtqtc")
+settingType = 3
+
+[node name="MaxPlayers" type="SpinBox" parent="Real/ServerSettings/VBoxContainer" unique_id=282849045]
+layout_mode = 2
+min_value = 4.0
+max_value = 20.0
+value = 4.0
+rounded = true
+update_on_text_changed = true
+prefix = "Max"
+suffix = "Players"
+
+[node name="Controller" type="Node" parent="Real/ServerSettings/VBoxContainer/MaxPlayers" unique_id=355546189]
+script = ExtResource("13_mtqtc")
+settingType = 4
+
+[node name="IsPublic" type="CheckBox" parent="Real/ServerSettings/VBoxContainer" unique_id=1488808095]
+layout_mode = 2
+text = "MAIN_MENU_SERVER_SETTING_PUBLIC_LOBBY"
+
+[node name="Controller" type="Node" parent="Real/ServerSettings/VBoxContainer/IsPublic" unique_id=1226310451]
+script = ExtResource("13_mtqtc")
+settingType = 5
+
+[node name="Map" type="HBoxContainer" parent="Real/ServerSettings/VBoxContainer" unique_id=1124531272]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Real/ServerSettings/VBoxContainer/Map" unique_id=1784535365]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAIN_MENU_SERVER_SETTING_MAP"
+
+[node name="OptionButton" type="OptionButton" parent="Real/ServerSettings/VBoxContainer/Map" unique_id=1079085501]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "Classic Facility"
+popup/item_0/id = 0
+popup/item_1/text = "SCP-860-1"
+popup/item_1/id = 1
+
+[node name="Controller" type="Node" parent="Real/ServerSettings/VBoxContainer/Map/OptionButton" unique_id=1345963534]
+script = ExtResource("13_mtqtc")
+settingType = 6
+
+[node name="HostType" type="HBoxContainer" parent="Real/ServerSettings/VBoxContainer" unique_id=1338152611]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Real/ServerSettings/VBoxContainer/HostType" unique_id=1819081168]
+layout_mode = 2
+text = "MAIN_MENU_SERVER_SETTING_TYPE"
+
+[node name="OptionButton" type="OptionButton" parent="Real/ServerSettings/VBoxContainer/HostType" unique_id=944897378]
+layout_mode = 2
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "LAN"
+popup/item_0/id = 0
+popup/item_1/text = "Steam Networking"
+popup/item_1/id = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/ServerSettings/VBoxContainer" unique_id=442170925]
+material = ExtResource("2_pyoh2")
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=_CreateServer][center][font_size=32]PLAY_MENU_CREATE_SERVER[/font_size][/center][/url]
+
+[url=Play][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+
+[node name="GraphicsSettings" type="RichTextLabel" parent="Real" unique_id=1078694394]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 720.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]MAIN_MENU_SETTINGS[/font_size][/u][/center][/glitch]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_ixeow")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Real/GraphicsSettings" unique_id=1409290357]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.280469
+anchor_top = 0.0944444
+anchor_right = 0.719531
+anchor_bottom = 0.905556
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Shadows" type="CheckBox" parent="Real/GraphicsSettings/VBoxContainer" unique_id=1323649871]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SETTINGS_MENU_SHADOWS"
+script = ExtResource("10_vnc3b")
+
+[node name="ShadowQuality" type="HBoxContainer" parent="Real/GraphicsSettings/VBoxContainer" unique_id=1402462922]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Real/GraphicsSettings/VBoxContainer/ShadowQuality" unique_id=2141816108]
+layout_mode = 2
+text = "SETTINGS_MENU_SHADOW_QUALITY"
+vertical_alignment = 1
+
+[node name="Limit" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer/ShadowQuality" unique_id=1780536553]
+layout_mode = 2
+action_mode = 1
+selected = 0
+allow_reselect = true
+item_count = 5
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+popup/item_4/text = "Very High"
+popup/item_4/id = 4
+script = ExtResource("15_76gf6")
+
+[node name="VSyncSettings" type="HBoxContainer" parent="Real/GraphicsSettings/VBoxContainer" unique_id=1340611288]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Real/GraphicsSettings/VBoxContainer/VSyncSettings" unique_id=2097045222]
+layout_mode = 2
+text = "SETTINGS_MENU_VSYNC"
+
+[node name="VSync" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer/VSyncSettings" unique_id=1046030176]
+layout_mode = 2
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "VSYNC_DISABLED"
+popup/item_0/id = 0
+popup/item_1/text = "VSYNC_ENABLED"
+popup/item_1/id = 1
+popup/item_2/text = "VSYNC_ADAPTIVE"
+popup/item_2/id = 2
+popup/item_3/text = "VSYNC_MAILBOX"
+popup/item_3/id = 3
+script = ExtResource("13_k5t6y")
+
+[node name="Resolution" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer" unique_id=1306758685]
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+script = ExtResource("10_wodbi")
+isSubwindow = true
+
+[node name="TextureLimits" type="HBoxContainer" parent="Real/GraphicsSettings/VBoxContainer" unique_id=1509380531]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Real/GraphicsSettings/VBoxContainer/TextureLimits" unique_id=123098165]
+layout_mode = 2
+text = "SETTINGS_MENU_TEXTURE_LIMIT"
+
+[node name="Limit" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer/TextureLimits" unique_id=2116867141]
+layout_mode = 2
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "No Limit"
+popup/item_0/id = 0
+script = ExtResource("15_f2b8n")
+
+[node name="ScaleType" type="HBoxContainer" parent="Real/GraphicsSettings/VBoxContainer" unique_id=639250396]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Real/GraphicsSettings/VBoxContainer/ScaleType" unique_id=1325674063]
+layout_mode = 2
+text = "SETTINGS_MENU_SCALING_MODE"
+
+[node name="ScaleMode" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer/ScaleType" unique_id=193064763]
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "SCALING_MODE_DEFAULT"
+popup/item_0/id = 0
+popup/item_1/text = "SCALING_MODE_FSR1"
+popup/item_1/id = 1
+popup/item_2/text = "SCALING_MODE_FSR2"
+popup/item_2/id = 2
+script = ExtResource("15_n3n6a")
+
+[node name="FSRScale" type="HBoxContainer" parent="Real/GraphicsSettings/VBoxContainer" unique_id=999426092]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Real/GraphicsSettings/VBoxContainer/FSRScale" unique_id=1898015148]
+layout_mode = 2
+text = "SETTINGS_MENU_FSR_TYPE"
+
+[node name="FsrQuaility" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer/FSRScale" unique_id=2106341216]
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "FSR_SCALE_ULTRA"
+popup/item_0/id = 0
+popup/item_1/text = "FSR_SCALE_QUALITY"
+popup/item_1/id = 1
+popup/item_2/text = "FSR_SCALE_BALANCED"
+popup/item_2/id = 2
+popup/item_3/text = "FSR_SCALE_PERFORMANCE"
+popup/item_3/id = 3
+script = ExtResource("16_bbl03")
+
+[node name="FsrSharpnessLabel" type="Label" parent="Real/GraphicsSettings/VBoxContainer" unique_id=409385217]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2cnhd")
+text = "SETTINGS_MENU_FSR_SHARPNESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FSRSharpness" type="HSlider" parent="Real/GraphicsSettings/VBoxContainer" unique_id=375215289 node_paths=PackedStringArray("label")]
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.2
+scrollable = false
+script = ExtResource("17_p3ok0")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="Real/GraphicsSettings/VBoxContainer/FSRSharpness" unique_id=328139077]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MSAA" type="OptionButton" parent="Real/GraphicsSettings/VBoxContainer" unique_id=777311264]
+layout_mode = 2
+action_mode = 1
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "MSAA Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "MSAA 2x"
+popup/item_1/id = 1
+popup/item_2/text = "MSAA 4x"
+popup/item_2/id = 2
+popup/item_3/text = "MSAA 8x"
+popup/item_3/id = 3
+script = ExtResource("16_8onq5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/GraphicsSettings/VBoxContainer" unique_id=1103712479]
+material = ExtResource("2_pyoh2")
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=Settings][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+
+[node name="Play" type="RichTextLabel" parent="Real" unique_id=558264115]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]MAIN_MENU_PLAY[/font_size][/u][/center][/glitch]
+
+
+
+[url=ServerSettings][center][font_size=32]PLAY_MENU_CREATE_SERVER[/font_size][/center][/url]
+
+[url=ServerList][center][font_size=32]PLAY_MENU_JOIN_SERVER[/font_size][/center][/url]
+
+[url=Connect][center][font_size=32]PLAY_MENU_DIRECT_CONNECT[/font_size][/center][/url]
+
+
+
+[url=Main][center][font_size=24]MAIN_MENU_BACK[/font_size][/center][/url]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_t6uey")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="Message" type="RichTextLabel" parent="Real" unique_id=1145467063 node_paths=PackedStringArray("ui")]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_t6uey")]
+meta_underlined = false
+script = ExtResource("9_ufl6j")
+ui = NodePath("..")
+placeholderText = "
+
+[glitch][center][font_size=28]{0}[/font_size][/center][/glitch]
+
+[url={1}][center][font_size=24]MAIN_MENU_BACK[/font_size][/center][/url]"
+
+[node name="TextureRect" type="TextureRect" parent="Real/Message" unique_id=1096517891]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_la2g6")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Real/Message/TextureRect" unique_id=1795991193]
+material = SubResource("ShaderMaterial_skc0n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ServerList" type="RichTextLabel" parent="Real" unique_id=2061739035]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]PLAY_MENU_SERVER_LIST[/font_size][/u][/center][/glitch]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_t6uey")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/ServerList" unique_id=1520701737]
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.389844
+anchor_top = 0.944444
+anchor_right = 0.610156
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[url=Play][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+meta_underlined = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Refresh" type="RichTextLabel" parent="Real/ServerList" unique_id=1112467933]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.944444
+anchor_right = 0.1625
+anchor_bottom = 1.0
+grow_vertical = 0
+bbcode_enabled = true
+text = "[url=_RefreshServers $ServerList/Control/ServerList][center][font_size=20]PLAY_MENU_REFRESH[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+meta_underlined = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="Real/ServerList" unique_id=1391162890]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.180469
+anchor_top = 0.116667
+anchor_right = 0.819531
+anchor_bottom = 0.883333
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="ScrollContainer" parent="Real/ServerList/Container" unique_id=949629116]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ServerList" type="VBoxContainer" parent="Real/ServerList/Container/Control" unique_id=884664597 node_paths=PackedStringArray("mainList", "serverInfo", "infoLabel", "samePlatformOnly")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_bds8f")
+mainList = NodePath("List")
+serverInfo = NodePath("Info")
+infoLabel = NodePath("Info/Label")
+serverPrefab = ExtResource("27_tst7x")
+lobbyPrefab = ExtResource("28_8yinm")
+samePlatformOnly = NodePath("../../ListControls/VrAllowed")
+metadata/_edit_lock_ = true
+
+[node name="List" type="VBoxContainer" parent="Real/ServerList/Container/Control/ServerList" unique_id=1880986941]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="VBoxContainer" parent="Real/ServerList/Container/Control/ServerList" unique_id=1275641662]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Label" type="RichTextLabel" parent="Real/ServerList/Container/Control/ServerList/Info" unique_id=633138932]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+fit_content = true
+shortcut_keys_enabled = false
+selection_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Real/ServerList/Container/Control/ServerList/Info" unique_id=452706199]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="Real/ServerList/Container/Control/ServerList/Info/HBoxContainer" unique_id=1667728319]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAIN_MENU_BACK"
+
+[node name="Join" type="Button" parent="Real/ServerList/Container/Control/ServerList/Info/HBoxContainer" unique_id=2016669146]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PLAY_MENU_JOIN_LISTING"
+
+[node name="ListControls" type="HFlowContainer" parent="Real/ServerList/Container" unique_id=1612847516]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="Refresh" type="Button" parent="Real/ServerList/Container/ListControls" unique_id=1325286118]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "PLAY_MENU_REFRESH"
+
+[node name="Search" type="LineEdit" parent="Real/ServerList/Container/ListControls" unique_id=1739681374]
+layout_mode = 2
+placeholder_text = "PLAY_MENU_SEARCH"
+expand_to_text_length = true
+
+[node name="VrAllowed" type="CheckButton" parent="Real/ServerList/Container/ListControls" unique_id=989805027]
+visible = false
+layout_mode = 2
+text = "VR Allowed"
+flat = true
+
+[node name="LobbyList" type="RichTextLabel" parent="Real" unique_id=1796076542]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]PLAY_MENU_LOBBY_LIST[/font_size][/u][/center][/glitch]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_t6uey")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/LobbyList" unique_id=112832568]
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.389844
+anchor_top = 0.944444
+anchor_right = 0.610156
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[url=Play][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+meta_underlined = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Refresh" type="RichTextLabel" parent="Real/LobbyList" unique_id=786261721]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.944444
+anchor_right = 0.1625
+anchor_bottom = 1.0
+grow_vertical = 0
+bbcode_enabled = true
+text = "[url=_RefreshServers $ServerList/Control/ServerList][center][font_size=20]PLAY_MENU_REFRESH[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+meta_underlined = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="Real/LobbyList" unique_id=903822508]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.180469
+anchor_top = 0.116667
+anchor_right = 0.819531
+anchor_bottom = 0.883333
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="ScrollContainer" parent="Real/LobbyList/Container" unique_id=1637384071]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="LobbyList" type="VBoxContainer" parent="Real/LobbyList/Container/Control" unique_id=972175702 node_paths=PackedStringArray("mainList", "serverInfo", "infoLabel", "samePlatformOnly")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("26_fkpwb")
+mainList = NodePath("List")
+serverInfo = NodePath("Info")
+infoLabel = NodePath("Info/Label")
+samePlatformOnly = NodePath("../../ListControls/VrAllowed")
+metadata/_edit_lock_ = true
+
+[node name="List" type="VBoxContainer" parent="Real/LobbyList/Container/Control/LobbyList" unique_id=1928762483]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="VBoxContainer" parent="Real/LobbyList/Container/Control/LobbyList" unique_id=1416728777]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Label" type="RichTextLabel" parent="Real/LobbyList/Container/Control/LobbyList/Info" unique_id=1257632414]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+fit_content = true
+shortcut_keys_enabled = false
+selection_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Real/LobbyList/Container/Control/LobbyList/Info" unique_id=826254240]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="Real/LobbyList/Container/Control/LobbyList/Info/HBoxContainer" unique_id=1743748157]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAIN_MENU_BACK"
+
+[node name="Join" type="Button" parent="Real/LobbyList/Container/Control/LobbyList/Info/HBoxContainer" unique_id=240376069]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PLAY_MENU_JOIN_LISTING"
+
+[node name="ListControls" type="HFlowContainer" parent="Real/LobbyList/Container" unique_id=403892650]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="Refresh" type="Button" parent="Real/LobbyList/Container/ListControls" unique_id=1296771093]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "PLAY_MENU_REFRESH"
+
+[node name="Search" type="LineEdit" parent="Real/LobbyList/Container/ListControls" unique_id=2146911017]
+visible = false
+layout_mode = 2
+placeholder_text = "PLAY_MENU_SEARCH"
+expand_to_text_length = true
+
+[node name="VrAllowed" type="CheckButton" parent="Real/LobbyList/Container/ListControls" unique_id=58618204]
+visible = false
+layout_mode = 2
+text = "VR Allowed"
+flat = true
+
+[node name="Connect" type="RichTextLabel" parent="Real" unique_id=133494980]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][u][font_size=48]PLAY_MENU_DIRECT_CONNECT[/font_size][/u][/center]"
+scroll_active = false
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/Connect" unique_id=401430965]
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -182.0
+offset_right = 162.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[url=Play][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+scroll_active = false
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="Real/Connect" unique_id=408932153]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -132.0
+offset_right = 204.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="LineEdit" type="LineEdit" parent="Real/Connect/Control" unique_id=1163168300]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -40.5
+offset_right = 144.0
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "PLAY_MENU_IP_ADDRESS"
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Real/Connect/Control" unique_id=1346952852]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = 9.5
+offset_right = 144.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Connect"
+flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/Connect/Control" unique_id=1707767446]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 13.5
+offset_right = 98.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[url=_DirectConnect $Connect/Control/LineEdit][center][font_size=24]PLAY_MENU_CONNECT[/font_size][/center][/url]"
+meta_underlined = false
+
+[node name="Credits" type="RichTextLabel" parent="Real" unique_id=298643082]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+scroll_active = false
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Real/Credits" unique_id=1186138050]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Real/Credits/MarginContainer" unique_id=712960552]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Credits" type="RichTextLabel" parent="Real/Credits/MarginContainer/VBoxContainer" unique_id=191393532]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 0.501961)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 0.501961)
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+bbcode_enabled = true
+script = ExtResource("16_ygboc")
+BaseFormat = "[font_size=32][u][b]Credits[/b][/u][/font_size]
+
+Copyright 2023 Brian Zulch and contributors.
+
+[font_size=16]
+[ul]
+VirtualBrightPlayz
+PintTheDragon
+TheMoogle
+moddedmcplayer
+ToyB-Chan
+JohnodonCode
+NotIntense
+DuoNineXcore
+[/ul]
+
+The game's source code is not licensed under CC-BY-SA 3.0 or CC-BY-SA 4.0.
+The game's source code is copyright Brian Zulch and contributors, All rights reserved.
+Parts of the game's assets and source code are under different licenses.
+[/font_size]
+
+[font_size=24][u][b]Third-Party Assets[/b][/u][/font_size]
+
+[font_size=12]
+[table=3]
+{0}
+[/table]
+[/font_size]"
+CellFormat = "[cell][center]{0}[/center][/cell]
+[cell][center]{1}[/center][/cell]
+[cell][center]{2}[/center][/cell]"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/Credits/MarginContainer/VBoxContainer" unique_id=205394923]
+material = ExtResource("2_pyoh2")
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=Main][center][font_size=24]MAIN_MENU_BACK[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+
+[node name="InputSettings" type="RichTextLabel" parent="Real" unique_id=797548729]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[glitch][center][u][font_size=48]MAIN_MENU_INPUT[/font_size][/u][/center][/glitch]
+[url=Settings][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_ixeow")]
+meta_underlined = false
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Real/InputSettings" unique_id=209574948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 15
+metadata/_edit_lock_ = true
+
+[node name="InputRemap" parent="Real/InputSettings/MarginContainer" unique_id=632463458 instance=ExtResource("22_seami")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Real/InputSettings" unique_id=4336494]
+visible = false
+material = ExtResource("2_pyoh2")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -308.0
+offset_top = 37.0
+offset_right = 308.0
+offset_bottom = 75.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[url=Settings][center][font_size=32]MAIN_MENU_BACK[/font_size][/center][/url]"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1315678886]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mo43o")
+metadata/_edit_lock_ = true
+
+[node name="Main" type="VBoxContainer" parent="PanelContainer" unique_id=1122455518]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/Main" unique_id=1305403942]
+layout_mode = 2
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_ur154")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/Main" unique_id=1401212769]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="PanelContainer/Main" unique_id=2040734757]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Settings" type="Button" parent="PanelContainer/Main" unique_id=1653815950]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Credits" type="Button" parent="PanelContainer/Main" unique_id=1883821234]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+
+[node name="Feedback" type="Button" parent="PanelContainer/Main" unique_id=132803571]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Issues/Feedback"
+
+[node name="Quit" type="Button" parent="PanelContainer/Main" unique_id=1137400751]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="Play" type="VBoxContainer" parent="PanelContainer" unique_id=1495240054]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/Play" unique_id=1242161915]
+layout_mode = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_mo43o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/Play" unique_id=967548071]
+layout_mode = 2
+
+[node name="Host" type="Button" parent="PanelContainer/Play" unique_id=1004648954]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Create Lobby"
+
+[node name="Join" type="Button" parent="PanelContainer/Play" unique_id=1331923412]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Server List"
+
+[node name="Direct" type="Button" parent="PanelContainer/Play" unique_id=269695362]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Direct Connect"
+
+[connection signal="pressed" from="Real/ServerList/Container/Control/ServerList/Info/HBoxContainer/Back" to="Real/ServerList/Container/Control/ServerList" method="Back"]
+[connection signal="pressed" from="Real/ServerList/Container/Control/ServerList/Info/HBoxContainer/Join" to="Real/ServerList/Container/Control/ServerList" method="Join"]
+[connection signal="pressed" from="Real/ServerList/Container/ListControls/Refresh" to="Real/ServerList/Container/Control/ServerList" method="Refresh"]
+[connection signal="text_changed" from="Real/ServerList/Container/ListControls/Search" to="Real/ServerList/Container/Control/ServerList" method="SetSearch"]
+[connection signal="text_submitted" from="Real/ServerList/Container/ListControls/Search" to="Real/ServerList/Container/Control/ServerList" method="SetSearch"]
+[connection signal="pressed" from="Real/LobbyList/Container/Control/LobbyList/Info/HBoxContainer/Back" to="Real/LobbyList/Container/Control/LobbyList" method="Back"]
+[connection signal="pressed" from="Real/LobbyList/Container/Control/LobbyList/Info/HBoxContainer/Join" to="Real/LobbyList/Container/Control/LobbyList" method="Join"]
+[connection signal="pressed" from="Real/LobbyList/Container/ListControls/Refresh" to="Real/LobbyList/Container/Control/LobbyList" method="Refresh"]
+[connection signal="text_changed" from="Real/LobbyList/Container/ListControls/Search" to="Real/LobbyList/Container/Control/LobbyList" method="SetSearch"]
+[connection signal="text_submitted" from="Real/LobbyList/Container/ListControls/Search" to="Real/LobbyList/Container/Control/LobbyList" method="SetSearch"]
+
+[editable path="Real/Settings/VBoxContainer/SettingsUi"]

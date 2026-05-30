@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=20 format=3 uid="uid://d25fnua8il4ut"]
+
+[ext_resource type="Resource" uid="uid://nmxv6a253rp8" path="res://rooms/ez/GateA.tres" id="1_x831e"]
+[ext_resource type="Resource" uid="uid://3iab1kvd41e2" path="res://rooms/ez/GateB.tres" id="2_54ij3"]
+[ext_resource type="Resource" uid="uid://b6rkvbjco24f4" path="res://rooms/ez/Room2.tres" id="2_ewqbf"]
+[ext_resource type="Resource" uid="uid://bwab51ln0w3a3" path="res://rooms/ez/Room2c.tres" id="3_8q6ur"]
+[ext_resource type="Resource" uid="uid://dms7ghm5gsgg7" path="res://rooms/ez/Room3.tres" id="5_1ysve"]
+[ext_resource type="Resource" uid="uid://dsgjgcywub6yc" path="res://rooms/ez/Room4.tres" id="6_rq3s4"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="7_gotnh"]
+[ext_resource type="Resource" uid="uid://ci2jusjgm6375" path="res://rooms/Empty.tres" id="7_s8cy3"]
+[ext_resource type="Resource" uid="uid://dyyqsu50f8kmi" path="res://rooms/ez/Checkpoint.tres" id="8_0yigg"]
+[ext_resource type="Resource" uid="uid://fti6c1cqcxei" path="res://rooms/hcz/Room1.tres" id="9_stf1n"]
+[ext_resource type="Resource" uid="uid://crx331k33c61e" path="res://rooms/hcz/Room2.tres" id="10_hgtqk"]
+[ext_resource type="Resource" uid="uid://quo8twb21erl" path="res://rooms/hcz/Room2c.tres" id="11_i75o3"]
+[ext_resource type="Resource" uid="uid://ux0brly1a370" path="res://rooms/hcz/Room3.tres" id="12_vuqip"]
+[ext_resource type="Resource" uid="uid://celqig6077wn2" path="res://rooms/hcz/Room4.tres" id="13_wuhyv"]
+[ext_resource type="Resource" uid="uid://cajhw2xcfwns1" path="res://rooms/hcz/106.tres" id="14_ihi21"]
+[ext_resource type="Resource" uid="uid://f82t71aqlxer" path="res://rooms/ez/Intercom.tres" id="15_83lo8"]
+[ext_resource type="Resource" uid="uid://bm20feqjkisbd" path="res://rooms/lcz/914.tres" id="16_cx07v"]
+[ext_resource type="Resource" uid="uid://0f104w2ciymk" path="res://rooms/lcz/173.tres" id="17_0t65v"]
+[ext_resource type="Resource" uid="uid://d228k870jjf24" path="res://rooms/lcz/toilets.tres" id="18_lhpb8"]
+
+[resource]
+script = ExtResource("7_gotnh")
+Collection = Array[Resource]([ExtResource("1_x831e"), ExtResource("2_54ij3"), ExtResource("2_ewqbf"), ExtResource("3_8q6ur"), ExtResource("5_1ysve"), ExtResource("6_rq3s4"), ExtResource("7_s8cy3"), ExtResource("8_0yigg"), ExtResource("9_stf1n"), ExtResource("10_hgtqk"), ExtResource("11_i75o3"), ExtResource("12_vuqip"), ExtResource("13_wuhyv"), ExtResource("14_ihi21"), ExtResource("15_83lo8"), ExtResource("16_cx07v"), ExtResource("17_0t65v"), ExtResource("18_lhpb8")])

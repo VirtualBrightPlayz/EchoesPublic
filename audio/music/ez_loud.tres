@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://bl40wdyd5q2ul"]
+
+[ext_resource type="AudioStream" uid="uid://dgkjg0nskf07b" path="res://audio/scpcb/EntranceZone.ogg" id="1_07ant"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_u1cf5"]
+
+[resource]
+script = ExtResource("2_u1cf5")
+audio = ExtResource("1_07ant")
+volumeDb = -2.0
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

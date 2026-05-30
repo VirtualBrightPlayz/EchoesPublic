@@ -1,0 +1,150 @@
+[gd_scene load_steps=4 format=3 uid="uid://ep58xk4eecdf"]
+
+[ext_resource type="Script" uid="uid://cue0tcrjet1oq" path="res://scripts/layout_generator/MapCluster.cs" id="1_fwhkf"]
+[ext_resource type="Script" uid="uid://c34p57woshxpt" path="res://scripts/layout_generator/MapRoom.cs" id="2_btk0i"]
+[ext_resource type="Resource" uid="uid://7gkf7i3u5i4d" path="res://rooms/preset_rooms/alt-door4_door.tres" id="5_dh3rj"]
+
+[node name="Loop1" type="Node3D"]
+script = ExtResource("1_fwhkf")
+stage = 2
+file = "res://rooms/graphs/loop1.txt"
+metadata/_custom_type_script = "uid://cue0tcrjet1oq"
+
+[node name="Room_5_0_2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8, 0, 0)
+script = ExtResource("2_btk0i")
+stage = 2
+
+[node name="Door_5_0_2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.2, 0, 0)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_8_0_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 0)
+script = ExtResource("2_btk0i")
+type = 3
+stage = 2
+
+[node name="Door_8_0_2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 0, 0)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Door_8_0_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 10.4)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_11_0_2" type="Node3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 62.4, 0, 0)
+script = ExtResource("2_btk0i")
+type = 1
+stage = 2
+
+[node name="Door_11_0_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 0, 10.4)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_8_0_5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 20.8)
+script = ExtResource("2_btk0i")
+type = 2
+stage = 2
+
+[node name="Door_8_0_5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 31.2)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_11_0_5" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.4, 0, 20.8)
+script = ExtResource("2_btk0i")
+type = 3
+stage = 2
+
+[node name="Door_11_0_5" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 72.8, 0, 20.8)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Door_11_0_6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.4, 0, 31.2)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_14_0_5" type="Node3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 83.2, 0, 20.8)
+script = ExtResource("2_btk0i")
+stage = 2
+
+[node name="Room_8_0_8" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41.6, 0, 41.6)
+script = ExtResource("2_btk0i")
+type = 3
+stage = 2
+
+[node name="Door_8_0_8" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 0, 41.6)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Door_8_0_9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 52)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_11_0_8" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 62.4, 0, 41.6)
+script = ExtResource("2_btk0i")
+type = 3
+stage = 2
+
+[node name="Door_11_0_8" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 72.8, 0, 41.6)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_14_0_8" type="Node3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 83.2, 0, 41.6)
+script = ExtResource("2_btk0i")
+type = 1
+stage = 2
+
+[node name="Door_14_0_8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.2, 0, 52)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_8_0_11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 62.4)
+script = ExtResource("2_btk0i")
+type = 2
+stage = 2
+
+[node name="Door_8_0_11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, 72.8)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_14_0_11" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.2, 0, 62.4)
+script = ExtResource("2_btk0i")
+stage = 2
+
+[node name="Room_8_0_14" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41.6, 0, 83.2)
+script = ExtResource("2_btk0i")
+type = 1
+stage = 2
+
+[node name="Door_8_0_14" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 0, 83.2)
+script = ExtResource("2_btk0i")
+room = ExtResource("5_dh3rj")
+
+[node name="Room_11_0_14" type="Node3D" parent="."]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 62.4, 0, 83.2)
+script = ExtResource("2_btk0i")
+stage = 2

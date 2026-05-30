@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://drl0xd7rewmq0"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_8ifpo"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_hiess"]
+
+[resource]
+resource_name = "Elevator A"
+script = ExtResource("2_8ifpo")
+size = 1
+scenes = []
+sceneFile = "uid://0y5ywcplk8ia"
+category = "Heavy Containment"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://bu5bcgjj7lwkl"]
+
+[ext_resource type="Texture2D" uid="uid://l4n461ix4wir" path="res://textures/inv_icons/INVcup.jpg" id="1_dg8kv"]
+[ext_resource type="PackedScene" uid="uid://ju5iw51pm2xl" path="res://scenes/items/cup.tscn" id="2_hxkjo"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_2pyux"]
+
+[resource]
+resource_name = "Cup"
+script = ExtResource("3_2pyux")
+ItemScene = ExtResource("2_hxkjo")
+Icon = ExtResource("1_dg8kv")
+Description = "Could really go for a cup of joe."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

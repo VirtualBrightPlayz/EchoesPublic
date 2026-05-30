@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cr21bk8yeh0hb"]
+
+[ext_resource type="Shader" path="res://materials/ui/selector.gdshader" id="1_g21nn"]
+
+[resource]
+shader = ExtResource("1_g21nn")
+shader_parameter/width_max = 1.0
+shader_parameter/width_min = 0.5
+shader_parameter/cursor_deg = 0.4
+shader_parameter/cursor_size = 0.4
+shader_parameter/color_bg = Vector4(0.4, 0.4, 0.4, 1)
+shader_parameter/color_fg = Vector4(0.17, 0.69, 1, 1)
+shader_parameter/bevel_width = 0.0334
+shader_parameter/bevel_enabled = false
+shader_parameter/bevel_color = Vector4(1, 0, 0, 1)

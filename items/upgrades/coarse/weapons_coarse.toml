@@ -1,0 +1,14 @@
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'Shotgun'
+output_item = 'Rifle Ammo'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'Short-Range SMG'
+output_item = 'SMG Ammo'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'Pistol'
+output_item = 'Pistol Ammo'

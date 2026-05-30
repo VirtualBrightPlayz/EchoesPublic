@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bvymcummyhag1"]
+
+[ext_resource type="Script" uid="uid://ded8fgxn3jo40" path="res://scripts/ui/radial_menu/CursorPos.cs" id="1_j6dv7"]
+[ext_resource type="Material" uid="uid://cr21bk8yeh0hb" path="res://materials/ui/selector.tres" id="2_t23od"]
+
+[node name="RadialMenu" type="CenterContainer" unique_id=179168007]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="CursorPos" type="Control" parent="." unique_id=199354621]
+layout_mode = 2
+script = ExtResource("1_j6dv7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1534653953]
+material = ExtResource("2_t23od")
+layout_mode = 2
+
+[node name="CenterNode" type="CenterContainer" parent="." unique_id=1012804357]
+layout_mode = 2

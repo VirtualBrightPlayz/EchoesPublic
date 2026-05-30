@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://ggta6sh8ryye"]
+
+[ext_resource type="PackedScene" uid="uid://dku5fan788o1q" path="res://models/props/forest/rock/rock.glb" id="1_prytv"]
+[ext_resource type="Texture2D" uid="uid://e81twl20c5fr" path="res://textures/main/rock36/Rock036_1K-PNG_Color.png" id="2_cxxpm"]
+[ext_resource type="Texture2D" uid="uid://ciq7sbrri3vpf" path="res://textures/main/rock36/Rock036_1K-PNG_AmbientOcclusion.png" id="3_gblq7"]
+[ext_resource type="Texture2D" uid="uid://c78ba7kio3xw8" path="res://textures/main/rock36/Rock036_1K-PNG_NormalGL.png" id="4_mgv3x"]
+[ext_resource type="Texture2D" uid="uid://d0ggg7u0jkcgp" path="res://textures/main/rock36/Rock036_1K-PNG_Roughness.png" id="5_iq3uq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdak6"]
+albedo_texture = ExtResource("2_cxxpm")
+roughness_texture = ExtResource("5_iq3uq")
+normal_enabled = true
+normal_texture = ExtResource("4_mgv3x")
+ao_enabled = true
+ao_texture = ExtResource("3_gblq7")
+
+[node name="Rock" type="Node3D"]
+
+[node name="rock" parent="." instance=ExtResource("1_prytv")]
+
+[node name="Cube" parent="rock" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pdak6")
+
+[editable path="rock"]

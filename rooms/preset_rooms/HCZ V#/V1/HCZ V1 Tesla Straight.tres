@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bkegoke8h0k4"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_1ce23"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_4ldme"]
+
+[resource]
+resource_name = "Tesla Straight - HCZ V1"
+script = ExtResource("2_1ce23")
+type = 2
+scenes = []
+sceneFile = "uid://bxcjs8yuwwii"
+zone = 2
+category = "HCZ V1 (Metal Tubes) (Echoes)"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

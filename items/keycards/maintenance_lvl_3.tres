@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://na0gqn363sh2"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_fyavx"]
+[ext_resource type="Texture2D" uid="uid://gwjjdvw2jsjj" path="res://textures/inv_icons/keycards/V2/CardIcon_Mt3.png" id="2_g8iiw"]
+[ext_resource type="PackedScene" uid="uid://bee3dxwqecwgq" path="res://scenes/items/keycard.tscn" id="3_vnnxb"]
+[ext_resource type="PackedScene" uid="uid://besqyxdgh10ks" path="res://models/rooms/pop_hcz_new/Pop_Cards/^Scrapped_M_Card_3.tscn" id="4_g8iiw"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_opo52"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_k1gwi"]
+[ext_resource type="Texture2D" uid="uid://cgie3lq08xj55" path="res://textures/main/cards/T_maintenance.png" id="6_rmjhw"]
+[ext_resource type="Texture2D" uid="uid://ddw8eg22gjuhr" path="res://textures/main/cards/ORM_keycard.png" id="7_n0xys"]
+[ext_resource type="Texture2D" uid="uid://bjb4ybvuby1hf" path="res://textures/main/cards/N_keycard.png" id="8_rm67t"]
+
+[sub_resource type="Resource" id="Resource_vnnxb"]
+script = ExtResource("1_fyavx")
+level = 3
+cardType = 1
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gm3tf"]
+render_priority = 0
+shader = ExtResource("5_k1gwi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_rmjhw")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("7_n0xys")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("7_n0xys")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("8_rm67t")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_5nx2a"]
+albedo_texture = ExtResource("6_rmjhw")
+orm_texture = ExtResource("7_n0xys")
+normal_enabled = true
+normal_texture = ExtResource("8_rm67t")
+
+[resource]
+resource_name = "T3 Maintenance Keycard"
+script = ExtResource("4_opo52")
+Access = [SubResource("Resource_vnnxb")]
+worldMaterial = SubResource("ORMMaterial3D_5nx2a")
+viewMaterial = SubResource("ShaderMaterial_gm3tf")
+cardScene = ExtResource("4_g8iiw")
+ItemScene = ExtResource("3_vnnxb")
+Icon = ExtResource("2_g8iiw")
+Description = "Can access high-tier checkpoints, shortcuts, and janitorial closets."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

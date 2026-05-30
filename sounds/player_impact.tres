@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://q1im18mrhqfh"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_qg1xf"]
+[ext_resource type="AudioStream" uid="uid://cirwosaty2otp" path="res://audio/Test/ImpactTEST.wav" id="2_7i5ti"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7i5ti"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("2_7i5ti")
+
+[resource]
+resource_name = "player_impact"
+script = ExtResource("1_qg1xf")
+DisplayName = "Player Impact"
+streams = [SubResource("AudioStreamRandomizer_7i5ti")]
+unitSize = 5.0
+maxDistance = 15.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

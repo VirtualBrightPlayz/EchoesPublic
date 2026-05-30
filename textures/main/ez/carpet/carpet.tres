@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cem7y30r4mghv"]
+
+[ext_resource type="Texture2D" uid="uid://dqf0m004c266a" path="res://textures/main/ez/carpet/T_carpet.png" id="1_ievkt"]
+[ext_resource type="Texture2D" uid="uid://xr0osgjbsd5m" path="res://textures/main/ez/carpet/N_carpet.png" id="2_44frw"]
+[ext_resource type="Texture2D" uid="uid://dr4m2raq7evv4" path="res://textures/main/ez/carpet/ORM_carpet.png" id="3_h6ter"]
+
+[resource]
+albedo_color = Color(0.658824, 0.631373, 0.584314, 1)
+albedo_texture = ExtResource("1_ievkt")
+orm_texture = ExtResource("3_h6ter")
+normal_enabled = true
+normal_texture = ExtResource("2_44frw")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

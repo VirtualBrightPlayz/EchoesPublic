@@ -1,0 +1,97 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bi7bt8dxcr04"
+path="res://.godot/imported/PopMod_HCZ_CaveResearch_Curve.fbx-ab4b887c34e0615347794dc4699d2da4.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/HCZ_V4/Meshes/PopMod_HCZ_CaveResearch_Curve.fbx"
+dest_files=["res://.godot/imported/PopMod_HCZ_CaveResearch_Curve.fbx-ab4b887c34e0615347794dc4699d2da4.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Catwalk_TrimSheet": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/CatwalkTrim.tres",
+"use_external/path": "uid://spv6oc7doiy0"
+},
+"Catwalk_TrimSheet.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/CatwalkTrim.tres",
+"use_external/path": "uid://spv6oc7doiy0"
+},
+"Catwalk_TrimSheet.021": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/CatwalkTrim.tres",
+"use_external/path": "uid://spv6oc7doiy0"
+},
+"ConcretPlaster": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcretePlaster.tres",
+"use_external/path": "uid://dj7268kgty7ye"
+},
+"ConcretRocky": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteRocky.tres",
+"use_external/path": "uid://cscnkf377dgw0"
+},
+"ConcretTiles": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteTiles.tres",
+"use_external/path": "uid://batgsopaswv3i"
+},
+"CounterTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/Pop_Props/M_CounterTrim.tres",
+"use_external/path": "uid://d30yg5571u22n"
+},
+"FloorDecals": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/FloorDecals_Red.tres",
+"use_external/path": "uid://iy6u5imaknye"
+},
+"HCZ_WallTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/HCZ_Wall.tres",
+"use_external/path": "uid://b2eaadmpiwfqb"
+},
+"HCZ_WallTrim.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/HCZ_Wall.tres",
+"use_external/path": "uid://b2eaadmpiwfqb"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

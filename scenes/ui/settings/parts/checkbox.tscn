@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://odeuew8ond5v"]
+
+[ext_resource type="Script" uid="uid://b2y2886ya3rde" path="res://scripts/settings/classes/Checkbox.cs" id="1_fwemb"]
+
+[node name="Checkbox" type="Container" unique_id=239059125 node_paths=PackedStringArray("CheckboxControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_fwemb")
+CheckboxControl = NodePath("HBoxContainer/HBoxContainer/CheckBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/HBoxContainer/Label")
+metadata/_custom_type_script = "uid://b2y2886ya3rde"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=369706992]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1725124073]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1192454550]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2084621853]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer/HBoxContainer" unique_id=1274682943]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer" unique_id=171001714]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14

@@ -1,0 +1,202 @@
+[gd_scene load_steps=21 format=3 uid="uid://dpgs3vs580t1x"]
+
+[ext_resource type="PackedScene" uid="uid://db8pmya1bga5e" path="res://effects/scenes/fire_noscript.tscn" id="4_7gbe8"]
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="5_c5ilo"]
+[ext_resource type="ArrayMesh" uid="uid://die585vimhkam" path="res://models/grass_cards.obj" id="6_44d0r"]
+[ext_resource type="Texture2D" uid="uid://etfkexhcjfin" path="res://textures/scpcb/forest/tree1.dds" id="7_22vrn"]
+[ext_resource type="Texture2D" uid="uid://bfeykeabcux3r" path="res://textures/scpcb/forest/tree1_mask.png" id="8_mx4ed"]
+[ext_resource type="PackedScene" uid="uid://hlxqk4xv86v1" path="res://scenes/back_buffer_blur.tscn" id="13_2782o"]
+[ext_resource type="Shader" uid="uid://dii82vtdxonfb" path="res://shaders/chromatic_aberration.gdshader" id="14_ovygx"]
+[ext_resource type="Script" uid="uid://c34u348ok0smv" path="res://scripts/map/HitboxMaker.cs" id="15_lypjf"]
+[ext_resource type="Texture2D" uid="uid://how2f6lkhav0" path="res://icons/sound-icon-white.png" id="16_th720"]
+[ext_resource type="Script" uid="uid://ygb4esl4cg44" path="res://scripts/TalkingIndicator.cs" id="17_ms6bf"]
+[ext_resource type="Script" uid="uid://b3jrtkmear2gs" path="res://scripts/map/PlayerHitbox.cs" id="18_qhyn1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pyfj3"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx4ed"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("7_22vrn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22vrn"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_mx4ed")
+stencil_flags = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrkwc"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("8_mx4ed")
+stencil_flags = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8rwv"]
+shader = ExtResource("14_ovygx")
+shader_parameter/amount_center = 0.25
+shader_parameter/amount_red = Vector2(0.01, 0)
+shader_parameter/amount_green = Vector2(-0.01, 0)
+shader_parameter/amount_blue = Vector2(0, 0)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2ceig"]
+radius = 0.2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tkso6"]
+properties/0/path = NodePath(".:modelPosition")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:modelRotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_70tjm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhibx"]
+radius = 0.75
+height = 2.5
+
+[node name="PlayerController" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 33
+floor_max_angle = 0.872665
+floor_snap_length = 0.5
+
+[node name="Fire" parent="." instance=ExtResource("4_7gbe8")]
+transform = Transform3D(1, -1.49012e-08, 7.10543e-15, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.5, -2.6077e-08)
+Enabled = false
+
+[node name="Model" type="Node" parent="."]
+script = ExtResource("5_c5ilo")
+headAxis = Vector3(-1, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_pyfj3")
+
+[node name="Bush" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+top_level = true
+mesh = ExtResource("6_44d0r")
+surface_material_override/0 = SubResource("StandardMaterial3D_mx4ed")
+
+[node name="BushSeen" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+top_level = true
+visible = false
+transparency = 0.25
+mesh = ExtResource("6_44d0r")
+surface_material_override/0 = SubResource("StandardMaterial3D_22vrn")
+
+[node name="BushNotSeen" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+top_level = true
+visible = false
+transparency = 0.6
+mesh = ExtResource("6_44d0r")
+surface_material_override/0 = SubResource("StandardMaterial3D_lrkwc")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+fov = 70.0
+far = 100.0
+
+[node name="BackBufferBlur" parent="Head/Camera3D" instance=ExtResource("13_2782o")]
+
+[node name="Distortion" type="ColorRect" parent="Head/Camera3D"]
+visible = false
+material = SubResource("ShaderMaterial_n8rwv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 268
+hit_from_inside = true
+
+[node name="RayCast3DPlayer" type="RayCast3D" parent="Head"]
+enabled = false
+target_position = Vector3(0, 0, -20)
+collision_mask = 281
+hit_back_faces = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 15.0
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Head"]
+shape = SubResource("SphereShape3D_2ceig")
+target_position = Vector3(0, 0, -3)
+collision_mask = 268
+
+[node name="Fwd" type="Marker3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="TPTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.2
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_tkso6")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamPolyphonic_70tjm")
+volume_db = -2.0
+unit_size = 5.0
+autoplay = true
+max_distance = 50.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="HitboxMaker" type="Node3D" parent="." node_paths=PackedStringArray("playerController")]
+script = ExtResource("15_lypjf")
+playerController = NodePath("..")
+collisionSize = 0.075
+headSize = 0.175
+layer = 16
+metadata/_custom_type_script = "uid://c34u348ok0smv"
+
+[node name="VoiceIcon" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.75, 0)
+billboard = 2
+texture = ExtResource("16_th720")
+
+[node name="Talking" type="Node" parent="." node_paths=PackedStringArray("spr")]
+script = ExtResource("17_ms6bf")
+spr = NodePath("../VoiceIcon")
+
+[node name="PlayerHitbox" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerHitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_xhibx")
+
+[node name="PlayerHitbox" type="Node" parent="PlayerHitbox"]
+script = ExtResource("18_qhyn1")
+HealthNode = NodePath("../..")
+metadata/_custom_type_script = "uid://b3jrtkmear2gs"

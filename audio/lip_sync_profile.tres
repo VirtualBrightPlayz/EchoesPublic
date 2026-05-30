@@ -1,0 +1,646 @@
+[gd_resource type="Resource" script_class="LipSyncProfile" format=3 uid="uid://c1hkcxs60577b"]
+
+[ext_resource type="Script" uid="uid://bnd1orvc4iror" path="res://scripts/LipSync/MfccCalibData.cs" id="1_bxar7"]
+[ext_resource type="Script" uid="uid://cha5vghbelss5" path="res://scripts/LipSync/MfccData.cs" id="1_itj00"]
+[ext_resource type="Script" uid="uid://dsk7vh4vdarfs" path="res://scripts/LipSync/LipSyncProfile.cs" id="2_bxar7"]
+
+[sub_resource type="Resource" id="Resource_dvb1k"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(94.4032, 0.322459, -65.5116, -29.5379, 4.88829, 14.524, -32.6411, 1.65058, -9.96008, -5.70253, -11.8862, -24.3524)
+
+[sub_resource type="Resource" id="Resource_dhgjv"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(94.4032, 0.322459, -65.5116, -29.5379, 4.88829, 14.524, -32.6411, 1.65058, -9.96008, -5.70253, -11.8862, -24.3524)
+
+[sub_resource type="Resource" id="Resource_6soob"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(102.163, -3.35876, -65.5843, -25.2444, 3.22452, 12.0059, -29.2931, 0.637856, -10.8177, -1.32635, -14.5432, -24.1698)
+
+[sub_resource type="Resource" id="Resource_3ltf3"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(99.3559, -3.68142, -65.2044, -23.4595, 6.20565, 14.9629, -29.8827, 0.673355, -7.07762, -3.55708, -14.4273, -23.34)
+
+[sub_resource type="Resource" id="Resource_jfl7h"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(99.3559, -3.68142, -65.2044, -23.4595, 6.20565, 14.9629, -29.8827, 0.673355, -7.07762, -3.55708, -14.4273, -23.34)
+
+[sub_resource type="Resource" id="Resource_nvabu"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(104.25, -2.83288, -66.5902, -22.9629, 5.51978, 16.5039, -32.3388, 5.82047, -10.5959, -2.73985, -12.5281, -24.4594)
+
+[sub_resource type="Resource" id="Resource_ir1nx"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(104.25, -2.83288, -66.5902, -22.9629, 5.51978, 16.5039, -32.3388, 5.82047, -10.5959, -2.73985, -12.5281, -24.4594)
+
+[sub_resource type="Resource" id="Resource_umiif"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(95.5864, -5.77519, -61.22, -24.6584, 4.41127, 13.6733, -25.223, -2.05466, -6.88764, -5.68399, -11.2092, -23.2153)
+
+[sub_resource type="Resource" id="Resource_11q4l"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(98.2486, -3.83679, -62.3401, -24.5638, 4.60843, 16.229, -28.9923, 2.1237, -9.07174, -4.58101, -10.6624, -26.1958)
+
+[sub_resource type="Resource" id="Resource_cbwhh"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(102.792, -4.5803, -62.5318, -26.2928, 7.91141, 17.1364, -31.1183, 5.19609, -10.0104, -0.852797, -12.3466, -23.5809)
+
+[sub_resource type="Resource" id="Resource_odha5"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(102.123, -1.52541, -62.2122, -26.7287, 10.6206, 16.9184, -28.8157, 3.67143, -9.67379, -0.738503, -9.71719, -27.097)
+
+[sub_resource type="Resource" id="Resource_gypfu"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(102.123, -1.52541, -62.2122, -26.7287, 10.6206, 16.9184, -28.8157, 3.67143, -9.67379, -0.738503, -9.71719, -27.097)
+
+[sub_resource type="Resource" id="Resource_n5qvh"]
+resource_name = "A"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_dvb1k"), SubResource("Resource_dhgjv"), SubResource("Resource_6soob"), SubResource("Resource_3ltf3"), SubResource("Resource_jfl7h"), SubResource("Resource_nvabu"), SubResource("Resource_ir1nx"), SubResource("Resource_umiif"), SubResource("Resource_11q4l"), SubResource("Resource_cbwhh"), SubResource("Resource_odha5"), SubResource("Resource_gypfu")])
+
+[sub_resource type="Resource" id="Resource_5olev"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(14.4418, 52.4001, 57.3778, -33.7005, -12.7519, -15.7099, -41.3811, -12.1905, -2.86315, -8.72773, 2.6656, 1.4856)
+
+[sub_resource type="Resource" id="Resource_l8xgb"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(14.4418, 52.4001, 57.3778, -33.7005, -12.7519, -15.7099, -41.3811, -12.1905, -2.86315, -8.72773, 2.6656, 1.4856)
+
+[sub_resource type="Resource" id="Resource_g3ycc"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.2943, 50.0763, 57.2628, -31.7488, -13.6425, -13.4841, -41.535, -16.8639, -1.7399, -9.32723, 8.31619, -1.77985)
+
+[sub_resource type="Resource" id="Resource_75u64"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.6851, 49.6865, 58.4471, -32.5135, -16.6643, -13.7836, -40.4831, -16.0458, -3.53566, -8.65428, 10.6456, -2.55644)
+
+[sub_resource type="Resource" id="Resource_1jpvk"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.6851, 49.6865, 58.4471, -32.5135, -16.6643, -13.7836, -40.4831, -16.0458, -3.53566, -8.65428, 10.6456, -2.55644)
+
+[sub_resource type="Resource" id="Resource_oiwna"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.6851, 49.6865, 58.4471, -32.5135, -16.6643, -13.7836, -40.4831, -16.0458, -3.53566, -8.65428, 10.6456, -2.55644)
+
+[sub_resource type="Resource" id="Resource_3up6f"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.2258, 43.8722, 52.8445, -32.5179, -17.8062, -10.6097, -40.1308, -11.5865, -5.08257, -14.397, 6.89698, -0.785431)
+
+[sub_resource type="Resource" id="Resource_jg3v4"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.5716, 48.6349, 59.5339, -34.5996, -21.9599, -10.2985, -39.1129, -11.9985, -8.43333, -10.806, 8.7893, -1.8847)
+
+[sub_resource type="Resource" id="Resource_0b3q4"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.5716, 48.6349, 59.5339, -34.5996, -21.9599, -10.2985, -39.1129, -11.9985, -8.43333, -10.806, 8.7893, -1.8847)
+
+[sub_resource type="Resource" id="Resource_kcwqp"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(15.5716, 48.6349, 59.5339, -34.5996, -21.9599, -10.2985, -39.1129, -11.9985, -8.43333, -10.806, 8.7893, -1.8847)
+
+[sub_resource type="Resource" id="Resource_6u0qt"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(19.2329, 47.434, 54.9094, -33.7783, -13.8364, -5.14157, -39.3458, -13.4095, -4.94565, -12.9605, 12.2101, 0.580702)
+
+[sub_resource type="Resource" id="Resource_x3acs"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(19.1248, 46.4672, 53.4128, -34.6509, -18.181, -7.73313, -45.6793, -10.6414, -2.62439, -15.709, 7.36492, -5.62769)
+
+[sub_resource type="Resource" id="Resource_ncokb"]
+resource_name = "I"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_5olev"), SubResource("Resource_l8xgb"), SubResource("Resource_g3ycc"), SubResource("Resource_75u64"), SubResource("Resource_1jpvk"), SubResource("Resource_oiwna"), SubResource("Resource_3up6f"), SubResource("Resource_jg3v4"), SubResource("Resource_0b3q4"), SubResource("Resource_kcwqp"), SubResource("Resource_6u0qt"), SubResource("Resource_x3acs")])
+
+[sub_resource type="Resource" id="Resource_lx658"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(83.3837, 42.3979, 27.8125, 10.6962, -13.6126, -32.4871, -35.2574, -6.42574, -4.215, -6.89639, -3.49631, 4.99706)
+
+[sub_resource type="Resource" id="Resource_dp4qj"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(103.657, 38.6616, 30.9851, 17.4325, -14.3838, -39.81, -39.6376, 1.2334, -4.21788, -3.0053, -6.27295, 4.75188)
+
+[sub_resource type="Resource" id="Resource_sjipt"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(103.442, 45.2382, 27.6227, 18.6821, -16.855, -39.8503, -34.1594, -2.74826, -3.74106, -1.06252, -4.21577, 6.51451)
+
+[sub_resource type="Resource" id="Resource_cqx5p"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(103.442, 45.2382, 27.6227, 18.6821, -16.855, -39.8503, -34.1594, -2.74826, -3.74106, -1.06252, -4.21577, 6.51451)
+
+[sub_resource type="Resource" id="Resource_ruc6a"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(99.9974, 39.49, 26.0574, 23.2681, -16.2552, -38.155, -35.7005, -1.28211, -2.39419, -0.155438, -4.75777, 2.19858)
+
+[sub_resource type="Resource" id="Resource_7rya4"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(99.9974, 39.49, 26.0574, 23.2681, -16.2552, -38.155, -35.7005, -1.28211, -2.39419, -0.155438, -4.75777, 2.19858)
+
+[sub_resource type="Resource" id="Resource_acve0"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(107.095, 37.704, 17.7955, 21.8823, -14.7393, -36.4075, -37.9585, -1.43935, -1.95933, -0.729475, -7.93386, 3.95606)
+
+[sub_resource type="Resource" id="Resource_isqp6"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(103.507, 35.0899, 23.2163, 23.9476, -14.1571, -38.5468, -39.7521, 0.516876, -2.71526, -4.07682, -4.71638, 4.66213)
+
+[sub_resource type="Resource" id="Resource_ucgd8"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(103.507, 35.0899, 23.2163, 23.9476, -14.1571, -38.5468, -39.7521, 0.516876, -2.71526, -4.07682, -4.71638, 4.66213)
+
+[sub_resource type="Resource" id="Resource_xqft1"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(103.507, 35.0899, 23.2163, 23.9476, -14.1571, -38.5468, -39.7521, 0.516876, -2.71526, -4.07682, -4.71638, 4.66213)
+
+[sub_resource type="Resource" id="Resource_uwq4a"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(98.4334, 35.4258, 29.2959, 24.7373, -15.4859, -44.6765, -39.9789, 0.554834, -2.20347, -3.48584, -7.42121, 6.30617)
+
+[sub_resource type="Resource" id="Resource_q1ged"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(94.0391, 36.8193, 24.7357, 22.5794, -14.3541, -37.9285, -44.6905, 0.747486, -3.31957, -3.98501, -5.99106, 6.13412)
+
+[sub_resource type="Resource" id="Resource_ivvbd"]
+resource_name = "U"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_lx658"), SubResource("Resource_dp4qj"), SubResource("Resource_sjipt"), SubResource("Resource_cqx5p"), SubResource("Resource_ruc6a"), SubResource("Resource_7rya4"), SubResource("Resource_acve0"), SubResource("Resource_isqp6"), SubResource("Resource_ucgd8"), SubResource("Resource_xqft1"), SubResource("Resource_uwq4a"), SubResource("Resource_q1ged")])
+
+[sub_resource type="Resource" id="Resource_adfjq"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(60.5204, 14.4442, 50.919, 6.73088, -58.1211, -16.4037, -25.2449, 5.39991, -7.63682, -2.49648, 7.27129, 1.73227)
+
+[sub_resource type="Resource" id="Resource_t52kf"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(59.3272, 14.8285, 51.4022, 5.41398, -55.6032, -15.3487, -25.9236, 3.00066, -4.18326, -3.45878, 7.9415, 3.44991)
+
+[sub_resource type="Resource" id="Resource_bxu7m"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(59.3272, 14.8285, 51.4022, 5.41398, -55.6032, -15.3487, -25.9236, 3.00066, -4.18326, -3.45878, 7.9415, 3.44991)
+
+[sub_resource type="Resource" id="Resource_ug27r"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(64.6106, 7.84383, 54.7537, 11.1545, -62.9968, -10.3974, -36.1244, 12.5741, -6.08611, -3.03231, 10.4532, -0.000128269)
+
+[sub_resource type="Resource" id="Resource_yt6qb"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(59.8906, 13.6469, 53.1424, 11.3463, -60.1772, -15.9427, -29.5471, 8.24133, -6.89045, -3.65541, 14.7142, -2.81186)
+
+[sub_resource type="Resource" id="Resource_vk8m3"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.7752, 6.07175, 47.8707, 5.94328, -51.1144, -16.6253, -24.8423, 4.07648, -8.83597, -4.3062, 13.9078, -0.655568)
+
+[sub_resource type="Resource" id="Resource_v4gld"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.7752, 6.07175, 47.8707, 5.94328, -51.1144, -16.6253, -24.8423, 4.07648, -8.83597, -4.3062, 13.9078, -0.655568)
+
+[sub_resource type="Resource" id="Resource_njswx"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.7752, 6.07175, 47.8707, 5.94328, -51.1144, -16.6253, -24.8423, 4.07648, -8.83597, -4.3062, 13.9078, -0.655568)
+
+[sub_resource type="Resource" id="Resource_dygsr"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(62.8155, 6.20337, 48.4506, 8.57117, -53.9075, -16.3762, -25.9896, 5.73695, -8.15014, -5.89542, 13.7459, -4.22936)
+
+[sub_resource type="Resource" id="Resource_qp70t"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.433, 7.01955, 43.3208, 7.63951, -49.8147, -18.7084, -21.6905, 0.344584, -8.68997, -3.96993, 11.2984, -4.16529)
+
+[sub_resource type="Resource" id="Resource_mm03w"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(56.2922, 7.11505, 47.7415, 4.10298, -50.4614, -18.2356, -22.5577, 6.9252, -13.1704, -1.03003, 8.81333, -3.23479)
+
+[sub_resource type="Resource" id="Resource_b8u0t"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(56.2922, 7.11505, 47.7415, 4.10298, -50.4614, -18.2356, -22.5577, 6.9252, -13.1704, -1.03003, 8.81333, -3.23479)
+
+[sub_resource type="Resource" id="Resource_dctt4"]
+resource_name = "E"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_adfjq"), SubResource("Resource_t52kf"), SubResource("Resource_bxu7m"), SubResource("Resource_ug27r"), SubResource("Resource_yt6qb"), SubResource("Resource_vk8m3"), SubResource("Resource_v4gld"), SubResource("Resource_njswx"), SubResource("Resource_dygsr"), SubResource("Resource_qp70t"), SubResource("Resource_mm03w"), SubResource("Resource_b8u0t")])
+
+[sub_resource type="Resource" id="Resource_k5jn8"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(108.123, 57.4829, 0.231544, -31.1448, -38.0931, -18.3303, -11.2501, -0.763622, -1.37124, -9.18139, -1.62025, -7.50111)
+
+[sub_resource type="Resource" id="Resource_8ujlb"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(108.123, 57.4829, 0.231544, -31.1448, -38.0931, -18.3303, -11.2501, -0.763622, -1.37124, -9.18139, -1.62025, -7.50111)
+
+[sub_resource type="Resource" id="Resource_6xcyd"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(120.483, 61.3833, -2.67855, -32.39, -40.9464, -12.681, -10.9799, -0.71601, -2.90784, -12.3007, 1.87198, -6.28539)
+
+[sub_resource type="Resource" id="Resource_ptkrq"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(109.581, 58.4632, 0.14795, -31.0802, -34.7305, -17.4233, -10.2216, 0.386309, -1.25797, -7.03745, -2.89486, -7.09716)
+
+[sub_resource type="Resource" id="Resource_c28ch"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(109.581, 58.4632, 0.14795, -31.0802, -34.7305, -17.4233, -10.2216, 0.386309, -1.25797, -7.03745, -2.89486, -7.09716)
+
+[sub_resource type="Resource" id="Resource_kpicd"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(116.197, 60.3573, 0.0735092, -32.3847, -34.4729, -16.3736, -14.6951, 0.310208, 0.288445, -8.94888, -3.10499, -9.90027)
+
+[sub_resource type="Resource" id="Resource_42jkt"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(116.197, 60.3573, 0.0735092, -32.3847, -34.4729, -16.3736, -14.6951, 0.310208, 0.288445, -8.94888, -3.10499, -9.90027)
+
+[sub_resource type="Resource" id="Resource_s3gsy"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(98.6345, 48.6618, 2.39418, -28.7858, -31.5489, -18.3776, -14.9982, -1.80503, -2.0184, -4.58475, -5.16056, -7.9687)
+
+[sub_resource type="Resource" id="Resource_bl3dh"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(124.25, 59.2761, 2.74547, -36.7258, -38.6555, -3.11669, -24.2456, 0.508568, 2.36339, -10.5136, 1.74478, -13.2269)
+
+[sub_resource type="Resource" id="Resource_1i7ga"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(87.8921, 45.0875, 4.29282, -26.4828, -30.3861, -20.4107, -11.8172, -3.12704, -1.13702, -6.15922, -3.45405, -5.72654)
+
+[sub_resource type="Resource" id="Resource_7ns1u"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(87.8921, 45.0875, 4.29282, -26.4828, -30.3861, -20.4107, -11.8172, -3.12704, -1.13702, -6.15922, -3.45405, -5.72654)
+
+[sub_resource type="Resource" id="Resource_5dg1j"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(87.8921, 45.0875, 4.29282, -26.4828, -30.3861, -20.4107, -11.8172, -3.12704, -1.13702, -6.15922, -3.45405, -5.72654)
+
+[sub_resource type="Resource" id="Resource_kbiai"]
+resource_name = "O"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_k5jn8"), SubResource("Resource_8ujlb"), SubResource("Resource_6xcyd"), SubResource("Resource_ptkrq"), SubResource("Resource_c28ch"), SubResource("Resource_kpicd"), SubResource("Resource_42jkt"), SubResource("Resource_s3gsy"), SubResource("Resource_bl3dh"), SubResource("Resource_1i7ga"), SubResource("Resource_7ns1u"), SubResource("Resource_5dg1j")])
+
+[sub_resource type="Resource" id="Resource_4jb75"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-94.2921, 9.29924, -21.6169, 4.12396, 1.36455, -2.33973, 12.9239, -7.49056, 10.5202, -5.48326, 2.16211, 2.69618)
+
+[sub_resource type="Resource" id="Resource_pkh5y"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-94.2921, 9.29924, -21.6169, 4.12396, 1.36455, -2.33973, 12.9239, -7.49056, 10.5202, -5.48326, 2.16211, 2.69618)
+
+[sub_resource type="Resource" id="Resource_6i6i1"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-92.1381, 8.7127, -17.1942, 4.38756, 2.28808, -9.56279, 9.85481, -7.84322, 8.96922, -7.96703, 0.382711, 2.73143)
+
+[sub_resource type="Resource" id="Resource_oihm5"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-92.1381, 8.7127, -17.1942, 4.38756, 2.28808, -9.56279, 9.85481, -7.84322, 8.96922, -7.96703, 0.382711, 2.73143)
+
+[sub_resource type="Resource" id="Resource_5awko"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-90.8793, 12.6227, -12.2517, 6.77516, 6.89263, -4.70859, 10.5583, -10.1942, 10.9076, 0.725945, 6.63197, 1.28038)
+
+[sub_resource type="Resource" id="Resource_g58qs"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-90.8793, 12.6227, -12.2517, 6.77516, 6.89263, -4.70859, 10.5583, -10.1942, 10.9076, 0.725945, 6.63197, 1.28038)
+
+[sub_resource type="Resource" id="Resource_0mae2"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-94.8607, 18.4073, -5.9819, 7.44614, 11.9989, 1.13167, 5.72637, -9.41181, 9.96684, 0.669255, 3.09499, -0.543954)
+
+[sub_resource type="Resource" id="Resource_tpom8"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-94.8607, 18.4073, -5.9819, 7.44614, 11.9989, 1.13167, 5.72637, -9.41181, 9.96684, 0.669255, 3.09499, -0.543954)
+
+[sub_resource type="Resource" id="Resource_boul5"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-94.8607, 18.4073, -5.9819, 7.44614, 11.9989, 1.13167, 5.72637, -9.41181, 9.96684, 0.669255, 3.09499, -0.543954)
+
+[sub_resource type="Resource" id="Resource_ea4ow"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-100.968, 15.0023, -4.99475, 0.222599, -0.156061, -1.86613, 1.5652, -13.3065, 12.5545, -2.99078, 3.551, 5.11951)
+
+[sub_resource type="Resource" id="Resource_skeqr"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-100.968, 15.0023, -4.99475, 0.222599, -0.156061, -1.86613, 1.5652, -13.3065, 12.5545, -2.99078, 3.551, 5.11951)
+
+[sub_resource type="Resource" id="Resource_dnmqh"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-101.28, 14.9625, -10.9884, 3.63849, -1.46983, -4.75809, -1.35477, -12.9419, 3.352, -5.51316, 9.38691, 3.83108)
+
+[sub_resource type="Resource" id="Resource_e6abx"]
+resource_name = "S"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_4jb75"), SubResource("Resource_pkh5y"), SubResource("Resource_6i6i1"), SubResource("Resource_oihm5"), SubResource("Resource_5awko"), SubResource("Resource_g58qs"), SubResource("Resource_0mae2"), SubResource("Resource_tpom8"), SubResource("Resource_boul5"), SubResource("Resource_ea4ow"), SubResource("Resource_skeqr"), SubResource("Resource_dnmqh")])
+
+[sub_resource type="Resource" id="Resource_1ho1n"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(4.20287, -73.4939, -24.7467, -41.5146, 36.4866, -18.2532, -42.9912, 25.6128, -18.3367, -15.3667, -4.86756, -8.54519)
+
+[sub_resource type="Resource" id="Resource_6nywh"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(6.64595, -70.9969, -23.4992, -40.7031, 35.0911, -19.6358, -41.8512, 26.5484, -20.3612, -15.0919, -5.33224, -7.19965)
+
+[sub_resource type="Resource" id="Resource_brfph"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(6.64595, -70.9969, -23.4992, -40.7031, 35.0911, -19.6358, -41.8512, 26.5484, -20.3612, -15.0919, -5.33224, -7.19965)
+
+[sub_resource type="Resource" id="Resource_1v3d3"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(3.48604, -73.3069, -21.2443, -38.7258, 41.228, -15.9755, -42.0908, 27.3674, -19.5224, -16.3977, -3.77952, -4.9585)
+
+[sub_resource type="Resource" id="Resource_bmnoo"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(0.0992155, -70.2224, -20.889, -33.5362, 48.0152, -13.3653, -42.8849, 26.4519, -13.9523, -16.6574, -1.89434, -1.88129)
+
+[sub_resource type="Resource" id="Resource_vp0mc"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(0.0992155, -70.2224, -20.889, -33.5362, 48.0152, -13.3653, -42.8849, 26.4519, -13.9523, -16.6574, -1.89434, -1.88129)
+
+[sub_resource type="Resource" id="Resource_fn60g"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(0.0992155, -70.2224, -20.889, -33.5362, 48.0152, -13.3653, -42.8849, 26.4519, -13.9523, -16.6574, -1.89434, -1.88129)
+
+[sub_resource type="Resource" id="Resource_fehsg"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-4.11702, -72.0068, -19.4903, -34.4816, 51.384, -9.98937, -41.869, 23.8249, -11.1455, -14.5005, -2.50434, 1.06166)
+
+[sub_resource type="Resource" id="Resource_8x3q4"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-3.07728, -77.9594, -21.17, -43.1906, 47.5942, -14.2397, -43.053, 23.7966, -16.0338, -14.3085, -4.90072, -0.659725)
+
+[sub_resource type="Resource" id="Resource_tewqw"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-3.07728, -77.9594, -21.17, -43.1906, 47.5942, -14.2397, -43.053, 23.7966, -16.0338, -14.3085, -4.90072, -0.659725)
+
+[sub_resource type="Resource" id="Resource_20see"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(0.276744, -74.1688, -19.241, -43.6977, 45.9489, -15.7779, -40.2263, 25.2095, -19.9191, -14.1233, -6.74933, -2.18605)
+
+[sub_resource type="Resource" id="Resource_xmojp"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(1.31308, -70.1734, -20.1492, -40.1508, 43.2813, -17.5982, -39.9897, 19.4756, -18.7343, -15.3779, -3.67611, -2.37209)
+
+[sub_resource type="Resource" id="Resource_hrnum"]
+resource_name = "A"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_1ho1n"), SubResource("Resource_6nywh"), SubResource("Resource_brfph"), SubResource("Resource_1v3d3"), SubResource("Resource_bmnoo"), SubResource("Resource_vp0mc"), SubResource("Resource_fn60g"), SubResource("Resource_fehsg"), SubResource("Resource_8x3q4"), SubResource("Resource_tewqw"), SubResource("Resource_20see"), SubResource("Resource_xmojp")])
+
+[sub_resource type="Resource" id="Resource_xyhfv"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-43.2386, 15.6592, 48.9612, -84.8009, -2.833, -25.1014, -19.2834, -1.33104, -3.90679, -5.55476, -24.2062, 19.6901)
+
+[sub_resource type="Resource" id="Resource_k2uju"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-43.2386, 15.6592, 48.9612, -84.8009, -2.833, -25.1014, -19.2834, -1.33104, -3.90679, -5.55476, -24.2062, 19.6901)
+
+[sub_resource type="Resource" id="Resource_hoprg"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-43.2386, 15.6592, 48.9612, -84.8009, -2.833, -25.1014, -19.2834, -1.33104, -3.90679, -5.55476, -24.2062, 19.6901)
+
+[sub_resource type="Resource" id="Resource_g4i2b"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-35.2865, 11.9494, 46.5669, -80.1916, -5.33236, -16.747, -17.0146, -6.10632, -3.57598, -11.2971, -19.7356, 19.9529)
+
+[sub_resource type="Resource" id="Resource_dv2rn"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-35.2865, 11.9494, 46.5669, -80.1916, -5.33236, -16.747, -17.0146, -6.10632, -3.57598, -11.2971, -19.7356, 19.9529)
+
+[sub_resource type="Resource" id="Resource_yanf7"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-33.8512, 12.7487, 48.1419, -75.8027, -0.970275, -14.077, -15.9112, -4.43317, -4.00741, -9.75624, -20.9105, 18.427)
+
+[sub_resource type="Resource" id="Resource_esvhf"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-29.7238, 13.0395, 47.7449, -74.1109, 0.827532, -16.0122, -17.368, -1.03761, -4.82927, -6.66788, -23.8217, 16.0327)
+
+[sub_resource type="Resource" id="Resource_ywjc0"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-29.2594, 11.9638, 41.5462, -75.673, -2.03293, -20.5864, -21.125, 0.550496, -5.41988, -6.31488, -25.0131, 14.2628)
+
+[sub_resource type="Resource" id="Resource_cfyxl"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-29.2594, 11.9638, 41.5462, -75.673, -2.03293, -20.5864, -21.125, 0.550496, -5.41988, -6.31488, -25.0131, 14.2628)
+
+[sub_resource type="Resource" id="Resource_toly7"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-28.3838, 13.1034, 39.9429, -81.0895, -4.13458, -21.5901, -23.217, -0.379879, -5.07243, -5.94475, -26.6384, 16.7773)
+
+[sub_resource type="Resource" id="Resource_sgvuh"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-30.049, 16.332, 44.4933, -81.9183, -4.172, -19.6186, -20.5346, -0.967396, -3.21888, -6.57229, -26.5918, 18.4819)
+
+[sub_resource type="Resource" id="Resource_kgq2q"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(-30.988, 14.4252, 48.9511, -82.3312, -4.30262, -17.6422, -19.922, -1.74145, -1.73191, -6.87055, -22.8569, 19.476)
+
+[sub_resource type="Resource" id="Resource_6110i"]
+resource_name = "I"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_xyhfv"), SubResource("Resource_k2uju"), SubResource("Resource_hoprg"), SubResource("Resource_g4i2b"), SubResource("Resource_dv2rn"), SubResource("Resource_yanf7"), SubResource("Resource_esvhf"), SubResource("Resource_ywjc0"), SubResource("Resource_cfyxl"), SubResource("Resource_toly7"), SubResource("Resource_sgvuh"), SubResource("Resource_kgq2q")])
+
+[sub_resource type="Resource" id="Resource_bqwjd"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(35.533, -11.3713, 16.6993, -39.3294, 2.89318, -39.3567, -22.8158, -8.25597, -7.36019, 3.86616, -36.1834, 0.447793)
+
+[sub_resource type="Resource" id="Resource_ukc4p"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(34.9281, -12.661, 19.5512, -38.5899, 1.56094, -42.7814, -22.405, -4.38001, -9.27184, 5.95235, -38.1812, 1.41627)
+
+[sub_resource type="Resource" id="Resource_jhk3s"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(34.5081, -10.06, 18.8845, -34.4219, -0.888195, -42.5238, -20.3715, -0.686506, -8.89058, 6.38143, -34.8167, 3.53054)
+
+[sub_resource type="Resource" id="Resource_3w8lf"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(34.5081, -10.06, 18.8845, -34.4219, -0.888195, -42.5238, -20.3715, -0.686506, -8.89058, 6.38143, -34.8167, 3.53054)
+
+[sub_resource type="Resource" id="Resource_s5ygq"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(37.6342, -14.2237, 21.2624, -39.5083, 0.311425, -43.2013, -19.1367, -0.746165, -8.25338, 9.12716, -33.4833, 9.34031)
+
+[sub_resource type="Resource" id="Resource_8lufd"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(38.2855, -15.8142, 19.5036, -40.1969, -0.710615, -45.3738, -20.6316, -2.2333, -6.60987, 8.43967, -33.5609, 8.54998)
+
+[sub_resource type="Resource" id="Resource_h752s"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(38.2855, -15.8142, 19.5036, -40.1969, -0.710615, -45.3738, -20.6316, -2.2333, -6.60987, 8.43967, -33.5609, 8.54998)
+
+[sub_resource type="Resource" id="Resource_luni8"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(36.1519, -19.4394, 19.2271, -40.2299, -1.71197, -44.589, -22.3965, -4.68736, -5.18404, 5.60121, -35.3138, 6.85632)
+
+[sub_resource type="Resource" id="Resource_e3jig"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(33.6976, -19.5395, 18.1519, -38.2936, -1.9537, -39.1852, -21.1819, -8.09226, -6.44132, 3.84725, -32.4591, 8.79825)
+
+[sub_resource type="Resource" id="Resource_xnc3x"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(31.7686, -17.1378, 15.7268, -36.8976, -3.82214, -35.4927, -19.9206, -10.4214, -7.47148, 1.72169, -25.7266, 12.091)
+
+[sub_resource type="Resource" id="Resource_0axkq"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(31.7686, -17.1378, 15.7268, -36.8976, -3.82214, -35.4927, -19.9206, -10.4214, -7.47148, 1.72169, -25.7266, 12.091)
+
+[sub_resource type="Resource" id="Resource_7t6h8"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(32.6759, -15.9283, 16.0853, -34.1267, -6.68933, -33.7935, -19.2428, -10.5989, -10.9929, -2.99576, -23.3298, 14.2316)
+
+[sub_resource type="Resource" id="Resource_3cpms"]
+resource_name = "U"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_bqwjd"), SubResource("Resource_ukc4p"), SubResource("Resource_jhk3s"), SubResource("Resource_3w8lf"), SubResource("Resource_s5ygq"), SubResource("Resource_8lufd"), SubResource("Resource_h752s"), SubResource("Resource_luni8"), SubResource("Resource_e3jig"), SubResource("Resource_xnc3x"), SubResource("Resource_0axkq"), SubResource("Resource_7t6h8")])
+
+[sub_resource type="Resource" id="Resource_fau3w"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(50.4517, -7.7234, 32.2949, -11.2938, -22.7773, -36.1782, -17.0449, -3.76728, -14.2331, -17.2505, -19.2403, -6.97144)
+
+[sub_resource type="Resource" id="Resource_qj2ug"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.5995, -9.87446, 35.2375, -11.929, -23.9159, -38.0778, -15.7104, -6.73728, -12.0679, -14.4366, -20.4019, -7.59465)
+
+[sub_resource type="Resource" id="Resource_a3ld7"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(57.3642, -14.5725, 35.1068, -13.0448, -24.1961, -36.5896, -16.1619, -10.2289, -10.4347, -10.9979, -20.9264, -7.63193)
+
+[sub_resource type="Resource" id="Resource_qoj6h"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(57.6517, -16.9243, 33.0222, -12.6672, -21.6956, -32.9037, -14.2754, -10.3326, -10.5447, -6.80165, -22.4781, -8.94783)
+
+[sub_resource type="Resource" id="Resource_et5pq"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(49.607, -9.94368, 25.0416, -9.98995, -21.814, -28.9976, -16.7923, -9.59308, -11.5233, -7.56851, -20.6884, -10.5545)
+
+[sub_resource type="Resource" id="Resource_0l7sp"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.434, -10.9479, 30.4261, -10.5064, -22.9973, -31.2703, -16.9088, -9.606, -10.7855, -9.04239, -22.8228, -12.4225)
+
+[sub_resource type="Resource" id="Resource_71iy0"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(57.1173, -14.7786, 33.1632, -13.4376, -25.4506, -33.8495, -17.6593, -11.152, -12.2039, -9.72323, -26.6532, -12.0981)
+
+[sub_resource type="Resource" id="Resource_yy1dg"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(58.6536, -15.0402, 32.9249, -12.5981, -24.0331, -33.4147, -15.5653, -11.0818, -10.4752, -9.3277, -28.4302, -11.2243)
+
+[sub_resource type="Resource" id="Resource_oc6tm"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.8885, -13.5923, 31.6711, -9.44059, -23.3162, -35.3663, -19.2624, -13.4729, -11.3124, -7.23353, -25.4669, -8.92444)
+
+[sub_resource type="Resource" id="Resource_x2d0j"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(54.3077, -13.3153, 26.9607, -11.6825, -23.1057, -32.507, -17.8833, -10.9616, -11.3772, -7.61013, -24.9515, -9.38067)
+
+[sub_resource type="Resource" id="Resource_8exwf"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(57.1583, -13.7717, 31.2957, -9.49387, -23.7088, -33.8517, -19.9999, -12.5552, -14.448, -7.60882, -23.9, -6.75594)
+
+[sub_resource type="Resource" id="Resource_bh5lk"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(47.7813, -14.279, 23.2283, -14.1903, -23.3991, -34.9507, -21.4061, -10.1546, -14.6862, -9.93202, -22.1417, -8.35476)
+
+[sub_resource type="Resource" id="Resource_t3dt8"]
+resource_name = "U"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_fau3w"), SubResource("Resource_qj2ug"), SubResource("Resource_a3ld7"), SubResource("Resource_qoj6h"), SubResource("Resource_et5pq"), SubResource("Resource_0l7sp"), SubResource("Resource_71iy0"), SubResource("Resource_yy1dg"), SubResource("Resource_oc6tm"), SubResource("Resource_x2d0j"), SubResource("Resource_8exwf"), SubResource("Resource_bh5lk")])
+
+[sub_resource type="Resource" id="Resource_8xxm5"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(7.13136, -36.0493, 45.3116, -45.0018, -15.5335, 1.30712, 2.57975, -1.87621, -25.0231, -22.2753, -16.3835, -17.8686)
+
+[sub_resource type="Resource" id="Resource_og165"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(7.13136, -36.0493, 45.3116, -45.0018, -15.5335, 1.30712, 2.57975, -1.87621, -25.0231, -22.2753, -16.3835, -17.8686)
+
+[sub_resource type="Resource" id="Resource_x868p"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(11.0679, -36.1678, 45.8939, -43.6037, -15.0179, -1.27964, 2.09077, -2.00726, -22.1396, -22.112, -16.9758, -17.1877)
+
+[sub_resource type="Resource" id="Resource_agvta"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(9.00015, -36.5818, 46.3998, -45.5433, -15.2458, -2.2234, 4.54739, -1.75528, -24.6915, -22.8361, -15.2472, -15.0902)
+
+[sub_resource type="Resource" id="Resource_6x15b"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(6.9975, -37.9122, 46.3833, -47.1867, -13.4928, -2.46627, 5.1093, -1.43682, -25.9659, -23.3276, -14.7122, -15.3698)
+
+[sub_resource type="Resource" id="Resource_uaaj5"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(8.53532, -38.0462, 47.7186, -47.1883, -12.696, 0.911982, 5.81218, 1.96836, -28.4411, -21.2039, -16.2846, -15.2897)
+
+[sub_resource type="Resource" id="Resource_ho2cn"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(8.53532, -38.0462, 47.7186, -47.1883, -12.696, 0.911982, 5.81218, 1.96836, -28.4411, -21.2039, -16.2846, -15.2897)
+
+[sub_resource type="Resource" id="Resource_7b27w"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(10.7284, -37.8687, 48.3174, -47.4775, -12.4096, -0.441053, 5.6634, 3.44915, -27.8056, -20.9677, -15.1907, -14.8774)
+
+[sub_resource type="Resource" id="Resource_5vkv0"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(10.0651, -36.6601, 44.7646, -47.5649, -12.3222, -2.30148, 3.44533, 3.18998, -25.7343, -21.7152, -13.4827, -17.0411)
+
+[sub_resource type="Resource" id="Resource_lma0n"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(8.78259, -36.9253, 44.4034, -46.989, -8.84085, -3.27116, 2.83545, 3.15925, -24.9397, -21.5475, -15.2429, -17.5317)
+
+[sub_resource type="Resource" id="Resource_5v78k"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(6.50871, -36.8011, 42.7923, -46.298, -6.9195, -3.78825, 2.533, 4.23353, -24.5398, -21.7912, -16.7553, -18.1593)
+
+[sub_resource type="Resource" id="Resource_o4ndq"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(6.50871, -36.8011, 42.7923, -46.298, -6.9195, -3.78825, 2.533, 4.23353, -24.5398, -21.7912, -16.7553, -18.1593)
+
+[sub_resource type="Resource" id="Resource_axcaj"]
+resource_name = "E"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_8xxm5"), SubResource("Resource_og165"), SubResource("Resource_x868p"), SubResource("Resource_agvta"), SubResource("Resource_6x15b"), SubResource("Resource_uaaj5"), SubResource("Resource_ho2cn"), SubResource("Resource_7b27w"), SubResource("Resource_5vkv0"), SubResource("Resource_lma0n"), SubResource("Resource_5v78k"), SubResource("Resource_o4ndq")])
+
+[sub_resource type="Resource" id="Resource_xnoxc"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(53.4437, -12.5336, -26.8718, -71.9889, -5.86158, -1.71208, -32.9083, 23.5142, -10.1256, -11.9777, 9.88356, -5.2619)
+
+[sub_resource type="Resource" id="Resource_xbv5x"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(55.6905, -10.3167, -26.2897, -74.0556, -4.34836, -1.11023, -32.4983, 22.0168, -11.2275, -11.7535, 10.583, -3.58379)
+
+[sub_resource type="Resource" id="Resource_mpb4i"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(55.6905, -10.3167, -26.2897, -74.0556, -4.34836, -1.11023, -32.4983, 22.0168, -11.2275, -11.7535, 10.583, -3.58379)
+
+[sub_resource type="Resource" id="Resource_rhgoa"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(56.333, -9.76143, -24.525, -75.675, -2.94111, -1.05093, -32.5898, 20.3978, -13.5273, -10.2217, 8.80644, -6.16729)
+
+[sub_resource type="Resource" id="Resource_c6gml"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(58.4256, -13.0486, -26.3266, -77.3327, 0.897129, -0.137581, -34.7978, 22.525, -15.1384, -9.02734, 10.9432, -6.86781)
+
+[sub_resource type="Resource" id="Resource_7dwtb"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(57.1661, -17.3801, -26.7047, -76.5345, 3.20375, 1.62178, -36.6776, 24.1441, -12.5228, -8.60572, 13.9697, -4.90919)
+
+[sub_resource type="Resource" id="Resource_g0ux6"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(55.1754, -22.4917, -25.5688, -74.1046, 2.16662, 4.13977, -37.2167, 21.9971, -11.681, -8.39678, 13.4544, -3.45267)
+
+[sub_resource type="Resource" id="Resource_2oaot"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(55.1868, -23.1765, -23.6401, -69.6453, 1.98939, 7.12993, -35.8718, 19.4102, -13.1933, -8.64339, 10.1737, -3.28467)
+
+[sub_resource type="Resource" id="Resource_vqnir"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(55.1868, -23.1765, -23.6401, -69.6453, 1.98939, 7.12993, -35.8718, 19.4102, -13.1933, -8.64339, 10.1737, -3.28467)
+
+[sub_resource type="Resource" id="Resource_k4wr8"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(52.926, -22.969, -25.6214, -65.7949, 0.0113297, 5.45765, -33.9696, 16.3894, -14.0262, -7.28709, 11.1593, -3.75411)
+
+[sub_resource type="Resource" id="Resource_0j4md"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(51.8167, -22.8919, -29.8059, -68.669, -1.94846, 1.63895, -33.594, 17.0955, -13.0462, -8.92375, 13.0527, -5.069)
+
+[sub_resource type="Resource" id="Resource_mo870"]
+script = ExtResource("1_itj00")
+array = PackedFloat32Array(54.3925, -23.7166, -31.425, -75.5203, -4.73847, -0.122875, -36.4146, 18.1257, -14.0283, -11.6312, 12.2342, -4.54612)
+
+[sub_resource type="Resource" id="Resource_mpk87"]
+resource_name = "O"
+script = ExtResource("1_bxar7")
+calibrationData = Array[ExtResource("1_itj00")]([SubResource("Resource_xnoxc"), SubResource("Resource_xbv5x"), SubResource("Resource_mpb4i"), SubResource("Resource_rhgoa"), SubResource("Resource_c6gml"), SubResource("Resource_7dwtb"), SubResource("Resource_g0ux6"), SubResource("Resource_2oaot"), SubResource("Resource_vqnir"), SubResource("Resource_k4wr8"), SubResource("Resource_0j4md"), SubResource("Resource_mo870")])
+
+[resource]
+script = ExtResource("2_bxar7")
+mfccDatas = Array[ExtResource("1_bxar7")]([SubResource("Resource_n5qvh"), SubResource("Resource_ncokb"), SubResource("Resource_ivvbd"), SubResource("Resource_dctt4"), SubResource("Resource_kbiai"), SubResource("Resource_e6abx"), SubResource("Resource_hrnum"), SubResource("Resource_6110i"), SubResource("Resource_3cpms"), SubResource("Resource_t3dt8"), SubResource("Resource_axcaj"), SubResource("Resource_mpk87")])
+metadata/_custom_type_script = "uid://dsk7vh4vdarfs"

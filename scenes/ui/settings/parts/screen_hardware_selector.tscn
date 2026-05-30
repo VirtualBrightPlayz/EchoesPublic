@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c8uxd4cqdbdvx"]
+
+[ext_resource type="Script" uid="uid://cln51kxulpkgo" path="res://scripts/settings/classes/MonitorHardwareSelector.cs" id="1_e5xqe"]
+
+[node name="ScreenHardwareSelector" type="Container" unique_id=442309867 node_paths=PackedStringArray("DropdownControl", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_e5xqe")
+DropdownControl = NodePath("HBoxContainer/VBoxContainer/OptionButton")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+metadata/_custom_type_script = "uid://cln51kxulpkgo"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=915562659]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1872505969]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1989697653]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1956344468]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer" unique_id=832119191]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1626759403]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14

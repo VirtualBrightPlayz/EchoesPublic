@@ -1,0 +1,92 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c8lwk4ixyktme"
+path="res://.godot/imported/Echoes_TeslaGate_HW_Var2.fbx-47dfb37830cc6c16188ced37115ad7b8.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/HCZ_V3/Echoes_TeslaGate_HW_Var2.fbx"
+dest_files=["res://.godot/imported/Echoes_TeslaGate_HW_Var2.fbx-47dfb37830cc6c16188ced37115ad7b8.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"HCZ_BlackWornMetal_2_HotSpot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/WornMetal_2_HS_HCZ.tres",
+"use_external/path": "uid://ti2mo8w56gf0"
+},
+"HCZ_BlackWornMetal_HotSpot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/WornMetal_HS_HCZ.tres",
+"use_external/path": "uid://i8fqnah4rxnf"
+},
+"HCZ_MetalPlatedFloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/MetalPlatedFloor_HS_HCZ_.tres",
+"use_external/path": "uid://bpbp2poieahfu"
+},
+"HCZ_Net": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_grate.tres",
+"use_external/path": "uid://clis3ysgy88gp"
+},
+"HCZ_Plastic_HotSpot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/Plastic_HS_HCZ.tres",
+"use_external/path": "uid://cccrsnbrhfjij"
+},
+"HCZ_Wall_HotSpot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_HS_ConcreteWalls.tres",
+"use_external/path": "uid://c2n8lfsg2iy8h"
+},
+"HCZ_YellowRusted_HotSpot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/Yellow_Rusted_HS_HCZ.tres",
+"use_external/path": "uid://dyfehk7q111n5"
+},
+"MetalTrim_Coil": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/TeslaCoil_Metal_Trim.tres",
+"use_external/path": "uid://benqxfg3h1pw2"
+},
+"TeslaGate": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/M_Tesla.tres",
+"use_external/path": "uid://bqbs8bfbmoy4a"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=1

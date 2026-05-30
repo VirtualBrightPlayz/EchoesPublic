@@ -1,0 +1,13 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://bspkrusdvgkk7"]
+
+[ext_resource type="Texture2D" uid="uid://dgwgpf0c2k24" path="res://textures/lens_dirt.png" id="1_ogvsa"]
+
+[resource]
+background_mode = 1
+tonemap_exposure = 2.2
+glow_enabled = true
+glow_intensity = 1.0
+glow_blend_mode = 0
+glow_map = ExtResource("1_ogvsa")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1

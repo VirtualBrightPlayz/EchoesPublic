@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ccvpi7bicjpsi"]
+
+[ext_resource type="Texture2D" uid="uid://dj2nnxfta884x" path="res://models/scpsl/scientist/Researcher1__Pan_Janusz_Body_diffuse.png" id="1_3fy8r"]
+[ext_resource type="Texture2D" uid="uid://njwmg0hdbbj" path="res://models/scpsl/scientist/Researcher1__Pan_Janusz_Body_normal.png" id="2_8mctd"]
+
+[resource]
+albedo_texture = ExtResource("1_3fy8r")
+normal_enabled = true
+normal_texture = ExtResource("2_8mctd")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gq5avflr776w"
+path="res://.godot/imported/Neck snap 4.ogg-d726c844e716718b84d07f9ec3d793d1.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/SCP/Sentient/173/Neck snap 4.ogg"
+dest_files=["res://.godot/imported/Neck snap 4.ogg-d726c844e716718b84d07f9ec3d793d1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

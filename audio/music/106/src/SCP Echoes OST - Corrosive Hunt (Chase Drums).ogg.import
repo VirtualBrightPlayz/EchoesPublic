@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxe85hnahmrbf"
+path="res://.godot/imported/SCP Echoes OST - Corrosive Hunt (Chase Drums).ogg-fc7e33cf47e69985e45933a9709c5025.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/106/src/SCP Echoes OST - Corrosive Hunt (Chase Drums).ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - Corrosive Hunt (Chase Drums).ogg-fc7e33cf47e69985e45933a9709c5025.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=140.0
+beat_count=0
+bar_beats=4

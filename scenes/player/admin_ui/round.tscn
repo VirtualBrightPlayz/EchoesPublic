@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bvuv1jjxs67bm"]
+
+[ext_resource type="Script" uid="uid://na6exia8dex4" path="res://scripts/ui/admin/AdminCategoryRound.cs" id="1_hc80w"]
+
+[node name="Round" type="VBoxContainer" unique_id=1864513863]
+
+[node name="Handler" type="Node" parent="." unique_id=408969827 node_paths=PackedStringArray("ParentContainer")]
+script = ExtResource("1_hc80w")
+ParentContainer = NodePath("..")
+
+[node name="State" type="HBoxContainer" parent="." unique_id=1986234985]
+layout_mode = 2
+alignment = 1
+
+[node name="Sep" type="HSeparator" parent="." unique_id=1170602883]
+layout_mode = 2
+
+[node name="Map" type="HBoxContainer" parent="." unique_id=1494740143]
+layout_mode = 2
+alignment = 1
+
+[node name="Sep2" type="HSeparator" parent="." unique_id=973206887]
+layout_mode = 2
+
+[node name="Broadcast" type="HBoxContainer" parent="." unique_id=1989038881]
+layout_mode = 2
+alignment = 1

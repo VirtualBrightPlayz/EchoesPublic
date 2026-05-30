@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cayt58y6bjnyg"]
+
+[ext_resource type="Texture2D" uid="uid://dq46o4hhfw3vk" path="res://textures/main/ez/randomprops/T_ladder2.png" id="1_tkxi7"]
+[ext_resource type="Texture2D" uid="uid://1nlre3kpjdta" path="res://textures/main/ez/randomprops/N_ladder2.png" id="2_0tsco"]
+[ext_resource type="Texture2D" uid="uid://u8fns6spwmaa" path="res://textures/main/ez/randomprops/ORM_ladder2.png" id="2_s8s0x"]
+
+[resource]
+albedo_texture = ExtResource("1_tkxi7")
+orm_texture = ExtResource("2_s8s0x")
+normal_enabled = true
+normal_texture = ExtResource("2_0tsco")
+ao_enabled = true

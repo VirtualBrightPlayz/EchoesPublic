@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dcoyg5rwh8g2p"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="3_kgmvy"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="4_62l1r"]
+
+[resource]
+resource_name = "PS-01 Checkpoint"
+script = ExtResource("3_kgmvy")
+type = 2
+scenes = []
+sceneFile = "uid://ckuicimclfmd4"
+category = "Misc."
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

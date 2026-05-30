@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr7kp03xy0sce"]
+
+[ext_resource type="Script" uid="uid://cw3f6hfh24bqt" path="res://scripts/map/SlowDownArea.cs" id="1_kc2wh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vtfef"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilxvb"]
+transparency = 1
+albedo_color = Color(0.467041, 0.89743, 0.730395, 0.705882)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0bon"]
+size = Vector3(3.66643, 1.88526, 3.76205)
+
+[node name="SlowDownArea" type="Area3D"]
+collision_layer = 134
+collision_mask = 134
+gravity_space_override = 1
+gravity = 0.245
+linear_damp_space_override = 1
+linear_damp = 8.0
+angular_damp_space_override = 1
+angular_damp = 8.0
+script = ExtResource("1_kc2wh")
+metadata/_custom_type_script = "uid://cw3f6hfh24bqt"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.66643, 0, 0, 0, 1.88526, 0, 0, 0, 3.76205, 0, 0, 0)
+mesh = SubResource("BoxMesh_vtfef")
+surface_material_override/0 = SubResource("StandardMaterial3D_ilxvb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_h0bon")

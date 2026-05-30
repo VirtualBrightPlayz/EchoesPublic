@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://bulnv20m4tlbr"]
+
+[ext_resource type="Texture2D" uid="uid://cppit2as38lbn" path="res://textures/main/ez/randomprops/T_wall_water_dispenser.png" id="1_1jtsf"]
+[ext_resource type="Texture2D" uid="uid://css6ne8vsekti" path="res://textures/main/ez/randomprops/ORM_wall_water_dispenser.png" id="1_3q8r3"]
+[ext_resource type="Texture2D" uid="uid://d1ud8ecc3ehwp" path="res://textures/main/ez/randomprops/N_wall_water_dispenser.png" id="2_pgjv7"]
+
+[resource]
+albedo_texture = ExtResource("1_1jtsf")
+orm_texture = ExtResource("1_3q8r3")
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+normal_enabled = true
+normal_texture = ExtResource("2_pgjv7")
+ao_enabled = true

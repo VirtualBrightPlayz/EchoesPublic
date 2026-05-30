@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c0s6qv8y17f81"]
+
+[ext_resource type="Texture2D" uid="uid://dco717aq2g76y" path="res://textures/main/ez/randomprops/T_oil_barrel.png" id="1_figu7"]
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_xeq25"]
+[ext_resource type="Texture2D" uid="uid://d2i6ujftf25hg" path="res://textures/main/ez/randomprops/ORM_oil_barrel.png" id="2_ed6hk"]
+[ext_resource type="Texture2D" uid="uid://d07xa8euvy70y" path="res://textures/main/ez/randomprops/N_oil_barrel.png" id="2_vq321"]
+[ext_resource type="Texture2D" uid="uid://dx7m0ex4j6wqk" path="res://textures/main/ez/randomprops/User0_oil_barrel.png" id="3_fh0k6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xeq25")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/texture_albedo = ExtResource("1_figu7")
+shader_parameter/mask_color = Color(0.1517, 0.24629669, 0.37, 1)
+shader_parameter/texture_mask = ExtResource("3_fh0k6")
+shader_parameter/albedo_texture_size = Vector2i(1024, 1024)
+shader_parameter/point_size = 1.0
+shader_parameter/texture_orm = ExtResource("2_ed6hk")
+shader_parameter/texture_normal = ExtResource("2_vq321")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

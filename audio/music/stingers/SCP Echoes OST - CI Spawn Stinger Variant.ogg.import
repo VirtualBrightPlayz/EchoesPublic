@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gmm0cd1ylb47"
+path="res://.godot/imported/SCP Echoes OST - CI Spawn Stinger Variant.ogg-d438633cb59e4fd77d1273cd33ba4a99.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/stingers/SCP Echoes OST - CI Spawn Stinger Variant.ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - CI Spawn Stinger Variant.ogg-d438633cb59e4fd77d1273cd33ba4a99.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

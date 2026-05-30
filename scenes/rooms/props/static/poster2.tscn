@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://of6uhxjo3md0"]
+
+[ext_resource type="Shader" uid="uid://djhylwybqgs02" path="res://shaders/poster.gdshader" id="1_oofch"]
+[ext_resource type="Texture2D" uid="uid://ecylc8yfoar1" path="res://textures/main/posters/poster2.png" id="2_gupaa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vlov2"]
+load_path = "res://.godot/imported/T_Cloud.png-afc6ec4c91480c15a53ce223f25c35be.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqws0"]
+load_path = "res://.godot/imported/Cloud_N.png-827ebdd0b9053735a025b1c653d27669.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2u7kl"]
+load_path = "res://.godot/imported/T_Cloud.png-afc6ec4c91480c15a53ce223f25c35be.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2lfn"]
+render_priority = 0
+shader = ExtResource("1_oofch")
+shader_parameter/texture_albedo = ExtResource("2_gupaa")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_normal = SubResource("CompressedTexture2D_wqws0")
+shader_parameter/normal_scale = 0.2000007695000008
+shader_parameter/texture_orm = SubResource("CompressedTexture2D_2u7kl")
+shader_parameter/roughness_brightness = -0.215
+shader_parameter/roughness_contrast = 0.38
+shader_parameter/albedooverlayroughness_brightness = -1.475
+shader_parameter/albedooverlayroughness_contrast = 2.255
+shader_parameter/specular_intensity = 0.5
+shader_parameter/overlay_albedo_strength = 0.6750000320625
+shader_parameter/ripping_texture = SubResource("CompressedTexture2D_vlov2")
+shader_parameter/ripping_brightness = 0.48
+shader_parameter/ripping_contrast = 1.0
+shader_parameter/uvnormal_scale = Vector2(0.2, 1)
+shader_parameter/uvnormal_offset = Vector2(0, 0)
+shader_parameter/uvorm_scale = Vector2(0.2, -0.55)
+shader_parameter/uvorm_offset = Vector2(0, 0)
+shader_parameter/uvripping_scale = Vector2(0.535, 0.08)
+shader_parameter/uvripping_offset = Vector2(-1.235, 0.38)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bkr5b"]
+material = SubResource("ShaderMaterial_x2lfn")
+size = Vector2(1.41, 2)
+orientation = 2
+
+[node name="Poster2" type="Node3D" unique_id=837721848]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=139837613]
+mesh = SubResource("PlaneMesh_bkr5b")

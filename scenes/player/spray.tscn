@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://o05asyulvolo"]
+
+[ext_resource type="Script" uid="uid://i0k81jp8qah6" path="res://scripts/player/PlayerSpray.cs" id="1_cuihc"]
+[ext_resource type="AudioStream" uid="uid://dnngubi8bb7e7" path="res://audio/edited/spray2.wav" id="3_m67fp"]
+
+[node name="Spray" type="Node3D" node_paths=PackedStringArray("decal")]
+script = ExtResource("1_cuihc")
+decal = NodePath("Decal")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, 0, 0, 0)
+layers = 4
+size = Vector3(1, 0.5, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1048526
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_m67fp")
+volume_db = -3.0
+unit_size = 7.0
+autoplay = true
+max_distance = 20.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]

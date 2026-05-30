@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://dj8a6wve1xa7v"]
+
+[ext_resource type="Texture2D" uid="uid://csfdf4on7gikh" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Safe_T.png" id="1_vfpu2"]
+[ext_resource type="Texture2D" uid="uid://bo84e10a2c5hc" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Safe_N.png" id="2_yvgk1"]
+[ext_resource type="Texture2D" uid="uid://bhaxtuene2rky" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Safe_ORM.png" id="3_32ub4"]
+
+[resource]
+albedo_texture = ExtResource("1_vfpu2")
+orm_texture = ExtResource("3_32ub4")
+normal_enabled = true
+normal_texture = ExtResource("2_yvgk1")
+ao_enabled = true
+texture_filter = 4

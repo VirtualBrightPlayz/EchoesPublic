@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://bcwfyymyg2o0j"]
+
+[ext_resource type="Resource" uid="uid://c8byc7ufeqof5" path="res://items/coin.tres" id="1_acg8c"]
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="2_6bluk"]
+
+[resource]
+script = ExtResource("2_6bluk")
+Items = [ExtResource("1_acg8c")]
+MaxSpawned = 6
+metadata/_custom_type_script = "uid://vus0iseb56sl"

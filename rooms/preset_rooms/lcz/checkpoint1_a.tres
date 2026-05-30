@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bo10uatokv4uj"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_irxud"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_irxud"]
+
+[resource]
+resource_name = "Checkpoint A"
+script = ExtResource("2_irxud")
+size = 2
+scenes = []
+sceneFile = "uid://q5de8x03ftbp"
+category = "Light Containment"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ci8m2orr6o8md"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_ygx6e"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="2_jvqfq"]
+
+[resource]
+resource_name = "PS-01 - Solitary Confinment - End Room"
+script = ExtResource("1_ygx6e")
+stage = 4
+scenes = []
+sceneFile = "uid://r0ben6pkng3n"
+category = "PS-01"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

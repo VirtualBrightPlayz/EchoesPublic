@@ -1,0 +1,23 @@
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'Pistol'
+output_item = 'Laser Gun'
+fail_chance = 0.8
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'Shotgun'
+output_item = 'Super Shotgun'
+fail_chance = 0.9
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'Frag. Grenade'
+output_item = 'SCP-018'
+fail_chance = 0.7
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'Sticky Grenade'
+output_item = 'SCP-018'
+fail_chance = 0.7

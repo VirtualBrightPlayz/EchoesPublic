@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0rr0qrls01xy"]
+
+[ext_resource type="PackedScene" uid="uid://bmdvptqgrswc8" path="res://scenes/rooms/props/static/panels/panels.fbx" id="1_1s3wv"]
+
+[node name="Node3D" type="Node3D" unique_id=547574478]
+
+[node name="panels" parent="." unique_id=527076373 instance=ExtResource("1_1s3wv")]
+
+[node name="HandScannerPad" parent="panels/finishednonngon/HandScanner/HandScannerBase/Skeleton3D" parent_id_path=PackedInt32Array(527076373, 267373411) index="0" unique_id=1476017352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12815, 0.1675)
+bone_idx = 2
+
+[editable path="panels"]

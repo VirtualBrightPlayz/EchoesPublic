@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b3eyux0upxgnp"]
+
+[ext_resource type="Texture2D" uid="uid://u3dai723yetm" path="res://models/scpsl/classd2_Classd1_Top_diffuse.png" id="1_xj244"]
+[ext_resource type="Texture2D" uid="uid://cw2vxxnha4v38" path="res://models/scpsl/classd2_Classd1_Top_normal.png" id="2_jjsvx"]
+
+[resource]
+albedo_texture = ExtResource("1_xj244")
+normal_enabled = true
+normal_texture = ExtResource("2_jjsvx")

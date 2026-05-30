@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SlimeEffect" load_steps=2 format=3 uid="uid://cpt3vp4teafx8"]
+
+[ext_resource type="Script" uid="uid://bi4q6ak22mrjg" path="res://scripts/player/statuseffects/defaultEffects/SlimeEffect.cs" id="1_mible"]
+
+[resource]
+script = ExtResource("1_mible")
+metadata/_custom_type_script = "uid://bi4q6ak22mrjg"

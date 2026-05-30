@@ -1,0 +1,25 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://4qdopt2oos63"]
+
+[ext_resource type="Texture2D" uid="uid://b11dobsay43sr" path="res://models/rooms/pop_hcz_new/Pop_Cards/Laminate/Laminate_T.png" id="1_uixc5"]
+[ext_resource type="Texture2D" uid="uid://dv45nl6mm7gxy" path="res://models/rooms/pop_hcz_new/Pop_Cards/Laminate/Laminate_N.png" id="2_eq8fx"]
+[ext_resource type="Texture2D" uid="uid://da53x8kwmuv5s" path="res://textures/main/rock36/Rock036_1K-PNG_Displacement.png" id="2_f1ono"]
+[ext_resource type="Texture2D" uid="uid://sv0sm4d03fss" path="res://textures/orm_normal.png" id="5_oehf2"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_uixc5")
+normal_enabled = true
+normal_texture = ExtResource("2_eq8fx")
+heightmap_deep_parallax = true
+heightmap_min_layers = 3
+heightmap_max_layers = 8
+heightmap_texture = ExtResource("2_f1ono")
+subsurf_scatter_strength = 1.0
+subsurf_scatter_texture = ExtResource("5_oehf2")
+distance_fade_mode = 1
+distance_fade_min_distance = 5.0
+distance_fade_max_distance = 2.0
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.094

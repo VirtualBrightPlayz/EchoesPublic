@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bj8kxswobp42h"]
+
+[ext_resource type="Shader" uid="uid://b1d0qxprhoa4q" path="res://shaders/anim_texture.gdshader" id="1_5e0qo"]
+[ext_resource type="Texture2D" uid="uid://ccg48xkidxv57" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/079_Face_2.png" id="2_hetj5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5e0qo")
+shader_parameter/albedo = ExtResource("2_hetj5")
+shader_parameter/slices = Vector2i(6, 1)
+shader_parameter/s = 10.0

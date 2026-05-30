@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b237hnq42jsqe"]
+
+[ext_resource type="Shader" uid="uid://bncyw7rt03c01" path="res://shaders/liquid.gdshader" id="1_m2scu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_m2scu")
+shader_parameter/liquid_color = Color(0.497, 0.5646667, 0.7, 0.21568628)
+shader_parameter/foam_color = Color(0.37603372, 0.5819186, 0.93859035, 1)
+shader_parameter/foam_line = 0.0
+shader_parameter/fill_amount = 0.5910000280725
+shader_parameter/size = Vector2(1, 1)
+shader_parameter/glass_thickness = 0.01
+shader_parameter/scale = 1.0
+shader_parameter/wave_intensity = 0.05
+shader_parameter/HasBubbles = false
+shader_parameter/AlwaysBubbles = false
+shader_parameter/BubbleStrength = 0.5
+shader_parameter/BubbleMask = 0.5
+shader_parameter/BubbleSpeed = Vector2(3, 3)

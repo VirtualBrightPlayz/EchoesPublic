@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://badg6spes6kaj"]
+
+[ext_resource type="Texture2D" uid="uid://5xx05e3rfow4" path="res://textures/scpcb/icons/room1_106.png" id="1_fxxiq"]
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_24sw1"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="4_cxthe"]
+
+[resource]
+resource_name = "SCP-106"
+script = ExtResource("2_24sw1")
+size = 2
+stage = 2
+scenes = []
+sceneFile = "uid://n5tmlfr86vvo"
+isInterest = true
+gridRect = Rect2i(0, -1, 2, 2)
+layoutIconOverride = ExtResource("1_fxxiq")
+category = "Heavy Containment"

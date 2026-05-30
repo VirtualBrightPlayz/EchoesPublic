@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEffect" load_steps=3 format=3 uid="uid://cd7fk0bpcf0up"]
+
+[ext_resource type="PackedScene" uid="uid://bhfjwu5wewqx8" path="res://effects/scenes/p_90_reload.tscn" id="1_0apuv"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_rkplp"]
+
+[resource]
+script = ExtResource("2_rkplp")
+DisplayName = "Rifle Reload"
+scene = ExtResource("1_0apuv")
+Lifetime = 3.5

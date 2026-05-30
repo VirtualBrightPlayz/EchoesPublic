@@ -1,0 +1,122 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dwdpac10uci1r"
+path="res://.godot/imported/SLm New HCZ Checkpoint HW.fbx-fb3a728a63046550719eadb320181a13.scn"
+
+[deps]
+
+source_file="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Meshes/SLm New HCZ Checkpoint HW.fbx"
+dest_files=["res://.godot/imported/SLm New HCZ Checkpoint HW.fbx-fb3a728a63046550719eadb320181a13.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"EZ_CEILING.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/ceiling.tres",
+"use_external/path": "uid://dyxpur77c60pp"
+},
+"EZ_METAL.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/metal.tres",
+"use_external/path": "uid://dvi2xxnxvdug8"
+},
+"EZ_MISC__CHECKPOINT.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/misc.tres",
+"use_external/path": "uid://6p2qly2easrl"
+},
+"EZ_PANELS1.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/metalpanels.tres",
+"use_external/path": "uid://cpus7x15jdt7l"
+},
+"EZ_WALLS.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/officewall.tres",
+"use_external/path": "uid://bly3eufg3tewb"
+},
+"Metal_Base": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Materials/V1_SolidWall_Grey.tres",
+"use_external/path": "uid://doubqlvll6xri"
+},
+"Metal_Pipe.005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Metal Pipe.tres",
+"use_external/path": "uid://bjwu0q6t61o31"
+},
+"MiscSigns": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/miscsigns.tres",
+"use_external/path": "uid://do0dd2ny8jsrd"
+},
+"N_Timming": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete Trim.tres",
+"use_external/path": "uid://now70qqcw6e7"
+},
+"N_Wall": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete.tres",
+"use_external/path": "uid://b2vvjw1fd5qec"
+},
+"N_WallDouble": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete Double.tres",
+"use_external/path": "uid://x3cm61idhx8r"
+},
+"concretefloor.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/concretefloor.tres",
+"use_external/path": "uid://be3hr3dm1cff2"
+},
+"dirtymetal_1.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/dirtymetal.tres",
+"use_external/path": "uid://ckn82kcpey4tf"
+},
+"sign_heavycontainment.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/miscsigns.tres",
+"use_external/path": "uid://do0dd2ny8jsrd"
+},
+"tilefloor.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/tilefloor.tres",
+"use_external/path": "uid://daanv7kmvsedh"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

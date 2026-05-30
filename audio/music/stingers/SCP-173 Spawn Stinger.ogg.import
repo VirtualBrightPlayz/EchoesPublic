@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://deh8decsodqu5"
+path="res://.godot/imported/SCP-173 Spawn Stinger.ogg-7ff9c973eb735876a39e27b0e8a15e42.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/stingers/SCP-173 Spawn Stinger.ogg"
+dest_files=["res://.godot/imported/SCP-173 Spawn Stinger.ogg-7ff9c973eb735876a39e27b0e8a15e42.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://by5npy04t6f23"]
+
+[ext_resource type="Texture2D" uid="uid://btcvakr7ufrud" path="res://models/main/items/Medkit/Medkit_Icon.png" id="1_ic3hd"]
+[ext_resource type="PackedScene" uid="uid://tne4b361k44s" path="res://scenes/items/medkit.tscn" id="2_akvg8"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_dj1fs"]
+
+[resource]
+resource_name = "First-Aid Kit"
+script = ExtResource("3_dj1fs")
+ItemScene = ExtResource("2_akvg8")
+Icon = ExtResource("1_ic3hd")
+Description = "A first-aid kit used to heal wounds."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

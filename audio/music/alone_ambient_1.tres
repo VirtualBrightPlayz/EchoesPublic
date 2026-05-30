@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicClip" format=3 uid="uid://w74xdyfi1yve"]
+
+[ext_resource type="AudioStream" uid="uid://bt1fqrwql85c8" path="res://audio/music/SCP Echoes OST - Distant Echoes.ogg" id="1_spsq6"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_s4d6m"]
+
+[resource]
+script = ExtResource("2_s4d6m")
+audio = ExtResource("1_spsq6")
+volumeDb = -6.0
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

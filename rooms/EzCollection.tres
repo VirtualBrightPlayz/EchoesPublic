@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=14 format=3 uid="uid://btryvsk6vi6nw"]
+
+[ext_resource type="Resource" uid="uid://b6rkvbjco24f4" path="res://rooms/ez/Room2.tres" id="1_q2jut"]
+[ext_resource type="Resource" uid="uid://bwab51ln0w3a3" path="res://rooms/ez/Room2c.tres" id="2_8mjjd"]
+[ext_resource type="Resource" uid="uid://dms7ghm5gsgg7" path="res://rooms/ez/Room3.tres" id="3_p787b"]
+[ext_resource type="Resource" uid="uid://dsgjgcywub6yc" path="res://rooms/ez/Room4.tres" id="4_a3crl"]
+[ext_resource type="Resource" uid="uid://nmxv6a253rp8" path="res://rooms/ez/GateA.tres" id="5_cdhfc"]
+[ext_resource type="Resource" uid="uid://3iab1kvd41e2" path="res://rooms/ez/GateB.tres" id="6_7g5ms"]
+[ext_resource type="Resource" uid="uid://ci2jusjgm6375" path="res://rooms/Empty.tres" id="8_x1qir"]
+[ext_resource type="Resource" uid="uid://q14y5t22c1r7" path="res://rooms/lcz/endoff.tres" id="9_ktod2"]
+[ext_resource type="Resource" uid="uid://f82t71aqlxer" path="res://rooms/ez/Intercom.tres" id="9_v6hli"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="10_0qh6c"]
+[ext_resource type="Resource" uid="uid://b553vukufcloy" path="res://rooms/ez/Room2Office1.tres" id="10_itpg6"]
+[ext_resource type="Resource" uid="uid://cpvswlbdwsuc6" path="res://rooms/ez/Room2Office2.tres" id="11_iajl3"]
+[ext_resource type="Resource" uid="uid://bm8835nwxxooc" path="res://rooms/ez/Room2Office3.tres" id="12_76i3d"]
+
+[resource]
+script = ExtResource("10_0qh6c")
+Collection = Array[Resource]([ExtResource("8_x1qir"), ExtResource("1_q2jut"), ExtResource("2_8mjjd"), ExtResource("3_p787b"), ExtResource("4_a3crl"), ExtResource("5_cdhfc"), ExtResource("6_7g5ms"), ExtResource("9_v6hli"), ExtResource("9_ktod2"), ExtResource("10_itpg6"), ExtResource("11_iajl3"), ExtResource("12_76i3d")])

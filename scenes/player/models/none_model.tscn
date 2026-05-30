@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b53hyf4ga4u0g"]
+
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="1_31byr"]
+
+[node name="PlayerModel" type="Node3D" unique_id=1344366656]
+script = ExtResource("1_31byr")
+metadata/_custom_type_script = "uid://xq2fvvleypij"

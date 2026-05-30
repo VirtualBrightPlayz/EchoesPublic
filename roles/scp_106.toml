@@ -1,0 +1,46 @@
+[role]
+name = 'SCP106'
+display_name = 'ROLE_NAME_SCP_106'
+team = 'SCP'
+ui_color = '#ff0000'
+controller = 'SCP'
+model = 'SCP106'
+abilities = ['Use', 'Ghost', 'Portal', 'TeleportAttack']
+
+[role.stats]
+max_health = 3500.0
+spawn_stage = 0
+can_capture_points = false
+
+[role.stats.movement]
+speed = 5.0
+acceleration = 50.0
+sprint_speed_multiplier = 1.0
+crouch_speed_multiplier = 0.5
+jump_velocity = 5.0
+gravity_multiplier = 1.5
+default_footsteps = '106'
+force_default_footsteps = true
+
+[role.voice]
+can_use_intercom = false
+proximity_chat = false
+global_team_chat = true
+main_chat_channel = 1
+alt_chat_channel = 1
+proximity_chat_channel = 0
+listening_chat_channels = [0,1]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_SCP_106'
+hint_text = 'ROLE_HINT_SCP_106'
+hint_time = 5.0
+spawn_audio = '106_spawn'
+
+[role.chase_music]
+chase_time = 10.0
+spotted_audio = '106_spotted'
+pre_chase_audio = '106_pre_chase'
+chase_audio = '106_chase'
+chase_layer_audio = '106_chase_layer'
+post_chase_audio = '106_post_chase'

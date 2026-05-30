@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://dq6ynry4t2l6o"]
+
+[ext_resource type="PackedScene" uid="uid://dvxct8buoohw5" path="res://scenes/rooms/ez/ez_gate_a.tscn" id="1_gd82l"]
+[ext_resource type="PackedScene" uid="uid://b3yt1ffgumpn0" path="res://scenes/rooms/ez/ez_hall.tscn" id="2_tbfxy"]
+[ext_resource type="PackedScene" uid="uid://djdebpv7m4sct" path="res://scenes/rooms/ez/ez_corner.tscn" id="3_n1hxx"]
+[ext_resource type="PackedScene" uid="uid://d07hyxbr22if8" path="res://scenes/rooms/ez/ez_troom.tscn" id="4_i0k7s"]
+[ext_resource type="PackedScene" uid="uid://bg4cc7up5bn3s" path="res://scenes/rooms/ez/ez_gate_b.tscn" id="5_elsg0"]
+[ext_resource type="PackedScene" uid="uid://rc1t4vm08cbb" path="res://scenes/rooms/checkpoints/checkpoint_2.tscn" id="6_g84kc"]
+[ext_resource type="Script" uid="uid://y0rao11t6xcn" path="res://scripts/map/Intercom.cs" id="7_iw8fy"]
+[ext_resource type="AudioStream" uid="uid://pxjrfgmhegqc" path="res://audio/scpcb/edited/intercom_on.wav" id="8_84mi6"]
+[ext_resource type="AudioStream" uid="uid://ywkjst3vm3ku" path="res://audio/scpcb/edited/intercom_off.wav" id="9_0n4l0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hdtco"]
+size = Vector3(3, 5, 8)
+
+[node name="DebugZone" type="Node3D"]
+
+[node name="EzGateA" parent="." instance=ExtResource("1_gd82l")]
+
+[node name="EzHall" parent="." instance=ExtResource("2_tbfxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.8)
+
+[node name="EzCorner" parent="." instance=ExtResource("3_n1hxx")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 62.4)
+
+[node name="EzTroom" parent="." instance=ExtResource("4_i0k7s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 41.6)
+
+[node name="EzHall2" parent="." instance=ExtResource("2_tbfxy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8, 0, 41.6)
+
+[node name="EzGateB" parent="." instance=ExtResource("5_elsg0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8, 0, 62.4)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("6_g84kc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 41.6, 0, 41.6)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.6)
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("7_iw8fy")
+onSound = ExtResource("8_84mi6")
+offSound = ExtResource("9_0n4l0")
+onTime = 1
+offTime = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 0)
+shape = SubResource("BoxShape3D_hdtco")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Area3D"]
+attenuation_model = 3
+unit_size = 1.0
+panning_strength = 0.0
+bus = &"Intercom"
+
+[node name="AudioFX" type="AudioStreamPlayer3D" parent="Area3D"]
+attenuation_model = 3
+unit_size = 1.0
+panning_strength = 0.0
+bus = &"Intercom"

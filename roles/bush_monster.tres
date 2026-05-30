@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://dxgljnp4ojc1m"]
+
+[ext_resource type="PackedScene" uid="uid://dpgs3vs580t1x" path="res://scenes/player/controllers_old/player_controller_bush_monster.tscn" id="1_ok4cp"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="2_lt15n"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="3_o4d4a"]
+
+[resource]
+script = ExtResource("3_o4d4a")
+RoleColor = Color(1, 0, 0, 1)
+MaxHealth = 500.0
+DisplayName = "ROLE_NAME_SCP_860_3"
+Objective = "ROLE_OBJ_SCP_860_3"
+team = 2
+spawnStage = 1
+canUseIntercom = false
+proxChat = false
+globalTeamChat = true
+mainChatChannel = 1
+altChatChannel = 1
+listeningChatChannels = PackedInt32Array(0, 1)
+SpawnAudio = ExtResource("2_lt15n")
+ControllerScene = ExtResource("1_ok4cp")
+SprintStaminaIncreaseRate = 0.3

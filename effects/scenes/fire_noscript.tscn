@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://db8pmya1bga5e"]
+
+[ext_resource type="Script" uid="uid://pcmdrvbk2vwx" path="res://scripts/map/FireWorldEffects.cs" id="1_pouk3"]
+[ext_resource type="AudioStream" uid="uid://csdbphqnuqs0g" path="res://audio/cc0/burn.wav" id="2_4sy3f"]
+[ext_resource type="PackedScene" uid="uid://cx6fi1w1w3dac" path="res://scenes/misc/fire/fire_particles.tscn" id="2_o1dj0"]
+[ext_resource type="Script" uid="uid://cgon41wv5dcm3" path="res://scripts/map/LoopAudio3D.cs" id="3_la7xk"]
+[ext_resource type="ArrayMesh" uid="uid://cjyfy3fegxyj6" path="res://models/scpcb/props/crate1.obj" id="6_w5far"]
+
+[node name="Fire" type="Node3D" unique_id=1463912420 node_paths=PackedStringArray("particles", "disableOnlyParticles", "audio", "light")]
+script = ExtResource("1_pouk3")
+particles = [NodePath("FireParticles/Fire")]
+disableOnlyParticles = [NodePath("FireParticles/Ember"), NodePath("FireParticles/Smoke")]
+audio = NodePath("Audio")
+light = NodePath("OmniLight3D")
+MaxRange = 10.0
+
+[node name="FireParticles" parent="." unique_id=1893485844 instance=ExtResource("2_o1dj0")]
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=2013316894]
+stream = ExtResource("2_4sy3f")
+max_distance = 25.0
+bus = &"World"
+attenuation_filter_db = 0.0
+script = ExtResource("3_la7xk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1438366629]
+transform = Transform3D(0.07705784, 0, 0, 0, 0.07705784, 0, 0, 0, 0.07705784, 4.997785, 0, 0)
+visible = false
+mesh = ExtResource("6_w5far")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2106111463]
+light_color = Color(1, 0.588235, 0, 1)
+light_energy = 3.0
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 0
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
+omni_range = 10.0

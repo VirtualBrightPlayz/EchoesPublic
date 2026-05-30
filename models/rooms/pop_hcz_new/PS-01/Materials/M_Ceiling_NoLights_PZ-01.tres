@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://ch60x0aw7pckw"]
+
+[ext_resource type="Texture2D" uid="uid://cjmwmyb2cs32p" path="res://models/rooms/pop_hcz_new/PS-01/Textures/ceilingPanel_Color.png" id="1_5awoj"]
+[ext_resource type="Texture2D" uid="uid://j1prbvs0yx0l" path="res://models/rooms/pop_hcz_new/PS-01/Textures/ceilingPanel_Normal.png" id="3_cosfs"]
+
+[resource]
+albedo_texture = ExtResource("1_5awoj")
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_cosfs")
+ao_enabled = true
+texture_filter = 4

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://huylo32ttxd2"]
+
+[ext_resource type="Script" uid="uid://crccik2n174m7" path="res://scripts/items/GrenadeBase.cs" id="1_csjrk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4edrb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kgws2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_f6mhy"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:ItemSerial")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="GrenadeBase" type="Node3D"]
+script = ExtResource("1_csjrk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4edrb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_kgws2")
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.03
+delta_interval = 0.03
+replication_config = SubResource("SceneReplicationConfig_f6mhy")
+visibility_update_mode = 1
+
+[node name="Marker3D" type="Marker3D" parent="."]

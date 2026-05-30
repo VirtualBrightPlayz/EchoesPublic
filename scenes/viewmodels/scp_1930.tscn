@@ -1,0 +1,469 @@
+[gd_scene format=3 uid="uid://cfp2xyrqbv2t3"]
+
+[ext_resource type="Script" uid="uid://b6vxn8fi7mx5a" path="res://scripts/player/role_ui/ViewmodelSCP1930.cs" id="1_x1m2g"]
+[ext_resource type="PackedScene" uid="uid://bfy2psng0mla" path="res://models/main/fps_arms/fps_arms.glb" id="2_nm6sq"]
+[ext_resource type="Texture2D" uid="uid://c3t8v2m2xw26" path="res://models/main/fps_arms/new_diff.png" id="2_x1m2g"]
+[ext_resource type="Texture2D" uid="uid://evu5rvb6ic3b" path="res://models/main/items/medkit_1930/T_SCP-1930_SCP_1930.png" id="3_23f5a"]
+[ext_resource type="Texture2D" uid="uid://djen053on36rh" path="res://models/main/fps_arms/hands_normal.png" id="3_abwqn"]
+[ext_resource type="PackedScene" uid="uid://dwky3aoe53v1h" path="res://models/main/items/medkit_1930/SCP-1930.fbx" id="3_ncvht"]
+[ext_resource type="Texture2D" uid="uid://b7icr41hgcfcd" path="res://models/main/items/medkit_1930/N_SCP-1930_SCP_1930.png" id="4_iuxj6"]
+[ext_resource type="Texture2D" uid="uid://mg07wm7qg72a" path="res://models/main/items/medkit_1930/ORM_SCP-1930_SCP_1930.png" id="5_nm6sq"]
+[ext_resource type="Script" uid="uid://pesq73gi47v3" path="res://addons/FastIK/FastIKFabric2.cs" id="7_kq1yl"]
+[ext_resource type="AudioStream" uid="uid://mrj6a7jedg3j" path="res://audio/PropsImpacts/Generic/Generic_Plastic_Box/Generic_Plastic_Box2.wav" id="10_8mpwn"]
+[ext_resource type="Script" uid="uid://b0nuhk3agpjy" path="res://scripts/map/RngTimer.cs" id="11_dfirb"]
+[ext_resource type="AudioStream" uid="uid://djj6ffm26yaar" path="res://audio/PropsImpacts/Generic/Generic_Plastic_Box/Generic_Plastic_Box1.wav" id="11_kq1yl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfirb"]
+albedo_texture = ExtResource("2_x1m2g")
+normal_enabled = true
+normal_texture = ExtResource("3_abwqn")
+use_z_clip_scale = true
+z_clip_scale = 0.9
+use_fov_override = true
+fov_override = 70.0
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_x1m2g"]
+albedo_texture = ExtResource("3_23f5a")
+orm_texture = ExtResource("5_nm6sq")
+normal_enabled = true
+normal_texture = ExtResource("4_iuxj6")
+use_z_clip_scale = true
+z_clip_scale = 0.9
+use_fov_override = true
+fov_override = 70.0
+
+[sub_resource type="Animation" id="Animation_rf5us"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.3346554, -0.1366705, 0.21864085)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.074074276, 1.3033319, 1.4983326)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Targets/LTarget:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.37272102, -0.38863704, 0.27833486)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Targets/LTarget:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.71389335, -1.7478833, -1.697766)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/SCP-1930:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.821371e-15, 1.5707963, 3.1415925)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/SCP-1930:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.18325342, 1.1990892, 1.405383)]
+}
+
+[sub_resource type="Animation" id="Animation_nm6sq"]
+resource_name = "idle"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.35762253, -0.5056344, 0.19885047), Vector3(-0.33846906, -0.105169, 0.2414031), Vector3(-0.3346554, -0.1366705, 0.21864085)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0740743, 1.3033319, 2.2157502), Vector3(0.0740743, 1.303332, 1.3919224), Vector3(0.074074276, 1.3033319, 1.4983326)]
+}
+
+[sub_resource type="Animation" id="Animation_iuxj6"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.0000002, 6.0000005, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.3346554, -0.1366705, 0.21864085), Vector3(-0.30057877, -0.1680119, 0.2301314), Vector3(-0.3008058, -0.11085555, 0.24700896), Vector3(-0.29842517, -0.18113142, 0.259546)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.0000002, 6.0000005, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.074074276, 1.3033319, 1.4983326), Vector3(0.07407429, 1.3033319, 1.6641389), Vector3(0.07407429, 1.3033319, 1.4077326), Vector3(0.2322435, 1.3071494, 1.5949624)]
+}
+
+[sub_resource type="Animation" id="Animation_x1m2g"]
+resource_name = "inspect"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.8, 1.2, 2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.3346554, -0.1366705, 0.21864085), Vector3(-0.31552327, -0.1374226, 0.2234789), Vector3(-0.3346554, -0.1366705, 0.21864085), Vector3(-0.3583146, -0.1366705, 0.21864085), Vector3(-0.3583146, -0.1366705, 0.21864085), Vector3(-0.3346554, -0.1366705, 0.21864085)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.40000004, 0.8000001, 1.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.074074276, 1.3033319, 1.4983326), Vector3(0.040497184, 1.3234428, 1.7071334), Vector3(-0.16129172, 1.3204827, 1.9159701), Vector3(0.074074276, 1.3033319, 1.4983326), Vector3(0.074074276, 1.3033319, 1.4983326)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Targets/LTarget:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.90000004, 0.96666664, 1.0666667, 1.2, 1.4, 1.8666668, 2.4, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 2, 1),
+"update": 0,
+"values": [Vector3(0.37272102, -0.38863704, 0.27833486), Vector3(-0.06233543, -0.11701749, 0.26506332), Vector3(-0.06233543, -0.11701749, 0.26506332), Vector3(-0.063284226, -0.026385553, 0.2907501), Vector3(-0.06328422, -0.08424608, 0.2907501), Vector3(-0.06328422, -0.08424608, 0.2907501), Vector3(-0.00695394, -0.115794994, 0.30266845), Vector3(-0.065540634, -0.092663296, 0.27125132), Vector3(0.4153548, -0.32796422, 0.17255434)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Targets/LTarget:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8000001, 0.90000004, 0.96666664, 1.0666667, 1.2, 1.4, 1.8666668, 2.4, 3.0000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.71389335, -1.7478833, -1.697766), Vector3(0.71389335, -1.7478833, -1.697766), Vector3(0.14399092, -1.6784317, -1.6676569), Vector3(0.14399092, -1.6784317, -1.6676569), Vector3(0.78811044, -1.1629361, -0.5497342), Vector3(0.78811044, -1.162936, -0.10160342), Vector3(0.78811044, -1.162936, -0.10160342), Vector3(0.25282395, -2.2415533, -1.3273025), Vector3(-0.17635709, -1.6473546, -1.6681663), Vector3(0.24575388, -1.5070332, -2.2104385)]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer3D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_8mpwn")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_kq1yl")
+}],
+"times": PackedFloat32Array(0.16666666, 0.9333334)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/SCP-1930:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.16666667, 0.26666668, 0.9, 1.0333333, 1.2, 2.1666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.18325342, 1.1990892, 1.405383), Vector3(0.18325342, 1.1990892, 1.405383), Vector3(0.6442126, 1.1990889, 1.4127918), Vector3(0.18325342, 1.1990892, 1.405383), Vector3(0.18325342, 1.1990892, 1.405383), Vector3(0.9099227, 1.1990892, 1.405383), Vector3(0.18325342, 1.1990892, 1.405383), Vector3(0.18325342, 1.1990892, 1.405383)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("caucasian_male_1/Skeleton3D/BoneAttachment3D/SCP-1930:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.1666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.821371e-15, 1.5707963, 3.1415925), Vector3(-3.821371e-15, 1.5707963, 3.1415925)]
+}
+
+[sub_resource type="Animation" id="Animation_8mpwn"]
+resource_name = "use"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Targets/RTarget:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.35762253, -0.5056344, 0.19885047), Vector3(-0.33846906, -0.105169, 0.2414031), Vector3(-0.3346554, -0.1366705, 0.21864085)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Targets/RTarget:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0740743, 1.3033319, 2.2157502), Vector3(0.0740743, 1.303332, 1.3919224), Vector3(0.074074276, 1.3033319, 1.4983326)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"HealCallback"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gcfv"]
+_data = {
+&"RESET": SubResource("Animation_rf5us"),
+&"equip": SubResource("Animation_nm6sq"),
+&"idle": SubResource("Animation_iuxj6"),
+&"inspect": SubResource("Animation_x1m2g"),
+&"use": SubResource("Animation_8mpwn")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfirb"]
+animation = &"inspect"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8mpwn"]
+animation = &"use"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ysdhr"]
+animation = &"equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_07uk5"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5pd1p"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d3cpc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8mpwn"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kq1yl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_orkb1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ibtfi"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ok1lk"]
+states/End/position = Vector2(761, 94)
+states/Inspect/node = SubResource("AnimationNodeAnimation_dfirb")
+states/Inspect/position = Vector2(514, 132)
+states/Start/position = Vector2(172, 94)
+states/Use/node = SubResource("AnimationNodeAnimation_8mpwn")
+states/Use/position = Vector2(569, 43)
+states/equip/node = SubResource("AnimationNodeAnimation_ysdhr")
+states/equip/position = Vector2(306, 68)
+states/idle/node = SubResource("AnimationNodeAnimation_07uk5")
+states/idle/position = Vector2(426, 68)
+transitions = ["Start", "equip", SubResource("AnimationNodeStateMachineTransition_5pd1p"), "equip", "idle", SubResource("AnimationNodeStateMachineTransition_d3cpc"), "idle", "Inspect", SubResource("AnimationNodeStateMachineTransition_8mpwn"), "Inspect", "idle", SubResource("AnimationNodeStateMachineTransition_kq1yl"), "idle", "Use", SubResource("AnimationNodeStateMachineTransition_orkb1"), "Use", "idle", SubResource("AnimationNodeStateMachineTransition_ibtfi")]
+
+[node name="Viewmodel1930" type="Node3D" unique_id=2053933870 node_paths=PackedStringArray("tree")]
+script = ExtResource("1_x1m2g")
+tree = NodePath("fps_arms/AnimationTree")
+statePath = "parameters/playback"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1691997065]
+fov = 70.0
+
+[node name="fps_arms" parent="." unique_id=594768854 instance=ExtResource("2_nm6sq")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="caucasian_male_1" parent="fps_arms" index="0" unique_id=520485217]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.1, 0)
+
+[node name="Skeleton3D" parent="fps_arms/caucasian_male_1" index="0" unique_id=1863972146]
+transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0)
+bones/18/rotation = Quaternion(0.08174464, 0.63462675, 0.6608657, -0.39220303)
+bones/18/scale = Vector3(1.0000006, 0.9999998, 0.9999995)
+bones/19/rotation = Quaternion(0.07634214, -0.124569, -0.064673156, 0.9871534)
+bones/19/scale = Vector3(0.99999976, 0.9999999, 0.9999999)
+
+[node name="caucasian_male_1_Body" parent="fps_arms/caucasian_male_1/Skeleton3D" index="0" unique_id=1512850601]
+layers = 16
+cast_shadow = 0
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_dfirb")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="fps_arms/caucasian_male_1/Skeleton3D" index="1" unique_id=1216004419]
+transform = Transform3D(0.09853564, -0.2554072, 0.9618002, 0.9918254, 0.10395429, -0.07400651, -0.081081234, 0.96122974, 0.26356268, -3.351456, -0.24890713, 2.2441077)
+bone_name = "hand.R"
+bone_idx = 5
+
+[node name="SCP-1930" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D" unique_id=611685971 instance=ExtResource("3_ncvht")]
+transform = Transform3D(-7.54979e-07, -7.578495e-14, 10, 1.509958e-06, -10, 3.821371e-14, 10, 1.509958e-06, 7.54979e-07, 0.18325342, 1.1990892, 1.405383)
+
+[node name="SCP1930_002" parent="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/SCP-1930/Armature/Skeleton3D" parent_id_path=PackedInt32Array(611685971, 1192133812) index="0" unique_id=220883265]
+surface_material_override/0 = SubResource("ORMMaterial3D_x1m2g")
+
+[node name="RightHand" type="SkeletonModifier3D" parent="fps_arms/caucasian_male_1/Skeleton3D" index="2" unique_id=1863571145 node_paths=PackedStringArray("Target")]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+active = true
+influence = 1.0
+script = ExtResource("7_kq1yl")
+ChainLength = 4
+TargetBone = "hand.R"
+Target = NodePath("../../../Targets/RTarget")
+
+[node name="LeftHand" type="SkeletonModifier3D" parent="fps_arms/caucasian_male_1/Skeleton3D" index="3" unique_id=1846191925 node_paths=PackedStringArray("Target")]
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+active = true
+influence = 1.0
+script = ExtResource("7_kq1yl")
+ChainLength = 4
+TargetBone = "hand.L"
+Target = NodePath("../../../Targets/LTarget")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fps_arms" unique_id=1113051081]
+libraries/ = SubResource("AnimationLibrary_7gcfv")
+
+[node name="AnimationTree" type="AnimationTree" parent="fps_arms" unique_id=2004220354]
+tree_root = SubResource("AnimationNodeStateMachine_ok1lk")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Targets" type="Node3D" parent="fps_arms" unique_id=1343520171]
+
+[node name="RTarget" type="Marker3D" parent="fps_arms/Targets" unique_id=824844427]
+transform = Transform3D(0.09032232, -0.25842565, 0.96179926, 0.99464065, 0.07220175, -0.07400654, -0.05031842, 0.9633288, 0.26356214, -0.3346554, -0.1366705, 0.21864085)
+
+[node name="LTarget" type="Marker3D" parent="fps_arms/Targets" unique_id=1773497592]
+transform = Transform3D(0.6616601, -0.093127295, -0.7439981, -0.74973404, -0.09570829, -0.6547814, -0.010228767, 0.9910432, -0.13314712, 0.37272102, -0.38863704, 0.27833486)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=991127658]
+volume_db = -6.0
+panning_strength = 0.0
+bus = &"World"
+
+[node name="RngTimer" type="Timer" parent="." unique_id=737782138]
+autostart = true
+script = ExtResource("11_dfirb")
+MinValue = 10.0
+MaxValue = 30.0
+metadata/_custom_type_script = "uid://b0nuhk3agpjy"
+
+[connection signal="timeout" from="RngTimer" to="." method="Inspect"]
+
+[editable path="fps_arms"]
+[editable path="fps_arms/caucasian_male_1/Skeleton3D/BoneAttachment3D/SCP-1930"]

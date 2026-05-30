@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://bg55o2qy0fdsi"]
+
+[ext_resource type="Texture2D" uid="uid://blb4vkqs5sm8f" path="res://textures/inv_icons/SCP-1930-Icon.png" id="1_j7um1"]
+[ext_resource type="PackedScene" uid="uid://b3xoua1680igm" path="res://scenes/items/scp_1930.tscn" id="2_j7um1"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_yohy4"]
+
+[resource]
+resource_name = "SCP-1930"
+script = ExtResource("3_yohy4")
+ItemScene = ExtResource("2_j7um1")
+Icon = ExtResource("1_j7um1")
+Description = "A strange first-aid kit with an entity inside. It wants to help, but note it can be a bit clumsy."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yhnntsbox1hr"]
+
+[ext_resource type="PackedScene" uid="uid://deggbp6myubdf" path="res://models/props/random environment props 2 electro boogalo.fbx" id="1_qfttj"]
+
+[node name="random environment props 2 electro boogalo" instance=ExtResource("1_qfttj")]
+
+[node name="bindfile1" parent="books" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314533, 2.38419e-07, 0.000155449)

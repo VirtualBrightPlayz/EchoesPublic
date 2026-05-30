@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dqke0rp7v5tum"]
+
+[ext_resource type="Shader" uid="uid://b1d0qxprhoa4q" path="res://shaders/anim_texture.gdshader" id="1_wpyjr"]
+[ext_resource type="Texture2D" uid="uid://b6ctvefaax4f5" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/SwipeCardIcon_Anim.png" id="2_xind3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wpyjr")
+shader_parameter/albedo = ExtResource("2_xind3")
+shader_parameter/albedo_tint = Color(0, 0, 0, 1)
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.4
+shader_parameter/emission_color = Color(0, 0, 0, 1)
+shader_parameter/fb_size = Vector2(4, 4)
+shader_parameter/fb_speed = 10.0

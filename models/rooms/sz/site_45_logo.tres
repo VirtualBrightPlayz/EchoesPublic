@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2t3tkx7rml5o"]
+
+[ext_resource type="Texture2D" uid="uid://cieaukggrhkw7" path="res://models/rooms/sz/Site_45_Logo_BaseColor.png" id="1_een8m"]
+[ext_resource type="Texture2D" uid="uid://cb6k0vdw033q5" path="res://models/rooms/sz/Site_45_Logo_Emission.png" id="2_18w0k"]
+
+[resource]
+albedo_texture = ExtResource("1_een8m")
+emission_enabled = true
+emission_texture = ExtResource("2_18w0k")

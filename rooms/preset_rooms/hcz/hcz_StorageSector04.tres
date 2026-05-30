@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://by4lky0tovrj1"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_72136"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_72136"]
+
+[resource]
+resource_name = "HC Storage Sector 04"
+script = ExtResource("2_72136")
+type = 2
+stage = 2
+scenes = []
+sceneFile = "uid://cn17rb1ssnruc"
+isInterest = true
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

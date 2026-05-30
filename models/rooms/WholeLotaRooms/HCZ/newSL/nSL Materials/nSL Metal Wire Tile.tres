@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://ebhiihk40jt4"]
+
+[ext_resource type="Texture2D" uid="uid://drjy4orrjpa6q" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Metal Wire Tile/Tile_WireFence_Albedo.png" id="1_6hg76"]
+[ext_resource type="Texture2D" uid="uid://yknqo38ygunr" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Metal Wire Tile/chain_fence_normal.png" id="2_a8v5v"]
+[ext_resource type="Texture2D" uid="uid://dj74vhgb8obwi" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Metal Wire Tile/Tile_WireFence_Mask_ORM.png" id="3_88i7g"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.275
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_6hg76")
+orm_texture = ExtResource("3_88i7g")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_a8v5v")

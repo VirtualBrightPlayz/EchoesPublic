@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c25otx67me1da"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_ojrb7"]
+[ext_resource type="PackedScene" uid="uid://d1yo3wxsjchtw" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Lab_TestTube.fbx" id="2_ojrb7"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_8b6lx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2hfae"]
+radius = 0.29563436
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2stdv"]
+height = 0.33535767
+radius = 0.032714844
+
+[node name="Lab_TestTube_Prop" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 1.5
+script = ExtResource("1_ojrb7")
+Category = 13
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0.03011547, 0)
+shape = SubResource("SphereShape3D_2hfae")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19725037, 0)
+shape = SubResource("CylinderShape3D_2stdv")
+
+[node name="Lab_TestTube" type="Node3D" parent="." instance=ExtResource("2_ojrb7")]
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_8b6lx")
+targetNode = NodePath("..")
+CanClaim = true

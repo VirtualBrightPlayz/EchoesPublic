@@ -1,0 +1,6 @@
+[ability]
+name = 'InventoryMilitary'
+base_name = 'Inventory'
+
+[ability.data]
+max_weapon_items = 2

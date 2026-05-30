@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Burning" load_steps=2 format=3 uid="uid://cmg3i65s7s83l"]
+
+[ext_resource type="Script" uid="uid://cu6ow1wshog2l" path="res://scripts/player/statuseffects/defaultEffects/Burning.cs" id="1_mtty4"]
+
+[resource]
+script = ExtResource("1_mtty4")
+metadata/_custom_type_script = "uid://cu6ow1wshog2l"

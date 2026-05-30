@@ -1,0 +1,189 @@
+keys,en
+ADMIN_PANEL_BAN,Ban
+ADMIN_PANEL_BRING,Bring
+ADMIN_PANEL_HEAL,Heal
+ADMIN_PANEL_KICK,Kick
+ADMIN_PANEL_KILL,Kill
+ADMIN_PANEL_MODERATION_REASON,Moderation Reason
+ADMIN_PANEL_TELEPORT_TO,Teleport To
+ADMIN_PANEL_TITLE,[center]Admin Panel[/center]
+ADMIN_PANEL_DELETE_PROP,Delete Grabbed Props
+ADMIN_PANEL_IGNORE_WEIGHT,Ignore Prop Weight
+ADMIN_PANEL_CLEAR_EFFECTS,Clear All Effects
+DAMAGE_CAUSE_UNKNOWN,Unknown
+DAMAGE_CAUSE_CRUSHED,Crushed
+DAMAGE_CAUSE_SCP173,SCP-173
+DAMAGE_CAUSE_SCP106,SCP-106
+DAMAGE_CAUSE_GUNLIGHT,Small gunshot
+DAMAGE_CAUSE_GUNHEAVY,Large gunshot
+DAMAGE_CAUSE_GAS,Gas
+DAMAGE_CAUSE_NUKE,Nuclear explosion
+DAMAGE_CAUSE_SCP457,SCP-457
+DAMAGE_CAUSE_FIRE,3rd degree burns
+DAMAGE_CAUSE_SCP207,SCP-207
+DAMAGE_CAUSE_SCP049_2,SCP-049-2
+DAMAGE_CAUSE_SCP008,SCP-008
+DAMAGE_CAUSE_FALL,Fall
+DAMAGE_CAUSE_ELECTRICSHOCK,Electrical Shock
+DAMAGE_CAUSE_SCP049,SCP-049
+DAMAGE_CAUSE_GENERIC,Generic
+DAMAGE_CAUSE_SCP939,SCP-939
+GAME_MENU_EXIT,Exit to Menu
+GAME_MENU_RETURN,Return to Game
+GAME_MENU_TITLE,In Game Menu
+GAME_MENU_SETTINGS,Settings
+GAME_WIP_WARNING,This game is a work-in-progress.\nEverything seen here is subject to change.\n
+GAME_WIP_WARNING_CLOSE,This popup can be closed by pressing the Escape key.
+LOADING_TEXT,Loading...
+MAIN_MENU_BACK,BACK
+MAIN_MENU_CREDITS,CREDITS
+MAIN_MENU_INPUT,INPUTS
+MAIN_MENU_ISSUES,ISSUES/FEEDBACK
+GAME_MENU_ISSUES,Issues/Feedback
+MAIN_MENU_LABEL,MAIN MENU
+MAIN_MENU_PLAY,PLAY
+MAIN_MENU_QUIT,QUIT
+MAIN_MENU_SETTINGS,SETTINGS
+MAIN_MENU_ESC,Press Escape to Cancel/Close
+NETWORK_BANNED,You have been banned from this server >:(
+NETWORK_CONNECTING,Connecting...
+NETWORK_DISCONNECTED,Disconnected.
+NETWORK_KICKED,You have been kicked from the server :(
+PLAY_MENU_CONNECT,CONNECT
+PLAY_MENU_CREATE_SERVER,CREATE LOBBY
+PLAY_MENU_DIRECT_CONNECT,DIRECT CONNECT
+PLAY_MENU_INFO_LISTING,INFO
+PLAY_MENU_IP_ADDRESS,IP ADDRESS
+PLAY_MENU_JOIN_LISTING,JOIN
+PLAY_MENU_JOIN_SERVER,JOIN SERVER
+PLAY_MENU_JOIN_LOBBY,JOIN LOBBY
+PLAY_MENU_REFRESH,REFRESH
+PLAY_MENU_SEARCH,Search
+PLAY_MENU_SERVER_LIST,SERVER LIST
+PLAY_MENU_LOBBY_LIST,LOBBY LIST
+PLEASE_WAIT_TEXT,Please Wait
+ROLE_INTRO,You Are
+ROLE_NAME_CI,Chaos Insurgency
+ROLE_NAME_CLASSD,Class-D
+ROLE_NAME_NTF,Nine-Tailed Fox
+ROLE_NAME_SCIENTIST,Scientist
+ROLE_NAME_SCP_008,SCP-049-2
+ROLE_NAME_SCP_860_2,SCP-860-2
+ROLE_NAME_SCP_860_3,SCP-860-3
+ROLE_NAME_SCP_049,SCP-049
+ROLE_NAME_SCP_106,SCP-106
+ROLE_NAME_SCP_173,SCP-173
+ROLE_NAME_SCP_457,SCP-457
+ROLE_NAME_SCP_939,SCP-939
+ROLE_NAME_TAXMAN,Tax Collector
+ROLE_NAME_SPECTATOR,Spectator
+ROLE_NAME_NTF_FOREST,Mobile Task Force Unit
+ROLE_OBJ_CI,Contain enemy factions.\nCooperate with your fellow [color=#365730]Chaos Insurgents[/color].
+ROLE_OBJ_CLASSD,Escape from the facility.
+ROLE_OBJ_NTF,Contain hostile [color=#f00]SCPs[/color] subjects.\nCooperate with your [color=#00f]Nine-Tailed Fox[/color] Unit.
+ROLE_OBJ_SCIENTIST,Escape from the facility.\nCooperate with your fellow [color=#ff5]Scientists[/color].
+ROLE_OBJ_SCP_008,Kill everyone.\nPrevent escape.\nCooperate with other [color=#f00]SCPs.[/color]
+ROLE_OBJ_SCP_049,Kill everyone.\nPrevent escape.\nCooperate with other [color=#f00]SCPs.[/color]
+ROLE_OBJ_SCP_106,Kill everyone.\nPrevent escape.\nCooperate with other [color=#f00]SCPs.[/color]
+ROLE_OBJ_SCP_173,Kill everyone.\nPrevent escape.\nCooperate with other [color=#f00]SCPs.[/color]
+ROLE_OBJ_SCP_457,Kill everyone.\nCooperate with other [color=#f00]SCPs.[/color]
+ROLE_OBJ_SCP_939,Kill everyone.\nPrevent escape.\nCooperate with other [color=#f00]SCPs.[/color]
+ROLE_OBJ_TAXMAN,Collect Taxes from people.
+ROLE_OBJ_SPECTATOR,You will respawn soon.
+ROLE_OBJ_SCP_860_2,Kill the humans.
+ROLE_OBJ_SCP_860_3,Kill the humans.
+ROLE_OBJ_NTF_FOREST,Survive.
+ROLE_HINT_SCP_173,[color=#00ff00]You can only move when nobody is watching.[/color]
+ROLE_HINT_SCP_106,[color=#00ff00]You can walk through closed doors.\nPress [lb]%INPUT_PLAYER_INVENTORY_BIND%[rb] to create and use portals.[/color]
+ROLE_HINT_SCP_049,[color=#00ff00]You can revive dead corpses with [lb]%INPUT_PLAYER_USE_BIND%[rb].[/color]
+ROLE_HINT_SCP_049_2,[color=#ffff00]Follow orders from SCP-049.[/color]
+ROLE_HINT_SCP_457,[color=#00ff00]Press [lb]%INPUT_PLAYER_USE_BIND%[rb] on fuel canisters to regain stamina.[/color]
+ROLE_HINT_SCP_939,[color=#00ff00]You can toggle climbing on walls with [lb]%INPUT_PLAYER_SPRINT_BIND%[rb].[/color]
+SCP_106_PORTAL_PLACE,Place Portal
+SCP_106_PORTAL_RTP,Random Teleport
+SCP_106_PORTAL_RTP_WARN,Has a long cooldown.\nYour portal will be moved.
+SCP_106_PORTAL_USE,Use Portal
+SETTINGS_MENU_OLD_MUSIC,Old Menu Music
+SETTINGS_MENU_OPEN_USER_FOLDER,Open User Settings Folder
+SETTINGS_MENU_SENS,Mouse Sensitivity
+SETTINGS_MENU_SHADOWS,Shadows
+SETTINGS_MENU_SHADOW_QUALITY,Shadow Quality
+SETTINGS_MENU_SNAP_TURN,Snap Turn
+SETTINGS_MENU_USERNAME,Username
+SETTINGS_MENU_VOLUME,Volume
+SETTINGS_MENU_VSYNC,V-Sync
+SETTINGS_USER_READ_ERROR,There was an issue loading your settings.\nThey have been reset to the default settings.
+SETTINGS_USER_WRITE_ERROR,There was an issue saving your settings.\nTry restarting the game or adding exclusions to your Anti-Virus settings.
+SETTINGS_MENU_REQUIRE_RESTART,Some settings require the game to be restarted to apply.
+VENTS_SAFE,Vents: Safe
+VENTS_UNSAFE,Vents: Unsafe
+VENTS_WARN,Vents: Warning
+VSYNC_DISABLED,Disabled
+VSYNC_ENABLED,Enabled
+VSYNC_ADAPTIVE,Adaptive
+VSYNC_MAILBOX,Mailbox
+SETTINGS_MENU_SCALING_MODE,Scaling Mode
+SETTINGS_MENU_FSR_TYPE,FSR Quality
+SCALING_MODE_DEFAULT,Standard
+SCALING_MODE_FSR1,AMD FSR1
+SCALING_MODE_FSR2,AMD FSR2
+FSR_SCALE_ULTRA,Ultra Quality
+FSR_SCALE_QUALITY,Quality
+FSR_SCALE_BALANCED,Balanced
+FSR_SCALE_PERFORMANCE,Performance
+SETTINGS_MENU_FSR_SHARPNESS,FSR Sharpness
+SETTINGS_MENU_TEXTURE_LIMIT,Texture Size Limit
+CAMERA_OFFLINE,OFFLINE
+CAMERA_NO_VIDEO,NO VIDEO FEED
+MAIN_MENU_GRAPHICS,GRAPHICS
+SETTINGS_MENU_OPEN_EDITOR,OPEN MAP EDITOR
+SETTINGS_MENU_OPEN_WORKSHOP_EDITOR,OPEN WORKSHOP UPLOADER
+MAIN_MENU_SERVER_SETTING_NAME,Lobby Name
+MAIN_MENU_SERVER_SETTING_MAP,Map
+SETTINGS_MENU_MIC_VOLUME,Microphone Volume (DB)
+MAIN_MENU_SERVER_SETTING_PUBLIC_LOBBY,Public Lobby
+SETTINGS_MENU_LANGUAGE,Language
+PLAYER_FORWARD,Move Forward
+PLAYER_BACKWARD,Move Back
+PLAYER_LEFT,Move Left
+PLAYER_RIGHT,Move Right
+PLAYER_JUMP,Jump
+PLAYER_SPRINT,Sprint
+PLAYER_SNEAK,Sneak
+PLAYER_USE,Use
+PLAYER_RELOAD,Reload Weapon
+PLAYER_THROW,Throw Held Item
+PLAYER_INVENTORY,Inventory
+PLAYER_VOICE_CHAT,Primary Voice Chat
+PLAYER_VOICE_CHAT_ALT,Secondary Voice Chat
+PLAYER_LIST,Player List
+PLAYER_PRIMARY,Primary Fire
+PLAYER_SECONDARY,Secondary Fire
+PLAYER_SPRAY,Spray Decal
+ADMIN_NOCLIP,No Clip
+MENU_PAUSE,Pause Menu
+DEBUG_PLAYER_HIDE_UI,Hide UI (Debug)
+ADMIN_MENU,Server Admin Menu
+DEATH_MSG_TEXT,Cause of death: {3}\nYou will respawn soon.
+DEATH_MSG_UNKNOWN,Cause of death is unknown. Possible interaction with unknown anomaly.\nBe cautious when moving the body
+DEATH_MSG_CRUSHED,Subject was crushed to death.
+DEATH_MSG_SCP173,Cause of death: Fatal cervical fracture.
+DEATH_MSG_SCP106,The Subject's body was found decayed heavily.\nLikely found by SCP-106. Use caution and proper hazard procedures when moving the body.
+DEATH_MSG_GUNLIGHT,"The Subject's body was found with mutiple handgun bullet wounds,\n during post-breach cleanup."
+DEATH_MSG_GUNHEAVY,"The Subject's body was found with mutiple intermiediate bullet wounds,\n during post-breach cleanup."
+DEATH_MSG_GAS,
+DEATH_MSG_NUKE,Subject not accounted for. Likely died in the nuclear explosion.
+DEATH_MSG_SCP457,
+DEATH_MSG_FIRE,
+DEATH_MSG_SCP207,"The Subject was recovered with signs of rapid deterioration.\n This is evident of SCP-207 usage, but no bottle was found."
+DEATH_MSG_SCP049_2,"The Subject was found bruised, cause of death was directly linked to blunt force truama."
+DEATH_MSG_SCP008,
+DEATH_MSG_FALL,The Subject was found with mutiple fractures in the legs as well as blunt truama to the head.
+DEATH_MSG_ELECTRICSHOCK,The Subject was found churned underneath a Tesla Gate.\nIt has been noted that Tesla's killed more humanoid personnel than rouge anomalies during the breach.
+DEATH_MSG_SCP049,The Subject was found with a burn mark in the shape of a hand and no other truama.\n This is consistent with other victims of SCP-049.
+DEATH_MSG_GENERIC,Generic
+HINT_INVENTORY_FULL,Your inventory is full.
+HINT_INVENTORY_CANT_USE,You cannot use this item.
+HINT_INVENTORY_TYPE_LIMIT_REACHED,You are carrying too many of this kind of item.
+INVENTORY_ONE,Inventory Slot 1
+INVENTORY_TWO,Inventory Slot 2

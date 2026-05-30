@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bg44atje7ahhk"]
+
+[ext_resource type="Script" path="res://scripts/player/statuseffects/defaultEffects/Scp1930Effect.cs" id="1_40486"]
+
+[resource]
+script = ExtResource("1_40486")
+metadata/_custom_type_script = "uid://d0uppbywj7tdl"

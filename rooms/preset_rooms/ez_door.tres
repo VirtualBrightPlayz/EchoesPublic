@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://581dfo0ykkv4"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_7dj1w"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_7dj1w"]
+
+[resource]
+resource_name = "EZ Door"
+script = ExtResource("2_7dj1w")
+type = 5
+stage = 3
+scenes = []
+sceneFile = "uid://dvkjy5s6l5006"
+category = "Doors"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://d228k870jjf24"]
+
+[ext_resource type="PackedScene" uid="uid://cgw4kiiepf13y" path="res://scenes/rooms/lcz/lcz_toilets.tscn" id="1_4jhyu"]
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_fpt6r"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="2_l0yql"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_ocexa"]
+
+[resource]
+script = ExtResource("2_l0yql")
+RoomScenes = Array[PackedScene]([ExtResource("1_4jhyu")])
+RequiredInstances = 1
+MaximumInstances = 1
+SpawnPoolEntries = 20
+Connections = 10
+BlockedNeighbours = 5
+PreSpawnValidatorResources = Array[ExtResource("2_ocexa")]([])
+PostSpawnValidatorResources = Array[ExtResource("2_ocexa")]([])
+Test = false
+Constraints = Array[ExtResource("1_fpt6r")]([])
+MaxConsecutive = -1

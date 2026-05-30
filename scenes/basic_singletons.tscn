@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bmuwwwstsjfkb"]
+
+[ext_resource type="Script" uid="uid://db7k2im7eryqu" path="res://scripts/DebugDrawManager.cs" id="1_vqp6r"]
+[ext_resource type="Script" uid="uid://6lv6fhdt7dbi" path="res://scripts/projectiles/ProjectileSimulationManager.cs" id="2_uqmgx"]
+[ext_resource type="Resource" uid="uid://cmt2nyajfgqco" path="res://projectile_resistance/air_pr.tres" id="3_mrhmc"]
+[ext_resource type="Script" uid="uid://doue3mcrkvm4k" path="res://scripts/items/ItemManager.cs" id="3_nsrao"]
+[ext_resource type="Resource" uid="uid://bru7e2bwprtpc" path="res://projectile_resistance/fallback_pr.tres" id="4_bwrsy"]
+[ext_resource type="Resource" uid="uid://baqq8fncjdx8r" path="res://game_data.tres" id="4_mrhmc"]
+[ext_resource type="Script" uid="uid://cf2y3ptcnqgu" path="res://scripts/player/SprayManager.cs" id="5_bwrsy"]
+[ext_resource type="PackedScene" uid="uid://o05asyulvolo" path="res://scenes/player/spray.tscn" id="6_w2yfj"]
+[ext_resource type="Script" uid="uid://cfmgutulk85jf" path="res://scripts/map/FacilityCameraManager.cs" id="7_lj5ij"]
+[ext_resource type="Resource" uid="uid://djnxgr4gpf22v" path="res://projectile_resistance/flesh_pr.tres" id="8_1qjd8"]
+[ext_resource type="Script" uid="uid://b1l128dltw155" path="res://scripts/player/PlayerSpawner.cs" id="8_uqmgx"]
+[ext_resource type="Script" uid="uid://dssio6ue1gnue" path="res://scripts/NetworkManager.cs" id="11_bwrsy"]
+[ext_resource type="Script" uid="uid://c0w5gx1o8jmey" path="res://scripts/player/input/InputManager.cs" id="11_w2yfj"]
+[ext_resource type="Script" uid="uid://cwm4ujckr2ppq" path="res://scripts/player/input/InputActionSet.cs" id="12_vjkxr"]
+[ext_resource type="Resource" uid="uid://dcmpdsk23wibw" path="res://data/input/sets/menu.tres" id="13_b2kfp"]
+[ext_resource type="Resource" uid="uid://c728b743bj887" path="res://data/input/sets/in_game.tres" id="14_b2kfp"]
+[ext_resource type="Resource" uid="uid://nbreyoctpopy" path="res://data/input/sets/inventory.tres" id="15_e5gw8"]
+[ext_resource type="Resource" uid="uid://cs5itskp7q07x" path="res://data/input/sets/admin_menu.tres" id="16_l3piu"]
+[ext_resource type="Resource" uid="uid://c5grvbqh5fajf" path="res://data/input/sets/menu_locked.tres" id="17_cwlxw"]
+[ext_resource type="Script" uid="uid://dd5dbl8o6tq62" path="res://scripts/CustomRoomLogic/ObjectivePointManager.cs" id="17_dtgfg"]
+[ext_resource type="Script" uid="uid://dwjjpo5r5eduh" path="res://scripts/CustomRoomLogic/ControlPointManager.cs" id="19_i7wmb"]
+[ext_resource type="Script" uid="uid://b3f5mtnw8t154" path="res://scripts/modding/ModLoader.cs" id="21_crpp7"]
+[ext_resource type="PackedScene" uid="uid://cjafbaiqcjlu1" path="res://scenes/player/network_player.tscn" id="23_bvmnw"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dtgfg"]
+properties/0/path = NodePath(".:activeObjectives")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:completeObjectives")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[node name="BasicSingletons" type="Node3D" unique_id=241310818]
+
+[node name="Singletons" type="Node3D" parent="." unique_id=1956252552]
+
+[node name="DebugDrawManager" type="Node3D" parent="Singletons" unique_id=1037436040]
+script = ExtResource("1_vqp6r")
+metadata/_custom_type_script = "uid://db7k2im7eryqu"
+
+[node name="NetworkManager" type="Node3D" parent="Singletons" unique_id=908792404]
+script = ExtResource("11_bwrsy")
+metadata/_custom_type_script = "uid://dssio6ue1gnue"
+
+[node name="ProjectileSimulationManager" type="Node3D" parent="Singletons" unique_id=786166594]
+script = ExtResource("2_uqmgx")
+NUM_SUBSTEPS = 1
+AirMedium = ExtResource("3_mrhmc")
+FallbackMedium = ExtResource("4_bwrsy")
+DebugDrawPrimitiveDuration = 5.0
+DebugDrawStringDuration = 3.0
+metadata/_custom_type_script = "uid://6lv6fhdt7dbi"
+
+[node name="ItemManager" type="Node3D" parent="Singletons" unique_id=1419325176 node_paths=PackedStringArray("spawner", "propSpawner")]
+script = ExtResource("3_nsrao")
+Data = ExtResource("4_mrhmc")
+spawner = NodePath("../../Spawners/ItemSpawner")
+propSpawner = NodePath("../../Spawners/PropSpawner")
+attackLayer = 281
+playerLayer = 267
+fleshMedium = ExtResource("8_1qjd8")
+propRenderDistance = 41.6
+itemRenderDistance = 20.8
+propCullTickrate = 10
+
+[node name="SprayManager" type="Node3D" parent="Singletons" unique_id=905011694 node_paths=PackedStringArray("players")]
+script = ExtResource("5_bwrsy")
+players = NodePath("../../Spawners/PlayerSpawner")
+sprayScene = ExtResource("6_w2yfj")
+attackLayer = 395
+metadata/_custom_type_script = "uid://cf2y3ptcnqgu"
+
+[node name="FacilityCameraManager" type="Node3D" parent="Singletons" unique_id=1207528525]
+script = ExtResource("7_lj5ij")
+
+[node name="InputManager" type="Node3D" parent="Singletons" unique_id=1984543039]
+script = ExtResource("11_w2yfj")
+ActionSets = Array[ExtResource("12_vjkxr")]([ExtResource("13_b2kfp"), ExtResource("14_b2kfp"), ExtResource("15_e5gw8"), ExtResource("16_l3piu"), ExtResource("17_cwlxw")])
+metadata/_custom_type_script = "uid://c0w5gx1o8jmey"
+
+[node name="ObjectivePointManager" type="Node3D" parent="Singletons" unique_id=650147760]
+script = ExtResource("17_dtgfg")
+metadata/_custom_type_script = "uid://dd5dbl8o6tq62"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Singletons/ObjectivePointManager" unique_id=1353374746]
+replication_config = SubResource("SceneReplicationConfig_dtgfg")
+
+[node name="ControlPointManager" type="Node3D" parent="Singletons" unique_id=1240060565]
+script = ExtResource("19_i7wmb")
+metadata/_custom_type_script = "uid://dwjjpo5r5eduh"
+
+[node name="ModLoader" type="Node3D" parent="Singletons" unique_id=1027127752]
+script = ExtResource("21_crpp7")
+metadata/_custom_type_script = "uid://b3f5mtnw8t154"
+
+[node name="Spawners" type="Node3D" parent="." unique_id=300325405]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="Spawners" unique_id=1819956968 groups=["players"]]
+spawn_path = NodePath("Players")
+script = ExtResource("8_uqmgx")
+scene = ExtResource("23_bvmnw")
+
+[node name="Players" type="Node3D" parent="Spawners/PlayerSpawner" unique_id=2060131251]
+
+[node name="ItemSpawner" type="MultiplayerSpawner" parent="Spawners" unique_id=1343754661]
+_spawnable_scenes = PackedStringArray("uid://bfw3t8bisu27y", "uid://rx0s17ad24jd", "uid://5q8y3op87b0r", "uid://d2gvq04j5ymys", "uid://dcq2yi6dpgphq", "uid://b4mnm64tr3ebe", "uid://0i2i5uy4u0p0", "uid://dj4eqkm4piowv", "uid://c0ftos60qj1ar", "uid://prm20hkft40f", "uid://bwl71qj2v436q", "uid://d16hyuqw2opru", "uid://br7jn03b6ax51", "uid://bs72q7myl3sr3")
+spawn_path = NodePath("Items")
+
+[node name="Items" type="Node" parent="Spawners/ItemSpawner" unique_id=2033400063]
+
+[node name="PropSpawner" type="MultiplayerSpawner" parent="Spawners" unique_id=1621359365]
+_spawnable_scenes = PackedStringArray("uid://b72c61mhew2kl", "uid://dormd71fxgl05", "uid://sdklk4d1b7s1", "uid://c82h31hyd8pb7", "uid://of6uhxjo3md0", "uid://dlsvhhdljgkgc", "uid://ceqj5ukctxybo")
+spawn_path = NodePath("Props")
+
+[node name="Props" type="Node" parent="Spawners/PropSpawner" unique_id=1848986983]

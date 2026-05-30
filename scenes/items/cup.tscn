@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://ju5iw51pm2xl"]
+
+[ext_resource type="Script" uid="uid://cp53141j2156n" path="res://scripts/items/Cup.cs" id="1_5bp6y"]
+[ext_resource type="Script" uid="uid://bgppldp6cwd1p" path="res://scripts/items/ItemObject.cs" id="1_rx8sf"]
+[ext_resource type="ArrayMesh" uid="uid://c81yklfaocmpq" path="res://models/scpcb/items/cup.obj" id="2_7okrc"]
+[ext_resource type="PackedScene" uid="uid://c55xgs5lrpsoa" path="res://scenes/rooms/props/dynamic/cup_paper.tscn" id="3_k2i0v"]
+[ext_resource type="Shader" uid="uid://bncyw7rt03c01" path="res://shaders/liquid.gdshader" id="4_m6gal"]
+[ext_resource type="Script" uid="uid://cnnnnu62sw6be" path="res://scripts/items/ItemGrip.cs" id="5_8f8bq"]
+[ext_resource type="Texture2D" uid="uid://dxw1ilyfclruq" path="res://models/main/items/cola/BubblesNoise.tres" id="5_od35d"]
+[ext_resource type="PackedScene" uid="uid://c7u2qrfgw047v" path="res://scenes/viewmodels/cup.tscn" id="5_s0n8u"]
+[ext_resource type="Texture2D" uid="uid://djybrvnnpa310" path="res://models/main/items/cola/WaveNoise.tres" id="6_k2i0v"]
+[ext_resource type="ArrayMesh" uid="uid://mvmnj2dnd70l" path="res://models/scpcb/items/cupliquid2.obj" id="7_m6gal"]
+[ext_resource type="Script" uid="uid://p4jmidqu6du" path="res://scripts/shaders/liquid_sim.gd" id="8_od35d"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="9_k2i0v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5bp6y"]
+size = Vector3(0.2, 0.3, 0.2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2i0v"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_m6gal")
+shader_parameter/liquid_color = Color(0.7, 0.1, 0.6, 1)
+shader_parameter/foam_color = Color(0.9, 0.3, 0.8, 1)
+shader_parameter/foam_line = 0.2
+shader_parameter/fill_amount = 1.0
+shader_parameter/size = Vector2(1, 1)
+shader_parameter/glass_thickness = 0.05
+shader_parameter/scale = 1.0
+shader_parameter/wave_intensity = 0.05
+shader_parameter/waves_noise = ExtResource("6_k2i0v")
+shader_parameter/HasBubbles = true
+shader_parameter/AlwaysBubbles = false
+shader_parameter/BubbleStrength = 0.5
+shader_parameter/BubbleMask = 0.5
+shader_parameter/BubbleSpeed = Vector2(3, 3)
+shader_parameter/bubbles_tex = ExtResource("5_od35d")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rx8sf"]
+properties/0/path = NodePath(".:Serial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:playerPath")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:Id")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:ModelEnabled")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ItemGrip:holderPath")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("Cup:color")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath("Cup:empty")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+properties/7/path = NodePath("Cup:drinkName")
+properties/7/spawn = true
+properties/7/replication_mode = 2
+properties/8/path = NodePath("Cup:emission")
+properties/8/spawn = true
+properties/8/replication_mode = 2
+
+[node name="Cup" type="Node" unique_id=652733321 node_paths=PackedStringArray("model", "viewModel", "grips")]
+script = ExtResource("1_rx8sf")
+model = NodePath("Cup")
+viewModel = NodePath("ViewmodelCup")
+grips = [NodePath("ItemGrip")]
+metadata/_custom_type_script = "uid://bgppldp6cwd1p"
+
+[node name="Cup" type="RigidBody3D" parent="." unique_id=343585628 node_paths=PackedStringArray("destroyTimer", "marker", "xformSync")]
+collision_layer = 4
+collision_mask = 13
+mass = 0.5
+continuous_cd = true
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("1_5bp6y")
+destroyTimer = NodePath("Timer")
+cupPropPrefab = ExtResource("3_k2i0v")
+marker = NodePath("Marker3D")
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cup" unique_id=942348341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_5bp6y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cup" unique_id=1109031978]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+gi_mode = 2
+mesh = ExtResource("2_7okrc")
+
+[node name="Liquid" type="MeshInstance3D" parent="Cup" unique_id=1380416997]
+unique_name_in_owner = true
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0.105, 0)
+material_override = SubResource("ShaderMaterial_k2i0v")
+gi_mode = 2
+instance_shader_parameters/coeff = Vector2(0, 0)
+instance_shader_parameters/vel = 0.0
+instance_shader_parameters/world_scale = Vector3(0.075, 0.075, 0.075)
+mesh = ExtResource("7_m6gal")
+script = ExtResource("8_od35d")
+
+[node name="Marker3D" type="Marker3D" parent="Cup" unique_id=673974232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118091, -0.038335)
+
+[node name="TransformSync" type="Node" parent="Cup" unique_id=1214192321]
+script = ExtResource("9_k2i0v")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="Timer" type="Timer" parent="Cup" unique_id=139277345]
+wait_time = 2.0
+one_shot = true
+
+[node name="ViewmodelCup" parent="." unique_id=1639500650 instance=ExtResource("5_s0n8u")]
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=1017375932]
+replication_interval = 5.0
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_rx8sf")
+
+[node name="ItemGrip" type="Node" parent="." unique_id=1292870414 node_paths=PackedStringArray("item", "marker")]
+script = ExtResource("5_8f8bq")
+item = NodePath("..")
+marker = NodePath("../Cup/Marker3D")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"

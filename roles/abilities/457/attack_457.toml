@@ -1,0 +1,13 @@
+[ability]
+name = 'BurnAttack'
+base_name = 'Attack'
+
+[ability.data]
+damage_amount = 20.0
+damage_type = 'Scp457'
+attack_cooldown_time = 1.0
+friendly_fire_allowed = false
+attack_sound_name = 'taken_106'
+damage_effect_type = 'Burn'
+damage_effect_duration = 3.0
+damage_effect_intensity = 1.0

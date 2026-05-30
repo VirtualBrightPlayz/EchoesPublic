@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://clvcio03mdt35"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_xbcsm"]
+[ext_resource type="AudioStream" uid="uid://c3tq40e73tdyh" path="res://audio/scpcb/steps/human_footsteps.tres" id="2_23bxe"]
+
+[resource]
+resource_name = "concrete"
+script = ExtResource("1_xbcsm")
+streams = [ExtResource("2_23bxe")]
+volumeDb = -2.0
+unitSize = 2.0
+maxDistance = 50.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

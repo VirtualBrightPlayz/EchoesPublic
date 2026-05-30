@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bt32vlv7ox70e"]
+
+[ext_resource type="Texture2D" uid="uid://dha1wcxkgxp5m" path="res://textures/scpcb_pbr/misc/dark_red/DefaultMaterial_BaseColor.png" id="1_bndw7"]
+[ext_resource type="Texture2D" uid="uid://3bvyacp52ydy" path="res://textures/scpcb_pbr/misc/dark_red/DefaultMaterial_Emission.png" id="2_71f7a"]
+[ext_resource type="Texture2D" uid="uid://djcg5aw7hjlp1" path="res://textures/scpcb/miscbump.jpg" id="3_7h0g5"]
+
+[resource]
+albedo_texture = ExtResource("1_bndw7")
+emission_enabled = true
+emission_energy_multiplier = 3.0
+emission_texture = ExtResource("2_71f7a")
+normal_enabled = true
+normal_texture = ExtResource("3_7h0g5")
+texture_filter = 5

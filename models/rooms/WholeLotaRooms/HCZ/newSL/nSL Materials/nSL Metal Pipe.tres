@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bjwu0q6t61o31"]
+
+[ext_resource type="Texture2D" uid="uid://pc54q6swsus3" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Metal Pipe/Metal Pipe T.png" id="1_x6lxn"]
+[ext_resource type="Texture2D" uid="uid://cdi5eaykkni6y" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Metal Pipe/Metal Pipe N.png" id="2_ng20q"]
+[ext_resource type="Texture2D" uid="uid://dbuxc6njklij6" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Ground/Tile_HCZGround_Mask_ORM.png" id="3_ng20q"]
+
+[resource]
+albedo_texture = ExtResource("1_x6lxn")
+orm_texture = ExtResource("3_ng20q")
+normal_enabled = true
+normal_scale = 0.25
+normal_texture = ExtResource("2_ng20q")

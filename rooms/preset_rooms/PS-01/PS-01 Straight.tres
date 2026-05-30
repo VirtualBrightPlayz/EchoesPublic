@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bdy8egnff8nka"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_63q8y"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_jsd6k"]
+
+[resource]
+resource_name = "PS-01 Straight"
+script = ExtResource("2_63q8y")
+type = 2
+stage = 4
+scenes = []
+sceneFile = "uid://dmhgene2ce0o"
+isGeneric = true
+category = "PS-01"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsu7hk4ns6lnw"]
+
+[ext_resource type="Script" uid="uid://ctmfj4ebgvodc" path="res://scripts/ui/LobbyListingUI.cs" id="1_iruci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tst7x"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Lobby" type="PanelContainer" node_paths=PackedStringArray("Icon", "Title", "JoinBtn")]
+offset_right = 268.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tst7x")
+script = ExtResource("1_iruci")
+Icon = NodePath("Margins/HBox/Icon")
+Title = NodePath("Margins/HBox/Name")
+JoinBtn = NodePath("Margins/HBox/Controls/Join")
+metadata/_custom_type_script = "uid://ctmfj4ebgvodc"
+
+[node name="Margins" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBox" type="HBoxContainer" parent="Margins"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Margins/HBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="RichTextLabel" parent="Margins/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Controls" type="VBoxContainer" parent="Margins/HBox"]
+layout_mode = 2
+
+[node name="Info" type="Button" parent="Margins/HBox/Controls"]
+visible = false
+layout_mode = 2
+text = "PLAY_MENU_INFO_LISTING"
+
+[node name="Join" type="Button" parent="Margins/HBox/Controls"]
+layout_mode = 2
+text = "PLAY_MENU_JOIN_LISTING"

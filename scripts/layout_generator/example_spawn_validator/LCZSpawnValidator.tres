@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dy1amr6oogkxm"]
+
+[ext_resource type="Script" uid="uid://cceucl4kuuqah" path="res://scripts/layout_generator/example_spawn_validator/LCZSpawnValidator.cs" id="1_udace"]
+
+[resource]
+script = ExtResource("1_udace")

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ildbjfmecmyx"]
+
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="1_hm5hf"]
+[ext_resource type="PackedScene" uid="uid://des4op3upnnpd" path="res://models/main/scp/scp_173/SCP173.fbx" id="4_qhdo4"]
+[ext_resource type="Script" uid="uid://b3jrtkmear2gs" path="res://scripts/map/PlayerHitbox.cs" id="5_umt8f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5blb"]
+radius = 0.3
+height = 3.0
+
+[node name="SCP173Model" type="Node3D" unique_id=1566727063 node_paths=PackedStringArray("disableLocal")]
+script = ExtResource("1_hm5hf")
+disableLocal = [NodePath("SCP173")]
+metadata/_custom_type_script = "uid://xq2fvvleypij"
+
+[node name="SCP173" parent="." unique_id=854370009 instance=ExtResource("4_qhdo4")]
+
+[node name="Rebar" parent="SCP173" index="0" unique_id=1467548980]
+gi_mode = 2
+
+[node name="SCP_173" parent="SCP173" index="1" unique_id=1178776343]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
+gi_mode = 2
+
+[node name="PlayerHitbox" type="StaticBody3D" parent="SCP173" unique_id=928567604]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.00461698, 0)
+collision_layer = 144
+collision_mask = 144
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SCP173/PlayerHitbox" unique_id=134432408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_f5blb")
+
+[node name="PlayerHitbox" type="Node" parent="SCP173/PlayerHitbox" unique_id=1423967952]
+script = ExtResource("5_umt8f")
+HealthNode = NodePath("../../..")
+metadata/_custom_type_script = "uid://b3jrtkmear2gs"
+
+[editable path="SCP173"]

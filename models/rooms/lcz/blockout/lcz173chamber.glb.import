@@ -1,0 +1,125 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dw8yx2ubo64vt"
+path="res://.godot/imported/lcz173chamber.glb-4f40486c6dd74950ccf4c0a667533aa9.scn"
+
+[deps]
+
+source_file="res://models/rooms/lcz/blockout/lcz173chamber.glb"
+dest_files=["res://.godot/imported/lcz173chamber.glb-4f40486c6dd74950ccf4c0a667533aa9.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"MetalWelding_TrimSheet_dark": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/metal_welding_trim.tres",
+"use_external/path": "uid://waql3nge3js0"
+},
+"catwalk hand rails": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/lcz/rooms/handrails.tres",
+"use_external/path": "uid://bubu7jlhagr5h"
+},
+"ceiling": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_concrete.tres",
+"use_external/path": "uid://u86b67k7hb7h"
+},
+"concrete floor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/grey_concrete.tres",
+"use_external/path": "uid://c45mrs0k1q6a6"
+},
+"concrete floor hotspot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/grey_concrete_hotspot.tres",
+"use_external/path": "uid://cqmalxwy77f87"
+},
+"glass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/new glass.tres",
+"use_external/path": "uid://d10efwhmp4vtr"
+},
+"grate": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/net/metalmesh1.tres",
+"use_external/path": "uid://68ph6ssb6aqi"
+},
+"hcz_alluminum": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/Aluminum_HS_HCZ.tres",
+"use_external/path": "uid://ojs6o8mae2le"
+},
+"industrial_ceiling_fan": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/industrial_ceiling_fan.tres",
+"use_external/path": "uid://clw1b5gufj4qt"
+},
+"light_concrete_hotspot": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/lcz/rooms/lcz_wall_tiles.tres",
+"use_external/path": "uid://do4ttpke7q5eg"
+},
+"metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_panels.tres",
+"use_external/path": "uid://cwswu55un0j7i"
+},
+"net": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/net/chainlinknet.tres",
+"use_external/path": "uid://5mqgm6y0ikk0"
+},
+"office wall": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/lcz/rooms/lcz_side_office.tres",
+"use_external/path": "uid://cueqdyj5qhuus"
+},
+"tilefloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/floortiles/floortiles1.tres",
+"use_external/path": "uid://dqgljyex83eau"
+},
+"vents": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/vents.tres",
+"use_external/path": "uid://6e5aeyomnu3g"
+},
+"wall text": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/walltext.tres",
+"use_external/path": "uid://bsm0ujvmm3eeb"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PropSpawnGroup" load_steps=5 format=3 uid="uid://cvvqsluvuckg7"]
+
+[ext_resource type="PackedScene" uid="uid://b72c61mhew2kl" path="res://scenes/rooms/props/dynamic/wet_floor_sign.tscn" id="1_nmxhg"]
+[ext_resource type="PackedScene" uid="uid://dormd71fxgl05" path="res://scenes/rooms/props/dynamic/wet_puddle_sign.tscn" id="2_j7f4o"]
+[ext_resource type="PackedScene" uid="uid://sdklk4d1b7s1" path="res://scenes/rooms/props/dynamic/wet_blood_sign.tscn" id="3_0aldf"]
+[ext_resource type="Script" uid="uid://dg32kkoa2ddpl" path="res://scripts/map/PropSpawnGroup.cs" id="4_vwm26"]
+
+[resource]
+script = ExtResource("4_vwm26")
+Props = [ExtResource("1_nmxhg"), ExtResource("2_j7f4o"), ExtResource("3_0aldf")]
+RemoveUsedProp = false
+RemoveUsedSpawn = true
+MaxSpawned = 4

@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5lmh0l7qr1pc"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_qoxeq"]
+[ext_resource type="PackedScene" uid="uid://ccmtkiqeihh62" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Lab_Scale.fbx" id="2_atmwy"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_sm4xd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n8sqf"]
+size = Vector3(0.48046875, 0.13623047, 0.42822266)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kd5mp"]
+size = Vector3(0.4794922, 0.017578125, 0.045288086)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5376"]
+size = Vector3(0.45117188, 0.026245117, 0.44921875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5cxu"]
+size = Vector3(0.4802246, 0.12695313, 0.04864501)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6liug"]
+size = Vector3(0.3779297, 0.041992188, 0.37597656)
+
+[node name="Lab_Scale_Prop" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 1.5
+script = ExtResource("1_qoxeq")
+Category = 13
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09363167, 0.026611328)
+shape = SubResource("BoxShape3D_n8sqf")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.034769874, -0.21014929)
+shape = SubResource("BoxShape3D_kd5mp")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013244629, 0)
+shape = SubResource("BoxShape3D_e5376")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.93245, -0.3612991, 0, 0.3612991, 0.93245, 0, 0.09341358, -0.18742934)
+shape = SubResource("BoxShape3D_i5cxu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17115489, 0.025568634)
+shape = SubResource("BoxShape3D_6liug")
+
+[node name="Lab_Scale" type="Node3D" parent="." instance=ExtResource("2_atmwy")]
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_sm4xd")
+targetNode = NodePath("..")
+CanClaim = true

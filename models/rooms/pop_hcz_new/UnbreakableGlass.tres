@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://brholynkwpy6e"]
+
+[ext_resource type="Texture2D" uid="uid://g1fb7s7fqdnr" path="res://models/rooms/pop_hcz_new/T_Echoes_UnbreakableGlass_Unbreakable_Glass.png" id="1_kjyaf"]
+[ext_resource type="Texture2D" uid="uid://dm2nbq5cx85cy" path="res://models/rooms/pop_hcz_new/N_Echoes_UnbreakableGlass_Unbreakable_Glass.png" id="2_rb4yi"]
+[ext_resource type="Texture2D" uid="uid://d4cmavnlmbfta" path="res://models/rooms/pop_hcz_new/ORM_Echoes_UnbreakableGlass_Unbreakable_Glass.png" id="3_mdc4l"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_kjyaf")
+orm_texture = ExtResource("3_mdc4l")
+normal_enabled = true
+normal_texture = ExtResource("2_rb4yi")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

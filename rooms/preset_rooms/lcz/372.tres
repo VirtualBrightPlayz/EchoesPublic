@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cjq5a3hwoudfv"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_1l016"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_b6484"]
+[ext_resource type="Resource" uid="uid://bcwe23lrnmova" path="res://rooms/preset_rooms/property_data/spawnpoint_173.tres" id="4_3m0g8"]
+[ext_resource type="Resource" uid="uid://de6njwqor5lbc" path="res://rooms/preset_rooms/property_data/spawnpoint_classd.tres" id="5_3m0g8"]
+[ext_resource type="Resource" uid="uid://bp70bnkaj1svu" path="res://rooms/preset_rooms/property_data/spawnpoint_scientist.tres" id="5_logl4"]
+
+[resource]
+resource_name = "SCP-372"
+script = ExtResource("2_1l016")
+size = 1
+stage = 1
+scenes = []
+sceneFile = "uid://b4y2y8n26aiei"
+isInterest = true
+zone = 1
+category = "Light Containment"
+templateData = Array[ExtResource("3_b6484")]([ExtResource("5_3m0g8"), ExtResource("5_logl4"), ExtResource("4_3m0g8")])
+templateDefaultValues = Dictionary[String, String]({
+"spawnpoint_classd": "true",
+"spawnpoint_scientist": "true"
+})

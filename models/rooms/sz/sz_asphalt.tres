@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cop40abjjg37v"]
+
+[ext_resource type="Texture2D" uid="uid://6k5l3d5780cl" path="res://models/rooms/sz/VirtAsphalt_BaseColor.jpg" id="1_5rola"]
+[ext_resource type="Texture2D" uid="uid://c6dntj13s5cov" path="res://models/rooms/sz/VirtAsphalt_Normal.jpg" id="2_noda1"]
+[ext_resource type="Texture2D" uid="uid://blketlstyqfsl" path="res://models/rooms/sz/VirtAsphalt_Roughness.jpg" id="3_g2gvf"]
+
+[resource]
+albedo_texture = ExtResource("1_5rola")
+roughness_texture = ExtResource("3_g2gvf")
+normal_enabled = true
+normal_texture = ExtResource("2_noda1")

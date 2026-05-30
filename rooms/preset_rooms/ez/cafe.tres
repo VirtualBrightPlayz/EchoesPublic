@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ckcx8xypw28k3"]
+
+[ext_resource type="Texture2D" uid="uid://r81b3b6wg1ny" path="res://textures/scpcb/icons/room2_cafe.png" id="1_50bk3"]
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_50bk3"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="4_jhdqp"]
+
+[resource]
+resource_name = "Cafeteria"
+script = ExtResource("2_50bk3")
+type = 2
+size = 1
+stage = 3
+scenes = []
+sceneFile = "uid://vpne74x18uyr"
+isInterest = true
+gridRect = Rect2i(-1, 0, 3, 1)
+layoutIconOverride = ExtResource("1_50bk3")
+category = "Entrance"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GameSound" load_steps=3 format=3 uid="uid://b4mgx4niu6oba"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_tjubl"]
+[ext_resource type="AudioStream" uid="uid://7svv8ypv84u" path="res://audio/cc0/cashregister.wav" id="2_nncxf"]
+
+[resource]
+script = ExtResource("1_tjubl")
+DisplayName = "Taxman Collected Payment"
+streams = [ExtResource("2_nncxf")]
+volumeDb = 0.0
+unitSize = 10.0
+maxDistance = 50.0
+maxDb = 3.0
+pitch = 1.0
+bus = ""
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

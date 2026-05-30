@@ -1,0 +1,20 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://bp6ppt3rn8w7u"]
+
+[ext_resource type="Texture2D" uid="uid://b1hfybs4gjh6v" path="res://textures/main/ez/net/T_Net.png" id="1_i8kol"]
+[ext_resource type="Texture2D" uid="uid://gf5m3axsiqh8" path="res://textures/main/ez/net/N_Net.png" id="2_r3ip1"]
+[ext_resource type="Texture2D" uid="uid://yt4u7fdwg8sm" path="res://textures/main/ez/net/ORM_Net.png" id="3_a4rv0"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 1
+alpha_antialiasing_edge = 0.3
+cull_mode = 2
+albedo_color = Color(0.34, 0.34, 0.34, 1)
+albedo_texture = ExtResource("1_i8kol")
+orm_texture = ExtResource("3_a4rv0")
+normal_enabled = true
+normal_texture = ExtResource("2_r3ip1")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_world_triplanar = true
+texture_filter = 5

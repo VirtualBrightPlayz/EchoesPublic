@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" load_steps=2 format=3 uid="uid://cif535e83yln3"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_u2lsf"]
+
+[resource]
+resource_name = "TeamVoice"
+script = ExtResource("1_u2lsf")
+GodotAction = &"player_voice_chat_alt"
+LocaleKey = "Action_TeamVoice"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://d30bsx1lwx0f3"]
+
+[ext_resource type="Shader" uid="uid://brab1be70lj5g" path="res://shaders/glass_shader.gdshader" id="1_kljsx"]
+[ext_resource type="Texture2D" uid="uid://cembhuhfbp2b3" path="res://textures/main/ez/randomprops/T_water_jug.png" id="1_mcbyx"]
+[ext_resource type="Texture2D" uid="uid://cvd1kfvg8xgce" path="res://textures/main/ez/randomprops/N_water_jug.png" id="2_ce17s"]
+[ext_resource type="Texture2D" uid="uid://8wavbxll4hb0" path="res://textures/main/ez/randomprops/ORM_water_jug.png" id="2_kljsx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kljsx")
+shader_parameter/uvgen_scale = Vector2(1, 1)
+shader_parameter/uvgen_offset = Vector2(0, 0)
+shader_parameter/uvorm_scale = Vector2(1, 1)
+shader_parameter/uvorm_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("1_mcbyx")
+shader_parameter/orm_texture = ExtResource("2_kljsx")
+shader_parameter/roughness_brightness = 0.0
+shader_parameter/roughness_contrast = 0.0
+shader_parameter/specular_blob = 32.0
+shader_parameter/normal_strength = 1.000000807500001
+shader_parameter/normal_map = ExtResource("2_ce17s")
+shader_parameter/edge_color = Color(0, 0, 0, 1)

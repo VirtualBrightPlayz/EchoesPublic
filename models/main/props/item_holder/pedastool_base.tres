@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://df2q30ktgkbe4"]
+
+[ext_resource type="Texture2D" uid="uid://dafoff2ieeqsy" path="res://models/main/props/item_holder/TyernaPedastool_Color.png" id="1_rkich"]
+[ext_resource type="Texture2D" uid="uid://duq1hc7gm7ylr" path="res://models/main/props/item_holder/TyernaPedastool_Emission.png" id="2_kv51g"]
+[ext_resource type="Texture2D" uid="uid://d3k1fcojr0oir" path="res://models/main/props/item_holder/TyernaPedastool_Metallic.png" id="3_3notp"]
+[ext_resource type="Texture2D" uid="uid://dojjeqyefwgdx" path="res://models/main/props/item_holder/TyernaPedastool_Normal.png" id="4_li67p"]
+[ext_resource type="Texture2D" uid="uid://r7bk6m2wb0vc" path="res://models/main/props/item_holder/TyernaPedastool_Roughness.png" id="5_pgn1e"]
+
+[resource]
+albedo_texture = ExtResource("1_rkich")
+metallic = 1.0
+metallic_texture = ExtResource("3_3notp")
+roughness_texture = ExtResource("5_pgn1e")
+emission_enabled = true
+emission_texture = ExtResource("2_kv51g")
+normal_enabled = true
+normal_texture = ExtResource("4_li67p")

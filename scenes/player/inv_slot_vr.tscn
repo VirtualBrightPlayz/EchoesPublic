@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqf3ncf3ndbus"]
+
+[ext_resource type="Script" uid="uid://dbcqssc31un2l" path="res://scripts/player/controllers/vr/InventorySocket.cs" id="1_es8wj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahxwv"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hd745"]
+flip_faces = true
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pd2iq"]
+transparency = 1
+blend_mode = 1
+specular_mode = 2
+albedo_color = Color(1, 1, 1, 0.501961)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.1
+
+[node name="Slot" type="StaticBody3D"]
+collision_layer = 260
+collision_mask = 260
+script = ExtResource("1_es8wj")
+size = 0.075
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ahxwv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("BoxMesh_hd745")
+surface_material_override/0 = SubResource("StandardMaterial3D_pd2iq")

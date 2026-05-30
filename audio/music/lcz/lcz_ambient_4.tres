@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MusicClip" format=3 uid="uid://c522adydte462"]
+
+[ext_resource type="AudioStream" uid="uid://576ye4u2u84g" path="res://audio/music/lcz/lightambience4.mp3" id="1_73e6j"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_qe62j"]
+
+[sub_resource type="Curve" id="Curve_gmang"]
+_limits = [0.0, 1.0, 0.0, 80.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(8, 1), 0.0, 0.0, 0, 0, Vector2(72, 1), 0.0, 0.0, 0, 0, Vector2(80, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+
+[resource]
+script = ExtResource("2_qe62j")
+audio = ExtResource("1_73e6j")
+volumeOverTime = SubResource("Curve_gmang")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

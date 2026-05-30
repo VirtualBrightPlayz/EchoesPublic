@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://c7or57xfwwams"]
+
+[ext_resource type="Script" uid="uid://bgppldp6cwd1p" path="res://scripts/items/ItemObject.cs" id="1_c1s5b"]
+[ext_resource type="PackedScene" uid="uid://m0475bia0cf4" path="res://scenes/misc/p_90.tscn" id="2_61602"]
+[ext_resource type="Script" uid="uid://hh1yhpfmcjst" path="res://scripts/items/Pistol.cs" id="2_c1s5b"]
+[ext_resource type="Resource" uid="uid://cpdg4vnjlra24" path="res://sounds/gunshot_rifle.tres" id="3_skl2s"]
+[ext_resource type="Resource" uid="uid://bv32wx1bogk3n" path="res://effects/gunshot_fx.tres" id="4_p4mcr"]
+[ext_resource type="Resource" uid="uid://cd7fk0bpcf0up" path="res://effects/p90_reload.tres" id="4_xrp3s"]
+[ext_resource type="Resource" uid="uid://b5ekf70hdycf0" path="res://effects/bullet_hole.tres" id="5_0y1qq"]
+[ext_resource type="PackedScene" uid="uid://b0rlp104og08f" path="res://scenes/viewmodels/p90.tscn" id="8_0y1qq"]
+[ext_resource type="Script" uid="uid://cnnnnu62sw6be" path="res://scripts/items/ItemGrip.cs" id="8_xrp3s"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="11_dwami"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4u4ih"]
+size = Vector3(0.884766, 0.361572, 0.138672)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p4mcr"]
+points = PackedVector3Array(-29.4314, 9.99617, -19.096, -29.4506, 9.75937, -19.3427, -30.7512, 9.56368, -19.3427, -30.7993, 9.78873, -19.096, -30.7801, 9.79264, -11.9053, -29.4314, 9.99421, -11.9053, -27.4854, 9.99225, -11.9053, -27.495, 9.99421, -19.096, 58.9764, 9.67131, -20.7277, 58.0805, 9.67131, -20.7277, 58.0901, 9.42473, -21.0434, 58.0805, 9.12141, -21.0979, -32.6008, 8.99616, -19.3427, -32.649, 9.22121, -19.096, -32.6586, 9.22121, -11.9053, -31.3966, 7.06464, -11.0994, -29.1231, 7.42472, -11.0994, 58.0901, 9.42473, -9.79773, 58.0805, 9.67131, -10.1134, 58.9764, 9.67131, -10.1134, 58.986, 9.66348, -19.5217, 59.2076, 9.45017, -19.5217, 59.2173, 9.43843, -20.7277, 58.9571, 9.42473, -21.0434, 58.9764, 9.12141, -21.0979, 58.0805, -9.12334, -21.0979, -37.5814, 0.1096, -19.5273, -37.2057, 0.356177, -19.5306, -33.7569, 8.43647, -19.3427, -33.8725, 8.63021, -19.096, -33.8628, 8.63804, -11.9053, -33.439, 6.02354, -11.0994, 58.0805, 9.12141, -9.74326, 58.9571, 9.42473, -9.79773, 59.2173, 9.43843, -10.1134, 59.2076, 9.45017, -11.3195, 58.986, 9.66348, -11.3195, 59.3136, 9.12141, -20.7277, 58.9764, -9.12334, -21.0979, 58.0901, -9.42667, -21.0434, -29.4506, -9.76131, -19.3427, -30.7512, -9.56561, -19.3427, -32.6008, -8.9981, -19.3427, -33.7569, -8.43841, -19.3427, -37.2057, -0.358114, -19.5306, -37.5814, -0.111537, -19.5273, -38.8916, 9.53674e-06, -19.3427, -38.5929, 2.11157, -19.3427, -37.9668, 3.9335, -19.3427, -37.4176, 4.95504, -19.3427, -36.2327, 6.49712, -19.3427, -35.3464, 7.33861, -19.3427, -35.4717, 7.53039, -19.096, -35.4909, 7.51865, -11.9053, -36.3965, 6.66151, -11.9053, -35.0574, 4.40121, -11.0994, 58.0805, -9.12334, -9.74215, 58.9764, 9.12141, -9.74326, -36.0978, 2.35619, -11.0994, -36.4639, 0.0900307, -11.0994, 59.3136, 9.12141, -10.1134, 59.3136, -9.12334, -20.7277, 58.9571, -9.42667, -21.0434, 58.0805, -9.67325, -20.7277, -29.4314, -9.99615, -19.096, -30.7993, -9.79067, -19.096, -32.649, -9.22315, -19.096, -33.8821, -8.63214, -19.096, -35.3464, -7.34251, -19.3427, -37.986, -3.90804, -19.3427, -38.5929, -2.11351, -19.3427, -36.2423, -6.49514, -19.3427, -37.408, -4.96676, -19.3427, -38.8145, -2.18592, -19.096, -39.1035, 9.53674e-06, -19.096, -38.8145, 2.18594, -19.096, -38.1883, 4.00982, -19.096, -36.4157, 6.63998, -19.096, -37.6007, 5.09594, -19.096, -37.62, 5.06462, -11.9053, -38.1498, 4.06462, -11.9053, 58.0901, -9.42667, -9.79773, 58.9764, -9.12334, -9.74215, -36.0978, -2.17613, -11.0994, -35.0574, -4.22115, -11.0994, -33.439, -5.84348, -11.0994, -31.3966, -6.88458, -11.0994, -29.1231, -7.24466, -11.0994, -38.8145, 2.17224, -11.9053, -39.1035, 0.00196743, -11.9053, -38.8145, -2.1683, -11.9053, 59.3136, -9.12334, -10.1134, 59.2173, -9.44037, -20.7277, 58.9764, -9.67325, -20.7277, -27.495, -9.99615, -19.096, -29.4314, -9.99615, -11.9053, -30.7801, -9.79458, -11.9053, -32.6586, -9.22315, -11.9053, -33.8725, -8.6341, -11.9053, -35.4717, -7.53429, -11.9053, -35.4717, -7.53625, -19.096, -37.5911, -5.11157, -19.096, -38.2076, -3.97458, -19.096, -36.4254, -6.63409, -19.096, -38.2365, -3.91391, -11.9053, 58.0805, -9.67325, -10.1134, 58.9571, -9.42667, -9.79773, -37.5814, -5.12918, -11.9053, -36.4254, -6.63017, -11.9053, 59.2173, -9.44037, -10.1134, 59.2076, -9.45211, -19.5217, 58.986, -9.66542, -19.5217, 58.9764, -9.67325, -10.1134, -27.4854, -9.99419, -11.9053, 59.2076, -9.45211, -11.3195, 58.986, -9.66542, -11.3195)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_p4mcr"]
+properties/0/path = NodePath(".:Serial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:Id")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:playerPath")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:ModelEnabled")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ItemGrip:holderPath")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("Model:Meta")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath("ItemGrip2:holderPath")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+properties/7/path = NodePath("Model:IsReloading")
+properties/7/spawn = true
+properties/7/replication_mode = 2
+
+[node name="Rifle" type="Node" unique_id=1394653489 node_paths=PackedStringArray("model", "viewModel", "grips", "physicsBodies")]
+script = ExtResource("1_c1s5b")
+model = NodePath("Model")
+viewModel = NodePath("ViewmodelP90")
+grips = [NodePath("ItemGrip"), NodePath("ItemGrip2"), NodePath("MagGrip")]
+physicsBodies = [NodePath("Model/Mag")]
+metadata/_custom_type_script = "uid://bgppldp6cwd1p"
+
+[node name="Model" type="RigidBody3D" parent="." unique_id=888802693 node_paths=PackedStringArray("fireEffectPoint", "marker", "xformSync")]
+collision_layer = 4
+collision_mask = 5
+mass = 2.0
+continuous_cd = true
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("2_c1s5b")
+gunshotSound = ExtResource("3_skl2s")
+gunshotEffect = ExtResource("4_p4mcr")
+bulletHoleEffect = ExtResource("5_0y1qq")
+reloadEffect = ExtResource("4_xrp3s")
+holdType = 2
+fireEffectPoint = NodePath("FirePoint")
+Spread = Vector2(0.05, 0.05)
+Recoil = Rect2(0, 1, 0, 2)
+TimedRecoil = Rect2(-0.5, 0.5, 0.5, 1.25)
+MaxAmmo = 50
+ReloadTime = 3.0
+FireRate = 0.07
+GunDamage = 32.0
+MaxRange = 5000.0
+TypeOfDamage = 5
+TypeOfAmmo = 2
+aimFov = 60.0
+useAimFov = false
+marker = NodePath("Marker3D")
+type = 2
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" unique_id=121538947]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_4u4ih")
+
+[node name="Marker3D" type="Marker3D" parent="Model" unique_id=1451107066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0049428, -0.0758609)
+
+[node name="P90" parent="Model" unique_id=142609824 instance=ExtResource("2_61602")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="P90_001" parent="Model/P90/P902" index="1" unique_id=1906697424]
+visible = false
+
+[node name="Marker3D2" type="Marker3D" parent="Model" unique_id=1930519424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0488991, -0.260157)
+
+[node name="FirePoint" type="Marker3D" parent="Model" unique_id=1126752818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03247381, -0.45385066)
+
+[node name="Mag" type="RigidBody3D" parent="Model" unique_id=1942513987]
+collision_layer = 4
+collision_mask = 5
+freeze = true
+continuous_cd = true
+
+[node name="P90" parent="Model/Mag" unique_id=1332281569 instance=ExtResource("2_61602")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="P90" parent="Model/Mag/P90/P902" index="0" unique_id=853826994]
+visible = false
+
+[node name="P90_002" parent="Model/Mag/P90/P902" index="2" unique_id=448278420]
+visible = false
+
+[node name="P90_003" parent="Model/Mag/P90/P902" index="3" unique_id=1509875680]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Mag" unique_id=1116281348]
+transform = Transform3D(-2.18557e-10, 0.005, 0, 0, 0, -0.005, -0.005, -2.18557e-10, 0, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_p4mcr")
+
+[node name="MagMarker" type="Marker3D" parent="Model/Mag" unique_id=1829119466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0785864, -0.00101691)
+
+[node name="TransformSync" type="Node" parent="Model" unique_id=867737946]
+script = ExtResource("11_dwami")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="ViewmodelP90" parent="." unique_id=773405430 instance=ExtResource("8_0y1qq")]
+
+[node name="ItemGrip" type="Node" parent="." unique_id=395793681 node_paths=PackedStringArray("item", "marker")]
+script = ExtResource("8_xrp3s")
+item = NodePath("..")
+marker = NodePath("../Model/Marker3D")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="ItemGrip2" type="Node" parent="." unique_id=1477051990 node_paths=PackedStringArray("item", "marker")]
+script = ExtResource("8_xrp3s")
+item = NodePath("..")
+marker = NodePath("../Model/Marker3D2")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="MagGrip" type="Node" parent="." unique_id=438424486 node_paths=PackedStringArray("item", "target", "marker")]
+script = ExtResource("8_xrp3s")
+item = NodePath("..")
+target = NodePath("../Model/Mag")
+marker = NodePath("../Model/Mag/MagMarker")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=2008902904]
+replication_interval = 5.0
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_p4mcr")
+
+[connection signal="OnHeld" from="ItemGrip" to="Model" method="OnEquipChange"]
+[connection signal="OnUnHeld" from="ItemGrip" to="Model" method="OnEquipChange"]
+
+[editable path="Model/P90"]
+[editable path="Model/P90/P902"]
+[editable path="Model/Mag/P90"]
+[editable path="Model/Mag/P90/P902"]

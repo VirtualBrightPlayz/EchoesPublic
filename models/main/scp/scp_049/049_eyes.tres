@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://capbbi1k1nbew"]
+
+[ext_resource type="Texture2D" uid="uid://dg4r1gbiidh8v" path="res://models/main/scp/scp_049/T_eyes.png" id="1_6xa18"]
+[ext_resource type="Texture2D" uid="uid://bjqcagm3obu2n" path="res://models/main/scp/scp_049/E_eyes.png" id="2_pucfb"]
+[ext_resource type="Texture2D" uid="uid://duohj0jqdi1jh" path="res://models/main/scp/scp_049/N_eyes.png" id="3_vjbgf"]
+[ext_resource type="Texture2D" uid="uid://dsq41gplt54mf" path="res://models/main/scp/scp_049/ORM_eyes.png" id="4_jsoxk"]
+
+[resource]
+albedo_texture = ExtResource("1_6xa18")
+orm_texture = ExtResource("4_jsoxk")
+emission_enabled = true
+emission_texture = ExtResource("2_pucfb")
+normal_enabled = true
+normal_texture = ExtResource("3_vjbgf")

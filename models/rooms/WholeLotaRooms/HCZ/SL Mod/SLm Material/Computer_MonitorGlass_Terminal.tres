@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://chg767djjeilu"]
+
+[ext_resource type="Texture2D" uid="uid://ca13hmkkx5nlu" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/ComputerTerminal_Terminal T.png" id="1_dj45a"]
+[ext_resource type="Texture2D" uid="uid://dsvtb8t4opbpp" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/ComputerTerminal_Terminal_Computer N.png" id="2_vwqwg"]
+[ext_resource type="Texture2D" uid="uid://c0nvi4bbliqqp" path="res://textures/main/lcz/rooms/pipes/Pipes_Metallic-Pipes_Roughness.png" id="3_dj45a"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.29411766)
+albedo_texture = ExtResource("1_dj45a")
+orm_texture = ExtResource("3_dj45a")
+normal_enabled = true
+normal_texture = ExtResource("2_vwqwg")
+clearcoat_enabled = true

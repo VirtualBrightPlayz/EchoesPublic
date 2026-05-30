@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://cj7al52hn2u3y"]
+
+[ext_resource type="Texture2D" uid="uid://du1u1ahjcc0ja" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/PlaneForPAinter_Bake_BaseMap.png" id="1_8v3l0"]
+[ext_resource type="Texture2D" uid="uid://djts3i4cwrvdw" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/PlaneForPAinter_Bake_Normal.png" id="1_u25vt"]
+[ext_resource type="Texture2D" uid="uid://c6ut8dpnnfkpo" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/PlaneForPAinter_Bake_MaskMap_ORM.png" id="3_k5px6"]
+
+[resource]
+albedo_texture = ExtResource("1_8v3l0")
+orm_texture = ExtResource("3_k5px6")
+normal_enabled = true
+normal_texture = ExtResource("1_u25vt")

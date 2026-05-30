@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://03un8utdny2i"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_l6fdf"]
+[ext_resource type="ArrayMesh" uid="uid://pmu2mbmkxij6" path="res://models/scpcb/props/monitor.obj" id="1_mqwdq"]
+[ext_resource type="Material" uid="uid://b0jepx68l26yp" path="res://materials/scpcb_map/monitor.tres" id="2_qgu4g"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="4_746k1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4661r"]
+size = Vector3(0.213379, 0.645752, 0.70874)
+
+[node name="Monitor" type="RigidBody3D" node_paths=PackedStringArray("PropAudio", "Mesh", "DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 385
+mass = 2.0
+script = ExtResource("1_l6fdf")
+Category = 1
+PropAudio = NodePath("AudioStreamPlayer3D")
+Mesh = NodePath("Monitor")
+DestroyOnDeath = []
+xformSync = NodePath("Sync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="Monitor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.99384e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99384e-10, 0, 0, 0)
+mesh = ExtResource("1_mqwdq")
+surface_material_override/0 = ExtResource("2_qgu4g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 1
+max_distance = 30.0
+bus = &"World"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0.32605, -0.00939941)
+shape = SubResource("BoxShape3D_4661r")
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("4_746k1")
+targetNode = NodePath("..")
+CanClaim = true

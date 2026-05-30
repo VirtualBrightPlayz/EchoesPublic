@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b27awal4w50hr"]
+
+[ext_resource type="Shader" uid="uid://djhylwybqgs02" path="res://shaders/poster.gdshader" id="1_sbsj8"]
+[ext_resource type="Texture2D" uid="uid://rjjmq53jhea" path="res://textures/main/ez/random_textures/T_Fracture_Voronoi.png" id="2_0rwm0"]
+[ext_resource type="Texture2D" uid="uid://bkai25n7u7wp8" path="res://textures/main/posters/postermtf.png" id="3_00b1w"]
+[ext_resource type="Texture2D" uid="uid://cixxtu6k57dpn" path="res://textures/main/ez/random_textures/Cloud_N.png" id="3_tygoc"]
+[ext_resource type="Texture2D" uid="uid://dn4i7fwxitdbl" path="res://textures/main/ez/random_textures/T_Cloud.png" id="4_00b1w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00b1w"]
+render_priority = 0
+shader = ExtResource("1_sbsj8")
+shader_parameter/texture_albedo = ExtResource("3_00b1w")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_normal = ExtResource("3_tygoc")
+shader_parameter/normal_scale = 0.2000007695000008
+shader_parameter/texture_orm = ExtResource("4_00b1w")
+shader_parameter/roughness_brightness = -0.215
+shader_parameter/roughness_contrast = 0.38
+shader_parameter/albedooverlayroughness_brightness = -1.475
+shader_parameter/albedooverlayroughness_contrast = 2.255
+shader_parameter/specular_intensity = 0.5
+shader_parameter/overlay_albedo_strength = 0.6750000320625
+shader_parameter/ripping_texture = ExtResource("2_0rwm0")
+shader_parameter/ripping_brightness = 0.405
+shader_parameter/ripping_contrast = 1.0
+shader_parameter/uvnormal_scale = Vector2(0.2, 1)
+shader_parameter/uvnormal_offset = Vector2(0, 0)
+shader_parameter/uvorm_scale = Vector2(0.2, -0.55)
+shader_parameter/uvorm_offset = Vector2(0, 0)
+shader_parameter/uvripping_scale = Vector2(1.15, 0.1)
+shader_parameter/uvripping_offset = Vector2(0, 0.005)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gj27h"]
+material = SubResource("ShaderMaterial_00b1w")
+size = Vector2(1.41, 2)
+orientation = 2
+
+[node name="Poster_MTF" type="Node3D" unique_id=377524701]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=621745194]
+mesh = SubResource("PlaneMesh_gj27h")

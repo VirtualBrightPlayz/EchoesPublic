@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cpjlmxl2upjhc"]
+
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_l0yrt"]
+[ext_resource type="Texture2D" uid="uid://bpft0aha4yrt5" path="res://scenes/rooms/props/static/panels/textures/handscanner_T.png" id="2_ohkeb"]
+[ext_resource type="Texture2D" uid="uid://bpov5s4ncngeg" path="res://scenes/rooms/props/static/panels/textures/handscanner_E.png" id="3_lwiv0"]
+[ext_resource type="Texture2D" uid="uid://ct6dyjfuys886" path="res://scenes/rooms/props/static/panels/textures/handscanner_User0.png" id="4_6ypaa"]
+[ext_resource type="Texture2D" uid="uid://duia3hurk6vec" path="res://scenes/rooms/props/static/panels/textures/handscanner_N.png" id="5_dpcib"]
+[ext_resource type="Texture2D" uid="uid://d1foor30jq8yk" path="res://scenes/rooms/props/static/panels/textures/handscanner_ORM.png" id="6_v1rrp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_l0yrt")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_emission = ExtResource("3_lwiv0")
+shader_parameter/emission = Color(1, 1, 1, 0)
+shader_parameter/texture_albedo = ExtResource("2_ohkeb")
+shader_parameter/mask_color = Color(1, 0.59583336, 0.029999971, 1)
+shader_parameter/texture_mask = ExtResource("4_6ypaa")
+shader_parameter/texture_orm = ExtResource("6_v1rrp")
+shader_parameter/texture_normal = ExtResource("5_dpcib")
+shader_parameter/normal_scale = 1.000000807500001
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

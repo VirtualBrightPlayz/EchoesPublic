@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bntileprd4omn"]
+
+[ext_resource type="Script" uid="uid://c5sqrrnu6lvjq" path="res://scripts/items/ItemNetTest.cs" id="1_0443e"]
+[ext_resource type="Resource" uid="uid://cen6yieun0jh5" path="res://items/flashlight.tres" id="2_vsd13"]
+
+[node name="ItemNetTest" type="Node"]
+script = ExtResource("1_0443e")
+item = ExtResource("2_vsd13")

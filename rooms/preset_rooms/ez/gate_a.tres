@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dnsnk0xbaii88"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_qng5u"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_2mq6j"]
+
+[resource]
+resource_name = "Gate A"
+script = ExtResource("2_qng5u")
+size = 1
+stage = 3
+scenes = []
+sceneFile = "uid://dvxct8buoohw5"
+isInterest = true
+category = "Entrance"

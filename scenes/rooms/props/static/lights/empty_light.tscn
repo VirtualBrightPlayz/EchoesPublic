@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp4l16mvbt2sk"]
+
+[ext_resource type="Script" uid="uid://bsxuyl0i423w6" path="res://scripts/CustomRoomLogic/LightSettings.cs" id="1_rt346"]
+
+[node name="Empty_light" type="Node3D" node_paths=PackedStringArray("PrimaryLights", "SecondaryLights")]
+script = ExtResource("1_rt346")
+Range = 7.0
+Color = Color(1, 0.952941, 0.901961, 1)
+LightSize = 0.5
+SecondaryLightSize = 0.5
+PrimaryEnergy = 1.5
+SecondaryEnergy = 1.5
+PrimaryLights = [NodePath("OmniLight3D")]
+SecondaryLights = [NodePath("OmniLight3D2")]
+metadata/_custom_type_script = "uid://bsxuyl0i423w6"
+
+[node name="OmniLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 0.952941, 0.901961, 1)
+light_energy = 1.5
+light_size = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 17.0
+distance_fade_shadow = 17.0
+spot_range = 7.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.952941, 0.901961, 1)
+light_energy = 1.5
+light_size = 0.5
+light_specular = 0.0
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 15.0
+distance_fade_shadow = 15.0

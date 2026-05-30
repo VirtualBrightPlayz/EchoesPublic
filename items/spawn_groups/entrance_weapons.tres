@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://blfia74jq7fpd"]
+
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="2_40ivm"]
+[ext_resource type="Resource" uid="uid://djx75o3eoid8t" path="res://items/grenade_frag.tres" id="2_c7twy"]
+[ext_resource type="Resource" uid="uid://chswf18obx3g2" path="res://items/p90.tres" id="4_03xv2"]
+[ext_resource type="Resource" uid="uid://cxv807hgg0kir" path="res://items/grenade_sticky.tres" id="6_hikv4"]
+[ext_resource type="Resource" uid="uid://dcqpikvdkdf65" path="res://items/shotgun.tres" id="8_7l7gu"]
+
+[resource]
+script = ExtResource("2_40ivm")
+Items = [ExtResource("8_7l7gu"), ExtResource("2_c7twy"), ExtResource("6_hikv4"), ExtResource("4_03xv2")]

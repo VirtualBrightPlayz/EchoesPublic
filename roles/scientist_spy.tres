@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://bxbc7ttmcefw8"]
+
+[ext_resource type="Resource" uid="uid://dlps6uir1t7af" path="res://roles/ambient/human.tres" id="1_nv5lf"]
+[ext_resource type="PackedScene" uid="uid://bikuypqxlrnb1" path="res://scenes/player/controllers_old/player_controller_scientist.tscn" id="2_quec8"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="3_scgl7"]
+[ext_resource type="Resource" uid="uid://cseg2afemf5an" path="res://items/keycards/research_lvl_1.tres" id="4_d2lol"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="5_7porj"]
+
+[resource]
+script = ExtResource("5_7porj")
+RoleColor = Color(1, 1, 0.333333, 1)
+MaxHealth = 100.0
+DisplayName = "ROLE_NAME_SCIENTIST"
+Objective = "ROLE_OBJ_SPY"
+team = 5
+StartItems = [ExtResource("4_d2lol")]
+SpawnAudio = ExtResource("3_scgl7")
+ControllerScene = ExtResource("2_quec8")
+Ambient = ExtResource("1_nv5lf")
+SprintStaminaDecreaseRate = 0.3
+SprintStaminaIncreaseRate = 0.3
+SkillFlags = 16

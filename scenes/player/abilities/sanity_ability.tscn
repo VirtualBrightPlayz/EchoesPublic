@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ddtb6gnvwi47s"]
+
+[ext_resource type="Script" uid="uid://be82la3ha6i0i" path="res://scripts/player/controllers/ability/SanityAbility.cs" id="1_vh7ue"]
+
+[node name="SanityAbility" type="Node" unique_id=1675328485]
+script = ExtResource("1_vh7ue")
+metadata/_custom_type_script = "uid://be82la3ha6i0i"

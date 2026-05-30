@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://b2dpxr6w7smb4"]
+
+[ext_resource type="Script" uid="uid://gbx5cqsanacv" path="res://scripts/map/Door.cs" id="1_hbf8v"]
+[ext_resource type="AudioStream" uid="uid://b1h2ttycxme7" path="res://audio/Doors/HCZ/Opening/DoorsHCZOpen1.wav" id="2_t46me"]
+[ext_resource type="AudioStream" uid="uid://da8yvr6lohirq" path="res://audio/Doors/HCZ/Opening/DoorsHCZOpen2.wav" id="3_nxewy"]
+[ext_resource type="AudioStream" uid="uid://cr2038djp830h" path="res://audio/Doors/HCZ/Opening/DoorsHCZOpen3.wav" id="4_0w5p6"]
+[ext_resource type="AudioStream" uid="uid://djbd7dtlsh562" path="res://audio/Doors/HCZ/Closing/DoorsHCZClose1.wav" id="5_yyfvx"]
+[ext_resource type="AudioStream" uid="uid://dbkmujdduf6fn" path="res://audio/Doors/HCZ/Closing/DoorsHCZClose2.wav" id="6_3ru2m"]
+[ext_resource type="AudioStream" uid="uid://d4gjjj72q3gbo" path="res://audio/Doors/HCZ/Closing/DoorsHCZClose3.wav" id="7_ibt0g"]
+[ext_resource type="AudioStream" uid="uid://c0fwwfwupmgr8" path="res://audio/scpcb/doors/Button2.ogg" id="8_mttlr"]
+[ext_resource type="PackedScene" uid="uid://b7mmpevt45sdo" path="res://models/scpcb/doorframe.glb" id="9_gv4h1"]
+[ext_resource type="Material" uid="uid://cr22vapdmat0n" path="res://materials/scpcb_map/door01.tres" id="10_cgoaw"]
+[ext_resource type="Material" uid="uid://ckn82kcpey4tf" path="res://materials/scpcb_map/dirtymetal.tres" id="11_puw8q"]
+[ext_resource type="Script" uid="uid://m6uxe7omjc4a" path="res://scripts/map/DoorButton.cs" id="12_nkovd"]
+[ext_resource type="ArrayMesh" uid="uid://c4b7ocpuhkuqr" path="res://models/scpcb/props/heavydoor1.obj" id="13_7skmf"]
+[ext_resource type="Material" uid="uid://dqhbd5ob83aba" path="res://materials/scpcb_map/containment_doors.tres" id="14_88pqm"]
+[ext_resource type="PackedScene" uid="uid://wgfvrc4odf7h" path="res://models/main/hcz_door/hcz_door_right.glb" id="15_luevy"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="16_t46me"]
+[ext_resource type="ArrayMesh" uid="uid://b786ewn0eqf25" path="res://models/scpcb/props/heavydoor2.obj" id="16_tt6ox"]
+[ext_resource type="PackedScene" uid="uid://dgs2rh2f5bga4" path="res://models/main/hcz_door/hcz_door_left.glb" id="17_0pwml"]
+[ext_resource type="Resource" uid="uid://dsqjeet0d5d3i" path="res://projectile_resistance/metal_pr.tres" id="17_nxewy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_epok6"]
+size = Vector3(1.30984, 3.23267, 0.186523)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obyi3"]
+size = Vector3(0.927923, 3.23267, 0.186523)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gp0pc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = false
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = false
+properties/1/replication_mode = 0
+properties/2/path = NodePath(".:isMoving")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:isOpen")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:isLocked")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_3t1j2"]
+size = Vector3(2.158, 3.639, 0.15)
+
+[node name="HczDoor" type="Node3D" unique_id=221949192 node_paths=PackedStringArray("marker", "doors", "startPoints", "endPoints", "audio", "audioNear", "occluder")]
+script = ExtResource("1_hbf8v")
+marker = NodePath("Marker3D")
+doors = [NodePath("Door1"), NodePath("Door2")]
+startPoints = [NodePath("Start"), NodePath("Start")]
+endPoints = [NodePath("End1"), NodePath("End2")]
+audio = NodePath("Audio")
+audioNear = NodePath("AudioNear")
+openSounds = [ExtResource("2_t46me"), ExtResource("3_nxewy"), ExtResource("4_0w5p6")]
+closeSounds = [ExtResource("5_yyfvx"), ExtResource("6_3ru2m"), ExtResource("7_ibt0g")]
+failSounds = [ExtResource("8_mttlr")]
+speed = 0.7
+transition = 7
+ease = 0
+occluder = NodePath("OccluderInstance3D")
+
+[node name="doorframe" parent="." unique_id=166973304 instance=ExtResource("9_gv4h1")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, 0, 0, 0)
+
+[node name="DoorFrame" parent="doorframe" index="0" unique_id=667736492]
+surface_material_override/0 = ExtResource("10_cgoaw")
+surface_material_override/1 = ExtResource("11_puw8q")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=37456274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=764744912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+attenuation_model = 1
+max_distance = 30.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="AudioNear" type="AudioStreamPlayer3D" parent="." unique_id=326371725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+max_distance = 10.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Door1" type="StaticBody3D" parent="." unique_id=734364943 node_paths=PackedStringArray("marker")]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+collision_layer = 257
+collision_mask = 257
+script = ExtResource("12_nkovd")
+marker = NodePath("../Marker3D")
+target = NodePath("..")
+metadata/no_vr_use = true
+
+[node name="Door01" type="MeshInstance3D" parent="Door1" unique_id=1206762518]
+transform = Transform3D(1.02, 0, 0, 0, 1.02, 0, 0, 0, 1.02, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = ExtResource("13_7skmf")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("11_puw8q")
+surface_material_override/1 = ExtResource("14_88pqm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1" unique_id=1962443286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.245589, 1.60388, 0)
+shape = SubResource("BoxShape3D_epok6")
+
+[node name="hcz_door_right" parent="Door1" unique_id=607096759 instance=ExtResource("15_luevy")]
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 0, 0, 0)
+
+[node name="ProjectileSettings" type="Node" parent="Door1" unique_id=128876506]
+script = ExtResource("16_t46me")
+Medium = ExtResource("17_nxewy")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="Door2" type="StaticBody3D" parent="." unique_id=950211612 node_paths=PackedStringArray("marker")]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+collision_layer = 257
+collision_mask = 257
+script = ExtResource("12_nkovd")
+marker = NodePath("../Marker3D")
+target = NodePath("..")
+metadata/no_vr_use = true
+
+[node name="Door02" type="MeshInstance3D" parent="Door2" unique_id=1697623179]
+transform = Transform3D(-1.02, 0, -8.91712e-08, 0, 1.02, 0, 8.91712e-08, 0, -1.02, 0, 0, 0)
+visible = false
+gi_mode = 2
+mesh = ExtResource("16_tt6ox")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("14_88pqm")
+surface_material_override/1 = ExtResource("11_puw8q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2" unique_id=1897766148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446741, 1.60388, 0)
+shape = SubResource("BoxShape3D_obyi3")
+
+[node name="hcz_door_left" parent="Door2" unique_id=1799587697 instance=ExtResource("17_0pwml")]
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 0, 0, 0)
+
+[node name="ProjectileSettings" type="Node" parent="Door2" unique_id=2138873504]
+script = ExtResource("16_t46me")
+Medium = ExtResource("17_nxewy")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="Start" type="Marker3D" parent="." unique_id=1166059460]
+
+[node name="End1" type="Marker3D" parent="." unique_id=201731499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="End2" type="Marker3D" parent="." unique_id=1370502865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=68641758]
+replication_interval = 0.2
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_gp0pc")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=962059547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67103, 0)
+occluder = SubResource("BoxOccluder3D_3t1j2")
+
+[editable path="doorframe"]

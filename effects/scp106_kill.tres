@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameEffect" format=3 uid="uid://bxvtia2184c6p"]
+
+[ext_resource type="PackedScene" uid="uid://byaotwmgdopc7" path="res://effects/scenes/scp106_kill.tscn" id="1_1hlrb"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_15nim"]
+
+[resource]
+resource_name = "SCP106 Killed"
+script = ExtResource("2_15nim")
+DisplayName = "SCP-106 Killed"
+scene = ExtResource("1_1hlrb")
+Lifetime = 15.0

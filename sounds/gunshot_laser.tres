@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://b12t8n5r08h7v"]
+
+[ext_resource type="AudioStream" uid="uid://htlc455tdc5l" path="res://audio/edited/laser_gun_reverb.wav" id="2_f44tv"]
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="4_18wf7"]
+
+[resource]
+script = ExtResource("4_18wf7")
+DisplayName = "Laser Gunshot"
+streams = [ExtResource("2_f44tv")]
+maxDistance = 250.0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cswujfwltj3a8"
+path="res://.godot/imported/SCP Echoes OST - Light Fright.ogg-dc9abeed5e612a7314da7869c522bf1c.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/SCP Echoes OST - Light Fright.ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - Light Fright.ogg-dc9abeed5e612a7314da7869c522bf1c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

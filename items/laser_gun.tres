@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://dr1g4ngtgc7n3"]
+
+[ext_resource type="PackedScene" uid="uid://0byh8ndivq3l" path="res://scenes/items/laser_gun.tscn" id="1_hx01b"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_eohsu"]
+
+[resource]
+resource_name = "Laser Gun"
+script = ExtResource("3_eohsu")
+ItemScene = ExtResource("1_hx01b")
+Description = "A high-tech pistol that fires deadly lasers. Use your shots wisely, this kind of ammo probably doesn't exist."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

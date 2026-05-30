@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://dljmifbvx1i5w"]
+
+[ext_resource type="Texture2D" uid="uid://dxoh4jb8ed3ww" path="res://textures/main/ez/officeceiling/T_Office_Ceiling_Tiles_2x1.png" id="1_qtkto"]
+[ext_resource type="Texture2D" uid="uid://c8xxplj7i6m62" path="res://textures/main/ez/officeceiling/N_Office_Ceiling_Tiles_2x1.png" id="2_gjsbm"]
+[ext_resource type="Texture2D" uid="uid://bna4dxua7lwc0" path="res://textures/main/ez/officeceiling/ORM_Office_Ceiling_Tiles_2x1.png" id="3_dc3k8"]
+
+[resource]
+albedo_texture = ExtResource("1_qtkto")
+orm_texture = ExtResource("3_dc3k8")
+normal_enabled = true
+normal_texture = ExtResource("2_gjsbm")
+uv1_world_triplanar = true

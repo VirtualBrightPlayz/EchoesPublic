@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://mnmh4cy8v2ny"]
+
+[ext_resource type="Shader" uid="uid://ca1mlv0uksfjt" path="res://shaders/fp_pov_alpha.gdshader" id="1_3x12n"]
+[ext_resource type="Texture2D" uid="uid://b11dobsay43sr" path="res://models/rooms/pop_hcz_new/Pop_Cards/Laminate/Laminate_T.png" id="1_q7ll8"]
+[ext_resource type="Texture2D" uid="uid://dv45nl6mm7gxy" path="res://models/rooms/pop_hcz_new/Pop_Cards/Laminate/Laminate_N.png" id="3_dxs38"]
+[ext_resource type="Texture2D" uid="uid://b7jgay13djw35" path="res://models/rooms/pop_hcz_new/Pop_Cards/Laminate/Laminate_ORM.png" id="4_4jhk6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3x12n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_q7ll8")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("4_4jhk6")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("4_4jhk6")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("3_dxs38")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissions = 0.0

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://iasqdtyxgo43"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_pa0kl"]
+[ext_resource type="PackedScene" uid="uid://cw83t531huyso" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Lab_Thermometer.fbx" id="2_pa0kl"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_gkb82"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m84f7"]
+size = Vector3(0.07446289, 0.22705078, 0.0078125)
+
+[node name="Lab_Thermometer_Prop" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 1.5
+script = ExtResource("1_pa0kl")
+Category = 13
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11253357, 0)
+shape = SubResource("BoxShape3D_m84f7")
+
+[node name="Lab_Thermometer" type="Node3D" parent="." instance=ExtResource("2_pa0kl")]
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_gkb82")
+targetNode = NodePath("..")
+CanClaim = true

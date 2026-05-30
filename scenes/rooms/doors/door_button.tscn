@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://dawmxpv0uae1s"]
+
+[ext_resource type="Script" uid="uid://m6uxe7omjc4a" path="res://scripts/map/DoorButton.cs" id="1_h14gy"]
+[ext_resource type="PackedScene" uid="uid://b5ef2t75pu8cf" path="res://models/scpcb/button.glb" id="1_y7pbn"]
+[ext_resource type="AudioStream" uid="uid://pshajbfjgl58" path="res://audio/scpcb/doors/Button.ogg" id="2_grlq0"]
+[ext_resource type="Material" uid="uid://bqg74nviosjin" path="res://materials/scpcb_map/keypad.tres" id="2_rvp3h"]
+[ext_resource type="Material" uid="uid://sv6exwgovn0k" path="res://materials/button/door_button_green_2.tres" id="3_10c55"]
+[ext_resource type="PackedScene" uid="uid://va16wncmp128" path="res://models/main/button/button_new.glb" id="3_jyclw"]
+[ext_resource type="PackedScene" uid="uid://gojr3tw14tig" path="res://models/scpcb/props/button_keycard.glb" id="4_qpnv0"]
+[ext_resource type="Material" uid="uid://broi715j07upe" path="res://materials/button/door_button_yellow_2.tres" id="4_xdsa3"]
+[ext_resource type="Material" uid="uid://dy5en3anucfsx" path="res://materials/button/door_button_red_2.tres" id="5_u52i1"]
+[ext_resource type="Material" uid="uid://dgmtg7vm11nmr" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Closed_icon.tres" id="6_cg32n"]
+[ext_resource type="Texture2D" uid="uid://b4p34phk7g51y" path="res://models/main/props/keycard_access/T_KeycardScanner.png" id="6_fo7i3"]
+[ext_resource type="Material" uid="uid://6kupth2rwv37" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/open_icon.tres" id="7_5sdlx"]
+[ext_resource type="Material" uid="uid://duyuoegeasitq" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/PleaseHold_icon.tres" id="8_tqwa1"]
+[ext_resource type="Material" uid="uid://cgg7hyvnn25ko" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Error_icon.tres" id="9_cg32n"]
+[ext_resource type="Material" uid="uid://dd0nvjy5rkibs" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/InvalidInput_icon.tres" id="10_ookj5"]
+[ext_resource type="PackedScene" uid="uid://coecwlpg2pbvu" path="res://models/main/props/keycard_access/SM_KeycardScanner.fbx" id="10_ydkfc"]
+[ext_resource type="PackedScene" uid="uid://bg4ow0ll2obxf" path="res://models/main/button/Door_Button.fbx" id="11_tqwa1"]
+[ext_resource type="Material" uid="uid://dqke0rp7v5tum" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/swipe_card.tres" id="18_x8s3t"]
+[ext_resource type="Texture2D" uid="uid://b1v8py5sxojqc" path="res://models/main/props/keycard_access/N_KeycardScanner.png" id="19_tqwa1"]
+[ext_resource type="Texture2D" uid="uid://dxgdh51ssjs1a" path="res://models/main/props/keycard_access/ORM_KeycardScanner.png" id="20_cg32n"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="21_ookj5"]
+[ext_resource type="Resource" uid="uid://dsqjeet0d5d3i" path="res://projectile_resistance/metal_pr.tres" id="22_h6ggu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kbja1"]
+size = Vector3(0.231463, 0.41662, 0.275552)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ookj5"]
+albedo_texture = ExtResource("6_fo7i3")
+orm_texture = ExtResource("20_cg32n")
+normal_enabled = true
+normal_texture = ExtResource("19_tqwa1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fo7i3"]
+size = Vector3(0.347168, 0.41662, 0.385823)
+
+[node name="DoorButton" type="StaticBody3D" unique_id=321796501 node_paths=PackedStringArray("marker", "audio", "button", "keycard", "buttonMesh", "keycardLight", "keycardMesh")]
+collision_layer = 257
+collision_mask = 257
+script = ExtResource("1_h14gy")
+marker = NodePath("Marker3D")
+audio = NodePath("AudioNear")
+pressSounds = [ExtResource("2_grlq0")]
+button = NodePath("Door_Button")
+keycard = NodePath("SM_KeycardScanner")
+buttonMaterials = [ExtResource("3_10c55"), ExtResource("4_xdsa3"), ExtResource("5_u52i1")]
+buttonMaterials2 = [ExtResource("6_cg32n"), ExtResource("7_5sdlx"), ExtResource("8_tqwa1"), ExtResource("9_cg32n"), ExtResource("10_ookj5")]
+buttonMesh = NodePath("Door_Button/New Button")
+keycardMaterials = [ExtResource("18_x8s3t"), ExtResource("7_5sdlx"), ExtResource("8_tqwa1"), ExtResource("9_cg32n"), ExtResource("10_ookj5")]
+keycardLight = NodePath("SM_KeycardScanner/KeycardScanner/OmniLight3D")
+keycardLightColors = PackedColorArray(0, 0.713726, 1, 1, 0.4, 0.737255, 0, 1, 1, 0.603922, 0, 1, 0.737255, 0, 0, 1)
+keycardMesh = NodePath("SM_KeycardScanner/KeycardScanner")
+emission = 1.0
+materialIndex = 1
+materialIndexButton2 = 1
+
+[node name="Door_Button" parent="." unique_id=2017421884 instance=ExtResource("11_tqwa1")]
+transform = Transform3D(-0.08, 0, 6.993822e-09, 0, 0.08, 0, -6.993822e-09, 0, -0.08, 0, 0, 0)
+
+[node name="New Button" parent="Door_Button" index="0" unique_id=61958401]
+surface_material_override/0 = ExtResource("3_10c55")
+
+[node name="button_new" parent="." unique_id=1484798396 instance=ExtResource("3_jyclw")]
+transform = Transform3D(-0.08, 0, -1.20797e-08, 0, 0.08, 0, 1.20797e-08, 0, -0.08, 0, 0, 0)
+visible = false
+
+[node name="New Button" parent="button_new" index="0" unique_id=1701208052]
+gi_mode = 0
+instance_shader_parameters/emission_energy_multi = 0.0
+instance_shader_parameters/emission_pulse_amount = 0.0
+surface_material_override/0 = ExtResource("3_10c55")
+
+[node name="button" parent="." unique_id=1444013529 instance=ExtResource("1_y7pbn")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+visible = false
+
+[node name="Object" parent="button" index="0" unique_id=1810626049]
+gi_mode = 0
+surface_material_override/0 = ExtResource("2_rvp3h")
+
+[node name="button_keycard" parent="." unique_id=785886757 instance=ExtResource("4_qpnv0")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+visible = false
+
+[node name="ButtonKeycard" parent="button_keycard" index="0" unique_id=1006586749]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, -0.01, 0, 0.01, -4.37114e-10, 0, 0, 0)
+gi_mode = 0
+surface_material_override/0 = ExtResource("2_rvp3h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1094027898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0679694, 0)
+shape = SubResource("BoxShape3D_kbja1")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1307890925]
+
+[node name="AudioNear" type="AudioStreamPlayer3D" parent="." unique_id=1085248704]
+max_distance = 10.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="SM_KeycardScanner" parent="." unique_id=1348174982 instance=ExtResource("10_ydkfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="KeycardScanner" parent="SM_KeycardScanner" index="0" unique_id=1349222770]
+gi_mode = 2
+surface_material_override/0 = SubResource("ORMMaterial3D_ookj5")
+surface_material_override/1 = ExtResource("18_x8s3t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SM_KeycardScanner/KeycardScanner" index="0" unique_id=70313816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0869507, 0.166613)
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+distance_fade_enabled = true
+omni_range = 0.2
+omni_attenuation = 0.0
+
+[node name="KeycardArea" type="Area3D" parent="." unique_id=514810989]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeycardArea" unique_id=876454988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0231934, 0.0679694, 0.0551354)
+shape = SubResource("BoxShape3D_fo7i3")
+
+[node name="ProjectileSettings" type="Node" parent="." unique_id=1111822496]
+script = ExtResource("21_ookj5")
+Medium = ExtResource("22_h6ggu")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[connection signal="body_entered" from="KeycardArea" to="." method="AreaEnter"]
+
+[editable path="Door_Button"]
+[editable path="button_new"]
+[editable path="button"]
+[editable path="button_keycard"]
+[editable path="SM_KeycardScanner"]

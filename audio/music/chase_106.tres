@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MusicClip" format=3 uid="uid://ccemfndjplkiq"]
+
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_upnxh"]
+
+[resource]
+script = ExtResource("2_upnxh")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

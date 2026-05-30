@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://dcqpikvdkdf65"]
+
+[ext_resource type="Texture2D" uid="uid://bb3l0epjvqamw" path="res://textures/inv_icons/shotgun_icon.png" id="1_qjo4d"]
+[ext_resource type="PackedScene" uid="uid://be5d54oook4jq" path="res://scenes/items/shotgun.tscn" id="2_qjo4d"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_7m3yu"]
+
+[resource]
+resource_name = "Shotgun"
+script = ExtResource("3_7m3yu")
+ItemScene = ExtResource("2_qjo4d")
+Icon = ExtResource("1_qjo4d")
+Description = "A shotgun that fires a spread of pellets, capable of doing very high damage up close."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://hm3pwlvy0sa7"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_odxg5"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_kqt1o"]
+
+[resource]
+resource_name = "Checkpoint Core-HC"
+script = ExtResource("2_odxg5")
+type = 2
+size = 2
+scenes = []
+sceneFile = "uid://c21ioes37w00b"
+gridRect = Rect2i(0, 0, 1, 2)
+category = "Misc."

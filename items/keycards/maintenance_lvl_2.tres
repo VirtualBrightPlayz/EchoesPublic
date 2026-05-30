@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://dc8lutpuf8m8n"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_ritoi"]
+[ext_resource type="Texture2D" uid="uid://wemmapwbmm24" path="res://textures/inv_icons/keycards/V3 - Current/M2 Card Icon.png" id="2_f7p42"]
+[ext_resource type="PackedScene" uid="uid://bee3dxwqecwgq" path="res://scenes/items/keycard.tscn" id="3_5nx2a"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_0khua"]
+[ext_resource type="PackedScene" uid="uid://baffhc42la316" path="res://models/rooms/pop_hcz_new/Pop_Cards/M_Card_2.tscn" id="4_f7p42"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_tclmx"]
+[ext_resource type="Texture2D" uid="uid://cgie3lq08xj55" path="res://textures/main/cards/T_maintenance.png" id="6_ritoi"]
+[ext_resource type="Texture2D" uid="uid://ddw8eg22gjuhr" path="res://textures/main/cards/ORM_keycard.png" id="7_okxyw"]
+[ext_resource type="Texture2D" uid="uid://bjb4ybvuby1hf" path="res://textures/main/cards/N_keycard.png" id="8_dtin8"]
+
+[sub_resource type="Resource" id="Resource_ritoi"]
+script = ExtResource("1_ritoi")
+level = 2
+cardType = 1
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gm3tf"]
+render_priority = 0
+shader = ExtResource("5_tclmx")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_ritoi")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("7_okxyw")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("7_okxyw")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("8_dtin8")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_5nx2a"]
+albedo_texture = ExtResource("6_ritoi")
+orm_texture = ExtResource("7_okxyw")
+normal_enabled = true
+normal_texture = ExtResource("8_dtin8")
+
+[resource]
+resource_name = "T2 Maintenance Keycard"
+script = ExtResource("4_0khua")
+Access = [SubResource("Resource_ritoi")]
+worldMaterial = SubResource("ORMMaterial3D_5nx2a")
+viewMaterial = SubResource("ShaderMaterial_gm3tf")
+cardScene = ExtResource("4_f7p42")
+ItemScene = ExtResource("3_5nx2a")
+Icon = ExtResource("2_f7p42")
+Description = "Can access mid-tier checkpoints, shortcuts, and janitorial closets."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

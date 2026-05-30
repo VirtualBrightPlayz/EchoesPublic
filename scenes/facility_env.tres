@@ -1,0 +1,24 @@
+[gd_resource type="Environment" format=3 uid="uid://dm3nps0ldtkkd"]
+
+[ext_resource type="Texture2D" uid="uid://dgwgpf0c2k24" path="res://textures/lens_dirt.png" id="1_dudi4"]
+
+[resource]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.1, 0.1, 0.1, 1)
+reflected_light_source = 1
+tonemap_mode = 3
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_min_cell_size = 0.3125
+sdfgi_y_scale = 2
+glow_enabled = true
+glow_intensity = 2.0
+glow_map = ExtResource("1_dudi4")
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_end = 40.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_gi_inject = 0.0

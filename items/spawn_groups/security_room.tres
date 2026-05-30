@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://dw2kxp8glh6gq"]
+
+[ext_resource type="Resource" uid="uid://dxl1yivlnk3d0" path="res://items/keycards/security_lvl_2.tres" id="1_mgi05"]
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="2_mvlsa"]
+
+[resource]
+script = ExtResource("2_mvlsa")
+Items = [ExtResource("1_mgi05")]
+metadata/_custom_type_script = "uid://vus0iseb56sl"

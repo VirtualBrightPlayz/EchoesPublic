@@ -1,0 +1,40 @@
+[role]
+name = 'Chaos'
+display_name = 'ROLE_NAME_CI'
+team = 'ClassD'
+ui_color = '#365730'
+controller = 'Humanoid'
+model = 'Chaos'
+abilities = ['InventoryMilitary', 'Use', 'Grab', 'Sanity', 'Stamina']
+ragdoll_effect = 'Zombie Ragdoll'
+
+[role.stats]
+max_health = 100.0
+spawn_stage = 1
+can_capture_points = true
+start_items = ['Short-Range SMG', 'Chaos Access Device', 'First-Aid Kit', 'Frag. Grenade']
+start_ammo = [0, 0, 250]
+immune_damage_types = ['Water']
+
+[role.stats.movement]
+speed = 4.0
+acceleration = 70.0
+sprint_speed_multiplier = 1.8
+crouch_speed_multiplier = 0.5
+jump_velocity = 5.0
+gravity_multiplier = 1.9
+
+[role.voice]
+can_use_intercom = true
+proximity_chat = true
+global_team_chat = false
+main_chat_channel = 0
+alt_chat_channel = 0
+proximity_chat_channel = 0
+listening_chat_channels = [0]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_CI'
+hint_text = ''
+hint_time = 0.0
+spawn_audio = 'ci_spawn'

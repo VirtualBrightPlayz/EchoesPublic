@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://byomgdf3c7r41"]
+
+[node name="PlaceholderText" type="RichTextLabel"]
+text = "PLACEHOLDER TEXT"

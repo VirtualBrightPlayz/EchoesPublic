@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://c0u65pd3bbrnt"]
+
+[ext_resource type="Texture2D" uid="uid://cfdyq7eg51omu" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ECZ_BlastDoor_Frame_T.png" id="1_e5pnq"]
+[ext_resource type="Texture2D" uid="uid://8l1qb5qcy4v8" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ECZ_BlastDoor_Frame_N.png" id="2_nyn1m"]
+[ext_resource type="Texture2D" uid="uid://842i5n5hup0d" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ECZ_BlastDoor_Frame_ORM.png" id="3_1ihp4"]
+
+[resource]
+albedo_texture = ExtResource("1_e5pnq")
+orm_texture = ExtResource("3_1ihp4")
+normal_enabled = true
+normal_texture = ExtResource("2_nyn1m")

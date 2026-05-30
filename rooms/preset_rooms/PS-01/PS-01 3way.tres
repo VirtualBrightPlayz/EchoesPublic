@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://b6oryij6ee4es"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_wjqdn"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_6k8sy"]
+
+[resource]
+resource_name = "PS-01 3way"
+script = ExtResource("2_wjqdn")
+type = 3
+stage = 4
+scenes = []
+sceneFile = "uid://60tobkc1t8v8"
+isGeneric = true
+category = "PS-01"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

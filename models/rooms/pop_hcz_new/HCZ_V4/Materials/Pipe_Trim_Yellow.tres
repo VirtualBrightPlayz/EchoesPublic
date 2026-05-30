@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://btp6ygpfqqdnr"]
+
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_mm7fx"]
+[ext_resource type="Texture2D" uid="uid://b4h8lafa8g0x2" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/PipeTrim_T.png" id="2_jv81v"]
+[ext_resource type="Texture2D" uid="uid://1ab5na57xehd" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/PipeTrim_CM.png" id="3_ukneo"]
+[ext_resource type="Texture2D" uid="uid://bb22p0pcr5yw8" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/PipeTrim_N.png" id="4_mmbnf"]
+[ext_resource type="Texture2D" uid="uid://d0g5eqctogfit" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/PipeTrim_ORM.png" id="5_w3q27"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mm7fx")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_jv81v")
+shader_parameter/mask_color = Color(1, 0.802, 0.33999997, 1)
+shader_parameter/texture_mask = ExtResource("3_ukneo")
+shader_parameter/albedo_texture_size = Vector2i(2048, 2048)
+shader_parameter/point_size = 1.0
+shader_parameter/texture_orm = ExtResource("5_w3q27")
+shader_parameter/texture_normal = ExtResource("4_mmbnf")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://wqhogjm40ymg"]
+
+[ext_resource type="Texture2D" uid="uid://bkvfbwwuquhyo" path="res://models/main/vertical_door/T_verticaldoor.png" id="1_q6a0v"]
+[ext_resource type="Texture2D" uid="uid://u0ynu5kcx0sj" path="res://models/main/vertical_door/N_verticaldoor.png" id="2_j1l3x"]
+[ext_resource type="Texture2D" uid="uid://ve44vj1kkl8j" path="res://models/main/vertical_door/ORM_verticaldoor.png" id="3_gtjo4"]
+
+[resource]
+albedo_texture = ExtResource("1_q6a0v")
+orm_texture = ExtResource("3_gtjo4")
+normal_enabled = true
+normal_texture = ExtResource("2_j1l3x")

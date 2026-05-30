@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0n8og4cooevn"]
+
+[ext_resource type="PackedScene" uid="uid://ch4s78kxbe5d2" path="res://scenes/rooms/props/static/lights/cclamp.fbx" id="1_mgqjn"]
+
+[node name="Cclamp" type="Node3D" unique_id=893615468]
+
+[node name="cclamp" parent="." unique_id=1750970279 instance=ExtResource("1_mgqjn")]
+
+[editable path="cclamp"]

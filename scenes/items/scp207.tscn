@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://b7vwrkcgghnpu"]
+
+[ext_resource type="Script" uid="uid://bgppldp6cwd1p" path="res://scripts/items/ItemObject.cs" id="1_wepnt"]
+[ext_resource type="Script" uid="uid://mu1bygtcggbg" path="res://scripts/items/Scp207.cs" id="2_lyn4c"]
+[ext_resource type="Script" uid="uid://cnnnnu62sw6be" path="res://scripts/items/ItemGrip.cs" id="4_3jwvq"]
+[ext_resource type="PackedScene" uid="uid://c745i2yxcph3j" path="res://models/main/items/cola/SCP207.fbx" id="4_5x6nv"]
+[ext_resource type="Texture2D" uid="uid://dhbyg4rdhrce0" path="res://models/main/items/cola/SCP207_T.png" id="5_ie5od"]
+[ext_resource type="Texture2D" uid="uid://d4ftpbmrjsud3" path="res://models/main/items/cola/SCP207_N.png" id="6_0g2o0"]
+[ext_resource type="Texture2D" uid="uid://dr05qe4adtpcm" path="res://models/main/items/cola/SCP207_ORM.png" id="7_11fe8"]
+[ext_resource type="PackedScene" uid="uid://bjq111jf62rd" path="res://scenes/viewmodels/scp207.tscn" id="10_11fe8"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="13_4dy1b"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ie5od"]
+height = 1.1704102
+radius = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jlyy"]
+albedo_color = Color(0.137255, 0.0666667, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7ewbt"]
+material = SubResource("StandardMaterial3D_2jlyy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n776l"]
+albedo_color = Color(0.572549, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_50oco"]
+material = SubResource("StandardMaterial3D_n776l")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_cym5g"]
+transparency = 1
+albedo_texture = ExtResource("5_ie5od")
+orm_texture = ExtResource("7_11fe8")
+normal_enabled = true
+normal_texture = ExtResource("6_0g2o0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie5od"]
+albedo_color = Color(0.101960786, 0.07058824, 0.043137256, 1)
+roughness = 0.13
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_lyn4c"]
+properties/0/path = NodePath(".:Serial")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:Id")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:playerPath")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:ModelEnabled")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ItemGrip:holderPath")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("scp207:empty")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+
+[node name="ItemObject" type="Node" unique_id=48285469 node_paths=PackedStringArray("model", "viewModel", "grips")]
+script = ExtResource("1_wepnt")
+model = NodePath("scp207")
+viewModel = NodePath("ViewmodelCola")
+grips = [NodePath("ItemGrip")]
+metadata/_custom_type_script = "uid://bgppldp6cwd1p"
+
+[node name="scp207" type="RigidBody3D" parent="." unique_id=525890739 node_paths=PackedStringArray("inst", "marker", "xformSync")]
+collision_layer = 4
+collision_mask = 5
+continuous_cd = true
+script = ExtResource("2_lyn4c")
+inst = NodePath("SCP207/Bottle/BottleFluid")
+drinkDelay = 1.75
+marker = NodePath("Marker3D")
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scp207" unique_id=1038253662]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.14630127, 0)
+shape = SubResource("CylinderShape3D_ie5od")
+
+[node name="Bottle" type="MeshInstance3D" parent="scp207" unique_id=127638497]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_7ewbt")
+
+[node name="BottleLabel" type="MeshInstance3D" parent="scp207" unique_id=746903859]
+transform = Transform3D(0.22, 0, 0, 0, 0.034, 0, 0, 0, 0.22, 0, 0.04, 0)
+visible = false
+mesh = SubResource("CylinderMesh_50oco")
+
+[node name="Marker3D" type="Marker3D" parent="scp207" unique_id=387095309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123353, 0)
+
+[node name="TransformSync" type="Node" parent="scp207" unique_id=1739323436]
+script = ExtResource("13_4dy1b")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="SCP207" parent="scp207" unique_id=770407202 instance=ExtResource("4_5x6nv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.136, 0)
+
+[node name="Bottle" parent="scp207/SCP207" index="0" unique_id=1630650473]
+surface_material_override/0 = SubResource("ORMMaterial3D_cym5g")
+
+[node name="BottleFluid" parent="scp207/SCP207/Bottle" index="0" unique_id=44177980]
+surface_material_override/0 = SubResource("StandardMaterial3D_ie5od")
+
+[node name="Cap" parent="scp207/SCP207/Bottle" index="1" unique_id=1848846847]
+surface_material_override/0 = SubResource("ORMMaterial3D_cym5g")
+
+[node name="ViewmodelCola" parent="." unique_id=1903606477 instance=ExtResource("10_11fe8")]
+
+[node name="ItemGrip" type="Node" parent="." unique_id=1235765440 node_paths=PackedStringArray("item", "marker")]
+script = ExtResource("4_3jwvq")
+item = NodePath("..")
+marker = NodePath("../scp207/Marker3D")
+metadata/_custom_type_script = "uid://cnnnnu62sw6be"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=273007795]
+replication_interval = 5.0
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_lyn4c")
+
+[editable path="scp207/SCP207"]

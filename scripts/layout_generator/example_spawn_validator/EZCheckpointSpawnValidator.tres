@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwfn8phl381r4"]
+
+[ext_resource type="Script" uid="uid://bowmtso844nf1" path="res://scripts/layout_generator/example_spawn_validator/EZSpawnValidator.cs" id="1_r5h6u"]
+
+[resource]
+script = ExtResource("1_r5h6u")
+CheckpointX = 5
+isEz = false
+isCheckpoint = true

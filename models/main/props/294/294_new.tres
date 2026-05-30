@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://co4lsy5a43qei"]
+
+[ext_resource type="Texture2D" uid="uid://botrelxdjsk2r" path="res://models/main/props/294/SCP294_DefaultMaterial_BaseColor.png" id="1_xr8ti"]
+[ext_resource type="Texture2D" uid="uid://bayhej8cdg21n" path="res://models/main/props/294/SCP294_DefaultMaterial_Metallic.png" id="2_623uw"]
+[ext_resource type="Texture2D" uid="uid://d07s3hk6ha5pe" path="res://models/main/props/294/SCP294_DefaultMaterial_Normal.png" id="3_7ysy0"]
+[ext_resource type="Texture2D" uid="uid://bd5d3r84jrdju" path="res://models/main/props/294/SCP294_DefaultMaterial_Roughness.png" id="4_pqhc2"]
+
+[resource]
+albedo_texture = ExtResource("1_xr8ti")
+metallic = 1.0
+metallic_texture = ExtResource("2_623uw")
+roughness_texture = ExtResource("4_pqhc2")
+normal_enabled = true
+normal_texture = ExtResource("3_7ysy0")

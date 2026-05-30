@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rbgsn2koxs4u"]
+
+[ext_resource type="Script" uid="uid://ii6qb7fba8t8" path="res://scripts/player/controllers/ability/StatueAttackAbility.cs" id="1_eek7v"]
+[ext_resource type="Resource" uid="uid://bjf02bsy8i3xs" path="res://sounds/necksnap.tres" id="2_ul2ym"]
+
+[node name="StatueAttackAbility" type="Node" unique_id=450435620 node_paths=PackedStringArray("rayCast")]
+script = ExtResource("1_eek7v")
+rayCast = NodePath("RayCast3DPlayer")
+damageAmount = 10000.0
+damageType = 2
+attackSound = ExtResource("2_ul2ym")
+metadata/_custom_type_script = "uid://ii6qb7fba8t8"
+
+[node name="RayCast3DPlayer" type="RayCast3D" parent="." unique_id=480475060]
+enabled = false
+target_position = Vector3(0, 0, -3)
+collision_mask = 281
+hit_back_faces = false

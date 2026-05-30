@@ -1,0 +1,837 @@
+[gd_scene format=3 uid="uid://b0uuw10tls3th"]
+
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="1_xkisb"]
+[ext_resource type="PackedScene" uid="uid://bwa5psus1mkr8" path="res://models/npc/soldier/forest_soldier_outdated.glb" id="2_ciq0p"]
+[ext_resource type="Texture2D" uid="uid://bxuispgpcxtld" path="res://models/npc/soldier/forest_soldier_outdated_Image_0.png" id="3_33nmb"]
+[ext_resource type="Script" uid="uid://b3jrtkmear2gs" path="res://scripts/map/PlayerHitbox.cs" id="3_efajn"]
+[ext_resource type="Texture2D" uid="uid://3uxjjoerfdaj" path="res://models/npc/soldier/forest_soldier_outdated_Image_1.png" id="4_3d2mr"]
+[ext_resource type="AnimationLibrary" uid="uid://cdjfqikettmwr" path="res://models/main/human/anims/basic.res" id="4_33nmb"]
+[ext_resource type="AnimationLibrary" uid="uid://cd5sufjlfjega" path="res://models/main/human/anims/pistol/pistol.res" id="5_3d2mr"]
+[ext_resource type="Texture2D" uid="uid://dww0d1qhsy1u1" path="res://models/npc/soldier/forest_soldier_outdated_Image_2.png" id="5_s42pq"]
+[ext_resource type="AnimationLibrary" uid="uid://c5qjhi62djvi4" path="res://models/main/human/anims/rifle/rifle.res" id="6_s42pq"]
+[ext_resource type="Script" uid="uid://n7pocn4687j3" path="res://scripts/player/PlayerAnims.cs" id="7_yy14h"]
+[ext_resource type="Script" uid="uid://b413bc3tfquku" path="res://scripts/player/controllers/animation/PlayerAnimTool.cs" id="8_y23j8"]
+[ext_resource type="Script" uid="uid://gmd8piq5k2id" path="res://scripts/player/player_anims_script.gd" id="9_cp152"]
+[ext_resource type="Script" uid="uid://c34u348ok0smv" path="res://scripts/map/HitboxMaker.cs" id="10_kcuh1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33nmb"]
+resource_name = "material"
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy14h"]
+resource_name = "material_1"
+albedo_color = Color(0, 0.435294, 1, 1)
+albedo_texture = ExtResource("3_33nmb")
+metallic_texture = ExtResource("4_3d2mr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_3d2mr")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_s42pq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y23j8"]
+resource_name = "material_1"
+albedo_color = Color(0, 0.435294, 1, 1)
+albedo_texture = ExtResource("3_33nmb")
+metallic_texture = ExtResource("4_3d2mr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_3d2mr")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_s42pq")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3o2g8"]
+radius = 0.075
+height = 1.2405
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5fboh"]
+radius = 0.075
+height = 0.381981
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i4xm2"]
+radius = 0.075
+height = 0.5366
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dl2h6"]
+radius = 0.075
+height = 0.381982
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eeoii"]
+radius = 0.075
+height = 0.536597
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l0sbk"]
+radius = 0.075
+height = 0.190069
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8r018"]
+radius = 0.075
+height = 0.15
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ti2yg"]
+radius = 0.175
+height = 0.35
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jrby6"]
+radius = 0.075
+height = 0.156978
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kb4n8"]
+radius = 0.075
+height = 0.248858
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tll0q"]
+radius = 0.075
+height = 0.229353
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sd2fe"]
+radius = 0.075
+height = 0.15
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tbsi7"]
+radius = 0.075
+height = 0.156981
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nkyvr"]
+radius = 0.075
+height = 0.248859
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jxk0j"]
+radius = 0.075
+height = 0.229347
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47vi5"]
+radius = 0.075
+height = 0.15
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i3h6o"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ax78e"]
+animation = &"pistol/pistol_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_otl20"]
+animation = &"pistol/pistol_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3o2g8"]
+animation = &"pistol/pistol_walk"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5fboh"]
+animation = &"pistol/walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i4xm2"]
+animation = &"pistol/walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_dl2h6"]
+resource_name = "Pistol"
+blend_point_0/node = SubResource("AnimationNodeAnimation_ax78e")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_otl20")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_3o2g8")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_5fboh")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_i4xm2")
+blend_point_4/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eeoii"]
+animation = &"rifle/rifle_aiming_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l0sbk"]
+animation = &"rifle/walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8r018"]
+animation = &"rifle/walking"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ti2yg"]
+animation = &"rifle/strafe_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jrby6"]
+animation = &"rifle/strafe_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kb4n8"]
+resource_name = "Rifle"
+blend_point_0/node = SubResource("AnimationNodeAnimation_eeoii")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_l0sbk")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_8r018")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ti2yg")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_jrby6")
+blend_point_4/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tll0q"]
+animation = &"basic/small_item"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sd2fe"]
+animation = &"basic/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tbsi7"]
+animation = &"basic/walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nkyvr"]
+animation = &"basic/walking"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jxk0j"]
+animation = &"basic/left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_47vi5"]
+animation = &"basic/right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_0e0a7"]
+resource_name = "Walk"
+blend_point_0/node = SubResource("AnimationNodeAnimation_sd2fe")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_tbsi7")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_nkyvr")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_jxk0j")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_47vi5")
+blend_point_4/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_14ygx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dey8v"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a5g7j"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ow6k3"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c7cmr"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dpb6t"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aaav4"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gc88t"]
+resource_name = "Arms"
+state_machine_type = 1
+states/Pistol/node = SubResource("AnimationNodeBlendSpace2D_dl2h6")
+states/Pistol/position = Vector2(0, 0)
+states/Rifle/node = SubResource("AnimationNodeBlendSpace2D_kb4n8")
+states/Rifle/position = Vector2(0, 0)
+states/SmallItem/node = SubResource("AnimationNodeAnimation_tll0q")
+states/SmallItem/position = Vector2(0, 0)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_0e0a7")
+states/Walk/position = Vector2(0, 0)
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_14ygx"), "Walk", "Pistol", SubResource("AnimationNodeStateMachineTransition_dey8v"), "Pistol", "Walk", SubResource("AnimationNodeStateMachineTransition_a5g7j"), "Walk", "Rifle", SubResource("AnimationNodeStateMachineTransition_ow6k3"), "Rifle", "Walk", SubResource("AnimationNodeStateMachineTransition_c7cmr"), "Walk", "SmallItem", SubResource("AnimationNodeStateMachineTransition_dpb6t"), "SmallItem", "Walk", SubResource("AnimationNodeStateMachineTransition_aaav4")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dbns1"]
+animation = &"basic/jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_11q1a"]
+animation = &"basic/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_40i1o"]
+animation = &"basic/walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iuaek"]
+animation = &"basic/walking"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k1u0t"]
+animation = &"basic/left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_meagv"]
+animation = &"basic/right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2hnfn"]
+resource_name = "Walk"
+blend_point_0/node = SubResource("AnimationNodeAnimation_11q1a")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_40i1o")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_iuaek")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_k1u0t")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_meagv")
+blend_point_4/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cbo3w"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wwyk3"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_346jr"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o12nt"]
+resource_name = "Legs"
+state_machine_type = 1
+states/Jump/node = SubResource("AnimationNodeAnimation_dbns1")
+states/Jump/position = Vector2(0, 0)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_2hnfn")
+states/Walk/position = Vector2(350, -9)
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_cbo3w"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_wwyk3"), "Jump", "Walk", SubResource("AnimationNodeStateMachineTransition_346jr")]
+graph_offset = Vector2(-380, -97)
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_wbe1u"]
+resource_name = "MainBlend"
+filter_enabled = true
+filters = ["%GeneralSkeleton:Hips", "%GeneralSkeleton:LeftFoot", "%GeneralSkeleton:LeftLowerLeg", "%GeneralSkeleton:LeftUpperLeg", "%GeneralSkeleton:RightFoot", "%GeneralSkeleton:RightLowerLeg", "%GeneralSkeleton:RightUpperLeg", "%GeneralSkeleton:Spine"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f47s2"]
+resource_name = "Root"
+graph_offset = Vector2(-689, 72)
+nodes/Arms/node = SubResource("AnimationNodeStateMachine_gc88t")
+nodes/Arms/position = Vector2(-380, -80)
+nodes/Legs/node = SubResource("AnimationNodeStateMachine_o12nt")
+nodes/Legs/position = Vector2(-340, 120)
+nodes/MainBlend/node = SubResource("AnimationNodeBlend2_wbe1u")
+nodes/MainBlend/position = Vector2(200, 0)
+node_connections = [&"output", 0, &"MainBlend", &"MainBlend", 0, &"Arms", &"MainBlend", 1, &"Legs"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ocrqu"]
+properties/0/path = NodePath("Root/AnimationTree:walking")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Root/AnimationTree:walkingDirection")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Root/AnimationTree:heldItem")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Model" type="Node3D" unique_id=1612774509 node_paths=PackedStringArray("disableLocal", "lookForwards", "anims", "skeleton", "rightHandBone", "ikSys")]
+script = ExtResource("1_xkisb")
+disableLocal = [NodePath("Root")]
+lookForwards = [NodePath("Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LookAtModifier3D"), NodePath("Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LookAtModifier3D2")]
+anims = NodePath("Root/AnimationTree")
+skeleton = NodePath("Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton")
+boneNames = Dictionary[int, String]({
+0: "LeftHand",
+1: "RightHand",
+2: "Head",
+3: "LeftFoot",
+4: "RightFoot"
+})
+boneChainLengths = Dictionary[int, int]({
+0: 3,
+1: 3
+})
+boneOffsets = Dictionary[int, Quaternion]({
+0: Quaternion(-0.5, 0.5, -0.5, 0.5),
+1: Quaternion(-0.5, -0.5, 0.5, 0.5)
+})
+rightHandBone = NodePath("Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/BoneAttachment3D/Palm")
+hipsName = "Hips"
+headAxis = Vector3(-1, 0, 0)
+ikSys = NodePath("Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/GodotIK")
+headOffset = Vector3(0, 2.5, 0)
+hipsRotation = Quaternion(0, 1, 0, 0)
+metadata/_custom_type_script = "uid://xq2fvvleypij"
+
+[node name="Root" type="Node3D" parent="." unique_id=1385527221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="forest_soldier_outdated" parent="Root" unique_id=1944502331 instance=ExtResource("2_ciq0p")]
+transform = Transform3D(-1.3, 0, -1.96295e-07, 0, 1.3, 0, 1.96295e-07, 0, -1.3, 0, -1.25, 0)
+
+[node name="GeneralSkeleton" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig" parent_id_path=PackedInt32Array(1944502331, 54246663) index="1" unique_id=1975494707]
+bones/2/rotation = Quaternion(0.13230143, 0.10141608, 0.9828448, -0.078913346)
+bones/3/rotation = Quaternion(-0.039786566, 0.9937881, -0.1026289, 0.016421176)
+bones/4/rotation = Quaternion(-0.043321084, 0.73302954, -0.67708236, 0.048483413)
+bones/5/rotation = Quaternion(-0.09234335, 0.013513799, 0.99538237, -0.022450885)
+bones/6/rotation = Quaternion(0.034172058, 0.9938712, -0.06333492, -0.08391119)
+bones/7/rotation = Quaternion(0.010590165, 0.6975651, -0.7159989, -0.025229672)
+bones/8/rotation = Quaternion(0.02819481, 0.013816854, 0.023820931, 0.9992231)
+bones/9/rotation = Quaternion(0.009559834, 0.003536783, 0.014154141, 0.99984795)
+bones/10/rotation = Quaternion(0.047924325, -0.0014693124, 0.004830238, 0.9988382)
+bones/11/rotation = Quaternion(-0.06825685, 0.010790043, -0.0010071432, 0.99760896)
+bones/12/rotation = Quaternion(0.45879024, 0.49946788, 0.6288913, -0.3801831)
+bones/13/rotation = Quaternion(0.12570004, 0.80109143, -0.5719004, -0.124024294)
+bones/14/rotation = Quaternion(0.009871324, -0.7070379, 0.009871569, 0.7070379)
+bones/15/rotation = Quaternion(0.05223136, 0.4796312, -0.014996296, 0.87578595)
+bones/35/rotation = Quaternion(0.47719118, -0.47780702, -0.63529575, -0.37468457)
+bones/36/rotation = Quaternion(-0.14891355, 0.8277616, -0.4960631, 0.21577048)
+bones/37/rotation = Quaternion(0.0411175, 0.7059104, -0.041117664, 0.70591015)
+bones/38/rotation = Quaternion(0.042301103, -0.5713973, 0.03601789, 0.8187908)
+
+[node name="S 1_0" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="0" unique_id=581787223]
+gi_mode = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_33nmb")
+
+[node name="S 1_1" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="1" unique_id=902648831]
+gi_mode = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_yy14h")
+
+[node name="S 1_1_001" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="2" unique_id=541567275]
+gi_mode = 2
+surface_material_override/0 = SubResource("StandardMaterial3D_y23j8")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="3" unique_id=100876966]
+transform = Transform3D(-0.58869064, 0.65276265, -0.47680587, -0.76395816, -0.2564727, 0.59210545, 0.2642168, 0.71282715, 0.64966655, -0.2813847, 0.9947054, 0.05665949)
+bone_name = "RightThumb"
+bone_idx = 39
+
+[node name="Palm" type="Marker3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/BoneAttachment3D" unique_id=742134979]
+transform = Transform3D(0.707107, -0.241845, -0.664463, 0, 0.939693, -0.34202, 0.707107, 0.241845, 0.664463, 0.0367109, 0.0295952, -0.0782817)
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="4" unique_id=84664079]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
+bone_name = "Spine"
+bone = 8
+origin_from = 2
+origin_external_node = NodePath("")
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 1.0472
+primary_damp_threshold = 1.0
+secondary_limit_angle = 0.523599
+secondary_damp_threshold = 1.0
+
+[node name="LookAtModifier3D2" type="LookAtModifier3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="5" unique_id=1390077728]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, 0, 0)
+bone_name = "Head"
+bone = 11
+origin_from = 2
+origin_external_node = NodePath("")
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 1.0472
+primary_damp_threshold = 1.0
+secondary_limit_angle = 0.523599
+secondary_damp_threshold = 1.0
+
+[node name="GodotIK" type="GodotIK" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="6" unique_id=455013537]
+active = false
+
+[node name="Hips" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="7" unique_id=436362039]
+bone_name = "Hips"
+bone_idx = 0
+metadata/hitbox = true
+metadata/bone_idx = 0
+metadata/child_bone_idx = 1
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Hips" unique_id=1077727316]
+transform = Transform3D(-1, -6.10373e-13, -6.25664e-15, 0, 0.01025, -0.999947, 6.10406e-13, -0.999947, -0.01025, 3.88068e-15, 0.620218, 0.00635755)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Hips/Body" unique_id=296301206]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Hips/Body" unique_id=1362022976]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_3o2g8")
+
+[node name="LeftUpperLeg" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="8" unique_id=541695350]
+transform = Transform3D(-0.9525379, 0.18195409, 0.24405734, -0.12828413, -0.96697485, 0.22023319, 0.27606967, 0.17847179, 0.94442225, 0.11619971, 1.0095394, 0.05185484)
+bone_name = "LeftUpperLeg"
+bone_idx = 2
+metadata/hitbox = true
+metadata/bone_idx = 2
+metadata/child_bone_idx = 3
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftUpperLeg" unique_id=184500623]
+transform = Transform3D(0.567078, 0.818504, 0.0920522, 0, 0.111759, -0.993735, -0.823664, 0.563525, 0.0633762, -0.0175811, 0.189794, -0.0121043)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftUpperLeg/Body" unique_id=766464619]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftUpperLeg/Body" unique_id=1210983244]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5fboh")
+
+[node name="LeftLowerLeg" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="9" unique_id=550814682]
+transform = Transform3D(0.92803395, 0.19955769, -0.31453046, 0.20214579, -0.9790432, -0.024727091, -0.3128734, -0.04063347, -0.9489253, 0.2128523, 0.64166665, 0.08703031)
+bone_name = "LeftLowerLeg"
+bone_idx = 3
+metadata/hitbox = true
+metadata/bone_idx = 3
+metadata/child_bone_idx = 4
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftLowerLeg" unique_id=264288194]
+transform = Transform3D(-0.97746, -0.208024, -0.0360406, 0, 0.170709, -0.985321, 0.211123, -0.963112, -0.166861, 0.00966969, 0.264362, 0.0447689)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftLowerLeg/Body" unique_id=677570864]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftLowerLeg/Body" unique_id=1814352467]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_i4xm2")
+
+[node name="RightUpperLeg" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="10" unique_id=1880283895]
+transform = Transform3D(-0.9819374, 0.042198613, -0.18444069, -0.04719025, -0.9986267, 0.022756414, -0.1832271, 0.031049175, 0.9825802, -0.11619496, 1.0095388, 0.05185625)
+bone_name = "RightUpperLeg"
+bone_idx = 5
+metadata/hitbox = true
+metadata/bone_idx = 5
+metadata/child_bone_idx = 6
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightUpperLeg" unique_id=470086753]
+transform = Transform3D(0.566861, -0.818652, -0.0920716, 0, 0.111763, -0.993735, 0.823813, 0.56331, 0.063354, 0.0175849, 0.189795, -0.0121001)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightUpperLeg/Body" unique_id=1289554622]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightUpperLeg/Body" unique_id=1762186575]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_dl2h6")
+
+[node name="RightLowerLeg" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="11" unique_id=1529088341]
+transform = Transform3D(0.93916595, 0.009777823, 0.3433246, -0.028333757, -0.9939821, 0.10581555, 0.34229314, -0.109106034, -0.93323696, -0.13024782, 0.6282605, 0.033419583)
+bone_name = "RightLowerLeg"
+bone_idx = 6
+metadata/hitbox = true
+metadata/bone_idx = 6
+metadata/child_bone_idx = 7
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightLowerLeg" unique_id=1229082159]
+transform = Transform3D(-0.977484, 0.207912, 0.0360242, 0, 0.170722, -0.985319, -0.21101, -0.963134, -0.166878, -0.00966523, 0.26436, 0.0447732)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightLowerLeg/Body" unique_id=1268936660]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightLowerLeg/Body" unique_id=950776220]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_eeoii")
+
+[node name="Spine" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="12" unique_id=1709467735]
+transform = Transform3D(0.9984833, -0.046825718, 0.02895549, 0.04838397, 0.99727523, -0.055687543, -0.026268981, 0.05700406, 0.9980283, 6.6906014e-14, 1.2404388, 0.012711896)
+bone_name = "Spine"
+bone_idx = 8
+metadata/hitbox = true
+metadata/bone_idx = 8
+metadata/child_bone_idx = 9
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Spine" unique_id=1868521767]
+transform = Transform3D(1, 5.46031e-13, 1.55395e-13, 0, 0.273721, -0.961809, -5.67713e-13, 0.961809, 0.273721, -1.47679e-14, 0.0914051, -0.0260129)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Spine/Body" unique_id=1336605280]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Spine/Body" unique_id=688167451]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_l0sbk")
+
+[node name="UpperChest" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="13" unique_id=186852238]
+transform = Transform3D(0.9965328, -0.074435495, 0.037171915, 0.07703644, 0.99425703, -0.07428551, -0.03142896, 0.07689153, 0.996544, -0.010066648, 1.425648, -0.02879042)
+bone_name = "UpperChest"
+bone_idx = 9
+metadata/hitbox = true
+metadata/bone_idx = 9
+metadata/child_bone_idx = 10
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/UpperChest" unique_id=1495776406]
+transform = Transform3D(-1, 3.05572e-14, 1.799e-15, 0, 0.0587715, -0.998271, -3.06102e-14, -0.998271, -0.0587715, -1.32232e-16, 0.0733759, 0.00431987)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/UpperChest/Body" unique_id=575184184]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/UpperChest/Body" unique_id=253535467]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_8r018")
+
+[node name="Neck" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="14" unique_id=581064411]
+transform = Transform3D(0.9959006, -0.08028803, 0.04166465, 0.08623389, 0.9817785, -0.16933599, -0.027309803, 0.17223471, 0.9846774, -0.020669032, 1.5709151, -0.008896565)
+bone_name = "Neck"
+bone_idx = 10
+metadata/hitbox = true
+metadata/bone_idx = 10
+metadata/child_bone_idx = 11
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Neck" unique_id=1437482598]
+transform = Transform3D(1, -1.50819e-07, -7.34324e-09, 0, 0.0486316, -0.998817, 1.50997e-07, 0.998817, 0.0486316, 1.78143e-09, 0.242307, -0.0117978)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Neck/Body" unique_id=65781226]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/Neck/Body" unique_id=1950560771]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ti2yg")
+
+[node name="LeftShoulder" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="15" unique_id=100228144]
+transform = Transform3D(-0.2518917, 0.9594067, 0.12684412, -0.113186896, -0.1593775, 0.9807076, 0.9611136, 0.2326751, 0.14873818, 0.06379359, 1.5686839, -0.011058668)
+bone_name = "LeftShoulder"
+bone_idx = 12
+metadata/hitbox = true
+metadata/bone_idx = 12
+metadata/child_bone_idx = 13
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftShoulder" unique_id=1453558232]
+transform = Transform3D(0.0709468, -0.997375, -0.0145002, 0, 0.0145369, -0.999894, 0.99748, 0.0709393, 0.00103134, 0.00113811, 0.0784809, -8.09494e-05)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftShoulder/Body" unique_id=558961132]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftShoulder/Body" unique_id=1449651212]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_jrby6")
+
+[node name="LeftUpperArm" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="16" unique_id=479132465]
+transform = Transform3D(0.5724702, 0.16632473, -0.8028786, 0.10529506, -0.9860141, -0.12918547, -0.8131364, -0.010584325, -0.581977, 0.21378997, 1.5432513, 0.02762608)
+bone_name = "LeftUpperArm"
+bone_idx = 13
+metadata/hitbox = true
+metadata/bone_idx = 13
+metadata/child_bone_idx = 14
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftUpperArm" unique_id=816233893]
+transform = Transform3D(-0.253688, 0.967252, 0.00807588, 0, 0.00834901, -0.999965, -0.967286, -0.253679, -0.00211804, -0.00100487, 0.124425, 0.000263546)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftUpperArm/Body" unique_id=1208177422]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftUpperArm/Body" unique_id=984560988]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_kb4n8")
+
+[node name="LeftLowerArm" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="17" unique_id=724333210]
+transform = Transform3D(-0.80287856, 0.150278, -0.5768905, -0.12918581, -0.9885694, -0.077726535, -0.581977, 0.012121101, 0.813115, 0.25360605, 1.2976027, 0.026319623)
+bone_name = "LeftLowerArm"
+bone_idx = 14
+metadata/hitbox = true
+metadata/bone_idx = 14
+metadata/child_bone_idx = 15
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftLowerArm" unique_id=997195432]
+transform = Transform3D(-0.998045, -0.0625019, -0.000356667, 0, 0.0057064, -0.999984, 0.0625029, -0.998029, -0.00569524, 4.09012e-05, 0.114674, 0.000653109)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftLowerArm/Body" unique_id=1279584646]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftLowerArm/Body" unique_id=440172887]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_tll0q")
+
+[node name="LeftHand" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="18" unique_id=1196403383]
+transform = Transform3D(0.05601698, 0.04359492, -0.99747765, -0.027833879, -0.99858975, -0.04520663, -0.9980418, 0.030296005, -0.054724693, 0.2872529, 1.0707633, 0.03011408)
+bone_name = "LeftHand"
+bone_idx = 15
+metadata/hitbox = true
+metadata/bone_idx = 15
+metadata/child_bone_idx = 16
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftHand" unique_id=1318126527]
+transform = Transform3D(-0.684846, 0.72845, 0.0186413, 0, 0.025582, -0.999673, -0.728688, -0.684622, -0.0175197, -0.000281713, 0.0151074, 0.000264763)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftHand/Body" unique_id=1350616512]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LeftHand/Body" unique_id=18649343]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_sd2fe")
+
+[node name="RightShoulder" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="19" unique_id=749773850]
+transform = Transform3D(-0.30022636, -0.9000267, -0.31593728, 0.07126166, -0.35145473, 0.93348885, -0.9512025, 0.25774363, 0.16965319, -0.10375199, 1.5557276, -0.0057788137)
+bone_name = "RightShoulder"
+bone_idx = 35
+metadata/hitbox = true
+metadata/bone_idx = 35
+metadata/child_bone_idx = 36
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightShoulder" unique_id=1643653840]
+transform = Transform3D(0.0272838, 0.999466, 0.0179963, 0, 0.018003, -0.999838, -0.999628, 0.0272794, 0.000491191, -0.00141254, 0.0784777, -3.85538e-05)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightShoulder/Body" unique_id=246988799]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightShoulder/Body" unique_id=217937856]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_tbsi7")
+
+[node name="RightUpperArm" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="20" unique_id=1233823720]
+transform = Transform3D(0.73968947, -0.12764615, 0.66073155, -0.095124975, -0.9918198, -0.08511621, 0.66619146, 0.000107601285, -0.74578094, -0.24414343, 1.5002916, 0.037349552)
+bone_name = "RightUpperArm"
+bone_idx = 36
+metadata/hitbox = true
+metadata/bone_idx = 36
+metadata/child_bone_idx = 37
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightUpperArm" unique_id=173894815]
+transform = Transform3D(-0.354003, -0.935234, -0.00430272, 0, 0.00460064, -0.999989, 0.935244, -0.353999, -0.00162864, 0.000535387, 0.124428, 0.000202651)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightUpperArm/Body" unique_id=2075032250]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightUpperArm/Body" unique_id=150409953]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_nkyvr")
+
+[node name="RightLowerArm" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="21" unique_id=233335471]
+transform = Transform3D(-0.6607318, -0.04090417, 0.74950683, 0.08511645, -0.99615663, 0.02066993, 0.7457807, 0.07745276, 0.66167396, -0.2748492, 1.253334, 0.037787404)
+bone_name = "RightLowerArm"
+bone_idx = 37
+metadata/hitbox = true
+metadata/bone_idx = 37
+metadata/child_bone_idx = 38
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightLowerArm" unique_id=1978925467]
+transform = Transform3D(-0.963046, 0.269333, 0.00133043, 0, 0.00493966, -0.999988, -0.269336, -0.963034, -0.00475712, -0.000152565, 0.114672, 0.000545515)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightLowerArm/Body" unique_id=1682222235]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightLowerArm/Body" unique_id=375794960]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_jxk0j")
+
+[node name="RightHand" type="BoneAttachment3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton" index="22" unique_id=169292996]
+transform = Transform3D(0.47560316, 0.05132952, 0.8781612, 0.038119607, -0.99856097, 0.03772191, 0.8788337, 0.01553461, -0.47687548, -0.283211, 1.0248678, 0.0560451)
+bone_name = "RightHand"
+bone_idx = 38
+metadata/hitbox = true
+metadata/bone_idx = 38
+metadata/child_bone_idx = 39
+
+[node name="Body" type="StaticBody3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightHand" unique_id=1132556417]
+transform = Transform3D(-0.555837, -0.831247, -0.00856144, 0, 0.010299, -0.999947, 0.831291, -0.555808, -0.00572455, 0.00012938, 0.0151111, 8.6509e-05)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Hitbox" type="Node" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightHand/Body" unique_id=1437888868]
+script = ExtResource("3_efajn")
+HealthNode = NodePath("../../../../../../../../..")
+DamageMultiplier = 0.75
+
+[node name="Shape" type="CollisionShape3D" parent="Root/forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/RightHand/Body" unique_id=836148288]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_47vi5")
+
+[node name="AnimationPlayer" parent="Root/forest_soldier_outdated" index="1" unique_id=1639788549]
+root_motion_track = NodePath("%GeneralSkeleton:Hips")
+libraries/ = SubResource("AnimationLibrary_i3h6o")
+libraries/basic = ExtResource("4_33nmb")
+libraries/pistol = ExtResource("5_3d2mr")
+libraries/rifle = ExtResource("6_s42pq")
+
+[node name="RightHand" type="Node3D" parent="Root" unique_id=281456092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718431, -0.356683)
+
+[node name="AnimationTree" type="AnimationTree" parent="Root" unique_id=1263404398 node_paths=PackedStringArray("lookModify")]
+root_node = NodePath("../forest_soldier_outdated")
+root_motion_track = NodePath("%GeneralSkeleton:Hips")
+tree_root = SubResource("AnimationNodeBlendTree_f47s2")
+anim_player = NodePath("../forest_soldier_outdated/AnimationPlayer")
+parameters/Arms/Pistol/blend_position = Vector2(0, 0)
+parameters/Arms/Rifle/blend_position = Vector2(0, 0)
+parameters/Arms/Walk/blend_position = Vector2(0, 0)
+parameters/Legs/Walk/blend_position = Vector2(0, 0)
+parameters/MainBlend/blend_amount = 1.0
+script = ExtResource("7_yy14h")
+rotationLerpSpeed = 5.0
+lookModify = NodePath("../forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton/LookAtModifier3D")
+armsStatePath = &"parameters/Arms/playback"
+legsStatePath = &"parameters/Legs/playback"
+walkStateName = &"Walk"
+jumpStateName = &"Jump"
+pistolStateName = &"Pistol"
+rifleStateName = &"Rifle"
+smallItemStateName = "SmallItem"
+walkPaths = [&"parameters/Arms/Walk/blend_position", &"parameters/Arms/Pistol/blend_position", &"parameters/Arms/Rifle/blend_position", &"parameters/Legs/Walk/blend_position"]
+
+[node name="PlayerAnimTool" type="Node" parent="Root/AnimationTree" unique_id=926297339 node_paths=PackedStringArray("animTree", "skeleton")]
+script = ExtResource("8_y23j8")
+animTree = NodePath("..")
+skeleton = NodePath("../../forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton")
+LegBonesCount = 10
+LegBones0 = "LeftUpperLeg"
+LegBones1 = "LeftLowerLeg"
+LegBones2 = "LeftFoot"
+LegBones3 = "LeftToes"
+LegBones4 = "RightUpperLeg"
+LegBones5 = "RightLowerLeg"
+LegBones6 = "RightFoot"
+LegBones7 = "RightToes"
+LegBones8 = "Hips"
+LegBones9 = "Spine"
+metadata/_custom_type_script = "uid://b413bc3tfquku"
+
+[node name="PlayerAnimsScript" type="Node" parent="Root/AnimationTree" unique_id=742566899]
+script = ExtResource("9_cp152")
+metadata/_custom_type_script = "uid://gmd8piq5k2id"
+
+[node name="HitboxMaker" type="Node3D" parent="Root" unique_id=745850021 node_paths=PackedStringArray("skeleton", "playerController")]
+script = ExtResource("10_kcuh1")
+skeleton = NodePath("../forest_soldier_outdated/Sketchfab_model/Root/Rig/GeneralSkeleton")
+playerController = NodePath("../..")
+collisionSize = 0.075
+headSize = 0.175
+limbDamageMulti = 0.75
+bodyDamageMulti = 0.75
+layer = 16
+metadata/_custom_type_script = "uid://c34u348ok0smv"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1265138227]
+replication_interval = 0.3
+replication_config = SubResource("SceneReplicationConfig_ocrqu")
+
+[editable path="Root/forest_soldier_outdated"]

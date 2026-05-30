@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://co154vb6mi26"]
+
+[ext_resource type="Script" uid="uid://bjai1nbrfa5kv" path="res://scripts/player/controllers/ability/InventoryAbility.cs" id="1_ksxrd"]
+
+[node name="InventoryAbility" type="Node" unique_id=387557390]
+script = ExtResource("1_ksxrd")
+metadata/_custom_type_script = "uid://bjai1nbrfa5kv"

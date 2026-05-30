@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://8127p3bfkx36"]
+
+[ext_resource type="Texture2D" uid="uid://bb3l0epjvqamw" path="res://textures/inv_icons/shotgun_icon.png" id="1_70b0j"]
+[ext_resource type="PackedScene" uid="uid://d4lh1tdvlf3dw" path="res://scenes/items/shotgun_joke.tscn" id="2_70b0j"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_xkuh0"]
+
+[resource]
+resource_name = "Super Shotgun"
+script = ExtResource("3_xkuh0")
+ItemScene = ExtResource("2_70b0j")
+Icon = ExtResource("1_70b0j")
+Description = "This feels dangerous to hold."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cucut1wmkytl0"]
+
+[ext_resource type="PackedScene" uid="uid://cgptem6ac0tu0" path="res://models/scpcb/npc/guard.glb" id="1_dpipl"]
+[ext_resource type="Material" uid="uid://dvpubq6pwhure" path="res://models/scpcb/npc/guard/guard_body.tres" id="2_ye012"]
+[ext_resource type="Material" uid="uid://cc80ktxdh166h" path="res://models/scpcb/npc/guard/guard_head.tres" id="3_mtno6"]
+[ext_resource type="Animation" uid="uid://v8gxrl8trhrg" path="res://models/scpcb/npc/guard/hold_weapon.res" id="4_14a84"]
+[ext_resource type="AnimationLibrary" uid="uid://h3se8rf3n5r6" path="res://models/npc/anims/base.res" id="4_a6skv"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1u6ci"]
+_data = {
+&"hold_weapon": ExtResource("4_14a84")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xtfs1"]
+
+[node name="Guard" type="Node3D"]
+
+[node name="guard" parent="." instance=ExtResource("1_dpipl")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Mesh_0" parent="guard/Scene_Root/GeneralSkeleton" index="0"]
+surface_material_override/0 = ExtResource("2_ye012")
+
+[node name="Mesh_1" parent="guard/Scene_Root/GeneralSkeleton" index="1"]
+surface_material_override/0 = ExtResource("3_mtno6")
+
+[node name="AnimationPlayer" parent="guard" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_1u6ci"),
+&"Base": ExtResource("4_a6skv")
+}
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_xtfs1")
+
+[editable path="guard"]

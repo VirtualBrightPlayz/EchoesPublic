@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://lw0pwjdn658r"]
+
+[ext_resource type="Texture2D" uid="uid://cs1du634p84pc" path="res://textures/scpcb/icons/room1_173.png" id="1_4c68q"]
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_b72vp"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="4_w18hc"]
+[ext_resource type="Resource" uid="uid://bcwe23lrnmova" path="res://rooms/preset_rooms/property_data/spawnpoint_173.tres" id="5_geim1"]
+
+[resource]
+resource_name = "SCP-173"
+script = ExtResource("2_b72vp")
+size = 2
+stage = 1
+scenes = []
+sceneFile = "uid://yi6hpeqt1da7"
+isInterest = true
+gridRect = Rect2i(-1, -1, 2, 2)
+layoutIconOverride = ExtResource("1_4c68q")
+zone = 1
+category = "Light Containment"
+templateData = Array[ExtResource("4_w18hc")]([ExtResource("5_geim1")])
+templateDefaultValues = Dictionary[String, String]({
+"spawnpoint_173": "true"
+})

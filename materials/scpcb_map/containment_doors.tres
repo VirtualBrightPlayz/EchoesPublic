@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dqhbd5ob83aba"]
+
+[ext_resource type="Texture2D" uid="uid://b8e0ioeowk4e7" path="res://textures/scpcb/containment_doors.jpg" id="1_pjk50"]
+[ext_resource type="Texture2D" uid="uid://crf6e0c44c7xs" path="res://textures/scpcb/containmentdoorsbump.jpg" id="2_4h1lf"]
+[ext_resource type="Texture2D" uid="uid://dvquuo2l6enev" path="res://textures/custom/contdoor_metal.png" id="2_ht1a0"]
+[ext_resource type="Texture2D" uid="uid://cwnqllolpyo4a" path="res://textures/custom/contdoor_rough.png" id="4_wx2m8"]
+
+[resource]
+albedo_texture = ExtResource("1_pjk50")
+metallic = 1.0
+metallic_texture = ExtResource("2_ht1a0")
+roughness_texture = ExtResource("4_wx2m8")
+normal_enabled = true
+normal_texture = ExtResource("2_4h1lf")

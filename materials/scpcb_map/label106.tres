@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b6jj21vfl84nt"]
+
+[ext_resource type="Texture2D" uid="uid://ersrikafy4uh" path="res://textures/scpcb/label106.jpg" id="1_21lyw"]
+[ext_resource type="Texture2D" uid="uid://c105pf5a6nsun" path="res://textures/scpcb/dirtymetalbump.jpg" id="2_8ts8i"]
+
+[resource]
+albedo_texture = ExtResource("1_21lyw")
+normal_enabled = true
+normal_texture = ExtResource("2_8ts8i")

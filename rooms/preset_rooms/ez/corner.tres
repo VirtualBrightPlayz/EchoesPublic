@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://c4j7ye2ypr3ey"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_ppyi5"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_4m0gg"]
+
+[resource]
+resource_name = "Entrance Corner"
+script = ExtResource("2_ppyi5")
+type = 1
+stage = 3
+scenes = []
+sceneFile = "uid://ds4mofxxwql10"
+isGeneric = true
+category = "Entrance"

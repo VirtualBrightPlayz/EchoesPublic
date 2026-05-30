@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://ds15672hp3rxi"]
+
+[ext_resource type="Texture2D" uid="uid://goiqqxq44x52" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ DamagedAtlas/Atlas_HCZConcrete_Albedo.png" id="1_p61om"]
+[ext_resource type="Texture2D" uid="uid://csbftcn3m4vtj" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ DamagedAtlas/Atlas_HCZConcrete_Normal.png" id="2_rwvmv"]
+[ext_resource type="Texture2D" uid="uid://csfn1f4tfx0ni" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ DamagedAtlas/Atlas_HCZConcrete_Mask_ORM.png" id="3_v7sl0"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_p61om")
+orm_texture = ExtResource("3_v7sl0")
+normal_enabled = true
+normal_texture = ExtResource("2_rwvmv")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dpfno1xt8trrb"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_ssvg7"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_8j5hd"]
+
+[resource]
+resource_name = "Brig Class-D Prison"
+script = ExtResource("2_ssvg7")
+type = 3
+size = 2
+scenes = []
+sceneFile = "uid://db1tpbo7njcym"
+gridRect = Rect2i(0, 0, 3, 3)
+category = "Brig"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

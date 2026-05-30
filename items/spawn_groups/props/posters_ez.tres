@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PropSpawnGroup" load_steps=5 format=3 uid="uid://bbwn6yeaqk16u"]
+
+[ext_resource type="PackedScene" uid="uid://c82h31hyd8pb7" path="res://scenes/rooms/props/static/poster1.tscn" id="1_80dus"]
+[ext_resource type="PackedScene" uid="uid://of6uhxjo3md0" path="res://scenes/rooms/props/static/poster2.tscn" id="2_f1ltd"]
+[ext_resource type="PackedScene" uid="uid://dlsvhhdljgkgc" path="res://scenes/rooms/props/static/poster3.tscn" id="3_bujy3"]
+[ext_resource type="Script" uid="uid://dg32kkoa2ddpl" path="res://scripts/map/PropSpawnGroup.cs" id="4_8klt1"]
+
+[resource]
+script = ExtResource("4_8klt1")
+Props = [ExtResource("1_80dus"), ExtResource("2_f1ltd"), ExtResource("3_bujy3")]
+RemoveUsedProp = true
+RemoveUsedSpawn = true
+MaxSpawned = -1

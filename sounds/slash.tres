@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://dcohs0eohup35"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_hxxs4"]
+[ext_resource type="AudioStream" uid="uid://corw4nmnqyegm" path="res://audio/scpcb/misc/Slash2.ogg" id="2_2r3yb"]
+
+[resource]
+resource_name = "slash"
+script = ExtResource("1_hxxs4")
+DisplayName = "Slash"
+streams = [ExtResource("2_2r3yb")]
+maxDistance = 10.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

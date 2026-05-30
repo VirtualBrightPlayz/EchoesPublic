@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds17au6s1fxsl"]
+
+[ext_resource type="Script" uid="uid://deyos716by3n1" path="res://scripts/npc/NpcPlayer.cs" id="1_88t5d"]
+[ext_resource type="Script" uid="uid://m6jpr2uwykkx" path="res://scripts/npc/NpcInput.cs" id="2_4ol1k"]
+
+[node name="NpcPlayer" type="Node3D" node_paths=PackedStringArray("debugLabel", "Inputs")]
+script = ExtResource("1_88t5d")
+rotationLerpSpeed = 4.0
+debugLabel = NodePath("Label3D")
+playerMask = 2
+Inputs = NodePath("InputManager")
+lerpSpeed = 10.0
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("2_4ol1k")
+inputPath = NodePath(".")
+
+[node name="Label3D" type="Label3D" parent="."]
+ignore_occlusion_culling = true
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+text = "SCP-173"

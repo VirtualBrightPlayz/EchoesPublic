@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://buhnevvekubt2"]
+
+[ext_resource type="FontFile" uid="uid://bcytjb3umu806" path="res://fonts/Permanent_Marker/PermanentMarker-Regular.ttf" id="1_jcscu"]
+[ext_resource type="Script" uid="uid://b63uslrh7qsfd" path="res://scripts/ui/ChangelogLabel.cs" id="2_c34db"]
+[ext_resource type="Script" uid="uid://dp7ca043v2v2y" path="res://scripts/ui/DrawingTexture.cs" id="2_twfdx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_jcscu")
+scroll_active = false
+metadata/_edit_lock_ = true
+
+[node name="ChangelogLabel" type="Node" parent="Label"]
+script = ExtResource("2_c34db")
+titleSize = 64
+bodySize = 32
+fontColor = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://b63uslrh7qsfd"
+
+[node name="TextureRect" type="TextureRect" parent="." node_paths=PackedStringArray("hideOnDraw")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 0
+expand_mode = 1
+script = ExtResource("2_twfdx")
+size = Vector2i(1024, 512)
+hideOnDraw = [NodePath("../Label"), NodePath("../TextureButton")]
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="TextureButton" to="Label/ChangelogLabel" method="OpenUrl"]
+[connection signal="pressed" from="TextureButton" to="TextureRect" method="ShowTexture"]

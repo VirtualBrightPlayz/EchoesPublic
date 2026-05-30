@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamSynchronized" format=3 uid="uid://blp45yekxy6aj"]
+
+[ext_resource type="AudioStream" uid="uid://bbj33dtfcufqe" path="res://audio/music/106/src/SCP Echoes OST - Corrosive Hunt (Pre-Chase).ogg" id="1_3pq84"]
+[ext_resource type="AudioStream" uid="uid://c0vhkkpsorhrq" path="res://audio/music/106/src/SCP Echoes OST - Corrosive Hunt (Pre-Chase Drums).ogg" id="2_132d7"]
+
+[resource]
+stream_count = 2
+stream_0/stream = ExtResource("1_3pq84")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_132d7")
+stream_1/volume = -60.0

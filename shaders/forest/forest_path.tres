@@ -1,0 +1,16 @@
+[gd_resource type="Shader" format=3 uid="uid://cq6r5m662vx10"]
+
+[resource]
+code = "shader_type spatial;
+
+uniform sampler2D base_tex : source_color;
+uniform sampler2D path_tex : source_color;
+uniform sampler2D mask_tex;
+uniform vec2 uv_scale = vec2(1.0);
+
+void fragment() {
+	float ratio = texture(mask_tex, UV).a;
+	vec4 base = texture(base_tex, UV * uv_scale);
+	vec4 path = texture(path_tex, UV * uv_scale);
+	ALBEDO = mix(base.rgb, path.rgb, ratio);
+}"

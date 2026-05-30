@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cr1e7jd007oup"]
+
+[ext_resource type="PackedScene" uid="uid://nj5c0gxnx80i" path="res://scenes/rooms/lcz/lcz_hall_fan.tscn" id="1_tmfuv"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="2_3d35o"]
+
+[resource]
+script = ExtResource("2_3d35o")
+RoomScenes = Array[PackedScene]([ExtResource("1_tmfuv")])
+RequiredInstances = 0
+MaximumInstances = 1
+SpawnPoolEntries = 1
+Connections = 10
+BlockedNeighbours = 5
+PreSpawnValidatorResources = []
+PostSpawnValidatorResources = []
+Test = false
+Constraints = []
+MaxConsecutive = 0

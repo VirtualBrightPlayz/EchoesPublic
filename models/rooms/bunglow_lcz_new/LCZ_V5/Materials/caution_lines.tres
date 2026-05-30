@@ -1,0 +1,9 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://vd1uno7wqqf3"]
+
+[ext_resource type="Texture2D" uid="uid://e0frv0np14iw" path="res://models/rooms/bunglow_lcz_new/LCZ_V5/Textures/T_Decal_Warning_1.PNG" id="1_gh3fk"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+disable_fog = true
+albedo_texture = ExtResource("1_gh3fk")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c236g8jpc5sv"
+path="res://.godot/imported/rogues' gallery the old man.mp3-4d4a5d1d6a62189ca57347f84fd2f241.mp3str"
+
+[deps]
+
+source_file="res://audio/music/rogues_gallery/rogues' gallery the old man.mp3"
+dest_files=["res://.godot/imported/rogues' gallery the old man.mp3-4d4a5d1d6a62189ca57347f84fd2f241.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

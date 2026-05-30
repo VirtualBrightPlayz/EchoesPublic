@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cunvl00e6pq53"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_u0x44"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_u0x44"]
+
+[resource]
+resource_name = "Light Control Room"
+script = ExtResource("2_u0x44")
+type = 4
+size = 1
+stage = 1
+scenes = []
+sceneFile = "uid://chru4v7gmk12a"
+isInterest = true
+category = "Light Containment"

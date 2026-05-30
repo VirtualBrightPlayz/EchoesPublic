@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AmbientProfile" load_steps=2 format=3 uid="uid://bboim1luqmo0g"]
+
+[ext_resource type="Script" uid="uid://brb00nufs5ako" path="res://scripts/map/AmbientProfile.cs" id="1_dk51c"]
+
+[resource]
+script = ExtResource("1_dk51c")
+HasDepthFog = true
+DepthFogNear = 20.0
+DepthFogColor = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://brb00nufs5ako"

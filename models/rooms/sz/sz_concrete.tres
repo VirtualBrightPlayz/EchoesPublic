@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://u86b67k7hb7h"]
+
+[ext_resource type="Texture2D" uid="uid://c5j2h0pk2my31" path="res://models/rooms/sz/Concretn_basecolor.jpg" id="1_mw6no"]
+[ext_resource type="Texture2D" uid="uid://dhokjambni05a" path="res://models/rooms/sz/Concretn_normal.jpg" id="2_r7unc"]
+[ext_resource type="Texture2D" uid="uid://crcnkt5mp8i1u" path="res://models/rooms/sz/Concretn_roughness.jpg" id="3_ve6o3"]
+
+[resource]
+albedo_texture = ExtResource("1_mw6no")
+roughness_texture = ExtResource("3_ve6o3")
+normal_enabled = true
+normal_texture = ExtResource("2_r7unc")

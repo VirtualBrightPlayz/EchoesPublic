@@ -1,0 +1,24 @@
+[[item_upgrades]]
+scp_914_setting = 'OneToOne'
+input_item = 'Frag. Grenade'
+output_item = 'Sticky Grenade'
+
+[[item_upgrades]]
+scp_914_setting = 'OneToOne'
+input_item = 'Sticky Grenade'
+output_item = 'Frag. Grenade'
+
+[[item_upgrades]]
+scp_914_setting = 'OneToOne'
+input_item = 'SMG Ammo'
+output_item = 'Rifle Ammo'
+
+[[item_upgrades]]
+scp_914_setting = 'OneToOne'
+input_item = 'Pistol Ammo'
+output_item = 'SMG Ammo'
+
+[[item_upgrades]]
+scp_914_setting = 'OneToOne'
+input_item = 'Rifle Ammo'
+output_item = 'Pistol Ammo'

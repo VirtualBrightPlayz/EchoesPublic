@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bug614peqb547"]
+
+[ext_resource type="Script" uid="uid://buvwom4m37imp" path="res://scripts/ui/admin/AdminCategoryPlayer.cs" id="1_7fqwh"]
+
+[node name="Player" type="VBoxContainer" unique_id=309560566]
+
+[node name="Handler" type="Node" parent="." unique_id=507761162 node_paths=PackedStringArray("ReasonBox")]
+script = ExtResource("1_7fqwh")
+ReasonBox = NodePath("../Moderation/ReasonBox")
+
+[node name="Teleporting" type="HBoxContainer" parent="." unique_id=679324598]
+layout_mode = 2
+alignment = 1
+
+[node name="Sep" type="HSeparator" parent="." unique_id=586389278]
+layout_mode = 2
+
+[node name="Movement" type="HBoxContainer" parent="." unique_id=580627726]
+layout_mode = 2
+alignment = 1
+
+[node name="Sep2" type="HSeparator" parent="." unique_id=1736880615]
+layout_mode = 2
+
+[node name="Stats" type="HBoxContainer" parent="." unique_id=347629117]
+layout_mode = 2
+alignment = 1
+
+[node name="Sep3" type="HSeparator" parent="." unique_id=668873257]
+layout_mode = 2
+
+[node name="Moderation" type="HBoxContainer" parent="." unique_id=24057557]
+layout_mode = 2
+alignment = 1
+
+[node name="ReasonBox" type="LineEdit" parent="Moderation" unique_id=1952066864]
+layout_mode = 2
+placeholder_text = "Reason"
+expand_to_text_length = true
+caret_blink = true
+
+[node name="Sep4" type="HSeparator" parent="." unique_id=1511572596]
+layout_mode = 2
+
+[node name="Props" type="HBoxContainer" parent="." unique_id=1773878818]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="DeleteProp" type="Button" parent="Props" unique_id=811740112]
+layout_mode = 2
+text = "ADMIN_PANEL_DELETE_PROP"
+
+[node name="IgnoreWeight" type="Button" parent="Props" unique_id=1525471202]
+layout_mode = 2
+text = "ADMIN_PANEL_IGNORE_WEIGHT"

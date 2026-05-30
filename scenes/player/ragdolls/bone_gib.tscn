@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://br7jn03b6ax51"]
+
+[ext_resource type="Script" uid="uid://b5g5kyjfi7dak" path="res://scripts/network/RigidbodySync.cs" id="1_nxk0j"]
+[ext_resource type="PackedScene" uid="uid://cvivu6m0og8p4" path="res://models/main/human/gibs/Bone.fbx" id="2_gn18u"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_wmqiq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmqiq"]
+radius = 0.02
+height = 0.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gn18u"]
+radius = 0.02
+height = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dkby5"]
+radius = 0.02
+height = 0.1
+
+[node name="BoneGib" type="RigidBody3D" node_paths=PackedStringArray("xformSync")]
+collision_layer = 384
+collision_mask = 393
+continuous_cd = true
+script = ExtResource("1_nxk0j")
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://b5g5kyjfi7dak"
+
+[node name="Bone" parent="." instance=ExtResource("2_gn18u")]
+transform = Transform3D(-1.0927848e-09, 0.025, 0, -0.025, -1.0927848e-09, 0, 0, 0, 0.025, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_wmqiq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.09278474e-07, 2.5, 0, -2.5, -1.09278474e-07, 0, 0, 0, 2.5, 1.0409344e-08, 0.238138, 0)
+shape = SubResource("CapsuleShape3D_gn18u")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.09278474e-07, 2.5, 0, -2.5, -1.09278474e-07, 0, 0, 0, 2.5, -9.292574e-09, -0.2125893, 0)
+shape = SubResource("CapsuleShape3D_dkby5")
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_wmqiq")
+targetNode = NodePath("..")
+CanClaim = true
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[editable path="Bone"]

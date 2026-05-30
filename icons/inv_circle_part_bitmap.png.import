@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://4r3nhx3y521g"
+path="res://.godot/imported/inv_circle_part_bitmap.png-cff745e79cdaf99da7194a34757ab358.res"
+
+[deps]
+
+source_file="res://icons/inv_circle_part_bitmap.png"
+dest_files=["res://.godot/imported/inv_circle_part_bitmap.png-cff745e79cdaf99da7194a34757ab358.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

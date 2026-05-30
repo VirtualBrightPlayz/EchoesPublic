@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://kpkum8ka445u"]
+
+[ext_resource type="Script" uid="uid://b32bswgkta4wp" path="res://scripts/map/Lever.cs" id="1_u0lo7"]
+[ext_resource type="PackedScene" uid="uid://b387yxgf4v85i" path="res://models/scpcb/props/leverhandle.glb" id="2_jgcop"]
+[ext_resource type="Material" uid="uid://dcawk0fjracwk" path="res://materials/scpcb_map/mechanical_lever.tres" id="3_084c6"]
+[ext_resource type="PackedScene" uid="uid://ctk6i8hf1qfai" path="res://models/scpcb/props/leverbase.glb" id="4_hsph6"]
+[ext_resource type="AudioStream" uid="uid://d2vuymiq01atd" path="res://audio/scpcb/doors/LeverFlip.ogg" id="5_ei0ot"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jc0th"]
+size = Vector3(0.18554688, 0.2600708, 0.06542969)
+
+[node name="Lever" type="Node3D" unique_id=418530473 node_paths=PackedStringArray("collision", "visuals", "Presets")]
+script = ExtResource("1_u0lo7")
+collision = NodePath("StaticBody3D")
+visuals = NodePath("StaticBody3D")
+Presets = [NodePath("Point0"), NodePath("Point1")]
+MouseAxis = Vector2(0, -1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1633924398]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2084033264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11489868, 0)
+shape = SubResource("BoxShape3D_jc0th")
+
+[node name="leverhandle" parent="StaticBody3D" unique_id=367946507 instance=ExtResource("2_jgcop")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 0, 0)
+
+[node name="Mesh01" parent="StaticBody3D/leverhandle" index="0" unique_id=602869468]
+surface_material_override/0 = ExtResource("3_084c6")
+
+[node name="leverbase" parent="." unique_id=1860791040 instance=ExtResource("4_hsph6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="default" parent="leverbase" index="0" unique_id=1680720029]
+transform = Transform3D(0.01, 0, 0, 0, -4.371139e-10, -0.010000001, 0, 0.010000001, -4.371139e-10, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_084c6")
+
+[node name="Point0" type="Marker3D" parent="." unique_id=344947478]
+
+[node name="Point1" type="Marker3D" parent="." unique_id=2011040994]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0)
+
+[node name="LeverFlip" type="AudioStreamPlayer3D" parent="." unique_id=536605239]
+stream = ExtResource("5_ei0ot")
+unit_size = 5.0
+max_distance = 10.0
+max_polyphony = 32
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[connection signal="ValueSnapped" from="." to="LeverFlip" method="play" unbinds=1]
+
+[editable path="StaticBody3D/leverhandle"]
+[editable path="leverbase"]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cg56fli8402hm"]
+
+[ext_resource type="Texture2D" uid="uid://c105pf5a6nsun" path="res://textures/scpcb/dirtymetalbump.jpg" id="1_t5gvg"]
+
+[resource]
+albedo_color = Color(0.25, 0.25, 0.25, 1)
+metallic = 0.2
+metallic_specular = 1.0
+roughness_texture = ExtResource("1_t5gvg")

@@ -1,0 +1,111 @@
+[gd_scene load_steps=21 format=3 uid="uid://74cd5jgou5ec"]
+
+[ext_resource type="PackedScene" uid="uid://bpdbxs2ylfdjl" path="res://scenes/rooms/sz/surface.tscn" id="1_ld4dh"]
+[ext_resource type="Script" uid="uid://b1l128dltw155" path="res://scripts/player/PlayerSpawner.cs" id="2_grpi4"]
+[ext_resource type="Script" uid="uid://5llg51ne317v" path="res://scripts/RoundManager.cs" id="3_l1ckw"]
+[ext_resource type="Environment" uid="uid://dm3nps0ldtkkd" path="res://scenes/facility_env.tres" id="4_c62ma"]
+[ext_resource type="PackedScene" uid="uid://64mbuw68oxh3" path="res://scenes/rooms/doors/lcz_door.tscn" id="5_i7k7t"]
+[ext_resource type="PackedScene" uid="uid://c8kx158pflubj" path="res://scenes/items/flashlight.tscn" id="6_at312"]
+[ext_resource type="Script" uid="uid://bq8ankcw5bpow" path="res://scripts/map/AmbientArea.cs" id="7_7bwta"]
+[ext_resource type="AudioStream" uid="uid://dgkjg0nskf07b" path="res://audio/scpcb/EntranceZone.ogg" id="8_qt01a"]
+[ext_resource type="Script" uid="uid://hwysde7lgyur" path="res://scripts/map/LoopAudio.cs" id="9_yx0gd"]
+[ext_resource type="PackedScene" uid="uid://dvxct8buoohw5" path="res://scenes/rooms/ez/ez_gate_a.tscn" id="10_i6745"]
+[ext_resource type="PackedScene" uid="uid://b3yt1ffgumpn0" path="res://scenes/rooms/ez/ez_hall.tscn" id="11_l14lf"]
+[ext_resource type="PackedScene" uid="uid://djdebpv7m4sct" path="res://scenes/rooms/ez/ez_corner.tscn" id="12_e34k5"]
+[ext_resource type="PackedScene" uid="uid://d07hyxbr22if8" path="res://scenes/rooms/ez/ez_troom.tscn" id="13_fu4rk"]
+[ext_resource type="PackedScene" uid="uid://bg4cc7up5bn3s" path="res://scenes/rooms/ez/ez_gate_b.tscn" id="14_j8wsg"]
+[ext_resource type="PackedScene" uid="uid://rc1t4vm08cbb" path="res://scenes/rooms/checkpoints/checkpoint_2.tscn" id="15_t2w7o"]
+[ext_resource type="Script" uid="uid://y0rao11t6xcn" path="res://scripts/map/Intercom.cs" id="16_re2q7"]
+[ext_resource type="AudioStream" uid="uid://pxjrfgmhegqc" path="res://audio/scpcb/edited/intercom_on.wav" id="17_c4l4p"]
+[ext_resource type="AudioStream" uid="uid://ywkjst3vm3ku" path="res://audio/scpcb/edited/intercom_off.wav" id="18_d0keq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f071e"]
+size = Vector3(1000, 40, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hdtco"]
+size = Vector3(3, 5, 8)
+
+[node name="Facility" type="Node3D"]
+
+[node name="Surface" parent="." instance=ExtResource("1_ld4dh")]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="." groups=["players"]]
+spawn_path = NodePath("../Players")
+script = ExtResource("2_grpi4")
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="RoundManager" type="Node3D" parent="."]
+script = ExtResource("3_l1ckw")
+TimeToStart = 5.0
+environment = ExtResource("4_c62ma")
+
+[node name="LczDoor" parent="." instance=ExtResource("5_i7k7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.56, -8.07286, -63.744)
+
+[node name="Flashlight" parent="." instance=ExtResource("6_at312")]
+
+[node name="Ez" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
+
+[node name="AmbientArea" type="Area3D" parent="Ez"]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("7_7bwta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ez/AmbientArea"]
+shape = SubResource("BoxShape3D_f071e")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Ez"]
+stream = ExtResource("8_qt01a")
+volume_db = -20.0
+bus = &"World"
+script = ExtResource("9_yx0gd")
+
+[node name="EzGateA" parent="Ez" instance=ExtResource("10_i6745")]
+
+[node name="EzHall" parent="Ez" instance=ExtResource("11_l14lf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.8)
+
+[node name="EzCorner" parent="Ez" instance=ExtResource("12_e34k5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 62.4)
+
+[node name="EzTroom" parent="Ez" instance=ExtResource("13_fu4rk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 41.6)
+
+[node name="EzHall2" parent="Ez" instance=ExtResource("11_l14lf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20.8, 0, 41.6)
+
+[node name="EzGateB" parent="Ez" instance=ExtResource("14_j8wsg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.8, 0, 62.4)
+
+[node name="Checkpoint2" parent="Ez" instance=ExtResource("15_t2w7o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 41.6, 0, 41.6)
+
+[node name="Area3D" type="Area3D" parent="Ez" node_paths=PackedStringArray("audio", "audioFx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.6)
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("16_re2q7")
+audio = NodePath("Audio")
+audioFx = NodePath("AudioFX")
+onSound = ExtResource("17_c4l4p")
+offSound = ExtResource("18_d0keq")
+onTime = 1
+offTime = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ez/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 0)
+shape = SubResource("BoxShape3D_hdtco")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Ez/Area3D"]
+attenuation_model = 3
+unit_size = 1.0
+panning_strength = 0.0
+bus = &"Intercom"
+
+[node name="AudioFX" type="AudioStreamPlayer3D" parent="Ez/Area3D"]
+attenuation_model = 3
+unit_size = 1.0
+panning_strength = 0.0
+bus = &"Reverb"

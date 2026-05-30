@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dpv6haigexs2p"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_hcntl"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_o2u3k"]
+
+[resource]
+resource_name = "Keter Containment"
+script = ExtResource("2_hcntl")
+type = 3
+size = 1
+stage = 2
+scenes = []
+sceneFile = "uid://b6c2cis6oa4d7"
+isInterest = true
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

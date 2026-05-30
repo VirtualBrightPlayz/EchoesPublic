@@ -1,0 +1,10 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.2.0)
+
+newmtl 01 - Default
+Kd 0.588235319 0.588235319 0.588235319
+Ks 0 0 0
+d 1
+illum 1
+map_Kd .\CameraTexture.jpg
+

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dtvqn4gulioxu"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_pigf1"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_ehjjn"]
+
+[resource]
+resource_name = "PS-01 Door"
+script = ExtResource("2_pigf1")
+type = 5
+stage = 4
+scenes = []
+sceneFile = "uid://b1xehc6hbr34i"
+category = "Doors"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

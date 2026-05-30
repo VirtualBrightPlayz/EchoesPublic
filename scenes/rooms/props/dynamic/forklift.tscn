@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://bqs3bgkfnnkr7"]
+
+[ext_resource type="PackedScene" uid="uid://ct3feexxg73y" path="res://models/rooms/pop_hcz_new/Pop_Props/Fortlift/Forklift SCP Echoes.fbx" id="1_mci84"]
+[ext_resource type="Script" uid="uid://d0abewbclrf34" path="res://scripts/network/VehicleSync.cs" id="1_oiayp"]
+[ext_resource type="Script" uid="uid://dvv03rek3kpyp" path="res://scripts/player/PlayerSeat.cs" id="3_ocf72"]
+[ext_resource type="AudioStream" uid="uid://bavj8s854eyf8" path="res://audio/edited/motor.wav" id="4_tpam0"]
+[ext_resource type="Script" uid="uid://dkm4bjp3fmn86" path="res://scripts/CustomRoomLogic/VelocityAudio.cs" id="5_4drl2"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="6_c7hhb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jkykl"]
+
+[sub_resource type="Curve" id="Curve_mci84"]
+_limits = [0.0, 90.0, 0.0, 1.0]
+_data = [Vector2(0, 45), 0.0, -30.000002, 0, 1, Vector2(1, 15), -30.000002, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58dyh"]
+size = Vector3(1.4472656, 2.272213, 2.9901655)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nx687"]
+points = PackedVector3Array(0.0056688907, -0.019534571, 0.009654762, 0.0040597348, -0.021680158, 0.0005359114, 0.0040597348, -0.021143466, 0.0005359114, 0.006205346, -0.021680158, 0.0005359114, 0.0040597348, -0.021411458, 0.009385169, 0.006205346, -0.021411458, 0.009385169, 0.0040597348, -0.019265871, 0.008580853, 0.006205346, -0.020606775, 0.0013402272, 0.006205346, -0.019265871, 0.008580853, 0.0040597348, -0.020606775, 0.0013402272, 0.0040597348, -0.019265871, 0.009385169, 0.0040597348, -0.021680158, 0.0018767351, 0.006205346, -0.019265871, 0.009385169, 0.0045964, -0.020606775, 0.009654762, 0.006205346, -0.020875001, 0.0008037193, 0.006205346, -0.021680158, 0.0018767351, 0.0056688907, -0.020606775, 0.009654762, 0.0045964, -0.019534571, 0.009654762, 0.006205346, -0.021143466, 0.0005359114, 0.0040597348, -0.020875001, 0.0008037193)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mci84"]
+points = PackedVector3Array(0.0059371185, -0.036165506, 0.00080238096, 0.0040597348, -0.031068916, 0.00026587304, 0.0040597348, -0.031068916, 0.0010706349, 0.006205346, -0.021680158, 0.00026587304, 0.0040597348, -0.021680158, 0.0013388889, 0.006205346, -0.021680158, 0.0013388889, 0.0040597348, -0.021680158, 0.00026587304, 0.004328172, -0.035626817, 0.0010706349, 0.0059371185, -0.031604715, 0.00026587304, 0.004328172, -0.036434125, 0.000534127, 0.0059371185, -0.035626817, 0.0010706349, 0.006205346, -0.026779635, 0.00026587304, 0.0059371185, -0.036165506, 0.000534127, 0.006205346, -0.026779635, 0.0010706349, 0.0040597348, -0.0222174, 0.0013388889, 0.004328172, -0.036434125, 0.00080238096, 0.006205346, -0.0222174, 0.0013388889, 0.0056688907, -0.036434125, 0.00080238096, 0.004328172, -0.031604715, 0.00026587304, 0.0056688907, -0.036434125, 0.000534127)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oiayp"]
+points = PackedVector3Array(-0.004524761, -0.019802563, 0.009654762, -0.006133917, -0.021680158, 0.0005359114, -0.006133917, -0.021143466, 0.0005359114, -0.0039883056, -0.021680158, 0.0005359114, -0.006133917, -0.021411458, 0.009385169, -0.006133917, -0.019265871, 0.008580853, -0.0039883056, -0.021411458, 0.009385169, -0.0039883056, -0.020606775, 0.0013402272, -0.0039883056, -0.019265871, 0.008580853, -0.006133917, -0.020606775, 0.0013402272, -0.006133917, -0.019265871, 0.009385169, -0.0039883056, -0.019265871, 0.009385169, -0.006133917, -0.021680158, 0.0018767351, -0.0058654794, -0.020339254, 0.009654762, -0.0039883056, -0.020875001, 0.0008037193, -0.0039883056, -0.021680158, 0.0018767351, -0.004524761, -0.020606775, 0.009654762, -0.0055972515, -0.019534571, 0.009654762, -0.0039883056, -0.021143466, 0.0005359114, -0.006133917, -0.020875001, 0.0008037193)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ocf72"]
+points = PackedVector3Array(-0.004256533, -0.036165506, 0.00080238096, -0.006133917, -0.031604715, 0.00026587304, -0.0058654794, -0.036434125, 0.000534127, -0.006133917, -0.021680158, 0.0013388889, -0.0039883056, -0.021680158, 0.00026587304, -0.0039883056, -0.021680158, 0.0013388889, -0.006133917, -0.021680158, 0.00026587304, -0.0058654794, -0.035626817, 0.0010706349, -0.004256533, -0.031604715, 0.00026587304, -0.004256533, -0.035626817, 0.0010706349, -0.006133917, -0.031604715, 0.0010706349, -0.004256533, -0.036165506, 0.000534127, -0.0039883056, -0.026240947, 0.00026587304, -0.0039883056, -0.026240947, 0.0010706349, -0.006133917, -0.0222174, 0.0013388889, -0.0058654794, -0.036434125, 0.00080238096, -0.0039883056, -0.0222174, 0.0013388889, -0.004524761, -0.036434125, 0.00080238096, -0.004524761, -0.036434125, 0.000534127)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mci84"]
+size = Vector3(1.8662109, 1, 1.6280518)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_mci84"]
+properties/0/path = NodePath("PlayerSeat:PlayerPath")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="Forklift" type="VehicleBody3D" unique_id=1987279559 node_paths=PackedStringArray("xformSync", "driverSeat")]
+collision_layer = 257
+collision_mask = 171
+physics_material_override = SubResource("PhysicsMaterial_jkykl")
+center_of_mass_mode = 1
+contact_monitor = true
+max_contacts_reported = 32
+script = ExtResource("1_oiayp")
+xformSync = NodePath("TransformSync")
+driverSeat = NodePath("PlayerSeat")
+EngineTarget = 40.0
+EngineAccel = 1000.0
+SteeringTarget = 1.0
+SteeringAccel = 180.0
+SteeringSpeedCurve = SubResource("Curve_mci84")
+metadata/_custom_type_script = "uid://d0abewbclrf34"
+
+[node name="FrontL" type="VehicleWheel3D" parent="." unique_id=506693938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82500005, 0.6, 1.2749999)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.45
+suspension_stiffness = 75.0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="FrontL" unique_id=2106568403]
+transform = Transform3D(5.9604645e-08, -1.6292068e-07, 1, -1, 7.54979e-08, 5.960466e-08, -7.549791e-08, -1, -1.6292068e-07, 0, 0, 0)
+remote_path = NodePath("../../Forklift SCP Echoes/Cylinder_low_002")
+update_scale = false
+
+[node name="FrontR" type="VehicleWheel3D" parent="." unique_id=134756352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8249998, 0.6, 1.2750001)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.45
+suspension_stiffness = 75.0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="FrontR" unique_id=424900440]
+transform = Transform3D(5.9604645e-08, -1.6292068e-07, 1, -1, 7.54979e-08, 5.960466e-08, -7.549791e-08, -1, -1.6292068e-07, 0, 0, 0)
+remote_path = NodePath("../../Forklift SCP Echoes/Cylinder_low_001")
+update_scale = false
+
+[node name="BackL" type="VehicleWheel3D" parent="." unique_id=543093992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82500005, 0.6, -1.0499998)
+use_as_traction = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.45
+suspension_stiffness = 75.0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="BackL" unique_id=205020820]
+transform = Transform3D(5.9604645e-08, -1.6292068e-07, 1, -1, 7.54979e-08, 5.960466e-08, -7.549791e-08, -1, -1.6292068e-07, 0, 0, 0)
+remote_path = NodePath("../../Forklift SCP Echoes/Cylinder_001_low_003")
+update_scale = false
+
+[node name="BackR" type="VehicleWheel3D" parent="." unique_id=252819162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82500046, 0.6, -1.0499996)
+use_as_traction = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.45
+suspension_stiffness = 75.0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="BackR" unique_id=772864130]
+transform = Transform3D(5.9604645e-08, -1.6292068e-07, 1, -1, 7.54979e-08, 5.960466e-08, -7.549791e-08, -1, -1.6292068e-07, 0, 0, 0)
+remote_path = NodePath("../../Forklift SCP Echoes/Cylinder_001_low_002")
+update_scale = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1276138501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3980714, 0.22035062)
+shape = SubResource("BoxShape3D_58dyh")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1651440066]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8194782, -3.5820534e-08)
+shape = SubResource("ConvexPolygonShape3D_nx687")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=169510579]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8194782, -3.5820534e-08)
+shape = SubResource("ConvexPolygonShape3D_mci84")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1628884170]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8194782, -3.5820534e-08)
+shape = SubResource("ConvexPolygonShape3D_oiayp")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1254612523]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8194782, -3.5820534e-08)
+shape = SubResource("ConvexPolygonShape3D_ocf72")
+
+[node name="Forklift SCP Echoes" parent="." unique_id=932011052 instance=ExtResource("1_mci84")]
+
+[node name="Cube_001_low_001" parent="Forklift SCP Echoes" index="0" unique_id=7146867]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8194782, -3.5820534e-08)
+gi_mode = 2
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Forklift SCP Echoes/Cube_001_low_001" index="0" unique_id=543400904]
+remote_path = NodePath("../../Cube_Low_001")
+update_rotation = false
+update_scale = false
+
+[node name="Cube_002_low_001" parent="Forklift SCP Echoes" index="1" unique_id=813540072]
+gi_mode = 2
+
+[node name="Cube_004_low_001" parent="Forklift SCP Echoes" index="2" unique_id=2075122544]
+gi_mode = 2
+
+[node name="Cube_005_low_001" parent="Forklift SCP Echoes" index="3" unique_id=822671328]
+gi_mode = 2
+
+[node name="Cube_006_low_001" parent="Forklift SCP Echoes" index="4" unique_id=381709708]
+gi_mode = 2
+
+[node name="Cube_007_low_001" parent="Forklift SCP Echoes" index="5" unique_id=1038154876]
+gi_mode = 2
+
+[node name="Cube_008_low_001" parent="Forklift SCP Echoes" index="6" unique_id=1673877158]
+gi_mode = 2
+
+[node name="Cube_009_low_001" parent="Forklift SCP Echoes" index="7" unique_id=1097214358]
+gi_mode = 2
+
+[node name="Cube_010_low_001" parent="Forklift SCP Echoes" index="8" unique_id=86066975]
+gi_mode = 2
+
+[node name="Cube_011_low_001" parent="Forklift SCP Echoes" index="9" unique_id=196094921]
+gi_mode = 2
+
+[node name="Cube_012_low_001" parent="Forklift SCP Echoes" index="10" unique_id=2049970852]
+gi_mode = 2
+
+[node name="Cube_013_low_001" parent="Forklift SCP Echoes" index="11" unique_id=1376738280]
+gi_mode = 2
+
+[node name="Cube_014_low_001" parent="Forklift SCP Echoes" index="12" unique_id=2060096799]
+gi_mode = 2
+
+[node name="Cube_015_low_001" parent="Forklift SCP Echoes" index="13" unique_id=917970694]
+gi_mode = 2
+
+[node name="Cube_016_low_001" parent="Forklift SCP Echoes" index="14" unique_id=472071353]
+gi_mode = 2
+
+[node name="Cube_017_low_001" parent="Forklift SCP Echoes" index="15" unique_id=1600566337]
+gi_mode = 2
+
+[node name="Cube_018_low_001" parent="Forklift SCP Echoes" index="16" unique_id=890370200]
+gi_mode = 2
+
+[node name="Cube_038_low_001" parent="Forklift SCP Echoes" index="17" unique_id=1518943470]
+gi_mode = 2
+
+[node name="Cube_Low_001" parent="Forklift SCP Echoes" index="18" unique_id=765215150]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8194782, -3.5820534e-08)
+gi_mode = 2
+
+[node name="Cylinder_001_low_001" parent="Forklift SCP Echoes" index="19" unique_id=289396645]
+gi_mode = 2
+
+[node name="Cylinder_001_low_002" parent="Forklift SCP Echoes" index="20" unique_id=2031933021]
+transform = Transform3D(5.9604645e-06, -1.6292068e-05, 100, -100, 7.54979e-06, 5.960466e-06, -7.549791e-06, -100, -1.6292068e-05, -0.82500046, 0.6, -1.0499996)
+gi_mode = 2
+
+[node name="Cylinder_001_low_003" parent="Forklift SCP Echoes" index="21" unique_id=1726248040]
+transform = Transform3D(5.9604645e-06, -1.6292068e-05, 100, -100, 7.54979e-06, 5.960466e-06, -7.549791e-06, -100, -1.6292068e-05, 0.82500005, 0.6, -1.0499998)
+gi_mode = 2
+
+[node name="Cylinder_002_low_001" parent="Forklift SCP Echoes" index="22" unique_id=837890850]
+gi_mode = 2
+
+[node name="Cylinder_low_001" parent="Forklift SCP Echoes" index="23" unique_id=1343678739]
+transform = Transform3D(5.9604645e-06, -1.6292068e-05, 100, -100, 7.54979e-06, 5.960466e-06, -7.549791e-06, -100, -1.6292068e-05, -0.8249998, 0.6, 1.2750001)
+gi_mode = 2
+
+[node name="Cylinder_low_002" parent="Forklift SCP Echoes" index="24" unique_id=2115983327]
+transform = Transform3D(5.9604645e-06, -1.6292068e-05, 100, -100, 7.54979e-06, 5.960466e-06, -7.549791e-06, -100, -1.6292068e-05, 0.82500005, 0.6, 1.2749999)
+gi_mode = 2
+
+[node name="Steering Wheel_low_001" parent="Forklift SCP Echoes" index="25" unique_id=2094972953]
+transform = Transform3D(-100, 3.8941438e-05, 1.7021842e-12, 0, -4.371139e-06, 100, 3.8941438e-05, 100, 4.371139e-06, 0, 0, 0)
+gi_mode = 2
+
+[node name="PlayerSeat" type="StaticBody3D" parent="." unique_id=673587480 node_paths=PackedStringArray("Vehicle", "camera", "exitPoint")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.28420547, 0.372)
+collision_layer = 258
+collision_mask = 0
+script = ExtResource("3_ocf72")
+Vehicle = NodePath("..")
+camera = NodePath("Camera3D")
+exitPoint = NodePath("Marker3D")
+metadata/_custom_type_script = "uid://dvv03rek3kpyp"
+
+[node name="Camera3D" type="Camera3D" parent="PlayerSeat" unique_id=2031327607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.430413e-08, 2.2442236, 0.57190037)
+cull_mask = 1048527
+fov = 70.0
+far = 100.0
+
+[node name="Marker3D" type="Marker3D" parent="PlayerSeat" unique_id=1227613558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerSeat" unique_id=1718894420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4166251, 0.31402588)
+shape = SubResource("BoxShape3D_mci84")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=759893871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47122, -1.029171)
+stream = ExtResource("4_tpam0")
+volume_db = -14.0
+autoplay = true
+max_distance = 50.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="VelocityAudio" type="Node" parent="." unique_id=1848575545 node_paths=PackedStringArray("rb", "audio")]
+script = ExtResource("5_4drl2")
+rb = NodePath("..")
+audio = NodePath("../AudioStreamPlayer3D")
+maxVolume = 2.0
+linear = 0.15
+angular = 0.0
+lerp = true
+pitch = true
+metadata/_custom_type_script = "uid://dkm4bjp3fmn86"
+
+[node name="TransformSync" type="Node" parent="." unique_id=1149838342]
+script = ExtResource("6_c7hhb")
+targetNode = NodePath("..")
+CanStealClaim = false
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=192460169]
+replication_config = SubResource("SceneReplicationConfig_mci84")
+
+[editable path="Forklift SCP Echoes"]

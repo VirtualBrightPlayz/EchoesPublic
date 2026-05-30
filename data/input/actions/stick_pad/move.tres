@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InputActionStickPad" load_steps=2 format=3 uid="uid://cccxh2wkftaif"]
+
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="1_t46x7"]
+
+[resource]
+resource_name = "Move"
+script = ExtResource("1_t46x7")
+GodotAction = &"player_move"
+GodotActionPositiveX = &"player_right"
+GodotActionNegativeX = &"player_left"
+GodotActionPositiveY = &"player_backward"
+GodotActionNegativeY = &"player_forward"
+LocaleKey = "Action_Move"
+Mode = 1
+metadata/_custom_type_script = "uid://cv67jfffymwa5"

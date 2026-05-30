@@ -1,0 +1,19 @@
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'Medkit'
+output_item = 'Flashlight'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'Flashlight'
+output_item = 'Coin'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'SCP-1930'
+output_item = 'Medkit'
+
+[[item_upgrades]]
+scp_914_setting = 'Coarse'
+input_item = 'SCP-018'
+output_item = 'Frag. Grenade'

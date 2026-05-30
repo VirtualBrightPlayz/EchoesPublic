@@ -1,0 +1,449 @@
+[gd_scene format=3 uid="uid://dlp8cym7j7e8e"]
+
+[ext_resource type="PackedScene" uid="uid://dyxql065kqx0m" path="res://models/rooms/room1_pc_lab.glb" id="1_wd78j"]
+[ext_resource type="Material" uid="uid://be3hr3dm1cff2" path="res://materials/scpcb_map/concretefloor.tres" id="2_pafn2"]
+[ext_resource type="Material" uid="uid://daanv7kmvsedh" path="res://materials/scpcb_map/tilefloor.tres" id="3_5h0lk"]
+[ext_resource type="Material" uid="uid://cliu7e0dpitao" path="res://materials/scpcb_map/whitewall.tres" id="4_foypp"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cly707s3qbqvx" path="res://scenes/rooms/lcz/lcz_pc_lab.occ" id="7_4tjwt"]
+[ext_resource type="PackedScene" uid="uid://o4i6hnq2ba7q" path="res://scenes/rooms/props/static/Fake Door sProp.tscn" id="7_6nhbh"]
+[ext_resource type="PackedScene" uid="uid://dvak67dunv5c7" path="res://scenes/rooms/props/static/Counter_3m_Drawers.tscn" id="8_dphjs"]
+[ext_resource type="PackedScene" uid="uid://oo3sytp6ckms" path="res://scenes/rooms/props/static/Counter_1.5m_Sink.tscn" id="9_fgabw"]
+[ext_resource type="Script" uid="uid://cskyg1sfrd3eo" path="res://scripts/map/ZoneArea.cs" id="10_0xcpt"]
+[ext_resource type="PackedScene" uid="uid://deqwm2at1qwwb" path="res://scenes/rooms/props/static/Counter_1.5m_Corner.tscn" id="10_41kyr"]
+[ext_resource type="PackedScene" uid="uid://csu4o5pwkpvd" path="res://scenes/rooms/props/static/Counter_3m_Cabinets.tscn" id="11_wdl7b"]
+[ext_resource type="PackedScene" uid="uid://li3imlirbx1k" path="res://scenes/rooms/props/dynamic/sm_pallet_box.tscn" id="12_3dv6h"]
+[ext_resource type="PackedScene" uid="uid://df028nxjfyf1v" path="res://scenes/rooms/props/static/security_camera.tscn" id="12_dphjs"]
+[ext_resource type="PackedScene" uid="uid://c18gg2sg36c10" path="res://scenes/rooms/props/static/Counter_1.5m_Empty.tscn" id="13_l26ri"]
+[ext_resource type="PackedScene" uid="uid://crn8w0iqj243b" path="res://scenes/rooms/props/dynamic/metal_shelf_2.tscn" id="14_x3iu0"]
+[ext_resource type="PackedScene" uid="uid://bmy5ust1dxdra" path="res://scenes/rooms/props/dynamic/standing_whiteboard.tscn" id="16_3dv6h"]
+[ext_resource type="PackedScene" uid="uid://of6uhxjo3md0" path="res://scenes/rooms/props/static/poster2.tscn" id="16_qf06a"]
+[ext_resource type="PackedScene" uid="uid://bh1hepas4rb5j" path="res://scenes/rooms/props/static/posterscientist.tscn" id="17_c3rxb"]
+[ext_resource type="PackedScene" uid="uid://b5lmh0l7qr1pc" path="res://scenes/rooms/props/dynamic/Lab_Scale_Prop.tscn" id="18_gwdd4"]
+[ext_resource type="PackedScene" uid="uid://b5euqtb5rk8ny" path="res://scenes/rooms/props/dynamic/Lab_Swivel_Stool_Prop.tscn" id="19_8lp8v"]
+[ext_resource type="PackedScene" uid="uid://di75h017e42mg" path="res://scenes/rooms/props/dynamic/Lab_Flask001_Prop.tscn" id="20_ubwtj"]
+[ext_resource type="PackedScene" uid="uid://cy417nin6l7qv" path="res://scenes/rooms/props/dynamic/Lab_Flask017_Prop.tscn" id="21_kkiug"]
+[ext_resource type="PackedScene" uid="uid://xd1o12ju6vtu" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Lab_Beaker.fbx" id="22_fh5si"]
+[ext_resource type="PackedScene" uid="uid://b3cjsurddi3jf" path="res://scenes/rooms/props/dynamic/big_trash_bin.tscn" id="24_yvevf"]
+[ext_resource type="PackedScene" uid="uid://s8l876cvijhl" path="res://scenes/rooms/props/dynamic/sponge.tscn" id="25_u7mtu"]
+[ext_resource type="PackedScene" uid="uid://dbofawwb1qve2" path="res://scenes/rooms/props/dynamic/box_1.tscn" id="27_qf06a"]
+[ext_resource type="PackedScene" uid="uid://dkbcfrslkmhlc" path="res://scenes/rooms/props/dynamic/Lab_Flask000_Prop.tscn" id="28_3dv6h"]
+[ext_resource type="PackedScene" uid="uid://dthbxu2uf1exb" path="res://scenes/rooms/props/dynamic/Lab_Stool_Prop.tscn" id="28_c3rxb"]
+[ext_resource type="LightmapGIData" uid="uid://q216r201jvbe" path="res://scenes/rooms/lcz/Lightmaps/lcz_pc_lab.lmbake" id="28_fgabw"]
+[ext_resource type="PackedScene" uid="uid://d48oybfdc0ft" path="res://scenes/rooms/props/static/lights/highbay_light.tscn" id="29_41kyr"]
+[ext_resource type="PackedScene" uid="uid://yy62qyoant5o" path="res://scenes/rooms/props/dynamic/fire_extuingisher_dynamic.tscn" id="29_gwdd4"]
+[ext_resource type="PackedScene" uid="uid://by8fg2dj7offe" path="res://scenes/rooms/props/dynamic/Lab_Flask003_Prop.tscn" id="29_l26ri"]
+[ext_resource type="PackedScene" uid="uid://deaojebenwkyr" path="res://scenes/rooms/props/static/fire_extunguisher_stand.tscn" id="30_8lp8v"]
+[ext_resource type="Script" uid="uid://d3v3anjmyuw2p" path="res://scripts/items/ItemSpawner.cs" id="30_x3iu0"]
+[ext_resource type="PackedScene" uid="uid://fc1q46c7i83b" path="res://scenes/rooms/props/static/fuel_457_1.tscn" id="31_8lp8v"]
+[ext_resource type="Resource" uid="uid://cseg2afemf5an" path="res://items/keycards/research_lvl_1.tres" id="31_qf06a"]
+[ext_resource type="Resource" uid="uid://by5npy04t6f23" path="res://items/medkit.tres" id="34_gwdd4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gla0c"]
+data = PackedVector3Array(6.4, 5.12, -5.12, -6.4, 5.12, 9.92, 6.4, 5.12, 9.92, 6.4, 5.12, -5.12, -6.4, 5.12, -5.12, -6.4, 5.12, 9.92, -6.4, 0, -5.12, 6.4, 0, 9.9198, -6.4, 0, 9.9198, -6.4, 0, -5.12, 6.4, 0, -5.12, 6.4, 0, 9.9198, 0.9599, 0, 9.9198, -0.9601, 0, 10.24, -0.9601, 0, 9.9198, 0.9599, 0, 9.9198, 0.9599, 0, 10.24, -0.9601, 0, 10.24, -6.4, 0, 9.9198, -6.4, 5.12, -5.12, -6.4, 0, -5.12, -6.4, 0, 9.9198, -6.4, 5.12, 9.9198, -6.4, 5.12, -5.12, -6.4, 0, -5.12, 6.4, 5.12, -5.12, 6.4, 0, -5.12, -6.4, 0, -5.12, -6.4, 5.12, -5.12, 6.4, 5.12, -5.12, 6.4, 0, -5.12, 6.4, 5.12, 9.9198, 6.4, 0, 9.9198, 6.4, 0, -5.12, 6.4, 5.12, -5.12, 6.4, 5.12, 9.9198, -0.9601, 3.2, 9.9198, 0.9599, 3.2, 10.24, 0.9599, 3.2, 9.9198, -0.9601, 3.2, 9.9198, -0.9601, 3.2, 10.24, 0.9599, 3.2, 10.24, -0.9601, 3.2, 9.9198, -6.4, 0, 9.9198, -0.9601, 0, 9.9198, -0.9601, 3.2, 9.9198, -6.4, 5.12, 9.9198, -6.4, 0, 9.9198, 0.9599, 0, 9.9198, 6.4, 5.12, 9.9198, 0.9599, 3.2, 9.9198, 0.9599, 0, 9.9198, 6.4, 0, 9.9198, 6.4, 5.12, 9.9198, -0.9601, 0, 9.9198, 6.4, 0, 9.9198, 0.9599, 0, 9.9198, -0.9601, 0, 9.9198, -6.4, 0, 9.9198, 6.4, 0, 9.9198, 0.9599, 3.2, 9.9198, -6.4, 5.12, 9.9198, -0.9601, 3.2, 9.9198, 0.9599, 3.2, 9.9198, 6.4, 5.12, 9.9198, -6.4, 5.12, 9.9198, 0.9599, 3.2, 9.9198, 0.9599, 0, 10.24, 0.9599, 0, 9.9198, 0.9599, 3.2, 9.9198, 0.9599, 3.2, 10.24, 0.9599, 0, 10.24, -0.9601, 0, 9.9198, -0.9601, 3.2, 10.24, -0.9601, 3.2, 9.9198, -0.9601, 0, 9.9198, -0.9601, 0, 10.24, -0.9601, 3.2, 10.24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oa7me"]
+size = Vector3(13, 6, 16)
+
+[node name="LczPcLab" type="Node3D" unique_id=1493483274]
+
+[node name="room1_pc_lab" parent="." unique_id=1827759735 instance=ExtResource("1_wd78j")]
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0, 0, 0)
+
+[node name="Room" parent="room1_pc_lab" index="0" unique_id=2130439401]
+layers = 9
+surface_material_override/0 = ExtResource("2_pafn2")
+surface_material_override/1 = ExtResource("3_5h0lk")
+surface_material_override/2 = ExtResource("4_foypp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="room1_pc_lab/Room" index="0" unique_id=361937353]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="room1_pc_lab/Room/StaticBody3D" unique_id=442813397]
+shape = SubResource("ConcavePolygonShape3D_gla0c")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=287837554]
+occluder = ExtResource("7_4tjwt")
+bake_mask = 4294966280
+
+[node name="PDExit" type="Marker3D" parent="." unique_id=1324930968 groups=["pd_exit"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
+gizmo_extents = 1.0
+
+[node name="ZoneArea" type="Area3D" parent="." unique_id=417341233]
+script = ExtResource("10_0xcpt")
+zone = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneArea" unique_id=1440911270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 2.5)
+shape = SubResource("BoxShape3D_oa7me")
+
+[node name="LCZ Lab Space" type="Marker3D" parent="." unique_id=1957892145 groups=["dev_teleport"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.981161)
+
+[node name="Doors" type="Node3D" parent="." unique_id=405137749]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Doors" unique_id=2005208440 groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.24, 0, 0)
+visible = false
+metadata/optional = false
+metadata/door_type = 0
+
+[node name="Marker3D2" type="Marker3D" parent="Doors" unique_id=1548152819 groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.24, 0, 0)
+visible = false
+metadata/optional = false
+metadata/door_type = 0
+
+[node name="Marker3D3" type="Marker3D" parent="Doors" unique_id=1319965151 groups=["map_door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.24)
+visible = false
+metadata/optional = false
+metadata/door_type = 0
+
+[node name="Marker3D4" type="Marker3D" parent="Doors" unique_id=1613735870 groups=["map_door"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 10.24)
+metadata/optional = false
+metadata/door_type = 0
+
+[node name="Props" type="Node3D" parent="." unique_id=701869363]
+
+[node name="FakeDoorSProp" parent="Props" unique_id=254395716 instance=ExtResource("7_6nhbh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.586609, 0, 0)
+
+[node name="Cntr1_5mEmpty" parent="Props" unique_id=383901893 instance=ExtResource("8_dphjs")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.84318435, 0, 3.851356)
+
+[node name="Cntr1_5mEmpty9" parent="Props" unique_id=918999973 instance=ExtResource("8_dphjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3184526, 0, 3.851356)
+
+[node name="Cntr1_5mEmpty11" parent="Props" unique_id=1399200628 instance=ExtResource("8_dphjs")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.84318435, 0, -1.591277)
+
+[node name="Cntr1_5mEmpty12" parent="Props" unique_id=1099524079 instance=ExtResource("8_dphjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3184526, 0, -1.591277)
+
+[node name="Cntr1_5mEmpty4" parent="Props" unique_id=1210514018 instance=ExtResource("8_dphjs")]
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 6.5589585, 0, 8.088386)
+
+[node name="Cntr1_5mEmpty5" parent="Props" unique_id=488112822 instance=ExtResource("8_dphjs")]
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 6.5589585, 0, 3.925486)
+
+[node name="Cntr1_5mEmpty2" parent="Props" unique_id=1059941740 instance=ExtResource("9_fgabw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.546382, -2.3841858e-07, -0.23421296)
+
+[node name="Cntr1_5mEmpty6" parent="Props" unique_id=1141163121 instance=ExtResource("9_fgabw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.546382, -2.3841858e-07, -2.3159602)
+
+[node name="Cntr1_5mEmpty3" parent="Props" unique_id=478143956 instance=ExtResource("10_41kyr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5640364, 0, 10.167883)
+
+[node name="Cntr1_5mEmpty7" parent="Props" unique_id=1267205164 instance=ExtResource("11_wdl7b")]
+transform = Transform3D(-4.371139e-08, 0, 1, -8.742278e-08, -1, -3.821371e-15, 1, -8.742278e-08, 4.371139e-08, 6.6112556, 4.039004, -4.3752)
+
+[node name="Cntr1_5mEmpty8" parent="Props" unique_id=1902928924 instance=ExtResource("11_wdl7b")]
+transform = Transform3D(-4.371139e-08, 0, 1, -8.742278e-08, -1, -3.821371e-15, 1, -8.742278e-08, 4.371139e-08, 6.6112556, 4.039004, -0.23274589)
+
+[node name="sm_pallet_box" parent="Props" unique_id=1435660640 instance=ExtResource("12_3dv6h")]
+transform = Transform3D(0.9941321, 0, -0.10817287, 0, 1, 0, 0.10817287, 0, 0.9941321, 5.702121, 1.4046127, 5.3535914)
+
+[node name="Cntr1_5mEmpty10" parent="Props" unique_id=804108276 instance=ExtResource("13_l26ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400122, 0, 10.165868)
+
+[node name="MetalShelf2" parent="Props" unique_id=1145644981 instance=ExtResource("14_x3iu0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.143426, 0.0051699877, 2.5116858)
+
+[node name="MetalShelf3" parent="Props" unique_id=1475235881 instance=ExtResource("14_x3iu0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.143426, 0.0051699877, 4.6186366)
+
+[node name="Cntr1_5mEmpty13" parent="Props" unique_id=479626783 instance=ExtResource("13_l26ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83514696, -2.3841858e-07, -1.5868942)
+
+[node name="Cntr1_5mEmpty14" parent="Props" unique_id=1559151198 instance=ExtResource("13_l26ri")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.9150362, -2.3841858e-07, -1.5868942)
+
+[node name="StandingWhiteboard" parent="Props" unique_id=2093802958 instance=ExtResource("16_3dv6h")]
+transform = Transform3D(0.34587142, 0, -0.9382819, 0, 1, 0, 0.9382819, 0, 0.34587142, -5.255051, 0, 8.066269)
+
+[node name="Poster2" parent="Props" unique_id=837721848 instance=ExtResource("16_qf06a")]
+transform = Transform3D(0.9998564, -0.016946334, 0, 0.016946334, 0.9998564, 0, 0, 0, 1, -4.4685965, 2.4946952, -5.2455134)
+
+[node name="Poster_JoinSCP" parent="Props" unique_id=297037657 instance=ExtResource("17_c3rxb")]
+transform = Transform3D(-0.9999902, 0.0044156685, 8.7421924e-08, 0.0044156685, 0.9999902, -3.8603e-10, -8.742278e-08, 0, -1, -2.7704477, 2.3649843, 10.166164)
+
+[node name="Lab_Scale_Prop" parent="Props" unique_id=1769646600 instance=ExtResource("18_gwdd4")]
+transform = Transform3D(-0.009930801, 0, 0.9999507, 0, 1, 0, -0.9999507, 0, -0.009930801, 5.725542, 1.3898778, 6.39207)
+
+[node name="Lab_SwivelStool_Prop" parent="Props" unique_id=239676343 instance=ExtResource("19_8lp8v")]
+transform = Transform3D(0.7933002, 0, -0.60883063, 0, 1, 0, 0.60883063, 0, 0.7933002, 3.8698878, 0, 7.921193)
+
+[node name="Lab_Flask001_Prop" parent="Props" unique_id=743508176 instance=ExtResource("20_ubwtj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.813982, 1.4146516, 5.144337)
+
+[node name="Lab_Flask017_Prop" parent="Props" unique_id=1454313933 instance=ExtResource("21_kkiug")]
+transform = Transform3D(0.37518904, 0, -0.9269483, 0, 1, 0, 0.9269483, 0, 0.37518904, 5.607496, 1.4141024, 5.2504625)
+
+[node name="Lab_Beaker" parent="Props" unique_id=856887430 instance=ExtResource("22_fh5si")]
+transform = Transform3D(-3.090862e-08, -0.70710677, 0.70710677, 1, -4.371139e-08, 0, 3.090862e-08, 0.70710677, 0.70710677, 5.8153977, 1.655362, 6.3416147)
+
+[node name="BigTrashBin" parent="Props" unique_id=2026894048 instance=ExtResource("24_yvevf")]
+transform = Transform3D(0.18290463, 0, 0.9831307, 0, 1, 0, -0.9831307, 0, 0.18290463, 1.8022492, 0.611514, 9.471096)
+
+[node name="Sponge" parent="Props" unique_id=2072198605 instance=ExtResource("25_u7mtu")]
+transform = Transform3D(0.4978975, 0, -0.8672359, 0, 1, 0, 0.8672359, 0, 0.4978975, 6.3475, 1.389939, -0.38536954)
+
+[node name="Lab_Flask000_Prop" parent="Props" unique_id=2013461431 instance=ExtResource("28_3dv6h")]
+transform = Transform3D(0.8304112, 0, -0.557151, 0, 1, 0, 0.557151, 0, 0.8304112, -2.4953127, 1.3900001, 4.6232853)
+
+[node name="Lab_Flask003_Prop" parent="Props" unique_id=1831211025 instance=ExtResource("29_l26ri")]
+transform = Transform3D(0.84900856, 0, 0.5283791, 0, 1, 0, -0.5283791, 0, 0.84900856, -2.2655654, 1.3901019, 4.4286923)
+
+[node name="Box1" parent="Props" unique_id=459518876 instance=ExtResource("27_qf06a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0384817, 1.8568742, 2.1192448)
+
+[node name="Box2" parent="Props" unique_id=261486057 instance=ExtResource("27_qf06a")]
+transform = Transform3D(-0.014660295, 0, 0.9998925, 0, 1, 0, -0.9998925, 0, -0.014660295, -6.01081, 1.8568742, 2.5487463)
+
+[node name="Lab_Stool_Prop" parent="Props" unique_id=1525064305 instance=ExtResource("28_c3rxb")]
+transform = Transform3D(0.99050707, 0, -0.13746183, 0, 1, 0, 0.13746183, 0, 0.99050707, 1.6715697, 2.3841858e-07, 0.26214314)
+
+[node name="Lab_Stool_Prop2" parent="Props" unique_id=752418004 instance=ExtResource("28_c3rxb")]
+transform = Transform3D(0.9962613, 0, 0.086390704, 0, 1, 0, -0.086390704, 0, 0.9962613, -2.1488528, 0, 2.0167584)
+
+[node name="Lab_Stool_Prop3" parent="Props" unique_id=224212370 instance=ExtResource("28_c3rxb")]
+transform = Transform3D(0.9962613, 0, 0.086390704, 0, 1, 0, -0.086390704, 0, 0.9962613, 0.10952783, 0, 5.7728753)
+
+[node name="Lab_Stool_Prop4" parent="Props" unique_id=699783190 instance=ExtResource("28_c3rxb")]
+transform = Transform3D(0.9606533, 0, -0.2777506, 0, 1, 0, 0.2777506, 0, 0.9606533, -1.3593328, 0, 5.7028804)
+
+[node name="FireExtuingisherDynamic" parent="Props" unique_id=543630202 instance=ExtResource("29_gwdd4")]
+transform = Transform3D(0.9275952, 0, 0.37358686, 0, 1, 0, -0.37358686, 0, 0.9275952, -6.343118, 1.4461039, -1.9924008)
+
+[node name="FireExtunguisherStand" parent="Props" unique_id=804363556 instance=ExtResource("30_8lp8v")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.561648, 1.4228127, -1.9425637)
+
+[node name="Fuel457_1" parent="Props" unique_id=284171842 instance=ExtResource("31_8lp8v")]
+transform = Transform3D(-0.9901144, 0, 0.14026195, 0, 1, 0, -0.14026195, 0, -0.9901144, -6.2016497, 0.06265071, -2.6943612)
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1633600254]
+visible = false
+quality = 3
+supersampling_factor = 4.0
+bounces = 16
+bounce_indirect_energy = 2.0
+directional = true
+interior = true
+use_denoiser = false
+environment_mode = 0
+light_data = ExtResource("28_fgabw")
+
+[node name="SecurityCamera" parent="." unique_id=1654921730 instance=ExtResource("12_dphjs")]
+transform = Transform3D(-0.70710677, 0.1830127, -0.68301266, 0, 0.96592593, 0.25881907, 0.7071068, 0.18301271, -0.6830127, -6.0439363, 4.055561, -4.6881065)
+cameraTag = "LCZ Endoff"
+cameraName = "LARGE_LAB"
+
+[node name="Lights" type="Node3D" parent="." unique_id=132194956]
+
+[node name="Highbay_Start2" parent="Lights" unique_id=1206186521 instance=ExtResource("29_41kyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2910848, 4.014, 8.065327)
+Range = 7.0
+Shadows = false
+Color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+LightSize = 0.0
+PrimaryEnergy = 6.0
+PrimaryVolumetricFogEnergy = 0.0
+SecondaryVolumetricFogEnergy = 0.0
+PrimarySpotLightAngle = 90.0
+
+[node name="SpotLight3D" parent="Lights/Highbay_Start2" index="0" unique_id=1440754465]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.0
+shadow_enabled = false
+distance_fade_begin = 27.0
+distance_fade_shadow = 10.0
+spot_range = 7.0
+spot_angle = 90.0
+
+[node name="OmniLight3D" parent="Lights/Highbay_Start2/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_volumetric_fog_energy = 0.0
+
+[node name="Highbay_WireMiddle" parent="Lights/Highbay_Start2/Highbay_WireStart" parent_id_path=PackedInt32Array(1206186521, 1573229176) index="0" unique_id=1782368713]
+visible = false
+
+[node name="Highbay_Start3" parent="Lights" unique_id=382432329 instance=ExtResource("29_41kyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2910848, 4.014, -3.0321217)
+Range = 7.0
+Shadows = false
+Color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+LightSize = 0.0
+PrimaryEnergy = 6.0
+PrimaryVolumetricFogEnergy = 0.0
+SecondaryVolumetricFogEnergy = 0.0
+PrimarySpotLightAngle = 90.0
+
+[node name="SpotLight3D" parent="Lights/Highbay_Start3" index="0" unique_id=1440754465]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.0
+shadow_enabled = false
+distance_fade_begin = 27.0
+distance_fade_shadow = 10.0
+spot_range = 7.0
+spot_angle = 90.0
+
+[node name="OmniLight3D" parent="Lights/Highbay_Start3/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_volumetric_fog_energy = 0.0
+
+[node name="Highbay_WireMiddle" parent="Lights/Highbay_Start3/Highbay_WireStart" parent_id_path=PackedInt32Array(382432329, 1573229176) index="0" unique_id=1782368713]
+visible = false
+
+[node name="Highbay_Start4" parent="Lights" unique_id=277163105 instance=ExtResource("29_41kyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5898347, 4.014, 8.065327)
+Range = 7.0
+Shadows = false
+Color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+LightSize = 0.0
+PrimaryEnergy = 6.0
+PrimaryVolumetricFogEnergy = 0.0
+SecondaryVolumetricFogEnergy = 0.0
+PrimarySpotLightAngle = 90.0
+
+[node name="SpotLight3D" parent="Lights/Highbay_Start4" index="0" unique_id=1440754465]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.0
+shadow_enabled = false
+distance_fade_begin = 27.0
+distance_fade_shadow = 10.0
+spot_range = 7.0
+spot_angle = 90.0
+
+[node name="OmniLight3D" parent="Lights/Highbay_Start4/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_volumetric_fog_energy = 0.0
+
+[node name="Highbay_WireMiddle" parent="Lights/Highbay_Start4/Highbay_WireStart" parent_id_path=PackedInt32Array(277163105, 1573229176) index="0" unique_id=1782368713]
+visible = false
+
+[node name="Highbay_Start6" parent="Lights" unique_id=49324406 instance=ExtResource("29_41kyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2910848, 4.014, 2.551366)
+Range = 7.0
+Shadows = false
+Color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+LightSize = 0.0
+PrimaryEnergy = 6.0
+PrimaryVolumetricFogEnergy = 0.0
+SecondaryVolumetricFogEnergy = 0.0
+PrimarySpotLightAngle = 90.0
+
+[node name="SpotLight3D" parent="Lights/Highbay_Start6" index="0" unique_id=1440754465]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.0
+shadow_enabled = false
+distance_fade_begin = 27.0
+distance_fade_shadow = 10.0
+spot_range = 7.0
+spot_angle = 90.0
+
+[node name="OmniLight3D" parent="Lights/Highbay_Start6/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_volumetric_fog_energy = 0.0
+
+[node name="Highbay_WireMiddle" parent="Lights/Highbay_Start6/Highbay_WireStart" parent_id_path=PackedInt32Array(49324406, 1573229176) index="0" unique_id=1782368713]
+visible = false
+
+[node name="Highbay_Start7" parent="Lights" unique_id=829012984 instance=ExtResource("29_41kyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5898347, 4.014, 2.551366)
+Range = 7.0
+Shadows = false
+Color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+LightSize = 0.0
+PrimaryEnergy = 6.0
+PrimaryVolumetricFogEnergy = 0.0
+SecondaryVolumetricFogEnergy = 0.0
+PrimarySpotLightAngle = 90.0
+
+[node name="SpotLight3D" parent="Lights/Highbay_Start7" index="0" unique_id=1440754465]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.0
+shadow_enabled = false
+distance_fade_begin = 27.0
+distance_fade_shadow = 10.0
+spot_range = 7.0
+spot_angle = 90.0
+
+[node name="OmniLight3D" parent="Lights/Highbay_Start7/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_volumetric_fog_energy = 0.0
+
+[node name="Highbay_WireMiddle" parent="Lights/Highbay_Start7/Highbay_WireStart" parent_id_path=PackedInt32Array(829012984, 1573229176) index="0" unique_id=1782368713]
+visible = false
+
+[node name="Highbay_Start5" parent="Lights" unique_id=1231006389 instance=ExtResource("29_41kyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5898347, 4.014, -3.0321217)
+Range = 7.0
+Shadows = false
+Color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+LightSize = 0.0
+PrimaryEnergy = 6.0
+PrimaryVolumetricFogEnergy = 0.0
+SecondaryVolumetricFogEnergy = 0.0
+PrimarySpotLightAngle = 90.0
+
+[node name="SpotLight3D" parent="Lights/Highbay_Start5" index="0" unique_id=1440754465]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.0
+shadow_enabled = false
+distance_fade_begin = 27.0
+distance_fade_shadow = 10.0
+spot_range = 7.0
+spot_angle = 90.0
+
+[node name="OmniLight3D" parent="Lights/Highbay_Start5/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.7294118, 0.8039216, 0.78431374, 1)
+light_volumetric_fog_energy = 0.0
+
+[node name="Highbay_WireMiddle" parent="Lights/Highbay_Start5/Highbay_WireStart" parent_id_path=PackedInt32Array(1231006389, 1573229176) index="0" unique_id=1782368713]
+visible = false
+
+[node name="ItemSpawner" type="Marker3D" parent="." unique_id=1458981991]
+transform = Transform3D(-0.7899302, 0, 0.61319673, 0, 1, 0, -0.61319673, 0, -0.7899302, 2.174445, 1.4883912, -0.7865778)
+script = ExtResource("30_x3iu0")
+Item = ExtResource("31_qf06a")
+SpawnOnReady = true
+metadata/_custom_type_script = "uid://d3v3anjmyuw2p"
+
+[node name="ItemSpawner2" type="Marker3D" parent="." unique_id=1276480408]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.1419215, 1.8574687, 4.13759)
+script = ExtResource("30_x3iu0")
+Item = ExtResource("34_gwdd4")
+SpawnOnReady = true
+metadata/_custom_type_script = "uid://d3v3anjmyuw2p"
+
+[node name="ItemSpawner3" type="Marker3D" parent="." unique_id=1930616279]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.1419215, 1.1724865, 2.976396)
+script = ExtResource("30_x3iu0")
+Item = ExtResource("34_gwdd4")
+SpawnOnReady = true
+metadata/_custom_type_script = "uid://d3v3anjmyuw2p"
+
+[editable path="room1_pc_lab"]
+[editable path="Lights/Highbay_Start2"]
+[editable path="Lights/Highbay_Start3"]
+[editable path="Lights/Highbay_Start4"]
+[editable path="Lights/Highbay_Start6"]
+[editable path="Lights/Highbay_Start7"]
+[editable path="Lights/Highbay_Start5"]

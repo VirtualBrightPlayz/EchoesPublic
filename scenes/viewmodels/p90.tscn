@@ -1,0 +1,317 @@
+[gd_scene format=3 uid="uid://b0rlp104og08f"]
+
+[ext_resource type="Script" uid="uid://btx74i5nt8ylr" path="res://scripts/player/role_ui/Viewmodel.cs" id="1_sss8b"]
+[ext_resource type="Resource" uid="uid://cpdg4vnjlra24" path="res://sounds/gunshot_rifle.tres" id="2_d3l10"]
+[ext_resource type="Material" uid="uid://bmjrrob7hinpq" path="res://models/main/human/class_d/hands_pov.tres" id="4_hjh2w"]
+[ext_resource type="Material" uid="uid://bgfdsul2ah4dg" path="res://models/p90/textures/p90_1_view.tres" id="5_j3d0n"]
+[ext_resource type="Material" uid="uid://bttktjioqhcky" path="res://models/p90/textures/p90_2_view.tres" id="6_p8x6f"]
+[ext_resource type="Script" uid="uid://cgon41wv5dcm3" path="res://scripts/map/LoopAudio3D.cs" id="7_j3d0n"]
+[ext_resource type="Shader" uid="uid://ca1mlv0uksfjt" path="res://shaders/fp_pov_alpha.gdshader" id="7_xgp4t"]
+[ext_resource type="Texture2D" uid="uid://b3c5m7pym4dfc" path="res://textures/flare_01.png" id="8_g1rn1"]
+[ext_resource type="Curve" path="res://textures/tweencurve.tres" id="9_g1rn1"]
+[ext_resource type="PackedScene" uid="uid://bfabof6to6owi" path="res://models/p90/P90Anims.glb" id="10_g1rn1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j255n"]
+render_priority = 0
+shader = ExtResource("7_xgp4t")
+shader_parameter/albedo = Color(1, 1, 0, 1)
+shader_parameter/texture_albedo = ExtResource("8_g1rn1")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissions = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_hyfed"]
+material = SubResource("ShaderMaterial_j255n")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yy60u"]
+animation = &"Aim in"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a8iyx"]
+animation = &"Aim out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8csg3"]
+animation = &"Aim fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g1rn1"]
+animation = &"Equip - Pull Out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3c3j"]
+animation = &"Fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hyfed"]
+animation = &"Idle (250 Frames)"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p2r7r"]
+animation = &"Inspect"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tjkaj"]
+animation = &"Reload"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y032b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_piw8y"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1rvgd"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_al0x7"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tiisb"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6s61r"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0rv4g"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xfktj"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hlajq"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1eegx"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nky0m"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yxopo"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4u22k"]
+xfade_time = 0.1
+xfade_curve = ExtResource("9_g1rn1")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hjh2w"]
+states/Aim/node = SubResource("AnimationNodeAnimation_yy60u")
+states/Aim/position = Vector2(538, 142)
+states/AimEnd/node = SubResource("AnimationNodeAnimation_a8iyx")
+states/AimEnd/position = Vector2(348, 127)
+states/AimFire/node = SubResource("AnimationNodeAnimation_8csg3")
+states/AimFire/position = Vector2(503, 230)
+states/Equip/node = SubResource("AnimationNodeAnimation_g1rn1")
+states/Equip/position = Vector2(212, 5)
+states/Fire/node = SubResource("AnimationNodeAnimation_x3c3j")
+states/Fire/position = Vector2(656, -93)
+states/Idle/node = SubResource("AnimationNodeAnimation_hyfed")
+states/Idle/position = Vector2(656, 38)
+states/Inspect/node = SubResource("AnimationNodeAnimation_p2r7r")
+states/Inspect/position = Vector2(1101, -24)
+states/Reload/node = SubResource("AnimationNodeAnimation_tjkaj")
+states/Reload/position = Vector2(863, -76)
+transitions = ["Start", "Equip", SubResource("AnimationNodeStateMachineTransition_y032b"), "Equip", "Idle", SubResource("AnimationNodeStateMachineTransition_piw8y"), "Idle", "Aim", SubResource("AnimationNodeStateMachineTransition_1rvgd"), "Aim", "AimEnd", SubResource("AnimationNodeStateMachineTransition_al0x7"), "AimEnd", "Idle", SubResource("AnimationNodeStateMachineTransition_tiisb"), "Aim", "AimFire", SubResource("AnimationNodeStateMachineTransition_6s61r"), "AimFire", "AimEnd", SubResource("AnimationNodeStateMachineTransition_0rv4g"), "Idle", "Fire", SubResource("AnimationNodeStateMachineTransition_xfktj"), "Fire", "Idle", SubResource("AnimationNodeStateMachineTransition_hlajq"), "Idle", "Reload", SubResource("AnimationNodeStateMachineTransition_1eegx"), "Reload", "Idle", SubResource("AnimationNodeStateMachineTransition_nky0m"), "Idle", "Inspect", SubResource("AnimationNodeStateMachineTransition_yxopo"), "Inspect", "Idle", SubResource("AnimationNodeStateMachineTransition_4u22k")]
+graph_offset = Vector2(58, -7)
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_j3d0n"]
+polyphony = 64
+
+[node name="ViewmodelP90" type="Node3D" unique_id=294655374 node_paths=PackedStringArray("tree", "root", "viewCamBone", "viewCam", "audio")]
+script = ExtResource("1_sss8b")
+tree = NodePath("Pivot/P90Anims/AnimationTree")
+root = NodePath("Pivot/P90Anims")
+viewCamBone = NodePath("Pivot/P90Anims/Skel_Arm/Skeleton3D/BoneAttachment3D")
+viewCam = NodePath("Pivot/P90Anims/Skel_Arm/Skeleton3D/BoneAttachment3D/Camera3D")
+aimLerpSpeed = 10.0
+gunReloadPath = "Reload"
+gunAimPath = "Aim"
+gunIdlePath = "Idle"
+gunWalkPath = ""
+gunFirePath = PackedStringArray("Fire")
+gunAimFirePath = "AimFire"
+gunInspectPath = "Inspect"
+gunAimCondPath = ""
+gunStateSwitchPaths = PackedStringArray("Equip", "Aim", "AimEnd", "Fire", "AimFire")
+audio = NodePath("Pivot/P90Anims/Audio")
+fireAudio = ExtResource("2_d3l10")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1283452886]
+
+[node name="P90Anims" parent="Pivot" unique_id=1638638577 instance=ExtResource("10_g1rn1")]
+
+[node name="Skeleton3D" parent="Pivot/P90Anims/Skel_Arm" parent_id_path=PackedInt32Array(1638638577, 1046694317) index="0" unique_id=1475005796]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+bones/1/position = Vector3(-0.1602637, 0.1996638, 0.26042208)
+bones/1/rotation = Quaternion(-0.32396936, -0.68190986, 0.42618763, 0.4984045)
+bones/2/rotation = Quaternion(-1.5397708e-06, 1.9911995e-07, 0.46660957, 0.8844635)
+bones/3/rotation = Quaternion(0.101679415, 0.026910495, -0.250179, 0.9624696)
+bones/4/rotation = Quaternion(0.059690356, -0.124638475, -0.04869334, 0.9892074)
+bones/4/scale = Vector3(0.30775672, 0.30775678, 0.30775666)
+bones/5/position = Vector3(-0.035144363, 0.029814268, -0.0025466008)
+bones/5/rotation = Quaternion(-0.2736551, -0.24133143, 0.1257858, 0.9225238)
+bones/6/rotation = Quaternion(0.041638475, 0.1467357, -0.076943494, 0.9852993)
+bones/8/rotation = Quaternion(0.06607018, -0.08302334, -0.03809031, 0.9936252)
+bones/9/rotation = Quaternion(-0.094293274, 0.056443773, 0.039947063, 0.99314)
+bones/10/rotation = Quaternion(-0.47439247, 0.10988619, 0.030546505, 0.8728939)
+bones/11/rotation = Quaternion(-0.5937782, -0.18593651, 0.025493484, 0.78243536)
+bones/12/rotation = Quaternion(0.0007606862, -0.076691866, -0.08462256, 0.9934571)
+bones/13/rotation = Quaternion(-0.5480436, 0.11953153, 0.057490002, 0.8258664)
+bones/14/rotation = Quaternion(-0.59882766, 0.047922533, 0.01836325, 0.799232)
+bones/15/rotation = Quaternion(-0.4006313, 0.13701144, -0.011012127, 0.9058705)
+bones/16/rotation = Quaternion(-0.109367296, -0.018305983, -0.14943224, 0.9825343)
+bones/17/rotation = Quaternion(-0.6190478, 0.13531098, 0.021752013, 0.77330315)
+bones/18/rotation = Quaternion(-0.5383764, 0.11387777, 0.0035506599, 0.8349672)
+bones/19/rotation = Quaternion(-0.46757424, 0.18478994, -0.20637432, 0.83942646)
+bones/20/rotation = Quaternion(-0.2903122, 0.09292803, -0.20300092, 0.93052346)
+bones/21/rotation = Quaternion(-0.48279586, 0.1546795, -0.10904073, 0.8550396)
+bones/22/rotation = Quaternion(-0.4981454, 0.09723456, -0.022390854, 0.8613334)
+bones/23/rotation = Quaternion(-0.32825172, 0.124558195, -0.079060405, 0.9329982)
+bones/24/rotation = Quaternion(0.00038247116, 0.011520027, -0.033160325, 0.99938357)
+bones/25/rotation = Quaternion(4.813558e-07, 0.01152609, -8.540518e-09, 0.9999336)
+bones/26/position = Vector3(0.13677034, 0.24344824, 0.050581142)
+bones/26/rotation = Quaternion(-0.29960614, 0.7537004, -0.43015856, 0.39640313)
+bones/27/rotation = Quaternion(-1.8987866e-06, -1.8169534e-07, -0.5730688, 0.81950736)
+bones/28/rotation = Quaternion(0.043378416, -0.23683387, 0.20714308, 0.94821924)
+bones/29/scale = Vector3(0.30775666, 0.30775666, 0.30775666)
+bones/30/position = Vector3(0.015921004, 0.027764762, -0.004529198)
+bones/30/rotation = Quaternion(-0.26284707, -0.05953234, -0.18521819, 0.9450194)
+bones/31/rotation = Quaternion(-0.13022842, -0.14331351, 0.25699872, 0.9468122)
+bones/32/rotation = Quaternion(0.29706132, -0.07163194, 0.59082377, 0.74669325)
+bones/33/rotation = Quaternion(0.110618085, 0.117450945, 0.057508677, 0.9852216)
+bones/34/rotation = Quaternion(-0.52131057, -0.03852373, -0.082066596, 0.84853774)
+bones/35/rotation = Quaternion(-0.5928863, -0.10447242, -0.045755588, 0.7971687)
+bones/36/rotation = Quaternion(-0.3704607, -0.14798915, 0.15489814, 0.90380573)
+bones/37/rotation = Quaternion(0.05888464, 0.10743493, 0.085958876, 0.98873734)
+bones/38/rotation = Quaternion(-0.5470977, -0.11959727, -0.057353098, 0.8264933)
+bones/39/rotation = Quaternion(-0.6505732, -0.046597496, -0.021504667, 0.75770754)
+bones/40/rotation = Quaternion(-0.32374883, -0.13352856, 0.09922096, 0.9314033)
+bones/41/rotation = Quaternion(-0.06973178, -0.006554279, 0.14191546, 0.98739785)
+bones/42/rotation = Quaternion(-0.4980189, -0.015487401, -0.17602243, 0.84897196)
+bones/43/rotation = Quaternion(-0.65825933, -0.11203651, -0.020701865, 0.7441196)
+bones/44/rotation = Quaternion(-0.17627707, -0.17058702, 0.119783126, 0.962018)
+bones/45/rotation = Quaternion(-0.2038915, 0.083648585, 0.08502872, 0.97170025)
+bones/46/rotation = Quaternion(-0.3750409, -0.17162229, -0.106287085, 0.9047614)
+bones/47/rotation = Quaternion(-0.56292015, -0.09866874, 0.0148455985, 0.82046634)
+bones/48/rotation = Quaternion(-0.2081044, -0.1136065, 0.09412153, 0.9669164)
+bones/49/rotation = Quaternion(0.0024397178, -0.07352081, 0.033072688, 0.9967422)
+bones/50/rotation = Quaternion(4.9298563e-07, -0.07356104, -3.6966707e-08, 0.99729073)
+bones/51/position = Vector3(-0.090652525, -0.18124612, 0.18114612)
+bones/51/rotation = Quaternion(-0.45901248, 0.55578023, 0.51779956, -0.46075976)
+bones/52/position = Vector3(-0.023893297, -0.20078266, 0.329209)
+bones/52/rotation = Quaternion(0.32937247, 0.39233994, 0.5195055, 0.683884)
+bones/53/position = Vector3(-0.28587207, -0.6827145, -0.22676417)
+bones/54/position = Vector3(0.25490674, -0.42049405, -0.14021868)
+bones/54/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+bones/56/position = Vector3(-0.0741352, -0.1728753, 0.2728546)
+bones/56/rotation = Quaternion(7.392904e-05, -0.7065759, -0.0043018586, 0.7076243)
+bones/57/position = Vector3(-0.14716925, 0.09551592, 6.026027e-08)
+bones/57/rotation = Quaternion(-3.8973347e-08, 5.6976717e-08, -0.7071068, 0.7071068)
+bones/58/position = Vector3(0.09998985, 0.060064048, 3.7079072e-08)
+
+[node name="Arm" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D" index="0" unique_id=1599945215]
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("4_hjh2w")
+
+[node name="P90" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D" index="1" unique_id=364665995]
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("5_j3d0n")
+surface_material_override/1 = ExtResource("6_p8x6f")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D" index="2" unique_id=66734042]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+bone_name = "Cam"
+bone_idx = 55
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D/BoneAttachment3D" unique_id=1905505210]
+fov = 58.7
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D" index="3" unique_id=1442324104]
+transform = Transform3D(0.0014641285, 0.0059837257, -0.9999811, -0.0061926716, 0.999963, 0.0059745503, 0.9999798, 0.0061838063, 0.001501143, -0.0741352, -0.1728753, 0.2728546)
+bone_name = "Grip"
+bone_idx = 56
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D/BoneAttachment3D2" unique_id=2042387779]
+transform = Transform3D(0.99998516, -0.00539512, -0.0009086662, 0.0053910865, 0.9999759, -0.0043849037, 0.0009323965, 0.0043799398, 0.99999017, 0.26211777, 0.06507937, -0.00065894425)
+visible = false
+layers = 16
+light_color = Color(0.898039, 0.494118, 0, 1)
+distance_fade_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot/P90Anims/Skel_Arm/Skeleton3D/BoneAttachment3D2/OmniLight3D" unique_id=200384202]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+layers = 16
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+instance_shader_parameters/fov = 58.70000183825
+mesh = SubResource("QuadMesh_hyfed")
+
+[node name="Cube_002" parent="Pivot/P90Anims" index="4" unique_id=400021547]
+visible = false
+
+[node name="Cube_003" parent="Pivot/P90Anims" index="5" unique_id=1022364922]
+visible = false
+
+[node name="Cube_005" parent="Pivot/P90Anims" index="6" unique_id=1045860407]
+visible = false
+
+[node name="Cube_006" parent="Pivot/P90Anims" index="7" unique_id=1929053021]
+visible = false
+
+[node name="Cube_007" parent="Pivot/P90Anims" index="8" unique_id=837962269]
+visible = false
+
+[node name="Cube_008" parent="Pivot/P90Anims" index="9" unique_id=1909169493]
+visible = false
+
+[node name="BézierCircle" parent="Pivot/P90Anims" index="10" unique_id=254080577]
+visible = false
+
+[node name="BézierCircle_001" parent="Pivot/P90Anims" index="11" unique_id=1673917888]
+visible = false
+
+[node name="AnimationTree" type="AnimationTree" parent="Pivot/P90Anims" unique_id=113828153]
+tree_root = SubResource("AnimationNodeStateMachine_hjh2w")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Reload" type="AudioStreamPlayer3D" parent="Pivot/P90Anims" unique_id=1856667642]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, 0, 0, 0)
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"World"
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Pivot/P90Anims" unique_id=1840949854]
+stream = SubResource("AudioStreamPolyphonic_j3d0n")
+attenuation_model = 3
+autoplay = true
+panning_strength = 0.0
+bus = &"World"
+script = ExtResource("7_j3d0n")
+metadata/_custom_type_script = "uid://cgon41wv5dcm3"
+
+[editable path="Pivot/P90Anims"]

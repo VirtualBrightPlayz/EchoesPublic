@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://15riqo48q4r7"]
+
+[ext_resource type="Texture2D" uid="uid://qjbuoaytdihy" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/Tesla T.png" id="1_aw6x5"]
+[ext_resource type="Texture2D" uid="uid://bd2jn8qdlxo5a" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/Tesla N.png" id="2_cbhbg"]
+[ext_resource type="Texture2D" uid="uid://dtkfjr8l82pdc" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/Tesla Mask_ORM.png" id="3_shyxl"]
+
+[resource]
+albedo_texture = ExtResource("1_aw6x5")
+orm_texture = ExtResource("3_shyxl")
+normal_enabled = true
+normal_texture = ExtResource("2_cbhbg")

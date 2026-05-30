@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cfx1ex6bawsxt"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_6c7f4"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_vybp1"]
+
+[resource]
+resource_name = "PS-01 Curve"
+script = ExtResource("2_6c7f4")
+type = 1
+stage = 4
+scenes = []
+sceneFile = "uid://ckfwtyemxrxsj"
+isGeneric = true
+category = "PS-01"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cc2wbq8dkeyi6"]
+
+[ext_resource type="Texture2D" uid="uid://bg0pk138f1j6w" path="res://models/main/human/zombie/T_zombie_Body.png" id="1_6w48q"]
+[ext_resource type="Texture2D" uid="uid://d3lk587lq6cv5" path="res://models/main/human/zombie/N_zombie_Body.png" id="2_ydkg6"]
+[ext_resource type="Texture2D" uid="uid://c8brthfrvdwsm" path="res://models/main/human/zombie/ORM_zombie_Body.png" id="3_r0acp"]
+
+[resource]
+albedo_texture = ExtResource("1_6w48q")
+orm_texture = ExtResource("3_r0acp")
+normal_enabled = true
+normal_texture = ExtResource("2_ydkg6")

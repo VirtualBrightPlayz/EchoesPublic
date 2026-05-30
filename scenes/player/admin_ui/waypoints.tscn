@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bnaiaduxwh64q"]
+
+[ext_resource type="Script" path="res://scripts/ui/admin/AdminCategoryWaypoints.cs" id="1_gsvwd"]
+
+[node name="Waypoints" type="VBoxContainer" unique_id=1932682236]
+
+[node name="Handler" type="Node" parent="." unique_id=1325605173 node_paths=PackedStringArray("container")]
+script = ExtResource("1_gsvwd")
+container = NodePath("../HFlowContainer")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=2109696263]
+layout_mode = 2

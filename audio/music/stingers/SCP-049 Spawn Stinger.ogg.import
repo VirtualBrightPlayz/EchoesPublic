@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqm2fr3atn1yh"
+path="res://.godot/imported/SCP-049 Spawn Stinger.ogg-16d5625cd77e0c60767aaeb128712a5c.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/stingers/SCP-049 Spawn Stinger.ogg"
+dest_files=["res://.godot/imported/SCP-049 Spawn Stinger.ogg-16d5625cd77e0c60767aaeb128712a5c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

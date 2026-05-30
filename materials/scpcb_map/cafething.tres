@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bstqyx0ws68pr"]
+
+[ext_resource type="Texture2D" uid="uid://bwn77obxkwdwa" path="res://textures/scpcb/crtbev.jpg" id="1_n4jp7"]
+
+[resource]
+albedo_texture = ExtResource("1_n4jp7")
+texture_filter = 5

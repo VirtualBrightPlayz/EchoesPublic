@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd8b08yfa6d4e"]
+
+[ext_resource type="PackedScene" uid="uid://0y5ywcplk8ia" path="res://scenes/rooms/hcz/hcz_elevator.tscn" id="1_jpitu"]
+
+[node name="HczElevator2" instance=ExtResource("1_jpitu")]
+
+[node name="Elevator" parent="." index="4"]
+elevatorId = "checkpoint1_2"
+
+[editable path="room2tunnel2_opt_rmesh"]
+[editable path="Elevator"]
+[editable path="Elevator/LczDoor/doorframe"]

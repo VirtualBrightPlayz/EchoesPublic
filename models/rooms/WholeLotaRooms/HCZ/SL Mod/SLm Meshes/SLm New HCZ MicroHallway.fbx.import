@@ -1,0 +1,82 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://6y124anf3eol"
+path="res://.godot/imported/SLm New HCZ MicroHallway.fbx-53f32af64bbb0268204ee7e7b4cc61f4.scn"
+
+[deps]
+
+source_file="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Meshes/SLm New HCZ MicroHallway.fbx"
+dest_files=["res://.godot/imported/SLm New HCZ MicroHallway.fbx-53f32af64bbb0268204ee7e7b4cc61f4.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Metal_Base": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/Echoes V1 (Metal Tubes)/V1 Materials/V1_SolidWall_Grey.tres",
+"use_external/path": "uid://doubqlvll6xri"
+},
+"Metal_Pipe": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Metal Pipe.tres",
+"use_external/path": "uid://bjwu0q6t61o31"
+},
+"N_Ground": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Ground.tres",
+"use_external/path": "uid://cd2ojiv6602km"
+},
+"N_Timming": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete Trim.tres",
+"use_external/path": "uid://now70qqcw6e7"
+},
+"N_Wall": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete.tres",
+"use_external/path": "uid://b2vvjw1fd5qec"
+},
+"N_WallDouble": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete Double.tres",
+"use_external/path": "uid://x3cm61idhx8r"
+},
+"N_WallTriple": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Materials/nSL Concrete Triple.tres",
+"use_external/path": "uid://c1t702avo4a4d"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

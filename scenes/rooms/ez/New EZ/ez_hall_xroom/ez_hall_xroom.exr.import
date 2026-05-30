@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://daf2d1qtd5dab"
+path.bptc="res://.godot/imported/ez_hall_xroom.exr-0af7ac8a16b24cb80ee5c8128717245d.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://scenes/rooms/ez/New EZ/ez_hall_xroom/ez_hall_xroom.exr"
+dest_files=["res://.godot/imported/ez_hall_xroom.exr-0af7ac8a16b24cb80ee5c8128717245d.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=8

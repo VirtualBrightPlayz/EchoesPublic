@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://batgsopaswv3i"]
+
+[ext_resource type="Texture2D" uid="uid://dgsi416m4las4" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ConcreteTiles_T.png" id="1_qcfh2"]
+[ext_resource type="Texture2D" uid="uid://creaghaddnxhx" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ConcreteTiles_N.png" id="2_di7sl"]
+[ext_resource type="Texture2D" uid="uid://1e5rdu773omc" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ConcreteTiles_ORM.png" id="3_fiwkh"]
+
+[resource]
+albedo_texture = ExtResource("1_qcfh2")
+orm_texture = ExtResource("3_fiwkh")
+normal_enabled = true
+normal_texture = ExtResource("2_di7sl")

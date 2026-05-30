@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dgpopau5j5gdm"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_kdjwv"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_kdjwv"]
+
+[resource]
+resource_name = "SCP-895"
+script = ExtResource("2_kdjwv")
+size = 2
+scenes = []
+sceneFile = "uid://8bjay0s7csq0"
+category = "Heavy Containment"

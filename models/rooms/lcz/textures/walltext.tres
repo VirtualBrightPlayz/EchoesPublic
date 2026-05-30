@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bsm0ujvmm3eeb"]
+
+[ext_resource type="Texture2D" uid="uid://cb2xvklt61v1o" path="res://models/rooms/lcz/textures/T_walltext.png" id="1_18qck"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_18qck")

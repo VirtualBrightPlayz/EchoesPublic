@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GameSound" load_steps=3 format=3 uid="uid://b3or6e8mr3lho"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_hxybw"]
+[ext_resource type="AudioStream" uid="uid://b3sj2c57epnke" path="res://audio/scpcb/294/spit.ogg" id="2_hxybw"]
+
+[resource]
+script = ExtResource("1_hxybw")
+DisplayName = "Spit"
+streams = [ExtResource("2_hxybw")]
+volumeDb = 0.0
+unitSize = 5.0
+maxDistance = 20.0
+maxDb = 3.0
+pitch = 1.0
+bus = ""
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

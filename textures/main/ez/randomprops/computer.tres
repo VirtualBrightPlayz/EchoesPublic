@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://bynsr54uo6en"]
+
+[ext_resource type="Texture2D" uid="uid://baj5wn68sxfla" path="res://textures/main/ez/randomprops/T_ComputerAssets.png" id="1_fqks6"]
+[ext_resource type="Texture2D" uid="uid://y3gmfp8xgp7r" path="res://textures/main/ez/randomprops/ORM_ComputerAssets.png" id="2_6qyyu"]
+[ext_resource type="Texture2D" uid="uid://8tf20i0tvsg3" path="res://textures/main/ez/randomprops/E_ComputerAssets.png" id="2_ofreg"]
+[ext_resource type="Texture2D" uid="uid://cj81mslhj8l61" path="res://textures/main/ez/randomprops/N_ComputerAssets.png" id="3_241s5"]
+
+[resource]
+albedo_texture = ExtResource("1_fqks6")
+orm_texture = ExtResource("2_6qyyu")
+emission_enabled = true
+emission_texture = ExtResource("2_ofreg")
+normal_enabled = true
+normal_texture = ExtResource("3_241s5")
+ao_enabled = true
+ao_light_affect = 1.0

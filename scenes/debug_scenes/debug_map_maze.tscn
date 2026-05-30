@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://uu53q10prixc"]
+
+[ext_resource type="Script" uid="uid://cnu5qs2f60voa" path="res://scripts/layout_generator/MazeMapGenerator.cs" id="1_y6ckx"]
+[ext_resource type="Resource" uid="uid://lj61kl2rt4qg" path="res://rooms/LczCollection.tres" id="2_sgmt7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("tex")]
+script = ExtResource("1_y6ckx")
+size = Vector2i(16, 16)
+tex = NodePath("../TextureRect")
+settingsCollection = ExtResource("2_sgmt7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1

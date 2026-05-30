@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://m6cr4pbuvlkc"]
+
+[ext_resource type="Script" uid="uid://bh5xgm35s4u0x" path="res://scripts/layout_generator/ImageMapGenerator.cs" id="1_a0nof"]
+[ext_resource type="Image" uid="uid://bfefsmkd51gte" path="res://textures/maps/lcz_map0.png" id="2_oehfg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("tex")]
+script = ExtResource("1_a0nof")
+images = [ExtResource("2_oehfg")]
+tex = NodePath("../TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1

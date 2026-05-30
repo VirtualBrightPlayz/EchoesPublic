@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="InputActionSet" format=3 uid="uid://nbreyoctpopy"]
+
+[ext_resource type="Script" uid="uid://c5rpk473lbp36" path="res://scripts/player/input/InputActionAnalog.cs" id="1_oav35"]
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="2_hen0c"]
+[ext_resource type="Resource" uid="uid://dodfk1oja24cj" path="res://data/input/actions/digital/crouch.tres" id="3_wklck"]
+[ext_resource type="Resource" uid="uid://bed7q5plt61ok" path="res://data/input/actions/digital/jump.tres" id="4_tjqsd"]
+[ext_resource type="Resource" uid="uid://bievr8pbyabxx" path="res://data/input/actions/digital/sprint.tres" id="5_1nxkk"]
+[ext_resource type="Resource" uid="uid://xxkb8dfkifda" path="res://data/input/actions/digital/proximity_voice.tres" id="7_3x8d8"]
+[ext_resource type="Resource" uid="uid://cv8t6omy0xjft" path="res://data/input/actions/digital/pause.tres" id="8_2acj5"]
+[ext_resource type="Resource" uid="uid://cif535e83yln3" path="res://data/input/actions/digital/team_voice.tres" id="8_a4ac0"]
+[ext_resource type="Resource" uid="uid://o7h1k73akxnl" path="res://data/input/actions/digital/inventory.tres" id="10_djtki"]
+[ext_resource type="Resource" uid="uid://bnn7ogvhrilb6" path="res://data/input/actions/digital/player_list.tres" id="10_qmmem"]
+[ext_resource type="Resource" uid="uid://drg71mqtoukfu" path="res://data/input/actions/digital/inventory_one.tres" id="11_ppeqx"]
+[ext_resource type="Resource" uid="uid://byia3jfuf4oef" path="res://data/input/actions/digital/inventory_two.tres" id="12_oav35"]
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="13_nkpn6"]
+[ext_resource type="Resource" uid="uid://cccxh2wkftaif" path="res://data/input/actions/stick_pad/move.tres" id="14_kn0s6"]
+[ext_resource type="Script" uid="uid://cwm4ujckr2ppq" path="res://scripts/player/input/InputActionSet.cs" id="16_cpv1r"]
+
+[resource]
+resource_name = "Inventory"
+script = ExtResource("16_cpv1r")
+LocaleKey = "Set_Inventory"
+StickPadActions = Array[ExtResource("13_nkpn6")]([ExtResource("14_kn0s6")])
+DigitalActions = Array[ExtResource("2_hen0c")]([ExtResource("3_wklck"), ExtResource("4_tjqsd"), ExtResource("5_1nxkk"), ExtResource("7_3x8d8"), ExtResource("8_a4ac0"), ExtResource("8_2acj5"), ExtResource("10_djtki"), ExtResource("10_qmmem"), ExtResource("11_ppeqx"), ExtResource("12_oav35")])
+metadata/_custom_type_script = "uid://cwm4ujckr2ppq"

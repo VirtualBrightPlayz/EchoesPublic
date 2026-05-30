@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=4 uid="uid://dq4ugar2o3xo0"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_dqi1i"]
+[ext_resource type="Material" uid="uid://b1eesnmbq6ijt" path="res://textures/main/ez/randomprops/plantpot.tres" id="2_jha6f"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_u7rh0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7rh0"]
+size = Vector3(0.609131, 0.302063, 0.358398)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kkcwy"]
+_surfaces = [{
+"aabb": AABB(-0.3, 0, -0.175, 0.6, 0.3, 0.35),
+"format": 34359742465,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAAAAUAAgADAAYAAQAHAAMABAACAAgABgAIAAIACQAAAAQACgAGAAMABgAKAAsAAwAMAAoADAADAAcABAAMAAkABwAJAAwADAAEAA0ADQAKAAwACAANAAQADgALAAoACgANAA4ADQAIAA8ADwAOAA0AEAAPAAgADgAPABAAEAALAA4ACAAGABAACwAQAAYAAAAJABEAEQAFAAAAEgARAAkACQAHABIAEQASABMAFAASAAcABwABABQABQAUAAEAEgAUABUAFQATABIAFAAFABYAFgAVABQABQARABcAFwAWAAUAEwAXABEAFQAWABcAFwATABUA"),
+"name": "plantpots",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("mpmZvpqZmT4zMzM+mpmZPpqZmT4zMzM+mpmZPgAAAAApXA8+mpmZPgAAAAApXA++mpmZvgAAAAApXA8+zcyMvpqZmT6amRk+zcyMPgAAAAAfheu9mpmZPpqZmT4zMzO+zcyMPgAAAAAfhes9mpmZvpqZmT4zMzO+zcyMvgAAAAAfheu9zcyMvgXXozwfheu9mpmZvgAAAAApXA++zcyMvgAAAAAfhes9zcyMvgXXozwfhes9zcyMPgXXozwfhes9zcyMPgXXozwfheu9zcyMvpqZmT6amRm+zcyMPpqZmT6amRm+zcyMPrkehT6amRm+zcyMPpqZmT6amRk+zcyMPrkehT6amRk+zcyMvrkehT6amRk+zcyMvrkehT6amRm+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u7rh0"]
+resource_name = "plantpot2_low"
+_surfaces = [{
+"aabb": AABB(-0.3, 0, -0.175, 0.6, 0.3, 0.35),
+"attribute_data": PackedByteArray("ooIePvBq+j681s0+dsL6Pq6qzT6IPR0/hSoePsYRHT8WLC49dnk6PzM5Pz4UVTo/V/EwPgr+WT+WMWs9JhtaP5YEFj7AF1U+nbMWPkwh6T5qEos+PvXoPua6ij6kv1Q+U1Q4P24hHj/gP10/DP0dP+itWT8Cpj0/qyQ8Px7DPT+l5Rk/vtf6PiTqUz9oj/o+3v1TPxDtHD9f+Rk/PBEdPzePYT3UmS8/CrNkPcAq6z7eOBo+xlTrPupvGT7Wri8/5vxPP6i/VD6A6HQ/gL9UPmRFcj/4S18+bUVyP9yu4z4EoFI/IExfPozodD8W9eg+5/xPP2716D4EoFI/Lq/jPgSl6j6iTEY/4vcUP6JMRj/i9xQ/0oRKPwSl6j7ShEo/a/w3PoiYHj/5BtA+dlUeP7sQ0D6ijSI/7Q84PrTQIj/zpOo+2pxLP9j3FD/anEs/2PcUPwjVTz/xpOo+CNVPP0SQ1T7kKSQ//g5DPtLmIz97+0I+/h4oP4GG1T4SYig/fS7jPrgaYD/ALuM+fpFCP/d06D6cNEU/BT8uP5g0RT+6dOg+nnddPyPiMD96kUI/H+IwP84aYD8BPy4/sHddP3+VDT8mCVM/5KTqPioJUz/kpOo+EO1QP3+VDT8O7VA/q+tZPvThRD+s/uA+lK1EP9v64D58kUI/EORZPuDFQj99lQ0/Rj1WP9qk6j5GPVY/2qTqPi4hVD99lQ0/LiFUPwNp5j6qLi4/FcBkPkb6LT+xx2Q+MN4rP9Rs5j6SEiw/"),
+"format": 34359742487,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGwAaABkAGgAcABgAGQAdABsAHgAYABwAHwAbAB0AHQAeAB8AHAAfAB4AIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMwAyADEAMgA0ADAAMQA1ADMANgAwADQANwAzADUANQA2ADcANAA3ADYAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQA"),
+"material": ExtResource("2_jha6f"),
+"name": "plantpots",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("mpmZvpqZmT4zMzM+mpmZPpqZmT4zMzM+mpmZPgAAAAApXA8+mpmZvgAAAAApXA8+mpmZPpqZmT4zMzM+mpmZPpqZmT4zMzO+mpmZPgAAAAApXA++mpmZPgAAAAApXA8+mpmZPpqZmT4zMzO+mpmZvpqZmT4zMzO+mpmZvgAAAAApXA++mpmZPgAAAAApXA++mpmZvpqZmT4zMzO+mpmZvpqZmT4zMzM+mpmZvgAAAAApXA8+mpmZvgAAAAApXA++zcyMvrkehT6amRm+zcyMPrkehT6amRm+zcyMPrkehT6amRk+zcyMvrkehT6amRk+zcyMvgXXozwfhes9zcyMPgXXozwfhes9zcyMPgXXozwfheu9zcyMvgXXozwfheu9mpmZvpqZmT4zMzM+mpmZvpqZmT4zMzO+zcyMvpqZmT6amRm+zcyMPpqZmT6amRm+zcyMvpqZmT6amRk+mpmZPpqZmT4zMzO+mpmZPpqZmT4zMzM+zcyMPpqZmT6amRk+zcyMvpqZmT6amRk+zcyMvpqZmT6amRm+zcyMvrkehT6amRm+zcyMvrkehT6amRk+zcyMvpqZmT6amRm+zcyMPpqZmT6amRm+zcyMPrkehT6amRm+zcyMvrkehT6amRm+zcyMPpqZmT6amRm+zcyMPpqZmT6amRk+zcyMPrkehT6amRk+zcyMPrkehT6amRm+zcyMPpqZmT6amRk+zcyMvpqZmT6amRk+zcyMvrkehT6amRk+zcyMPrkehT6amRk+mpmZvgAAAAApXA++mpmZvgAAAAApXA8+zcyMvgAAAAAfhes9zcyMPgAAAAAfhes9zcyMvgAAAAAfheu9mpmZPgAAAAApXA8+mpmZPgAAAAApXA++zcyMPgAAAAAfheu9zcyMvgAAAAAfheu9zcyMvgAAAAAfhes9zcyMvgXXozwfhes9zcyMvgXXozwfheu9zcyMvgAAAAAfhes9zcyMPgAAAAAfhes9zcyMPgXXozwfhes9zcyMvgXXozwfhes9zcyMPgAAAAAfhes9zcyMPgAAAAAfheu9zcyMPgXXozwfheu9zcyMPgXXozwfhes9zcyMPgAAAAAfheu9zcyMvgAAAAAfheu9zcyMvgXXozwfheu9zcyMPgXXozwfheu9/3+gcp3/K8D/f6Bynf8rwP9/oHKd/yvA/3+gcp3/K8D///9/gf8AgP///3+B/wCA////f4H/AID///9/gf8AgJ/yAACvfyx5n/IAAK9/LHmf8gAAr38seZ/yAACvfyx5AAD/f/9/wL8AAP9//3/AvwAA/3//f8C/AAD/f/9/wL//f///r///v/9///+v//+//3///6///7//f///r///v/9/AAD//8f//38AAP//x///fwAA///H//9/AAD//8f//3///////v//f//////+//9///////7//3///////v//f//////+//9///////7//3///////v//f//////+/////3//////////f/////////9//////////3///////3//f2v/tb//f/9/a/+1v/9//39r/7W//3//f2v/tb8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/////9r/7Y//////2v/tj//////a/+2P/////9r/7Y//38AAP7//7//fwAA/v//v/9/AAD+//+//38AAP7//7//fwAA/v//v/9/AAD+//+//38AAP7//7//fwAA/v//v////3/+/wCA////f/7/AID///9//v8AgP///3/+/wCA/////4v/OUD/////i/85QP////+L/zlA/////4v/OUAAAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9//3+L/zjA/3//f4v/OMD/f/9/i/84wP9//3+L/zjA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_kkcwy")
+
+[node name="PlantPot2Empty" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 2.5
+script = ExtResource("1_dqi1i")
+Category = 8
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151825, 0)
+shape = SubResource("BoxShape3D_u7rh0")
+
+[node name="plantpot2_low" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_u7rh0")
+skeleton = NodePath("")
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_u7rh0")
+targetNode = NodePath("..")
+CanClaim = true

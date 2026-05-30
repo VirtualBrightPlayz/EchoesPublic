@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" load_steps=2 format=3 uid="uid://bo2k4cbvx4bah"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_iarpb"]
+
+[resource]
+resource_name = "Secondary"
+script = ExtResource("1_iarpb")
+GodotAction = &"player_secondary"
+LocaleKey = "Action_Secondary"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

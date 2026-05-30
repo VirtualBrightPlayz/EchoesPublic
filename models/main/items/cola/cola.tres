@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dpk0ud5jhoc3l"]
+
+[ext_resource type="Texture2D" uid="uid://h8pltix7vcg4" path="res://models/main/items/cola/Virt_ColaV2_VirtCola_BaseColor.png" id="1_xk25j"]
+[ext_resource type="Texture2D" uid="uid://c4gi85apw7odh" path="res://models/main/items/cola/Virt_ColaV2_VirtCola_Metallic.png" id="2_yyelr"]
+[ext_resource type="Texture2D" uid="uid://du5f2edqbxorv" path="res://models/main/items/cola/Virt_ColaV2_VirtCola_Normal.png" id="3_1jewy"]
+
+[resource]
+resource_name = "Cola"
+transparency = 4
+albedo_texture = ExtResource("1_xk25j")
+metallic = 1.0
+metallic_texture = ExtResource("2_yyelr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_yyelr")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_1jewy")

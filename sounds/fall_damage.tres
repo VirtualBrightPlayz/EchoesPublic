@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GameSound" load_steps=3 format=3 uid="uid://bn34ephy78ly0"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_q5sd2"]
+[ext_resource type="AudioStream" uid="uid://8rkyn2gniebr" path="res://audio/scpcb/misc/Damage3.ogg" id="2_x21vs"]
+
+[resource]
+script = ExtResource("1_q5sd2")
+DisplayName = "Fall Damage"
+streams = [ExtResource("2_x21vs")]
+volumeDb = 0.0
+unitSize = 7.0
+maxDistance = 25.0
+maxDb = 3.0
+pitch = 1.0
+bus = ""

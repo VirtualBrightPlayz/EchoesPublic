@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" load_steps=2 format=3 uid="uid://bed7q5plt61ok"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_wxjpy"]
+
+[resource]
+resource_name = "Jump"
+script = ExtResource("1_wxjpy")
+GodotAction = &"player_jump"
+LocaleKey = "Action_Jump"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

@@ -1,0 +1,760 @@
+[gd_scene format=3 uid="uid://crb1kmb3pxbwl"]
+
+[ext_resource type="Script" uid="uid://dp3rc6tlm16" path="res://scripts/player/LocalPlayerHUDVR.cs" id="1_84un8"]
+[ext_resource type="Theme" uid="uid://gc3sw2lgqw6u" path="res://ui_themes/ui_theme.tres" id="2_rl8c7"]
+[ext_resource type="Texture2D" uid="uid://cajocwjf088ef" path="res://icons/HealthIcon.png" id="3_lqni8"]
+[ext_resource type="Theme" uid="uid://2mabmc2rstfk" path="res://themes/bar.tres" id="4_5du67"]
+[ext_resource type="Texture2D" uid="uid://d376api8rkich" path="res://icons/RunningIcon.png" id="5_kpr2g"]
+[ext_resource type="Texture2D" uid="uid://dqltjlx810olr" path="res://icons/RadiationIcon.png" id="6_q8b2o"]
+[ext_resource type="Texture2D" uid="uid://bv3vvvlk15yyq" path="res://icons/microphone-line-icon.png" id="7_btv7x"]
+[ext_resource type="FontFile" uid="uid://bs1rwxor003sh" path="res://fonts/Rubik/static/Rubik-Black.ttf" id="7_ip2gq"]
+[ext_resource type="FontFile" uid="uid://dp2jcbv7w3woh" path="res://fonts/Roboto/Roboto-Regular.ttf" id="8_exwjk"]
+[ext_resource type="Shader" uid="uid://bnoqemdcpy8lc" path="res://shaders/mic.gdshader" id="8_ol67q"]
+[ext_resource type="Texture2D" uid="uid://dcnhfnymurol0" path="res://icons/microphone-line-icon-white.png" id="9_tr8us"]
+[ext_resource type="Script" uid="uid://c8f21fqo7e4rr" path="res://scripts/ui/VoiceListUI.cs" id="12_y6sk8"]
+[ext_resource type="PackedScene" uid="uid://bekqdwdcg4ogs" path="res://scenes/player/voice_ui.tscn" id="13_rg3ko"]
+[ext_resource type="PackedScene" uid="uid://bbytu3wsla2pp" path="res://scenes/player/role_ui/role_intro_ui.tscn" id="14_4jwpr"]
+[ext_resource type="PackedScene" uid="uid://cqf3ncf3ndbus" path="res://scenes/player/inv_slot_vr.tscn" id="14_teifk"]
+[ext_resource type="Script" uid="uid://b1ltmldqs2gjr" path="res://scripts/ui/WorldCanvas.cs" id="15_ed0ui"]
+[ext_resource type="Script" uid="uid://dcrtf2konijp4" path="res://scripts/ui/vr/MenuVRHand.cs" id="16_25lv0"]
+[ext_resource type="Script" uid="uid://dg4ipr0ws81tw" path="res://scripts/ui/VoiceDebugEdit.cs" id="17_tlcun"]
+[ext_resource type="Script" uid="uid://dpmd42luag8an" path="res://scripts/ui/VolumeSlider.cs" id="18_2n003"]
+[ext_resource type="Script" uid="uid://8qxw8j65frv5" path="res://scripts/ui/SnapTurnEdit.cs" id="18_d6px7"]
+[ext_resource type="PackedScene" uid="uid://cee02p0w3j42i" path="res://scenes/player/player_list.tscn" id="18_v23ls"]
+[ext_resource type="Script" uid="uid://dqkt8vaf3fc0y" path="res://scripts/ui/TextureLimitEdit.cs" id="19_45ruq"]
+[ext_resource type="Script" uid="uid://bpo4o851g4nag" path="res://scripts/ui/ShadowQualityEdit.cs" id="19_uaoll"]
+[ext_resource type="Script" uid="uid://cqoe5hhhqklns" path="res://scripts/ui/MicInputEdit.cs" id="20_7ebsq"]
+[ext_resource type="Script" uid="uid://cdj3ojkufwykg" path="res://scripts/ui/ShadowsEdit.cs" id="20_bjycs"]
+[ext_resource type="Shader" uid="uid://b0apm7r1i7260" path="res://shaders/color_post.gdshader" id="21_ayipk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krnps"]
+shader = ExtResource("8_ol67q")
+shader_parameter/progress = 0.0
+
+[sub_resource type="Animation" id="Animation_185gv"]
+resource_name = "FadeOut"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RoleInfo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RoleName:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sq1vv"]
+resource_name = "SpawnIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RoleName:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RoleInfo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RoleName:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpb6g"]
+_data = {
+&"FadeOut": SubResource("Animation_185gv"),
+&"SpawnIn": SubResource("Animation_sq1vv")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dik1"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.196078)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lvr0s"]
+size = Vector2(3, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ih1ub"]
+viewport_path = NodePath("MenuLayer")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcnkj"]
+resource_local_to_scene = true
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_ih1ub")
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_7qf0i"]
+radius = 0.01
+section_length = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_118m1"]
+transparency = 1
+no_depth_test = true
+albedo_color = Color(1, 0, 0, 0.501961)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_xj5uo"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v23ls"]
+render_priority = -128
+shader = ExtResource("21_ayipk")
+shader_parameter/main_color = Color(0, 0, 0, 1)
+
+[node name="VRUI" type="Control" unique_id=1234513736 node_paths=PackedStringArray("handUI", "viewUI", "menuViewport", "menuRoot", "menuRootUI", "menuCanvas", "menuHandLeft", "menuHandRight", "blinkOverlay", "healthBar", "healthIcon", "radiationBar", "radiationIcon", "radiationLabel", "roleThemedRoot", "roleIntroRoot", "roleIntroAnim", "roleIntroLabel", "roleLabel", "roleObjective", "inventoryMenu", "inventorySlots", "SprintBar", "SprintBarRoot", "micRoot", "micBG", "micFG")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_84un8")
+mainTheme = ExtResource("2_rl8c7")
+handUI = NodePath("HandLayer")
+viewUI = NodePath("ViewLayer")
+menuViewport = NodePath("MenuLayer")
+menuRoot = NodePath("Menu")
+menuRootUI = NodePath("MenuLayer/HBoxContainer")
+menuCanvas = NodePath("Menu/WorldCanvas")
+menuHandLeft = NodePath("Menu/Left")
+menuHandRight = NodePath("Menu/Right")
+blinkOverlay = NodePath("BlinkMesh")
+healthBar = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/HealthBarControl/HealthBar")
+healthIcon = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/HealthBarControl/MarginContainer/HealthIcon")
+radiationBar = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/RadiationBarControl/RadiationBar")
+radiationIcon = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/RadiationBarControl/MarginContainer/RadiationIcon")
+radiationLabel = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/RadiationLabel")
+radiationColorGood = Color(0, 1, 0, 1)
+radiationColorBad = Color(1, 0, 0, 1)
+radiationColorWarn = Color(1, 1, 0, 1)
+roleThemedRoot = NodePath("HandLayer/HBoxContainer/RoleThemedGUI")
+roleIntroRoot = NodePath("ViewLayer/RoleIntro")
+roleIntroAnim = NodePath("ViewLayer/RoleIntro/RoleIntroAnim")
+roleIntroLabel = NodePath("ViewLayer/RoleIntro/Label")
+roleLabel = NodePath("ViewLayer/RoleIntro/RoleName")
+roleObjective = NodePath("ViewLayer/RoleIntro/RoleInfo")
+inventoryMenu = NodePath("Inventory")
+inventorySlots = [NodePath("Inventory/Slot0"), NodePath("Inventory/Slot1"), NodePath("Inventory/Slot2"), NodePath("Inventory/Slot3"), NodePath("Inventory/Slot4"), NodePath("Inventory/Slot5"), NodePath("Inventory/Slot6"), NodePath("Inventory/Slot7")]
+SprintBar = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/SprintBarControl/HealthBar")
+SprintBarRoot = NodePath("HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/SprintBarControl")
+micRoot = NodePath("HandLayer/HBoxContainer/AspectRatioContainer/Mic")
+micBG = NodePath("HandLayer/HBoxContainer/AspectRatioContainer/Mic/BG")
+micFG = NodePath("HandLayer/HBoxContainer/AspectRatioContainer/Mic/FG")
+
+[node name="HandLayer" type="SubViewport" parent="." unique_id=1843731154]
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(256, 256)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HandLayer" unique_id=1725859574]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RoleThemedGUI" type="Control" parent="HandLayer/HBoxContainer" unique_id=2003434490]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI" unique_id=2084182974]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RadiationLabel" type="Label" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer" unique_id=341611201]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RadiationBarControl" type="BoxContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer" unique_id=1820996227]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/RadiationBarControl" unique_id=1992776127]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_lock_ = true
+
+[node name="RadiationIcon" type="TextureRect" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/RadiationBarControl/MarginContainer" unique_id=1088673529]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_q8b2o")
+expand_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="RadiationBar" type="ProgressBar" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/RadiationBarControl" unique_id=1710335249]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("4_5du67")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="SprintBarControl" type="BoxContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer" unique_id=489027392]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/SprintBarControl" unique_id=337157138]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Icon" type="TextureRect" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/SprintBarControl/MarginContainer" unique_id=1095994206]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_kpr2g")
+expand_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/SprintBarControl" unique_id=1145349656]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("4_5du67")
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBarControl" type="BoxContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer" unique_id=1613035639]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/HealthBarControl" unique_id=1944707118]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_edit_lock_ = true
+
+[node name="HealthIcon" type="TextureRect" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/HealthBarControl/MarginContainer" unique_id=723891929]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_lqni8")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="HealthBar" type="ProgressBar" parent="HandLayer/HBoxContainer/RoleThemedGUI/VBoxContainer/HealthBarControl" unique_id=757916134]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("4_5du67")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HandLayer/HBoxContainer" unique_id=21220154]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+ratio = 0.8
+
+[node name="Mic" type="Control" parent="HandLayer/HBoxContainer/AspectRatioContainer" unique_id=1320267077]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BG" type="TextureRect" parent="HandLayer/HBoxContainer/AspectRatioContainer/Mic" unique_id=1358771464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_btv7x")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="FG" type="TextureRect" parent="HandLayer/HBoxContainer/AspectRatioContainer/Mic" unique_id=1749243988]
+material = SubResource("ShaderMaterial_krnps")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_tr8us")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ViewLayer" type="SubViewport" parent="." unique_id=1762837127]
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1024, 1024)
+
+[node name="RoleIntro" type="Control" parent="ViewLayer" unique_id=514341922]
+layout_mode = 3
+anchor_top = 0.347222
+anchor_right = 1.0
+anchor_bottom = 0.645833
+offset_top = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="ViewLayer/RoleIntro" unique_id=858028908]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 50.0
+grow_horizontal = 2
+pivot_offset = Vector2(128, 25)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_ip2gq")
+theme_override_font_sizes/font_size = 35
+text = "ROLE_INTRO"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="RoleName" type="RichTextLabel" parent="ViewLayer/RoleIntro" unique_id=351226930]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1250.0
+offset_top = 50.0001
+offset_right = 1250.0
+offset_bottom = 158.0
+grow_horizontal = 2
+pivot_offset = Vector2(1250, 50)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_ip2gq")
+theme_override_font_sizes/normal_font_size = 90
+bbcode_enabled = true
+text = "[center]SPECTATOR"
+fit_content = true
+scroll_active = false
+
+[node name="RoleInfo" type="RichTextLabel" parent="ViewLayer/RoleIntro" unique_id=773877287]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = 80.5
+offset_right = 113.5
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("8_exwjk")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center]You will Respawn soon."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="RoleIntroAnim" type="AnimationPlayer" parent="ViewLayer/RoleIntro" unique_id=1828837479]
+libraries/ = SubResource("AnimationLibrary_vpb6g")
+
+[node name="RoleIntroUI" parent="ViewLayer" unique_id=882580994 instance=ExtResource("14_4jwpr")]
+
+[node name="VoiceList" type="VBoxContainer" parent="ViewLayer" unique_id=1609000800]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Node" type="Node" parent="ViewLayer/VoiceList" unique_id=1238255757 node_paths=PackedStringArray("container")]
+script = ExtResource("12_y6sk8")
+uiScene = ExtResource("13_rg3ko")
+container = NodePath("..")
+
+[node name="MenuLayer" type="SubViewport" parent="." unique_id=47242191]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+gui_embed_subwindows = true
+size = Vector2i(1536, 1024)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer" unique_id=749995801]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PauseMenu" type="Panel" parent="MenuLayer/HBoxContainer" unique_id=252727253]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6dik1")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuLayer/HBoxContainer/PauseMenu" unique_id=2014061276]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer" unique_id=1487766030]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer" unique_id=146375218]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer" unique_id=978190889]
+layout_mode = 2
+size_flags_vertical = 1
+text = "GAME_MENU_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game" type="Button" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1445918954]
+visible = false
+layout_mode = 2
+text = "GAME_MENU_RETURN"
+
+[node name="Settings" type="Button" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1565986040]
+visible = false
+layout_mode = 2
+text = "GAME_MENU_SETTINGS"
+
+[node name="Menu" type="Button" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1764836933]
+layout_mode = 2
+text = "GAME_MENU_EXIT"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer" unique_id=951255149]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="VoiceDebug" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=467189894]
+visible = false
+layout_mode = 2
+text = "VoiceDebug"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Listen" type="CheckBox" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=609513960]
+visible = false
+layout_mode = 2
+text = "ListenSelf"
+script = ExtResource("17_tlcun")
+flag = 1
+
+[node name="Zeros" type="CheckBox" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1166969026]
+visible = false
+layout_mode = 2
+text = "RemoveZeros"
+script = ExtResource("17_tlcun")
+flag = 2
+
+[node name="Label" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=75596197]
+layout_mode = 2
+text = "MAIN_MENU_SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1700657569]
+layout_mode = 2
+
+[node name="HBoxContainerVolume" type="VBoxContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer" unique_id=940903681]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainerVolume" unique_id=602713685]
+layout_mode = 2
+text = "SETTINGS_MENU_VOLUME"
+
+[node name="Volume" type="HSlider" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainerVolume" unique_id=674056670 node_paths=PackedStringArray("label")]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.0
+scrollable = false
+script = ExtResource("18_2n003")
+label = NodePath("Label")
+rawLabel = false
+
+[node name="Label" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/HBoxContainerVolume/Volume" unique_id=1076542592]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SnapTurn" type="CheckBox" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1601564818]
+layout_mode = 2
+text = "SETTINGS_MENU_SNAP_TURN"
+script = ExtResource("18_d6px7")
+
+[node name="TexLimit" type="PanelContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1701469516]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/TexLimit" unique_id=1506360265]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/TexLimit/VBoxContainer" unique_id=960419516]
+layout_mode = 2
+text = "SETTINGS_MENU_TEXTURE_LIMIT"
+vertical_alignment = 1
+
+[node name="Limit" type="OptionButton" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/TexLimit/VBoxContainer" unique_id=649015135]
+layout_mode = 2
+action_mode = 1
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "No Limit"
+popup/item_0/id = 0
+script = ExtResource("19_45ruq")
+
+[node name="ShadowQuality" type="PanelContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=311798907]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/ShadowQuality" unique_id=818725524]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/ShadowQuality/VBoxContainer" unique_id=372292670]
+layout_mode = 2
+text = "SETTINGS_MENU_SHADOW_QUALITY"
+vertical_alignment = 1
+
+[node name="Limit" type="OptionButton" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2/ShadowQuality/VBoxContainer" unique_id=494336739]
+layout_mode = 2
+action_mode = 1
+selected = 0
+allow_reselect = true
+item_count = 5
+popup/item_0/text = "Very Low"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+popup/item_4/text = "Very High"
+popup/item_4/id = 4
+script = ExtResource("19_uaoll")
+
+[node name="Shadows" type="CheckBox" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1620976956]
+layout_mode = 2
+text = "SETTINGS_MENU_SHADOWS"
+script = ExtResource("20_bjycs")
+
+[node name="MicInput" type="OptionButton" parent="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=820915498]
+layout_mode = 2
+fit_to_longest_item = false
+allow_reselect = true
+script = ExtResource("20_7ebsq")
+
+[node name="PlayerList" parent="MenuLayer/HBoxContainer" unique_id=457524773 instance=ExtResource("18_v23ls")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Inventory" type="Node3D" parent="." unique_id=1386758419]
+
+[node name="Slot0" parent="Inventory" unique_id=797221965 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.1, 0)
+
+[node name="Slot1" parent="Inventory" unique_id=647131469 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.1, 0)
+
+[node name="Slot2" parent="Inventory" unique_id=1955165025 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.1, 0)
+
+[node name="Slot3" parent="Inventory" unique_id=1734128324 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.1, 0)
+
+[node name="Slot4" parent="Inventory" unique_id=134562853 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.1, 0)
+
+[node name="Slot5" parent="Inventory" unique_id=1415089533 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.1, 0)
+
+[node name="Slot6" parent="Inventory" unique_id=135270806 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.1, 0)
+
+[node name="Slot7" parent="Inventory" unique_id=1298701085 instance=ExtResource("14_teifk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.1, 0)
+
+[node name="Menu" type="Node3D" parent="." unique_id=2105343235]
+top_level = true
+
+[node name="WorldCanvas" type="MeshInstance3D" parent="Menu" unique_id=785148280 node_paths=PackedStringArray("viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+mesh = SubResource("QuadMesh_lvr0s")
+surface_material_override/0 = SubResource("StandardMaterial3D_jcnkj")
+script = ExtResource("15_ed0ui")
+viewport = NodePath("../../MenuLayer")
+
+[node name="Left" type="Node3D" parent="Menu" unique_id=298872947 node_paths=PackedStringArray("menu")]
+top_level = true
+script = ExtResource("16_25lv0")
+menu = NodePath("../WorldCanvas")
+
+[node name="Laser" type="MeshInstance3D" parent="Menu/Left" unique_id=1402928940]
+transform = Transform3D(1, 7.45058e-09, 2.32831e-10, 0, -3.89991e-08, 1, 1.49012e-08, -1, -4.72937e-08, 0, 0, -12.5)
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+mesh = SubResource("TubeTrailMesh_7qf0i")
+surface_material_override/0 = SubResource("StandardMaterial3D_118m1")
+
+[node name="Right" type="Node3D" parent="Menu" unique_id=818906161 node_paths=PackedStringArray("menu")]
+top_level = true
+script = ExtResource("16_25lv0")
+menu = NodePath("../WorldCanvas")
+
+[node name="Laser" type="MeshInstance3D" parent="Menu/Right" unique_id=1990288819]
+transform = Transform3D(1, 7.45058e-09, 2.32831e-10, 0, -3.89991e-08, 1, 1.49012e-08, -1, -4.72937e-08, 0, 0, -12.5)
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+mesh = SubResource("TubeTrailMesh_7qf0i")
+surface_material_override/0 = SubResource("StandardMaterial3D_118m1")
+
+[node name="BlinkMesh" type="MeshInstance3D" parent="." unique_id=663129849]
+visible = false
+cast_shadow = 0
+extra_cull_margin = 16384.0
+lod_bias = 128.0
+ignore_occlusion_culling = true
+mesh = SubResource("QuadMesh_xj5uo")
+surface_material_override/0 = SubResource("ShaderMaterial_v23ls")
+
+[connection signal="pressed" from="MenuLayer/HBoxContainer/PauseMenu/MarginContainer/HBoxContainer/VBoxContainer/Menu" to="." method="ExitGame"]

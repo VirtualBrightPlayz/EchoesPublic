@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dy38ghmwik61w"
+path="res://.godot/imported/hcz_map1.png-c8fe251514c09aa81e4b89ca40ca4c78.image"
+
+[deps]
+
+source_file="res://textures/maps/hcz_map1.png"
+dest_files=["res://.godot/imported/hcz_map1.png-c8fe251514c09aa81e4b89ca40ca4c78.image"]
+
+[params]
+

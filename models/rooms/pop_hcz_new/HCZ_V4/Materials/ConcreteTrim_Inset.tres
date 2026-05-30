@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://btl8ifk3fa5sp"]
+
+[ext_resource type="Texture2D" uid="uid://cqg3r6kqsh2a" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Concrete_Inset_Trim_T.png" id="1_ifhrj"]
+[ext_resource type="Texture2D" uid="uid://bxdqe2jehk7fu" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Concrete_Inset_Trim_N.png" id="2_tqeso"]
+[ext_resource type="Texture2D" uid="uid://dwux7a2j10akn" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Concrete_Inset_Trim_ORM.png" id="3_ykg3v"]
+
+[resource]
+albedo_texture = ExtResource("1_ifhrj")
+orm_texture = ExtResource("3_ykg3v")
+normal_enabled = true
+normal_texture = ExtResource("2_tqeso")

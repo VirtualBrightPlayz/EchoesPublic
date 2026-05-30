@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://duj7lmgwj17s8"]
+
+[ext_resource type="AudioStream" uid="uid://be4negtkl6jp7" path="res://audio/scpsl/Doctors Lab.wav" id="1_f0rdc"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="1_yyod2"]
+
+[resource]
+script = ExtResource("1_yyod2")
+audio = ExtResource("1_f0rdc")
+volumeDb = -20.0
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

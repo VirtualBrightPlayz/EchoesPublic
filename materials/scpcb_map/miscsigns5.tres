@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ddwas1pewj75l"]
+
+[ext_resource type="Texture2D" uid="uid://dn2qlao0f2mje" path="res://textures/custom/signs5.png" id="1_yvg4l"]
+[ext_resource type="Texture2D" uid="uid://c105pf5a6nsun" path="res://textures/scpcb/dirtymetalbump.jpg" id="2_kx26f"]
+
+[resource]
+albedo_texture = ExtResource("1_yvg4l")
+roughness = 0.25
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("1_yvg4l")
+normal_enabled = true
+normal_texture = ExtResource("2_kx26f")

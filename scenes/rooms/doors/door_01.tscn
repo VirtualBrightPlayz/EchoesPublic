@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bllxm44dovuw1"]
+
+[ext_resource type="PackedScene" uid="uid://b32sml85jw4x7" path="res://models/scpcb/door01.glb" id="1_8ggwg"]
+[ext_resource type="Script" uid="uid://m6uxe7omjc4a" path="res://scripts/map/DoorButton.cs" id="1_dstx1"]
+[ext_resource type="Material" uid="uid://cr22vapdmat0n" path="res://materials/scpcb_map/door01.tres" id="2_xc0ym"]
+[ext_resource type="PackedScene" uid="uid://d32prbuta6s8r" path="res://models/main/lcz_door/LightZoneDoor.glb" id="4_trr8l"]
+[ext_resource type="Material" uid="uid://dyieavv4hx47g" path="res://materials/doors/lightzonedoor_scratch.tres" id="5_1iqf8"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="6_ku471"]
+[ext_resource type="Resource" uid="uid://dsqjeet0d5d3i" path="res://projectile_resistance/metal_pr.tres" id="7_oqaq3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfn1x"]
+size = Vector3(2, 3.25, 0.1)
+
+[node name="Door01" type="StaticBody3D" unique_id=1729313120]
+collision_layer = 257
+collision_mask = 257
+script = ExtResource("1_dstx1")
+metadata/no_vr_use = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=444126051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
+shape = SubResource("BoxShape3D_lfn1x")
+
+[node name="door01" parent="." unique_id=1389452336 instance=ExtResource("1_8ggwg")]
+transform = Transform3D(20, 0, 0, 0, 13.5, 0, 0, 0, 12, 0, 0, 0)
+visible = false
+
+[node name="Mesh01" parent="door01" index="0" unique_id=722103170]
+gi_mode = 2
+surface_material_override/0 = ExtResource("2_xc0ym")
+
+[node name="Duplicate00" parent="door01" index="1" unique_id=2082714721]
+gi_mode = 2
+surface_material_override/0 = ExtResource("2_xc0ym")
+
+[node name="Duplicate01" parent="door01" index="2" unique_id=127261627]
+gi_mode = 2
+surface_material_override/0 = ExtResource("2_xc0ym")
+
+[node name="LightZoneDoor2" parent="." unique_id=1045079205 instance=ExtResource("4_trr8l")]
+transform = Transform3D(1.25, 1.35896e-07, 0, -1.88745e-07, 0.9, 0, 0, 0, -0.8, 0, 0, 0)
+
+[node name="LightZoneDoor" parent="LightZoneDoor2" index="0" unique_id=101632849]
+gi_mode = 2
+surface_material_override/0 = ExtResource("5_1iqf8")
+
+[node name="ProjectileSettings" type="Node" parent="." unique_id=1787519310]
+script = ExtResource("6_ku471")
+Medium = ExtResource("7_oqaq3")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[editable path="door01"]
+[editable path="LightZoneDoor2"]

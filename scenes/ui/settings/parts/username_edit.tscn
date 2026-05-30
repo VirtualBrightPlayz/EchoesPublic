@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://2dwi1jqb3cky"]
+
+[ext_resource type="Script" uid="uid://dsltrde3trc7j" path="res://scripts/settings/classes/UsernameEditSetting.cs" id="1_tqcuy"]
+
+[node name="Text" type="Container" unique_id=2063429371 node_paths=PackedStringArray("TextEdit", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_tqcuy")
+TextEdit = NodePath("HBoxContainer/VBoxContainer/LineEdit")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+metadata/_custom_type_script = "uid://dsltrde3trc7j"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=829471954]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=936987447]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer" unique_id=441020694]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1724612574]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer" unique_id=798864357]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=526821707]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14

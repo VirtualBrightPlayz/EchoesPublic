@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dp0wvry4g61qt"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_a7ksr"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_uxbe3"]
+
+[resource]
+resource_name = "LCZ Warehouse"
+script = ExtResource("1_a7ksr")
+type = 4
+size = 2
+scenes = []
+sceneFile = "uid://b5217jqm0aoed"
+gridRect = Rect2i(0, 0, 2, 1)
+zone = 1
+category = "Light Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

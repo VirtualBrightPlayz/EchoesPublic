@@ -1,0 +1,10 @@
+[ability]
+name = 'FireDash'
+base_name = 'Dash'
+
+[ability.data]
+stamina_required = 25.0
+dash_speed = 6.0
+dash_time = 0.5
+damage_type = 'Fire'
+damage_per_second = 50.0

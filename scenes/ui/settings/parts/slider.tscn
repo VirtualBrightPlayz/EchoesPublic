@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dppncr6rktvej"]
+
+[ext_resource type="Script" uid="uid://b3qjkbdb5iw7g" path="res://scripts/settings/classes/CSlider.cs" id="1_pommq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3p2d"]
+font_size = 14
+font_color = Color(1, 0, 0, 1)
+
+[node name="Slider" type="Container" unique_id=887219295 node_paths=PackedStringArray("SliderControl", "MinLabel", "MaxLabel", "SpinBox", "Label", "MessageLabel")]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_pommq")
+SliderControl = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/HSlider")
+MinLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Min")
+MaxLabel = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Max")
+SpinBox = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/SpinBox")
+Label = NodePath("HBoxContainer/Label")
+MessageLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+metadata/_custom_type_script = "uid://b3qjkbdb5iw7g"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=513506381]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1330789468]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HSeparator" type="VSeparator" parent="HBoxContainer" unique_id=2063161304]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1075492145]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=440977387]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=605586408]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Min" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2084713578]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=105147640]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+scrollable = false
+
+[node name="Max" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=357918825]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=926559390]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+label_settings = SubResource("LabelSettings_o3p2d")

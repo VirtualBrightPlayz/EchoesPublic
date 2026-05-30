@@ -1,0 +1,43 @@
+[gd_scene load_steps=22 format=3 uid="uid://3kapbmtb0240"]
+
+[ext_resource type="Resource" uid="uid://ckgn1g0hpfnvm" path="res://rooms/preset_rooms/lcz/endoff.tres" id="2_d4ts1"]
+[ext_resource type="Script" uid="uid://niqy0bc7j02r" path="res://scripts/layout_generator/MapGeneratorPresets.cs" id="3_fisem"]
+[ext_resource type="Resource" uid="uid://bdgnqp6j6j8o3" path="res://rooms/preset_rooms/lcz/corner.tres" id="3_tpevw"]
+[ext_resource type="Resource" uid="uid://dg6kl4i6sk0mn" path="res://rooms/preset_rooms/lcz/hall.tres" id="4_kcmeo"]
+[ext_resource type="Resource" uid="uid://cmq4gr5dwfagd" path="res://rooms/preset_rooms/generic_door.tres" id="4_lvljg"]
+[ext_resource type="Resource" uid="uid://5wthv07ick05" path="res://rooms/preset_rooms/lcz_door.tres" id="5_ewsmj"]
+[ext_resource type="Resource" uid="uid://cr5ddhwhcqxtj" path="res://rooms/preset_rooms/lcz/troom.tres" id="5_g0tp0"]
+[ext_resource type="Resource" uid="uid://ps2qh8b70yac" path="res://rooms/preset_rooms/lcz/xroom.tres" id="6_7s8ni"]
+[ext_resource type="Resource" uid="uid://7gkf7i3u5i4d" path="res://rooms/preset_rooms/alt-door4_door.tres" id="6_ojaqp"]
+[ext_resource type="Resource" uid="uid://581dfo0ykkv4" path="res://rooms/preset_rooms/ez_door.tres" id="7_h2xtg"]
+[ext_resource type="Resource" uid="uid://cunvl00e6pq53" path="res://rooms/preset_rooms/lcz/control_room.tres" id="7_iqo8g"]
+[ext_resource type="Resource" uid="uid://cngk3n456few2" path="res://rooms/preset_rooms/lcz/office_corner.tres" id="8_vvjnk"]
+[ext_resource type="Resource" uid="uid://bleltiohqx6oq" path="res://rooms/preset_rooms/lcz/pc_lab.tres" id="9_3v637"]
+[ext_resource type="Resource" uid="uid://ccdma1miw0hmu" path="res://rooms/preset_rooms/lcz/bathrooms.tres" id="10_arns8"]
+[ext_resource type="Resource" uid="uid://cjq5a3hwoudfv" path="res://rooms/preset_rooms/lcz/372.tres" id="11_lu823"]
+[ext_resource type="Resource" uid="uid://lw0pwjdn658r" path="res://rooms/preset_rooms/lcz/173.tres" id="12_tycwc"]
+[ext_resource type="Resource" uid="uid://dhta16d1vnl0c" path="res://rooms/preset_rooms/lcz/914.tres" id="13_nedn8"]
+[ext_resource type="Resource" uid="uid://s4ihb1wgqyey" path="res://rooms/preset_rooms/lcz/018.tres" id="14_l0jpa"]
+[ext_resource type="Resource" uid="uid://bo10uatokv4uj" path="res://rooms/preset_rooms/lcz/checkpoint1_a.tres" id="15_pa8wx"]
+[ext_resource type="Resource" uid="uid://dqi11o8hdbwor" path="res://rooms/preset_rooms/lcz/checkpoint1_b.tres" id="16_406hm"]
+[ext_resource type="Script" uid="uid://4x26y1ocmbu5" path="res://scripts/layout_generator/graph/GraphGenerator.cs" id="20_hi824"]
+
+[node name="MapTest" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.947505, -0.197501, 0.25145, 0, 0.786421, 0.617692, -0.31974, -0.585266, 0.745138, 0.771139, 1.89432, 2.28517)
+
+[node name="GraphGenerator" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("20_hi824")
+graphFile = "res://maps/lcz_graph1.md"
+target = NodePath(".")
+rooms = Array[Object]([ExtResource("2_d4ts1"), ExtResource("3_tpevw"), ExtResource("4_kcmeo"), ExtResource("5_g0tp0"), ExtResource("6_7s8ni")])
+interestRooms = Array[Object]([ExtResource("7_iqo8g"), ExtResource("8_vvjnk"), ExtResource("9_3v637"), ExtResource("10_arns8"), ExtResource("11_lu823"), ExtResource("12_tycwc"), ExtResource("13_nedn8"), ExtResource("14_l0jpa"), ExtResource("15_pa8wx"), ExtResource("16_406hm")])
+spread = 5.0
+pointCount = 5
+metadata/_custom_type_script = "uid://4x26y1ocmbu5"
+
+[node name="LczGen" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_fisem")
+target = NodePath(".")
+doors = Array[Object]([ExtResource("4_lvljg"), ExtResource("5_ewsmj"), ExtResource("6_ojaqp"), ExtResource("7_h2xtg")])

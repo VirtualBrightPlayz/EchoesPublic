@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://ca8yr01mvpvxl"]
+
+[ext_resource type="Shader" uid="uid://cehqkiohuolj2" path="res://addons/csg_terrain/csg_terrain_shader.gdshader" id="1_eberb"]
+[ext_resource type="Texture2D" uid="uid://dnrstav402b64" path="res://textures/scpcb/forestfloor.jpg" id="2_a5yux"]
+[ext_resource type="Texture2D" uid="uid://crai2f6yopr6y" path="res://textures/scpcb_pbr/concrete/ConcreteFloor_Diffuse.png" id="3_or137"]
+
+[sub_resource type="Gradient" id="Gradient_nkbsx"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c0d45"]
+gradient = SubResource("Gradient_nkbsx")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_eberb")
+shader_parameter/wall_underlay = 1.0
+shader_parameter/ground_scale = Vector2(0.05, 0.05)
+shader_parameter/ground_color = Color(1, 1, 1, 1)
+shader_parameter/ground_albedo = ExtResource("2_a5yux")
+shader_parameter/ground_normal_strenght = 1.0
+shader_parameter/ground_roughness = 1.0
+shader_parameter/wall_scale = Vector2(0.05, 0.05)
+shader_parameter/wall_color = Color(1, 1, 1, 1)
+shader_parameter/wall_albedo = ExtResource("3_or137")
+shader_parameter/wall_normal_strenght = 1.0
+shader_parameter/wall_roughness = 1.0
+shader_parameter/path_scale = Vector2(0.05, 0.05)
+shader_parameter/path_color = Color(1, 1, 1, 1)
+shader_parameter/path_normal_strenght = 1.0
+shader_parameter/path_roughness = 1.0
+shader_parameter/path_mask = SubResource("GradientTexture1D_c0d45")

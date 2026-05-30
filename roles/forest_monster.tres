@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://clhxqnvdse0xe"]
+
+[ext_resource type="PackedScene" uid="uid://djg7a0pdw7100" path="res://scenes/player/controllers_old/player_controller_forest_monster.tscn" id="1_jcsk0"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="2_50edc"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="3_t03wy"]
+
+[resource]
+script = ExtResource("3_t03wy")
+RoleColor = Color(1, 0, 0, 1)
+MaxHealth = 600.0
+DisplayName = "ROLE_NAME_SCP_860_2"
+Objective = "ROLE_OBJ_SCP_860_2"
+team = 2
+spawnStage = 1
+canUseIntercom = false
+proxChat = false
+globalTeamChat = true
+mainChatChannel = 1
+altChatChannel = 1
+listeningChatChannels = PackedInt32Array(0, 1)
+SpawnAudio = ExtResource("2_50edc")
+ControllerScene = ExtResource("1_jcsk0")
+SprintStaminaIncreaseRate = 0.3
+MaxSprintStamina = 3.0
+SprintStaminaPause = 0.5
+OverrideNoSCPSprint = true

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bs72q7myl3sr3"]
+
+[ext_resource type="Script" uid="uid://fmge6f45deq1" path="res://scripts/items/ThrownGrenade.cs" id="2_jwwkc"]
+[ext_resource type="Curve" uid="uid://b6gx2qqnx55kr" path="res://items/grenade falloffs/grenadefalloff.tres" id="2_siscs"]
+[ext_resource type="Resource" uid="uid://c16v4o8w0xooh" path="res://effects/explosion_effect.tres" id="3_raj7b"]
+[ext_resource type="PackedScene" uid="uid://db8pmya1bga5e" path="res://effects/scenes/fire_noscript.tscn" id="4_7a5u7"]
+[ext_resource type="Shader" uid="uid://catjgmyjk12sk" path="res://shaders/457_shader.gdshader" id="5_nrq08"]
+[ext_resource type="Texture2D" uid="uid://dfld274iicvbf" path="res://textures/3DNOISE_T.png" id="6_siscs"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="9_nuydv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nrq08"]
+friction = 0.0
+absorbent = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i0thq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gg5ch"]
+radius = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_nrq08"]
+radius = 0.3
+height = 0.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1kf3w"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jwwkc"]
+noise = SubResource("FastNoiseLite_1kf3w")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_raj7b"]
+render_priority = -1
+shader = ExtResource("5_nrq08")
+shader_parameter/emission_color = Color(2.055, 0.9216666, 0, 0.45882353)
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jwwkc")
+shader_parameter/strength_main = 6.16
+shader_parameter/time_speed = Vector2(1, 1)
+shader_parameter/texture_displacement = ExtResource("6_siscs")
+shader_parameter/scale_displacement = Vector3(0.2, 0.5, 0.2)
+shader_parameter/tile_displacement = Vector2(0.5, 0.5)
+
+[node name="FireballThrown" type="RigidBody3D" unique_id=708709119 node_paths=PackedStringArray("ExplosionShape", "xformSync")]
+collision_layer = 258
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_nrq08")
+gravity_scale = 0.25
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 32
+script = ExtResource("2_jwwkc")
+ExplodeOnContact = true
+DefaultVelocity = 15.0
+ExplosionTimer = 3.0
+ExplosionShape = NodePath("Area3D")
+DamageFalloff = ExtResource("2_siscs")
+DamageAmount = 70.0
+MaxDistance = 5.0
+ExplosionEffect = ExtResource("3_raj7b")
+xformSync = NodePath("TransformSync")
+canGrab = false
+Affected = 16
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1925770213]
+shape = SubResource("SphereShape3D_i0thq")
+
+[node name="Fire" parent="." unique_id=1463912420 instance=ExtResource("4_7a5u7")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=621502371]
+collision_layer = 4
+collision_mask = 406
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1142207376]
+shape = SubResource("SphereShape3D_gg5ch")
+
+[node name="TransformSync" type="Node" parent="." unique_id=83313113]
+script = ExtResource("9_nuydv")
+targetNode = NodePath("..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=144195968]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("SphereMesh_nrq08")
+surface_material_override/0 = SubResource("ShaderMaterial_raj7b")

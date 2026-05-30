@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5euqtb5rk8ny"]
+
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="1_rtfm5"]
+[ext_resource type="PackedScene" uid="uid://bf73y5n3rpc0q" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/swivelchairCushion.fbx" id="2_rtfm5"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="3_istag"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_htxgp"]
+height = 1.2990723
+radius = 3.6533203
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_istag"]
+height = 5.7421875
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k8k8k"]
+height = 1.0136719
+radius = 0.3154297
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4j12r"]
+size = Vector3(2.9003906, 0.6784668, 3.3631592)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7md2p"]
+size = Vector3(0.140625, 0.162537, 0.3930664)
+
+[node name="Lab_SwivelStool_Prop" type="RigidBody3D" node_paths=PackedStringArray("DestroyOnDeath", "xformSync")]
+collision_layer = 385
+collision_mask = 129
+mass = 1.5
+script = ExtResource("1_rtfm5")
+Category = 13
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, -0.0016589165, 0.856778, 0.0116122365)
+shape = SubResource("CylinderShape3D_htxgp")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0.4696893, 0)
+shape = SubResource("CylinderShape3D_istag")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0.07479304, 0.7027326, -0.028679967)
+shape = SubResource("CylinderShape3D_k8k8k")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0.7857313, 0.024592895)
+shape = SubResource("BoxShape3D_4j12r")
+
+[node name="swivelchairCushion" type="Node3D" parent="." instance=ExtResource("2_rtfm5")]
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_istag")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0.20188478)
+shape = SubResource("BoxShape3D_7md2p")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.30901685, 0, -0.95105654, 0, 1, 0, 0.95105654, 0, 0.30901685, -0.19342056, 0.09, 0.06284625)
+shape = SubResource("BoxShape3D_7md2p")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.8090172, 0, -0.587785, 0, 1, 0, 0.587785, 0, -0.8090172, -0.11997721, 0.09, -0.16513488)
+shape = SubResource("BoxShape3D_7md2p")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.8090172, 0, 0.587785, 0, 1, 0, -0.587785, 0, -0.8090172, 0.12162107, 0.09, -0.16739745)
+shape = SubResource("BoxShape3D_7md2p")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.30901685, 0, 0.95105654, 0, 1, 0, -0.95105654, 0, 0.30901685, 0.18787193, 0.09, 0.06104339)
+shape = SubResource("BoxShape3D_7md2p")

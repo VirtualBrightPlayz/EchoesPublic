@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://bwc72r7qtxdkt"]
+
+[ext_resource type="Texture2D" uid="uid://cb26ee4qqmpd2" path="res://models/rooms/pop_hcz_new/Pop_Props/Crates & Boxes/EchoesCrateTrim_T.png" id="1_8evp5"]
+[ext_resource type="Texture2D" uid="uid://djt2dy1nrdf4f" path="res://models/rooms/pop_hcz_new/Pop_Props/Crates & Boxes/EchoesCrateTrim_N.png" id="2_tj1gh"]
+[ext_resource type="Texture2D" uid="uid://cmnq7wj4guu63" path="res://models/rooms/pop_hcz_new/Pop_Props/Crates & Boxes/EchoesCrateTrim_ORM.png" id="3_kmjea"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_8evp5")
+orm_texture = ExtResource("3_kmjea")
+normal_enabled = true
+normal_texture = ExtResource("2_tj1gh")
+ao_enabled = true

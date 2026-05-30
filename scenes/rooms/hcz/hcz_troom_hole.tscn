@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt6ob7g17mjfb"]
+
+[ext_resource type="Script" uid="uid://cskyg1sfrd3eo" path="res://scripts/map/ZoneArea.cs" id="11_yl6tw"]
+[ext_resource type="Script" uid="uid://dwjw2x1hogp7b" path="res://scripts/map/PropSpawnpoint.cs" id="12_jppu4"]
+[ext_resource type="Resource" uid="uid://dhimip3x61gx" path="res://items/spawn_groups/props/wet_floor_sign_hcz.tres" id="13_wcegu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7ak4"]
+size = Vector3(21, 21, 21)
+
+[node name="HczTroom" type="Node3D"]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+bake_mask = 4294966280
+
+[node name="ZoneArea" type="Area3D" parent="."]
+script = ExtResource("11_yl6tw")
+zone = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneArea"]
+shape = SubResource("BoxShape3D_p7ak4")
+
+[node name="PropSpawnpoint" type="Marker3D" parent="."]
+transform = Transform3D(0.795431, 0, 0.606044, 0, 1, 0, -0.606044, 0, 0.795431, -1.69816, 0, -1.30657)
+script = ExtResource("12_jppu4")
+SpawnGroup = ExtResource("13_wcegu")
+
+[node name="Doors" type="Node3D" parent="."]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Doors" groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.24, 0, 0)
+metadata/optional = false
+metadata/door_type = 2
+
+[node name="Marker3D2" type="Marker3D" parent="Doors" groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.24, 0, 0)
+metadata/optional = false
+metadata/door_type = 2
+
+[node name="Marker3D3" type="Marker3D" parent="Doors" groups=["map_door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.24)
+visible = false
+metadata/optional = false
+metadata/door_type = 2
+
+[node name="Marker3D4" type="Marker3D" parent="Doors" groups=["map_door"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 10.24)
+metadata/optional = false
+metadata/door_type = 2
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+blend_distance = 0.0
+size = Vector3(21, 9, 21)
+box_projection = true
+cull_mask = 1048527
+ambient_mode = 0

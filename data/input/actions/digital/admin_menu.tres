@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" load_steps=2 format=3 uid="uid://cxd3fyiv03ksa"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_r5g7f"]
+
+[resource]
+resource_name = "AdminMenu"
+script = ExtResource("1_r5g7f")
+GodotAction = &"admin_menu"
+LocaleKey = "Action_AdminMenu"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

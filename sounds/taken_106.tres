@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://c430tdjc0uy3l"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_r5tsc"]
+[ext_resource type="AudioStream" uid="uid://fk423lrffr8u" path="res://audio/scpcb/106/Damage2.ogg" id="2_1o3xj"]
+
+[resource]
+resource_name = "taken_106"
+script = ExtResource("1_r5tsc")
+DisplayName = "Taken by 106"
+streams = [ExtResource("2_1o3xj")]
+maxDistance = 50.0

@@ -1,0 +1,7 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://bp35afsdkit21"]
+
+[ext_resource type="Texture2D" uid="uid://cspfu26a6fq2h" path="res://models/rooms/bunglow_lcz_new/LCZ_V5/Textures/weathered914storagetext.png" id="1_c7p8s"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_c7p8s")

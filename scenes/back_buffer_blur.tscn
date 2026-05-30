@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://hlxqk4xv86v1"]
+
+[ext_resource type="Script" uid="uid://cr8vptyvvg34g" path="res://scripts/shaders/BackBuffer.cs" id="1_b3r8h"]
+[ext_resource type="Shader" uid="uid://cytq0jvixl11p" path="res://shaders/blur_x2.gdshader" id="2_47c3k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_251vx"]
+shader = ExtResource("2_47c3k")
+shader_parameter/amount = 1.0
+shader_parameter/levels = 32.0
+
+[sub_resource type="Gradient" id="Gradient_a2yif"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0, 0, 0.392157)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_spaf3"]
+gradient = SubResource("Gradient_a2yif")
+width = 128
+height = 128
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="BackBufferBlur" type="Node" node_paths=PackedStringArray("tex", "layer", "layerTex")]
+script = ExtResource("1_b3r8h")
+tex = NodePath("Control")
+layer = NodePath("CanvasLayer")
+layerTex = NodePath("CanvasLayer/Control")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visibility_layer = 2
+material = SubResource("ShaderMaterial_251vx")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_spaf3")
+expand_mode = 1

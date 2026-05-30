@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnjr3q7qk500b"]
+
+[ext_resource type="Shader" uid="uid://bet41ilyt84pu" path="res://shaders/computer_display.gdshader" id="1_r3krv"]
+[ext_resource type="Texture2D" uid="uid://f4jlbkxadgo" path="res://textures/main/ez/randomprops/T_scposmockup.png" id="2_jl6im"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_r3krv")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 256
+shader_parameter/roughness = 0.4
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.999999977648
+shader_parameter/metallic = 0.0
+shader_parameter/texture_emission = ExtResource("2_jl6im")
+shader_parameter/emission = Color(1, 1, 1, 1)
+shader_parameter/emission_energy = 5.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://cee02p0w3j42i"]
+
+[ext_resource type="Script" uid="uid://dn270ohk73l4m" path="res://scripts/ui/PlayerListController.cs" id="1_fwluk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfphv"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_fwluk"]
+default_font_size = 24
+
+[node name="PlayerList" type="PanelContainer" unique_id=1369287780]
+anchors_preset = -1
+anchor_left = 0.222656
+anchor_top = 0.169444
+anchor_right = 0.777344
+anchor_bottom = 0.830556
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nfphv")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Box" type="VBoxContainer" parent="." unique_id=1659156371]
+layout_mode = 2
+theme = SubResource("Theme_fwluk")
+
+[node name="MarginContainer" type="MarginContainer" parent="Box" unique_id=794461362]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Box/MarginContainer" unique_id=2118772451]
+layout_mode = 2
+bbcode_enabled = true
+text = "My Server"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="PanelContainer" type="PanelContainer" parent="Box" unique_id=1773862748]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="Box/PanelContainer" unique_id=308443030]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Username" type="Label" parent="Box/PanelContainer/Title" unique_id=41294318]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 45.0
+text = "Username"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Box/PanelContainer/Title" unique_id=980461925]
+layout_mode = 2
+
+[node name="Role" type="Label" parent="Box/PanelContainer/Title" unique_id=1416605899]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 33.0
+text = "Role"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Box/PanelContainer/Title" unique_id=1670811343]
+layout_mode = 2
+
+[node name="Volume" type="Label" parent="Box/PanelContainer/Title" unique_id=1541701060]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 25.0
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Box" unique_id=1177339408]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+scroll_deadzone = 10
+
+[node name="Content" type="VBoxContainer" parent="Box/Scroll" unique_id=663450209]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Listing" type="HBoxContainer" parent="Box/Scroll/Content" unique_id=1326896649]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Username" type="Label" parent="Box/Scroll/Content/Listing" unique_id=2113120139]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 45.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Box/Scroll/Content/Listing" unique_id=1508043311]
+layout_mode = 2
+
+[node name="Role" type="Label" parent="Box/Scroll/Content/Listing" unique_id=124413722]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 33.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Box/Scroll/Content/Listing" unique_id=238407839]
+layout_mode = 2
+
+[node name="Volume" type="HSlider" parent="Box/Scroll/Content/Listing" unique_id=209908740]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 25.0
+value = 100.0
+rounded = true
+scrollable = false
+
+[node name="VSeparator3" type="VSeparator" parent="Box/Scroll/Content/Listing" unique_id=286231478]
+visible = false
+layout_mode = 2
+
+[node name="Ping" type="Label" parent="Box/Scroll/Content/Listing" unique_id=1700650636]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 10.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Box/Scroll/Content" unique_id=599699036]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="Box/Scroll/Content/PanelContainer" unique_id=1723359184]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Username" type="Label" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=2121665361]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 45.0
+text = "Username"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=175968576]
+layout_mode = 2
+
+[node name="Role" type="Label" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=1504087328]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 33.0
+text = "Role"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=1855060481]
+layout_mode = 2
+
+[node name="Volume" type="Label" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=662709817]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 25.0
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=349317122]
+visible = false
+layout_mode = 2
+
+[node name="Ping" type="Label" parent="Box/Scroll/Content/PanelContainer/Title" unique_id=2019835374]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 10.0
+text = "Ping"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controller" type="Node" parent="." unique_id=591278349 node_paths=PackedStringArray("playerListRoot", "playerListing", "playerListLabel")]
+script = ExtResource("1_fwluk")
+playerListRoot = NodePath("../Box/Scroll/Content")
+playerListing = NodePath("../Box/Scroll/Content/Listing")
+playerListLabel = NodePath("../Box/MarginContainer/RichTextLabel")

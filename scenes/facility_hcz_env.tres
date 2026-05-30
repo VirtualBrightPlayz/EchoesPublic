@@ -1,0 +1,36 @@
+[gd_resource type="Environment" format=3 uid="uid://bjxyv6fgfkfev"]
+
+[ext_resource type="Texture2D" uid="uid://rjjmq53jhea" path="res://textures/main/ez/random_textures/T_Fracture_Voronoi.png" id="1_0mldo"]
+[ext_resource type="Shader" uid="uid://coja35bc07x1b" path="res://shaders/sky_solid.gdshader" id="2_5ggs8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_liq2a"]
+shader = ExtResource("2_5ggs8")
+shader_parameter/sky_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="Sky" id="Sky_iweov"]
+sky_material = SubResource("ShaderMaterial_liq2a")
+
+[resource]
+background_mode = 1
+sky = SubResource("Sky_iweov")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssao_intensity = 1.0
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_min_cell_size = 0.3125
+sdfgi_y_scale = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.5
+glow_blend_mode = 0
+glow_map = ExtResource("1_0mldo")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_end = 40.0
+volumetric_fog_enabled = true
+volumetric_fog_length = 40.0

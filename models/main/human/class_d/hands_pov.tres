@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bmjrrob7hinpq"]
+
+[ext_resource type="Shader" uid="uid://c6iepoxvq7xy0" path="res://shaders/fp_pov_subsurf.gdshader" id="1_lq0qi"]
+[ext_resource type="Texture2D" uid="uid://dxuokd4mivp6b" path="res://models/main/human/hands/T_Hand.png" id="2_lggsq"]
+[ext_resource type="Texture2D" uid="uid://cf0mwyf7ggcfh" path="res://models/main/human/hands/ORM_Hand.png" id="3_lq0qi"]
+[ext_resource type="Texture2D" uid="uid://cwvmiqds21xjo" path="res://models/main/human/hands/N_Hand.png" id="4_lggsq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lq0qi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_lggsq")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("3_lq0qi")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("3_lq0qi")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("4_lggsq")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/scattering = 0.1

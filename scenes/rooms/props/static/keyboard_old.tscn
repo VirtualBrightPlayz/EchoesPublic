@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b75jy2op86x25"]
+
+[ext_resource type="ArrayMesh" uid="uid://kbgc61nlmv83" path="res://models/scpcb/props/keyboard.obj" id="1_clcgr"]
+[ext_resource type="Material" uid="uid://bakrfi04f6yeb" path="res://materials/scpcb_map/keyboard.tres" id="2_dx3ut"]
+
+[node name="Keyboard" type="MeshInstance3D"]
+transform = Transform3D(-6.99382e-10, 0, 0.016, 0, 0.016, 0, -0.016, 0, -6.99382e-10, 0, 0, 0)
+layers = 9
+mesh = ExtResource("1_clcgr")
+surface_material_override/0 = ExtResource("2_dx3ut")

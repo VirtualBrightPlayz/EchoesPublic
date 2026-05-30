@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="InputActionSet" load_steps=12 format=3 uid="uid://dcmpdsk23wibw"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_3oo2i"]
+[ext_resource type="Script" uid="uid://c5rpk473lbp36" path="res://scripts/player/input/InputActionAnalog.cs" id="1_a3u57"]
+[ext_resource type="Script" uid="uid://cwm4ujckr2ppq" path="res://scripts/player/input/InputActionSet.cs" id="2_a3u57"]
+[ext_resource type="Resource" uid="uid://dy5n1pq87rue0" path="res://data/input/actions/digital/select.tres" id="3_kimeh"]
+[ext_resource type="Resource" uid="uid://hqj3xywaquvh" path="res://data/input/actions/digital/up.tres" id="3_sywcj"]
+[ext_resource type="Resource" uid="uid://c30kigqldtu5s" path="res://data/input/actions/digital/down.tres" id="4_218yk"]
+[ext_resource type="Resource" uid="uid://dypdoq01ly4jj" path="res://data/input/actions/digital/cancel.tres" id="4_qyemq"]
+[ext_resource type="Resource" uid="uid://drxixwofalkr" path="res://data/input/actions/digital/left.tres" id="5_oqq7h"]
+[ext_resource type="Resource" uid="uid://c7p1s4742n6fn" path="res://data/input/actions/digital/right.tres" id="6_kimeh"]
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="7_218yk"]
+[ext_resource type="Resource" uid="uid://cv8t6omy0xjft" path="res://data/input/actions/digital/pause.tres" id="9_qyemq"]
+
+[resource]
+resource_name = "Menu"
+script = ExtResource("2_a3u57")
+LocaleKey = "Set_Menu"
+DigitalActions = Array[ExtResource("1_3oo2i")]([ExtResource("3_sywcj"), ExtResource("4_218yk"), ExtResource("5_oqq7h"), ExtResource("6_kimeh"), ExtResource("3_kimeh"), ExtResource("4_qyemq"), ExtResource("9_qyemq")])
+metadata/_custom_type_script = "uid://cwm4ujckr2ppq"

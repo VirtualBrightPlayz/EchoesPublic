@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://c8l2o3kemn2m3"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_g8j7c"]
+[ext_resource type="AudioStream" uid="uid://eg76116ihlnv" path="res://audio/SCP/Sentient/173/SCP173_move_loop.wav" id="2_g8j7c"]
+
+[resource]
+resource_name = "173"
+script = ExtResource("1_g8j7c")
+streams = [ExtResource("2_g8j7c")]
+unitSize = 5.0
+maxDistance = 50.0
+forceLoop = true
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

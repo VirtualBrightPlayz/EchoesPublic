@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://csuyyslttnkys"]
+
+[ext_resource type="Resource" uid="uid://d2twtg744rqyi" path="res://scripts/layout_generator/example_rooms/Room2.tres" id="1_x6irl"]
+[ext_resource type="Resource" uid="uid://bwq4efiuqjdqt" path="res://scripts/layout_generator/example_rooms/Room2c.tres" id="2_ayxn1"]
+[ext_resource type="Resource" uid="uid://dgc71t7u81bl" path="res://scripts/layout_generator/example_rooms/Room3.tres" id="3_p2s3v"]
+[ext_resource type="Resource" uid="uid://de7c3d4mf141q" path="res://scripts/layout_generator/example_rooms/Room4.tres" id="4_i6gh4"]
+[ext_resource type="Resource" uid="uid://cuksbab0oe7m8" path="res://scripts/layout_generator/example_rooms/RoomEmpty.tres" id="5_4po16"]
+[ext_resource type="Resource" uid="uid://dih7fwo873248" path="res://scripts/layout_generator/example_rooms/Room2Special.tres" id="6_0khlj"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="6_4jd6e"]
+
+[resource]
+script = ExtResource("6_4jd6e")
+Collection = Array[Resource]([ExtResource("1_x6irl"), ExtResource("2_ayxn1"), ExtResource("3_p2s3v"), ExtResource("4_i6gh4"), ExtResource("5_4po16"), ExtResource("6_0khlj")])

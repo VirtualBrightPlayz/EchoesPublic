@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GameSound" load_steps=3 format=3 uid="uid://ow5co3g2suqs"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_ifxma"]
+[ext_resource type="AudioStream" uid="uid://dnwobw2o57vr3" path="res://audio/scpcb/106/Decay0.ogg" id="2_o2xnr"]
+
+[resource]
+script = ExtResource("1_ifxma")
+DisplayName = "SCP-106 Spawning"
+streams = [ExtResource("2_o2xnr")]
+volumeDb = 0.0
+unitSize = 10.0
+maxDistance = 50.0
+maxDb = 3.0
+pitch = 1.0
+bus = ""

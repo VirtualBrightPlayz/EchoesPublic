@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://dv60cc34cjqhk"]
+
+[ext_resource type="Script" uid="uid://dkfhdltot1qsm" path="res://scripts/player/role_ui/SCP106UI.cs" id="1_0khjl"]
+[ext_resource type="Texture2D" uid="uid://gpf33vx5hpf2" path="res://icons/portal_enter.png" id="1_qo7a6"]
+[ext_resource type="Texture2D" uid="uid://r6tdaf3o45p" path="res://icons/portal_exit.png" id="2_3sgaa"]
+[ext_resource type="FontFile" uid="uid://bs1rwxor003sh" path="res://fonts/Rubik/static/Rubik-Black.ttf" id="2_tknny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2slfc"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 0.196078)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 0.501961)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_leili"]
+vertical = true
+
+[node name="SCP106UI" type="Control" unique_id=12701143 node_paths=PackedStringArray("overlay", "inventoryRoot")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_0khjl")
+overlay = NodePath("ColorRect")
+inventoryRoot = NodePath("PanelContainer")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1798524130]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1434363757]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19375
+anchor_top = 0.354167
+anchor_right = 0.80625
+anchor_bottom = 0.645833
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2slfc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=22804237]
+layout_mode = 2
+alignment = 1
+
+[node name="Place" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=114315274]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/Place" unique_id=967866316]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tknny")
+text = "SCP_106_PORTAL_PLACE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlacePortal" type="TextureButton" parent="PanelContainer/HBoxContainer/Place" unique_id=670661405]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("1_qo7a6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=548755446]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_leili")
+
+[node name="Use" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1365712471]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/Use" unique_id=1404345561]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tknny")
+text = "SCP_106_PORTAL_USE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UsePortal" type="TextureButton" parent="PanelContainer/HBoxContainer/Use" unique_id=1341038966]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_3sgaa")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="VSeparator2" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=902250531]
+visible = false
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_leili")
+
+[node name="RTP" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1580358256]
+visible = false
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/RTP" unique_id=1237403928]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tknny")
+text = "SCP_106_PORTAL_RTP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UsePortal" type="TextureButton" parent="PanelContainer/HBoxContainer/RTP" unique_id=1129413029]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_3sgaa")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/RTP" unique_id=1636280052]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.784314, 0, 1)
+theme_override_fonts/font = ExtResource("2_tknny")
+text = "SCP_106_PORTAL_RTP_WARN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Place/PlacePortal" to="." method="PlacePortal"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/Use/UsePortal" to="." method="UsePortal"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/RTP/UsePortal" to="." method="UseRandomTP"]

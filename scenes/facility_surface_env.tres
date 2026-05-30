@@ -1,0 +1,24 @@
+[gd_resource type="Environment" format=3 uid="uid://bey68nxo5pnd3"]
+
+[ext_resource type="Texture2D" uid="uid://dgwgpf0c2k24" path="res://textures/lens_dirt.png" id="1_o102f"]
+[ext_resource type="Texture2D" uid="uid://5a7p3wc07cia" path="res://models/rooms/sz/MorningSkyHDRI007B_4K-HDR.exr" id="2_p3hnu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qlmw7"]
+panorama = ExtResource("2_p3hnu")
+
+[sub_resource type="Sky" id="Sky_0raxl"]
+sky_material = SubResource("PanoramaSkyMaterial_qlmw7")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_0raxl")
+sky_rotation = Vector3(0, 0.959931, 0)
+tonemap_mode = 3
+glow_enabled = true
+glow_map = ExtResource("1_o102f")
+fog_enabled = true
+fog_light_color = Color(0.301961, 0.301961, 0.392157, 1)
+fog_density = 0.005
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01

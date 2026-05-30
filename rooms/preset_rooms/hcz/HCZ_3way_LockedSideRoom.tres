@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://du1xackgqy647"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_f5k7e"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_jecg3"]
+
+[resource]
+resource_name = "Heavy TRoom Locked Side Room"
+script = ExtResource("1_f5k7e")
+type = 3
+stage = 2
+scenes = []
+sceneFile = "uid://cou4f2oog57nw"
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

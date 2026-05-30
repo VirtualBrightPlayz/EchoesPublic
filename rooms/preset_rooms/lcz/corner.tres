@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bdgnqp6j6j8o3"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_p6j4g"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_ui3u5"]
+
+[resource]
+resource_name = "Light Corner"
+script = ExtResource("2_p6j4g")
+type = 1
+stage = 1
+scenes = []
+sceneFile = "uid://cuftys478nh1k"
+isGeneric = true
+category = "Light Containment"

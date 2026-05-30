@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=4 uid="uid://dh4bsx8ecsh2f"]
+
+[ext_resource type="Material" uid="uid://by2uww285i4lb" path="res://scenes/rooms/props/static/lights/textures/light_trim.tres" id="1_tbbgi"]
+[ext_resource type="Script" uid="uid://bsxuyl0i423w6" path="res://scripts/CustomRoomLogic/LightSettings.cs" id="1_w0pce"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v5smp"]
+_surfaces = [{
+"aabb": AABB(-0.72, -0.72, 0, 1.44, 1.44, 0.05),
+"format": 34359742465,
+"index_count": 90,
+"index_data": PackedByteArray("CwAMAA0AAgANAAwADQAOAAsADgANAAIADAALAA8ADwALAA4ADAAQAAIADwAQAAwAAgAQAAAAAAAQAA8AAgADAA4ADgADAA8AAwACAAEAAAABAAIADwADAAQAAQAEAAMADwAFAAAABAAFAA8ABgABAAAABAABAAYAAAAHAAYABgAIAAQAAAAFAAkACQAFAAQACQAHAAAABAAIAAkABgAHAAoACAAGAAoABwAJAAoACQAIAAoA"),
+"lods": [0.6625061, PackedByteArray("AAABAAIAAwACAAEAAAACAAMAAQAEAAMAAwAFAAAABAAFAAMABgABAAAABAABAAYAAAAHAAYABgAIAAQAAAAFAAkACQAFAAQACQAHAAAABAAIAAkABgAHAAoACAAGAAoABwAJAAoACQAIAAoA")],
+"name": "T_light_trim",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 17,
+"vertex_data": PackedByteArray("7FE4P+xROL/KzMw87FE4v+xROL/KzMw80SIzv9IiM7/OzMw80SIzv9IiMz/MzMw87FE4v+xROD/KzMw87FE4P+xROD/KzMw87FE4v+xROL8AAACA7FE4P+xROL8AAACA7FE4v+xROD8AAACA7FE4P+xROD8AAACACtcjJAAAAAAAAACAAAAAPwAAAD/NzEw9AAAAPwAAAL/MzEw9AAAAvwAAAL/NzEw9AAAAvwAAAD/MzEw90SIzP9IiMz/OzMw80SIzP9IiM7/MzMw8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w0pce"]
+resource_name = "Square_Wall_Light1"
+_surfaces = [{
+"aabb": AABB(-0.72, -0.72, 0, 1.44, 1.44, 0.05),
+"attribute_data": PackedByteArray("NrOIPUJ2Oz856Q4/VnY7P1j4DD8qhDk/MkaYPR6EOT8x6Q4/THY7P5eziD1Odjs/hxGkPaC5Kz+HEaQ91ugtPwRVEj/q6C0/A1USP7S5Kz/oEaQ9rLkrP+gRpD3g6C0//VQSP+DoLT/7VBI/qrkrP3pGmD3+gzk/VPgMP0CEOT8y6Q4/bHY7P+WziD0sdjs/NhKkPYq5Kz/8VBI/yrkrP/5UEj8A6S0/KxKkPcLoLT/XAeI+bB4/PxX/Dj9sHj8/AAAAP1gfMD/XAeI+bB4/PxX/Dj9sHj8/Ff8OP2wePz/XAeI+bB4/P/1UEj/g6C0/hxGkPdboLT+HEaQ9oLkrP/tUEj+quSs/MZSiPSjaLj4gOqI9kFmiPe21Lj64S6I9lpBBPlDyeD1Q8ng9gEp5Pc69eT1sw0E+8+IuPjjTLj5sw0E+YK1BPsRFmD0UhDk/UfgMPyCEOT8="),
+"format": 34359742487,
+"index_count": 90,
+"index_data": PackedByteArray("IQAiACMAJAAjACIAIgAlACQAJgAlACIAIgAhACYAJwAjACQAIwAnACEAJgAhACcAJAAoACcAJwAoACYAAgApAAAAAAABAAIAAAApACoAKgAEAAAABQAEACoAKgADAAUABgAHAAgACAAJAAYACgALAAwADAANAAoADgAPABAAEAARAA4AEgATABQAFAAVABIAFgAXABgAFwAZABgAGgAWABgAGwAcABgAHQAeAB8AHwAgAB0A"),
+"lods": [0.6625061, PackedByteArray("AAABAAIAAAACAAMAAwAEAAAABQAEAAMABgAHAAgACAAJAAYACgALAAwADAANAAoADgAPABAAEAARAA4AEgATABQAFAAVABIAFgAXABgAFwAZABgAGgAWABgAGwAcABgAHQAeAB8AHwAgAB0A")],
+"material": ExtResource("1_tbbgi"),
+"name": "T_light_trim",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 43,
+"vertex_data": PackedByteArray("7FE4P+xROL/KzMw87FE4v+xROL/KzMw80SIzv9IiM7/OzMw80SIzv9IiMz/MzMw87FE4P+xROD/KzMw87FE4v+xROD/KzMw87FE4P+xROL/KzMw87FE4P+xROL8AAACA7FE4v+xROL8AAACA7FE4v+xROL/KzMw87FE4v+xROD/KzMw87FE4v+xROD8AAACA7FE4P+xROD8AAACA7FE4P+xROD/KzMw80SIzv9IiMz/MzMw80SIzv9IiM7/OzMw87FE4v+xROL/KzMw87FE4v+xROD/KzMw87FE4v+xROD/KzMw87FE4v+xROL/KzMw87FE4v+xROL8AAACA7FE4v+xROD8AAACA7FE4v+xROL8AAACA7FE4P+xROL8AAACACtcjJAAAAAAAAACA7FE4P+xROD8AAACA7FE4v+xROD8AAACA7FE4P+xROD8AAACA7FE4v+xROD8AAACA7FE4P+xROD8AAACA7FE4P+xROL8AAACA7FE4P+xROL/KzMw87FE4P+xROD/KzMw8AAAAPwAAAD/NzEw9AAAAPwAAAL/MzEw9AAAAvwAAAL/NzEw90SIzv9IiM7/OzMw80SIzP9IiM7/MzMw80SIzP9IiMz/OzMw8AAAAvwAAAD/MzEw90SIzv9IiMz/MzMw80SIzP9IiM7/MzMw80SIzP9IiMz/OzMw8/3//f/9//v//f/9/AAD/P/9//38AAP8//3//f/7//z//f/9//3/+//9//3/+//8//38AAAAA/z//fwAAAAD/P/9/AAAAAP8//38AAAAA/z//f///////P/9///////8//3///////z//f///////P/9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AID//////3//////////fwCA/////////7///////38AgP//////f////////////7//////////v////3//f/7/////f/9//v////9//3/+/////3//f/7/0YDRgFABPsDRgC1/7gDxvy1/LX9+AKfA4XjheHYA+MMdh+F4wwfevx2HHYfyBzrALX/RgBsAh7/heB2HQQAdvP9//3//f/7//3//f/9//v8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_v5smp")
+
+[node name="SquareWallLight1" type="Node3D" node_paths=PackedStringArray("PrimaryLights")]
+script = ExtResource("1_w0pce")
+PrimaryLights = [NodePath("OmniLight3D")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 20.0
+omni_range = 10.0
+
+[node name="Square_Wall_Light1" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_w0pce")
+skeleton = NodePath("")

@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dm0g6sb6y8rcs"]
+
+[ext_resource type="Texture2D" uid="uid://bgpe7eg5p7p8i" path="res://textures/main/button/ButtonRed_BaseColor.png" id="1_wes71"]
+[ext_resource type="Texture2D" uid="uid://bx01wg8cwfa06" path="res://textures/main/button/ButtonRed_Emission.png" id="2_fkuis"]
+[ext_resource type="Texture2D" uid="uid://bjvy2hjh3qfuj" path="res://textures/main/button/Button_Metallic.png" id="3_tt5os"]
+[ext_resource type="Texture2D" uid="uid://kxt3iqagug04" path="res://textures/main/button/Button_Normal.png" id="4_q8atr"]
+[ext_resource type="Texture2D" uid="uid://dngxh8k0o6vb4" path="res://textures/main/button/Button_Roughness.png" id="5_tee07"]
+
+[resource]
+albedo_texture = ExtResource("1_wes71")
+metallic = 1.0
+metallic_texture = ExtResource("3_tt5os")
+roughness_texture = ExtResource("5_tee07")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("2_fkuis")
+normal_enabled = true
+normal_texture = ExtResource("4_q8atr")
+texture_filter = 5

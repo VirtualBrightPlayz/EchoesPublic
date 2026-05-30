@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://b18dpd8pi1o0e"]
+
+[ext_resource type="AudioStream" uid="uid://iyueh62h2oo3" path="res://audio/music/SCP Echoes OST - Don't Blink.ogg" id="1_ooeun"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_esx8u"]
+
+[resource]
+script = ExtResource("2_esx8u")
+audio = ExtResource("1_ooeun")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

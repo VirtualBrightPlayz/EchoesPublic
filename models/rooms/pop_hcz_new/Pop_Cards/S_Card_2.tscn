@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c13uq6d6n6lt3"]
+
+[ext_resource type="PackedScene" uid="uid://bm23bkm1n1slr" path="res://models/rooms/pop_hcz_new/Pop_Cards/Meshes/Sec_Card_Holder.fbx" id="1_uddw4"]
+[ext_resource type="PackedScene" uid="uid://dw5w1ooxd1ciw" path="res://models/rooms/pop_hcz_new/Pop_Cards/Meshes/Sec_Card_Base.fbx" id="2_7slmt"]
+[ext_resource type="Texture2D" uid="uid://dgh2e4a2cmmcq" path="res://models/rooms/pop_hcz_new/Pop_Cards/CardTextures/SecurityCards-02.png" id="3_uddw4"]
+[ext_resource type="PackedScene" uid="uid://cl4fgcn63bcaa" path="res://models/rooms/pop_hcz_new/Pop_Cards/Meshes/Sec_T2.fbx" id="4_7slmt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jafbw"]
+albedo_texture = ExtResource("3_uddw4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpo8o"]
+albedo_texture = ExtResource("3_uddw4")
+
+[node name="SCard2" type="Node3D" unique_id=1785624315]
+
+[node name="Sec_Card_Holder" parent="." unique_id=925854615 instance=ExtResource("1_uddw4")]
+
+[node name="Sec_Card_Base" parent="." unique_id=874374363 instance=ExtResource("2_7slmt")]
+
+[node name="Sec Card Base" parent="Sec_Card_Base" index="0" unique_id=863580584]
+surface_material_override/0 = SubResource("StandardMaterial3D_jafbw")
+
+[node name="Sec_T2" parent="." unique_id=1733068997 instance=ExtResource("4_7slmt")]
+
+[node name="Sec T2" parent="Sec_T2" index="0" unique_id=881579302]
+surface_material_override/0 = SubResource("StandardMaterial3D_xpo8o")
+
+[editable path="Sec_Card_Base"]
+[editable path="Sec_T2"]

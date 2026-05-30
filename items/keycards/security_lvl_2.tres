@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://dxl1yivlnk3d0"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_6ro1h"]
+[ext_resource type="Texture2D" uid="uid://ekbl7yui1nsp" path="res://textures/inv_icons/keycards/V3 - Current/S2 Card Icon.png" id="2_nhhe7"]
+[ext_resource type="PackedScene" uid="uid://bee3dxwqecwgq" path="res://scenes/items/keycard.tscn" id="3_xj850"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_nhhe7"]
+[ext_resource type="PackedScene" uid="uid://c13uq6d6n6lt3" path="res://models/rooms/pop_hcz_new/Pop_Cards/S_Card_2.tscn" id="4_uetpw"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_uetpw"]
+[ext_resource type="Texture2D" uid="uid://ddw8eg22gjuhr" path="res://textures/main/cards/ORM_keycard.png" id="6_6ro1h"]
+[ext_resource type="Texture2D" uid="uid://bhh64hjdat3kx" path="res://textures/main/cards/T_patrolofficer.png" id="6_xj850"]
+[ext_resource type="Texture2D" uid="uid://bjb4ybvuby1hf" path="res://textures/main/cards/N_keycard.png" id="7_yt4tv"]
+
+[sub_resource type="Resource" id="Resource_7vfp5"]
+script = ExtResource("1_6ro1h")
+level = 2
+cardType = 3
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66m4e"]
+render_priority = 0
+shader = ExtResource("5_uetpw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_xj850")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("6_6ro1h")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_6ro1h")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("7_yt4tv")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_cp8r5"]
+albedo_texture = ExtResource("6_xj850")
+orm_texture = ExtResource("6_6ro1h")
+normal_enabled = true
+normal_texture = ExtResource("7_yt4tv")
+
+[resource]
+resource_name = "T2 Security Keycard"
+script = ExtResource("4_nhhe7")
+Access = [SubResource("Resource_7vfp5")]
+worldMaterial = SubResource("ORMMaterial3D_cp8r5")
+viewMaterial = SubResource("ShaderMaterial_66m4e")
+cardScene = ExtResource("4_uetpw")
+ItemScene = ExtResource("3_xj850")
+Icon = ExtResource("2_nhhe7")
+Description = "Can access mid-tier checkpoints, armories, and security stations."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

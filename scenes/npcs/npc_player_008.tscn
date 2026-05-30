@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw7g7ht7dunpp"]
+
+[ext_resource type="Script" uid="uid://bvmgbr7ijkqir" path="res://scripts/npc/NpcPlayer008.cs" id="1_kew3d"]
+[ext_resource type="Script" uid="uid://m6jpr2uwykkx" path="res://scripts/npc/NpcInput.cs" id="2_o1shi"]
+[ext_resource type="Script" uid="uid://b00lpx6nvc3jk" path="res://scripts/player/statuseffects/PlayerStatusEffectManager.cs" id="3_0m1og"]
+[ext_resource type="Script" uid="uid://cfoy82crg0m54" path="res://scripts/network/transform_sync2.gd" id="3_oy0wi"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_s8moo"]
+properties/0/path = NodePath(".:PlayerPosition")
+properties/0/spawn = true
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:PlayerRotation")
+properties/1/spawn = true
+properties/1/replication_mode = 0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_xqfkl"]
+properties/0/path = NodePath(".:PlayerId")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:RoleIndex")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:Health")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:AuthorityId")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:AmmoAmounts")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath(".:ActiveStatusEffects")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+
+[node name="NpcPlayer" type="Node3D" node_paths=PackedStringArray("debugLabel", "Inputs", "xformSync", "viewSync", "statusEffectManager")]
+script = ExtResource("1_kew3d")
+rotationLerpSpeed = 4.0
+debugLabel = NodePath("Label3D")
+playerMask = 2
+Inputs = NodePath("InputManager")
+xformSync = NodePath("TransformSync")
+viewSync = NodePath("ViewSync")
+lerpSpeed = 10.0
+statusEffectManager = NodePath("EffectManager")
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("2_o1shi")
+inputPath = NodePath(".")
+
+[node name="Label3D" type="Label3D" parent="."]
+ignore_occlusion_culling = true
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+text = "SCP-008"
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_s8moo")
+
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.2
+replication_config = SubResource("SceneReplicationConfig_xqfkl")
+
+[node name="EffectManager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("3_0m1og")
+player = NodePath("..")
+
+[node name="TransformSync" type="Node" parent="."]
+script = ExtResource("3_oy0wi")
+metadata/_custom_type_script = "uid://cfoy82crg0m54"
+
+[node name="ViewSync" type="Node" parent="."]
+script = ExtResource("3_oy0wi")
+metadata/_custom_type_script = "uid://cfoy82crg0m54"

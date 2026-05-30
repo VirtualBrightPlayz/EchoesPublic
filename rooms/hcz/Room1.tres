@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettings" load_steps=6 format=3 uid="uid://fti6c1cqcxei"]
+
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_gr7mo"]
+[ext_resource type="Resource" uid="uid://ttj42wdlmhys" path="res://scripts/layout_generator/example_spawn_validator/HCZSpawnValidator.tres" id="1_mf2t3"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="1_tr4nl"]
+[ext_resource type="PackedScene" uid="uid://bfa4jp7bk5rak" path="res://scenes/rooms/hcz/hcz_endoff.tscn" id="1_w8lbj"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_45rkd"]
+
+[resource]
+script = ExtResource("1_tr4nl")
+RoomScenes = Array[PackedScene]([ExtResource("1_w8lbj")])
+MaximumInstances = 2
+Connections = 2
+PreSpawnValidatorResources = Array[ExtResource("2_45rkd")]([ExtResource("1_mf2t3")])

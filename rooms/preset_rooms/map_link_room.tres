@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://dayu53lr8or5n"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_ciwvo"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="2_as6b8"]
+[ext_resource type="Resource" uid="uid://doioxvyh11s28" path="res://rooms/preset_rooms/property_data/map_link.tres" id="3_as6b8"]
+
+[resource]
+resource_name = "Map Link"
+script = ExtResource("1_ciwvo")
+scenes = []
+sceneFile = "uid://yf3d1geat4cq"
+category = "Tools"
+templateData = Array[ExtResource("2_as6b8")]([ExtResource("3_as6b8")])
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

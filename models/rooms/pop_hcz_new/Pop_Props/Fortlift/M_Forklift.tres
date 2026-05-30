@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://c3lsabwi4qnts"]
+
+[ext_resource type="Texture2D" uid="uid://c4vqb03dk3bjx" path="res://models/rooms/pop_hcz_new/Pop_Props/Fortlift/Echoes Forklift_T.png" id="1_iphns"]
+[ext_resource type="Texture2D" uid="uid://cg0g1tkdcfvoo" path="res://models/rooms/pop_hcz_new/Pop_Props/Fortlift/Echoes Forklift_N.png" id="2_45c4o"]
+[ext_resource type="Texture2D" uid="uid://btbbk1llhf10w" path="res://models/rooms/pop_hcz_new/Pop_Props/Fortlift/Echoes Forklift_ORM.png" id="3_181kt"]
+
+[resource]
+albedo_texture = ExtResource("1_iphns")
+orm_texture = ExtResource("3_181kt")
+normal_enabled = true
+normal_texture = ExtResource("2_45c4o")

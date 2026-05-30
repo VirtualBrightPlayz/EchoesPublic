@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cq3fee6lm58do"]
+
+[ext_resource type="Texture2D" uid="uid://dy36aiob6d3pq" path="res://models/rooms/pop_hcz_new/DoorAccessRequirement/Textures/Door Access Requirements_T.png" id="1_je0ly"]
+[ext_resource type="Texture2D" uid="uid://cjmfi2wynsbgo" path="res://models/rooms/pop_hcz_new/DoorAccessRequirement/Textures/Door Access Requirements_N.png" id="2_15wnl"]
+[ext_resource type="Texture2D" uid="uid://82nxc3f1pmp3" path="res://models/rooms/pop_hcz_new/DoorAccessRequirement/Textures/Door Access Requirements_ORM.png" id="3_udwu5"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_je0ly")
+orm_texture = ExtResource("3_udwu5")
+normal_enabled = true
+normal_texture = ExtResource("2_15wnl")

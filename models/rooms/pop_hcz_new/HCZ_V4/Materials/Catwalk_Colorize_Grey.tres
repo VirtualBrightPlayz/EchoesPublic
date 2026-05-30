@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dl4636ci4oseh"]
+
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_b50wu"]
+[ext_resource type="Texture2D" uid="uid://cn57rirf2gsxi" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/CatwalkTrim_T.png" id="2_f4uq1"]
+[ext_resource type="Texture2D" uid="uid://c4ri26m6n0t4a" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/CatwalkTrim_N.png" id="3_b50wu"]
+[ext_resource type="Texture2D" uid="uid://cplbm2lmi8bu8" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/CatwalkTrim_ORM.png" id="4_kq2k6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b50wu")
+shader_parameter/albedo = Color(0.35, 0.35, 0.35, 1)
+shader_parameter/emission = Color(0, 0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("2_f4uq1")
+shader_parameter/mask_color = Color(0.004633617, 0.004633617, 0.004633617, 1)
+shader_parameter/texture_orm = ExtResource("4_kq2k6")
+shader_parameter/texture_normal = ExtResource("3_b50wu")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

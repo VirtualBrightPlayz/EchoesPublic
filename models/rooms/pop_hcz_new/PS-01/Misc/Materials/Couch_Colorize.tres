@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dbnw7t5hlhm07"]
+
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_8u466"]
+[ext_resource type="Texture2D" uid="uid://l74fv8hvxvkt" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Textures/TyernaCouchBack_Fabric030_2K-JPG_Color.jpg" id="2_8u466"]
+[ext_resource type="Texture2D" uid="uid://cpr7r1bmrjyj0" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Textures/TyernaCouchBack_Fabric030_2K-JPG_NormalGL.jpg" id="3_tpquc"]
+[ext_resource type="Texture2D" uid="uid://dm0q2cyu0ndb2" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Textures/TyernaCouchBack_Fabric030_2K-JPG_Roughness.png" id="4_d6lab"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8u466")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/texture_albedo = ExtResource("2_8u466")
+shader_parameter/mask_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture_size = Vector2i(2048, 2048)
+shader_parameter/point_size = 0.10000000149012
+shader_parameter/texture_orm = ExtResource("4_d6lab")
+shader_parameter/texture_normal = ExtResource("3_tpquc")
+shader_parameter/normal_scale = 1.000000807500001
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

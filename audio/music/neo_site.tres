@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://bb8nu1ko05tyq"]
+
+[ext_resource type="AudioStream" uid="uid://rlb76apv0yme" path="res://audio/music/Azure.ogg" id="1_c3ini"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_xn257"]
+
+[resource]
+script = ExtResource("2_xn257")
+audio = ExtResource("1_c3ini")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

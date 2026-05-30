@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://citwgdrw3d3jd"]
+
+[ext_resource type="PackedScene" uid="uid://dytskyjwjk2ci" path="res://scenes/rooms/props/static/socket.fbx" id="1_ijjfy"]
+
+[node name="Socket" type="Node3D" unique_id=1690392839]
+
+[node name="socket" parent="." unique_id=1697197739 instance=ExtResource("1_ijjfy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

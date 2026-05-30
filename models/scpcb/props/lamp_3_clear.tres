@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cu2oebtlhff7m"]
+
+[ext_resource type="Texture2D" uid="uid://b1q54xmpx1wft" path="res://models/scpcb/props/lamp3.png" id="1_msrk3"]
+
+[resource]
+transparency = 4
+albedo_color = Color(1, 1, 1, 0.501961)
+albedo_texture = ExtResource("1_msrk3")
+metallic = 0.1
+roughness = 0.4

@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://t4kuwuxn45k5"]
+
+[ext_resource type="Script" uid="uid://o3ivnagc455d" path="res://scripts/player/AdminHUD.cs" id="1_ucfag"]
+[ext_resource type="PackedScene" uid="uid://byomgdf3c7r41" path="res://scenes/player/admin_ui/placeholder_text.tscn" id="2_56uxe"]
+[ext_resource type="PackedScene" uid="uid://bug614peqb547" path="res://scenes/player/admin_ui/player.tscn" id="3_p4ek2"]
+[ext_resource type="PackedScene" uid="uid://bvuv1jjxs67bm" path="res://scenes/player/admin_ui/round.tscn" id="4_jqj6e"]
+[ext_resource type="PackedScene" uid="uid://5y51tv3ucj2v" path="res://scenes/player/admin_ui/roles.tscn" id="5_cl6us"]
+[ext_resource type="PackedScene" uid="uid://ctbsr8uqwfq88" path="res://scenes/player/admin_ui/items.tscn" id="6_x5mgv"]
+[ext_resource type="PackedScene" uid="uid://bnaiaduxwh64q" path="res://scenes/player/admin_ui/waypoints.tscn" id="7_cspx0"]
+[ext_resource type="PackedScene" uid="uid://0dkawxvecwap" path="res://scenes/player/admin_ui/props.tscn" id="8_w478x"]
+[ext_resource type="PackedScene" uid="uid://cg522grki8k5j" path="res://scenes/player/admin_ui/effects.tscn" id="9_eum3k"]
+
+[sub_resource type="Gradient" id="Gradient_6ubf3"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0.168627, 0.415686, 1, 0.427451, 0.733333, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r5e8m"]
+gradient = SubResource("Gradient_6ubf3")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.709402, 0.264957)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_84bjt"]
+texture = SubResource("GradientTexture2D_r5e8m")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cspx0"]
+bg_color = Color(0.0862745, 0.164706, 0.333333, 0.784314)
+
+[node name="AdminHUD" type="Control" unique_id=1948746953 node_paths=PackedStringArray("PlayerListGui", "ActionListGui", "ActionOpsGui", "ResponseLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ucfag")
+PlayerListGui = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions/PlayerList")
+ActionListGui = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions/Actions/ActionList")
+ActionOpsGui = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions/Actions/ActionOps")
+ResponseLabel = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Response")
+categoryKeys = PackedStringArray("Welcome", "Player", "Round", "Roles", "Items", "Waypoints", "Props", "Effects")
+categoryScenes = [ExtResource("2_56uxe"), ExtResource("3_p4ek2"), ExtResource("4_jqj6e"), ExtResource("5_cl6us"), ExtResource("6_x5mgv"), ExtResource("7_cspx0"), ExtResource("8_w478x"), ExtResource("9_eum3k")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2143682990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="Panel" type="Control" parent="MarginContainer" unique_id=158288444]
+visible = false
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Background" type="Panel" parent="MarginContainer/Panel" unique_id=1054961318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_84bjt")
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/Panel" unique_id=819893594]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.06
+anchor_right = 1.0
+anchor_bottom = 0.16
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "ADMIN_PANEL_TITLE"
+
+[node name="PlayerList" type="ItemList" parent="MarginContainer/Panel" unique_id=370417869]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 0.212
+anchor_bottom = 0.98
+offset_left = 10.0
+offset_right = 0.199997
+allow_reselect = true
+
+[node name="KillButton" type="Button" parent="MarginContainer/Panel" unique_id=1335215406]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.199
+anchor_right = 0.875
+anchor_bottom = 0.261
+offset_top = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADMIN_PANEL_KILL"
+
+[node name="HealButton" type="Button" parent="MarginContainer/Panel" unique_id=949417859]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.281
+anchor_top = 0.2
+anchor_right = 0.531
+anchor_bottom = 0.262
+offset_left = 0.0999908
+offset_right = 0.0999908
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADMIN_PANEL_HEAL"
+
+[node name="ModerationReason" type="LineEdit" parent="MarginContainer/Panel" unique_id=594884211]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.281
+anchor_top = 0.358
+anchor_right = 0.875
+anchor_bottom = 0.42
+offset_left = 0.0999908
+offset_right = -3.05176e-05
+offset_bottom = -1.52588e-05
+placeholder_text = "ADMIN_PANEL_MODERATION_REASON"
+
+[node name="KickCommand" type="Button" parent="MarginContainer/Panel" unique_id=2021358028]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.43
+anchor_right = 0.875
+anchor_bottom = 0.492
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADMIN_PANEL_KICK"
+
+[node name="BanCommand" type="Button" parent="MarginContainer/Panel" unique_id=430191647]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.281
+anchor_top = 0.43
+anchor_right = 0.531
+anchor_bottom = 0.5
+offset_left = 0.0999908
+offset_right = 0.0999908
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADMIN_PANEL_BAN"
+
+[node name="TeleportCommand" type="Button" parent="MarginContainer/Panel" unique_id=2065063953]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.281
+anchor_top = 0.588
+anchor_right = 0.531
+anchor_bottom = 0.65
+offset_left = 0.0999908
+offset_right = 0.100006
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADMIN_PANEL_TELEPORT_TO"
+
+[node name="BringCommand" type="Button" parent="MarginContainer/Panel" unique_id=1788285339]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.588
+anchor_right = 0.875
+anchor_bottom = 0.65
+offset_right = -3.05176e-05
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "ADMIN_PANEL_BRING"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=279005457]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cspx0")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=337300485]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=798070652]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=284666589]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "ADMIN_PANEL_TITLE"
+fit_content = true
+shortcut_keys_enabled = false
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=515090502]
+layout_mode = 2
+
+[node name="PlayersAndActions" type="HSplitContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=372482018]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="PlayerList" type="ItemList" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions" unique_id=551740082]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+select_mode = 2
+allow_reselect = true
+allow_search = false
+
+[node name="Actions" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions" unique_id=1323522037]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionList" type="ItemList" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions/Actions" unique_id=837124828]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+allow_reselect = true
+allow_search = false
+
+[node name="ActionOps" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayersAndActions/Actions" unique_id=492221702]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=873333242]
+layout_mode = 2
+
+[node name="Response" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=923014595]
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+fit_content = true
+shortcut_keys_enabled = false
+selection_enabled = true

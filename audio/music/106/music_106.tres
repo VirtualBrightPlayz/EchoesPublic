@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://ccmfjbysvu5xd"]
+
+[ext_resource type="AudioStream" uid="uid://dxxek0w6oppxv" path="res://audio/music/106/chase_106.tres" id="1_c5enh"]
+[ext_resource type="AudioStream" uid="uid://blp45yekxy6aj" path="res://audio/music/106/pre_chase_106.tres" id="1_dh3l7"]
+[ext_resource type="AudioStream" uid="uid://do7mgnagdfg3m" path="res://audio/music/106/post_chase_106.tres" id="3_8jmr3"]
+
+[resource]
+clip_count = 3
+clip_0/name = &"PreChase"
+clip_0/stream = ExtResource("1_dh3l7")
+clip_0/auto_advance = 0
+clip_1/name = &"Chase"
+clip_1/stream = ExtResource("1_c5enh")
+clip_1/auto_advance = 0
+clip_2/name = &"PostChase"
+clip_2/stream = ExtResource("3_8jmr3")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 1,
+"to_time": 1
+}
+}

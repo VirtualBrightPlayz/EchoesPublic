@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bhtfqr86csgh5"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_h8vss"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_n8y60"]
+
+[resource]
+resource_name = "Light T-Room Shelter"
+script = ExtResource("2_h8vss")
+type = 3
+stage = 1
+scenes = []
+sceneFile = "uid://ce2sjsx8hxi4r"
+isInterest = true
+category = "Light Containment"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicClip" format=3 uid="uid://b8fp1bsfjebfg"]
+
+[ext_resource type="AudioStream" uid="uid://cjs26xsxuqx8k" path="res://audio/music/SCP Echoes OST - Office Angst.ogg" id="1_h0v08"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="1_k2yuy"]
+
+[resource]
+script = ExtResource("1_k2yuy")
+audio = ExtResource("1_h0v08")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

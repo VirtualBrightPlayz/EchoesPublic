@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://m5xe40jh2lqt"]
+
+[ext_resource type="Resource" uid="uid://cseg2afemf5an" path="res://items/keycards/research_lvl_1.tres" id="1_rugvj"]
+[ext_resource type="Resource" uid="uid://d4fy776rf773k" path="res://items/keycards/maintenance_lvl_1.tres" id="2_5sf4q"]
+[ext_resource type="Resource" uid="uid://uppiy18w1uuf" path="res://items/keycards/security_lvl_1.tres" id="3_adu00"]
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="4_lrtp4"]
+
+[resource]
+script = ExtResource("4_lrtp4")
+Items = [ExtResource("1_rugvj"), ExtResource("2_5sf4q"), ExtResource("3_adu00")]
+MaxSpawned = 6
+metadata/_custom_type_script = "uid://vus0iseb56sl"

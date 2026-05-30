@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://ds4mofxxwql10"]
+
+[ext_resource type="PackedScene" uid="uid://by7ypalosouvk" path="res://scenes/rooms/ez/New EZ/ez_hall_curve/ez_hall_curve.fbx" id="1_g6bdu"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="2_80bpd"]
+[ext_resource type="ArrayOccluder3D" uid="uid://2o3xthxh2kj1" path="res://scenes/rooms/ez/New EZ/ez_hall_curve/ez_hall_curve.occ" id="2_eqh1j"]
+[ext_resource type="Script" uid="uid://cskyg1sfrd3eo" path="res://scripts/map/ZoneArea.cs" id="3_0pvj0"]
+[ext_resource type="Resource" uid="uid://brjxp8712l8em" path="res://projectile_resistance/concrete_pr.tres" id="3_666pl"]
+[ext_resource type="Script" uid="uid://dwjw2x1hogp7b" path="res://scripts/map/PropSpawnpoint.cs" id="4_2xvrt"]
+[ext_resource type="Resource" uid="uid://cvvqsluvuckg7" path="res://items/spawn_groups/props/wet_floor_sign_ez.tres" id="5_t1lw5"]
+[ext_resource type="PackedScene" uid="uid://514a41lgvvf5" path="res://scenes/rooms/props/static/lights/spot.tscn" id="6_7fn3s"]
+[ext_resource type="PackedScene" uid="uid://d48oybfdc0ft" path="res://scenes/rooms/props/static/lights/highbay_light.tscn" id="7_kcigo"]
+[ext_resource type="PackedScene" uid="uid://citwgdrw3d3jd" path="res://scenes/rooms/props/static/socket.tscn" id="9_uuda6"]
+[ext_resource type="LightmapGIData" uid="uid://7n4qdanu0mhv" path="res://scenes/rooms/ez/New EZ/ez_hall_curve/ez_hall_curve.lmbake" id="9_yrsfw"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrsfw"]
+data = PackedVector3Array(-1.561, 0, -1.561, -1.536, -0.049999997, -1.536, -10.19, -0.049999997, -1.536, -10.19, -0.049999997, -1.536, -10.19, 0, -1.561, -1.561, 0, -1.561, -10.19, 0, 0.487, -10.19, 0, -0.487, -0.487, 0, -0.487, -0.487, 0, -0.487, 0.487, 0, 0.487, -10.19, 0, 0.487, 0.487, 0, -10.19, 0.487, 0, 0.487, -0.487, 0, -0.487, -0.487, 0, -0.487, -0.487, 0, -10.19, 0.487, 0, -10.19, 1.561, 0, 1.561, 2.56, 0, 2.56, -10.19, 0, 2.56, -10.19, 0, 2.56, -10.19, 0, 1.561, 1.561, 0, 1.561, 2.56, 0, -10.19, 2.56, 0, 2.56, 1.561, 0, 1.561, 1.561, 0, 1.561, 1.561, 0, -10.19, 2.56, 0, -10.19, 1.536, -0.049999997, 1.536, 1.561, 0, 1.561, -10.19, 0, 1.561, -10.19, 0, 1.561, -10.19, -0.049999997, 1.536, 1.536, -0.049999997, 1.536, -2.56, 0, -2.56, -1.561, 0, -1.561, -10.19, 0, -1.561, -10.19, 0, -1.561, -10.19, 0, -2.56, -2.56, 0, -2.56, -1.561, 0, -10.19, -1.561, 0, -1.561, -2.56, 0, -2.56, -2.56, 0, -2.56, -2.56, 0, -10.19, -1.561, 0, -10.19, -0.51199996, -0.049999997, -0.51199996, -0.487, 0, -0.487, -10.19, 0, -0.487, -10.19, 0, -0.487, -10.19, -0.049999997, -0.51199996, -0.51199996, -0.049999997, -0.51199996, 0.487, 0, 0.487, 0.51199996, -0.049999997, 0.51199996, -10.19, -0.049999997, 0.51199996, -10.19, -0.049999997, 0.51199996, -10.19, 0, 0.487, 0.487, 0, 0.487, -1.536, -0.049999997, -10.19, -1.536, -0.049999997, -1.536, -1.561, 0, -1.561, -1.561, 0, -1.561, -1.561, 0, -10.19, -1.536, -0.049999997, -10.19, 0.51199996, -0.049999997, -10.19, 0.51199996, -0.049999997, 0.51199996, 0.487, 0, 0.487, 0.487, 0, 0.487, 0.487, 0, -10.19, 0.51199996, -0.049999997, -10.19, 1.561, 0, -10.19, 1.561, 0, 1.561, 1.536, -0.049999997, 1.536, 1.536, -0.049999997, 1.536, 1.536, -0.049999997, -10.19, 1.561, 0, -10.19, -0.487, 0, -10.19, -0.487, 0, -0.487, -0.51199996, -0.049999997, -0.51199996, -0.51199996, -0.049999997, -0.51199996, -0.51199996, -0.049999997, -10.19, -0.487, 0, -10.19, -0.537, 0, -0.537, -0.51199996, -0.049999997, -0.51199996, -10.19, -0.049999997, -0.51199996, -10.19, -0.049999997, -0.51199996, -10.19, 0, -0.537, -0.537, 0, -0.537, -1.5109999, 0, -1.5109999, -0.537, 0, -0.537, -10.19, 0, -0.537, -10.19, 0, -0.537, -10.19, 0, -1.5109999, -1.5109999, 0, -1.5109999, -0.537, 0, -10.19, -0.537, 0, -0.537, -1.5109999, 0, -1.5109999, -1.5109999, 0, -1.5109999, -1.5109999, 0, -10.19, -0.537, 0, -10.19, 1.5109999, 0, 1.5109999, 1.536, -0.049999997, 1.536, -10.19, -0.049999997, 1.536, -10.19, -0.049999997, 1.536, -10.19, 0, 1.5109999, 1.5109999, 0, 1.5109999, -1.536, -0.049999997, -1.536, -1.5109999, 0, -1.5109999, -10.19, 0, -1.5109999, -10.19, 0, -1.5109999, -10.19, -0.049999997, -1.536, -1.536, -0.049999997, -1.536, 0.537, 0, 0.537, 1.5109999, 0, 1.5109999, -10.19, 0, 1.5109999, -10.19, 0, 1.5109999, -10.19, 0, 0.537, 0.537, 0, 0.537, 1.5109999, 0, -10.19, 1.5109999, 0, 1.5109999, 0.537, 0, 0.537, 0.537, 0, 0.537, 0.537, 0, -10.19, 1.5109999, 0, -10.19, 0.51199996, -0.049999997, 0.51199996, 0.537, 0, 0.537, -10.19, 0, 0.537, -10.19, 0, 0.537, -10.19, -0.049999997, 0.51199996, 0.51199996, -0.049999997, 0.51199996, 0.537, 0, -10.19, 0.537, 0, 0.537, 0.51199996, -0.049999997, 0.51199996, 0.51199996, -0.049999997, 0.51199996, 0.51199996, -0.049999997, -10.19, 0.537, 0, -10.19, -1.5109999, 0, -10.19, -1.5109999, 0, -1.5109999, -1.536, -0.049999997, -1.536, -1.536, -0.049999997, -1.536, -1.536, -0.049999997, -10.19, -1.5109999, 0, -10.19, 1.536, -0.049999997, -10.19, 1.536, -0.049999997, 1.536, 1.5109999, 0, 1.5109999, 1.5109999, 0, 1.5109999, 1.5109999, 0, -10.19, 1.536, -0.049999997, -10.19, -0.51199996, -0.049999997, -10.19, -0.51199996, -0.049999997, -0.51199996, -0.537, 0, -0.537, -0.537, 0, -0.537, -0.537, 0, -10.19, -0.51199996, -0.049999997, -10.19, -10.24, 0, -2.56, -10.19, 0, -2.56, -10.19, 0, 2.56, -10.19, 0, 2.56, -10.24, 0, 2.56, -10.24, 0, -2.56, -10.19, -0.049999997, -2.56, -10.19, -0.049999997, 2.56, -10.19, 0, 2.56, -10.19, 0, 2.56, -10.19, 0, -2.56, -10.19, -0.049999997, -2.56, 2.56, 0, -10.24, 2.56, 0, -10.19, -2.56, 0, -10.19, -2.56, 0, -10.19, -2.56, 0, -10.24, 2.56, 0, -10.24, 2.56, -0.049999997, -10.19, -2.56, -0.049999997, -10.19, -2.56, 0, -10.19, -2.56, 0, -10.19, 2.56, 0, -10.19, 2.56, -0.049999997, -10.19)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uuda6"]
+data = PackedVector3Array(-10.24, 6, 2.56, -2.56, 6, 2.56, -2.56, 6, -2.56, -2.56, 6, -2.56, -10.24, 6, -2.56, -10.24, 6, 2.56, 2.56, 6, -2.56, -2.56, 6, -2.56, -2.56, 6, 2.56, -2.56, 6, 2.56, 2.56, 6, 2.56, 2.56, 6, -2.56, 2.56, 6, -10.24, -2.56, 6, -10.24, -2.56, 6, -2.56, -2.56, 6, -2.56, 2.56, 6, -2.56, 2.56, 6, -10.24)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_80bpd"]
+data = PackedVector3Array(2.51, 6, -0.25, 2.51, 0, -0.25, 2.56, 0, -0.25, 2.56, 0, -0.25, 2.56, 6, -0.25, 2.51, 6, -0.25, 2.51, 6, -0.25, 2.51, 6, 0.25, 2.51, 0, 0.25, 2.51, 0, 0.25, 2.51, 0, -0.25, 2.51, 6, -0.25, 2.51, 0, 0.25, 2.51, 6, 0.25, 2.56, 6, 0.25, 2.56, 6, 0.25, 2.56, 0, 0.25, 2.51, 0, 0.25, -2.51, 6, 0.25, -2.51, 0, 0.25, -2.56, 0, 0.25, -2.56, 0, 0.25, -2.56, 6, 0.25, -2.51, 6, 0.25, -2.51, 6, 0.25, -2.51, 6, -0.25, -2.51, 0, -0.25, -2.51, 0, -0.25, -2.51, 0, 0.25, -2.51, 6, 0.25, -2.51, 0, -0.25, -2.51, 6, -0.25, -2.56, 6, -0.25, -2.56, 6, -0.25, -2.56, 0, -0.25, -2.51, 0, -0.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_666pl"]
+data = PackedVector3Array(0.25, 6, 2.51, 0.25, 0, 2.51, 0.25, 0, 2.56, 0.25, 0, 2.56, 0.25, 6, 2.56, 0.25, 6, 2.51, 0.25, 6, 2.51, -0.25, 6, 2.51, -0.25, 0, 2.51, -0.25, 0, 2.51, 0.25, 0, 2.51, 0.25, 6, 2.51, -0.25, 0, 2.51, -0.25, 6, 2.51, -0.25, 6, 2.56, -0.25, 6, 2.56, -0.25, 0, 2.56, -0.25, 0, 2.51, -0.25, 6, -2.51, -0.25, 0, -2.51, -0.25, 0, -2.56, -0.25, 0, -2.56, -0.25, 6, -2.56, -0.25, 6, -2.51, -0.25, 6, -2.51, 0.25, 6, -2.51, 0.25, 0, -2.51, 0.25, 0, -2.51, -0.25, 0, -2.51, -0.25, 6, -2.51, 0.25, 0, -2.51, 0.25, 6, -2.51, 0.25, 6, -2.56, 0.25, 6, -2.56, 0.25, 0, -2.56, 0.25, 0, -2.51)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_daxi6"]
+data = PackedVector3Array(2.56, 6, -10.24, 2.56, 6, -5.37, 2.56, 0, -5.37, 2.56, 0, -5.37, 2.56, 0, -10.24, 2.56, 6, -10.24, -2.56, 0, -5.37, -2.56, 6, -5.37, -2.56, 6, -10.24, -2.56, 6, -10.24, -2.56, 0, -10.24, -2.56, 0, -5.37, -2.56, 6, -2.56, -2.56, 6, -2.6, -2.56, 0, -2.6, -2.56, 0, -2.6, -2.56, 0, -2.56, -2.56, 6, -2.56, -2.56, 0, -4.87, -2.56, 0, -2.6, -2.56, 6, -2.6, -2.56, 6, -2.6, -2.56, 6, -4.87, -2.56, 0, -4.87, -4.87, 0, -2.56, -4.87, 6, -2.56, -2.6, 6, -2.56, -2.6, 6, -2.56, -2.6, 0, -2.56, -4.87, 0, -2.56, -2.6, 0, -2.56, -2.6, 6, -2.56, -2.56, 6, -2.56, -2.56, 6, -2.56, -2.56, 0, -2.56, -2.6, 0, -2.56, 2.56, 0, -4.87, 2.56, 6, -4.87, 2.56, 6, 2.48, 2.56, 6, 2.48, 2.56, 0, 2.48, 2.56, 0, -4.87, 2.56, 0, 2.48, 2.56, 6, 2.48, 2.56, 6, 2.56, 2.56, 6, 2.56, 2.56, 0, 2.56, 2.56, 0, 2.48, -10.24, 6, -2.56, -5.37, 6, -2.56, -5.37, 0, -2.56, -5.37, 0, -2.56, -10.24, 0, -2.56, -10.24, 6, -2.56, -5.37, 0, 2.56, -5.37, 6, 2.56, -10.24, 6, 2.56, -10.24, 6, 2.56, -10.24, 0, 2.56, -5.37, 0, 2.56, 2.56, 0, 2.56, 2.56, 6, 2.56, 2.48, 6, 2.56, 2.48, 6, 2.56, 2.48, 0, 2.56, 2.56, 0, 2.56, 2.48, 0, 2.56, 2.48, 6, 2.56, -4.87, 6, 2.56, -4.87, 6, 2.56, -4.87, 0, 2.56, 2.48, 0, 2.56)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80bpd"]
+size = Vector3(20.8, 1, 20.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5ktf"]
+size = Vector3(14.4067, 7.26694, 14.2134)
+
+[node name="ez_hall_curve" unique_id=854610922 instance=ExtResource("1_g6bdu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1978206385]
+transform = Transform3D(-1.016, 0, -8.88215e-08, 0, 1.016, 0, 8.88215e-08, 0, -1.016, 0, 0, 0)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=857317886]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_yrsfw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=216064604]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_uuda6")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=1670129616]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, 5.684342e-14, 0, -5.12)
+shape = SubResource("ConcavePolygonShape3D_80bpd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="3" unique_id=519505323]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, -5.12, 0, -5.684342e-14)
+shape = SubResource("ConcavePolygonShape3D_666pl")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4" unique_id=1677956588]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_daxi6")
+
+[node name="ProjectileSettings" type="Node" parent="StaticBody3D" index="5" unique_id=170982036]
+script = ExtResource("2_80bpd")
+Medium = ExtResource("3_666pl")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="6" unique_id=952396396]
+transform = Transform3D(1, 0, -2.1316282e-14, 0, 1, 0, 2.1316282e-14, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_80bpd")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1" unique_id=335500055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+size = Vector3(23, 9, 23)
+box_projection = true
+cull_mask = 1048527
+ambient_mode = 0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2" unique_id=1283641850]
+occluder = ExtResource("2_eqh1j")
+bake_mask = 4294966280
+
+[node name="ZoneArea" type="Area3D" parent="." index="3" unique_id=226978466]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("3_0pvj0")
+zone = 3
+metadata/_custom_type_script = "uid://cskyg1sfrd3eo"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneArea" index="0" unique_id=1174930542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29666, 3.01964, -3.39331)
+shape = SubResource("BoxShape3D_u5ktf")
+
+[node name="Doors" type="Node3D" parent="." index="4" unique_id=1552253549]
+transform = Transform3D(1.016, 0, 0, 0, 1.016, 0, 0, 0, 1.016, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Doors" index="0" unique_id=419539950 groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.24, 0, 0)
+gizmo_extents = 5.0
+metadata/optional = true
+metadata/door_type = 3
+
+[node name="Marker3D2" type="Marker3D" parent="Doors" index="1" unique_id=857569508 groups=["map_door"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.24, 0, 0)
+visible = false
+gizmo_extents = 5.0
+metadata/optional = true
+metadata/door_type = 3
+
+[node name="Marker3D3" type="Marker3D" parent="Doors" index="2" unique_id=1408613149 groups=["map_door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.24)
+visible = false
+gizmo_extents = 5.0
+metadata/optional = true
+metadata/door_type = 3
+
+[node name="Marker3D4" type="Marker3D" parent="Doors" index="3" unique_id=1767878041 groups=["map_door"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 10.24)
+gizmo_extents = 5.0
+metadata/optional = true
+metadata/door_type = 3
+
+[node name="Props" type="Node3D" parent="." index="5" unique_id=1135317271]
+
+[node name="PropSpawnpoint" type="Marker3D" parent="Props" index="0" unique_id=1082124652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664957, 5.62117)
+script = ExtResource("4_2xvrt")
+SpawnGroup = ExtResource("5_t1lw5")
+metadata/_custom_type_script = "uid://dwjw2x1hogp7b"
+
+[node name="hall_curve_ez" parent="." index="6" unique_id=1073839507]
+transform = Transform3D(-1.016, 0, -8.88215e-08, 0, 1.016, 0, 8.88215e-08, 0, -1.016, 0, 0, 0)
+layers = 9
+
+[node name="floor" parent="hall_curve_ez" index="0" unique_id=364737582]
+layers = 9
+
+[node name="ceiling" parent="hall_curve_ez" index="1" unique_id=551552468]
+layers = 9
+
+[node name="beam_2" parent="hall_curve_ez" index="2" unique_id=327216885]
+layers = 9
+
+[node name="Spot_Base2" parent="." index="7" unique_id=2103085160 instance=ExtResource("6_7fn3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1, 0)
+BakeMode = 0
+
+[node name="Highbay_Start" parent="Spot_Base2/Spot_Base" index="0" unique_id=245959838 instance=ExtResource("7_kcigo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09491873, 0)
+BakeMode = 0
+Color = Color(0.8666667, 0.9098039, 1, 1)
+LightSize = 0.1
+PrimaryEnergy = 1.0
+SecondaryEnergy = 0.1
+PrimarySpotLightAngle = 60.0
+SecondarySpotLightAngle = 60.0
+
+[node name="SpotLight3D" parent="Spot_Base2/Spot_Base/Highbay_Start" index="0" unique_id=1440754465]
+light_color = Color(0.8666667, 0.9098039, 1, 1)
+light_energy = 1.0
+light_size = 0.1
+light_bake_mode = 0
+spot_angle = 60.0
+
+[node name="OmniLight3D" parent="Spot_Base2/Spot_Base/Highbay_Start/SpotLight3D" index="0" unique_id=178133412]
+light_color = Color(0.8666667, 0.9098039, 1, 1)
+light_energy = 0.1
+light_bake_mode = 0
+
+[node name="Highbay_WireStart" parent="Spot_Base2/Spot_Base/Highbay_Start" index="2" unique_id=1573229176]
+visible = false
+
+[node name="Spot_Rotate" parent="Spot_Base2/Spot_Base" index="1"]
+visible = false
+
+[node name="SpotLight3D" parent="Spot_Base2/Spot_Base/Spot_Rotate" index="0"]
+light_bake_mode = 0
+distance_fade_shadow = 13.0
+
+[node name="OmniLight3D" parent="Spot_Base2/Spot_Base/Spot_Rotate/SpotLight3D" index="0"]
+light_bake_mode = 0
+distance_fade_shadow = 8.0
+
+[node name="LightmapGI" type="LightmapGI" parent="." index="8" unique_id=1830570060]
+visible = false
+quality = 3
+supersampling = true
+bounces = 16
+bounce_indirect_energy = 2.0
+directional = true
+interior = true
+use_denoiser = false
+environment_mode = 0
+light_data = ExtResource("9_yrsfw")
+
+[node name="Socket" parent="." index="9" unique_id=251667558 instance=ExtResource("9_uuda6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6, 0.5, 4.25)
+
+[node name="Socket2" parent="." index="10" unique_id=1217839020 instance=ExtResource("9_uuda6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.25, 0.5, 2.6)
+
+[editable path="Spot_Base2"]
+[editable path="Spot_Base2/Spot_Base/Highbay_Start"]

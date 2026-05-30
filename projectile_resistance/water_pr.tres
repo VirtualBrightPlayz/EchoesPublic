@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectileResistanceMedium" format=3 uid="uid://dbmrtw02pe4ag"]
+
+[ext_resource type="Script" uid="uid://b3qidhfd7iu0l" path="res://scripts/projectiles/ProjectileResistanceMedium.cs" id="1_03md5"]
+
+[resource]
+script = ExtResource("1_03md5")
+SpeedMultiplier = 0.1
+DebugName = "Water"
+DebugColor = Color(0.94902, 0, 1, 1)
+metadata/_custom_type_script = "uid://b3qidhfd7iu0l"

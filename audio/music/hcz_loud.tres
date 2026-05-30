@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://81gioqpt0bbi"]
+
+[ext_resource type="AudioStream" uid="uid://coli2ubbc36is" path="res://audio/scpcb/HeavyContainment.ogg" id="1_wopv5"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_dg2tu"]
+
+[resource]
+script = ExtResource("2_dg2tu")
+audio = ExtResource("1_wopv5")
+volumeDb = 0.0
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

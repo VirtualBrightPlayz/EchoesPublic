@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://c53ate6oesbul"]
+
+[ext_resource type="Shader" uid="uid://befhbmd785xxu" path="res://shaders/sz/surface_terrain.gdshader" id="1_eaw63"]
+[ext_resource type="Texture2D" uid="uid://ch52fp2khhusu" path="res://models/rooms/sz/red_sand_diff_2k.jpg" id="2_n3d4u"]
+[ext_resource type="Texture2D" uid="uid://0lufycasswle" path="res://models/rooms/sz/red_sand_nor_gl_2k.exr" id="3_kc42j"]
+[ext_resource type="Texture2D" uid="uid://c33h2fvebwi14" path="res://models/rooms/sz/red_sand_rough_2k.exr" id="4_62oha"]
+[ext_resource type="Texture2D" uid="uid://m24qnmffxkij" path="res://models/rooms/sz/Rock029_2K-JPG_AmbientOcclusion.jpg" id="5_eooh3"]
+[ext_resource type="Texture2D" uid="uid://di8csaacdsbba" path="res://models/rooms/sz/Rock029_2K-JPG_Color.jpg" id="6_an463"]
+[ext_resource type="Texture2D" uid="uid://bkw0a743rak4d" path="res://models/rooms/sz/Rock029_2K-JPG_NormalGL.jpg" id="7_4w4ul"]
+[ext_resource type="Texture2D" uid="uid://dcoo5u2tiy55x" path="res://models/rooms/sz/Rock029_2K-JPG_Roughness.jpg" id="8_fy5bv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_eaw63")
+shader_parameter/up = Vector3(0, 1, 0)
+shader_parameter/uv_scale = Vector2(2, 2)
+shader_parameter/power = 3.0
+shader_parameter/main_color = ExtResource("2_n3d4u")
+shader_parameter/main_roughness = ExtResource("4_62oha")
+shader_parameter/main_normal = ExtResource("3_kc42j")
+shader_parameter/slope_color = ExtResource("6_an463")
+shader_parameter/slope_roughness = ExtResource("8_fy5bv")
+shader_parameter/slope_normal = ExtResource("7_4w4ul")
+shader_parameter/slope_ao = ExtResource("5_eooh3")

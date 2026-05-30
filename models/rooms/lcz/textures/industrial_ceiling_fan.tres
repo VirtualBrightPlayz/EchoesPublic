@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://clw1b5gufj4qt"]
+
+[ext_resource type="Texture2D" uid="uid://csuf3y62n3qv6" path="res://models/rooms/lcz/textures/T_industrialceilingfan.png" id="1_ugrc1"]
+[ext_resource type="Texture2D" uid="uid://b0y8vk6bd73aj" path="res://models/rooms/lcz/textures/N_industrialceilingfan.png" id="2_sik1h"]
+[ext_resource type="Texture2D" uid="uid://rncjrlh6xack" path="res://models/rooms/lcz/textures/ORM_industrialceilingfan.png" id="3_r7m3j"]
+
+[resource]
+albedo_texture = ExtResource("1_ugrc1")
+orm_texture = ExtResource("3_r7m3j")
+normal_enabled = true
+normal_texture = ExtResource("2_sik1h")

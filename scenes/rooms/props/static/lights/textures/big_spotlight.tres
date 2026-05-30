@@ -1,0 +1,19 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://c1iuqpx5afwc4"]
+
+[ext_resource type="Texture2D" uid="uid://m4y3rtpxapqk" path="res://scenes/rooms/props/static/lights/textures/ORM_Light_Big_Spotlight.png" id="1_kqrl8"]
+[ext_resource type="Texture2D" uid="uid://biirj0nwrtfo5" path="res://scenes/rooms/props/static/lights/textures/T_Light_Big_Spotlight.png" id="1_nayeu"]
+[ext_resource type="Texture2D" uid="uid://err8n7owbg8f" path="res://scenes/rooms/props/static/lights/textures/E_Light_Big_Spotlight.png" id="2_hulom"]
+[ext_resource type="Texture2D" uid="uid://dwrf8iocnktky" path="res://scenes/rooms/props/static/lights/textures/N_Light_Big_Spotlight.png" id="3_parwy"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_nayeu")
+orm_texture = ExtResource("1_kqrl8")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_hulom")
+normal_enabled = true
+normal_texture = ExtResource("3_parwy")

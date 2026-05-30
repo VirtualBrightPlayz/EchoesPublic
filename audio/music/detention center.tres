@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicClip" format=3 uid="uid://bmxgpoj1xwg2s"]
+
+[ext_resource type="AudioStream" uid="uid://c407u7g757et1" path="res://audio/music/SCP Echoes OST - Detention Center.ogg" id="1_3g14u"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_qu5ck"]
+
+[resource]
+script = ExtResource("2_qu5ck")
+audio = ExtResource("1_3g14u")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

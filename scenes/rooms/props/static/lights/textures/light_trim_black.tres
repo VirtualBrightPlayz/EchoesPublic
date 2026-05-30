@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cat65mqxj5bcu"]
+
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_furos"]
+[ext_resource type="Texture2D" uid="uid://dan8yoxu6vqn6" path="res://scenes/rooms/props/static/lights/textures/T_light_trim.png" id="2_hxdja"]
+[ext_resource type="Texture2D" uid="uid://4jutabuwwo0a" path="res://scenes/rooms/props/static/lights/textures/E_light_trim.png" id="3_rnibo"]
+[ext_resource type="Texture2D" uid="uid://q4le1smuwgpp" path="res://scenes/rooms/props/static/lights/textures/User0_light_trim.png" id="4_3g0py"]
+[ext_resource type="Texture2D" uid="uid://cnxq238uth428" path="res://scenes/rooms/props/static/lights/textures/N_light_trim.png" id="5_5lleq"]
+[ext_resource type="Texture2D" uid="uid://c1bc2883x2pt3" path="res://scenes/rooms/props/static/lights/textures/ORM_light_trim.png" id="6_l0twl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_furos")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_emission = ExtResource("3_rnibo")
+shader_parameter/emission = Color(1.353256, 1.353256, 1.353256, 1)
+shader_parameter/texture_albedo = ExtResource("2_hxdja")
+shader_parameter/mask_color = Color(0.18, 0.18, 0.18, 1)
+shader_parameter/texture_mask = ExtResource("4_3g0py")
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/texture_orm = ExtResource("6_l0twl")
+shader_parameter/texture_normal = ExtResource("5_5lleq")
+shader_parameter/normal_scale = 1.000000807500001
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

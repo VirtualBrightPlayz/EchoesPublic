@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://c8rly5o2ugl5w"]
+
+[ext_resource type="Texture2D" uid="uid://d348dpoulmsyq" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Catwalk Tile/Tile_HCZCatwalk_Albedo.png" id="1_je0uu"]
+[ext_resource type="Texture2D" uid="uid://b65kmswj18mvm" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Catwalk Tile/Tile_HCZCatwalk_Normal.png" id="2_q3peb"]
+[ext_resource type="Texture2D" uid="uid://bw8ex4itoum5t" path="res://models/rooms/WholeLotaRooms/HCZ/newSL/nSL Textures/HCZ Catwalk Tile/Tile_HCZCatwalk_Mask_ORM.png" id="3_55xgr"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.25
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_je0uu")
+orm_texture = ExtResource("3_55xgr")
+normal_enabled = true
+normal_texture = ExtResource("2_q3peb")

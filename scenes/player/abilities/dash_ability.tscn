@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cnss60lv6ugvh"]
+
+[ext_resource type="Script" uid="uid://p30wgrq4o3pi" path="res://scripts/player/controllers/ability/457/BackDraftAbility.cs" id="1_cs7ax"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cw8m8"]
+
+[node name="BackDraftAbility" type="Node" unique_id=143244825 node_paths=PackedStringArray("cast")]
+script = ExtResource("1_cs7ax")
+cast = NodePath("ShapeCast3D")
+metadata/_custom_type_script = "uid://p30wgrq4o3pi"
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=534875245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+enabled = false
+shape = SubResource("CylinderShape3D_cw8m8")
+target_position = Vector3(0, 0, -1)
+collision_mask = 57

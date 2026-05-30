@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettings" load_steps=5 format=3 uid="uid://b7suh2jkk47fx"]
+
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_xqev2"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_q4gr5"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="3_bu473"]
+[ext_resource type="PackedScene" uid="uid://y7ymy12rfx8h" path="res://scenes/rooms/hcz/hcz_Hall_Tesla_Var1.tscn" id="3_xqev2"]
+
+[resource]
+script = ExtResource("3_bu473")
+RoomScenes = Array[PackedScene]([ExtResource("3_xqev2")])
+MaximumInstances = 2
+Connections = 10

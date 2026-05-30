@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettingsCollection" load_steps=15 format=3 uid="uid://d3ier6beqrey3"]
+
+[ext_resource type="Resource" uid="uid://fti6c1cqcxei" path="res://rooms/hcz/Room1.tres" id="1_rmpjg"]
+[ext_resource type="Resource" uid="uid://crx331k33c61e" path="res://rooms/hcz/Room2.tres" id="2_ujfo2"]
+[ext_resource type="Resource" uid="uid://quo8twb21erl" path="res://rooms/hcz/Room2c.tres" id="3_cxov2"]
+[ext_resource type="Resource" uid="uid://ux0brly1a370" path="res://rooms/hcz/Room3.tres" id="4_w3rlt"]
+[ext_resource type="Resource" uid="uid://celqig6077wn2" path="res://rooms/hcz/Room4.tres" id="5_2r38d"]
+[ext_resource type="Resource" uid="uid://ci2jusjgm6375" path="res://rooms/Empty.tres" id="6_862rm"]
+[ext_resource type="Resource" uid="uid://dsbmeoivspdns" path="res://rooms/hcz/elevator.tres" id="9_663n1"]
+[ext_resource type="Resource" uid="uid://cajhw2xcfwns1" path="res://rooms/hcz/106.tres" id="10_40ius"]
+[ext_resource type="Resource" uid="uid://se2svkux18cp" path="res://rooms/hcz/elevator2.tres" id="10_j5k4i"]
+[ext_resource type="Resource" uid="uid://dai5y0jacbxmq" path="res://rooms/hcz/nuke.tres" id="10_lojcw"]
+[ext_resource type="Resource" uid="uid://b7suh2jkk47fx" path="res://rooms/hcz/tesla.tres" id="11_o4x6o"]
+[ext_resource type="Script" uid="uid://k171oa3431sc" path="res://scripts/layout_generator/RoomGenerationSettingsCollection.cs" id="12_d18xh"]
+[ext_resource type="Resource" uid="uid://pfcmexbt3eef" path="res://rooms/hcz/457.tres" id="12_gdaea"]
+[ext_resource type="Resource" uid="uid://o1jqcntrnkbj" path="res://rooms/hcz/049.tres" id="13_jj178"]
+
+[resource]
+script = ExtResource("12_d18xh")
+Collection = Array[Resource]([ExtResource("6_862rm"), ExtResource("1_rmpjg"), ExtResource("2_ujfo2"), ExtResource("3_cxov2"), ExtResource("4_w3rlt"), ExtResource("5_2r38d"), ExtResource("9_663n1"), ExtResource("10_j5k4i"), ExtResource("11_o4x6o"), ExtResource("12_gdaea"), ExtResource("13_jj178"), ExtResource("10_40ius"), ExtResource("10_lojcw")])

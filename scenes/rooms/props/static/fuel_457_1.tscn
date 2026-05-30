@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://fc1q46c7i83b"]
+
+[ext_resource type="Script" uid="uid://dkppogjfat8n" path="res://scripts/map/Fuel457.cs" id="1_xpa4k"]
+[ext_resource type="PackedScene" uid="uid://1n4ooig5odnu" path="res://models/rooms/gas_can/worn_jerrycan_glb.glb" id="2_geaif"]
+[ext_resource type="PackedScene" uid="uid://db8pmya1bga5e" path="res://effects/scenes/fire_noscript.tscn" id="3_fnyqf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5u2fx"]
+size = Vector3(0.179932, 0.482849, 0.365479)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_q455b"]
+properties/0/path = NodePath(".:MaxFuelAmount")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:FuelAmount")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:FuelCooldown")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_heo6u"]
+radius = 6.5
+
+[node name="Fuel457_1" type="StaticBody3D" unique_id=284171842 node_paths=PackedStringArray("marker", "fire", "area")]
+collision_layer = 257
+collision_mask = 257
+script = ExtResource("1_xpa4k")
+marker = NodePath("CollisionShape3D/Marker3D")
+FuelCooldown = 30.0
+fire = NodePath("Fire")
+area = NodePath("Area3D")
+DamageAmount = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1216387059]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.414, 0)
+shape = SubResource("BoxShape3D_5u2fx")
+
+[node name="worn_jerrycan_glb" parent="CollisionShape3D" unique_id=1303465931 instance=ExtResource("2_geaif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.206696, 0)
+
+[node name="Marker3D" type="Marker3D" parent="CollisionShape3D" unique_id=1897656942]
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=1295939989]
+replication_interval = 0.5
+delta_interval = 0.5
+replication_config = SubResource("SceneReplicationConfig_q455b")
+
+[node name="Fire" parent="." unique_id=154173325 instance=ExtResource("3_fnyqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.513807, 0)
+visible = false
+
+[node name="OmniLight3D" parent="Fire" index="3" unique_id=2106111463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40747, 0)
+light_energy = 2.069256
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1803887509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.421149, 0)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1241741075]
+shape = SubResource("SphereShape3D_heo6u")
+
+[editable path="Fire"]
+[editable path="Fire/FireParticles"]

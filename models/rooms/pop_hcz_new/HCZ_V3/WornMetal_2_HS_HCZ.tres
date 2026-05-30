@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://ti2mo8w56gf0"]
+
+[ext_resource type="Texture2D" uid="uid://njqb68xvu2sw" path="res://models/rooms/pop_hcz_new/HCZ_V3/T_BlackWornMetal_2_HotSpot.png" id="1_8nplp"]
+[ext_resource type="Texture2D" uid="uid://bta0lm3yu2px0" path="res://models/rooms/pop_hcz_new/HCZ_V3/N_BlackWornMetal_2_HotSpot.png" id="2_rpehr"]
+[ext_resource type="Texture2D" uid="uid://cr41adnu7nf4w" path="res://models/rooms/pop_hcz_new/HCZ_V3/ORM_BlackWornMetal_2_HotSpot.png" id="3_7yvor"]
+
+[resource]
+albedo_texture = ExtResource("1_8nplp")
+orm_texture = ExtResource("3_7yvor")
+normal_enabled = true
+normal_texture = ExtResource("2_rpehr")

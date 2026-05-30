@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://dtoeqovruvnwx"]
+
+[ext_resource type="Script" uid="uid://c1trd2id4adti" path="res://scripts/player/role_ui/KeycardViewmodel.cs" id="1_d885r"]
+[ext_resource type="AudioStream" uid="uid://dswhc7awi6e1b" path="res://audio/scpcb/doors/KeycardUse1.ogg" id="2_1ps8u"]
+[ext_resource type="AudioStream" uid="uid://v11gbpa0lkvr" path="res://audio/scpcb/doors/KeycardUse.wav" id="3_8ubyu"]
+[ext_resource type="PackedScene" uid="uid://dakwkh1gtjieh" path="res://models/main/items/keycard_old/keycardanimsold.glb" id="4_adbds"]
+[ext_resource type="Material" uid="uid://bmjrrob7hinpq" path="res://models/main/human/class_d/hands_pov.tres" id="5_5g8il"]
+[ext_resource type="PackedScene" uid="uid://cr2wbv4q2mmid" path="res://models/main/items/keycard_old/keycard.glb" id="6_1a0d1"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="7_634hx"]
+[ext_resource type="PackedScene" uid="uid://ckso6mvmsr7tb" path="res://models/main/items/ci_keycard/ChaosCardVirt.fbx" id="8_5um24"]
+[ext_resource type="Texture2D" uid="uid://b1uuw01b50n3a" path="res://models/main/items/ci_keycard/T_ChaosCard.png" id="9_2cijk"]
+[ext_resource type="Texture2D" uid="uid://cdjjj87lvt4qo" path="res://models/main/items/ci_keycard/ORM_ChaosCard.png" id="10_7s0oc"]
+[ext_resource type="Texture2D" uid="uid://drrg4iposl5jp" path="res://models/main/items/ci_keycard/N_ChaosCard.png" id="11_of6c2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7kkk"]
+render_priority = 0
+shader = ExtResource("7_634hx")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d4tvw"]
+render_priority = 0
+shader = ExtResource("7_634hx")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("9_2cijk")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("10_7s0oc")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("10_7s0oc")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("11_of6c2")
+shader_parameter/normal_scale = 0.250001
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u7kkk"]
+animation = &"Equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebyem"]
+animation = &"Idle"
+use_custom_timeline = true
+timeline_length = 30.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d4tvw"]
+animation = &"Inspect"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yeao2"]
+animation = &"Use"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7y7lq"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ux12y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sw85l"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pirk5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r5i7i"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o6vsu"]
+states/Equip/node = SubResource("AnimationNodeAnimation_u7kkk")
+states/Equip/position = Vector2(341, 57)
+states/Idle/node = SubResource("AnimationNodeAnimation_ebyem")
+states/Idle/position = Vector2(548, 11)
+states/Inspect/node = SubResource("AnimationNodeAnimation_d4tvw")
+states/Inspect/position = Vector2(683, 11)
+states/Use/node = SubResource("AnimationNodeAnimation_yeao2")
+states/Use/position = Vector2(536, 114)
+transitions = ["Use", "Idle", SubResource("AnimationNodeStateMachineTransition_7y7lq"), "Start", "Equip", SubResource("AnimationNodeStateMachineTransition_ux12y"), "Equip", "Idle", SubResource("AnimationNodeStateMachineTransition_sw85l"), "Idle", "Inspect", SubResource("AnimationNodeStateMachineTransition_pirk5"), "Inspect", "Idle", SubResource("AnimationNodeStateMachineTransition_r5i7i")]
+graph_offset = Vector2(38, -27)
+
+[node name="ViewmodelKeycardCI" type="Node3D" unique_id=1263461921 node_paths=PackedStringArray("root", "viewCam", "mesh", "tree", "audio")]
+script = ExtResource("1_d885r")
+root = NodePath("keycard anims")
+viewCam = NodePath("keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D/Camera3D")
+mesh = NodePath("keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2/keycard/Keycard")
+tree = NodePath("AnimationTree3")
+usePathV = "Use"
+usePathH = "Use"
+startPathV = "Equip"
+startPathH = "Equip"
+audio = NodePath("AudioStreamPlayer3D")
+success = ExtResource("2_1ps8u")
+fail = ExtResource("3_8ubyu")
+
+[node name="keycard anims" parent="." unique_id=1579311619 instance=ExtResource("4_adbds")]
+top_level = true
+
+[node name="Skeleton3D" parent="keycard anims/Skel_Arm" parent_id_path=PackedInt32Array(1579311619, 284883611) index="0" unique_id=1677421732]
+bones/1/position = Vector3(-0.18575828, 1.3485885, -0.05155513)
+bones/1/rotation = Quaternion(0.69504225, -0.2048874, -0.33075497, 0.60459787)
+bones/2/rotation = Quaternion(-0.30928972, -0.0250055, 0.37123445, 0.8751569)
+bones/3/rotation = Quaternion(-0.06953019, -0.15069033, 0.07201409, 0.9834999)
+bones/4/position = Vector3(-0.029334178, 0.14741741, -0.009534571)
+bones/4/rotation = Quaternion(0.94333696, 0.031797323, -0.32480595, 0.0600463)
+bones/5/rotation = Quaternion(0.0776723, -0.48208857, 0.10370715, 0.8664887)
+bones/6/rotation = Quaternion(-0.049999543, -0.025536861, 0.05659767, 0.9968173)
+bones/7/rotation = Quaternion(-0.35284948, -1.8293529e-06, -2.297628e-06, 0.9356802)
+bones/8/rotation = Quaternion(0.010912529, 0.041880805, 0.0111861015, 0.9990004)
+bones/9/rotation = Quaternion(-0.06126322, -0.006094109, 0.10638742, 0.992417)
+bones/10/rotation = Quaternion(-0.041776486, 0.011804109, -0.018852528, 0.99887943)
+bones/12/rotation = Quaternion(0.25746182, 0.029153034, -0.07988553, 0.96253926)
+bones/13/rotation = Quaternion(-0.5780482, -0.054739483, 0.024488544, 0.81379616)
+bones/14/rotation = Quaternion(-0.7545287, -0.010251763, 0.0014894827, 0.65618527)
+bones/15/rotation = Quaternion(-0.92875767, 1.7573805e-07, 9.705225e-08, 0.37068745)
+bones/16/position = Vector3(0.019329155, 0.060730506, 0.009565297)
+bones/16/rotation = Quaternion(0.14905241, 0.12350134, -0.17516002, 0.9653236)
+bones/17/rotation = Quaternion(-0.5867913, -0.03556977, 0.061653607, 0.8066038)
+bones/18/rotation = Quaternion(-0.8300076, -0.0017181238, -0.022439588, 0.55729777)
+bones/19/rotation = Quaternion(-0.92793036, -0.0045995195, 0.0076814513, 0.37264612)
+bones/20/rotation = Quaternion(0.101985335, 0.119550794, -0.1269269, 0.9793857)
+bones/21/rotation = Quaternion(-0.60250336, -0.04636496, -0.0078252815, 0.79673)
+bones/22/rotation = Quaternion(-0.7358803, -0.0019718492, 0.006882805, 0.67707384)
+bones/23/rotation = Quaternion(-0.8404229, 0.04500164, -0.020831045, 0.53965765)
+bones/24/rotation = Quaternion(-0.0024688279, -0.008471003, -0.033070534, 0.99941415)
+bones/25/rotation = Quaternion(4.0529054e-07, -0.041488074, -5.864017e-08, 0.9991391)
+bones/26/rotation = Quaternion(0.54135597, 0.50213504, 0.45531774, -0.49747366)
+bones/51/rotation = Quaternion(3.530151e-10, 0.9999891, -0.0046758275, -7.549708e-08)
+
+[node name="Arm" parent="keycard anims/Skel_Arm/Skeleton3D" index="0" unique_id=463079854]
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 2
+instance_shader_parameters/fov = 45.0
+surface_material_override/0 = ExtResource("5_5g8il")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="keycard anims/Skel_Arm/Skeleton3D" index="1" unique_id=475254241]
+transform = Transform3D(-1, -1.6653343e-16, -1.5099579e-07, 9.65894e-15, 0.9999997, -6.3329935e-08, 1.509958e-07, -6.426126e-08, -0.9999999, 0, 1.6489347, 0.112823926)
+bone_name = "Cam"
+bone_idx = 51
+
+[node name="Camera3D" type="Camera3D" parent="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D" unique_id=1399585313]
+fov = 45.0
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="keycard anims/Skel_Arm/Skeleton3D" index="2" unique_id=1875968195]
+transform = Transform3D(0.91628903, -0.0743593, 0.39355403, -0.22666815, -0.9063893, 0.35648218, 0.33020544, -0.41584694, -0.8473693, -0.15308352, 1.6305517, 0.43275914)
+bone_name = "R_Item"
+bone_idx = 4
+
+[node name="keycard" parent="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2" unique_id=159924696 instance=ExtResource("6_1a0d1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="Keycard" parent="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2/keycard" index="0" unique_id=124909996]
+visible = false
+cast_shadow = 0
+ignore_occlusion_culling = true
+gi_mode = 0
+instance_shader_parameters/fov = 45.0
+surface_material_override/0 = SubResource("ShaderMaterial_u7kkk")
+
+[node name="ChaosCardVirt" parent="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2" unique_id=1588128528 instance=ExtResource("8_5um24")]
+transform = Transform3D(-0.04, 3.49691e-09, 0, 1.52855e-16, 1.74846e-09, 0.04, 3.49691e-09, 0.04, -1.74846e-09, 6.10999e-10, -2.16041e-10, 0.00528452)
+
+[node name="ChaosCard" parent="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2/ChaosCardVirt" index="0" unique_id=1161961234]
+cast_shadow = 0
+gi_mode = 2
+instance_shader_parameters/fov = 45.0
+surface_material_override/0 = SubResource("ShaderMaterial_d4tvw")
+
+[node name="Keycard Simple" parent="keycard anims" index="1" unique_id=1700037609]
+visible = false
+
+[node name="AnimationPlayer" parent="keycard anims" index="2" unique_id=1451733441]
+deterministic = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1618846808]
+attenuation_model = 3
+panning_strength = 0.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="AnimationTree3" type="AnimationTree" parent="." unique_id=1427825844]
+root_node = NodePath("../keycard anims")
+tree_root = SubResource("AnimationNodeStateMachine_o6vsu")
+anim_player = NodePath("../keycard anims/AnimationPlayer")
+
+[editable path="keycard anims"]
+[editable path="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2/keycard"]
+[editable path="keycard anims/Skel_Arm/Skeleton3D/BoneAttachment3D2/ChaosCardVirt"]

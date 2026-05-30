@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://c0bbpstm2ic72"]
+
+[ext_resource type="Script" uid="uid://gbx5cqsanacv" path="res://scripts/map/Door.cs" id="1_3yisl"]
+[ext_resource type="AudioStream" uid="uid://d2vuymiq01atd" path="res://audio/scpcb/doors/LeverFlip.ogg" id="2_x5gk0"]
+[ext_resource type="Script" uid="uid://m6uxe7omjc4a" path="res://scripts/map/DoorButton.cs" id="3_ac80u"]
+[ext_resource type="AudioStream" uid="uid://c0fwwfwupmgr8" path="res://audio/scpcb/doors/Button2.ogg" id="3_bflgt"]
+[ext_resource type="Material" uid="uid://dqke0rp7v5tum" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/swipe_card.tres" id="4_x5gk0"]
+[ext_resource type="Material" uid="uid://6kupth2rwv37" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/open_icon.tres" id="5_bflgt"]
+[ext_resource type="Material" uid="uid://duyuoegeasitq" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/PleaseHold_icon.tres" id="6_bvfmf"]
+[ext_resource type="Material" uid="uid://cgg7hyvnn25ko" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Error_icon.tres" id="7_48cfp"]
+[ext_resource type="Material" uid="uid://dd0nvjy5rkibs" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/InvalidInput_icon.tres" id="8_37ep7"]
+[ext_resource type="PackedScene" uid="uid://cxk8xuagjsewv" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/SafeHandle_001.fbx" id="9_wcnk4"]
+[ext_resource type="PackedScene" uid="uid://bp1o1nv7ddhgv" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Safe_Door_001.fbx" id="10_strq5"]
+[ext_resource type="PackedScene" uid="uid://b88xpkexs5c75" path="res://models/rooms/pop_hcz_new/Pop_Props/Safe/Safe_Base_001.fbx" id="11_dkgnm"]
+[ext_resource type="Script" uid="uid://dv0d6ryduyre0" path="res://scripts/projectiles/ProjectileSettings.cs" id="11_qo101"]
+[ext_resource type="Resource" uid="uid://dsqjeet0d5d3i" path="res://projectile_resistance/metal_pr.tres" id="12_ac80u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wfay1"]
+size = Vector3(0.087371826, 1, 0.97210693)
+
+[sub_resource type="Animation" id="Animation_k3uuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xh0ih"]
+resource_name = "closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wfay1"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k3uuw"]
+_data = {
+&"RESET": SubResource("Animation_k3uuw"),
+&"closed": SubResource("Animation_xh0ih"),
+&"open": SubResource("Animation_wfay1")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x5gk0"]
+size = Vector3(1, 1, 0.05078125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bflgt"]
+size = Vector3(1, 1, 0.05078125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvfmf"]
+size = Vector3(1, 1.0023193, 0.05078125)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l6qbi"]
+properties/0/path = NodePath(".:isMoving")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:isOpen")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:isLocked")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="Safe_BP" type="Node3D" unique_id=1890424006 node_paths=PackedStringArray("animPlayers", "audio", "audioNear")]
+script = ExtResource("1_3yisl")
+animPlayers = [NodePath("SafeDoor/AnimationPlayer")]
+closeAnim = &"closed"
+audio = NodePath("SafeDoor/Audio")
+audioNear = NodePath("SafeDoor/AudioNear")
+openSounds = [ExtResource("2_x5gk0")]
+closeSounds = [ExtResource("2_x5gk0")]
+failSounds = [ExtResource("3_bflgt")]
+
+[node name="SafeDoor" type="StaticBody3D" parent="." unique_id=2017904366 node_paths=PackedStringArray("otherMesh")]
+collision_layer = 261
+collision_mask = 263
+script = ExtResource("3_ac80u")
+target = NodePath("..")
+otherMesh = NodePath("Safe_Door_001/Safe_Door_001")
+otherMaterials = [ExtResource("4_x5gk0"), ExtResource("5_bflgt"), ExtResource("6_bvfmf"), ExtResource("7_48cfp"), ExtResource("8_37ep7")]
+otherMaterialIndex = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeDoor" unique_id=1988960491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013538837, 0, -0.44760132)
+shape = SubResource("BoxShape3D_wfay1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SafeDoor" unique_id=1991584774]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_k3uuw")
+
+[node name="SafeHandle_001" parent="SafeDoor" unique_id=134095456 instance=ExtResource("9_wcnk4")]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, -0.4750018, -0.6, -0.4499998)
+
+[node name="Safe_Door_001" parent="SafeDoor" unique_id=1832603591 instance=ExtResource("10_strq5")]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, -0.4750018, -0.6, -0.45000005)
+
+[node name="Safe_Door_001" parent="SafeDoor/Safe_Door_001" index="0" unique_id=376035119]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0.47500038, 0.6, 0.45000005)
+
+[node name="ProjectileSettings" type="Node" parent="SafeDoor" unique_id=14133799]
+script = ExtResource("11_qo101")
+Medium = ExtResource("12_ac80u")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="SafeDoor" unique_id=1400648062]
+attenuation_model = 1
+max_distance = 20.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="AudioNear" type="AudioStreamPlayer3D" parent="SafeDoor" unique_id=1150620854]
+max_distance = 10.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Safe_Base_001" parent="." unique_id=1007411577 instance=ExtResource("11_dkgnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4750018, -0.6, -0.44999957)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Safe_Base_001" unique_id=1170031841]
+collision_layer = 257
+collision_mask = 257
+
+[node name="ProjectileSettings" type="Node" parent="Safe_Base_001/StaticBody3D" unique_id=1256305464]
+script = ExtResource("11_qo101")
+Medium = ExtResource("12_ac80u")
+metadata/_custom_type_script = "uid://dv0d6ryduyre0"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Safe_Base_001/StaticBody3D" unique_id=2023196321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.594736, 0.47460938)
+shape = SubResource("BoxShape3D_x5gk0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Safe_Base_001/StaticBody3D" unique_id=550905839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595, -0.475)
+shape = SubResource("BoxShape3D_x5gk0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Safe_Base_001/StaticBody3D" unique_id=1827383703]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.47627634, 0.595, 0)
+shape = SubResource("BoxShape3D_bflgt")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Safe_Base_001/StaticBody3D" unique_id=1589691712]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0013756454, 1.0740774, 0)
+shape = SubResource("BoxShape3D_bvfmf")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Safe_Base_001/StaticBody3D" unique_id=1126517231]
+transform = Transform3D(1.9106855e-15, 1, -4.371139e-08, 4.371139e-08, -4.371139e-08, -1, -1, 0, -4.371139e-08, 0.0013756454, 0.121124506, 0)
+shape = SubResource("BoxShape3D_bvfmf")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1659237308]
+replication_config = SubResource("SceneReplicationConfig_l6qbi")
+
+[editable path="SafeDoor/Safe_Door_001"]

@@ -1,0 +1,45 @@
+[role]
+name = 'SCP457'
+display_name = 'ROLE_NAME_SCP_457'
+team = 'SCP'
+ui_color = '#ff0000'
+controller = 'SCP'
+model = 'SCP457'
+abilities = ['Use', 'Stamina', 'FireDash', 'FireBall', 'BurnAttack']
+ragdoll_effect = 'Fire'
+
+[role.stats]
+max_health = 3500.0
+spawn_stage = 0
+can_capture_points = false
+
+[role.stats.movement]
+speed = 6.0
+acceleration = 50.0
+sprint_speed_multiplier = 1.0
+crouch_speed_multiplier = 0.5
+jump_velocity = 5.0
+gravity_multiplier = 1.5
+default_footsteps = '106'
+force_default_footsteps = true
+
+[role.stats.stamina]
+decrease_rate = 0.0
+increase_rate = 1.0
+max_value = 100.0
+pause_time = 5.0
+
+[role.voice]
+can_use_intercom = false
+proximity_chat = false
+global_team_chat = true
+main_chat_channel = 1
+alt_chat_channel = 1
+proximity_chat_channel = 0
+listening_chat_channels = [0,1]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_SCP_457'
+hint_text = 'ROLE_HINT_SCP_457'
+hint_time = 5.0
+spawn_audio = '457_spawn'

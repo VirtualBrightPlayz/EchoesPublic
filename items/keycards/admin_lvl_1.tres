@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://by72qwb43boan"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_sk2cy"]
+[ext_resource type="Texture2D" uid="uid://8xn7hn7tbsve" path="res://textures/inv_icons/keycards/V3 - Current/A2 Card Icon.png" id="2_xy76y"]
+[ext_resource type="PackedScene" uid="uid://bee3dxwqecwgq" path="res://scenes/items/keycard.tscn" id="3_c17fe"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_g8tn2"]
+[ext_resource type="PackedScene" uid="uid://dk7p2svmaovun" path="res://models/rooms/pop_hcz_new/Pop_Cards/^Scrapped_A_Card_1.tscn" id="4_xy76y"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_qq7nm"]
+[ext_resource type="Texture2D" uid="uid://brprma6wbox" path="res://textures/main/cards/T_sitedirector.png" id="6_6cm5f"]
+[ext_resource type="Texture2D" uid="uid://ddw8eg22gjuhr" path="res://textures/main/cards/ORM_keycard.png" id="7_wdoqd"]
+[ext_resource type="Texture2D" uid="uid://bjb4ybvuby1hf" path="res://textures/main/cards/N_keycard.png" id="8_wkpio"]
+
+[sub_resource type="Resource" id="Resource_c17fe"]
+script = ExtResource("1_sk2cy")
+level = 1
+cardType = 4
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_df81x"]
+render_priority = 0
+shader = ExtResource("5_qq7nm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_6cm5f")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("7_wdoqd")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("7_wdoqd")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("8_wkpio")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_gv3uf"]
+albedo_texture = ExtResource("6_6cm5f")
+orm_texture = ExtResource("7_wdoqd")
+normal_enabled = true
+normal_texture = ExtResource("8_wkpio")
+
+[resource]
+resource_name = "T1 Admin Keycard"
+script = ExtResource("4_g8tn2")
+Access = [SubResource("Resource_c17fe")]
+worldMaterial = SubResource("ORMMaterial3D_gv3uf")
+viewMaterial = SubResource("ShaderMaterial_df81x")
+cardScene = ExtResource("4_xy76y")
+ItemScene = ExtResource("3_c17fe")
+Icon = ExtResource("2_xy76y")
+Description = "Can access low-tier checkpoints and administrative areas."
+metadata/_custom_type_script = "uid://bod50askdghnl"

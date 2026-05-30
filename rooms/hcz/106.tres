@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="RoomGenerationSettings" load_steps=6 format=3 uid="uid://cajhw2xcfwns1"]
+
+[ext_resource type="Script" uid="uid://b1jgx08in0d5l" path="res://scripts/layout_generator/SpawnConstraint.cs" id="1_gn273"]
+[ext_resource type="Resource" uid="uid://buauhbvv7suuo" path="res://scripts/layout_generator/example_spawn_validator/HCZ2SpawnValidator.tres" id="1_h2px6"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_xbqbv"]
+[ext_resource type="PackedScene" uid="uid://n5tmlfr86vvo" path="res://scenes/rooms/hcz/hcz_106.tscn" id="3_g62ja"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="4_pvy3r"]
+
+[resource]
+script = ExtResource("4_pvy3r")
+RoomScenes = Array[PackedScene]([ExtResource("3_g62ja")])
+RequiredInstances = 4
+MaximumInstances = 4
+PreSpawnValidatorResources = Array[ExtResource("2_xbqbv")]([ExtResource("1_h2px6")])
+CellPositions = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, -1), Vector2i(1, -1)])
+ConnectionDoors = Array[int]([2, 0, 0, 0])
+BlockedConnectionDoors = Array[int]([9, 12, 3, 6])

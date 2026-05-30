@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://crwai8jwf1t6f"]
+
+[ext_resource type="Texture2D" uid="uid://birlpb8c2hy1x" path="res://models/main/human/class_d/T_ClassD_Mouth.png" id="1_7tqns"]
+[ext_resource type="Texture2D" uid="uid://cgsgedjpg6f18" path="res://models/main/human/class_d/N_ClassD_Mouth.png" id="2_8bc4g"]
+[ext_resource type="Texture2D" uid="uid://7scfevommeed" path="res://models/main/human/zombie/E_zombie_Mouth.png" id="2_sgesh"]
+[ext_resource type="Texture2D" uid="uid://c713lc3gk1s7t" path="res://models/main/human/class_d/ORM_ClassD_Mouth.png" id="3_sqt2d"]
+
+[resource]
+albedo_texture = ExtResource("1_7tqns")
+orm_texture = ExtResource("3_sqt2d")
+emission_enabled = true
+emission_texture = ExtResource("2_sgesh")
+normal_enabled = true
+normal_texture = ExtResource("2_8bc4g")

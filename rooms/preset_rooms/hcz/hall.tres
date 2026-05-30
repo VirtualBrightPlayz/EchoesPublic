@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://bks2b0li5e501"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_xca8v"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_g1ww4"]
+
+[resource]
+resource_name = "Heavy Hall"
+script = ExtResource("1_xca8v")
+type = 2
+stage = 2
+scenes = []
+sceneFile = "uid://bugbg6krte2fh"
+isGeneric = true
+category = "Heavy Containment"

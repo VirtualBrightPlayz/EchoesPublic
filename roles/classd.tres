@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PlayerRole" format=3 uid="uid://6u7ww578qw11"]
+
+[ext_resource type="Resource" uid="uid://dlps6uir1t7af" path="res://roles/ambient/human.tres" id="1_2v83t"]
+[ext_resource type="PackedScene" uid="uid://d0kjurl0ehcoa" path="res://scenes/player/controllers_old/player_controller_classd.tscn" id="1_uacs5"]
+[ext_resource type="AudioStream" uid="uid://cxurffccy1imp" path="res://audio/scpcb/Bell1.ogg" id="2_ofyg3"]
+[ext_resource type="Script" uid="uid://djd2mt1p7443y" path="res://scripts/player/PlayerRole.cs" id="3_1hx5e"]
+
+[resource]
+resource_name = "ClassD"
+script = ExtResource("3_1hx5e")
+RoleColor = Color(1, 0.588235, 0, 1)
+MaxHealth = 100.0
+DisplayName = "ROLE_NAME_CLASSD"
+Objective = "ROLE_OBJ_CLASSD"
+team = 1
+SpawnAudio = ExtResource("2_ofyg3")
+ControllerScene = ExtResource("1_uacs5")
+Ambient = ExtResource("1_2v83t")
+SprintStaminaDecreaseRate = 0.3
+SprintStaminaIncreaseRate = 0.3
+SkillFlags = 1

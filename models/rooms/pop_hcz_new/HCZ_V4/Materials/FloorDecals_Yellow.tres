@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://di2fhbum0t0jc"]
+
+[ext_resource type="Texture2D" uid="uid://d1ifc74xc3qoe" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/FloorDecals_T.png" id="1_pxuli"]
+[ext_resource type="Texture2D" uid="uid://bwknvf0pnee5d" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/FloorDecals_N.png" id="2_qjjp6"]
+[ext_resource type="Texture2D" uid="uid://bj64ccxqn2sjr" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/FloorDecals_ORM.png" id="3_u53pl"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.548
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 0.3
+albedo_texture = ExtResource("1_pxuli")
+orm_texture = ExtResource("3_u53pl")
+normal_enabled = true
+normal_texture = ExtResource("2_qjjp6")

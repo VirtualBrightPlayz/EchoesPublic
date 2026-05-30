@@ -1,0 +1,152 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dvjmkuukr1dyp"
+path="res://.godot/imported/TestSurface_Uncombined.fbx-6cc86bd9cc86b418fc42b768646568f5.scn"
+
+[deps]
+
+source_file="res://models/rooms/sz/TestSurface_Uncombined.fbx"
+dest_files=["res://.godot/imported/TestSurface_Uncombined.fbx-6cc86bd9cc86b418fc42b768646568f5.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=true
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"CLiff": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_rock.tres",
+"use_external/path": "uid://chd0v708ydchf"
+},
+"ChainLink'": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/net/chainlinknet.tres",
+"use_external/path": "uid://5mqgm6y0ikk0"
+},
+"Disp_SZ_Terrain": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_rock.tres",
+"use_external/path": "uid://chd0v708ydchf"
+},
+"Handrails": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/plastic/yellowplastic.tres",
+"use_external/path": "uid://u6ojhdp7nsk6"
+},
+"LCZ_ConcreteSlab": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_concrete.tres",
+"use_external/path": "uid://u86b67k7hb7h"
+},
+"LCZ_ConcreteSlabTiles": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/concrete_slab_floor_tiles.tres",
+"use_external/path": "uid://d017mh0d0ofdg"
+},
+"LCZ_Grate": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/Grate.tres",
+"use_external/path": "uid://clus0krfaeefr"
+},
+"LCZ_GreyConcrete": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/grey_concrete.tres",
+"use_external/path": "uid://c45mrs0k1q6a6"
+},
+"LCZ_GreyConcreteTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/grey_concrete_trim.tres",
+"use_external/path": "uid://do67hxhb7rwci"
+},
+"LCZ_MetalWallTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/metal_trim.tres",
+"use_external/path": "uid://bglm86u0ucyl6"
+},
+"LCZ_WhiteConcreteTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/white_concrete_trim.tres",
+"use_external/path": "uid://cbmowqkyup40j"
+},
+"Material01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/scpcb_map/containment_doors.tres",
+"use_external/path": "uid://dqhbd5ob83aba"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/metal/metal.tres",
+"use_external/path": "uid://cun2yem6sujm7"
+},
+"MetalWelding_TrimSheet": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/metal_welding_trim.tres",
+"use_external/path": "uid://waql3nge3js0"
+},
+"MetalWelding_TrimSheet_dark": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/metal_welding_trim.tres",
+"use_external/path": "uid://waql3nge3js0"
+},
+"PieceColor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/ez/plastic/grayplastic.tres",
+"use_external/path": "uid://dieamc62ukw18"
+},
+"SZ_Asphalt": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_asphalt.tres",
+"use_external/path": "uid://cop40abjjg37v"
+},
+"SZ_Contrete": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_concrete.tres",
+"use_external/path": "uid://u86b67k7hb7h"
+},
+"SZ_wall1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_wall.tres",
+"use_external/path": "uid://bm3r34yp6afqt"
+},
+"Site45 Logo.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/site_45_logo.tres",
+"use_external/path": "uid://b2t3tkx7rml5o"
+},
+"ropeMaterial_ACG": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/sz/sz_rope.tres",
+"use_external/path": "uid://bfddugs12kxki"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=1

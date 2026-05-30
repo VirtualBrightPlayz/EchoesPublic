@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://kjlqwuqvye8u"]
+
+[ext_resource type="AudioStream" uid="uid://c7lnrr6dlw1eu" path="res://audio/scpcb/The Dread.ogg" id="1_jqa5g"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="1_ytlmm"]
+
+[resource]
+script = ExtResource("1_ytlmm")
+audio = ExtResource("1_jqa5g")
+volumeDb = -4.0
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

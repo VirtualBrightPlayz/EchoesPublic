@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProjectileResistanceMedium" format=3 uid="uid://brjxp8712l8em"]
+
+[ext_resource type="Script" uid="uid://b3qidhfd7iu0l" path="res://scripts/projectiles/ProjectileResistanceMedium.cs" id="1_n51gg"]
+
+[resource]
+script = ExtResource("1_n51gg")
+PenetrationCost = 10.0
+SpeedMultiplier = 0.985
+DebugName = "Concrete"
+DebugColor = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://b3qidhfd7iu0l"

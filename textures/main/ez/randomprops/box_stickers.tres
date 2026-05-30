@@ -1,0 +1,8 @@
+[gd_resource type="ORMMaterial3D" load_steps=2 format=3 uid="uid://cjuqrcx77wrhi"]
+
+[ext_resource type="Texture2D" uid="uid://brahkbtjv5cex" path="res://textures/main/ez/randomprops/cardboard_stickers_and_stuff.png" id="1_wl1ob"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_wl1ob")
+ao_enabled = true

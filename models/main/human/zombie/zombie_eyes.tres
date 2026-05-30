@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://duk48ubvfw01o"]
+
+[ext_resource type="Texture2D" uid="uid://dww8esrcyo5wi" path="res://models/main/human/zombie/T_zombie_Eyes.png" id="1_65bvv"]
+[ext_resource type="Texture2D" uid="uid://f0wht1w5kwyi" path="res://models/main/human/zombie/E_zombie_Eyes.png" id="2_phsqp"]
+[ext_resource type="Texture2D" uid="uid://bs34srl7cclbf" path="res://models/main/human/zombie/N_zombie_Eyes.png" id="2_x81lv"]
+[ext_resource type="Texture2D" uid="uid://bn0k0o3d4j31d" path="res://models/main/human/zombie/ORM_zombie_Eyes.png" id="3_phsqp"]
+
+[resource]
+albedo_texture = ExtResource("1_65bvv")
+orm_texture = ExtResource("3_phsqp")
+emission_enabled = true
+emission_energy_multiplier = 16.0
+emission_texture = ExtResource("2_phsqp")
+normal_enabled = true
+normal_texture = ExtResource("2_x81lv")

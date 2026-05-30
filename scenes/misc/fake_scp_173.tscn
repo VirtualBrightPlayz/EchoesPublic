@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://wtmgehwo4pd6"]
+
+[ext_resource type="PackedScene" uid="uid://dlhxdwkcc6gqw" path="res://scenes/player/controllers_old/player_controller_173.tscn" id="1_pcx8e"]
+[ext_resource type="Script" uid="uid://dqaclgnfa2l2f" path="res://scripts/map/FakePlayer.cs" id="2_3y0co"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sa6f2"]
+radius = 0.25
+height = 2.5
+
+[node name="FakeSCP173" type="Node3D"]
+
+[node name="PlayerController" parent="." node_paths=PackedStringArray("currentHealthLabel", "labelStart") instance=ExtResource("1_pcx8e")]
+script = ExtResource("2_3y0co")
+Health = 0.0
+MaxHealth = 1000.0
+currentHealthLabel = NodePath("../Marker3D/Label3D")
+labelStart = NodePath("../Marker3D")
+canHeal = false
+healAmount = 0.0
+
+[node name="CollisionShape3D" parent="PlayerController" index="0"]
+shape = SubResource("CapsuleShape3D_sa6f2")
+
+[node name="SpotLight3D" parent="PlayerController/Head" index="3"]
+visible = false
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, -0.5)
+
+[node name="Label3D" type="Label3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+font_size = 12
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="PlayerController" method="HealOverTime"]
+
+[editable path="PlayerController"]
+[editable path="PlayerController/CollisionShape3D/scp173"]

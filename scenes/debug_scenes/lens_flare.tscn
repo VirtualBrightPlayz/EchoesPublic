@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://dvyof0j22dx5v"]
+
+[ext_resource type="Texture2D" uid="uid://b3c5m7pym4dfc" path="res://textures/flare_01.png" id="1_3xebd"]
+[ext_resource type="Script" uid="uid://dhp7qccqaqorc" path="res://scripts/map/LensFlare.cs" id="2_tp1k8"]
+[ext_resource type="Script" uid="uid://6yxnykbhd4vi" path="res://scripts/map/LightFlicker.cs" id="3_srya2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gixxo"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_g5ntp"]
+sky_material = SubResource("ProceduralSkyMaterial_gixxo")
+
+[sub_resource type="Environment" id="Environment_l4so7"]
+background_mode = 2
+sky = SubResource("Sky_g5ntp")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_gixxo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g5ntp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l4so7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_iyhah"]
+
+[sub_resource type="Animation" id="Animation_gixxo"]
+resource_name = "test"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.01),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.15363, -2, 0), Vector3(5.70359, -2, 0), Vector3(2.15363, -2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g5ntp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.15363, -2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4so7"]
+_data = {
+&"RESET": SubResource("Animation_g5ntp"),
+&"test": SubResource("Animation_gixxo")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l4so7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Node3D" type="OmniLight3D" parent="."]
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+billboard = 1
+double_sided = false
+texture = ExtResource("1_3xebd")
+script = ExtResource("2_tp1k8")
+
+[node name="LightFlicker" type="Node" parent="Node3D"]
+script = ExtResource("3_srya2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 1, -11)
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15363, -2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_gixxo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_g5ntp")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_l4so7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_iyhah")
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="RigidBody3D"]
+node_a = NodePath("..")
+node_b = NodePath("../../StaticBody3D")
+linear_limit_x/enabled = false
+linear_limit_y/enabled = false
+linear_limit_z/enabled = false
+linear_spring_x/enabled = true
+linear_spring_x/stiffness = 20.0
+linear_spring_y/enabled = true
+linear_spring_y/stiffness = 20.0
+linear_spring_z/enabled = true
+linear_spring_z/stiffness = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_l4so7")
+}
+autoplay = "test"

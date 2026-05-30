@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cmmqmg431msgm"]
+
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="1_1g33s"]
+[ext_resource type="Texture2D" uid="uid://cr3fnke4hwtkl" path="res://models/main/items/Grenade_New/T_GrenadeM35_BLUE.png" id="2_8u5b0"]
+[ext_resource type="Texture2D" uid="uid://budmhrgx3jddn" path="res://models/main/items/Grenade_New/ORM_GrenadeM69.png" id="3_nh2k1"]
+[ext_resource type="Texture2D" uid="uid://t66gt1pmhml2" path="res://models/main/items/Grenade_New/N_GrenadeM69.png" id="4_6digp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1g33s")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_8u5b0")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("3_nh2k1")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("3_nh2k1")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("4_6digp")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)

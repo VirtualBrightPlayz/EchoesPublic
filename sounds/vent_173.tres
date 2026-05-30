@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://dtpwoa1uigmv5"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_n5yny"]
+[ext_resource type="AudioStream" uid="uid://b7c0wiu4c15uo" path="res://audio/cc0/336356__ev-dawg__heater-vent-hit-higher-part.wav" id="2_t52h4"]
+[ext_resource type="AudioStream" uid="uid://b4a6e8c4qj738" path="res://audio/cc0/336355__ev-dawg__heater-vent-hit-lower-part.wav" id="3_lgb6k"]
+
+[resource]
+script = ExtResource("1_n5yny")
+DisplayName = "Vent Open 173"
+streams = [ExtResource("2_t52h4"), ExtResource("3_lgb6k")]
+unitSize = 5.0
+maxDistance = 15.0

@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://clqubh46ao5pt"]
+
+[ext_resource type="Texture2D" uid="uid://dfetodhahe3rx" path="res://textures/main/ez/concrete/T_tile_concrete.png" id="1_epov5"]
+[ext_resource type="Texture2D" uid="uid://djbkq6urievsp" path="res://textures/main/ez/concrete/N_tile_concrete.png" id="2_lnnxm"]
+[ext_resource type="Texture2D" uid="uid://blkh372kc211c" path="res://textures/main/ez/concrete/ORM_tile_concrete.png" id="3_row1t"]
+
+[resource]
+albedo_texture = ExtResource("1_epov5")
+orm_texture = ExtResource("3_row1t")
+normal_enabled = true
+normal_texture = ExtResource("2_lnnxm")
+heightmap_texture = ExtResource("2_lnnxm")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true

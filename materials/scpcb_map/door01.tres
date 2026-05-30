@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cr22vapdmat0n"]
+
+[ext_resource type="Texture2D" uid="uid://cj36ts0b08tt6" path="res://textures/scpcb/Door01.jpg" id="1_psqcd"]
+[ext_resource type="Texture2D" uid="uid://dtvi027fg1ntu" path="res://textures/old_scpcb/dirtymetalbump.jpg" id="2_y2vdu"]
+
+[resource]
+albedo_texture = ExtResource("1_psqcd")
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_y2vdu")

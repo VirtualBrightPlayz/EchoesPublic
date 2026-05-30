@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://spv6oc7doiy0"]
+
+[ext_resource type="Texture2D" uid="uid://cn57rirf2gsxi" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/CatwalkTrim_T.png" id="1_y3p7k"]
+[ext_resource type="Texture2D" uid="uid://c4ri26m6n0t4a" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/CatwalkTrim_N.png" id="2_g1h1u"]
+[ext_resource type="Texture2D" uid="uid://cplbm2lmi8bu8" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/CatwalkTrim_ORM.png" id="3_mjl6b"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_y3p7k")
+orm_texture = ExtResource("3_mjl6b")
+normal_enabled = true
+normal_texture = ExtResource("2_g1h1u")
+ao_enabled = true
+texture_filter = 5

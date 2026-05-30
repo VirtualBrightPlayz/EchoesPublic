@@ -1,0 +1,57 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cn21b28hd34ok"
+path="res://.godot/imported/SCP_Echoes_Counters.fbx-ffa830703f9a6d61c94d4c2428b0e9dd.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/Pop_Props/Counters/SCP_Echoes_Counters.fbx"
+dest_files=["res://.godot/imported/SCP_Echoes_Counters.fbx-ffa830703f9a6d61c94d4c2428b0e9dd.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"CounterTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/Pop_Props/Counters/M_CounterTrim.tres",
+"use_external/path": "uid://d30yg5571u22n"
+},
+"HCZ_Metal_Trimming": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V3/HCZ_panels.tres",
+"use_external/path": "uid://cwswu55un0j7i"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=0
+fbx/naming_version=1

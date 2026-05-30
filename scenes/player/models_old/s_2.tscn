@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://bk6vqum82qhbn"]
+
+[ext_resource type="ArrayMesh" uid="uid://dnxw0pb0nqyqw" path="res://models/scpcb/npc/s2.obj" id="1_ul6es"]
+[ext_resource type="Material" uid="uid://lorjcxlsht6i" path="res://models/scpcb/npc/ci/ci_head.tres" id="2_07101"]
+[ext_resource type="Texture2D" uid="uid://dpwe6ssrm1ywo" path="res://models/scpcb/npc/p90.jpg" id="3_2fky6"]
+[ext_resource type="Material" uid="uid://dj6tsnafj641y" path="res://models/scpcb/npc/ci/ci_body.tres" id="4_7r3p1"]
+[ext_resource type="Texture2D" uid="uid://bnw16xorgng3e" path="res://models/scpcb/npc/gasmask.jpg" id="6_lkxls"]
+[ext_resource type="PackedScene" uid="uid://be365oj1l4kau" path="res://models/scpcb/npc/ci/ci_idle.glb" id="8_svlxk"]
+[ext_resource type="Animation" uid="uid://dwcekkonbkuow" path="res://models/scpcb/npc/ci/ci_hold_weapon.res" id="9_7yr7y"]
+[ext_resource type="Animation" uid="uid://g51be2igxw83" path="res://models/scpcb/npc/ci/ci_idle.res" id="9_leejs"]
+[ext_resource type="AnimationLibrary" uid="uid://h3se8rf3n5r6" path="res://models/npc/anims/base.res" id="10_2pcag"]
+[ext_resource type="Animation" uid="uid://kbblfusbxocp" path="res://models/scpcb/npc/ci/ci_walk.res" id="10_dpul1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqcwe"]
+albedo_texture = ExtResource("3_2fky6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ise2f"]
+albedo_texture = ExtResource("6_lkxls")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ojok"]
+albedo_texture = ExtResource("6_lkxls")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se3yh"]
+albedo_texture = ExtResource("6_lkxls")
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sl0ag"]
+_data = {
+&"ci_hold_weapon": ExtResource("9_7yr7y"),
+&"ci_idle": ExtResource("9_leejs"),
+&"ci_walk": ExtResource("10_dpul1")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qibmw"]
+
+[node name="S2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0, 0, 0)
+visible = false
+mesh = ExtResource("1_ul6es")
+surface_material_override/0 = ExtResource("2_07101")
+surface_material_override/1 = SubResource("StandardMaterial3D_oqcwe")
+surface_material_override/2 = ExtResource("4_7r3p1")
+surface_material_override/3 = SubResource("StandardMaterial3D_ise2f")
+surface_material_override/4 = SubResource("StandardMaterial3D_4ojok")
+surface_material_override/5 = SubResource("StandardMaterial3D_se3yh")
+
+[node name="ci_idle" parent="." instance=ExtResource("8_svlxk")]
+transform = Transform3D(-0.175, 0, -1.5299e-08, 0, 0.175, 0, 1.5299e-08, 0, -0.175, 0, 0, 0)
+
+[node name="GeneralSkeleton" parent="ci_idle/Armature" index="0"]
+bones/0/position = Vector3(0.0127627, 7.45722, -0.0506802)
+bones/0/rotation = Quaternion(-0.0287523, -0.0508053, -0.0300879, 0.997841)
+bones/1/rotation = Quaternion(0.0294211, 0.0120457, 0.021543, 0.999262)
+bones/2/rotation = Quaternion(0.0104413, 0.00360601, 0.013771, 0.999844)
+bones/3/rotation = Quaternion(0.0102361, 0.00382857, 0.0138039, 0.999845)
+bones/4/rotation = Quaternion(0.18974, 0.00362536, -0.0174886, 0.981672)
+bones/5/rotation = Quaternion(-0.0678549, 0.00719645, -0.00478836, 0.997658)
+bones/6/position = Vector3(0.00553262, 1.37777, 0.389334)
+bones/7/rotation = Quaternion(0.457537, 0.499934, 0.631811, -0.376219)
+bones/8/rotation = Quaternion(0.124168, 0.804087, -0.567292, -0.1273)
+bones/9/rotation = Quaternion(0.00914924, -0.707048, 0.00914923, 0.707048)
+bones/10/rotation = Quaternion(0.051851, 0.476532, -0.0161545, 0.877478)
+bones/11/rotation = Quaternion(0.476531, -0.478703, -0.634686, -0.375414)
+bones/12/rotation = Quaternion(-0.151023, 0.827647, -0.49627, 0.214263)
+bones/13/rotation = Quaternion(0.0410928, 0.705912, -0.0410928, 0.705912)
+bones/14/rotation = Quaternion(0.0462771, -0.571335, 0.0381557, 0.818523)
+bones/15/rotation = Quaternion(0.136286, 0.0851465, 0.98378, -0.0797035)
+bones/16/rotation = Quaternion(-0.0383706, 0.992556, -0.114458, 0.0160937)
+bones/17/rotation = Quaternion(-0.0426412, 0.710245, -0.70085, 0.0504282)
+bones/18/rotation = Quaternion(-9.21962e-08, 0.999075, 0.0429962, -3.95127e-08)
+bones/20/rotation = Quaternion(-0.0900426, -0.011238, 0.995391, -0.0310404)
+bones/21/rotation = Quaternion(0.0321021, 0.994765, -0.0486154, -0.083957)
+bones/22/rotation = Quaternion(0.0111792, 0.687725, -0.725455, -0.0249871)
+bones/23/rotation = Quaternion(-2.32507e-07, 0.998049, 0.0624326, -9.27568e-09)
+
+[node name="Mesh_0" parent="ci_idle/Armature/GeneralSkeleton" index="0"]
+surface_material_override/0 = ExtResource("4_7r3p1")
+
+[node name="Mesh_1" parent="ci_idle/Armature/GeneralSkeleton" index="1"]
+surface_material_override/0 = ExtResource("2_07101")
+
+[node name="AnimationPlayer" parent="ci_idle" index="1"]
+libraries = {
+"CI": SubResource("AnimationLibrary_sl0ag"),
+"base": ExtResource("10_2pcag")
+}
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_qibmw")
+
+[editable path="ci_idle"]

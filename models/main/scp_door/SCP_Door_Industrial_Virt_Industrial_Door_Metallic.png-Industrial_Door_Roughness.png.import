@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://wvp12xifl6ub"
+path.s3tc="res://.godot/imported/SCP_Door_Industrial_Virt_Industrial_Door_Metallic.png-Industrial_Door_Roughness.png-900a288144ab4c0c78f97db0b42c21a3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4f6442fc39119c71d6c6bfc35d888ea4"
+}
+
+[deps]
+
+source_file="res://models/main/scp_door/SCP_Door_Industrial_Virt_Industrial_Door_Metallic.png-Industrial_Door_Roughness.png"
+dest_files=["res://.godot/imported/SCP_Door_Industrial_Virt_Industrial_Door_Metallic.png-Industrial_Door_Roughness.png-900a288144ab4c0c78f97db0b42c21a3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=1024
+detect_3d/compress_to=0

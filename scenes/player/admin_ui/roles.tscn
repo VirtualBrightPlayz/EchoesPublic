@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://5y51tv3ucj2v"]
+
+[ext_resource type="Script" uid="uid://6j3lfhoxsyrv" path="res://scripts/ui/admin/AdminCategoryRoles.cs" id="1_j3ulp"]
+
+[node name="Player" type="VBoxContainer" unique_id=1689140937]
+
+[node name="Handler" type="Node" parent="." unique_id=843363454 node_paths=PackedStringArray("RoleList", "UseSpawnpoint", "ParentContainer")]
+script = ExtResource("1_j3ulp")
+RoleList = NodePath("../RoleList")
+UseSpawnpoint = NodePath("../Commands/UseSpawn")
+ParentContainer = NodePath("..")
+
+[node name="RoleList" type="ItemList" parent="." unique_id=1509140465]
+layout_mode = 2
+theme_override_colors/guide_color = Color(0.0056171864, 0.0056171864, 0.0056171864, 0)
+wraparound_items = false
+max_columns = 8
+same_column_width = true
+icon_mode = 0
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=992138680]
+layout_mode = 2
+
+[node name="Commands" type="HBoxContainer" parent="." unique_id=745754062]
+layout_mode = 2
+
+[node name="UseSpawn" type="CheckButton" parent="Commands" unique_id=121530744]
+layout_mode = 2
+button_pressed = true
+text = "Use Spawnpoint"

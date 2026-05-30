@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ProjectileResistanceMedium" format=3 uid="uid://djnxgr4gpf22v"]
+
+[ext_resource type="Script" uid="uid://b3qidhfd7iu0l" path="res://scripts/projectiles/ProjectileResistanceMedium.cs" id="1_kboo3"]
+
+[resource]
+script = ExtResource("1_kboo3")
+DebugName = "Flesh"
+DebugColor = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://b3qidhfd7iu0l"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Scp207Effect" load_steps=3 format=3 uid="uid://x3a5ipxt3a14"]
+
+[ext_resource type="PackedScene" uid="uid://c7e5dgvysvg2r" path="res://scenes/overlays/Scp207Overlay.tscn" id="1_eyjeq"]
+[ext_resource type="Script" uid="uid://bwebfu8a5n7cf" path="res://scripts/player/statuseffects/defaultEffects/Scp207Effect.cs" id="1_ra0cf"]
+
+[resource]
+script = ExtResource("1_ra0cf")
+Overlay = ExtResource("1_eyjeq")
+metadata/_custom_type_script = "uid://bwebfu8a5n7cf"

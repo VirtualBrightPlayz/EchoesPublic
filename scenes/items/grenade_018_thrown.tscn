@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://prm20hkft40f"]
+
+[ext_resource type="Curve" uid="uid://b6gx2qqnx55kr" path="res://items/grenade falloffs/grenadefalloff.tres" id="2_q46j5"]
+[ext_resource type="Script" uid="uid://fmge6f45deq1" path="res://scripts/items/ThrownGrenade.cs" id="2_ubvtm"]
+[ext_resource type="Resource" uid="uid://c16v4o8w0xooh" path="res://effects/explosion_effect.tres" id="3_q46j5"]
+[ext_resource type="Resource" uid="uid://bycod81tjjig4" path="res://sounds/bounce.tres" id="4_q46j5"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="9_q46j5"]
+[ext_resource type="PackedScene" uid="uid://db6ndggoli2dc" path="res://models/main/items/018/SCP018.fbx" id="10_q46j5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8dbp"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="Curve" id="Curve_f8dbp"]
+_data = [Vector2(0, 0.27867824), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i0thq"]
+radius = 0.10294173
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gg5ch"]
+radius = 6.0
+
+[sub_resource type="Curve" id="Curve_q46j5"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ltcb4"]
+texture_mode = 1
+curve = SubResource("Curve_q46j5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f8dbp"]
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, -1, 0)
+spread = 5.0
+alpha_curve = SubResource("CurveTexture_ltcb4")
+
+[sub_resource type="Curve" id="Curve_ubvtm"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltcb4"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.4, 0, 0, 1)
+roughness = 0.2
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_4yjtb"]
+material = SubResource("StandardMaterial3D_ltcb4")
+shape = 0
+size = 0.1
+sections = 12
+section_length = 0.15
+curve = SubResource("Curve_ubvtm")
+
+[node name="GrenadeFragThrown" type="RigidBody3D" unique_id=253988865 node_paths=PackedStringArray("trails", "ExplosionShape", "xformSync")]
+collision_layer = 258
+collision_mask = 21
+mass = 3.0
+physics_material_override = SubResource("PhysicsMaterial_f8dbp")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 32
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("2_ubvtm")
+SpeedUp = true
+SpeedUpMaxVelocity = 70.0
+SpeedUpOverTime = SubResource("Curve_f8dbp")
+SpeedUpMaxTime = 20.0
+trails = NodePath("GPUParticles3D")
+SpeedUpSpeed = 1.05
+DamageVelocity = 1.0
+DefaultVelocity = 15.0
+ExplosionTimer = 35.0
+ExplosionShape = NodePath("Area3D")
+DamageFalloff = ExtResource("2_q46j5")
+DamageAmount = 150.0
+MaxDistance = 6.0
+ExplosionEffect = ExtResource("3_q46j5")
+HitEffect = ExtResource("4_q46j5")
+xformSync = NodePath("TransformSync")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2022065385]
+shape = SubResource("SphereShape3D_i0thq")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=404116974]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=8198707]
+transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 0, 0, 0)
+collision_layer = 4
+collision_mask = 406
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1779852551]
+shape = SubResource("SphereShape3D_gg5ch")
+
+[node name="TransformSync" type="Node" parent="." unique_id=1859629256]
+script = ExtResource("9_q46j5")
+targetNode = NodePath("..")
+CanClaim = true
+
+[node name="SCP018" parent="." unique_id=1413570175 instance=ExtResource("10_q46j5")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=781021184]
+extra_cull_margin = 100.0
+ignore_occlusion_culling = true
+gi_mode = 2
+emitting = false
+amount = 240
+lifetime = 0.1
+one_shot = true
+transform_align = 3
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_f8dbp")
+draw_pass_1 = SubResource("RibbonTrailMesh_4yjtb")

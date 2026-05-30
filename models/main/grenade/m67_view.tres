@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://c8djdre6lx6wb"]
+
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="1_1adk4"]
+[ext_resource type="Texture2D" uid="uid://b452bdysbxb6h" path="res://models/main/grenade/DefaultMaterial_BaseColor.png" id="2_i1rff"]
+[ext_resource type="Texture2D" uid="uid://2h3edl4xuppf" path="res://models/main/grenade/DefaultMaterial_Metallic.png" id="3_jvd3n"]
+[ext_resource type="Texture2D" uid="uid://bnmr5jd24xtr5" path="res://models/main/grenade/DefaultMaterial_Normal.png" id="4_37r5n"]
+[ext_resource type="Texture2D" uid="uid://c0thcib1xtn57" path="res://models/main/grenade/DefaultMaterial_Roughness.png" id="5_7kbmd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1adk4")
+shader_parameter/fov = 70.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_i1rff")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("3_jvd3n")
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("5_7kbmd")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("4_37r5n")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)

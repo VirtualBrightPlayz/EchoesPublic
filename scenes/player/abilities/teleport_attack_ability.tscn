@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://co30yuyddwgs3"]
+
+[ext_resource type="Script" uid="uid://bxdbg2s2uwqi0" path="res://scripts/player/controllers/ability/TeleportVictimAttackAbility.cs" id="1_smftp"]
+[ext_resource type="Resource" uid="uid://c430tdjc0uy3l" path="res://sounds/taken_106.tres" id="2_x8iip"]
+
+[node name="TeleportVictimAttackAbility" type="Node" unique_id=840639812 node_paths=PackedStringArray("rayCast", "attackCooldown")]
+script = ExtResource("1_smftp")
+rayCast = NodePath("RayCast3DPlayer")
+attackCooldown = NodePath("AttackCooldown")
+damageAmount = 40.0
+damageType = 3
+attackSound = ExtResource("2_x8iip")
+metadata/_custom_type_script = "uid://bxdbg2s2uwqi0"
+
+[node name="RayCast3DPlayer" type="RayCast3D" parent="." unique_id=888774355]
+enabled = false
+target_position = Vector3(0, 0, -3)
+collision_mask = 281
+hit_back_faces = false
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=2048758295]
+wait_time = 0.5
+one_shot = true

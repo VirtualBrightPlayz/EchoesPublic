@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpns5egwqebw"]
+
+[ext_resource type="PackedScene" uid="uid://muwjlhqjkjxx" path="res://scenes/rooms/lcz/lcz_endoff.tscn" id="1_8fofx"]
+
+[node name="LczEndoff" instance=ExtResource("1_8fofx")]
+
+[node name="ZoneArea" parent="." index="6"]
+zone = 3
+
+[node name="LightmapGI" parent="." index="10"]
+visible = false
+
+[editable path="lcz_endoff"]

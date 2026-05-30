@@ -1,0 +1,24 @@
+new keycards
+
+[maintenance]
+1 - janitorial
+2 - maintenance
+3 - containment engineer
+
+[research]
+1 - assistant researcher
+2 - specialized researcher
+3 - research coordinator
+
+[security]
+1 - checkpoint officer
+2 - patrol officer
+3 - command officer
+
+[admin]
+1 - project director
+2 - zone manager
+3 - site director
+
+[goi]
+task force & chaos have all access except for nuke

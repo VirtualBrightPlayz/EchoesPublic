@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicClip" load_steps=3 format=3 uid="uid://bs0uyaybn2uhu"]
+
+[ext_resource type="AudioStream" uid="uid://cy3lh0cfqy4o" path="res://audio/music/SCP Echoes - Heavy Dread.ogg" id="1_crx3q"]
+[ext_resource type="Script" uid="uid://3tiy6dxqbpq3" path="res://scripts/map/MusicClip.cs" id="2_o5e2p"]
+
+[resource]
+script = ExtResource("2_o5e2p")
+audio = ExtResource("1_crx3q")
+metadata/_custom_type_script = "uid://3tiy6dxqbpq3"

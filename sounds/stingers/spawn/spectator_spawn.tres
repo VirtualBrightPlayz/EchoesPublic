@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://ba4yu2ieqt700"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_7ysb3"]
+[ext_resource type="AudioStream" uid="uid://b1sh23jnk8agk" path="res://audio/music/stingers/SCP Echoes OST - Death Stinger.ogg" id="2_7ysb3"]
+
+[resource]
+resource_name = "spectator_spawn"
+script = ExtResource("1_7ysb3")
+streams = [ExtResource("2_7ysb3")]
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

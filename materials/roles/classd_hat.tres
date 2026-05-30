@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bm6feg57ygnfh"]
+
+[ext_resource type="Texture2D" uid="uid://b6ldqmq3pnaf4" path="res://models/scpsl/classd2_Classd1_Hat_diffuse.png" id="1_ulinh"]
+[ext_resource type="Texture2D" uid="uid://4n4omq83jrx3" path="res://models/scpsl/classd2_Classd1_Hat_normal.png" id="2_0v76u"]
+
+[resource]
+albedo_texture = ExtResource("1_ulinh")
+normal_enabled = true
+normal_texture = ExtResource("2_0v76u")

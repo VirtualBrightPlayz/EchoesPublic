@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEffect" load_steps=3 format=3 uid="uid://c3xr1kui4dlgm"]
+
+[ext_resource type="PackedScene" uid="uid://cdoo4bryigdlo" path="res://effects/scenes/pistol_reload.tscn" id="1_f6dk6"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_2uh6p"]
+
+[resource]
+script = ExtResource("2_2uh6p")
+DisplayName = "Pistol Reload"
+scene = ExtResource("1_f6dk6")
+Lifetime = 2.5

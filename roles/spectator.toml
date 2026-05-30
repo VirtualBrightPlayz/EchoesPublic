@@ -1,0 +1,31 @@
+[role]
+name = 'Spectator'
+display_name = 'ROLE_NAME_SPECTATOR'
+team = 'Dead'
+ui_color = '#ffffff'
+controller = 'Dead'
+model = 'None'
+
+[role.stats]
+max_health = 1.0
+spawn_stage = 0
+can_capture_points = false
+
+[role.stats.movement]
+speed = 15.0
+acceleration = 150.0
+
+[role.voice]
+can_use_intercom = false
+proximity_chat = false
+global_team_chat = true
+main_chat_channel = 2
+alt_chat_channel = 2
+proximity_chat_channel = 0
+listening_chat_channels = [0, 2]
+
+[role.intro]
+objective_text = 'ROLE_OBJ_SPECTATOR'
+hint_text = ''
+hint_time = 0.0
+spawn_audio = ''

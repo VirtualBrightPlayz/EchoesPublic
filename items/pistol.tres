@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemPreset" format=3 uid="uid://tuh08g673bgs"]
+
+[ext_resource type="Texture2D" uid="uid://7k1hl3hkubhw" path="res://textures/inv_icons/PISTOLINV.png" id="1_yaref"]
+[ext_resource type="PackedScene" uid="uid://cco4c8rvwxr2w" path="res://scenes/items/pistol.tscn" id="2_ivh2g"]
+[ext_resource type="Script" uid="uid://ddmra6s3qsvrs" path="res://scripts/items/ItemPreset.cs" id="3_jyghk"]
+
+[resource]
+resource_name = "Pistol"
+script = ExtResource("3_jyghk")
+ItemScene = ExtResource("2_ivh2g")
+Icon = ExtResource("1_yaref")
+Description = "A pistol usually weilded by lower ranking security personnel. It may be small, but it can pack a punch."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

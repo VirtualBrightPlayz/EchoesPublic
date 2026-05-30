@@ -1,0 +1,85 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cbvispctevnuv"
+path="res://.godot/imported/PS-01_Straight_Basic.fbx-5a91d720410963ed7e48ff4c52723dde.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/PS-01/Meshes/PS-01_Straight_Basic.fbx"
+dest_files=["res://.godot/imported/PS-01_Straight_Basic.fbx-5a91d720410963ed7e48ff4c52723dde.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"EZ_CEILING": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/M_Ceiling_PZ-01.tres",
+"use_external/path": "uid://0tfm53dl5i2y"
+},
+"PZ-01_Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/PZ-01_Wall_CM_DarkBlue.tres",
+"use_external/path": "uid://ctfduv42tsi1y"
+},
+"TileFloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/M_TileFloor_PZ-01.tres",
+"use_external/path": "uid://cqwqauxxwdrq4"
+}
+},
+"nodes": {
+"PATH:Ceiling_Straight_SCZ": {
+"mesh_instance/layers": 9
+},
+"PATH:Floor_Straight_SCZ": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_001": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_002": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_003": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_TopWallTaper": {
+"mesh_instance/layers": 9
+},
+"PATH:Walls_Straight_SCZ": {
+"mesh_instance/layers": 9
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

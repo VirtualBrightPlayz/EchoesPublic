@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://cb0yncwn2sm4d"]
+
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="1_3ilxi"]
+[ext_resource type="Resource" uid="uid://cseg2afemf5an" path="res://items/keycards/research_lvl_1.tres" id="1_7d12m"]
+
+[resource]
+script = ExtResource("1_3ilxi")
+Items = [ExtResource("1_7d12m"), ExtResource("1_7d12m")]

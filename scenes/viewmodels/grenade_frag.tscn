@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://dnx8rnrkl2cue"]
+
+[ext_resource type="Script" uid="uid://b5erbvdy4kqbs" path="res://scripts/player/role_ui/ViewmodelGrenade.cs" id="1_4gtli"]
+[ext_resource type="Curve" path="res://textures/tweencurve.tres" id="5_5rref"]
+[ext_resource type="PackedScene" uid="uid://db28aeuuymcn2" path="res://models/main/items/Grenade_New/GrenadeAnims.glb" id="12_xyxi4"]
+[ext_resource type="Material" uid="uid://bmjrrob7hinpq" path="res://models/main/human/class_d/hands_pov.tres" id="13_0w848"]
+[ext_resource type="Material" uid="uid://cmmqmg431msgm" path="res://models/main/items/Grenade_New/Grenade_FP.tres" id="14_wq5sf"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wq5sf"]
+animation = &"Grenade - Equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1dhdv"]
+animation = &"Grenade - Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jg6d4"]
+animation = &"Grenade - Pin Pull"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ypa8h"]
+animation = &"Grenade - Throw"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jg6d4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3va8d"]
+xfade_time = 0.1
+xfade_curve = ExtResource("5_5rref")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wq5sf"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cotvh"]
+xfade_time = 0.1
+xfade_curve = ExtResource("5_5rref")
+advance_mode = 2
+advance_condition = &"throw"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b1ci3"]
+xfade_time = 0.1
+xfade_curve = ExtResource("5_5rref")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wq5sf"]
+states/Equip/node = SubResource("AnimationNodeAnimation_wq5sf")
+states/Equip/position = Vector2(330, 25)
+states/Idle/node = SubResource("AnimationNodeAnimation_1dhdv")
+states/Idle/position = Vector2(568, 70)
+states/PullPin/node = SubResource("AnimationNodeAnimation_jg6d4")
+states/PullPin/position = Vector2(685, 67)
+states/Throw/node = SubResource("AnimationNodeAnimation_ypa8h")
+states/Throw/position = Vector2(685, 153)
+transitions = ["Start", "Equip", SubResource("AnimationNodeStateMachineTransition_jg6d4"), "Equip", "Idle", SubResource("AnimationNodeStateMachineTransition_3va8d"), "Throw", "End", SubResource("AnimationNodeStateMachineTransition_wq5sf"), "Idle", "PullPin", SubResource("AnimationNodeStateMachineTransition_cotvh"), "PullPin", "Throw", SubResource("AnimationNodeStateMachineTransition_b1ci3")]
+
+[node name="ViewmodelFrag" type="Node3D" unique_id=508754958 node_paths=PackedStringArray("tree")]
+script = ExtResource("1_4gtli")
+tree = NodePath("Grenade Animations/AnimationTree")
+gunWalkPath = ""
+gunFirePath = "parameters/conditions/throw"
+stateSwitchPaths = PackedStringArray("Equip")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=497052922]
+visible = false
+fov = 70.0
+
+[node name="Grenade Animations" parent="." unique_id=700379152 instance=ExtResource("12_xyxi4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Grenade Animations/Skel_Arm" parent_id_path=PackedInt32Array(700379152, 1149490888) index="0" unique_id=2001640492]
+bones/1/position = Vector3(-0.18628353, 0.30275306, 0.14893633)
+bones/1/rotation = Quaternion(-0.3310642, -0.64456236, 0.51555663, 0.45731533)
+bones/2/rotation = Quaternion(-2.223528e-06, 1.6047207e-07, 0.6775718, 0.73545665)
+bones/3/rotation = Quaternion(0.262354, 0.18111414, -0.17329599, 0.9318458)
+bones/5/position = Vector3(-0.029165018, 0.024003485, -0.0041682464)
+bones/5/rotation = Quaternion(-0.2412007, -0.030057872, 0.233298, 0.94153637)
+bones/6/rotation = Quaternion(-0.08031732, 0.19294405, -0.29265705, 0.9330989)
+bones/7/rotation = Quaternion(0.11891106, -0.028610643, -0.25289372, 0.9597325)
+bones/8/position = Vector3(-0.019443449, 0.069570564, 0.010423296)
+bones/8/rotation = Quaternion(-0.042690344, -0.09545328, -0.050143886, 0.9932531)
+bones/9/rotation = Quaternion(-0.4272749, 0.17123298, -0.024774782, 0.88741297)
+bones/10/rotation = Quaternion(-0.456233, 0.15859133, -0.13186833, 0.8656276)
+bones/11/rotation = Quaternion(-0.390557, 0.1856934, -0.2624272, 0.8626212)
+bones/12/rotation = Quaternion(-0.09377964, -0.068291195, -0.09153651, 0.9890211)
+bones/13/rotation = Quaternion(-0.416065, 0.12688449, 0.03864206, 0.89960945)
+bones/14/rotation = Quaternion(-0.5060372, 0.049670316, 0.012908729, 0.8609836)
+bones/15/rotation = Quaternion(-0.4225597, 0.23310384, -0.08625636, 0.87158805)
+bones/16/position = Vector3(0.017528038, 0.059861887, 0.01169684)
+bones/16/rotation = Quaternion(-0.26226324, 0.029342815, -0.118534744, 0.95723903)
+bones/17/rotation = Quaternion(-0.31598428, 0.13967444, 0.047314346, 0.9372334)
+bones/18/rotation = Quaternion(-0.6075203, 0.11316182, 0.0132346805, 0.7860905)
+bones/19/rotation = Quaternion(-0.3545561, 0.42315862, -0.25357556, 0.7943086)
+bones/20/position = Vector3(0.028456157, 0.054493688, 0.006314639)
+bones/20/rotation = Quaternion(-0.2632635, 0.19201353, -0.20365766, 0.92322636)
+bones/21/rotation = Quaternion(-0.46079442, 0.24667144, -0.07286905, 0.8494186)
+bones/22/rotation = Quaternion(-0.41188264, 0.100570336, -0.22442564, 0.87742317)
+bones/23/rotation = Quaternion(-0.38566974, 0.1328668, -0.2830369, 0.86804116)
+bones/24/rotation = Quaternion(0.0020914513, 0.06302368, -0.033096623, 0.9974609)
+bones/24/scale = Vector3(0.9999999, 1.0000001, 0.9999998)
+bones/25/rotation = Quaternion(4.6610475e-07, 0.06305816, 2.0890226e-08, 0.9980099)
+bones/25/scale = Vector3(1.0000001, 1.0000004, 1.0000002)
+bones/26/position = Vector3(0.18628353, 0.30275306, 0.14893633)
+bones/26/rotation = Quaternion(0.31966835, 0.6951256, -0.53278166, 0.36160251)
+bones/27/rotation = Quaternion(-1.4371815e-06, -1.8996423e-07, -0.43719357, 0.89936745)
+bones/28/rotation = Quaternion(-0.13900192, 0.20364696, -0.7177255, 0.65121156)
+bones/30/position = Vector3(0.03294025, 0.02713961, 0.00028069492)
+bones/30/rotation = Quaternion(-0.15622357, -0.17868425, -0.07346844, 0.96864265)
+bones/31/rotation = Quaternion(-0.10485844, -0.18801698, 0.07798124, 0.97343373)
+bones/32/rotation = Quaternion(0.20564234, -0.0116701275, 0.28672996, 0.93560725)
+bones/33/rotation = Quaternion(0.0730875, 0.08329032, 0.037502885, 0.99313366)
+bones/34/rotation = Quaternion(-0.06166534, -0.075649396, -0.106154814, 0.98954827)
+bones/35/rotation = Quaternion(-0.08128638, -0.11285984, 0.016453527, 0.99014366)
+bones/36/rotation = Quaternion(-0.13572025, -0.20448227, 0.07802462, 0.9662708)
+bones/37/position = Vector3(0.00038890113, 0.065689996, 0.011945379)
+bones/37/rotation = Quaternion(0.07611444, 0.08288972, 0.07856154, 0.9905372)
+bones/38/rotation = Quaternion(-0.13071625, -0.13263631, 0.0007040367, 0.9825072)
+bones/39/rotation = Quaternion(-0.04703004, -0.04996906, 0.011699162, 0.99757427)
+bones/40/rotation = Quaternion(-0.11374501, -0.12757072, 0.051177196, 0.9839556)
+bones/41/position = Vector3(-0.017428411, 0.05977727, 0.013182491)
+bones/41/rotation = Quaternion(0.04684548, 0.041627534, 0.1446798, 0.987492)
+bones/42/rotation = Quaternion(-0.14385496, -0.12777737, 0.049549516, 0.980063)
+bones/43/rotation = Quaternion(-0.11467279, -0.103757456, 0.04706526, 0.98684824)
+bones/44/rotation = Quaternion(-0.1566309, -0.16810994, 0.12323543, 0.96541125)
+bones/45/position = Vector3(-0.030562669, 0.050835513, 0.013775801)
+bones/45/rotation = Quaternion(-0.006948478, -0.029829152, 0.2212582, 0.9747342)
+bones/46/rotation = Quaternion(-0.107753396, -0.09935345, 0.16107301, 0.97599876)
+bones/47/rotation = Quaternion(-0.12533735, -0.08095401, 0.05832976, 0.9870839)
+bones/48/rotation = Quaternion(-0.14071532, -0.10682307, 0.10175526, 0.9789964)
+bones/49/rotation = Quaternion(-0.00080224645, 0.024185, 0.033152875, 0.99915737)
+bones/50/rotation = Quaternion(4.3862792e-07, 0.024198487, 5.7053555e-08, 0.9997072)
+bones/51/position = Vector3(-0.10431099, -0.13655394, 0.17372277)
+bones/51/rotation = Quaternion(-0.33098873, 0.58664286, 0.17217135, -0.7187863)
+bones/52/position = Vector3(0.4142939, -0.40746522, 0.23056406)
+bones/52/rotation = Quaternion(-0.5553337, 0.37823808, 0.5937305, 0.44274673)
+bones/53/position = Vector3(-0.3504886, -0.7304391, -0.11133671)
+bones/58/position = Vector3(-0.10063686, -0.033190966, 0.21846257)
+bones/58/rotation = Quaternion(0.036368538, -0.063197054, -0.9817548, 0.17561598)
+bones/60/position = Vector3(0.008512089, -0.009675739, -0.015335106)
+bones/60/rotation = Quaternion(-2.4355037e-07, 4.155644e-08, 0.7071068, 0.7071068)
+bones/61/rotation = Quaternion(-0.16117886, 0.036776382, -0.39343873, 0.9043644)
+bones/62/position = Vector3(-0.00926931, -0.018282467, 1.1397016e-08)
+bones/62/rotation = Quaternion(-4.839605e-09, -3.970015e-08, 0.35232013, 0.9358795)
+
+[node name="Arm" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="0" unique_id=2048880710]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("13_0w848")
+
+[node name="BottomShell" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="1" unique_id=399417425]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="Cylinder" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="2" unique_id=862764757]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="Cylinder_002" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="3" unique_id=1644810667]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="Pin" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="4" unique_id=1169883407]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="PinHolder" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="5" unique_id=1405282701]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="Plane" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="6" unique_id=1136455969]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="Sphere" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="7" unique_id=1409014629]
+layers = 16
+cast_shadow = 0
+extra_cull_margin = 1.0
+gi_mode = 2
+instance_shader_parameters/fov = 58.70000183825
+surface_material_override/0 = ExtResource("14_wq5sf")
+
+[node name="StickyGernade_001" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="8" unique_id=1020323679]
+visible = false
+
+[node name="StickyGernadePin" parent="Grenade Animations/Skel_Arm/Skeleton3D" index="9" unique_id=572641951]
+visible = false
+
+[node name="Cube" parent="Grenade Animations" index="2" unique_id=1760067902]
+visible = false
+
+[node name="Cube_001" parent="Grenade Animations" index="3" unique_id=815013303]
+visible = false
+
+[node name="Cube_002" parent="Grenade Animations" index="4" unique_id=1940971707]
+visible = false
+
+[node name="Cube_003" parent="Grenade Animations" index="5" unique_id=1930670116]
+visible = false
+
+[node name="BézierCircle" parent="Grenade Animations" index="6" unique_id=994679628]
+visible = false
+
+[node name="BézierCircle_001" parent="Grenade Animations" index="7" unique_id=2129703822]
+visible = false
+
+[node name="AnimationTree" type="AnimationTree" parent="Grenade Animations" unique_id=361514759]
+tree_root = SubResource("AnimationNodeStateMachine_wq5sf")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/throw = false
+
+[editable path="Grenade Animations"]

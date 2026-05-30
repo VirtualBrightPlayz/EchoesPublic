@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dsthl2ysnt718"]
+
+[ext_resource type="Texture2D" uid="uid://cb6r8tds6xcwa" path="res://scenes/rooms/props/static/panels/textures/T_Gradient2.png" id="1_bu5ij"]
+[ext_resource type="Texture2D" uid="uid://dms3cekwgryab" path="res://scenes/rooms/props/static/panels/textures/handreticle-01.png" id="1_hwssr"]
+[ext_resource type="Shader" uid="uid://dd2lhgg8thcyg" path="res://shaders/floatingoverlay.gdshader" id="1_l6is8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_l6is8")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.4
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/texture_emission = ExtResource("1_hwssr")
+shader_parameter/emission = Color(0.59607846, 0.9529412, 0.6313726, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/gradient_effect = ExtResource("1_bu5ij")
+shader_parameter/gradient_strength = 5.195
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/time_speed_x = 0.0
+shader_parameter/time_speed_y = 1.0

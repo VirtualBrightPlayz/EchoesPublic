@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bg14sxp67g0by"]
+
+[ext_resource type="Script" uid="uid://dh5tijonoqu1c" path="res://scripts/player/controllers/DebugFPController.cs" id="1_4c8xn"]
+[ext_resource type="Script" uid="uid://b8vu6svo26dmh" path="res://scripts/player/input/LocalPlayerInput.cs" id="4_5luwh"]
+[ext_resource type="PackedScene" uid="uid://hlxqk4xv86v1" path="res://scenes/back_buffer_blur.tscn" id="13_4j6h0"]
+[ext_resource type="Script" uid="uid://6uk6u6sb0kae" path="res://scripts/map/ElevatorShake.cs" id="14_xicbe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qgydv"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ok4x1"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wyiju"]
+radius = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_iowun"]
+size = Vector3(0.5, 0.2, 0.2)
+
+[node name="DebugPlayerController" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "Inputs")]
+collision_layer = 2
+collision_mask = 33
+slide_on_ceiling = false
+floor_snap_length = 0.5
+script = ExtResource("1_4c8xn")
+Speed = 4.0
+SneakMultiplier = 0.5
+GravityMulti = 1.5
+head = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+Inputs = NodePath("Inputs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_qgydv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+visible = false
+mesh = SubResource("CapsuleMesh_ok4x1")
+skeleton = NodePath("../..")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+fov = 70.0
+far = 100.0
+
+[node name="BackBufferBlur" parent="Head/Camera3D" instance=ExtResource("13_4j6h0")]
+
+[node name="ElevatorShake" type="Node" parent="Head/Camera3D"]
+script = ExtResource("14_xicbe")
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 268
+hit_from_inside = true
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Head"]
+shape = SubResource("SphereShape3D_wyiju")
+target_position = Vector3(0, 0, -3)
+collision_mask = 268
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+visible = false
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 15.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+visible = false
+mesh = SubResource("BoxMesh_iowun")
+
+[node name="Inputs" type="Node" parent="."]
+script = ExtResource("4_5luwh")

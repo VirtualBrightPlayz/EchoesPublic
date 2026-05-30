@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://7mjw4emnh8yw"]
+
+[ext_resource type="Texture2D" uid="uid://bwo8esneheuao" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/Warhead Metal T.png" id="1_0dteq"]
+[ext_resource type="Texture2D" uid="uid://chvou3665qw5d" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/Warhead Metal N.png" id="2_pvbgc"]
+[ext_resource type="Texture2D" uid="uid://rj7bp5gletrp" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/Grate_ORM.png" id="3_pvbgc"]
+
+[resource]
+albedo_texture = ExtResource("1_0dteq")
+orm_texture = ExtResource("3_pvbgc")
+normal_enabled = true
+normal_texture = ExtResource("2_pvbgc")

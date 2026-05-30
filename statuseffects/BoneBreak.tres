@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BoneBreak" load_steps=2 format=3 uid="uid://cj561xshpsm54"]
+
+[ext_resource type="Script" uid="uid://cskuyl4hc2pdu" path="res://scripts/player/statuseffects/defaultEffects/BoneBreak.cs" id="1_03chk"]
+
+[resource]
+script = ExtResource("1_03chk")
+metadata/_custom_type_script = "uid://cskuyl4hc2pdu"

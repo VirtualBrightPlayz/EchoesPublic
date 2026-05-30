@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://blkidjxn02dqf"]
+
+[ext_resource type="Script" uid="uid://3t5cphkub5cu" path="res://scripts/player/controllers/ability/457/FireballAbility.cs" id="1_sdwq6"]
+[ext_resource type="PackedScene" uid="uid://bs72q7myl3sr3" path="res://scenes/items/grenade_fireball_thrown.tscn" id="2_p51ea"]
+
+[node name="FireballAbility" type="Node" unique_id=1464020896]
+script = ExtResource("1_sdwq6")
+staminaRequired = 50.0
+fireballPrefab = ExtResource("2_p51ea")
+metadata/_custom_type_script = "uid://3t5cphkub5cu"

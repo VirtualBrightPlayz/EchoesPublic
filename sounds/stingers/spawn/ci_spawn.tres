@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://081qceq2wpkg"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_7rnva"]
+[ext_resource type="AudioStream" uid="uid://bc3dc474ytq40" path="res://audio/music/stingers/SCP Echoes OST - CI Spawn Stinger.ogg" id="2_7rnva"]
+
+[resource]
+resource_name = "ci_spawn"
+script = ExtResource("1_7rnva")
+streams = [ExtResource("2_7rnva")]
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

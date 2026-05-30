@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cyr8xl88l3oym"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_0kbkx"]
+[ext_resource type="Texture2D" uid="uid://0rfnu6nh5j8o" path="res://textures/map_editor/bolt.png" id="1_jmnyt"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="4_f78bb"]
+
+[resource]
+resource_name = "Heavy Tesla 1"
+script = ExtResource("1_0kbkx")
+type = 2
+scenes = []
+sceneFile = "uid://y7ymy12rfx8h"
+layoutIcon = ExtResource("1_jmnyt")
+zone = 2
+category = "Heavy Containment"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

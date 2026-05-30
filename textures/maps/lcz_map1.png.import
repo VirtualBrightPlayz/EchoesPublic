@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://783lfvv1uxyo"
+path="res://.godot/imported/lcz_map1.png-faa7712d393c0a61eafff6356f1dd4d1.image"
+
+[deps]
+
+source_file="res://textures/maps/lcz_map1.png"
+dest_files=["res://.godot/imported/lcz_map1.png-faa7712d393c0a61eafff6356f1dd4d1.image"]
+
+[params]
+

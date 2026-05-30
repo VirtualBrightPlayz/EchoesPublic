@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://cw68dgddles7s"]
+
+[ext_resource type="Texture2D" uid="uid://djf85qd3xuuv7" path="res://scenes/misc/fire/slowsmoke.png" id="2_gvo0k"]
+[ext_resource type="Texture2D" uid="uid://bhv647katwep8" path="res://scenes/misc/fire/slowsmoke_n.png" id="3_4odrb"]
+[ext_resource type="Texture2D" uid="uid://u3jxc6231hmd" path="res://scenes/misc/fire/T_Gradient3_Transparent.png" id="3_gtoyp"]
+[ext_resource type="Script" uid="uid://devajooc73iic" path="res://scripts/CustomRoomLogic/LookAtMainCamera.cs" id="3_isobt"]
+[ext_resource type="Texture2D" uid="uid://cx6j8d04dh06u" path="res://textures/scpcb/bullethole1_normal.png" id="5_5fd46"]
+
+[sub_resource type="Curve" id="Curve_gvo0k"]
+_data = [Vector2(0, 0.467213), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gtoyp"]
+curve = SubResource("Curve_gvo0k")
+
+[sub_resource type="Curve" id="Curve_gtoyp"]
+_limits = [-10.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, -10), 0.0, 20.0, 0, 1, Vector2(1, 10), 20.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_isobt"]
+curve = SubResource("Curve_gtoyp")
+
+[sub_resource type="Curve" id="Curve_isobt"]
+_data = [Vector2(0, 0.364597), 0.0, 0.716585, 0, 0, Vector2(0.102459, 0.764045), 1.9191, 1.9191, 0, 0, Vector2(0.389344, 1), 0.603146, -1.40143, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4odrb"]
+curve = SubResource("Curve_isobt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gtoyp"]
+particle_flag_align_y = true
+angle_min = -1.99999
+angle_max = 2.00001
+angle_curve = SubResource("CurveTexture_isobt")
+inherit_velocity_ratio = 1.0
+direction = Vector3(1, 1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, -0.25, 0)
+scale_min = 10.0
+scale_max = 15.0
+scale_curve = SubResource("CurveTexture_4odrb")
+color = Color(0.6, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_gtoyp")
+anim_speed_min = 1.0
+anim_speed_max = 2.0
+anim_offset_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtoyp"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_gvo0k")
+roughness = 0.5
+normal_enabled = true
+normal_scale = 0.4
+normal_texture = ExtResource("3_4odrb")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 11
+particles_anim_v_frames = 11
+particles_anim_loop = false
+proximity_fade_distance = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_isobt"]
+material = SubResource("StandardMaterial3D_gtoyp")
+
+[sub_resource type="Curve" id="Curve_a1oug"]
+_data = [Vector2(0, 0), 0.0, 13.3652, 0, 0, Vector2(0.213115, 1), 1.78202, -1.40143, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qg3we"]
+curve = SubResource("Curve_a1oug")
+
+[sub_resource type="Curve" id="Curve_4odrb"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1.85393), 0.0, 3.65543, 0, 0, Vector2(1, 0.674157), -3.08427, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5fd46"]
+_limits = [0.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 8.20225), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_a1oug"]
+curve_x = SubResource("Curve_4odrb")
+curve_y = SubResource("Curve_5fd46")
+curve_z = SubResource("Curve_4odrb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4odrb"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+angle_min = -1.99999
+angle_max = 2.00001
+angle_curve = SubResource("CurveTexture_isobt")
+inherit_velocity_ratio = 1.0
+direction = Vector3(1, 0.75, 0)
+spread = 22.5
+initial_velocity_min = 10.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, -50, 0)
+scale_min = 0.2
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_qg3we")
+scale_over_velocity_max = 10.0
+scale_over_velocity_curve = SubResource("CurveXYZTexture_a1oug")
+color = Color(0.6, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_gtoyp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mnml"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_gtoyp")
+roughness = 0.25
+normal_enabled = true
+normal_texture = ExtResource("5_5fd46")
+disable_receive_shadows = true
+billboard_keep_scale = true
+use_particle_trails = true
+proximity_fade_enabled = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_gtoyp"]
+material = SubResource("StandardMaterial3D_3mnml")
+size = 2.0
+
+[sub_resource type="Animation" id="Animation_gtoyp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gvo0k"]
+resource_name = "blood"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root/GPUParticles3D2:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtoyp"]
+_data = {
+&"RESET": SubResource("Animation_gtoyp"),
+&"blood": SubResource("Animation_gvo0k")
+}
+
+[node name="BloodParticles" type="Node3D" unique_id=1890345639]
+
+[node name="Root" type="Node3D" parent="." unique_id=1208542902]
+
+[node name="LookAtMain" type="Node" parent="Root" unique_id=1329158535]
+script = ExtResource("3_isobt")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Root" unique_id=2047536421]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+cast_shadow = 0
+emitting = false
+amount = 1
+lifetime = 5.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_gtoyp")
+draw_pass_1 = SubResource("QuadMesh_isobt")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Root" unique_id=568061495]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 0, 0, 0)
+cast_shadow = 0
+emitting = false
+amount = 2
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+visibility_aabb = AABB(-2, -85.8559, -6.61217, 54.6255, 98.8819, 19.4308)
+local_coords = true
+transform_align = 3
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_4odrb")
+draw_pass_1 = SubResource("RibbonTrailMesh_gtoyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Root" unique_id=1198602480]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_gtoyp")
+
+[connection signal="ready" from="." to="Root/GPUParticles3D" method="restart" binds= [false]]
+[connection signal="ready" from="." to="Root/GPUParticles3D2" method="restart" binds= [false]]

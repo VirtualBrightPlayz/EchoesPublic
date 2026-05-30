@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://crq6xa4jg2jo8"]
+
+[ext_resource type="Shader" uid="uid://biqk0jt4lht7v" path="res://shaders/PBR_Glass.gdshader" id="1_cxn6d"]
+[ext_resource type="Texture2D" uid="uid://duq80ifcogxud" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Lab Door/Textures/PS-01 Door_T.png" id="2_6bh60"]
+[ext_resource type="Texture2D" uid="uid://76ykoqtmon61" path="res://models/rooms/pop_hcz_new/PS-01/Misc/Lab Door/Textures/PS-01 Door_N.png" id="3_1xnsb"]
+[ext_resource type="Texture2D" uid="uid://crcnkt5mp8i1u" path="res://models/rooms/sz/Concretn_roughness.jpg" id="4_6bh60"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_cxn6d")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/albedo_texture = ExtResource("2_6bh60")
+shader_parameter/roughness = 0.2000000095
+shader_parameter/roughness_texture = ExtResource("4_6bh60")
+shader_parameter/normal_strength = 1.000000807500001
+shader_parameter/normal_map = ExtResource("3_1xnsb")
+shader_parameter/edge_color = Color(0, 0, 0, 1)

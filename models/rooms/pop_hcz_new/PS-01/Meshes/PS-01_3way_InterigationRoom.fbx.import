@@ -1,0 +1,138 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://byasfd12ea8kt"
+path="res://.godot/imported/PS-01_3way_InterigationRoom.fbx-61d3ff037a9c4001af6a7f5e14be6f14.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/PS-01/Meshes/PS-01_3way_InterigationRoom.fbx"
+dest_files=["res://.godot/imported/PS-01_3way_InterigationRoom.fbx-61d3ff037a9c4001af6a7f5e14be6f14.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Concrete_Inset_Trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteTrim_Inset.tres",
+"use_external/path": "uid://btl8ifk3fa5sp"
+},
+"EZ_CEILING_nolights": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/M_Ceiling_NoLights_PZ-01.tres",
+"use_external/path": "uid://ch60x0aw7pckw"
+},
+"PZ-01_Walls": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/PZ-01_Wall_CM_DarkBlue.tres",
+"use_external/path": "uid://ctfduv42tsi1y"
+},
+"TileFloor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Materials/M_TileFloor_PZ-01.tres",
+"use_external/path": "uid://cqwqauxxwdrq4"
+}
+},
+"nodes": {
+"PATH:Curve_Ceiling_SCZ": {
+"mesh_instance/layers": 9
+},
+"PATH:Curve_Floor_SCZ": {
+"mesh_instance/layers": 9
+},
+"PATH:DoorWallNode_002": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_3way_SCZ_007": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_3way_SCZ_008": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_3way_SCZ_009": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_3way_SCZ_010": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_3way_SCZ_011": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_014": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_015": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_042": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_043": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_044": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_045": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_046": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_047": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_048": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_049": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_050": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_051": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_052": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_053": {
+"mesh_instance/layers": 9
+},
+"PATH:Trim_Straight_SCZ_054": {
+"mesh_instance/layers": 9
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

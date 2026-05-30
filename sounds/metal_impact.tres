@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://4ytyotebnsvb"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_4f2pp"]
+[ext_resource type="AudioStream" uid="uid://bnp6y1x31yggr" path="res://audio/cc_by/167308__dasdeer__metal-hit-1.wav" id="2_655ji"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8rhkn"]
+playback_mode = 1
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("2_655ji")
+
+[resource]
+script = ExtResource("1_4f2pp")
+DisplayName = "Metal Impact"
+streams = [SubResource("AudioStreamRandomizer_8rhkn")]
+unitSize = 3.0
+maxDistance = 15.0
+pitch = 0.75

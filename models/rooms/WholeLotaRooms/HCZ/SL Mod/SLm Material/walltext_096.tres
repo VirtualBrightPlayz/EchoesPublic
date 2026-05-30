@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://4twktc71skk6"]
+
+[ext_resource type="Texture2D" uid="uid://bpi5qv7pd1gtd" path="res://models/rooms/WholeLotaRooms/HCZ/SL Mod/SLm Textures/096 106 Text.png" id="1_hls2m"]
+[ext_resource type="Texture2D" uid="uid://kuej6r0dx410" path="res://models/rooms/pop_hcz_new/HCZ_V4/Textures/ConcretePlaster_ORM.png" id="2_wxcbo"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.9490196, 0.77254903, 0.23921569, 1)
+albedo_texture = ExtResource("1_hls2m")
+orm_texture = ExtResource("2_wxcbo")

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bwyl6cexx273k"]
+
+[ext_resource type="Texture2D" uid="uid://ba6il0msbip8t" path="res://textures/scpcb/bullethole1_alpha.png" id="1_fo3gs"]
+[ext_resource type="Texture2D" uid="uid://be18p1lyhfe0" path="res://textures/scpcb/bullethole1_alpha2.png" id="1_lccsl"]
+[ext_resource type="Texture2D" uid="uid://cx6j8d04dh06u" path="res://textures/scpcb/bullethole1_normal.png" id="2_w806x"]
+
+[sub_resource type="Animation" id="Animation_fo3gs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Decal:emission_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+
+[sub_resource type="Animation" id="Animation_s3pb6"]
+resource_name = "glow"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Decal:emission_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhkfc"]
+_data = {
+&"RESET": SubResource("Animation_fo3gs"),
+&"glow": SubResource("Animation_s3pb6")
+}
+
+[node name="BulletHole" type="Node3D" unique_id=79611558]
+
+[node name="Decal" type="Decal" parent="." unique_id=1101714496]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+size = Vector3(0.1, 0.25, 0.1)
+texture_albedo = ExtResource("1_fo3gs")
+texture_normal = ExtResource("2_w806x")
+texture_emission = ExtResource("1_lccsl")
+emission_energy = 1.5
+modulate = Color(1, 0, 0, 1)
+distance_fade_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1341301084]
+libraries/ = SubResource("AnimationLibrary_yhkfc")
+autoplay = &"glow"

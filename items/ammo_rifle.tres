@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AmmoItemPreset" format=3 uid="uid://cwigahnxphwyd"]
+
+[ext_resource type="Texture2D" uid="uid://brgfre2gmtk3m" path="res://textures/inv_icons/ammo.png" id="1_mfcht"]
+[ext_resource type="PackedScene" uid="uid://5q8y3op87b0r" path="res://scenes/items/ammo_pistol.tscn" id="2_xayxl"]
+[ext_resource type="Script" uid="uid://c7nu5dqrd8ay7" path="res://scripts/items/AmmoItemPreset.cs" id="3_s2fy8"]
+
+[resource]
+resource_name = "Rifle Ammo"
+script = ExtResource("3_s2fy8")
+TypeOfAmmo = 1
+ItemScene = ExtResource("2_xayxl")
+Icon = ExtResource("1_mfcht")
+metadata/_custom_type_script = "uid://c7nu5dqrd8ay7"

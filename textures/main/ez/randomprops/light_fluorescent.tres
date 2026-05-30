@@ -1,0 +1,6 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://kxemm5uqwlma"]
+
+[resource]
+emission_enabled = true
+normal_enabled = true
+ao_enabled = true

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Flashbang" load_steps=2 format=3 uid="uid://cm3ny4w18cntt"]
+
+[ext_resource type="Script" uid="uid://dexr1y7xoggqn" path="res://scripts/player/statuseffects/defaultEffects/Flashbang.cs" id="1_5q17m"]
+
+[resource]
+script = ExtResource("1_5q17m")
+metadata/_custom_type_script = "uid://dexr1y7xoggqn"

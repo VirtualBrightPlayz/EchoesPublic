@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=3 uid="uid://kdjdmv0gkvh8"]
+
+[ext_resource type="Script" uid="uid://digphi4anc06n" path="res://scripts/LipSync/LipSync.cs" id="1_mxryi"]
+[ext_resource type="Script" uid="uid://tmugj300arbb" path="res://scripts/LipSync/BlendShapeData.cs" id="2_dvb1k"]
+[ext_resource type="Resource" uid="uid://c1hkcxs60577b" path="res://audio/lip_sync_profile.tres" id="3_de8gc"]
+[ext_resource type="PackedScene" uid="uid://bob12oh0lob75" path="res://models/main/human/class_d/ClassDRig.fbx" id="4_de8gc"]
+
+[sub_resource type="Resource" id="Resource_u2yu4"]
+script = ExtResource("2_dvb1k")
+blendShapeValues = Dictionary[String, float]({
+"01_M_JawOpen": 0.3,
+"10_M_L_Widen": 1.0,
+"11_M_R_Widen": 1.0
+})
+metadata/_custom_type_script = "uid://tmugj300arbb"
+
+[sub_resource type="Resource" id="Resource_uy5mo"]
+script = ExtResource("2_dvb1k")
+blendShapeValues = Dictionary[String, float]({})
+metadata/_custom_type_script = "uid://tmugj300arbb"
+
+[sub_resource type="Resource" id="Resource_wms7j"]
+script = ExtResource("2_dvb1k")
+blendShapeValues = Dictionary[String, float]({
+"02_M_L_CommisMove": 0.5,
+"03_M_R_CommisMove": 0.5,
+"06_M_L_LowerLipDrop": 0.5,
+"07_M_R_LowerLipDrop": 0.5,
+"08_M_L_Pucker": 0.5,
+"09_M_R_Pucker": 0.5
+})
+metadata/_custom_type_script = "uid://tmugj300arbb"
+
+[sub_resource type="Resource" id="Resource_o2rdm"]
+script = ExtResource("2_dvb1k")
+blendShapeValues = Dictionary[String, float]({
+"01_M_JawOpen": 0.3,
+"08_M_L_Pucker": 1.0,
+"09_M_R_Pucker": 1.0
+})
+metadata/_custom_type_script = "uid://tmugj300arbb"
+
+[sub_resource type="Resource" id="Resource_ordh1"]
+script = ExtResource("2_dvb1k")
+blendShapeValues = Dictionary[String, float]({
+"01_M_JawOpen": 0.3,
+"10_M_L_Widen": 1.0,
+"11_M_R_Widen": 1.0
+})
+metadata/_custom_type_script = "uid://tmugj300arbb"
+
+[sub_resource type="Resource" id="Resource_b0foj"]
+script = ExtResource("2_dvb1k")
+blendShapeValues = Dictionary[String, float]({
+"01_M_JawOpen": 0.2,
+"08_M_L_Pucker": 1.0,
+"09_M_R_Pucker": 1.0
+})
+metadata/_custom_type_script = "uid://tmugj300arbb"
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_mxryi"]
+
+[node name="Node" type="Node" node_paths=PackedStringArray("mesh", "debugLabel")]
+script = ExtResource("1_mxryi")
+mesh = NodePath("ClassDRig/GeneralSkeleton/Mesh")
+debugLabel = NodePath("Label3D")
+effectIndex = 1
+signalGain = 5.0
+lerpSpeed = 100.0
+phonemeToBlendShapes = Dictionary[String, ExtResource("2_dvb1k")]({
+"A": SubResource("Resource_u2yu4"),
+"E": SubResource("Resource_uy5mo"),
+"I": SubResource("Resource_wms7j"),
+"O": SubResource("Resource_o2rdm"),
+"S": SubResource("Resource_ordh1"),
+"U": SubResource("Resource_b0foj")
+})
+profile = ExtResource("3_de8gc")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_mxryi")
+volume_db = -8.0
+autoplay = true
+
+[node name="ClassDRig" parent="." instance=ExtResource("4_de8gc")]
+
+[node name="GeneralSkeleton" parent="ClassDRig" index="1"]
+bones/12/scale = Vector3(1.00001, 0.999999, 0.999987)
+bones/13/scale = Vector3(1.00001, 0.999999, 0.999986)
+bones/36/scale = Vector3(1.00001, 0.999999, 0.999987)
+bones/37/scale = Vector3(1.00003, 0.999999, 0.999972)
+bones/55/rotation = Quaternion(2.13427e-10, -8.95388e-10, 1, -5.74802e-10)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59174, 0.967048)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42971, 0.239907)
+visible = false
+
+[editable path="ClassDRig"]

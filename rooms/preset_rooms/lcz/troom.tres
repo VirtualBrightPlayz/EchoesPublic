@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cr5ddhwhcqxtj"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_keka6"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_sarb7"]
+
+[resource]
+resource_name = "Light T-Room"
+script = ExtResource("2_keka6")
+type = 3
+stage = 1
+scenes = []
+sceneFile = "uid://b4ul7mykrc0rl"
+isGeneric = true
+category = "Light Containment"

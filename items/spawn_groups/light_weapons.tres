@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemSpawnGroup" format=3 uid="uid://dee1105jduxfc"]
+
+[ext_resource type="Script" uid="uid://vus0iseb56sl" path="res://scripts/items/ItemSpawnGroup.cs" id="1_6k0ls"]
+[ext_resource type="Resource" uid="uid://tuh08g673bgs" path="res://items/pistol.tres" id="2_j85k6"]
+
+[resource]
+script = ExtResource("1_6k0ls")
+Items = [ExtResource("2_j85k6")]
+RemoveUsedItem = true
+MaxSpawned = 2

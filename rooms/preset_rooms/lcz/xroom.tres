@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ps2qh8b70yac"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_4elu5"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_384gd"]
+
+[resource]
+resource_name = "Light X-Room"
+script = ExtResource("2_4elu5")
+type = 4
+stage = 1
+scenes = []
+sceneFile = "uid://f1pcqxuju31k"
+isGeneric = true
+category = "Light Containment"

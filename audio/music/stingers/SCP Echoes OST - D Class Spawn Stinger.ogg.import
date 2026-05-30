@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crschrho54bfj"
+path="res://.godot/imported/SCP Echoes OST - D Class Spawn Stinger.ogg-94a6a3940066e76c076759942bcc6ab9.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/stingers/SCP Echoes OST - D Class Spawn Stinger.ogg"
+dest_files=["res://.godot/imported/SCP Echoes OST - D Class Spawn Stinger.ogg-94a6a3940066e76c076759942bcc6ab9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

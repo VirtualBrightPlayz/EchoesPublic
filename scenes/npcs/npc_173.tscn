@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://dj4eqkm4piowv"]
+
+[ext_resource type="Script" uid="uid://dd5p5yfh8kbui" path="res://scripts/npc/NpcScp173.cs" id="1_1ujcm"]
+[ext_resource type="Resource" uid="uid://cjqc3tiutwv7e" path="res://sounds/footsteps_173.tres" id="2_32tt3"]
+[ext_resource type="PackedScene" uid="uid://dd668ljdwslpn" path="res://models/scpcb/scp/scp173.glb" id="3_8iy47"]
+[ext_resource type="Shader" uid="uid://3s007lehwu54" path="res://shaders/spec_gloss.gdshader" id="4_305ht"]
+[ext_resource type="Texture2D" uid="uid://cohkega7tb53v" path="res://textures/scpcb/scp/173texture.jpg" id="5_ssj1p"]
+[ext_resource type="Texture2D" uid="uid://c5qq6xqu00dfh" path="res://textures/scpcb/scp/173_Norm.jpg" id="6_fbii2"]
+[ext_resource type="Texture2D" uid="uid://dgsm07sq6fybq" path="res://textures/scpcb/scp/173_Spec.jpg" id="7_ftm6h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3qva1"]
+radius = 0.25
+height = 2.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7b77m"]
+render_priority = 0
+shader = ExtResource("4_305ht")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("5_ssj1p")
+shader_parameter/roughness = 0.15
+shader_parameter/specular = 0.5
+shader_parameter/texture_specular = ExtResource("7_ftm6h")
+shader_parameter/texture_normal = ExtResource("6_fbii2")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nleio"]
+radius = 4000.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_21qex"]
+
+[node name="Npc173" type="CharacterBody3D" node_paths=PackedStringArray("debug", "agent", "playerFinder", "doorFinder")]
+floor_max_angle = 0.872665
+floor_snap_length = 0.5
+script = ExtResource("1_1ujcm")
+debug = NodePath("Label3D")
+agent = NodePath("NavigationAgent3D")
+playerFinder = NodePath("PlayerFinder")
+doorFinder = NodePath("DoorFinder")
+walkSpeed = 15.0
+accel = 1000.0
+rotationLerpSpeed = 20.0
+footstepInterval = 0.3
+footsteps = ExtResource("2_32tt3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_3qva1")
+
+[node name="scp173" parent="CollisionShape3D" instance=ExtResource("3_8iy47")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.25, 0)
+
+[node name="Scene_Root" parent="CollisionShape3D/scp173" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_7b77m")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_postprocessing = 1
+simplify_path = true
+simplify_epsilon = 0.5
+avoidance_enabled = true
+max_speed = 15.0
+debug_enabled = true
+
+[node name="PlayerFinder" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerFinder"]
+shape = SubResource("SphereShape3D_nleio")
+
+[node name="DoorFinder" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("SphereShape3D_21qex")
+target_position = Vector3(0, 0, -2)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+top_level = true
+visible = false
+ignore_occlusion_culling = true
+billboard = 1
+double_sided = false
+no_depth_test = true
+text = "hi"
+
+[editable path="CollisionShape3D/scp173"]

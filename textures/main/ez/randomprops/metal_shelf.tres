@@ -1,0 +1,16 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://b6j6od5sndlit"]
+
+[ext_resource type="Texture2D" uid="uid://cer3ngy3kqtfk" path="res://textures/main/ez/randomprops/T_metalshelf.png" id="1_l130a"]
+[ext_resource type="Texture2D" uid="uid://c2oqqmphstwuc" path="res://textures/main/ez/randomprops/ORM_metalshelf.png" id="2_en20p"]
+[ext_resource type="Texture2D" uid="uid://dwjn64iihr0l4" path="res://textures/main/ez/randomprops/N_metalshelf.png" id="2_xh610"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_l130a")
+orm_texture = ExtResource("2_en20p")
+normal_enabled = true
+normal_texture = ExtResource("2_xh610")
+ao_enabled = true

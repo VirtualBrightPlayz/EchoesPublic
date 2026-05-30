@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://cygd5cqvijh54"]
+
+[ext_resource type="Script" uid="uid://c56mgy4q2s47e" path="res://scripts/player/role_ui/ViewmodelFlashlight.cs" id="1_lvqjr"]
+[ext_resource type="Curve" uid="uid://ca1t17qyk2kme" path="res://textures/tweencurve.tres" id="2_2vgvp"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="2_lfok5"]
+[ext_resource type="Texture2D" uid="uid://dasm00licakxb" path="res://models/main/items/flashlight_2/T_Flashlight.png" id="3_5f881"]
+[ext_resource type="Material" uid="uid://bmjrrob7hinpq" path="res://models/main/human/class_d/hands_pov.tres" id="7_gywtq"]
+[ext_resource type="PackedScene" uid="uid://bokwqj6x7pi8m" path="res://models/main/items/flashlight_2/FlashAnims.glb" id="12_2vgvp"]
+[ext_resource type="Texture2D" uid="uid://cogcxdmshqw6l" path="res://models/main/items/flashlight_2/ORM_Flashlight.png" id="13_8icd5"]
+[ext_resource type="Texture2D" uid="uid://ivulubojsonh" path="res://models/main/items/flashlight_2/E_Flashlight.png" id="13_iyip8"]
+[ext_resource type="PackedScene" uid="uid://bybbgda2ti0ae" path="res://models/main/items/flashlight_2/flashlightl.fbx" id="14_2v0ua"]
+[ext_resource type="Texture2D" uid="uid://c7s62hlbhnmcp" path="res://models/main/items/flashlight_2/N_Flashlight.png" id="14_iyip8"]
+[ext_resource type="Shader" uid="uid://bblo8m4k7j6wl" path="res://shaders/fp_pov_glass.gdshader" id="18_462ny"]
+[ext_resource type="Texture2D" uid="uid://rjjmq53jhea" path="res://textures/main/ez/random_textures/T_Fracture_Voronoi.png" id="19_c88h7"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2vgvp"]
+animation = &"Use"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lfok5"]
+animation = &"Equip"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yjqrc"]
+animation = &"Idle (250 Frames)"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_offpg"]
+animation = &"Inspect"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yjqrc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nnyym"]
+xfade_time = 0.1
+xfade_curve = ExtResource("2_2vgvp")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5f881"]
+xfade_time = 0.1
+xfade_curve = ExtResource("2_2vgvp")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3xexw"]
+xfade_time = 0.1
+xfade_curve = ExtResource("2_2vgvp")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lvqjr"]
+xfade_time = 0.1
+xfade_curve = ExtResource("2_2vgvp")
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2vgvp"]
+xfade_time = 0.1
+xfade_curve = ExtResource("2_2vgvp")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_offpg"]
+states/Click/node = SubResource("AnimationNodeAnimation_2vgvp")
+states/Click/position = Vector2(391, 82)
+states/Equip/node = SubResource("AnimationNodeAnimation_lfok5")
+states/Equip/position = Vector2(225, 1)
+states/Idle/node = SubResource("AnimationNodeAnimation_yjqrc")
+states/Idle/position = Vector2(361, -34)
+states/Inspect/node = SubResource("AnimationNodeAnimation_offpg")
+states/Inspect/position = Vector2(652, -9)
+states/Start/position = Vector2(147, 81)
+transitions = ["Start", "Equip", SubResource("AnimationNodeStateMachineTransition_yjqrc"), "Equip", "Idle", SubResource("AnimationNodeStateMachineTransition_nnyym"), "Idle", "Inspect", SubResource("AnimationNodeStateMachineTransition_5f881"), "Inspect", "Idle", SubResource("AnimationNodeStateMachineTransition_3xexw"), "Idle", "Click", SubResource("AnimationNodeStateMachineTransition_lvqjr"), "Click", "Idle", SubResource("AnimationNodeStateMachineTransition_2vgvp")]
+graph_offset = Vector2(-90, -112)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvqjr"]
+render_priority = 0
+shader = ExtResource("2_lfok5")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("3_5f881")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("13_8icd5")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("13_8icd5")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("14_iyip8")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/texture_emissive = ExtResource("13_iyip8")
+shader_parameter/emissive_tint = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxlik"]
+render_priority = 0
+shader = ExtResource("18_462ny")
+shader_parameter/albedo = Color(1, 1, 1, 0)
+shader_parameter/orm_texture = ExtResource("19_c88h7")
+shader_parameter/roughness_brightness = 0.09
+shader_parameter/roughness_contrast = -0.465
+shader_parameter/normal_strength = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[node name="ViewmodelFlashlight" type="Node3D" unique_id=726466603 node_paths=PackedStringArray("root", "viewCam", "viewCamBone", "light", "tree")]
+script = ExtResource("1_lvqjr")
+root = NodePath("FlashAnims")
+viewCam = NodePath("FlashAnims/Skel_Arm/Skeleton3D/Camera/Camera3D")
+viewCamBone = NodePath("FlashAnims/Skel_Arm/Skeleton3D/Camera")
+light = NodePath("FlashAnims/Skel_Arm/Skeleton3D/Light/SpotLight3D")
+tree = NodePath("AnimationTree")
+stateSwitchPaths = PackedStringArray("Equip", "Click")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1488786596]
+root_node = NodePath("../FlashAnims")
+tree_root = SubResource("AnimationNodeStateMachine_offpg")
+anim_player = NodePath("../FlashAnims/AnimationPlayer")
+
+[node name="FlashAnims" parent="." unique_id=379786446 instance=ExtResource("12_2vgvp")]
+
+[node name="Skeleton3D" parent="FlashAnims/Skel_Arm" parent_id_path=PackedInt32Array(379786446, 2049460894) index="0" unique_id=1696946369]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+bones/1/position = Vector3(-0.13515529, -0.06625047, 0.16514763)
+bones/1/rotation = Quaternion(0.026728177, -0.80560476, 0.40323, 0.43323445)
+bones/2/rotation = Quaternion(-1.7216821e-06, 1.8011724e-07, 0.5194655, 0.8544915)
+bones/3/rotation = Quaternion(0.015008699, 0.5828084, -0.16709796, 0.7951022)
+bones/5/position = Vector3(-0.02730537, 0.02668366, -0.010254118)
+bones/5/rotation = Quaternion(-0.1263827, -0.19113325, 0.15047881, 0.9616921)
+bones/6/rotation = Quaternion(-0.015585087, 0.07736784, 0.034677573, 0.99627745)
+bones/7/rotation = Quaternion(0.046263684, -0.10520683, -0.026734188, 0.9930138)
+bones/8/rotation = Quaternion(0.03396126, -0.021832531, -0.19584626, 0.9798032)
+bones/9/rotation = Quaternion(-0.2698517, 0.15247107, -0.03351973, 0.95016265)
+bones/10/rotation = Quaternion(-0.5013276, 0.13720511, -0.05078903, 0.85279894)
+bones/11/rotation = Quaternion(-0.38698563, 0.304296, -0.19869094, 0.8474479)
+bones/12/rotation = Quaternion(0.0026035954, -0.08729724, -0.18725264, 0.9784217)
+bones/13/rotation = Quaternion(-0.49429107, 0.12295275, 0.049754538, 0.8591179)
+bones/14/rotation = Quaternion(-0.5463053, 0.049002137, 0.015250136, 0.83601236)
+bones/15/rotation = Quaternion(-0.44478256, -0.00036726985, 0.028835045, 0.8951742)
+bones/16/rotation = Quaternion(-0.12679467, -0.015649961, -0.1497337, 0.98043776)
+bones/17/rotation = Quaternion(-0.56062335, 0.12625983, 0.031993758, 0.81776303)
+bones/18/rotation = Quaternion(-0.5283426, 0.113912106, 0.0021871997, 0.84135205)
+bones/19/rotation = Quaternion(-0.29567194, 0.16304612, -0.16302174, 0.92704797)
+bones/20/rotation = Quaternion(-0.31697357, 0.09873215, -0.20024222, 0.9217825)
+bones/21/rotation = Quaternion(-0.48327327, 0.07607601, 0.03820354, 0.8713207)
+bones/22/rotation = Quaternion(-0.3370496, 0.09170365, -0.039323725, 0.9361847)
+bones/23/rotation = Quaternion(-0.30617294, 0.12388182, -0.114252605, 0.9369407)
+bones/24/rotation = Quaternion(0.0064644516, 0.19481707, -0.03252638, 0.9802789)
+bones/25/rotation = Quaternion(5.0892936e-07, 0.19492409, 8.405327e-08, 0.98081833)
+bones/26/rotation = Quaternion(0.65088975, 0.4076049, 0.32593605, 0.5513316)
+bones/27/rotation = Quaternion(-2.8912893e-06, -8.744097e-08, -0.8808216, 0.47344828)
+bones/28/rotation = Quaternion(0.08489618, -0.10655685, -0.5255834, 0.8397621)
+bones/49/rotation = Quaternion(-0.00015953773, 0.0048147305, 0.03316215, 0.9994384)
+bones/50/rotation = Quaternion(4.4357256e-07, 0.0048176856, -4.6220638e-08, 0.9999884)
+bones/51/position = Vector3(-0.1347546, -0.109157905, 0.22991851)
+bones/51/rotation = Quaternion(-0.6382032, 0.20599127, 0.5222613, -0.5267896)
+bones/52/position = Vector3(0.30251575, -0.48959795, -0.24416739)
+bones/52/rotation = Quaternion(0.3721324, 0.6259399, 0.53023946, 0.43423828)
+bones/53/position = Vector3(-0.4673235, -0.18002301, -0.36218947)
+bones/54/position = Vector3(0.26667675, -0.28693992, -0.5798554)
+bones/57/position = Vector3(-0.09008777, -0.122488946, 0.38049498)
+bones/57/rotation = Quaternion(-0.7052331, 0.0012280666, 6.221538e-05, 0.7089745)
+
+[node name="Arm" parent="FlashAnims/Skel_Arm/Skeleton3D" index="0" unique_id=214305670]
+surface_material_override/0 = ExtResource("7_gywtq")
+
+[node name="Body_low" parent="FlashAnims/Skel_Arm/Skeleton3D" index="1" unique_id=2021095882]
+visible = false
+
+[node name="Light" type="BoneAttachment3D" parent="FlashAnims/Skel_Arm/Skeleton3D" index="2" unique_id=56975745]
+transform = Transform3D(0.99999696, -0.0018203644, 0.0016535829, -0.001643928, 0.0052926536, 0.9999846, -0.0018290883, -0.9999842, 0.005289614, -0.09008777, -0.122488946, 0.38049498)
+bone_name = "Flashlight"
+bone_idx = 57
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FlashAnims/Skel_Arm/Skeleton3D/Light" unique_id=1283693263]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 20.0
+
+[node name="flashlightl" parent="FlashAnims/Skel_Arm/Skeleton3D/Light" unique_id=2121613152 instance=ExtResource("14_2v0ua")]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0.065, 0)
+
+[node name="Body_low_1" parent="FlashAnims/Skel_Arm/Skeleton3D/Light/flashlightl" index="0" unique_id=1697091029]
+surface_material_override/0 = SubResource("ShaderMaterial_lvqjr")
+surface_material_override/1 = SubResource("ShaderMaterial_dxlik")
+
+[node name="Camera" type="BoneAttachment3D" parent="FlashAnims/Skel_Arm/Skeleton3D" index="3" unique_id=2036419531]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+bone_name = "Cam"
+bone_idx = 55
+
+[node name="Camera3D" type="Camera3D" parent="FlashAnims/Skel_Arm/Skeleton3D/Camera" unique_id=1036554502]
+fov = 58.715508
+
+[node name="Cube" parent="FlashAnims" index="1" unique_id=1521668397]
+visible = false
+
+[node name="Cube_001" parent="FlashAnims" index="2" unique_id=814345216]
+visible = false
+
+[node name="Cube_002" parent="FlashAnims" index="3" unique_id=1373572998]
+visible = false
+
+[node name="Cube_003" parent="FlashAnims" index="4" unique_id=274937831]
+visible = false
+
+[node name="BézierCircle" parent="FlashAnims" index="5" unique_id=220104581]
+visible = false
+
+[node name="BézierCircle_001" parent="FlashAnims" index="6" unique_id=883973902]
+visible = false
+
+[editable path="FlashAnims"]
+[editable path="FlashAnims/Skel_Arm/Skeleton3D/Light/flashlightl"]

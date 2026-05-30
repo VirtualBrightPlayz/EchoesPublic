@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InputActionSet" load_steps=7 format=3 uid="uid://cs5itskp7q07x"]
+
+[ext_resource type="Script" uid="uid://c5rpk473lbp36" path="res://scripts/player/input/InputActionAnalog.cs" id="1_3qm16"]
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="2_gupmw"]
+[ext_resource type="Resource" uid="uid://cxd3fyiv03ksa" path="res://data/input/actions/digital/admin_menu.tres" id="6_2aaua"]
+[ext_resource type="Resource" uid="uid://cv8t6omy0xjft" path="res://data/input/actions/digital/pause.tres" id="8_3a38t"]
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="9_calvi"]
+[ext_resource type="Script" uid="uid://cwm4ujckr2ppq" path="res://scripts/player/input/InputActionSet.cs" id="11_3lq8j"]
+
+[resource]
+resource_name = "AdminMenu"
+script = ExtResource("11_3lq8j")
+LocaleKey = "Set_AdminMenu"
+DigitalActions = Array[ExtResource("2_gupmw")]([ExtResource("8_3a38t"), ExtResource("6_2aaua")])
+metadata/_custom_type_script = "uid://cwm4ujckr2ppq"

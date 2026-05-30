@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=4 uid="uid://cov6lauyf3oro"]
+
+[ext_resource type="Script" uid="uid://bsxuyl0i423w6" path="res://scripts/CustomRoomLogic/LightSettings.cs" id="1_40elj"]
+[ext_resource type="Material" uid="uid://by2uww285i4lb" path="res://scenes/rooms/props/static/lights/textures/light_trim.tres" id="1_jawnr"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pp3pd"]
+_surfaces = [{
+"aabb": AABB(-0.0625, -1.75, 0, 0.125, 3.5, 0.044102665),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("DAAAAAQADQAAAAwADgANAAwADQAOAAEAAQAAAA0ADAAPAA4AAQAOAA8ADwAMABAABAAQAAwAAQAPABEAEAARAA8AEQAQABIABAASABAAEgATABEAEwASAAQAEwADABEAEQADAAEABAADABMAAgABAAMAAAABAAIABQADAAQAAwAFAAIABgAEAAAABAAGAAUAAAAHAAYAAgAHAAAABQAGAAgACAAGAAcACQACAAUABwACAAkACAAKAAUABQAKAAkABwALAAgACgAIAAsACQALAAcACwAJAAoA"),
+"lods": [0.20324813, PackedByteArray("AAABAAIAAgABAAMAAQAAAAQABAADAAEAAwAFAAIABQADAAQABgAEAAAABAAGAAUAAAAHAAYAAgAHAAAABQAGAAgACAAGAAcACQACAAUABwACAAkACAAKAAUABQAKAAkABwALAAgACgAIAAsACQALAAcACwAJAAoA")],
+"name": "T_light_trim",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("Vg4tvXNo3T/MzMw8Vg4tvXNo3b/OzMw8AACAvQAA4L/KzMw8Vg4tPXNo3b/MzMw8Vg4tPXNo3T/OzMw8AACAPQAA4L/KzMw8AACAPQAA4D/KzMw8AACAvQAA4D/KzMw8AACAPQAA4D8AAACAAACAvQAA4L8AAACAAACAPQAA4L8AAACAAACAvQAA4D8AAACAEpwWvHNo3T//pDQ9fozcvHNo3T9x3Bo9fYzcvHNo3b9x3Bo9EZwWvHNo3b//pDQ9EZwWPHNo3T//pDQ9EpwWPHNo3b//pDQ9fYzcPHNo3T9x3Bo9fozcPHNo3b9x3Bo9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_40elj"]
+resource_name = "Long_Wall_LightThin"
+_surfaces = [{
+"aabb": AABB(-0.0625, -1.75, 0, 0.125, 3.5, 0.044102665),
+"attribute_data": PackedByteArray("bjK1PhyVMT/vaSU/HJUxP8yaJj/GxjI/8M6yPsbGMj8AAOQ10HIpP5Qf9j/Qcik/kh/2PwAAKj8AAAA2AAAqP4fqIz8ABzI/YMqyPgAHMj9gyrI+AABAP4fqIz8AAEA/nx/2PwAAKj8AAAAAAAAqPwAAYLTQcik/nx/2P9ByKT/mzrI+xsYyP2cytT4elTE/8mklPx6VMT/PmiY/xsYyP6rEsz50zjU/gvy1PmDqNj8JIM8+YOo2P+FX0T50zjU/bW0OPrBILD1tbQ4+0O1UPjAl4z3Q7VQ+MCXjPbBILD2sGYw9BgAqP7wZjD1Scyk/AAAUNlJzKT8AAAA2AAAqP6vEsz50zjU/gfy1PmDqNj8JIM8+YOo2P+BX0T50zjU/oBmMPQYAKj+0GYw9UnMpPwAAFDZScyk/AAAANgAAKj9lEgI+aIBSPmLtDT7Q7VQ+PyXkPdDtVD7QNgY+UI5SPjbb+z1ogFI+Y5LzPVCOUj452/s9UP41PUAl5D2wSCw9Yu0NPrBILD1jkvM9sMY1PWUSAj5Q/jU90DYGPrDGNT3oNgY+0O1UPug2Bj6wSCw9ZRICPtDtVD5lEgI+sEgsPTnb+z3Q7VQ+Odv7PbBILD01kvM90O1UPjWS8z2wSCw9"),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("KAApACoAKwApACgAKgAsACgAKgAtACwALgAvADAAMQAvAC4AMAAyAC4AMAAzADIAGAAZADQANAA1ABgANQA0ADYANgA3ADUANwA2ADgAOAA5ADcAOQA4ADoAOgA7ADkAOwA6ABoAGgAbADsAAAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQA"),
+"lods": [0.20324813, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQA")],
+"material": ExtResource("1_jawnr"),
+"name": "T_light_trim",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("Vg4tvXNo3T/MzMw8Vg4tvXNo3b/OzMw8AACAvQAA4L/KzMw8AACAvQAA4D/KzMw8AACAvQAA4D/KzMw8AACAvQAA4L/KzMw8AACAvQAA4L8AAACAAACAvQAA4D8AAACAAACAvQAA4D8AAACAAACAvQAA4L8AAACAAACAPQAA4L8AAACAAACAPQAA4D8AAACAAACAPQAA4D8AAACAAACAPQAA4L8AAACAAACAPQAA4L/KzMw8AACAPQAA4D/KzMw8AACAPQAA4L/KzMw8Vg4tPXNo3b/MzMw8Vg4tPXNo3T/OzMw8AACAPQAA4D/KzMw8AACAvQAA4L/KzMw8Vg4tvXNo3b/OzMw8Vg4tPXNo3b/MzMw8AACAPQAA4L/KzMw8Vg4tvXNo3b/OzMw8Vg4tvXNo3T/MzMw8Vg4tPXNo3T/OzMw8Vg4tPXNo3b/MzMw8AACAPQAA4L/KzMw8AACAPQAA4L8AAACAAACAvQAA4L8AAACAAACAvQAA4L/KzMw8AACAPQAA4D/KzMw8Vg4tPXNo3T/OzMw8Vg4tvXNo3T/MzMw8AACAvQAA4D/KzMw8AACAvQAA4D/KzMw8AACAvQAA4D8AAACAAACAPQAA4D8AAACAAACAPQAA4D/KzMw8EpwWvHNo3T//pDQ9Vg4tvXNo3T/MzMw8Vg4tPXNo3T/OzMw8fozcvHNo3T9x3Bo9EZwWPHNo3T//pDQ9fYzcPHNo3T9x3Bo9EpwWPHNo3b//pDQ9Vg4tPXNo3b/MzMw8Vg4tvXNo3b/OzMw8fozcPHNo3b9x3Bo9EZwWvHNo3b//pDQ9fYzcvHNo3b9x3Bo9fozcvHNo3T9x3Bo9fYzcvHNo3b9x3Bo9EpwWvHNo3T//pDQ9EZwWvHNo3b//pDQ9EZwWPHNo3T//pDQ9EpwWPHNo3b//pDQ9fYzcPHNo3T9x3Bo9fozcPHNo3b9x3Bo9fl4CgP5/AYB+Xvx/A4AAgP9//3//fwCA/3//f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP//////fwAA//////9/AAD//////38AAP//////fwAA////f/9///////9//3///////3//f///////f/9/////f/9//3///4Ch/H8AgPz/gKECgPt//v//f/9//3////9//3/+//8/fl78f3zeAECAofx//v8+L/9//3////8/fl78fwEAPa9+XgKAAQDA0IChAoCCIf6/gKH8f4Ih/7//fwAA////P/9/AAD///8//38AAP///z//fwAA////P/9//38AAP8/gKECgIIh/z9+XgKAAADBUP9//38AAP8//3///wAA/z//f///AAD/P/9///8AAP8//3///wAA/z/PbAKAAABmtn5eAoAAAD2vgKECgAAAAIDBUP9/AABgqC+TAoAwE/+/Pa//fz4v/78vk/x/MBP+v4Ch/H+CIf6/fl78fwAAAIA9r/9/Pi//v89s/H8AAJfJwVD/fwAAntfBUP9/AABgqMFQ/38AAJ7Xz2wCgAAAZ7bPbPx/AACXyS+TAoAwE/+/L5P8fzAT/789r/9/Pi//vz2v/38+L/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pp3pd")
+
+[node name="LongWallLightthin" type="Node3D" node_paths=PackedStringArray("PrimaryLights", "SecondaryLights")]
+script = ExtResource("1_40elj")
+LightSize = 0.1
+PrimaryLights = [NodePath("OmniLight3D2")]
+SecondaryLights = [NodePath("OmniLight3D")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+light_specular = 0.0
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 15.0
+distance_fade_shadow = 15.0
+
+[node name="OmniLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0.1)
+light_size = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 20.0
+spot_range = 10.0
+
+[node name="Long_Wall_LightThin" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_40elj")
+skeleton = NodePath("")

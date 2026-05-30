@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://dvolvrrkpe81u"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_hhr2n"]
+[ext_resource type="AudioStream" uid="uid://disdh8jwkby7h" path="res://audio/music/173/SCP Echoes OST - Don_t Blink (Chase Drums).ogg" id="2_hhr2n"]
+
+[resource]
+resource_name = "173_chase_layer"
+script = ExtResource("1_hhr2n")
+streams = [ExtResource("2_hhr2n")]
+forceLoop = true
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

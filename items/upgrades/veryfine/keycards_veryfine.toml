@@ -1,0 +1,32 @@
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'T2 Admin Keycard'
+output_item = 'T3 Admin Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'T1 Maintenance Keycard'
+output_item = 'T2 Maintenance Keycard'
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'T1 Research Keycard'
+output_item = 'T3 Research Keycard'
+fail_chance = 0.6
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'T2 Research Keycard'
+output_item = 'T3 Research Keycard'
+
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'T1 Security Keycard'
+output_item = 'T3 Security Keycard'
+fail_chance = 0.6
+
+[[item_upgrades]]
+scp_914_setting = 'VeryFine'
+input_item = 'T2 Security Keycard'
+output_item = 'T3 Security Keycard'

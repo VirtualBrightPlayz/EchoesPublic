@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputActionDigital" format=3 uid="uid://drg71mqtoukfu"]
+
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="1_gbtgr"]
+
+[resource]
+resource_name = "InventoryOne"
+script = ExtResource("1_gbtgr")
+GodotAction = &"inventory_one"
+LocaleKey = "Action_InventoryOne"
+metadata/_custom_type_script = "uid://dab5106xknh5r"

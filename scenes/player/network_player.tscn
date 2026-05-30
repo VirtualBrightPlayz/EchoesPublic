@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://cjafbaiqcjlu1"]
+
+[ext_resource type="Script" uid="uid://cjo6hds7roaj0" path="res://scripts/player/NetworkPlayer.cs" id="1_q3204"]
+[ext_resource type="Resource" uid="uid://q1im18mrhqfh" path="res://sounds/player_impact.tres" id="2_mv0qf"]
+[ext_resource type="PackedScene" uid="uid://1scpjevqwelt" path="res://scenes/player/PlayerHUD.tscn" id="3_2h33p"]
+[ext_resource type="Shader" uid="uid://c4u4lixr7o4q4" path="res://shaders/glitch_blur.gdshader" id="5_k1v63"]
+[ext_resource type="PackedScene" uid="uid://crb1kmb3pxbwl" path="res://scenes/player/VR_HUD.tscn" id="9_qnd3j"]
+[ext_resource type="PackedScene" uid="uid://deyhe8jrj57ia" path="res://scenes/player/player_console_ui.tscn" id="10_2ro41"]
+[ext_resource type="PackedScene" uid="uid://t4kuwuxn45k5" path="res://scenes/player/AdminHUD.tscn" id="10_5e6bm"]
+[ext_resource type="PackedScene" uid="uid://cywtb1vhpikya" path="res://scenes/player/vr_origin.tscn" id="10_wu8fa"]
+[ext_resource type="Script" uid="uid://sfh2hqft6ome" path="res://addons/Vosk/SpeechRecognizer.cs" id="11_rh7eq"]
+[ext_resource type="Script" uid="uid://f5n2561liaal" path="res://scripts/VoskProcessor.cs" id="12_p2s4j"]
+[ext_resource type="Script" uid="uid://p20hn207gfc1" path="res://scripts/SpatialVoiceChat.cs" id="13_mv0qf"]
+[ext_resource type="Script" uid="uid://ch4frgoig07n7" path="res://scripts/VoiceChat.cs" id="14_bex7u"]
+[ext_resource type="Script" uid="uid://b00lpx6nvc3jk" path="res://scripts/player/statuseffects/PlayerStatusEffectManager.cs" id="14_p2s4j"]
+[ext_resource type="Script" uid="uid://bs6wbkknsiocp" path="res://scripts/network/TransformSync.cs" id="17_qqha2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7ydk5"]
+properties/0/path = NodePath(".:IsVR")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:VoiceChatChannel")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4pphg"]
+properties/0/path = NodePath(".:PlayerId")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:RoleId")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:Health")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:username")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:AuthorityId")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("CanvasLayer/GUI/player_console_ui:IsAdmin")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath(".:CanNoclip")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+properties/7/path = NodePath(".:objectives")
+properties/7/spawn = true
+properties/7/replication_mode = 2
+properties/8/path = NodePath(".:activeControllerPath")
+properties/8/spawn = true
+properties/8/replication_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtlc3"]
+shader = ExtResource("5_k1v63")
+shader_parameter/amount = 0.0
+shader_parameter/frequency_0 = 5.0
+shader_parameter/frequency_1 = 100.0
+shader_parameter/speed = 10.0
+shader_parameter/steps_0 = 2.0
+shader_parameter/steps_1 = 1.0
+shader_parameter/noise_steps = 255.0
+
+[node name="Player" type="Node3D" unique_id=769151728 node_paths=PackedStringArray("console", "spawnSoundPlayer", "Hud", "HudVR", "voicePlayback", "globalVoicePlayback", "voiceChat", "glitchEffect", "xformSync", "viewSync", "HandSyncTargets", "HandSyncs", "statusEffectManager", "controllerSpawner", "controllerRoot", "modelSpawner", "modelRoot", "abilitySpawner", "abilityRoot")]
+script = ExtResource("1_q3204")
+console = NodePath("CanvasLayer/GUI/player_console_ui")
+serverOwned = NodePath("ServerSync")
+hideLocally = NodePath("CanvasLayer/GUI")
+spawnSoundPlayer = NodePath("SpawnSound")
+Hud = NodePath("CanvasLayer/GUI/PlayerHUD")
+HudVR = NodePath("VRUI")
+voicePlayback = NodePath("VoicePlayback")
+globalVoicePlayback = NodePath("GlobalVoicePlayback")
+voiceChat = NodePath("VoiceChat")
+glitchEffect = NodePath("CanvasLayer/Glitch")
+xformSync = NodePath("TransformSync")
+viewSync = NodePath("ViewSync")
+hitSound = ExtResource("2_mv0qf")
+modelLocalCullFlags = 32
+HandSyncTargets = [NodePath("LeftHand"), NodePath("RightHand"), NodePath("Head")]
+HandSyncs = [NodePath("LeftHand/TransformSync"), NodePath("RightHand/TransformSync"), NodePath("Head/TransformSync")]
+lerpSpeed = 10.0
+statusEffectManager = NodePath("EffectManager")
+controllerSpawner = NodePath("ControllerSpawner")
+controllerRoot = NodePath("ControllerRoot")
+modelSpawner = NodePath("ModelSpawner")
+modelRoot = NodePath("ModelRoot")
+abilitySpawner = NodePath("AbilitySpawner")
+abilityRoot = NodePath("AbilityRoot")
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=801960764]
+replication_interval = 0.3
+replication_config = SubResource("SceneReplicationConfig_7ydk5")
+
+[node name="ServerSync" type="MultiplayerSynchronizer" parent="." unique_id=1925799710]
+replication_interval = 0.3
+replication_config = SubResource("SceneReplicationConfig_4pphg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=881988585]
+follow_viewport_enabled = true
+
+[node name="Glitch" type="ColorRect" parent="CanvasLayer" unique_id=190439036]
+visible = false
+material = SubResource("ShaderMaterial_rtlc3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=613578291]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/Control" unique_id=567399155]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="GUI" type="Control" parent="CanvasLayer" unique_id=286123357]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PlayerHUD" parent="CanvasLayer/GUI" unique_id=79456863 node_paths=PackedStringArray("Player") instance=ExtResource("3_2h33p")]
+layout_mode = 1
+Player = NodePath("../../..")
+
+[node name="AdminHUD" parent="CanvasLayer/GUI" unique_id=261394638 node_paths=PackedStringArray("Player", "Console") instance=ExtResource("10_5e6bm")]
+layout_mode = 1
+Player = NodePath("../../..")
+Console = NodePath("../player_console_ui")
+
+[node name="player_console_ui" parent="CanvasLayer/GUI" unique_id=1062501607 node_paths=PackedStringArray("Player") instance=ExtResource("10_2ro41")]
+layout_mode = 1
+Player = NodePath("../../..")
+
+[node name="VRUI" parent="." unique_id=803033798 node_paths=PackedStringArray("Player", "uiMenuLayer") instance=ExtResource("9_qnd3j")]
+Player = NodePath("..")
+uiMenuLayer = NodePath("../CanvasLayer")
+
+[node name="SpawnSound" type="AudioStreamPlayer" parent="." unique_id=2037553288]
+bus = &"WorldLoud"
+
+[node name="Reverb" type="Node" parent="." unique_id=2031872160]
+script = ExtResource("13_mv0qf")
+FarPreset = 3
+
+[node name="VoiceChat" type="Node" parent="." unique_id=1487803409]
+process_mode = 3
+script = ExtResource("14_bex7u")
+CustomVoiceAudioPlayer = NodePath("../VoicePlayback")
+BufferLength = 0.3
+
+[node name="SpeechRecognizer" type="Node" parent="VoiceChat" unique_id=1484954167]
+script = ExtResource("11_rh7eq")
+modelPath = "res://addons/Vosk/vosk-model-small-en-us-0.15"
+recordBusName = "VoiceMicRecord"
+continuousRecognition = true
+metadata/_custom_type_script = "uid://sfh2hqft6ome"
+
+[node name="Vosk" type="Node" parent="VoiceChat" unique_id=1380578437 node_paths=PackedStringArray("player", "speech", "endTimer")]
+script = ExtResource("12_p2s4j")
+player = NodePath("../..")
+speech = NodePath("../SpeechRecognizer")
+endTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="VoiceChat/Vosk" unique_id=792681704]
+wait_time = 0.2
+one_shot = true
+ignore_time_scale = true
+
+[node name="VoicePlayback" type="AudioStreamPlayer3D" parent="." unique_id=1449652869]
+max_distance = 50.0
+bus = &"Voice"
+area_mask = 0
+attenuation_filter_db = -12.0
+
+[node name="GlobalVoicePlayback" type="AudioStreamPlayer" parent="." unique_id=310995229]
+bus = &"Voice"
+metadata/Intercom = true
+
+[node name="XRView" type="Node" parent="." unique_id=1001600170]
+
+[node name="VROrigin" parent="XRView" unique_id=413028638 instance=ExtResource("10_wu8fa")]
+
+[node name="EffectManager" type="Node" parent="." unique_id=1604509052 node_paths=PackedStringArray("player")]
+script = ExtResource("14_p2s4j")
+player = NodePath("..")
+
+[node name="TransformSync" type="Node" parent="." unique_id=1533040536]
+script = ExtResource("17_qqha2")
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[node name="ViewSync" type="Node" parent="." unique_id=1887617137]
+script = ExtResource("17_qqha2")
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[node name="LeftHand" type="Node3D" parent="." unique_id=1991005191]
+
+[node name="TransformSync" type="Node" parent="LeftHand" unique_id=696633289]
+script = ExtResource("17_qqha2")
+targetNode = NodePath("..")
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[node name="RightHand" type="Node3D" parent="." unique_id=1846872855]
+
+[node name="TransformSync" type="Node" parent="RightHand" unique_id=1088657992]
+script = ExtResource("17_qqha2")
+targetNode = NodePath("..")
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[node name="Head" type="Node3D" parent="." unique_id=1370965543]
+
+[node name="TransformSync" type="Node" parent="Head" unique_id=1345950102]
+script = ExtResource("17_qqha2")
+targetNode = NodePath("..")
+metadata/_custom_type_script = "uid://bs6wbkknsiocp"
+
+[node name="ControllerSpawner" type="MultiplayerSpawner" parent="." unique_id=284405232]
+spawn_path = NodePath("../ControllerRoot")
+spawn_limit = 1
+
+[node name="ControllerRoot" type="Node3D" parent="." unique_id=2004903609]
+
+[node name="ModelSpawner" type="MultiplayerSpawner" parent="." unique_id=683750845]
+spawn_path = NodePath("../ModelRoot")
+
+[node name="ModelRoot" type="Node3D" parent="." unique_id=1849352674]
+
+[node name="AbilitySpawner" type="MultiplayerSpawner" parent="." unique_id=605330251]
+spawn_path = NodePath("../AbilityRoot")
+
+[node name="AbilityRoot" type="Node3D" parent="." unique_id=933390848]

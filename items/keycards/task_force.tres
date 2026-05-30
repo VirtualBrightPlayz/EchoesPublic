@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://bmws8s5trskq"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_5e3hp"]
+[ext_resource type="Texture2D" uid="uid://c52r7wffd5i5n" path="res://textures/inv_icons/keycards/old/taskforceicon.png" id="2_5e3hp"]
+[ext_resource type="PackedScene" uid="uid://c458j30kej7t7" path="res://scenes/items/keycard_mtf.tscn" id="3_5e3hp"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_42cvn"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_0fanq"]
+[ext_resource type="Texture2D" uid="uid://dva4fu05l6rje" path="res://textures/main/cards/T_taskforce.png" id="6_yfuoc"]
+[ext_resource type="Texture2D" uid="uid://ddw8eg22gjuhr" path="res://textures/main/cards/ORM_keycard.png" id="7_4noct"]
+[ext_resource type="Texture2D" uid="uid://bjb4ybvuby1hf" path="res://textures/main/cards/N_keycard.png" id="8_nmkx7"]
+
+[sub_resource type="Resource" id="Resource_xcsnu"]
+script = ExtResource("1_5e3hp")
+level = 3
+cardType = 3
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="Resource" id="Resource_7hg03"]
+script = ExtResource("1_5e3hp")
+level = 2
+cardType = 4
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="Resource" id="Resource_5e3hp"]
+script = ExtResource("1_5e3hp")
+level = 3
+cardType = 1
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="Resource" id="Resource_yfuoc"]
+script = ExtResource("1_5e3hp")
+level = 3
+cardType = 2
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_42cvn"]
+render_priority = 0
+shader = ExtResource("5_0fanq")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_yfuoc")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("7_4noct")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("7_4noct")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("8_nmkx7")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_0fanq"]
+albedo_texture = ExtResource("6_yfuoc")
+orm_texture = ExtResource("7_4noct")
+normal_enabled = true
+normal_texture = ExtResource("8_nmkx7")
+
+[resource]
+resource_name = "Task Force Keycard"
+script = ExtResource("4_42cvn")
+Access = [SubResource("Resource_xcsnu"), SubResource("Resource_7hg03"), SubResource("Resource_5e3hp"), SubResource("Resource_yfuoc")]
+worldMaterial = SubResource("ORMMaterial3D_0fanq")
+viewMaterial = SubResource("ShaderMaterial_42cvn")
+ItemScene = ExtResource("3_5e3hp")
+Icon = ExtResource("2_5e3hp")
+Description = "An all-access card given to Mobile Task Force units so they can access a facility in the case of emergency."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

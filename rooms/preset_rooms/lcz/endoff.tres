@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://ckgn1g0hpfnvm"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="1_185tu"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_bgato"]
+
+[resource]
+resource_name = "Light Endoff"
+script = ExtResource("1_185tu")
+stage = 1
+scenes = []
+sceneFile = "uid://muwjlhqjkjxx"
+isGeneric = true
+category = "Light Containment"

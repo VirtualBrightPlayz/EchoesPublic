@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=4 uid="uid://bi6dgbgpmwcvr"]
+
+[ext_resource type="Material" uid="uid://4ey1jjccn6ru" path="res://models/rooms/sz/grey_dev_texture.tres" id="1_81t3u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp74q"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vihyc"]
+_surfaces = [{
+"aabb": AABB(-0.166444, -0.027739948, 0, 1e-05, 0.055480003, 0.066576),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("THAqvuM+47z/WIg9THAqvhw/4zz/WIg9THAqvhw/4zwAAAAATHAqvuM+47wAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kut8s"]
+resource_name = "Cube_018"
+_surfaces = [{
+"aabb": AABB(-0.166444, -0.027739948, 0, 1e-05, 0.055480003, 0.066576),
+"attribute_data": PackedByteArray("AABgPwAAgD4AAGA/AACAPgAAYD8AAIA+AABgPwAAgD4="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_jp74q"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("THAqvuM+47z/WIg9THAqvhw/4zz/WIg9THAqvhw/4zwAAAAATHAqvuM+47wAAAAA////f////7////9/////v////3////+/////f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vihyc")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ckfxe"]
+data = PackedVector3Array(-0.1664, -0.0277, 0.066599995, -0.1664, 0.0277, 0.066599995, -0.1664, 0.0277, 0, -0.1664, 0.0277, 0, -0.1664, -0.0277, 0, -0.1664, -0.0277, 0.066599995)
+
+[node name="BottomBrig" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Brig_RoomGen_Wall" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 16.644005, 0, 4.660935e-06)
+mesh = SubResource("ArrayMesh_kut8s")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_81t3u")
+
+[node name="Brig_RoomGen_Wall2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 16.644005, 0, 4.660935e-06)
+shape = SubResource("ConcavePolygonShape3D_ckfxe")

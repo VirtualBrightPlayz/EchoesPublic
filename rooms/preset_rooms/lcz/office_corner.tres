@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cngk3n456few2"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_0glb3"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_0glb3"]
+
+[resource]
+resource_name = "Light Office Corner 1"
+script = ExtResource("2_0glb3")
+type = 1
+size = 1
+stage = 1
+scenes = []
+sceneFile = "uid://cdxp3wqf2jj7m"
+isInterest = true
+category = "Light Containment"

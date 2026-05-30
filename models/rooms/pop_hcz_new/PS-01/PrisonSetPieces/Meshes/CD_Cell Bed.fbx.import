@@ -1,0 +1,68 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cpmcrioifehx4"
+path="res://.godot/imported/CD_Cell Bed.fbx-637c57d1a9967967f31381c700411f77.scn"
+
+[deps]
+
+source_file="res://models/rooms/pop_hcz_new/PS-01/PrisonSetPieces/Meshes/CD_Cell Bed.fbx"
+dest_files=["res://.godot/imported/CD_Cell Bed.fbx-637c57d1a9967967f31381c700411f77.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.387
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Bed.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/PS-01/Misc/Bed/M_Bed_Dark_Grey.tres",
+"use_external/path": "uid://cj5s5tjrpirfi"
+},
+"ConcretPlaster": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcretePlaster.tres",
+"use_external/path": "uid://dj7268kgty7ye"
+},
+"Concrete_Inset_Trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcreteTrim_Inset.tres",
+"use_external/path": "uid://btl8ifk3fa5sp"
+}
+},
+"nodes": {
+"PATH:PrisonBed": {
+"generate/physics": true,
+"physics/layer": 9
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

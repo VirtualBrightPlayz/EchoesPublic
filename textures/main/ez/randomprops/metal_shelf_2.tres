@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bgpgiydpbdl0k"]
+
+[ext_resource type="Texture2D" uid="uid://cc0f20u6b8eeo" path="res://textures/main/ez/randomprops/T_metalshelf2.png" id="1_jhutn"]
+[ext_resource type="Shader" uid="uid://mw5s6ur5wpe2" path="res://shaders/colormask.gdshader" id="1_sgbpu"]
+[ext_resource type="Texture2D" uid="uid://l6gmgfkyo7hq" path="res://textures/main/ez/randomprops/N_metalshelf2.png" id="2_2ixds"]
+[ext_resource type="Texture2D" uid="uid://cowrwyyrxgkti" path="res://textures/main/ez/randomprops/User0_metalshelf2.png" id="3_r4qdh"]
+[ext_resource type="Texture2D" uid="uid://b8q3jcj8o2jk2" path="res://textures/main/ez/randomprops/ORM_metalshelf2.png" id="3_sgbpu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_sgbpu")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/texture_albedo = ExtResource("1_jhutn")
+shader_parameter/mask_color = Color(0.1612, 0.36451998, 0.52, 1)
+shader_parameter/texture_mask = ExtResource("3_r4qdh")
+shader_parameter/albedo_texture_size = Vector2i(1024, 1024)
+shader_parameter/point_size = 1.0
+shader_parameter/texture_orm = ExtResource("3_sgbpu")
+shader_parameter/texture_normal = ExtResource("2_2ixds")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)

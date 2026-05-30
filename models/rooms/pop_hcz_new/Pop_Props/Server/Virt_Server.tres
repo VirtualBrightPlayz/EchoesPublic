@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://cwp7j5d1lhgww"]
+
+[ext_resource type="Texture2D" uid="uid://b5qkm4wds1nk" path="res://models/rooms/pop_hcz_new/Pop_Props/Server/VirtServers_T.png" id="1_026a7"]
+[ext_resource type="Texture2D" uid="uid://b4rh27pot2g4w" path="res://models/rooms/pop_hcz_new/Pop_Props/Server/VirtServers_E.png" id="2_gk1rx"]
+[ext_resource type="Texture2D" uid="uid://bucsjxlwo7q8h" path="res://models/rooms/pop_hcz_new/Pop_Props/Server/VirtServers_N.png" id="3_lahoj"]
+[ext_resource type="Texture2D" uid="uid://dd05ng1b43ai0" path="res://models/rooms/pop_hcz_new/Pop_Props/Server/VirtServers_ORM.png" id="4_ekg07"]
+
+[resource]
+albedo_texture = ExtResource("1_026a7")
+orm_texture = ExtResource("4_ekg07")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("2_gk1rx")
+normal_enabled = true
+normal_texture = ExtResource("3_lahoj")

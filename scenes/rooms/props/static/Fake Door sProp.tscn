@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://o4i6hnq2ba7q"]
+
+[ext_resource type="PackedScene" uid="uid://biael0mkwlg6s" path="res://models/rooms/pop_hcz_new/HCZ_V4/New Props/Meshes/Fake_Door_Low.fbx" id="1_6mbkp"]
+[ext_resource type="Material" uid="uid://b7sip83qmg0pj" path="res://models/rooms/pop_hcz_new/HCZ_V4/Materials/M_FakeDoor_Green.tres" id="2_wuig3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5qwnj"]
+size = Vector3(1.9279785, 3.4140015, 0.15348816)
+
+[node name="FakeDoorSProp" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.706655, 0.07660675)
+shape = SubResource("BoxShape3D_5qwnj")
+
+[node name="Fake_Door_Low" parent="StaticBody3D" instance=ExtResource("1_6mbkp")]
+
+[node name="FakeDoor_low" parent="StaticBody3D/Fake_Door_Low" index="2"]
+surface_material_override/0 = ExtResource("2_wuig3")
+
+[editable path="StaticBody3D/Fake_Door_Low"]

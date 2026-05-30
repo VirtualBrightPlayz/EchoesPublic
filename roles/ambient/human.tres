@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AmbientProfile" load_steps=2 format=3 uid="uid://dlps6uir1t7af"]
+
+[ext_resource type="Script" uid="uid://brb00nufs5ako" path="res://scripts/map/AmbientProfile.cs" id="1_youtv"]
+
+[resource]
+resource_name = "Human"
+script = ExtResource("1_youtv")
+HasVignette = true
+metadata/_custom_type_script = "uid://brb00nufs5ako"

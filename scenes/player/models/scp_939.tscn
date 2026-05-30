@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://bktyw705n56p3"]
+
+[ext_resource type="Script" uid="uid://xq2fvvleypij" path="res://scripts/player/PlayerModel.cs" id="1_j216j"]
+[ext_resource type="Script" uid="uid://n7pocn4687j3" path="res://scripts/player/PlayerAnims.cs" id="4_ontac"]
+[ext_resource type="Script" uid="uid://b3jrtkmear2gs" path="res://scripts/map/PlayerHitbox.cs" id="6_4gc2c"]
+[ext_resource type="PackedScene" uid="uid://0nxmf7n42ni" path="res://models/scpcb/scp/scp-939.glb" id="8_pub6v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4gc2c"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vw2hj"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pub6v"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_va2we"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h1wpc"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ontac"]
+animation = &"run_02_test"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vw2hj"]
+animation = &"idle_01"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_4gc2c"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ontac"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vw2hj"]
+graph_offset = Vector2(-1016.55457, 38.37358)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_vw2hj")
+nodes/Animation/position = Vector2(-800, 120)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_4gc2c")
+nodes/Blend2/position = Vector2(-340, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ontac")
+"nodes/Animation 2/position" = Vector2(-680, 340)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ontac")
+nodes/TimeScale/position = Vector2(60, 200)
+node_connections = [&"output", 0, &"TimeScale", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2", &"TimeScale", 0, &"Blend2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vw2hj"]
+properties/0/path = NodePath(".:velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("PlayerAnims:walking")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("PlayerAnims:walkingDirection")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="SCP939" type="Node3D" unique_id=1694842983 node_paths=PackedStringArray("disableLocal", "lookForwards", "anims", "skeleton", "iterateIk", "copyIk", "twistIk", "ikNodes", "ikCasts")]
+script = ExtResource("1_j216j")
+disableLocal = [NodePath("scp-939")]
+lookForwards = [NodePath("scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D/LookAtModifier3D")]
+anims = NodePath("PlayerAnims")
+skeleton = NodePath("scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D")
+ikWalkSpeed = 0.75
+iterateIk = NodePath("scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D/IK")
+copyIk = NodePath("scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D/TransformModifier3D")
+twistIk = NodePath("scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D/BoneTwistDisperser3D")
+ikNodes = {
+0: NodePath("scp-939/Left"),
+1: NodePath("scp-939/Right"),
+3: NodePath("scp-939/LeftFoot"),
+4: NodePath("scp-939/RightFoot")
+}
+ikRadius = 0.0
+ikCasts = {
+0: NodePath("scp-939/LeftCast"),
+1: NodePath("scp-939/RightCast"),
+3: NodePath("scp-939/LeftFootCast"),
+4: NodePath("scp-939/RightFootCast")
+}
+walkCycleMaxAngle = 15.0
+metadata/_custom_type_script = "uid://xq2fvvleypij"
+
+[node name="scp-939" parent="." unique_id=1798294684 instance=ExtResource("8_pub6v")]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, -0.25, 0, 0.25, -1.0927847e-08, 0, 0.5, 0)
+
+[node name="Armature" parent="scp-939/Scene_Root/Scene_Root1" parent_id_path=PackedInt32Array(1798294684, 900748393) index="1" unique_id=1490975288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Bone_006" parent="scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D/Bone_005" parent_id_path=PackedInt32Array(1798294684, 739495494) index="0" unique_id=1247379395]
+transform = Transform3D(0.9997213, 0.023353074, 0.0029662328, 0.01805237, -0.6796649, -0.73330075, -0.015108754, 0.7331513, -0.6798979, 0.4230605, 7.093475e-08, 9.592209e-08)
+
+[node name="IK" type="FABRIK3D" parent="scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1798294684, 1701588957) index="2" unique_id=1080246439]
+max_iterations = 20
+angular_delta_limit = 3.141592653589793
+deterministic = true
+setting_count = 4
+settings/0/target_node = NodePath("../../../../../../scp-939/LeftCast/LeftTarget")
+settings/1/target_node = NodePath("../../../../../../scp-939/RightCast/RightTarget")
+settings/2/target_node = NodePath("../../../../../../scp-939/LeftFootCast/LeftTarget")
+settings/3/target_node = NodePath("../../../../../../scp-939/RightFootCast/RightTarget")
+settings/0/root_bone_name = "Bone_001_R_001"
+settings/0/root_bone = 8
+settings/0/end_bone_name = "Bone_001_R_003"
+settings/0/end_bone = 10
+settings/0/extend_end_bone = false
+settings/0/joint_count = 3
+settings/1/root_bone_name = "Bone_001_L_001"
+settings/1/root_bone = 3
+settings/1/end_bone_name = "Bone_001_L_003"
+settings/1/end_bone = 5
+settings/1/extend_end_bone = false
+settings/1/joint_count = 3
+settings/2/root_bone_name = "Bone_R_001"
+settings/2/root_bone = 22
+settings/2/end_bone_name = "Bone_R_003"
+settings/2/end_bone = 24
+settings/2/extend_end_bone = false
+settings/2/joint_count = 3
+settings/3/root_bone_name = "Bone_L_001"
+settings/3/root_bone = 17
+settings/3/end_bone_name = "Bone_L_003"
+settings/3/end_bone = 19
+settings/3/extend_end_bone = false
+settings/3/joint_count = 3
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/1/joints/0/rotation_axis = 3
+settings/1/joints/0/limitation = null
+settings/1/joints/1/rotation_axis = 3
+settings/1/joints/1/limitation = null
+settings/1/joints/2/rotation_axis = 3
+settings/1/joints/2/limitation = null
+settings/2/joints/0/rotation_axis = 3
+settings/2/joints/0/limitation = null
+settings/2/joints/1/rotation_axis = 3
+settings/2/joints/1/limitation = null
+settings/2/joints/2/rotation_axis = 3
+settings/2/joints/2/limitation = null
+settings/3/joints/0/rotation_axis = 3
+settings/3/joints/0/limitation = null
+settings/3/joints/1/rotation_axis = 3
+settings/3/joints/1/limitation = null
+settings/3/joints/2/rotation_axis = 3
+settings/3/joints/2/limitation = null
+
+[node name="TransformModifier3D" type="CopyTransformModifier3D" parent="scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1798294684, 1701588957) index="3" unique_id=198227057]
+setting_count = 4
+settings/0/amount = 1.0
+settings/0/apply_bone_name = "Bone_001_R_003"
+settings/0/apply_bone = 10
+settings/0/reference_type = 1
+settings/0/reference_node = NodePath("../../../../../../scp-939/LeftCast/LeftTarget")
+settings/1/amount = 1.0
+settings/1/apply_bone_name = "Bone_001_L_003"
+settings/1/apply_bone = 5
+settings/1/reference_type = 1
+settings/1/reference_node = NodePath("../../../../../../scp-939/RightCast/RightTarget")
+settings/2/amount = 1.0
+settings/2/apply_bone_name = "Bone_R_003"
+settings/2/apply_bone = 24
+settings/2/reference_type = 1
+settings/2/reference_node = NodePath("../../../../../../scp-939/LeftFootCast/LeftTarget")
+settings/3/amount = 1.0
+settings/3/apply_bone_name = "Bone_L_003"
+settings/3/apply_bone = 19
+settings/3/reference_type = 1
+settings/3/reference_node = NodePath("../../../../../../scp-939/RightFootCast/RightTarget")
+settings/0/copy = 2
+settings/0/axes = 7
+settings/0/invert = 0
+settings/0/additive = false
+settings/1/copy = 2
+settings/1/axes = 7
+settings/1/invert = 0
+settings/1/additive = false
+settings/2/copy = 2
+settings/2/axes = 7
+settings/2/invert = 0
+settings/2/additive = false
+settings/3/copy = 2
+settings/3/axes = 7
+settings/3/invert = 0
+settings/3/additive = false
+
+[node name="BoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1798294684, 1701588957) index="4" unique_id=90787890]
+setting_count = 4
+settings/0/root_bone_name = "Bone_001_R"
+settings/0/root_bone = 7
+settings/0/end_bone_name = "Bone_001_R_004"
+settings/0/end_bone = 11
+settings/0/extend_end_bone = false
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 0
+settings/0/joint_count = 5
+settings/1/root_bone_name = "Bone_001_L"
+settings/1/root_bone = 2
+settings/1/end_bone_name = "Bone_001_L_004"
+settings/1/end_bone = 6
+settings/1/extend_end_bone = false
+settings/1/twist_from_rest = true
+settings/1/disperse_mode = 0
+settings/1/joint_count = 5
+settings/2/root_bone_name = "Bone_L"
+settings/2/root_bone = 16
+settings/2/end_bone_name = "Bone_L_004"
+settings/2/end_bone = 20
+settings/2/extend_end_bone = false
+settings/2/twist_from_rest = true
+settings/2/disperse_mode = 0
+settings/2/joint_count = 5
+settings/3/root_bone_name = "Bone_R"
+settings/3/root_bone = 21
+settings/3/end_bone_name = "Bone_R_004"
+settings/3/end_bone = 25
+settings/3/extend_end_bone = false
+settings/3/twist_from_rest = true
+settings/3/disperse_mode = 0
+settings/3/joint_count = 5
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="scp-939/Scene_Root/Scene_Root1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1798294684, 1701588957) index="5" unique_id=2134495984]
+bone_name = "Bone_002"
+bone = 12
+forward_axis = 0
+use_angle_limitation = true
+symmetry_limitation = true
+primary_limit_angle = 0.7853982
+primary_damp_threshold = 1.0
+secondary_limit_angle = 0.7853982
+secondary_damp_threshold = 1.0
+
+[node name="LeftPole" type="Marker3D" parent="scp-939" unique_id=1994559860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.4999999, 1)
+
+[node name="RightPole" type="Marker3D" parent="scp-939" unique_id=1451367318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.4999999, 1)
+
+[node name="LeftCast" type="ShapeCast3D" parent="scp-939" unique_id=936840743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+enabled = false
+shape = SubResource("SphereShape3D_4gc2c")
+max_results = 64
+collision_mask = 33
+
+[node name="LeftTarget" type="Marker3D" parent="scp-939/LeftCast" unique_id=58895745]
+
+[node name="Left" type="Node3D" parent="scp-939" unique_id=1721606760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.9999999, 2.1)
+
+[node name="Target" type="Marker3D" parent="scp-939/Left" unique_id=427181360]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -2, 0)
+
+[node name="RightCast" type="ShapeCast3D" parent="scp-939" unique_id=1619898442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+enabled = false
+shape = SubResource("SphereShape3D_vw2hj")
+max_results = 64
+collision_mask = 33
+
+[node name="RightTarget" type="Marker3D" parent="scp-939/RightCast" unique_id=1554967103]
+
+[node name="Right" type="Node3D" parent="scp-939" unique_id=1956619679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.9999999, 2.1)
+
+[node name="Target" type="Marker3D" parent="scp-939/Right" unique_id=1993852721]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -2, 0)
+
+[node name="LeftFootCast" type="ShapeCast3D" parent="scp-939" unique_id=721719831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 0)
+enabled = false
+shape = SubResource("SphereShape3D_pub6v")
+max_results = 64
+collision_mask = 33
+
+[node name="LeftTarget" type="Marker3D" parent="scp-939/LeftFootCast" unique_id=389204587]
+
+[node name="LeftFoot" type="Node3D" parent="scp-939" unique_id=226582783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 2.1)
+
+[node name="Target" type="Marker3D" parent="scp-939/LeftFoot" unique_id=552563781]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0.5, 0)
+
+[node name="RightFootCast" type="ShapeCast3D" parent="scp-939" unique_id=1041591751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+enabled = false
+shape = SubResource("SphereShape3D_va2we")
+max_results = 64
+collision_mask = 33
+
+[node name="RightTarget" type="Marker3D" parent="scp-939/RightFootCast" unique_id=370346841]
+
+[node name="RightFoot" type="Node3D" parent="scp-939" unique_id=1387151516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2.1)
+
+[node name="Target" type="Marker3D" parent="scp-939/RightFoot" unique_id=17258371]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0.5, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=91732202]
+collision_layer = 16
+collision_mask = 16
+
+[node name="PlayerHitbox" type="Node" parent="StaticBody3D" unique_id=646471348]
+script = ExtResource("6_4gc2c")
+HealthNode = NodePath("../..")
+metadata/_custom_type_script = "uid://b3jrtkmear2gs"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=497524910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_h1wpc")
+
+[node name="PlayerAnims" type="AnimationTree" parent="." unique_id=754292778]
+root_node = NodePath("../scp-939")
+tree_root = SubResource("AnimationNodeBlendTree_vw2hj")
+anim_player = NodePath("../scp-939/AnimationPlayer")
+parameters/Blend2/blend_amount = 0.0
+parameters/TimeScale/scale = 0.240000000000002
+script = ExtResource("4_ontac")
+walkSpeedPath = &"parameters/Blend2/blend_amount"
+metadata/_custom_type_script = "uid://n7pocn4687j3"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1314563528]
+replication_interval = 0.25
+replication_config = SubResource("SceneReplicationConfig_vw2hj")
+
+[editable path="scp-939"]

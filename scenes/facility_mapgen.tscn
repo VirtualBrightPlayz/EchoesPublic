@@ -1,0 +1,1035 @@
+[gd_scene format=3 uid="uid://brc8yik71a7po"]
+
+[ext_resource type="PackedScene" uid="uid://dwpgfdmhqtb7i" path="res://scenes/rooms/sz/surface_2.tscn" id="1_cm7nf"]
+[ext_resource type="Script" uid="uid://5llg51ne317v" path="res://scripts/RoundManager.cs" id="3_xbr4n"]
+[ext_resource type="PackedScene" uid="uid://64mbuw68oxh3" path="res://scenes/rooms/doors/lcz_door.tscn" id="5_kx6tg"]
+[ext_resource type="Script" uid="uid://bq8ankcw5bpow" path="res://scripts/map/AmbientArea.cs" id="7_8w7pc"]
+[ext_resource type="Environment" uid="uid://bjxyv6fgfkfev" path="res://scenes/facility_hcz_env.tres" id="7_ibhml"]
+[ext_resource type="Script" uid="uid://c721dofvmqye" path="res://scripts/map/MapGenerator.cs" id="8_qn7yr"]
+[ext_resource type="AudioStream" uid="uid://dgkjg0nskf07b" path="res://audio/scpcb/EntranceZone.ogg" id="8_xr3jo"]
+[ext_resource type="AudioStream" uid="uid://6undt3jsarbh" path="res://audio/scpcb/edited/DetonatingAlphaWarheads.wav" id="9_sa2f6"]
+[ext_resource type="AudioStream" uid="uid://b7klp5bwrwl8h" path="res://audio/scpcb/nuke/Siren.ogg" id="10_0oo47"]
+[ext_resource type="AudioStream" uid="uid://ce3cf677cx8p8" path="res://audio/scpcb/edited/AlphaWarheadsFail.wav" id="10_braoj"]
+[ext_resource type="AudioStream" uid="uid://dye58sdfbjuva" path="res://audio/scpcb/nuke/Nuke2.ogg" id="10_ee0ki"]
+[ext_resource type="Script" uid="uid://cil7aahcaqqsm" path="res://scripts/layout_generator/Layout.cs" id="10_j3xvi"]
+[ext_resource type="FontFile" uid="uid://bh7pr76diq664" path="res://fonts/AlfaSlabOne/AlfaSlabOne-Regular.ttf" id="13_cw177"]
+[ext_resource type="Script" uid="uid://cpsmk65rgsor4" path="res://scripts/layout_generator/LayoutDebugDraw.cs" id="13_mg1a2"]
+[ext_resource type="Script" uid="uid://cacio784iugsx" path="res://scripts/player/FreeCam.cs" id="14_62wuf"]
+[ext_resource type="FontFile" uid="uid://brx0xbupuqiko" path="res://fonts/Rubik/Rubik-VariableFont_wght.ttf" id="14_j5jej"]
+[ext_resource type="FontFile" uid="uid://busdsgp57qedg" path="res://fonts/SourceCodePro/SourceCodePro-VariableFont_wght.ttf" id="14_oh4uo"]
+[ext_resource type="Script" uid="uid://ckcmmqr4y5gcq" path="res://scripts/ui/UIBroadcast.cs" id="14_oxshr"]
+[ext_resource type="PackedScene" uid="uid://5g546jtvycqr" path="res://scenes/rooms/doors/hcz_door.tscn" id="15_8je6q"]
+[ext_resource type="Script" uid="uid://cka4536m8vpvl" path="res://scripts/ui/WaitingScreen.cs" id="17_2agsc"]
+[ext_resource type="Script" uid="uid://dyeuscstodeip" path="res://scripts/ui/HowToChat.cs" id="18_r2vw0"]
+[ext_resource type="AudioStream" uid="uid://c7lnrr6dlw1eu" path="res://audio/scpcb/The Dread.ogg" id="20_upgx8"]
+[ext_resource type="Script" uid="uid://c7nl0em8deduq" path="res://scripts/map/AmbientSoundPlayer.cs" id="22_elr2q"]
+[ext_resource type="Resource" uid="uid://5wthv07ick05" path="res://rooms/preset_rooms/lcz_door.tres" id="22_jfotv"]
+[ext_resource type="PackedScene" uid="uid://dvkjy5s6l5006" path="res://scenes/rooms/ez/New EZ/ez_doorway_wall/ez_doorway_wall.tscn" id="22_k4ne4"]
+[ext_resource type="Resource" uid="uid://cmq4gr5dwfagd" path="res://rooms/preset_rooms/generic_door.tres" id="22_na7c1"]
+[ext_resource type="AudioStream" uid="uid://bpx1xdfawe4oy" path="res://audio/scpcb/ambient/lcz/Ambient1.ogg" id="23_fj7n7"]
+[ext_resource type="Resource" uid="uid://7gkf7i3u5i4d" path="res://rooms/preset_rooms/alt-door4_door.tres" id="23_ui1wy"]
+[ext_resource type="AudioStream" uid="uid://dcpkar8htmq80" path="res://audio/scpcb/ambient/general/Ambient1.ogg" id="24_1y5ub"]
+[ext_resource type="AudioStream" uid="uid://bq87letikcaej" path="res://audio/scpcb/ambient/lcz/Ambient2.ogg" id="24_k1shp"]
+[ext_resource type="Resource" uid="uid://581dfo0ykkv4" path="res://rooms/preset_rooms/ez_door.tres" id="24_ui1wy"]
+[ext_resource type="AudioStream" uid="uid://e1ljhpyrnuct" path="res://audio/scpcb/ambient/general/Ambient2.ogg" id="25_47qj3"]
+[ext_resource type="Resource" uid="uid://brphnppfyqa1d" path="res://rooms/preset_rooms/hcz_door_old.tres" id="25_m31dw"]
+[ext_resource type="AudioStream" uid="uid://dltgu77id2kox" path="res://audio/scpcb/ambient/lcz/Ambient3.ogg" id="25_nse3f"]
+[ext_resource type="Resource" uid="uid://dtvqn4gulioxu" path="res://rooms/preset_rooms/brig_door.tres" id="26_geitw"]
+[ext_resource type="AudioStream" uid="uid://dmrveg4wtpsfl" path="res://audio/scpcb/ambient/lcz/Ambient4.ogg" id="26_k5rce"]
+[ext_resource type="AudioStream" uid="uid://dra7fe3fs5nrm" path="res://audio/scpcb/ambient/general/Ambient3.ogg" id="26_nray6"]
+[ext_resource type="AudioStream" uid="uid://ccd7afnepcs7r" path="res://audio/scpcb/ambient/lcz/Ambient5.ogg" id="27_8ggpx"]
+[ext_resource type="AudioStream" uid="uid://cvfuxrpgakvnk" path="res://audio/scpcb/ambient/general/Ambient4.ogg" id="27_deyme"]
+[ext_resource type="AudioStream" uid="uid://bi12gfjd34tnc" path="res://audio/scpcb/ambient/general/Ambient5.ogg" id="28_10w48"]
+[ext_resource type="AudioStream" uid="uid://3jb66djgs520" path="res://audio/scpcb/ambient/lcz/Ambient6.ogg" id="28_oo37g"]
+[ext_resource type="AudioStream" uid="uid://m2x11eym86l3" path="res://audio/scpcb/ambient/lcz/Ambient7.ogg" id="29_akp0v"]
+[ext_resource type="PackedScene" uid="uid://dyy4mdyp7nral" path="res://scenes/rooms/pocket_dim.tscn" id="29_y8myi"]
+[ext_resource type="AudioStream" uid="uid://b8rvcphnd7dx4" path="res://audio/scpcb/ambient/general/Ambient6.ogg" id="29_y8tq6"]
+[ext_resource type="AudioStream" uid="uid://cir7toryaqxue" path="res://audio/scpcb/ambient/general/Ambient7.ogg" id="30_er2xd"]
+[ext_resource type="AudioStream" uid="uid://ctr5dawdbqjhj" path="res://audio/scpcb/ambient/lcz/Ambient8.ogg" id="30_qfqwp"]
+[ext_resource type="AudioStream" uid="uid://dqqpa8fqpampa" path="res://audio/scpcb/ambient/general/Ambient8.ogg" id="31_ay7u1"]
+[ext_resource type="AudioStream" uid="uid://bt23rvqv75fyb" path="res://audio/scpcb/ambient/lcz/Ambient9.ogg" id="31_uscvn"]
+[ext_resource type="AudioStream" uid="uid://cp6vq705320b7" path="res://audio/scpcb/ambient/general/Ambient9.ogg" id="32_2cy3g"]
+[ext_resource type="AudioStream" uid="uid://0tn0t3wnkoqv" path="res://audio/scpcb/ambient/lcz/Ambient10.ogg" id="32_cvaxo"]
+[ext_resource type="AudioStream" uid="uid://cfasww2tx5whg" path="res://audio/scpcb/ambient/lcz/Ambient11.ogg" id="33_4ko2j"]
+[ext_resource type="AudioStream" uid="uid://8s1sj5rxcsva" path="res://audio/scpcb/ambient/general/Ambient10.ogg" id="33_gpl2e"]
+[ext_resource type="AudioStream" uid="uid://yjpxmkksvab1" path="res://audio/scpcb/ambient/general/Ambient11.ogg" id="34_1nf60"]
+[ext_resource type="AudioStream" uid="uid://bl88scxiqv2cc" path="res://audio/scpcb/ambient/general/Ambient12.ogg" id="35_flipl"]
+[ext_resource type="AudioStream" uid="uid://decwd56pqgan" path="res://audio/scpcb/ambient/general/Ambient13.ogg" id="36_sqdfp"]
+[ext_resource type="AudioStream" uid="uid://dvoxp06db6esp" path="res://audio/scpcb/ambient/general/Ambient14.ogg" id="37_fy73u"]
+[ext_resource type="AudioStream" uid="uid://cv7et1emgnijw" path="res://audio/scpcb/ambient/general/Ambient15.ogg" id="38_d6m1m"]
+[ext_resource type="Script" uid="uid://b0nuhk3agpjy" path="res://scripts/map/RngTimer.cs" id="39_0tlsy"]
+[ext_resource type="AudioStream" uid="uid://ce03vovh1h2df" path="res://audio/scpcb/ambient/ez/Ambient1.ogg" id="40_is2wh"]
+[ext_resource type="AudioStream" uid="uid://d2fs3m8kresk" path="res://audio/scpcb/ambient/ez/Ambient2.ogg" id="41_ow4gm"]
+[ext_resource type="AudioStream" uid="uid://bri4lhnsw1r4b" path="res://audio/scpcb/ambient/ez/Ambient3.ogg" id="42_84fod"]
+[ext_resource type="AudioStream" uid="uid://cholw5yrn0imn" path="res://audio/scpcb/ambient/ez/Ambient4.ogg" id="43_ou8el"]
+[ext_resource type="AudioStream" uid="uid://dta7s6ncc750u" path="res://audio/scpcb/ambient/ez/Ambient5.ogg" id="44_f0vb7"]
+[ext_resource type="AudioStream" uid="uid://cwjynwyqtgqty" path="res://audio/scpcb/ambient/ez/Ambient6.ogg" id="45_r5yjn"]
+[ext_resource type="AudioStream" uid="uid://b4oo7xxff04by" path="res://audio/scpcb/ambient/ez/Ambient7.ogg" id="46_gns7i"]
+[ext_resource type="AudioStream" uid="uid://cwwtoh6cqc0y8" path="res://audio/scpcb/ambient/ez/Ambient8.ogg" id="47_muqnh"]
+[ext_resource type="AudioStream" uid="uid://b16kshskbaeh" path="res://audio/scpcb/ambient/ez/Ambient9.ogg" id="48_jgose"]
+[ext_resource type="AudioStream" uid="uid://bjewr7b6yj71k" path="res://audio/scpcb/ambient/ez/Ambient10.ogg" id="49_3edfg"]
+[ext_resource type="Resource" uid="uid://c3uwjcslq7b2y" path="res://sounds/stingers/pa/rrt_spawn_pa.tres" id="49_by1ep"]
+[ext_resource type="Resource" uid="uid://bswvchpmn6i1k" path="res://sounds/stingers/pa/ci_spawn_pa.tres" id="50_2qd4d"]
+[ext_resource type="Resource" uid="uid://co2w0e8k5vbfw" path="res://sounds/stingers/pa/ntf_spawn_pa.tres" id="50_tvqll"]
+[ext_resource type="AudioStream" uid="uid://vh6naqmx8p3h" path="res://audio/scpcb/ambient/ez/Ambient11.ogg" id="50_vf2wa"]
+[ext_resource type="AudioStream" uid="uid://di1w2s5huubbf" path="res://audio/scpcb/ambient/ez/Ambient12.ogg" id="51_pi385"]
+[ext_resource type="AudioStream" uid="uid://bmsi5i2wud456" path="res://audio/scpcb/Alarm.ogg" id="52_7wpac"]
+[ext_resource type="Resource" uid="uid://c85a0bqeva1ba" path="res://audio/music/light_fright.tres" id="64_2qd4d"]
+[ext_resource type="Resource" uid="uid://b8fp1bsfjebfg" path="res://audio/music/office.tres" id="66_tvqll"]
+[ext_resource type="Resource" uid="uid://bmxgpoj1xwg2s" path="res://audio/music/detention center.tres" id="68_tvqll"]
+[ext_resource type="Script" uid="uid://3tasuyhwy2b6" path="res://scripts/DeconManager.cs" id="75_15nlf"]
+[ext_resource type="Script" uid="uid://kyp7ud7ydqjc" path="res://scripts/map/MusicManager.cs" id="91_ttr0p"]
+[ext_resource type="AudioStream" uid="uid://be4negtkl6jp7" path="res://audio/scpsl/Doctors Lab.wav" id="94_fcwve"]
+[ext_resource type="AudioStream" uid="uid://cgxtsuh4fxn8u" path="res://audio/music/Melancholy.wav" id="95_kiss3"]
+[ext_resource type="Script" uid="uid://d4mmgaib5j5he" path="res://scripts/round_logic/RoundLogic.cs" id="108_3pmdj"]
+[ext_resource type="Script" uid="uid://b6ryphdm06y0l" path="res://scripts/AsyncTools.cs" id="108_ax65d"]
+[ext_resource type="Script" uid="uid://dbhqoleundy78" path="res://scripts/map/AmbientCalculator.cs" id="109_438yi"]
+[ext_resource type="Shader" uid="uid://4hdas1op8kgu" path="res://shaders/vignette_post.gdshader" id="110_4m48e"]
+[ext_resource type="Script" uid="uid://2trsa1hkp42c" path="res://scripts/player/PlayerSpawnpoint.cs" id="111_mwwwk"]
+[ext_resource type="Resource" uid="uid://eeyy1gufq71y" path="res://roles/spectator.tres" id="112_b8x76"]
+[ext_resource type="Script" uid="uid://c2qlygpkpo7k0" path="res://scripts/map/MusicTrack.cs" id="114_fryn1"]
+[ext_resource type="AudioStream" uid="uid://dq38lr310ecis" path="res://audio/scpcb/Alarm2.ogg" id="116_qwusi"]
+[ext_resource type="AudioStream" uid="uid://ql35wwj4ktoh" path="res://audio/scpcb/Bang1.ogg" id="117_uknt2"]
+[ext_resource type="Resource" uid="uid://c522adydte462" path="res://audio/music/lcz/lcz_ambient_4.tres" id="118_1qgdh"]
+[ext_resource type="AudioStream" uid="uid://ceyrikle31hqw" path="res://audio/scpcb/ambient/hcz/Ambient1.ogg" id="118_7owio"]
+[ext_resource type="AudioStream" uid="uid://cuy136d13i4t7" path="res://audio/scpcb/Bang2.ogg" id="118_vs077"]
+[ext_resource type="AudioStream" uid="uid://bncwqikmm08vt" path="res://audio/scpcb/Bang3.ogg" id="119_6gqts"]
+[ext_resource type="AudioStream" uid="uid://cnxuokdjh3rsf" path="res://audio/scpcb/ambient/hcz/Ambient2.ogg" id="119_wotky"]
+[ext_resource type="AudioStream" uid="uid://dw8bmfy3o4i32" path="res://audio/scpcb/ambient/hcz/Ambient3.ogg" id="120_d1a27"]
+[ext_resource type="AudioStream" uid="uid://b8ximcudwmuyb" path="res://audio/scpcb/ambient/hcz/Ambient4.ogg" id="121_p0qfo"]
+[ext_resource type="AudioStream" uid="uid://b2u7mcf077f4u" path="res://audio/scpcb/ambient/hcz/Ambient5.ogg" id="122_wysu5"]
+[ext_resource type="AudioStream" uid="uid://ctlvi5u32tlsx" path="res://audio/scpcb/ambient/hcz/Ambient6.ogg" id="123_43ibm"]
+[ext_resource type="AudioStream" uid="uid://eoavixtvyja3" path="res://audio/scpcb/ambient/hcz/Ambient7.ogg" id="124_8v5lu"]
+[ext_resource type="AudioStream" uid="uid://psvm73xo5qh5" path="res://audio/scpcb/ambient/hcz/Ambient8.ogg" id="125_gcaxq"]
+[ext_resource type="Resource" uid="uid://bije14jc6sfpo" path="res://data/objectives/radio_for_backup.tres" id="125_r07h7"]
+[ext_resource type="AudioStream" uid="uid://bc16jbtevahky" path="res://audio/scpcb/ambient/hcz/Ambient9.ogg" id="126_41xxb"]
+[ext_resource type="AudioStream" uid="uid://c0jsr615ff6r4" path="res://audio/scpcb/ambient/hcz/Ambient10.ogg" id="127_00epn"]
+[ext_resource type="AudioStream" uid="uid://uhvjgqtc2ol" path="res://audio/scpcb/ambient/hcz/Ambient11.ogg" id="128_570i6"]
+[ext_resource type="Script" uid="uid://dwjjpo5r5eduh" path="res://scripts/CustomRoomLogic/ControlPointManager.cs" id="128_a6sfi"]
+[ext_resource type="Resource" uid="uid://bb8nu1ko05tyq" path="res://audio/music/neo_site.tres" id="134_6gqts"]
+[ext_resource type="Script" uid="uid://d4lucy1igoqnk" path="res://scripts/map/env_ctrl/AmbientEnvZone.cs" id="135_6gqts"]
+[ext_resource type="Resource" uid="uid://bs0uyaybn2uhu" path="res://audio/music/hcz_ambient_1.tres" id="139_m31dw"]
+[ext_resource type="Resource" uid="uid://bnxx0mkdcchvw" path="res://roles/scp_049.tres" id="143_a6sfi"]
+[ext_resource type="Resource" uid="uid://r1blypv8fcvf" path="res://roles/scp_106.tres" id="144_geitw"]
+[ext_resource type="Resource" uid="uid://ct8q7rtd5un2d" path="res://roles/scp_173.tres" id="144_m31dw"]
+[ext_resource type="Resource" uid="uid://fku38y668fs8" path="res://audio/music/chase_049.tres" id="144_tma20"]
+[ext_resource type="Resource" uid="uid://w74xdyfi1yve" path="res://audio/music/alone_ambient_1.tres" id="145_m31dw"]
+[ext_resource type="Resource" uid="uid://b18dpd8pi1o0e" path="res://audio/music/chase_173.tres" id="145_r07h7"]
+[ext_resource type="Resource" uid="uid://ccemfndjplkiq" path="res://audio/music/chase_106.tres" id="145_t1mdt"]
+[ext_resource type="Script" uid="uid://cl8jf1pllyhot" path="res://scripts/map/KillArea.cs" id="190_t1mdt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cm7nf"]
+flip_faces = true
+size = Vector3(10, 10, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cm7nf"]
+data = PackedVector3Array(5, 5, 5, -5, 5, 5, -5, -5, 5, 5, -5, 5, 5, 5, 5, -5, -5, 5, -5, 5, -5, 5, 5, -5, 5, -5, -5, -5, -5, -5, -5, 5, -5, 5, -5, -5, 5, 5, -5, 5, 5, 5, 5, -5, 5, 5, -5, -5, 5, 5, -5, 5, -5, 5, -5, 5, 5, -5, 5, -5, -5, -5, -5, -5, -5, 5, -5, 5, 5, -5, -5, -5, -5, 5, 5, 5, 5, 5, 5, 5, -5, -5, 5, -5, -5, 5, 5, 5, 5, -5, 5, -5, 5, -5, -5, 5, -5, -5, -5, 5, -5, -5, 5, -5, 5, -5, -5, -5)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_cm7nf"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_um43l"]
+properties/0/path = NodePath(".:ServerSettingsJson")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:IsBlinking")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:state")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:winningTeam")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:nukeActive")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath(".:nukeTimer")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath(".:nukeDetonated")
+properties/6/spawn = true
+properties/6/replication_mode = 2
+properties/7/path = NodePath(".:nukeOnCooldown")
+properties/7/spawn = true
+properties/7/replication_mode = 2
+properties/8/path = NodePath(".:ventTimer")
+properties/8/spawn = true
+properties/8/replication_mode = 2
+properties/9/path = NodePath(".:syncRoundTimer")
+properties/9/spawn = true
+properties/9/replication_mode = 2
+properties/10/path = NodePath(".:syncTimeToStart")
+properties/10/spawn = true
+properties/10/replication_mode = 2
+properties/11/path = NodePath(".:mapSeed")
+properties/11/spawn = true
+properties/11/replication_mode = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edngx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sj8dd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xto5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s64xr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbqk7"]
+bg_color = Color(0.75, 0.75, 0.75, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_invny"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2abdx"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Animation" id="Animation_uknt2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alarm:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Alarm2:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qwusi"]
+resource_name = "breach"
+length = 30.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alarm")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("52_7wpac")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Alarm:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 17, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -80.0]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Alarm2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("116_qwusi")
+}],
+"times": PackedFloat32Array(5)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Alarm2:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bang")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("117_uknt2")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("118_vs077")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("119_6gqts")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("117_uknt2")
+}],
+"times": PackedFloat32Array(3.36667, 7.46667, 9.6, 13.8667)
+}
+tracks/4/use_blend = false
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uknt2"]
+_data = {
+&"RESET": SubResource("Animation_uknt2"),
+&"breach": SubResource("Animation_qwusi")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4m48e"]
+render_priority = 127
+shader = ExtResource("110_4m48e")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4m48e"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Resource" id="Resource_tma20"]
+resource_name = "Alone"
+script = ExtResource("114_fryn1")
+context = 3
+clips = [ExtResource("118_1qgdh"), ExtResource("145_m31dw")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_ervtb"]
+resource_name = "LCZ"
+script = ExtResource("114_fryn1")
+context = 1
+zone = 1
+clips = [ExtResource("64_2qd4d")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_k4ne4"]
+resource_name = "HCZ"
+script = ExtResource("114_fryn1")
+context = 1
+zone = 2
+clips = [ExtResource("139_m31dw")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_438yi"]
+resource_name = "EZ"
+script = ExtResource("114_fryn1")
+context = 1
+zone = 3
+clips = [ExtResource("66_tvqll")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_4m48e"]
+resource_name = "SZ"
+script = ExtResource("114_fryn1")
+context = 1
+zone = 4
+clips = [ExtResource("134_6gqts")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_tvqll"]
+resource_name = "Brig"
+script = ExtResource("114_fryn1")
+context = 1
+zone = 5
+clips = [ExtResource("68_tvqll")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_r07h7"]
+resource_name = "SCP-173"
+script = ExtResource("114_fryn1")
+context = 2
+chaseRole = ExtResource("144_m31dw")
+clips = [ExtResource("145_r07h7")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_h2gpi"]
+resource_name = "SCP-106"
+script = ExtResource("114_fryn1")
+context = 2
+chaseRole = ExtResource("144_geitw")
+clips = [ExtResource("145_t1mdt")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="Resource" id="Resource_lohxe"]
+resource_name = "SCP-049"
+script = ExtResource("114_fryn1")
+context = 2
+chaseRole = ExtResource("143_a6sfi")
+clips = [ExtResource("144_tma20")]
+metadata/_custom_type_script = "uid://c2qlygpkpo7k0"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f071e"]
+size = Vector3(5000, 75, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4me6g"]
+size = Vector3(5000, 50, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3h5w"]
+size = Vector3(5000, 40, 5000)
+
+[sub_resource type="Environment" id="Environment_uest3"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_l3db3"]
+sample_partition_type = 1
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 4294966888
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"navmesh"
+agent_max_climb = 0.5
+edge_max_error = 0.5
+filter_ledge_spans = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nygfu"]
+size = Vector3(5000, 50, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2gpi"]
+size = Vector3(5000, 50, 5000)
+
+[node name="Facility" type="Node3D" unique_id=119413098]
+
+[node name="WorldSpawn" type="MeshInstance3D" parent="." unique_id=97780772]
+layers = 9
+mesh = SubResource("BoxMesh_cm7nf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldSpawn" unique_id=1939317941]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldSpawn/StaticBody3D" unique_id=1690497140]
+shape = SubResource("ConcavePolygonShape3D_cm7nf")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="WorldSpawn" unique_id=1407417958]
+occluder = SubResource("BoxOccluder3D_cm7nf")
+
+[node name="SurfaceSpawner" type="MultiplayerSpawner" parent="." unique_id=985863338]
+_spawnable_scenes = PackedStringArray("uid://dwpgfdmhqtb7i")
+spawn_path = NodePath("../Surface")
+
+[node name="Surface" type="Node3D" parent="." unique_id=1859950022]
+
+[node name="PocketDim" parent="." unique_id=792180509 instance=ExtResource("29_y8myi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
+
+[node name="RoundManager" type="Node3D" parent="." unique_id=905528320 node_paths=PackedStringArray("navmesh", "Logic", "targetSurfaceSpawn", "broadcast", "nukeIntercomSounds", "nukeSounds", "nukeCooldown") groups=["navmesh"]]
+script = ExtResource("3_xbr4n")
+TimeToStart = 15.0
+environment = ExtResource("7_ibhml")
+navmesh = NodePath("../NavMesh")
+Logic = NodePath("RoundLogic")
+surfacePrefab = ExtResource("1_cm7nf")
+targetSurfaceSpawn = NodePath("../Surface")
+broadcast = NodePath("Control/MarginContainer/UIBroadcast")
+nukeIntercomSounds = NodePath("NukeIntercom")
+nukeSounds = NodePath("NukeAudio")
+nukeTMinus = ExtResource("9_sa2f6")
+nukeCancel = ExtResource("10_braoj")
+nukeBlast = ExtResource("10_ee0ki")
+nukeSiren = ExtResource("10_0oo47")
+nukeCooldown = NodePath("NukeCooldown")
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="RoundManager" unique_id=763971177]
+replication_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_um43l")
+
+[node name="Control" type="Control" parent="RoundManager" unique_id=1787886144]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="RoundManager/Control" unique_id=1540973634]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -69.0
+offset_right = 129.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 24
+text = "Loading"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="RoundManager/Control" unique_id=1723278854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="UIBroadcast" type="RichTextLabel" parent="RoundManager/Control/MarginContainer" unique_id=1967187816]
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("14_j5jej")
+theme_override_fonts/bold_font = ExtResource("14_j5jej")
+theme_override_fonts/bold_italics_font = ExtResource("14_j5jej")
+theme_override_fonts/italics_font = ExtResource("14_j5jej")
+theme_override_fonts/mono_font = ExtResource("14_oh4uo")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_edngx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sj8dd")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+script = ExtResource("14_oxshr")
+
+[node name="Panel" type="PanelContainer" parent="RoundManager/Control" unique_id=937701093]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7xto5")
+
+[node name="RoundUI" type="Node" parent="RoundManager/Control/Panel" unique_id=2082087987 node_paths=PackedStringArray("root", "stateLabel", "playerCountLabel", "progressBar")]
+script = ExtResource("17_2agsc")
+root = NodePath("..")
+stateLabel = NodePath("../Box/Margin/Box/State")
+playerCountLabel = NodePath("../Box/Margin/Box/Count")
+progressBar = NodePath("../Box/Progress")
+
+[node name="Box" type="VBoxContainer" parent="RoundManager/Control/Panel" unique_id=554458565]
+layout_mode = 2
+
+[node name="Progress" type="ProgressBar" parent="RoundManager/Control/Panel/Box" unique_id=1610886568]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_s64xr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xbqk7")
+step = 0.0
+show_percentage = false
+
+[node name="Margin" type="MarginContainer" parent="RoundManager/Control/Panel/Box" unique_id=402172320]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Box" type="HBoxContainer" parent="RoundManager/Control/Panel/Box/Margin" unique_id=1320840500]
+layout_mode = 2
+
+[node name="State" type="Label" parent="RoundManager/Control/Panel/Box/Margin/Box" unique_id=458482259]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 42
+text = "Waiting for players..."
+vertical_alignment = 1
+
+[node name="Count" type="Label" parent="RoundManager/Control/Panel/Box/Margin/Box" unique_id=1354309308]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 42
+text = "0 connected players"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Basics" type="PanelContainer" parent="RoundManager/Control" unique_id=2025573286]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_invny")
+
+[node name="HowToChat" type="Node" parent="RoundManager/Control/Basics" unique_id=45677834 node_paths=PackedStringArray("root", "voiceChatKeyLabel", "playerListKeyLabel")]
+script = ExtResource("18_r2vw0")
+root = NodePath("..")
+voiceChatKeyLabel = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/Key")
+playerListKeyLabel = NodePath("../MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/Key")
+timeOnScreen = 2.5
+
+[node name="MarginContainer" type="MarginContainer" parent="RoundManager/Control/Basics" unique_id=595291591]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RoundManager/Control/Basics/MarginContainer" unique_id=2085842319]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer" unique_id=1832192238]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer/HBoxContainer" unique_id=235912147]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2abdx")
+
+[node name="Key" type="Label" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=965989091]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 32
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1414674767]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 24
+text = "Voice Chat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer" unique_id=3167193]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1027022662]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2abdx")
+
+[node name="Key" type="Label" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer" unique_id=810159361]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 32
+text = "N"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="RoundManager/Control/Basics/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2029215316]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_fonts/font = ExtResource("13_cw177")
+theme_override_font_sizes/font_size = 24
+text = "Player List"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gen" type="Node3D" parent="RoundManager" unique_id=1740909566 node_paths=PackedStringArray("TargetLayout", "mapSpawner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, 0)
+script = ExtResource("8_qn7yr")
+TargetLayout = NodePath("../../Lcz/Layout")
+mapSpawner = NodePath("../../Lcz/MapSpawner")
+doorScenes = Array[PackedScene]([ExtResource("15_8je6q"), ExtResource("5_kx6tg"), ExtResource("5_kx6tg"), ExtResource("22_k4ne4")])
+doorRooms = Array[Object]([ExtResource("22_na7c1"), ExtResource("22_jfotv"), ExtResource("23_ui1wy"), ExtResource("24_ui1wy"), ExtResource("25_m31dw"), ExtResource("26_geitw")])
+RoomsOfInterest = Array[Object]([])
+RoomsOfNonInterest = Array[Object]([])
+clusters = Array[Object]([])
+RoomGenerationSettingsCollections = Array[Object]([])
+
+[node name="NukeIntercom" type="AudioStreamPlayer" parent="RoundManager" unique_id=30081682]
+volume_db = -5.0
+bus = &"WorldLoud"
+
+[node name="NukeAudio" type="AudioStreamPlayer" parent="RoundManager" unique_id=462661253]
+volume_db = -5.0
+bus = &"World"
+
+[node name="NukeCooldown" type="Timer" parent="RoundManager" unique_id=2058229323]
+wait_time = 60.0
+one_shot = true
+
+[node name="ServerListPingTimer" type="Timer" parent="RoundManager" unique_id=158129420]
+wait_time = 15.0
+autostart = true
+
+[node name="AmbientSound" type="AudioStreamPlayer3D" parent="RoundManager" unique_id=1654797976]
+attenuation_model = 3
+max_distance = 100.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Timer" type="Timer" parent="RoundManager/AmbientSound" unique_id=857468918]
+autostart = true
+script = ExtResource("39_0tlsy")
+MinValue = 30.0
+MaxValue = 90.0
+
+[node name="AmbientSoundPlayer" type="Node" parent="RoundManager/AmbientSound" unique_id=1821633126]
+script = ExtResource("22_elr2q")
+Sounds = [ExtResource("24_1y5ub"), ExtResource("25_47qj3"), ExtResource("26_nray6"), ExtResource("27_deyme"), ExtResource("28_10w48"), ExtResource("29_y8tq6"), ExtResource("30_er2xd"), ExtResource("31_ay7u1"), ExtResource("32_2cy3g"), ExtResource("33_gpl2e"), ExtResource("34_1nf60"), ExtResource("35_flipl"), ExtResource("36_sqdfp"), ExtResource("37_fy73u"), ExtResource("38_d6m1m")]
+
+[node name="Decon" type="Node" parent="RoundManager" unique_id=146491631 node_paths=PackedStringArray("area", "intercom", "intercomGlobal", "timer")]
+script = ExtResource("75_15nlf")
+area = NodePath("../../Lcz/AmbientArea")
+intercom = NodePath("DeconIntercom")
+intercomGlobal = NodePath("DeconIntercomGlobal")
+volumeDb = -13.0
+timer = NodePath("DeconTimer")
+intervals = PackedFloat64Array(130, 200, 200, 60, 40, 0.5)
+
+[node name="DeconIntercom" type="AudioStreamPlayer" parent="RoundManager/Decon" unique_id=1358121280]
+volume_db = -16.0
+bus = &"WorldLoud"
+
+[node name="DeconIntercomGlobal" type="AudioStreamPlayer" parent="RoundManager/Decon" unique_id=435914942]
+volume_db = -16.0
+bus = &"WorldLoud"
+
+[node name="DeconTimer" type="Timer" parent="RoundManager/Decon" unique_id=1441997917]
+one_shot = true
+
+[node name="RoundStart" type="Node" parent="RoundManager" unique_id=921175426]
+
+[node name="Alarm" type="AudioStreamPlayer" parent="RoundManager/RoundStart" unique_id=345413858]
+bus = &"World"
+
+[node name="Alarm2" type="AudioStreamPlayer" parent="RoundManager/RoundStart" unique_id=811051804]
+bus = &"World"
+
+[node name="Bang" type="AudioStreamPlayer" parent="RoundManager/RoundStart" unique_id=2002202811]
+max_polyphony = 32
+bus = &"World"
+
+[node name="Timer" type="Timer" parent="RoundManager/RoundStart" unique_id=2015405487]
+wait_time = 25.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RoundManager/RoundStart" unique_id=555394982]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_uknt2")
+
+[node name="RoundLogic" type="Node" parent="RoundManager" unique_id=1184914557]
+script = ExtResource("108_3pmdj")
+respawnWaveSoundRRT = ExtResource("49_by1ep")
+respawnWaveSoundNTF = ExtResource("50_tvqll")
+respawnWaveSoundCI = ExtResource("50_2qd4d")
+globalStartObjectives = [ExtResource("125_r07h7")]
+radioForBackupObjective = ExtResource("125_r07h7")
+metadata/_custom_type_script = "uid://d4mmgaib5j5he"
+
+[node name="ControlPointManager" type="Node3D" parent="RoundManager" unique_id=19313764]
+script = ExtResource("128_a6sfi")
+metadata/_custom_type_script = "uid://dwjjpo5r5eduh"
+
+[node name="AmbientCalculator" type="Node" parent="." unique_id=1952657208]
+script = ExtResource("109_438yi")
+VignetteOverlayTarget = NodePath("Vignette")
+metadata/_custom_type_script = "uid://dbhqoleundy78"
+
+[node name="Vignette" type="MeshInstance3D" parent="AmbientCalculator" unique_id=1965245303]
+material_override = SubResource("ShaderMaterial_4m48e")
+cast_shadow = 0
+extra_cull_margin = 16384.0
+lod_bias = 128.0
+ignore_occlusion_culling = true
+instance_shader_parameters/amount = 0.0
+instance_shader_parameters/main_color = Color(0, 0, 0, 1)
+mesh = SubResource("QuadMesh_4m48e")
+
+[node name="Music" type="Node" parent="." unique_id=1252513418 node_paths=PackedStringArray("audioSources")]
+script = ExtResource("91_ttr0p")
+audioSources = [NodePath("LoopAudio"), NodePath("LoopAudio2")]
+soundTracks = [null, ExtResource("20_upgx8"), ExtResource("94_fcwve"), ExtResource("8_xr3jo"), ExtResource("95_kiss3")]
+volumeDb = PackedFloat32Array(0, -4, -20, -4, -20)
+musicTracks = [SubResource("Resource_tma20"), SubResource("Resource_ervtb"), SubResource("Resource_k4ne4"), SubResource("Resource_438yi"), SubResource("Resource_4m48e"), SubResource("Resource_tvqll"), SubResource("Resource_r07h7"), SubResource("Resource_h2gpi"), SubResource("Resource_lohxe")]
+speed = 0.5
+
+[node name="LoopAudio" type="AudioStreamPlayer" parent="Music" unique_id=169458188]
+bus = &"Music"
+
+[node name="LoopAudio2" type="AudioStreamPlayer" parent="Music" unique_id=110470649]
+bus = &"Music"
+
+[node name="Ez" type="Node3D" parent="." unique_id=422065440 groups=["navmesh"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -200, 0)
+
+[node name="AmbientArea" type="Area3D" parent="Ez" unique_id=669963748]
+collision_layer = 15
+collision_mask = 6
+monitorable = false
+reverb_bus_name = &"Reverb3"
+reverb_bus_amount = 1.0
+script = ExtResource("7_8w7pc")
+env = ExtResource("7_ibhml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ez/AmbientArea" unique_id=339212634]
+shape = SubResource("BoxShape3D_f071e")
+script = ExtResource("135_6gqts")
+metadata/_custom_type_script = "uid://d4lucy1igoqnk"
+
+[node name="Layout" type="Node3D" parent="Ez" unique_id=1448836344]
+script = ExtResource("10_j3xvi")
+GridSize = Vector2i(16, 16)
+CellSize = 20.8
+
+[node name="LayoutDebugDraw" type="MeshInstance3D" parent="Ez" unique_id=958647859 node_paths=PackedStringArray("TargetLayout", "world")]
+visible = false
+script = ExtResource("13_mg1a2")
+TargetLayout = NodePath("../Layout")
+Active = false
+world = NodePath("../../Window/FreeCam")
+
+[node name="MapSpawner" type="MultiplayerSpawner" parent="Ez" unique_id=1585374777]
+spawn_path = NodePath("../Map")
+
+[node name="Map" type="Node3D" parent="Ez" unique_id=393912518]
+
+[node name="AmbientSoundEz" type="AudioStreamPlayer3D" parent="Ez" unique_id=203097131]
+attenuation_model = 3
+max_distance = 100.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Timer" type="Timer" parent="Ez/AmbientSoundEz" unique_id=1334470117]
+autostart = true
+script = ExtResource("39_0tlsy")
+MinValue = 30.0
+MaxValue = 90.0
+
+[node name="AmbientSoundPlayer" type="Node" parent="Ez/AmbientSoundEz" unique_id=6658170]
+script = ExtResource("22_elr2q")
+Sounds = [ExtResource("40_is2wh"), ExtResource("41_ow4gm"), ExtResource("42_84fod"), ExtResource("43_ou8el"), ExtResource("44_f0vb7"), ExtResource("45_r5yjn"), ExtResource("46_gns7i"), ExtResource("47_muqnh"), ExtResource("48_jgose"), ExtResource("49_3edfg"), ExtResource("50_vf2wa"), ExtResource("51_pi385")]
+area = 3
+
+[node name="AmbientSoundHcz" type="AudioStreamPlayer3D" parent="Ez" unique_id=517713494]
+attenuation_model = 3
+max_distance = 100.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Timer" type="Timer" parent="Ez/AmbientSoundHcz" unique_id=1539218635]
+autostart = true
+script = ExtResource("39_0tlsy")
+MinValue = 30.0
+MaxValue = 90.0
+
+[node name="AmbientSoundPlayer" type="Node" parent="Ez/AmbientSoundHcz" unique_id=969058214]
+script = ExtResource("22_elr2q")
+Sounds = [ExtResource("118_7owio"), ExtResource("119_wotky"), ExtResource("120_d1a27"), ExtResource("121_p0qfo"), ExtResource("122_wysu5"), ExtResource("123_43ibm"), ExtResource("124_8v5lu"), ExtResource("125_gcaxq"), ExtResource("126_41xxb"), ExtResource("127_00epn"), ExtResource("128_570i6")]
+area = 2
+
+[node name="Lcz" type="Node3D" parent="." unique_id=425685275 groups=["navmesh"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, 0)
+
+[node name="AmbientArea" type="Area3D" parent="Lcz" unique_id=270082888]
+collision_layer = 15
+collision_mask = 6
+monitorable = false
+reverb_bus_name = &"Reverb3"
+reverb_bus_amount = 1.0
+script = ExtResource("7_8w7pc")
+env = ExtResource("7_ibhml")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lcz/AmbientArea" unique_id=677337863]
+shape = SubResource("BoxShape3D_4me6g")
+
+[node name="Layout" type="Node3D" parent="Lcz" unique_id=125048129]
+script = ExtResource("10_j3xvi")
+GridSize = Vector2i(64, 64)
+CellSize = 20.8
+
+[node name="MapSpawner" type="MultiplayerSpawner" parent="Lcz" unique_id=916851123]
+spawn_path = NodePath("../Map")
+
+[node name="Map" type="Node3D" parent="Lcz" unique_id=281753790]
+
+[node name="AmbientSound" type="AudioStreamPlayer3D" parent="Lcz" unique_id=1956731279]
+attenuation_model = 3
+max_distance = 100.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Timer" type="Timer" parent="Lcz/AmbientSound" unique_id=1758916861]
+autostart = true
+script = ExtResource("39_0tlsy")
+MinValue = 30.0
+MaxValue = 90.0
+
+[node name="AmbientSoundPlayer" type="Node" parent="Lcz/AmbientSound" unique_id=1945674882]
+script = ExtResource("22_elr2q")
+Sounds = [ExtResource("23_fj7n7"), ExtResource("24_k1shp"), ExtResource("25_nse3f"), ExtResource("26_k5rce"), ExtResource("27_8ggpx"), ExtResource("28_oo37g"), ExtResource("29_akp0v"), ExtResource("30_qfqwp"), ExtResource("31_uscvn"), ExtResource("32_cvaxo"), ExtResource("33_4ko2j")]
+area = 1
+
+[node name="Vents" type="Node3D" parent="." unique_id=569498986 groups=["navmesh"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -500, 0)
+
+[node name="AmbientArea" type="Area3D" parent="Vents" unique_id=546269671]
+collision_layer = 15
+collision_mask = 6
+monitorable = false
+reverb_bus_name = &"Reverb3"
+reverb_bus_amount = 1.0
+script = ExtResource("7_8w7pc")
+speed = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vents/AmbientArea" unique_id=1712630077]
+shape = SubResource("BoxShape3D_u3h5w")
+
+[node name="Layout" type="Node3D" parent="Vents" unique_id=1993361494]
+script = ExtResource("10_j3xvi")
+GridSize = Vector2i(64, 64)
+CellSize = 12.0
+
+[node name="MapSpawner" type="MultiplayerSpawner" parent="Vents" unique_id=1327394922]
+spawn_path = NodePath("../Map")
+
+[node name="Map" type="Node3D" parent="Vents" unique_id=212660013]
+
+[node name="SpectatorSpawn" type="Marker3D" parent="." unique_id=1743780702 groups=["spawn"]]
+gizmo_extents = 1.0
+script = ExtResource("111_mwwwk")
+role = ExtResource("112_b8x76")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2071620812]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 100, 100, 100)
+visible = false
+far = 250.0
+
+[node name="Window" type="Window" parent="." unique_id=1511664354]
+use_debanding = true
+use_occlusion_culling = true
+title = "Free Camera"
+initial_position = 3
+size = Vector2i(640, 480)
+current_screen = 0
+visible = false
+force_native = true
+
+[node name="FreeCam" type="Node3D" parent="Window" unique_id=2026555523 node_paths=PackedStringArray("window", "controlsWindow")]
+script = ExtResource("14_62wuf")
+SprintMultiplier = 5.0
+FarClip = 4000.0
+env = SubResource("Environment_uest3")
+window = NodePath("..")
+controlsWindow = NodePath("../Window")
+cullFlags = 4294967279
+
+[node name="Window" type="Window" parent="Window" unique_id=2074604650]
+disable_3d = true
+title = "Controls"
+initial_position = 3
+size = Vector2i(250, 250)
+current_screen = 0
+visible = false
+unresizable = true
+always_on_top = true
+force_native = true
+
+[node name="Control" type="Control" parent="Window/Window" unique_id=519466820]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HFlowContainer" parent="Window/Window/Control" unique_id=1833812775]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="CheckButton" parent="Window/Window/Control/HBoxContainer" unique_id=1474118984]
+layout_mode = 2
+text = "PlayerLock"
+
+[node name="Button2" type="Button" parent="Window/Window/Control/HBoxContainer" unique_id=136627405]
+layout_mode = 2
+text = "Focus Local Player"
+
+[node name="Button3" type="CheckButton" parent="Window/Window/Control/HBoxContainer" unique_id=1034361953]
+layout_mode = 2
+text = "WorldEnv"
+
+[node name="Button4" type="Button" parent="Window/Window/Control/HBoxContainer" unique_id=1111226867]
+layout_mode = 2
+text = "Screenshot"
+
+[node name="AsyncTools" type="Node" parent="." unique_id=721194092]
+script = ExtResource("108_ax65d")
+
+[node name="NavMesh" type="NavigationRegion3D" parent="." unique_id=527431539]
+navigation_mesh = SubResource("NavigationMesh_l3db3")
+
+[node name="Bounds" type="StaticBody3D" parent="." unique_id=1840921305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -650, 0)
+collision_layer = 47
+collision_mask = 47
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds" unique_id=1399762019]
+shape = SubResource("BoxShape3D_nygfu")
+
+[node name="KillBounds" type="Area3D" parent="." unique_id=1034753664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -600, 0)
+collision_layer = 0
+collision_mask = 18
+monitorable = false
+script = ExtResource("190_t1mdt")
+metadata/_custom_type_script = "uid://cl8jf1pllyhot"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillBounds" unique_id=1185297248]
+shape = SubResource("BoxShape3D_h2gpi")
+
+[connection signal="timeout" from="RoundManager/ServerListPingTimer" to="RoundManager" method="PingServerList"]
+[connection signal="timeout" from="RoundManager/AmbientSound/Timer" to="RoundManager/AmbientSound/AmbientSoundPlayer" method="PlayRandomSound"]
+[connection signal="timeout" from="Ez/AmbientSoundEz/Timer" to="Ez/AmbientSoundEz/AmbientSoundPlayer" method="PlayRandomSound"]
+[connection signal="timeout" from="Ez/AmbientSoundHcz/Timer" to="Ez/AmbientSoundHcz/AmbientSoundPlayer" method="PlayRandomSound"]
+[connection signal="timeout" from="Lcz/AmbientSound/Timer" to="Lcz/AmbientSound/AmbientSoundPlayer" method="PlayRandomSound"]
+[connection signal="toggled" from="Window/Window/Control/HBoxContainer/Button" to="Window/FreeCam" method="SetPlayerLock"]
+[connection signal="pressed" from="Window/Window/Control/HBoxContainer/Button2" to="Window/FreeCam" method="FocusPlayer"]
+[connection signal="toggled" from="Window/Window/Control/HBoxContainer/Button3" to="Window/FreeCam" method="SetUseWorldEnv"]
+[connection signal="pressed" from="Window/Window/Control/HBoxContainer/Button4" to="Window/FreeCam" method="TakeScreenshot"]

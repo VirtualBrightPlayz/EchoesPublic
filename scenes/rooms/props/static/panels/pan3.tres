@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b1qfk8xxvwrti"]
+
+[ext_resource type="Shader" uid="uid://b1d0qxprhoa4q" path="res://shaders/anim_texture.gdshader" id="1_8n3ns"]
+[ext_resource type="Texture2D" uid="uid://bmcqs1lypdxrd" path="res://scenes/rooms/props/static/panels/textures/pan3.png" id="2_8n3ns"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8n3ns")
+shader_parameter/albedo_tint = Color(0, 0, 0, 1)
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.4
+shader_parameter/emission = ExtResource("2_8n3ns")
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/fb_size = Vector2(12, 1)
+shader_parameter/fb_speed = 5.0

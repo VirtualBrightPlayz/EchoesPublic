@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameEffect" format=3 uid="uid://kangcirglgt0"]
+
+[ext_resource type="PackedScene" uid="uid://cw68dgddles7s" path="res://scenes/misc/blood/blood_particles.tscn" id="1_6daf3"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="1_d6sop"]
+
+[resource]
+resource_name = "Blood Spray"
+script = ExtResource("1_d6sop")
+DisplayName = "Blood Spray"
+scene = ExtResource("1_6daf3")
+Lifetime = 5.0
+metadata/_custom_type_script = "uid://dun4r5quuxvoy"

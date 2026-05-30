@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://6yfhxwavthj7"]
+
+[ext_resource type="Script" uid="uid://djvhv2q3jqi50" path="res://scripts/player/controllers/ability/StaminaAbility.cs" id="1_d4duo"]
+
+[node name="StaminaAbility" type="Node" unique_id=1506503989]
+script = ExtResource("1_d4duo")
+metadata/_custom_type_script = "uid://djvhv2q3jqi50"

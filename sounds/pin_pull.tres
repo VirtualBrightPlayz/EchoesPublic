@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://jxl15kcecr55"]
+
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_b2xfi"]
+[ext_resource type="AudioStream" uid="uid://btbqhwcndmmco" path="res://audio/edited/pin.wav" id="2_p0tym"]
+
+[resource]
+script = ExtResource("1_b2xfi")
+DisplayName = "Pin Pull"
+streams = [ExtResource("2_p0tym")]
+unitSize = 5.0
+maxDistance = 15.0
+metadata/_custom_type_script = "uid://bvc0wibnewx2r"

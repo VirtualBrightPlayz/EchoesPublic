@@ -1,0 +1,100 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bvikgt5j2l20l"
+path="res://.godot/imported/lcz_914_storage_entry.glb-f0b034c33cd817f38aa8699a861b7b86.scn"
+
+[deps]
+
+source_file="res://scenes/rooms/lcz/lcz_914_storage_entry.glb"
+dest_files=["res://.godot/imported/lcz_914_storage_entry.glb-f0b034c33cd817f38aa8699a861b7b86.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"914_wall_text": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/bunglow_lcz_new/LCZ_V5/Materials/914_storage_walltext.tres",
+"use_external/path": "uid://bp35afsdkit21"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/bunglow_lcz_new/LCZ_V5/Materials/caution_lines.tres",
+"use_external/path": "uid://vd1uno7wqqf3"
+},
+"Pipe_Trim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/Pipe_Trim_Blue.tres",
+"use_external/path": "uid://cqa8mdrgpflep"
+},
+"Pipe_Trim_White": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/Pipe_Trim_White.tres",
+"use_external/path": "uid://4qyd48f585gd"
+},
+"catwalk hand rails": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://textures/main/lcz/rooms/handrails.tres",
+"use_external/path": "uid://bubu7jlhagr5h"
+},
+"light_concrete_panels": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/bunglow_lcz_new/LCZ_V5/Materials/light_concrete_panels.tres",
+"use_external/path": "uid://14jf5c4kh8di"
+},
+"light_concrete_seamless": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/bunglow_lcz_new/LCZ_V5/Materials/light_concrete_seamless.tres",
+"use_external/path": "uid://x6wk7ovor8rb"
+},
+"light_concrete_trimsheet": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/bunglow_lcz_new/LCZ_V5/Materials/light_concrete_trimsheet.tres",
+"use_external/path": "uid://cd0pg0pm1gsye"
+},
+"metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/MetalPanels.tres",
+"use_external/path": "uid://dw24wtj061255"
+},
+"sz_asphalt": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/pop_hcz_new/HCZ_V4/Materials/ConcretePlaster.tres",
+"use_external/path": "uid://dj7268kgty7ye"
+},
+"vents": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://models/rooms/lcz/textures/vents.tres",
+"use_external/path": "uid://6e5aeyomnu3g"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

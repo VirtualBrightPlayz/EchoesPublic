@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresetRoom" format=3 uid="uid://cmq4gr5dwfagd"]
+
+[ext_resource type="Script" uid="uid://cqwggm1chlbv" path="res://scripts/layout_generator/PresetRoom.cs" id="2_m2n1p"]
+[ext_resource type="Script" uid="uid://cyg0oq1tdxtk5" path="res://scripts/layout_generator/RoomPropertyData.cs" id="3_m2n1p"]
+
+[resource]
+resource_name = "Generic Door"
+script = ExtResource("2_m2n1p")
+type = 5
+scenes = []
+sceneFile = "uid://64mbuw68oxh3"
+category = "Doors"
+metadata/_custom_type_script = "uid://cqwggm1chlbv"

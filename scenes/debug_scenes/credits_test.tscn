@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://blyyyswcqlov0"]
+
+[ext_resource type="Script" uid="uid://cm1wf13h0fqsj" path="res://scripts/ui/CreditsViewer.cs" id="1_xgwgk"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+bbcode_enabled = true
+script = ExtResource("1_xgwgk")
+BaseFormat = "[font_size=32][u][b]Credits[/b][/u][/font_size]
+
+Copyright 2023 Brian Zulch and contributors.
+
+[ul]
+VirtualBrightPlayz
+PintTheDragon
+TheMoogle
+moddedmcplayer
+ToyB-Chan
+JohnodonCode
+NotIntense
+DuoNineXcore
+[/ul]
+
+The game's source code is not licensed under CC-BY-SA 3.0 or CC-BY-SA 4.0.
+The game's source code is All rights reserved.
+Parts of the game's assets and source code are under a different license.
+
+[font_size=24]Software and Assets Used[/font_size]
+
+[table=3]
+{0}
+[/table]"
+CellFormat = "[cell][center]{0}[/center][/cell]
+[cell][center]{1}[/center][/cell]
+[cell][center]{2}[/center][/cell]"

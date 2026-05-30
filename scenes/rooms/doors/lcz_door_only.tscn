@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bh2grrytledib"]
+
+[ext_resource type="Script" uid="uid://gbx5cqsanacv" path="res://scripts/map/Door.cs" id="1_br5xv"]
+[ext_resource type="AudioStream" uid="uid://43ek16vycqf4" path="res://audio/Doors/LCZ/Opening/DoorsLCZOpen1.wav" id="2_0ymlb"]
+[ext_resource type="AudioStream" uid="uid://ddjcs7nqre2dy" path="res://audio/Doors/LCZ/Opening/DoorsLCZOpen2.wav" id="3_gwf6r"]
+[ext_resource type="AudioStream" uid="uid://dhk0erok5ukiv" path="res://audio/Doors/LCZ/Opening/DoorsLCZOpen3.wav" id="4_dyu0u"]
+[ext_resource type="AudioStream" uid="uid://b0u042dchbbyi" path="res://audio/Doors/LCZ/Close/DoorsLCZClose1.wav" id="5_rw7l5"]
+[ext_resource type="AudioStream" uid="uid://djsi3h2g4ehps" path="res://audio/Doors/LCZ/Close/DoorsLCZClose2.wav" id="6_pyu66"]
+[ext_resource type="AudioStream" uid="uid://olrk4fr7oppi" path="res://audio/Doors/LCZ/Close/DoorsLCZClose3.wav" id="7_hj6hf"]
+[ext_resource type="AudioStream" uid="uid://c0fwwfwupmgr8" path="res://audio/scpcb/doors/Button2.ogg" id="8_gneex"]
+[ext_resource type="PackedScene" uid="uid://b7mmpevt45sdo" path="res://models/scpcb/doorframe.glb" id="8_vt5jn"]
+[ext_resource type="Material" uid="uid://cr22vapdmat0n" path="res://materials/scpcb_map/door01.tres" id="9_adnsg"]
+[ext_resource type="Material" uid="uid://ckn82kcpey4tf" path="res://materials/scpcb_map/dirtymetal.tres" id="10_3mp7x"]
+[ext_resource type="PackedScene" uid="uid://bllxm44dovuw1" path="res://scenes/rooms/doors/door_01.tscn" id="11_ox0g6"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ct38c"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = false
+properties/0/replication_mode = 0
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = false
+properties/1/replication_mode = 0
+properties/2/path = NodePath(".:isMoving")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:isOpen")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath(".:isLocked")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_k6nfh"]
+size = Vector3(2.15781, 3.63852, 0.236444)
+
+[node name="LczDoorOnly" type="Node3D" unique_id=1669854139 node_paths=PackedStringArray("marker", "doors", "startPoints", "endPoints", "audio", "audioNear", "occluder")]
+script = ExtResource("1_br5xv")
+marker = NodePath("Marker3D")
+doors = [NodePath("Door01"), NodePath("Door02")]
+startPoints = [NodePath("Door01Start"), NodePath("Door02Start")]
+endPoints = [NodePath("Door01End"), NodePath("Door02End")]
+audio = NodePath("Audio")
+audioNear = NodePath("AudioNear")
+openSounds = [ExtResource("2_0ymlb"), ExtResource("3_gwf6r"), ExtResource("4_dyu0u")]
+closeSounds = [ExtResource("5_rw7l5"), ExtResource("6_pyu66"), ExtResource("7_hj6hf")]
+failSounds = [ExtResource("8_gneex")]
+speed = 0.7
+distance = 1.8
+occluder = NodePath("OccluderInstance3D")
+
+[node name="doorframe" parent="." unique_id=1789246046 instance=ExtResource("8_vt5jn")]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+
+[node name="DoorFrame" parent="doorframe" index="0" unique_id=667736492]
+gi_mode = 0
+surface_material_override/0 = ExtResource("9_adnsg")
+surface_material_override/1 = ExtResource("10_3mp7x")
+
+[node name="Door01" parent="." unique_id=143983458 node_paths=PackedStringArray("marker") instance=ExtResource("11_ox0g6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.1)
+marker = NodePath("../Marker3D")
+target = NodePath("..")
+
+[node name="Door02" parent="." unique_id=997759460 node_paths=PackedStringArray("marker") instance=ExtResource("11_ox0g6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+marker = NodePath("../Marker3D")
+target = NodePath("..")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=1815231772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+attenuation_model = 1
+volume_db = -5.0
+max_db = 0.0
+max_distance = 30.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="AudioNear" type="AudioStreamPlayer3D" parent="." unique_id=760065165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+max_distance = 10.0
+bus = &"World"
+attenuation_filter_db = 0.0
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="." unique_id=365005004]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_ct38c")
+
+[node name="Door01Start" type="Marker3D" parent="." unique_id=571733657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="Door01End" type="Marker3D" parent="." unique_id=1185945936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0, 0.1)
+
+[node name="Door02Start" type="Marker3D" parent="." unique_id=446824279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="Door02End" type="Marker3D" parent="." unique_id=657066638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, -0.1)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1577680899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=254600057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67103, 0)
+occluder = SubResource("BoxOccluder3D_k6nfh")
+
+[editable path="doorframe"]

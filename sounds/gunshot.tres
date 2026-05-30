@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="GameSound" format=3 uid="uid://dsu7w0yjs3t65"]
+
+[ext_resource type="AudioStream" uid="uid://cq8n8t1y2wgwe" path="res://audio/gunshots/PistolShot.mp3" id="1_etwy5"]
+[ext_resource type="Script" uid="uid://bvc0wibnewx2r" path="res://scripts/game/GameSound.cs" id="1_qcnj0"]
+[ext_resource type="AudioStream" uid="uid://beugttd6w7kxy" path="res://audio/gunshots/PistolShotMedium.mp3" id="2_r4n4p"]
+[ext_resource type="AudioStream" uid="uid://cd6g78cylsa74" path="res://audio/gunshots/PistolShotFar.mp3" id="3_7cije"]
+[ext_resource type="AudioStream" uid="uid://bqyihw4b7oodg" path="res://audio/gunshots/GlockShot1.wav" id="5_etwy5"]
+[ext_resource type="AudioStream" uid="uid://ccta6gwx4jlie" path="res://audio/gunshots/GlockShot2.wav" id="6_r4n4p"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_k4ne4"]
+resource_local_to_scene = true
+stream_count = 3
+stream_0/stream = ExtResource("1_etwy5")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("2_r4n4p")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("3_7cije")
+stream_2/volume = -60.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7cije"]
+random_pitch = 1.13
+streams_count = 2
+stream_0/stream = ExtResource("5_etwy5")
+stream_1/stream = ExtResource("6_r4n4p")
+
+[resource]
+script = ExtResource("1_qcnj0")
+DisplayName = "Gunshot"
+streams = [SubResource("AudioStreamRandomizer_7cije")]
+nearMediumFarStream = SubResource("AudioStreamSynchronized_k4ne4")
+nearDist = 25.0
+mediumDist = 150.0
+farDist = 250.0
+maxDistance = 250.0

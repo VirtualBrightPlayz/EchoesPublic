@@ -1,0 +1,127 @@
+[gd_resource type="Theme" format=3 uid="uid://cw5ui36b46hka"]
+
+[ext_resource type="FontFile" uid="uid://busdsgp57qedg" path="res://fonts/SourceCodePro/SourceCodePro-VariableFont_wght.ttf" id="1_4dxiv"]
+[ext_resource type="FontFile" uid="uid://bh7pr76diq664" path="res://fonts/AlfaSlabOne/AlfaSlabOne-Regular.ttf" id="1_7r6ew"]
+[ext_resource type="FontFile" uid="uid://nn8cnsrjwufg" path="res://fonts/Roboto/Roboto-Medium.ttf" id="1_qfee6"]
+[ext_resource type="FontFile" uid="uid://dw3qq6fgpqnw2" path="res://fonts/Roboto/Roboto-Bold.ttf" id="3_4toly"]
+[ext_resource type="FontFile" uid="uid://ct4r5ke8de53b" path="res://fonts/Roboto/Roboto-BoldItalic.ttf" id="4_5lp5e"]
+[ext_resource type="FontFile" uid="uid://c7ramwck4mbrd" path="res://fonts/Roboto/Roboto-MediumItalic.ttf" id="5_u0rut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfee6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lp5e"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dxiv"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4toly"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67jsx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6b1b"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7r6ew"]
+color = Color(1, 1, 1, 1)
+grow_begin = 10.0
+grow_end = 10.0
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7r6ew"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.3529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_bohrg"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ucwf4"]
+gradient = SubResource("Gradient_bohrg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.7, 0.3)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3lh6"]
+texture = SubResource("GradientTexture2D_ucwf4")
+expand_margin_left = 64.0
+expand_margin_top = 64.0
+expand_margin_right = 64.0
+expand_margin_bottom = 64.0
+modulate_color = Color(1, 1, 1, 0.5019608)
+
+[sub_resource type="Gradient" id="Gradient_7r6ew"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qfee6"]
+gradient = SubResource("Gradient_7r6ew")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.2)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dxiv"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+texture = SubResource("GradientTexture2D_qfee6")
+expand_margin_left = 32.0
+expand_margin_top = 32.0
+expand_margin_right = 32.0
+expand_margin_bottom = 32.0
+
+[resource]
+default_font = ExtResource("1_7r6ew")
+Button/styles/disabled = SubResource("StyleBoxFlat_qfee6")
+Button/styles/focus = SubResource("StyleBoxFlat_5lp5e")
+Button/styles/hover = SubResource("StyleBoxFlat_4dxiv")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_4toly")
+Button/styles/normal = SubResource("StyleBoxFlat_67jsx")
+Button/styles/pressed = SubResource("StyleBoxFlat_y6b1b")
+HSeparator/styles/separator = SubResource("StyleBoxLine_7r6ew")
+InventoryPanel/base_type = &"UIPanel"
+InventoryPanel/styles/panel = SubResource("StyleBoxFlat_7r6ew")
+RoleIntroText/base_type = &"RichTextLabel"
+RoleIntroText/fonts/mono_font = ExtResource("1_4dxiv")
+RoleIntroText/fonts/normal_font = ExtResource("1_qfee6")
+RoleIntroText/styles/normal = SubResource("StyleBoxTexture_i3lh6")
+RoleIntroTextClear/base_type = &"RichTextLabel"
+RoleIntroTextClear/fonts/bold_font = ExtResource("3_4toly")
+RoleIntroTextClear/fonts/bold_italics_font = ExtResource("4_5lp5e")
+RoleIntroTextClear/fonts/italics_font = ExtResource("5_u0rut")
+RoleIntroTextClear/fonts/mono_font = ExtResource("1_4dxiv")
+RoleIntroTextClear/fonts/normal_font = ExtResource("1_qfee6")
+UIPanel/base_type = &"PanelContainer"
+UIPanel/styles/panel = SubResource("StyleBoxTexture_4dxiv")

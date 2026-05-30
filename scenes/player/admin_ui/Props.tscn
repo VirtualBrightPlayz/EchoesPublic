@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0dkawxvecwap"]
+
+[ext_resource type="Script" uid="uid://lm3el1s8jdcl" path="res://scripts/ui/admin/AdminCategoryProps.cs" id="1_ng72m"]
+
+[node name="Items" type="VBoxContainer" unique_id=786276841]
+
+[node name="Handler" type="Node" parent="." unique_id=139134328 node_paths=PackedStringArray("container")]
+script = ExtResource("1_ng72m")
+container = NodePath("../ScrollContainer/GridContainer")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1866443819]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1169557026]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

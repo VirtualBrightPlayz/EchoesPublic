@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://cs4noa4e0gchs"]
+
+[ext_resource type="Texture2D" uid="uid://ceehugla7rxp8" path="res://textures/main/ez/floortiles/T_Tiles.png" id="1_7vru5"]
+[ext_resource type="Texture2D" uid="uid://17rnayk01tvw" path="res://textures/main/ez/floortiles/N_Tiles_lined.png" id="2_kcapr"]
+[ext_resource type="Texture2D" uid="uid://ece8817oodg3" path="res://textures/main/ez/floortiles/ORM_Tiles.png" id="3_ytkqj"]
+
+[resource]
+albedo_color = Color(0.760784, 0.721569, 0.678431, 1)
+albedo_texture = ExtResource("1_7vru5")
+orm_texture = ExtResource("3_ytkqj")
+normal_enabled = true
+normal_texture = ExtResource("2_kcapr")

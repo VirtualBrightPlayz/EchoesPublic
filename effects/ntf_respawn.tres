@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameEffect" load_steps=3 format=3 uid="uid://dttpq8mm3jx35"]
+
+[ext_resource type="PackedScene" uid="uid://bhc4fl2rekk3g" path="res://effects/scenes/ntf_respawn.tscn" id="1_0wr7y"]
+[ext_resource type="Script" uid="uid://dun4r5quuxvoy" path="res://scripts/game/GameEffect.cs" id="2_4ecyn"]
+
+[resource]
+script = ExtResource("2_4ecyn")
+DisplayName = "NTF Respawn Wave"
+scene = ExtResource("1_0wr7y")
+Lifetime = 30.0

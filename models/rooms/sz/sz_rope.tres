@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bfddugs12kxki"]
+
+[ext_resource type="Texture2D" uid="uid://bc4egfodk2og2" path="res://models/rooms/sz/Rope001_1K-JPG_Color.jpg" id="1_4ygml"]
+[ext_resource type="Texture2D" uid="uid://b1hmd3cdkbk5" path="res://models/rooms/sz/Rope001_1K-JPG_NormalGL.jpg" id="2_ei2ij"]
+[ext_resource type="Texture2D" uid="uid://b036t5skfj812" path="res://models/rooms/sz/Rope001_1K-JPG_Roughness.jpg" id="3_1kgdv"]
+
+[resource]
+albedo_texture = ExtResource("1_4ygml")
+roughness_texture = ExtResource("3_1kgdv")
+normal_enabled = true
+normal_texture = ExtResource("2_ei2ij")

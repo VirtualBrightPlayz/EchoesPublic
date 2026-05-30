@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://dyyqsu50f8kmi"]
+
+[ext_resource type="Resource" uid="uid://cwfn8phl381r4" path="res://scripts/layout_generator/example_spawn_validator/EZCheckpointSpawnValidator.tres" id="1_ry40a"]
+[ext_resource type="PackedScene" uid="uid://rc1t4vm08cbb" path="res://scenes/rooms/checkpoints/checkpoint_2.tscn" id="2_88g4l"]
+[ext_resource type="Resource" uid="uid://bhci1d8du0yu0" path="res://scripts/layout_generator/example_spawn_validator/NoEndoffNeighbourSpawnValidatorResource.tres" id="2_bnm6y"]
+[ext_resource type="Script" uid="uid://bywjguyrxw0rn" path="res://scripts/layout_generator/SpawnValidator.cs" id="2_n8v13"]
+[ext_resource type="Script" uid="uid://c3ohb0venlcjp" path="res://scripts/layout_generator/RoomGenerationSettings.cs" id="3_dxr5t"]
+
+[resource]
+script = ExtResource("3_dxr5t")
+RoomScenes = Array[PackedScene]([ExtResource("2_88g4l")])
+RequiredInstances = 0
+MaximumInstances = -1
+SpawnPoolEntries = 10
+Connections = 10
+BlockedNeighbours = 5
+PreSpawnValidatorResources = Array[ExtResource("2_n8v13")]([ExtResource("1_ry40a"), ExtResource("2_bnm6y")])
+PostSpawnValidatorResources = Array[ExtResource("2_n8v13")]([])
+Test = false
+Constraints = []
+MaxConsecutive = 1

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://gumx0boo5b4e"]
+
+[ext_resource type="Script" uid="uid://sq8nk83k7fw4" path="res://scripts/player/controllers/ability/PortalAbility.cs" id="1_ajkjf"]
+[ext_resource type="PackedScene" uid="uid://bfw3t8bisu27y" path="res://scenes/misc/portal_106.tscn" id="2_aka68"]
+[ext_resource type="Resource" uid="uid://ow5co3g2suqs" path="res://sounds/106_rise.tres" id="3_y2fpp"]
+[ext_resource type="PackedScene" uid="uid://dv60cc34cjqhk" path="res://scenes/player/role_ui/scp_106_ui.tscn" id="4_aka68"]
+
+[node name="PortalAbility" type="Node" unique_id=2036147000 node_paths=PackedStringArray("ui", "layer", "teleportCooldown", "teleportTimer")]
+script = ExtResource("1_ajkjf")
+ui = NodePath("CanvasLayer/SCP106UI")
+layer = NodePath("CanvasLayer")
+teleportCooldown = NodePath("TPCooldown")
+teleportTimer = NodePath("TPTimer")
+portalScene = ExtResource("2_aka68")
+teleportTime = 3.5
+teleportedSound = ExtResource("3_y2fpp")
+stateRiseName = "Rise/request"
+metadata/_custom_type_script = "uid://sq8nk83k7fw4"
+
+[node name="TPCooldown" type="Timer" parent="." unique_id=1217699438]
+wait_time = 10.0
+one_shot = true
+
+[node name="TPTimer" type="Timer" parent="." unique_id=1174519332]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1494134859]
+visible = false
+follow_viewport_enabled = true
+
+[node name="SCP106UI" parent="CanvasLayer" unique_id=585643039 node_paths=PackedStringArray("ability") instance=ExtResource("4_aka68")]
+ability = NodePath("../..")

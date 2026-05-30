@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://co6km81g2lmqd"]
+
+[ext_resource type="Texture2D" uid="uid://c5yemdu71oyg0" path="res://models/scpsl/zombie/Zombie_D_Male_Body_diffuse.png" id="1_np34t"]
+[ext_resource type="Texture2D" uid="uid://1j1780cym51o" path="res://models/scpsl/zombie/Zombie_D_Male_Body_normal.png" id="2_mcafx"]
+
+[resource]
+albedo_texture = ExtResource("1_np34t")
+normal_enabled = true
+normal_texture = ExtResource("2_mcafx")

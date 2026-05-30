@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="InputActionSet" format=3 uid="uid://c5grvbqh5fajf"]
+
+[ext_resource type="Script" uid="uid://c5rpk473lbp36" path="res://scripts/player/input/InputActionAnalog.cs" id="1_04177"]
+[ext_resource type="Script" uid="uid://dab5106xknh5r" path="res://scripts/player/input/InputActionDigital.cs" id="2_lmicm"]
+[ext_resource type="Resource" uid="uid://hqj3xywaquvh" path="res://data/input/actions/digital/up.tres" id="3_fimdi"]
+[ext_resource type="Resource" uid="uid://c30kigqldtu5s" path="res://data/input/actions/digital/down.tres" id="4_jikwb"]
+[ext_resource type="Resource" uid="uid://drxixwofalkr" path="res://data/input/actions/digital/left.tres" id="5_efhde"]
+[ext_resource type="Resource" uid="uid://c7p1s4742n6fn" path="res://data/input/actions/digital/right.tres" id="6_820d3"]
+[ext_resource type="Resource" uid="uid://dy5n1pq87rue0" path="res://data/input/actions/digital/select.tres" id="7_ld7da"]
+[ext_resource type="Resource" uid="uid://dypdoq01ly4jj" path="res://data/input/actions/digital/cancel.tres" id="8_ynbyg"]
+[ext_resource type="Resource" uid="uid://cv8t6omy0xjft" path="res://data/input/actions/digital/pause.tres" id="9_7oydq"]
+[ext_resource type="Resource" uid="uid://b0xsujqsmb2q6" path="res://data/input/actions/digital/click_lockmenu.tres" id="10_jikwb"]
+[ext_resource type="Script" uid="uid://cv67jfffymwa5" path="res://scripts/player/input/InputActionStickPad.cs" id="10_rikdb"]
+[ext_resource type="Script" uid="uid://cwm4ujckr2ppq" path="res://scripts/player/input/InputActionSet.cs" id="11_b6pv2"]
+[ext_resource type="Resource" uid="uid://c5eo63dp03lra" path="res://data/input/actions/digital/exit_lockmenu.tres" id="11_efhde"]
+[ext_resource type="Resource" uid="uid://dt5aa20wlv0o4" path="res://data/input/actions/stick_pad/camera_lockmenu.tres" id="13_jikwb"]
+
+[resource]
+resource_name = "MenuLocked"
+script = ExtResource("11_b6pv2")
+LocaleKey = "Set_MenuLocked"
+LockMouse = true
+StickPadActions = Array[ExtResource("10_rikdb")]([ExtResource("13_jikwb")])
+DigitalActions = Array[ExtResource("2_lmicm")]([ExtResource("3_fimdi"), ExtResource("4_jikwb"), ExtResource("5_efhde"), ExtResource("6_820d3"), ExtResource("7_ld7da"), ExtResource("8_ynbyg"), ExtResource("9_7oydq"), ExtResource("10_jikwb"), ExtResource("11_efhde")])
+metadata/_custom_type_script = "uid://cwm4ujckr2ppq"

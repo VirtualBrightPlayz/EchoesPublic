@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dormd71fxgl05"]
+
+[ext_resource type="PackedScene" uid="uid://b72c61mhew2kl" path="res://scenes/rooms/props/dynamic/wet_floor_sign.tscn" id="1_i5yeg"]
+[ext_resource type="Script" uid="uid://d6hjsjwwudsg" path="res://scripts/network/PhysicsProp3D.cs" id="2_bwwft"]
+[ext_resource type="Texture2D" uid="uid://5w2qcs6vnyi2" path="res://textures/scpcb/decals/decal8_blue.png" id="2_jnprj"]
+[ext_resource type="Texture2D" uid="uid://cdydj4f6sio3w" path="res://textures/scpcb/decals/decal8_orm.png" id="4_uljg4"]
+
+[node name="WetPuddleSign" type="Node3D"]
+
+[node name="WetFloorSign" type="RigidBody3D" parent="." node_paths=PackedStringArray("PropAudio", "Mesh", "DestroyOnDeath", "xformSync") groups=["phys_prop"] instance=ExtResource("1_i5yeg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297532, 0, 0)
+collision_layer = 261
+collision_mask = 261
+mass = 0.95
+continuous_cd = true
+script = ExtResource("2_bwwft")
+Category = 9
+PropAudio = NodePath("AudioStreamPlayer3D")
+Mesh = NodePath("wet_floor_sign_low/lowpoly")
+DestroyOnDeath = []
+xformSync = NodePath("TransformSync")
+metadata/_custom_type_script = "uid://d6hjsjwwudsg"
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(-0.858065, 0, -0.513541, 0, 1, 0, 0.513541, 0, -0.858065, 0.303, -0.25, 0)
+size = Vector3(3, 1, 3)
+texture_albedo = ExtResource("2_jnprj")
+texture_orm = ExtResource("4_uljg4")
+albedo_mix = 0.3
+distance_fade_enabled = true
+cull_mask = 1048526

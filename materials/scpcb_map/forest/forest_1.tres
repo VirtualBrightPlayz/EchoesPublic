@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cw6a0v8i6rmsi"]
+
+[ext_resource type="Shader" uid="uid://cq6r5m662vx10" path="res://shaders/forest/forest_path.tres" id="1_h43cm"]
+[ext_resource type="Texture2D" uid="uid://dnrstav402b64" path="res://textures/scpcb/forestfloor.jpg" id="2_e46h5"]
+[ext_resource type="Texture2D" uid="uid://bi76f2vwn3if7" path="res://textures/scpcb/forest/forest1h_mask.png" id="3_bh8ne"]
+[ext_resource type="Texture2D" uid="uid://dv2dtp1sjiao7" path="res://textures/scpcb/forestpath.jpg" id="4_u0ycx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h43cm")
+shader_parameter/base_tex = ExtResource("2_e46h5")
+shader_parameter/path_tex = ExtResource("4_u0ycx")
+shader_parameter/mask_tex = ExtResource("3_bh8ne")
+shader_parameter/uv_scale = Vector2(2, 2)

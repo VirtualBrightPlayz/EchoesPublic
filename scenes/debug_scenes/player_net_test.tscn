@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://lu1yrahrv8so"]
+
+[ext_resource type="Script" uid="uid://chriul3kh2dgq" path="res://scripts/player/PlayerNetTest.cs" id="1_203w2"]
+[ext_resource type="Script" uid="uid://cehlxdhraimk0" path="res://scripts/player/TestIDamageSource.cs" id="2_pouxu"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_203w2")
+amount = 100.0
+path = NodePath("../Node2")
+
+[node name="Node2" type="Node" parent="."]
+script = ExtResource("2_pouxu")

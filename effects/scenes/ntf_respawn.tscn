@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhc4fl2rekk3g"]
+
+[ext_resource type="AudioStream" uid="uid://dvewajgoefg30" path="res://audio/scpcb/intercom/Announc.ogg" id="1_tdefg"]
+
+[node name="NtfRespawn" type="Node3D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tdefg")
+volume_db = -12.0
+autoplay = true
+bus = &"WorldLoud"

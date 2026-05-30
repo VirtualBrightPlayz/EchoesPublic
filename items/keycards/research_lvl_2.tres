@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="KeycardPreset" format=3 uid="uid://vnjfrhb8iiwr"]
+
+[ext_resource type="Script" uid="uid://drxykkctosl0d" path="res://scripts/items/KeycardAccess.cs" id="1_w5do6"]
+[ext_resource type="Texture2D" uid="uid://dms1kkhdwgrya" path="res://textures/inv_icons/keycards/V3 - Current/R2 Card Icon.png" id="2_ykc8l"]
+[ext_resource type="PackedScene" uid="uid://bee3dxwqecwgq" path="res://scenes/items/keycard.tscn" id="3_rixmm"]
+[ext_resource type="PackedScene" uid="uid://4qt4cm3hs1jf" path="res://models/rooms/pop_hcz_new/Pop_Cards/R_Card_2.tscn" id="4_ej18s"]
+[ext_resource type="Script" uid="uid://bod50askdghnl" path="res://scripts/items/KeycardPreset.cs" id="4_ykc8l"]
+[ext_resource type="Shader" uid="uid://ce5ora5itp6pm" path="res://shaders/fp_pov.gdshader" id="5_ej18s"]
+[ext_resource type="Texture2D" uid="uid://bc3f1b4kdvx8f" path="res://textures/main/cards/T_specializedresearcher.png" id="6_ykc8l"]
+[ext_resource type="Texture2D" uid="uid://ddw8eg22gjuhr" path="res://textures/main/cards/ORM_keycard.png" id="7_ej18s"]
+[ext_resource type="Texture2D" uid="uid://bjb4ybvuby1hf" path="res://textures/main/cards/N_keycard.png" id="8_2000t"]
+
+[sub_resource type="Resource" id="Resource_xkvyd"]
+script = ExtResource("1_w5do6")
+level = 2
+cardType = 2
+metadata/_custom_type_script = "uid://drxykkctosl0d"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8gt5"]
+render_priority = 0
+shader = ExtResource("5_ej18s")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_ykc8l")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("7_ej18s")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/texture_roughness = ExtResource("7_ej18s")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("8_2000t")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/emissive_tint = Color(0, 0, 0, 1)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_s7p4m"]
+albedo_texture = ExtResource("6_ykc8l")
+orm_texture = ExtResource("7_ej18s")
+normal_enabled = true
+normal_texture = ExtResource("8_2000t")
+
+[resource]
+resource_name = "T2 Research Keycard"
+script = ExtResource("4_ykc8l")
+Access = [SubResource("Resource_xkvyd")]
+worldMaterial = SubResource("ORMMaterial3D_s7p4m")
+viewMaterial = SubResource("ShaderMaterial_q8gt5")
+cardScene = ExtResource("4_ej18s")
+isHorizAnims = true
+ItemScene = ExtResource("3_rixmm")
+Icon = ExtResource("2_ykc8l")
+Description = "Can access mid-tier checkpoints, labs, and containment areas."
+metadata/_custom_type_script = "uid://ddmra6s3qsvrs"

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cni1xkbiy7j1k"]
+
+[ext_resource type="PackedScene" uid="uid://d17qw7e3txv7" path="res://models/rooms/pop_hcz_new/Pop_Cards/Meshes/CardHolder_V.fbx" id="1_65dx3"]
+[ext_resource type="PackedScene" uid="uid://cmo7xwvcpr0kd" path="res://models/rooms/pop_hcz_new/Pop_Cards/Meshes/Card_V.fbx" id="2_0ss11"]
+[ext_resource type="Texture2D" uid="uid://04ci7ubghjq7" path="res://models/rooms/pop_hcz_new/Pop_Cards/CardTextures/Maintenance Card_Janitor.png" id="3_jnc52"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6faop"]
+albedo_texture = ExtResource("3_jnc52")
+
+[node name="MCard1" type="Node3D" unique_id=62431008]
+
+[node name="CardHolder_V" parent="." unique_id=551781709 instance=ExtResource("1_65dx3")]
+
+[node name="Card_V" parent="." unique_id=723472449 instance=ExtResource("2_0ss11")]
+
+[node name="Card_V" parent="Card_V" index="0" unique_id=699623782]
+surface_material_override/0 = SubResource("StandardMaterial3D_6faop")
+
+[editable path="Card_V"]
